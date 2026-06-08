@@ -10,9 +10,18 @@ import type { Access, FieldAccess } from 'payload'
  * `payload generate:types` has run; until then it resolves via the generated User type.
  */
 
-type MaybeRole = { role?: 'super-admin' | 'staff' | null } | null | undefined
-
-const roleOf = (user: MaybeRole): 'super-admin' | 'staff' | undefined => user?.role ?? undefined
+/**
+ * Read a role off any user-like value. Accepts `unknown` and narrows at runtime so it
+ * works for both the server `User` type and the admin-UI `ClientUser` type (whose generated
+ * shape doesn't always surface `role` to TS).
+ */
+const roleOf = (user: unknown): 'super-admin' | 'staff' | undefined => {
+  if (user && typeof user === 'object' && 'role' in user) {
+    const role = (user as { role?: unknown }).role
+    if (role === 'super-admin' || role === 'staff') return role
+  }
+  return undefined
+}
 
 /** Public — anyone (used for public-readable content). */
 export const anyone: Access = () => true
@@ -33,5 +42,5 @@ export const isAdminOrStaff: Access = ({ req: { user } }) => {
 export const isSuperAdminField: FieldAccess = ({ req: { user } }) => roleOf(user) === 'super-admin'
 
 /** Admin-UI visibility helper: hide a collection/global from non-super-admins. */
-export const superAdminOnlyUI = ({ req: { user } }: { req: { user: MaybeRole } }): boolean =>
+export const superAdminOnlyUI = ({ req: { user } }: { req: { user: unknown } }): boolean =>
   roleOf(user) === 'super-admin'

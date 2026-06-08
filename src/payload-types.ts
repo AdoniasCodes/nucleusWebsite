@@ -200,6 +200,10 @@ export interface HeroBlock {
   amharicSubline?: string | null;
   subhead?: string | null;
   image?: (number | null) | Media;
+  /**
+   * Optional. A path/URL (e.g. /images/...) used as the hero background when no image is uploaded.
+   */
+  bgImage?: string | null;
   links?:
     | {
         link: {
@@ -313,7 +317,7 @@ export interface RichTextBlock {
  * via the `definition` "CardsGridBlock".
  */
 export interface CardsGridBlock {
-  background?: ('white' | 'offwhite' | 'purple') | null;
+  background?: ('white' | 'offwhite' | 'mist' | 'purple') | null;
   eyebrow?: string | null;
   heading?: string | null;
   intro?: string | null;
@@ -321,6 +325,10 @@ export interface CardsGridBlock {
   cards?:
     | {
         icon?: (number | null) | Media;
+        /**
+         * Lucide icon name (e.g. GraduationCap, ShieldCheck, Sprout). Used when no icon image is uploaded. See lucide.dev/icons.
+         */
+        iconName?: string | null;
         title: string;
         description?: string | null;
         enableLink?: boolean | null;
@@ -522,6 +530,10 @@ export interface Post {
   category?: ('news' | 'academics' | 'admissions' | 'campus-life' | 'parent-resources') | null;
   excerpt?: string | null;
   heroImage?: (number | null) | Media;
+  /**
+   * Optional local/stock image path (e.g. /images/...) used if no hero image is uploaded.
+   */
+  heroImageUrl?: string | null;
   content: {
     root: {
       type: string;
@@ -840,6 +852,7 @@ export interface HeroBlockSelect<T extends boolean = true> {
   amharicSubline?: T;
   subhead?: T;
   image?: T;
+  bgImage?: T;
   links?:
     | T
     | {
@@ -883,6 +896,7 @@ export interface CardsGridBlockSelect<T extends boolean = true> {
     | T
     | {
         icon?: T;
+        iconName?: T;
         title?: T;
         description?: T;
         enableLink?: T;
@@ -1016,6 +1030,7 @@ export interface PostsSelect<T extends boolean = true> {
   category?: T;
   excerpt?: T;
   heroImage?: T;
+  heroImageUrl?: T;
   content?: T;
   authors?: T;
   publishedAt?: T;

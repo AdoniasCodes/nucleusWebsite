@@ -1,0 +1,76 @@
+import Image from 'next/image'
+import type { HeroBlock as HeroBlockType } from '@/payload-types'
+import { Container } from '@/components/ui/Container'
+import { CMSLink } from '@/components/ui/Button'
+import { Media } from '@/components/ui/Media'
+import { Orb } from '@/components/ui/Orb'
+import { isDark, type SectionBackground } from '@/components/ui/Section'
+
+/**
+ * Page hero. Background priority: uploaded media image → local `bgImage` (stock/demo) → orb-glow.
+ * On dark backgrounds the multi-line heading's final line is accented in ochre (the "Solve Truly."
+ * emphasis). `bgImage` is a code-only prop used by the default layouts; CMS uses the `image` upload.
+ */
+export function HeroBlock(props: HeroBlockType & { bgImage?: string }) {
+  const background = (props.background ?? 'purple') as SectionBackground
+  const dark = isDark(background)
+  const lines = (props.heading ?? '').split('\n')
+  const hasMedia = props.image && typeof props.image === 'object'
+  const hasBg = hasMedia || Boolean(props.bgImage)
+
+  return (
+    <section className={`relative overflow-hidden ${dark ? 'orb-glow text-pale' : 'bg-offwhite text-ink'}`}>
+      {hasMedia ? (
+        <div className="absolute inset-0">
+          <Media resource={props.image} fill priority className="object-cover" sizes="100vw" />
+          <div className="absolute inset-0 bg-navy/75" />
+        </div>
+      ) : props.bgImage ? (
+        <div className="absolute inset-0">
+          <Image src={props.bgImage} alt="" fill priority className="object-cover" sizes="100vw" />
+          {/* Navy gradient overlay keeps text legible over any photo. */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/75 to-navy/55" />
+        </div>
+      ) : (
+        dark && <Orb size={520} className="pointer-events-none absolute -right-32 -top-24 opacity-30" />
+      )}
+
+      <Container className="relative py-24 sm:py-32">
+        <div className="max-w-3xl">
+          {props.amharicSubline && (
+            <p lang="am" className={`mb-4 text-lg ${dark || hasBg ? 'text-ochre' : 'text-ochre-600'}`}>
+              {props.amharicSubline}
+            </p>
+          )}
+          {props.eyebrow && (
+            <p className="mb-3 font-display text-sm font-semibold uppercase tracking-[0.18em] text-ochre">
+              {props.eyebrow}
+            </p>
+          )}
+          <h1 className="text-4xl font-bold sm:text-6xl">
+            {lines.map((line, i) => (
+              <span
+                key={i}
+                className={`block ${i === lines.length - 1 && lines.length > 1 ? 'text-ochre' : ''}`}
+              >
+                {line}
+              </span>
+            ))}
+          </h1>
+          {props.subhead && (
+            <p className={`mt-6 max-w-xl text-lg ${dark || hasBg ? 'text-pale/90' : 'text-ink/75'}`}>
+              {props.subhead}
+            </p>
+          )}
+          {props.links && props.links.length > 0 && (
+            <div className="mt-9 flex flex-wrap gap-4">
+              {props.links.map((item, i) => (
+                <CMSLink key={i} link={item.link} />
+              ))}
+            </div>
+          )}
+        </div>
+      </Container>
+    </section>
+  )
+}

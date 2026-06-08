@@ -1,4 +1,4 @@
-import type { Block } from 'payload'
+import type { Block, Field } from 'payload'
 
 import { linkField } from '../fields/link'
 
@@ -19,6 +19,7 @@ export const CardsGrid: Block = {
       options: [
         { label: 'White', value: 'white' },
         { label: 'Off-white', value: 'offwhite' },
+        { label: 'Mist blue', value: 'mist' },
         { label: 'Purple gradient', value: 'purple' },
       ],
     },
@@ -38,6 +39,14 @@ export const CardsGrid: Block = {
       labels: { singular: 'Card', plural: 'Cards' },
       fields: [
         { name: 'icon', type: 'upload', relationTo: 'media' },
+        {
+          name: 'iconName',
+          type: 'text',
+          admin: {
+            description:
+              'Lucide icon name (e.g. GraduationCap, ShieldCheck, Sprout). Used when no icon image is uploaded. See lucide.dev/icons.',
+          },
+        },
         { name: 'title', type: 'text', required: true },
         { name: 'description', type: 'textarea' },
         {
@@ -45,10 +54,11 @@ export const CardsGrid: Block = {
           type: 'checkbox',
           defaultValue: false,
         },
+        // Cast: spreading a Field union loses the discriminant; the shape is valid.
         {
           ...linkField({ appearances: ['link'] }),
           admin: { condition: (_, sibling) => Boolean(sibling?.enableLink) },
-        },
+        } as Field,
       ],
     },
   ],

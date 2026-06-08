@@ -24,6 +24,15 @@ export const Hero: Block = {
     { name: 'subhead', type: 'textarea' },
     { name: 'image', type: 'upload', relationTo: 'media' },
     {
+      name: 'bgImage',
+      type: 'text',
+      label: 'Background image URL',
+      admin: {
+        description:
+          'Optional. A path/URL (e.g. /images/...) used as the hero background when no image is uploaded.',
+      },
+    },
+    {
       name: 'links',
       type: 'array',
       maxRows: 2,

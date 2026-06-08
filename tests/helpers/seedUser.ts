@@ -2,6 +2,7 @@ import { getPayload } from 'payload'
 import config from '../../src/payload.config.js'
 
 export const testUser = {
+  name: 'Dev User',
   email: 'dev@payloadcms.com',
   password: 'test',
 }
@@ -22,11 +23,11 @@ export async function seedTestUser(): Promise<void> {
     },
   })
 
-  // Create fresh test user
+  // Create fresh test user. Cast resolves the create() draft/non-draft overload union.
   await payload.create({
     collection: 'users',
     data: testUser,
-  })
+  } as Parameters<typeof payload.create>[0])
 }
 
 /**

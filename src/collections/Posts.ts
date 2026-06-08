@@ -33,6 +33,11 @@ export const Posts: CollectionConfig = {
     },
     { name: 'excerpt', type: 'textarea', maxLength: 280 },
     { name: 'heroImage', type: 'upload', relationTo: 'media' },
+    {
+      name: 'heroImageUrl',
+      type: 'text',
+      admin: { description: 'Optional local/stock image path (e.g. /images/...) used if no hero image is uploaded.' },
+    },
     { name: 'content', type: 'richText', required: true },
     {
       name: 'authors',
