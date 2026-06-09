@@ -23,7 +23,8 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
   const parentName = get('parentName')
   const email = get('email')
   const phone = get('phone')
-  const childAgeOrGrade = get('childAgeOrGrade')
+  const childAge = get('childAge')
+  const childGrade = get('childGrade')
   const sourcePage = get('sourcePage')
 
   if (!parentName || !email) return { status: 'error', message: 'Please add your name and email.' }
@@ -39,7 +40,8 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
           parentName,
           email,
           phone,
-          childAgeOrGrade,
+          childAge,
+          childGrade,
           preferredDate: get('preferredDate') || undefined,
           preferredTime: (get('preferredTime') as 'morning' | 'afternoon') || undefined,
           notes: get('notes') || undefined,
@@ -53,7 +55,8 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
           parentName,
           email,
           phone,
-          childAgeOrGrade,
+          childAge,
+          childGrade,
           interest: formType === 'fee-request' ? 'fee-request' : 'general',
           message: get('message') || undefined,
           sourcePage,

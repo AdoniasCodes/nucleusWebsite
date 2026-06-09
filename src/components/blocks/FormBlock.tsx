@@ -75,8 +75,11 @@ export function FormBlock(props: FormBlockType) {
               <Field label="Phone">
                 <input name="phone" className={inputBase} autoComplete="tel" inputMode="tel" />
               </Field>
-              <Field label="Child age / grade">
-                <input name="childAgeOrGrade" className={inputBase} />
+              <Field label="Child’s age">
+                <input name="childAge" className={inputBase} inputMode="numeric" placeholder="e.g. 5" />
+              </Field>
+              <Field label="Grade applying for">
+                <input name="childGrade" className={inputBase} placeholder="e.g. KG or Grade 1" />
               </Field>
 
               {isTour && (

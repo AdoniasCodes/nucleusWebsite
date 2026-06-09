@@ -1,17 +1,19 @@
 import type { MetadataRoute } from 'next'
 import { getPayloadClient } from '@/lib/payload'
+import { defaultPages } from '@/components/blocks/defaultPages'
 
 const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
 
-/** Auto-generated sitemap of canonical URLs: static routes + published pages + posts. */
+/** Auto-generated sitemap of canonical URLs: home + all code/CMS pages + published posts. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base: MetadataRoute.Sitemap = [
     { url: SERVER_URL, changeFrequency: 'weekly', priority: 1 },
-    { url: `${SERVER_URL}/about`, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${SERVER_URL}/academics`, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${SERVER_URL}/admissions`, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${SERVER_URL}/campus-life`, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${SERVER_URL}/news`, changeFrequency: 'weekly', priority: 0.6 },
+    // Every code-defined page (about, academics, program pages, admissions, contact, news…).
+    ...Object.keys(defaultPages).map((slug) => ({
+      url: `${SERVER_URL}/${slug}`,
+      changeFrequency: 'monthly' as const,
+      priority: slug === 'admissions' ? 0.9 : 0.7,
+    })),
   ]
 
   try {

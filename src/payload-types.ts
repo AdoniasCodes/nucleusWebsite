@@ -646,6 +646,8 @@ export interface AdmissionsInquiry {
   parentName: string;
   email: string;
   phone?: string | null;
+  childAge?: string | null;
+  childGrade?: string | null;
   childAgeOrGrade?: string | null;
   interest?: ('general' | 'fee-request' | 'admissions' | 'summer-camp') | null;
   message?: string | null;
@@ -666,6 +668,8 @@ export interface TourBooking {
   parentName: string;
   email: string;
   phone?: string | null;
+  childAge?: string | null;
+  childGrade?: string | null;
   childAgeOrGrade?: string | null;
   preferredDate?: string | null;
   preferredTime?: ('morning' | 'afternoon') | null;
@@ -1186,6 +1190,8 @@ export interface AdmissionsInquiriesSelect<T extends boolean = true> {
   parentName?: T;
   email?: T;
   phone?: T;
+  childAge?: T;
+  childGrade?: T;
   childAgeOrGrade?: T;
   interest?: T;
   message?: T;
@@ -1202,6 +1208,8 @@ export interface TourBookingsSelect<T extends boolean = true> {
   parentName?: T;
   email?: T;
   phone?: T;
+  childAge?: T;
+  childGrade?: T;
   childAgeOrGrade?: T;
   preferredDate?: T;
   preferredTime?: T;

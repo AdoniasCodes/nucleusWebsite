@@ -32,10 +32,14 @@ export const AdmissionsInquiries: CollectionConfig = {
     {
       type: 'row',
       fields: [
-        { name: 'phone', type: 'text', admin: { width: '50%' } },
-        { name: 'childAgeOrGrade', type: 'text', label: 'Child age / grade', admin: { width: '50%' } },
+        { name: 'phone', type: 'text', admin: { width: '33%' } },
+        { name: 'childAge', type: 'text', label: "Child's age", admin: { width: '33%' } },
+        { name: 'childGrade', type: 'text', label: 'Grade applying for', admin: { width: '34%' } },
       ],
     },
+    // Legacy column kept (hidden) so the schema change stays additive — no dev-push rename prompt.
+    // TODO: drop via a proper migration once we're on production migrations.
+    { name: 'childAgeOrGrade', type: 'text', admin: { hidden: true } },
     {
       name: 'interest',
       type: 'select',

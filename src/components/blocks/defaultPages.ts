@@ -101,7 +101,10 @@ export const defaultPages: Record<string, DefaultPage> = {
         bgImage: '/images/stock/academics-hero.jpg',
         subhead:
           'We follow the Cambridge pathway — one of the world’s most recognised and portable curricula — rewarding deep understanding over memorisation.',
-        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+        links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'The Cambridge Pathway', url: '/cambridge-pathway' } },
+          { link: { appearance: 'outline', type: 'custom', label: 'Book a Tour', url: '/contact' } },
+        ],
       },
       {
         blockType: 'prose',
@@ -137,8 +140,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Learning Beyond Books',
         columns: '4',
         cards: [
-          { iconName: 'Bot', title: 'Robotics & STEM', description: 'Coding, engineering and hands-on problem-solving.' },
-          { iconName: 'Sprout', title: 'Agriculture & Animal Care', description: 'The “Farmer-Scientist” — science you can hold.' },
+          { iconName: 'Bot', title: 'Robotics & STEM', description: 'Coding, engineering and hands-on problem-solving.', enableLink: true, link: { type: 'custom', label: 'Explore Robotics & STEM', url: '/robotics-stem' } },
+          { iconName: 'Sprout', title: 'Agriculture & Animal Care', description: 'The “Farmer-Scientist” — science you can hold.', enableLink: true, link: { type: 'custom', label: 'Explore Agriculture', url: '/agriculture-animal-care' } },
           { iconName: 'Music', title: 'Music & the Band', description: 'Expression, discipline and joy through music.' },
           { iconName: 'Languages', title: 'Multilingual Learning', description: 'English and Amharic, taught bilingually.' },
         ],
@@ -350,6 +353,186 @@ export const defaultPages: Record<string, DefaultPage> = {
         subhead: 'Stories, milestones and ideas from campus.',
       },
       { blockType: 'latestPosts', heading: 'Latest', limit: 9 },
+    ],
+  },
+
+  'cambridge-pathway': {
+    title: 'Cambridge Pathway',
+    seoTitle: 'The Cambridge Pathway at Nucleus | Cambridge School in Addis Ababa',
+    description:
+      'The Cambridge pathway at Nucleus International School, Mekanisa — a portable, internationally recognised education from the early years through Grade 8.',
+    layout: [
+      {
+        blockType: 'hero',
+        background: 'purple',
+        bgImage: '/images/stock/academics-hero.jpg',
+        eyebrow: 'Academics',
+        heading: 'The Cambridge Pathway',
+        subhead:
+          'A world-class, portable curriculum that rewards deep understanding over memorisation — and travels with your child anywhere in the world.',
+        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+      },
+      {
+        blockType: 'prose',
+        eyebrow: 'Why Cambridge',
+        heading: 'An education that opens doors',
+        items: [
+          { type: 'lead', text: 'The Cambridge pathway is one of the world’s most recognised curricula — structured, rigorous and respected by universities across Europe, North America and beyond.' },
+          { type: 'p', text: 'At Nucleus we follow the Cambridge pathway from the early years through Grade 8, so a child who begins in Mekanisa is prepared to continue, and to thrive, wherever life takes your family next.' },
+          { type: 'p', text: 'It is content-rich and clearly assessed, which suits children who like defined goals and steady, visible progress.' },
+        ],
+      },
+      {
+        blockType: 'cardsGrid',
+        background: 'mist',
+        heading: 'The Stages',
+        intro: 'A continuous Cambridge journey from first steps to Grade 8.',
+        columns: '3',
+        cards: [
+          { iconName: 'Baby', title: 'Early Years', description: 'Play-based foundations: language, numeracy, curiosity and confidence.' },
+          { iconName: 'BookOpen', title: 'Primary', description: 'Cambridge Primary across English, Mathematics, Science and more.' },
+          { iconName: 'GraduationCap', title: 'Lower Secondary', description: 'Cambridge Lower Secondary through Grade 8, building toward IGCSE-readiness.' },
+        ],
+      },
+      {
+        blockType: 'cardsGrid',
+        background: 'white',
+        eyebrow: 'Explore More',
+        heading: 'Beyond the curriculum',
+        columns: '3',
+        cards: [
+          { iconName: 'Bot', title: 'Robotics & STEM', description: 'Future-ready, hands-on technology and science.', enableLink: true, link: { type: 'custom', label: 'Explore Robotics & STEM', url: '/robotics-stem' } },
+          { iconName: 'Sprout', title: 'Agriculture & Animal Care', description: 'Real-world, holistic learning rooted in nature.', enableLink: true, link: { type: 'custom', label: 'Explore Agriculture', url: '/agriculture-animal-care' } },
+          { iconName: 'Scale', title: 'Cambridge or IB?', description: 'How the two compare for your child.', enableLink: true, link: { type: 'custom', label: 'Read the guide', url: '/news/cambridge-vs-ib-addis-ababa' } },
+        ],
+      },
+      {
+        blockType: 'ctaBand',
+        background: 'purple',
+        heading: 'See the Cambridge pathway in action',
+        subhead: 'Book a tour of our Mekanisa campus, or request the full fee sheet.',
+        links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } },
+          { link: { appearance: 'outline', type: 'custom', label: 'Admissions & Fees', url: '/admissions' } },
+        ],
+      },
+    ],
+  },
+
+  'robotics-stem': {
+    title: 'Robotics & STEM',
+    seoTitle: 'Robotics & STEM at Nucleus | Hands-on Tech for Kids in Addis Ababa',
+    description:
+      'Robotics, coding and STEM at Nucleus International School, Mekanisa — future-ready skills built through hands-on technology and science from an early age.',
+    layout: [
+      {
+        blockType: 'hero',
+        background: 'purple',
+        bgImage: '/images/stock/gallery-stem.jpg',
+        eyebrow: 'Learning Beyond Books',
+        heading: 'Robotics & STEM',
+        subhead:
+          'Coding, robotics and science that turn curious children into confident problem-solvers — unafraid of hard problems.',
+        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+      },
+      {
+        blockType: 'prose',
+        eyebrow: 'Why it matters early',
+        heading: 'Building thinkers, not just test-takers',
+        items: [
+          { type: 'lead', text: 'When children build something — a circuit, a program, a robot — they meet real problems and solve them. That habit carries into everything else they learn.' },
+          { type: 'p', text: 'Coding and robotics teach logic, sequencing and resilience. A program that doesn’t work isn’t a failure; it’s a puzzle. Children who grow up debugging grow up unafraid of hard problems.' },
+        ],
+      },
+      {
+        blockType: 'cardsGrid',
+        background: 'mist',
+        heading: 'What students do',
+        columns: '4',
+        cards: [
+          { iconName: 'Cpu', title: 'Coding', description: 'Logic and sequencing through age-appropriate coding.' },
+          { iconName: 'Bot', title: 'Robotics', description: 'Designing, building and testing real robots.' },
+          { iconName: 'FlaskConical', title: 'Science', description: 'Hands-on experiments that make ideas stick.' },
+          { iconName: 'Lightbulb', title: 'Problem-Solving', description: 'Iteration, teamwork and creative thinking.' },
+        ],
+      },
+      {
+        blockType: 'cardsGrid',
+        background: 'white',
+        eyebrow: 'Explore More',
+        heading: 'A full, holistic education',
+        columns: '3',
+        cards: [
+          { iconName: 'GraduationCap', title: 'Cambridge Pathway', description: 'Our portable, world-class curriculum.', enableLink: true, link: { type: 'custom', label: 'Explore Academics', url: '/cambridge-pathway' } },
+          { iconName: 'Sprout', title: 'Agriculture & Animal Care', description: 'Science you can hold.', enableLink: true, link: { type: 'custom', label: 'Explore Agriculture', url: '/agriculture-animal-care' } },
+          { iconName: 'Sparkles', title: 'Why this matters', description: 'The case for hands-on learning.', enableLink: true, link: { type: 'custom', label: 'Read the article', url: '/news/why-robotics-stem-agriculture-matter-early' } },
+        ],
+      },
+      {
+        blockType: 'ctaBand',
+        background: 'purple',
+        heading: 'Watch curiosity become capability',
+        subhead: 'Book a tour and see our learning in motion.',
+        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+      },
+    ],
+  },
+
+  'agriculture-animal-care': {
+    title: 'Agriculture & Animal Care',
+    seoTitle: 'Agriculture & Animal Care at Nucleus | Learning Beyond Books, Addis Ababa',
+    description:
+      'Agriculture and animal care at Nucleus International School, Mekanisa — holistic, hands-on learning that roots children in nature, patience and responsibility.',
+    layout: [
+      {
+        blockType: 'hero',
+        background: 'purple',
+        bgImage: '/images/stock/blog-beyond.jpg',
+        eyebrow: 'Learning Beyond Books',
+        heading: 'Agriculture &\nAnimal Care',
+        subhead:
+          'The “Farmer-Scientist” — tending plants and animals teaches patience, responsibility and a feel for cause and effect no screen can.',
+        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+      },
+      {
+        blockType: 'prose',
+        eyebrow: 'Nature beyond concrete',
+        heading: 'Science you can hold',
+        items: [
+          { type: 'lead', text: 'There is a kind of learning that only happens with soil on your hands and a living thing in your care.' },
+          { type: 'p', text: 'Tending a garden and caring for animals slows childhood down in the best way — building patience, responsibility and a genuine feel for how the natural world works.' },
+        ],
+      },
+      {
+        blockType: 'cardsGrid',
+        background: 'mist',
+        heading: 'What students do',
+        columns: '3',
+        cards: [
+          { iconName: 'Sprout', title: 'Growing', description: 'Planting, tending and harvesting — patience made real.' },
+          { iconName: 'Heart', title: 'Animal Care', description: 'Responsibility and empathy through caring for animals.' },
+          { iconName: 'FlaskConical', title: 'Real Science', description: 'Cause and effect, observed and understood first-hand.' },
+        ],
+      },
+      {
+        blockType: 'cardsGrid',
+        background: 'white',
+        eyebrow: 'Explore More',
+        heading: 'A full, holistic education',
+        columns: '3',
+        cards: [
+          { iconName: 'GraduationCap', title: 'Cambridge Pathway', description: 'Our portable, world-class curriculum.', enableLink: true, link: { type: 'custom', label: 'Explore Academics', url: '/cambridge-pathway' } },
+          { iconName: 'Bot', title: 'Robotics & STEM', description: 'Future-ready, hands-on technology.', enableLink: true, link: { type: 'custom', label: 'Explore Robotics & STEM', url: '/robotics-stem' } },
+          { iconName: 'Compass', title: 'Campus Life', description: 'See the whole of life at Nucleus.', enableLink: true, link: { type: 'custom', label: 'Explore Campus Life', url: '/campus-life' } },
+        ],
+      },
+      {
+        blockType: 'ctaBand',
+        background: 'purple',
+        heading: 'A full life starts outdoors',
+        subhead: 'Book a tour of our Mekanisa campus.',
+        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+      },
     ],
   },
 }

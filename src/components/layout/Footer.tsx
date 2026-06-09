@@ -4,10 +4,10 @@ import { getSiteSettings } from '@/lib/payload'
 import { NAV } from './nav'
 
 const PROGRAMS = [
-  { label: 'Cambridge Pathway', href: '/academics' },
-  { label: 'Robotics & STEM', href: '/academics' },
-  { label: 'Agriculture & Animal Care', href: '/academics' },
-  { label: 'Admissions', href: '/admissions' },
+  { label: 'Cambridge Pathway', href: '/cambridge-pathway' },
+  { label: 'Robotics & STEM', href: '/robotics-stem' },
+  { label: 'Agriculture & Animal Care', href: '/agriculture-animal-care' },
+  { label: 'Admissions & Fees', href: '/admissions' },
 ]
 
 export async function Footer() {
