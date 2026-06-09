@@ -17,6 +17,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     blockType: 'hero',
     background: 'purple',
     bgImage: '/images/stock/home-hero.jpg',
+    animateHeading: true,
     amharicSubline: 'ትምህርት ከደብተር ያልፋል',
     heading: 'Think Deeply.\nCreate Boldly.\nSolve Truly.',
     subhead:

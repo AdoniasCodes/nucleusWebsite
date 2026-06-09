@@ -5,6 +5,7 @@ import { CMSLink } from '@/components/ui/Button'
 import { Media } from '@/components/ui/Media'
 import { Orb } from '@/components/ui/Orb'
 import { isDark, type SectionBackground } from '@/components/ui/Section'
+import { HeroReveal } from './HeroReveal'
 
 /**
  * Page hero. Background priority: uploaded media image → local `bgImage` (stock/demo) → orb-glow.
@@ -36,40 +37,55 @@ export function HeroBlock(props: HeroBlockType & { bgImage?: string }) {
       )}
 
       <Container className="relative py-24 sm:py-32">
-        <div className="max-w-3xl">
-          {props.amharicSubline && (
-            <p lang="am" className={`mb-4 text-lg ${dark || hasBg ? 'text-ochre' : 'text-ochre-600'}`}>
-              {props.amharicSubline}
-            </p>
-          )}
-          {props.eyebrow && (
-            <p className="mb-3 font-display text-sm font-semibold uppercase tracking-[0.18em] text-ochre">
-              {props.eyebrow}
-            </p>
-          )}
-          <h1 className="text-4xl font-bold sm:text-6xl">
-            {lines.map((line, i) => (
-              <span
-                key={i}
-                className={`block ${i === lines.length - 1 && lines.length > 1 ? 'text-ochre' : ''}`}
-              >
-                {line}
-              </span>
-            ))}
-          </h1>
-          {props.subhead && (
-            <p className={`mt-6 max-w-xl text-lg ${dark || hasBg ? 'text-pale/90' : 'text-ink/75'}`}>
-              {props.subhead}
-            </p>
-          )}
-          {props.links && props.links.length > 0 && (
-            <div className="mt-9 flex flex-wrap gap-4">
-              {props.links.map((item, i) => (
-                <CMSLink key={i} link={item.link} />
-              ))}
+        {(() => {
+          const subheadAndLinks = (
+            <>
+              {props.subhead && (
+                <p className={`mt-6 max-w-xl text-lg ${dark || hasBg ? 'text-pale/90' : 'text-ink/75'}`}>
+                  {props.subhead}
+                </p>
+              )}
+              {props.links && props.links.length > 0 && (
+                <div className="mt-9 flex flex-wrap gap-4">
+                  {props.links.map((item, i) => (
+                    <CMSLink key={i} link={item.link} />
+                  ))}
+                </div>
+              )}
+            </>
+          )
+
+          if (props.animateHeading) {
+            return (
+              <HeroReveal lines={lines} amharic={props.amharicSubline} eyebrow={props.eyebrow} dark={dark || hasBg}>
+                {subheadAndLinks}
+              </HeroReveal>
+            )
+          }
+
+          return (
+            <div className="max-w-3xl">
+              {props.amharicSubline && (
+                <p lang="am" className={`mb-4 text-lg ${dark || hasBg ? 'text-ochre' : 'text-ochre-600'}`}>
+                  {props.amharicSubline}
+                </p>
+              )}
+              {props.eyebrow && (
+                <p className="mb-3 font-display text-sm font-semibold uppercase tracking-[0.18em] text-ochre">
+                  {props.eyebrow}
+                </p>
+              )}
+              <h1 className="text-4xl font-bold sm:text-6xl">
+                {lines.map((line, i) => (
+                  <span key={i} className={`block ${i === lines.length - 1 && lines.length > 1 ? 'text-ochre' : ''}`}>
+                    {line}
+                  </span>
+                ))}
+              </h1>
+              {subheadAndLinks}
             </div>
-          )}
-        </div>
+          )
+        })()}
       </Container>
     </section>
   )

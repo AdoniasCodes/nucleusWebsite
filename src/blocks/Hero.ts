@@ -18,6 +18,13 @@ export const Hero: Block = {
         { label: 'Navy', value: 'navy' },
       ],
     },
+    {
+      name: 'animateHeading',
+      type: 'checkbox',
+      label: 'Animate heading (typewriter)',
+      defaultValue: false,
+      admin: { description: 'Types the heading out, then fades in the subhead + buttons. Use sparingly (e.g. homepage).' },
+    },
     { name: 'eyebrow', type: 'text' },
     { name: 'heading', type: 'text', required: true },
     { name: 'amharicSubline', type: 'text', label: 'Amharic subline' },

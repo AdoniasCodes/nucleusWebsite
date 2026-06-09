@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Orb } from '@/components/ui/Orb'
+import Image from 'next/image'
 import { getSiteSettings } from '@/lib/payload'
 import { NAV } from './nav'
 
@@ -24,10 +24,13 @@ export async function Footer() {
       <div className="woven-rule h-1 w-full" />
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-16 sm:px-8 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2.5">
-            <Orb size={40} />
-            <span className="font-display text-lg font-bold text-white">{schoolName}</span>
-          </div>
+          <Image
+            src="/images/nucleus-logo-white.png"
+            alt={schoolName}
+            width={568}
+            height={429}
+            className="h-20 w-auto"
+          />
           <p className="mt-4 max-w-xs text-sm text-pale/75">{tagline}</p>
           <p lang="am" className="mt-2 text-sm text-ochre">
             ትምህርት ከደብተር ያልፋል

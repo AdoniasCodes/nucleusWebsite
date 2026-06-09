@@ -8,6 +8,7 @@ import { LatestPostsBlock, type LatestPostsProps } from './LatestPostsBlock'
 import { ProseBlock, type ProseProps } from './ProseBlock'
 import { FaqListBlock, type FaqListProps } from './FaqListBlock'
 import { TestimonialsBlock, type TestimonialsProps } from './TestimonialsBlock'
+import { FormBlock } from './FormBlock'
 
 /** A CMS layout block, plus the synthetic code-only blocks (homepage + inner pages). */
 export type RenderableBlock =
@@ -28,6 +29,7 @@ const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
   prose: ProseBlock,
   faqList: FaqListBlock,
   testimonials: TestimonialsBlock,
+  formBlock: FormBlock,
 }
 
 export function BlockRenderer({ blocks }: { blocks?: RenderableBlock[] | null }) {

@@ -5,6 +5,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Media } from '@/components/ui/Media'
 import { Icon } from '@/components/ui/Icon'
 import { CMSLink } from '@/components/ui/Button'
+import { Reveal } from '@/components/ui/Reveal'
 
 const colsClass: Record<string, string> = {
   '2': 'sm:grid-cols-2',
@@ -26,9 +27,9 @@ export function CardsGridBlock(props: CardsGridBlockType) {
           {cards.map((card, i) => {
             const hasImageIcon = card.icon && typeof card.icon === 'object'
             return (
+              <Reveal key={i} delay={Math.min(i, 5) * 70} className="h-full">
               <article
-                key={i}
-                className={`group flex flex-col rounded-2xl border p-7 transition-all duration-200 ${
+                className={`group flex h-full flex-col rounded-2xl border p-7 transition-all duration-200 ${
                   dark
                     ? 'border-white/10 bg-white/[0.06] hover:bg-white/[0.1]'
                     : 'border-navy/[0.08] bg-white shadow-[0_1px_3px_rgba(17,2,77,0.04)] hover:-translate-y-0.5 hover:border-ochre/40 hover:shadow-[0_12px_30px_-12px_rgba(17,2,77,0.18)]'
@@ -57,6 +58,7 @@ export function CardsGridBlock(props: CardsGridBlockType) {
                   </div>
                 )}
               </article>
+              </Reveal>
             )
           })}
         </div>

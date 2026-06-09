@@ -195,6 +195,10 @@ export interface Page {
  */
 export interface HeroBlock {
   background?: ('purple' | 'white' | 'navy') | null;
+  /**
+   * Types the heading out, then fades in the subhead + buttons. Use sparingly (e.g. homepage).
+   */
+  animateHeading?: boolean | null;
   eyebrow?: string | null;
   heading: string;
   amharicSubline?: string | null;
@@ -847,6 +851,7 @@ export interface PagesSelect<T extends boolean = true> {
  */
 export interface HeroBlockSelect<T extends boolean = true> {
   background?: T;
+  animateHeading?: T;
   eyebrow?: T;
   heading?: T;
   amharicSubline?: T;

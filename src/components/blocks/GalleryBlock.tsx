@@ -44,7 +44,7 @@ export async function GalleryBlock(props: GalleryBlockType) {
             ? items.map((item, i) => (
                 <figure key={item.id ?? i} className="group">
                   <div
-                    className={`relative aspect-[4/5] overflow-hidden ${TINTS[i % TINTS.length]}`}
+                    className={`relative aspect-[4/5] overflow-hidden transition-transform duration-300 ease-out group-hover:-translate-y-1.5 group-hover:scale-[1.05] ${TINTS[i % TINTS.length]}`}
                     style={{ clipPath: SHIELD }}
                   >
                     {item.image && typeof item.image === 'object' ? (
@@ -63,7 +63,7 @@ export async function GalleryBlock(props: GalleryBlockType) {
             : PLACEHOLDERS.map((ph, i) => (
                 <figure key={i} className="group">
                   <div
-                    className={`relative aspect-[4/5] overflow-hidden ${TINTS[i % TINTS.length]}`}
+                    className={`relative aspect-[4/5] overflow-hidden transition-transform duration-300 ease-out group-hover:-translate-y-1.5 group-hover:scale-[1.05] ${TINTS[i % TINTS.length]}`}
                     style={{ clipPath: SHIELD }}
                   >
                     <Image
