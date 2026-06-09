@@ -30,6 +30,11 @@ const dirname = path.dirname(filename)
 
 const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
 
+// Trusted origins for CORS/CSRF: the canonical site + Vercel's auto-set deployment URLs
+// (so the admin login works on the *.vercel.app URL before/after the custom domain is attached).
+const VERCEL_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL
+const ORIGINS = [SERVER_URL, VERCEL_URL ? `https://${VERCEL_URL}` : null].filter(Boolean) as string[]
+
 /**
  * Storage: media lives in Supabase Storage (S3-compatible) in every environment where the
  * S3_* env vars are present. When they're absent (fresh local dev), Payload falls back to
@@ -90,8 +95,8 @@ export default buildConfig({
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   // CSRF/CORS locked to the canonical site origin — admin + API only trust our own origin.
-  cors: [SERVER_URL].filter(Boolean),
-  csrf: [SERVER_URL].filter(Boolean),
+  cors: ORIGINS,
+  csrf: ORIGINS,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
