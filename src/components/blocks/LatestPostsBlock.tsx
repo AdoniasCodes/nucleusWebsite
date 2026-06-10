@@ -7,6 +7,7 @@ import { Media } from '@/components/ui/Media'
 import { Orb } from '@/components/ui/Orb'
 import { Reveal } from '@/components/ui/Reveal'
 import { getPayloadClient } from '@/lib/payload'
+import type { Post } from '@/payload-types'
 
 /**
  * "News & Perspectives" — latest published posts. Synthetic block (not yet a
@@ -16,14 +17,21 @@ import { getPayloadClient } from '@/lib/payload'
 export type LatestPostsProps = { blockType: 'latestPosts'; heading?: string; intro?: string; limit?: number }
 
 export async function LatestPostsBlock({ heading = 'News & Perspectives', intro, limit = 3 }: LatestPostsProps) {
-  const payload = await getPayloadClient()
-  const { docs } = await payload.find({
-    collection: 'posts',
-    sort: '-publishedAt',
-    limit,
-    depth: 1,
-    where: { _status: { equals: 'published' } },
-  })
+  // Degrade gracefully: a DB hiccup (e.g. pooler limit) renders the empty state, never a 500.
+  let docs: Post[] = []
+  try {
+    const payload = await getPayloadClient()
+    const res = await payload.find({
+      collection: 'posts',
+      sort: '-publishedAt',
+      limit,
+      depth: 1,
+      where: { _status: { equals: 'published' } },
+    })
+    docs = res.docs
+  } catch (err) {
+    console.error('[LatestPostsBlock] posts query failed — rendering empty state:', err)
+  }
 
   return (
     <Section background="offwhite">

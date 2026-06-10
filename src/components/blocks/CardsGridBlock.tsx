@@ -22,16 +22,16 @@ const overlayClass: Record<Overlay, string> = {
   white: 'bg-white/85',
   // radial: bright white in the middle, fading out to icy-blue then brand blue at the edges
   gradient:
-    'bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.94)_0%,rgba(217,230,245,0.7)_46%,rgba(63,93,186,0.82)_100%)]',
+    'bg-[radial-gradient(circle_at_center,rgba(255,255,255,1)_0%,rgba(217,230,245,0.8)_46%,rgba(63,93,186,0.92)_100%)]',
 }
 
 const cardClassByMode: Record<CardMode, string> = {
   dark: 'border-white/10 bg-white/[0.06] hover:bg-white/[0.1]',
   light:
     'border-navy/[0.08] bg-white shadow-[0_1px_3px_rgba(17,2,77,0.04)] hover:-translate-y-0.5 hover:border-ochre/40 hover:shadow-[0_12px_30px_-12px_rgba(17,2,77,0.18)]',
-  // solid white, flips to navy on hover
+  // solid white, flips to navy on hover with a thin gold border
   invert:
-    'border-navy/[0.08] bg-white shadow-[0_4px_14px_-6px_rgba(17,2,77,0.12)] hover:-translate-y-0.5 hover:border-navy hover:bg-navy hover:shadow-[0_18px_40px_-16px_rgba(17,2,77,0.45)]',
+    'border-navy/[0.08] bg-white shadow-[0_4px_14px_-6px_rgba(17,2,77,0.12)] hover:-translate-y-0.5 hover:border-ochre hover:bg-navy hover:shadow-[0_18px_40px_-16px_rgba(17,2,77,0.45)]',
 }
 
 const iconClassByMode: Record<CardMode, string> = {

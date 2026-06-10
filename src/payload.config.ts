@@ -105,6 +105,10 @@ export default buildConfig({
       // Runtime connection. In production this is the Supabase transaction pooler (port 6543).
       // Migrations run with DATABASE_URI pointed at the direct connection (5432) — see deployment.md.
       connectionString: process.env.DATABASE_URI || '',
+      // Cap connections so we never exhaust Supabase's pooler client limit (session mode = 15).
+      // Idle connections are released back to the pooler quickly so dev hot-reloads don't leak.
+      max: 5,
+      idleTimeoutMillis: 20000,
     },
     // Never auto-push schema in production; prod schema changes go through committed migrations.
     push: process.env.NODE_ENV !== 'production',
