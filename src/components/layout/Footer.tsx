@@ -14,7 +14,9 @@ export async function Footer() {
   const settings = await getSiteSettings().catch(() => null)
   const schoolName = settings?.schoolName ?? 'Nucleus International School'
   const phones = settings?.phones ?? []
-  const address = settings?.address ?? 'Mekanisa, ~100m from Mekanisa Abo Square, Addis Ababa, Ethiopia'
+  const address =
+    settings?.address ??
+    'Vatican, Addis Ababa — beside the Vatican Embassy (former Peace Corps compound), just before Mekanisa Abo Square'
   const email = settings?.email
   const tagline = settings?.footerTagline ?? 'Think Deeply. Create Boldly. Solve Truly.'
   const socials = settings?.socials ?? []
@@ -98,7 +100,7 @@ export async function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto w-full max-w-7xl px-5 py-6 text-xs text-pale/60 sm:px-8">
-          © {schoolName}. A Cambridge international school in Mekanisa, Addis Ababa.
+          © {schoolName}. A Cambridge international school at Vatican, Addis Ababa.
         </div>
       </div>
     </footer>

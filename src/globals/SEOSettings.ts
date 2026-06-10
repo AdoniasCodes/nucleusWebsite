@@ -32,7 +32,7 @@ export const SEOSettings: GlobalConfig = {
       type: 'textarea',
       maxLength: 160,
       defaultValue:
-        'A Cambridge-curriculum international school in Mekanisa, Addis Ababa for ages 2–Grade 8. Robotics, STEM, secure campus, foreign & multilingual staff. Book a tour.',
+        'A Cambridge-curriculum international school at Vatican, Addis Ababa (near Mekanisa Abo Square) for ages 2–Grade 8. Robotics, STEM, secure campus, foreign & multilingual staff. Book a tour.',
     },
     { name: 'defaultShareImage', type: 'upload', relationTo: 'media' },
     { name: 'twitterHandle', type: 'text' },

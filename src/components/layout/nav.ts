@@ -6,4 +6,5 @@ export const NAV = [
   { label: 'Admissions', href: '/admissions' },
   { label: 'Campus Life', href: '/campus-life' },
   { label: 'News', href: '/news' },
+  { label: 'Contact', href: '/contact' },
 ]

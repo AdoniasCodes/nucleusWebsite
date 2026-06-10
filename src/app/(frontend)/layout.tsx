@@ -33,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = seo?.defaultMetaTitle ?? 'Nucleus International School | Cambridge in Addis Ababa'
   const description =
     seo?.defaultMetaDescription ??
-    'A Cambridge-curriculum international school in Mekanisa, Addis Ababa for ages 2–Grade 8 — secure campus, robotics, STEM and multilingual learning.'
+    'A Cambridge-curriculum international school at Vatican, Addis Ababa (near Mekanisa Abo Square) for ages 2–Grade 8 — secure campus, robotics, STEM and multilingual learning.'
 
   return {
     metadataBase: new URL(SERVER_URL),

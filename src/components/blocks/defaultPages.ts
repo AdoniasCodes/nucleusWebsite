@@ -20,9 +20,9 @@ export type DefaultPage = {
 export const defaultPages: Record<string, DefaultPage> = {
   about: {
     title: 'About',
-    seoTitle: 'About Nucleus International School | Cambridge School in Mekanisa, Addis Ababa',
+    seoTitle: 'About Nucleus International School | Cambridge School at Vatican, Addis Ababa',
     description:
-      'From a trusted Addis daycare to a Cambridge international school. The story, mission and values behind Nucleus in Mekanisa — and our growth toward a Gerji campus.',
+      'From a trusted Addis preschool to a Cambridge international school. The story, mission and values behind Nucleus at Vatican, Addis Ababa — and our growth toward a Gerji campus.',
     layout: [
       {
         blockType: 'hero',
@@ -45,7 +45,7 @@ export const defaultPages: Record<string, DefaultPage> = {
           },
           {
             type: 'p',
-            text: 'Our Mekanisa campus is our proof of concept — where we show, every day, that elite academic standards and a nurturing, secure environment belong together. It is the first step in a longer journey, with a second campus planned for Gerji.',
+            text: 'Our Vatican campus is our proof of concept — where we show, every day, that elite academic standards and a nurturing, secure environment belong together. It is the first step in a longer journey, with a second campus planned for Gerji.',
           },
           { type: 'h3', text: 'Our Mission' },
           {
@@ -86,7 +86,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         blockType: 'ctaBand',
         background: 'navy',
         heading: 'Come see it for yourself',
-        subhead: 'The best way to understand Nucleus is to visit. Book a tour of our Mekanisa campus.',
+        subhead: 'The best way to understand Nucleus is to visit. Book a tour of our Vatican campus.',
         links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
       },
     ],
@@ -96,7 +96,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Academics',
     seoTitle: 'Cambridge Curriculum in Addis Ababa | Nucleus Academics (Ages 2–Grade 8)',
     description:
-      'The Cambridge pathway at Nucleus International School, Mekanisa — Early Years through Grade 8, with robotics, STEM, agriculture and multilingual learning. A portable, world-class education.',
+      'The Cambridge pathway at Nucleus International School, Vatican — Early Years through Grade 8, with robotics, STEM, agriculture and multilingual learning. A portable, world-class education.',
     layout: [
       {
         blockType: 'hero',
@@ -163,9 +163,9 @@ export const defaultPages: Record<string, DefaultPage> = {
 
   'campus-life': {
     title: 'Campus Life',
-    seoTitle: 'Campus Life at Nucleus | Robotics, Agriculture, Music & a Secure Campus in Mekanisa',
+    seoTitle: 'Campus Life at Nucleus | Robotics, Agriculture, Music & a Secure Campus at Vatican',
     description:
-      'Inside Nucleus International School, Mekanisa: robotics & STEM, an agriculture & animal-care program, music, sport, chef-prepared meals and a secure, nurturing campus.',
+      'Inside Nucleus International School, Vatican: robotics & STEM, an agriculture & animal-care program, music, sport, chef-prepared meals and a secure, nurturing campus.',
     layout: [
       {
         blockType: 'hero',
@@ -196,7 +196,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         blockType: 'ctaBand',
         background: 'purple',
         heading: 'See a full life in motion',
-        subhead: 'Book a tour and walk our Mekanisa campus.',
+        subhead: 'Book a tour and walk our Vatican campus.',
         links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
       },
     ],
@@ -206,7 +206,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Admissions',
     seoTitle: 'Admissions & Fees | Nucleus International School, Addis Ababa',
     description:
-      'How to join Nucleus International School in Mekanisa — admissions steps, requirements, tour booking and transparent fee information. Request your full fee sheet.',
+      'How to join Nucleus International School at Vatican, Addis Ababa — admissions steps, requirements, tour booking and transparent fee information. Request your full fee sheet.',
     layout: [
       {
         blockType: 'hero',
@@ -228,7 +228,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Four simple steps',
         columns: '4',
         cards: [
-          { iconName: 'CalendarCheck', title: '1. Book a Tour', description: 'Visit our Mekanisa campus and meet the team.' },
+          { iconName: 'CalendarCheck', title: '1. Book a Tour', description: 'Visit our Vatican campus and meet the team.' },
           { iconName: 'FileText', title: '2. Enquire', description: 'Submit an enquiry and receive the full fee sheet.' },
           { iconName: 'ClipboardCheck', title: '3. Apply', description: 'Complete the application with your child’s documents.' },
           { iconName: 'BadgeCheck', title: '4. Confirm', description: 'Secure your child’s place for the intake.' },
@@ -261,7 +261,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         intro: 'The questions families ask us most.',
         items: [
           { q: 'What curriculum does Nucleus follow?', a: 'Nucleus follows the Cambridge pathway, from the early years through Grade 8 — a portable, internationally recognised education.' },
-          { q: 'Where is Nucleus located?', a: 'In Mekanisa, about 100 metres from Mekanisa Abo Square, Addis Ababa.' },
+          { q: 'Where is Nucleus located?', a: 'At Vatican, Addis Ababa — beside the Vatican Embassy (the former Peace Corps compound), just before Mekanisa Abo Square. Our preschool remains at Mekanisa Abo Square.' },
           { q: 'What ages and grades do you accept?', a: 'We serve children from age 2 through Grade 8, growing with your child across early years, primary and lower secondary.' },
           { q: 'How much are the fees?', a: 'We keep our fees transparent and free of hidden capital-fee surprises. Request the full fee sheet and we’ll share it with you directly.' },
           { q: 'Is the campus safe?', a: 'Safety and child safeguarding come first at Nucleus — a secure, supervised campus is the foundation of everything we do.' },
@@ -290,9 +290,9 @@ export const defaultPages: Record<string, DefaultPage> = {
 
   contact: {
     title: 'Contact & Visit',
-    seoTitle: 'Contact & Visit | Nucleus International School, Mekanisa, Addis Ababa',
+    seoTitle: 'Contact & Visit | Nucleus International School, Vatican, Addis Ababa',
     description:
-      'Visit Nucleus International School — 100m from Mekanisa Abo Square, Addis Ababa. Directions from Bole, Old Airport and Kazanchis, contact numbers, and how to book a tour.',
+      'Visit Nucleus International School at Vatican, Addis Ababa — beside the Vatican Embassy, just before Mekanisa Abo Square. Directions from Bole, Old Airport and Kazanchis, contact numbers, and how to book a tour.',
     layout: [
       {
         blockType: 'hero',
@@ -301,7 +301,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Come See a Full Life\nin Motion',
         bgImage: '/images/stock/contact-hero.jpg',
         subhead:
-          'We’d love to show you around. Find us in Mekanisa, about 100 metres from Mekanisa Abo Square, Addis Ababa.',
+          'We’d love to show you around. Find us at Vatican, Addis Ababa — beside the Vatican Embassy (the former Peace Corps compound), just before Mekanisa Abo Square.',
       },
       {
         blockType: 'cardsGrid',
@@ -310,7 +310,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         columns: '3',
         cards: [
           { iconName: 'Phone', title: 'Call', description: '0947500992 / 0947500494' },
-          { iconName: 'MapPin', title: 'Visit', description: 'Mekanisa, ~100m from Mekanisa Abo Square, Addis Ababa.' },
+          { iconName: 'MapPin', title: 'Visit', description: 'Vatican — beside the Vatican Embassy (former Peace Corps), just before Mekanisa Abo Square, Addis Ababa.' },
           { iconName: 'CalendarCheck', title: 'Book a Tour', description: 'Arrange a visit and meet our team in person.' },
         ],
       },
@@ -323,15 +323,23 @@ export const defaultPages: Record<string, DefaultPage> = {
         successMessage: 'Thank you — we’ll be in touch within one business day to confirm your visit.',
       },
       {
-        blockType: 'prose',
-        background: 'mist',
-        heading: 'Getting to the School',
-        items: [
+        blockType: 'map',
+        eyebrow: 'Getting to the School',
+        heading: 'Find Us at Vatican, Addis Ababa',
+        intro: 'Easy to reach from across Addis Ababa — including Bole, Old Airport, Kazanchis and Gerji.',
+        embedSrc: 'https://www.google.com/maps?q=Peace+Corps+Ethiopia,+Addis+Ababa&z=14&hl=en&output=embed',
+        directionsUrl: 'https://maps.app.goo.gl/EPEuid1MeAT4N9RN6',
+        rows: [
           {
-            type: 'p',
-            text: 'Our Mekanisa campus is easy to reach from across Addis Ababa — including Bole, Old Airport, Kazanchis and Gerji. A detailed route map with one-tap directions is coming soon.',
+            iconName: 'MapPin',
+            title: 'Our Campus',
+            description:
+              'Vatican, Addis Ababa — beside the Vatican Embassy (the former Peace Corps compound), just before Mekanisa Abo Square.',
           },
+          { iconName: 'Phone', title: 'Call Us', description: '0947 500 992 · 0947 500 494' },
+          { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
         ],
+        note: 'Our preschool remains at its long-standing home at Mekanisa Abo Square.',
       },
       {
         blockType: 'ctaBand',
@@ -347,7 +355,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'News & Perspectives',
     seoTitle: 'News & Perspectives | Nucleus International School',
     description:
-      'Stories, milestones and ideas from the Nucleus International School learning community in Mekanisa, Addis Ababa.',
+      'Stories, milestones and ideas from the Nucleus International School learning community at Vatican, Addis Ababa.',
     layout: [
       {
         blockType: 'hero',
@@ -365,7 +373,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Cambridge Pathway',
     seoTitle: 'The Cambridge Pathway at Nucleus | Cambridge School in Addis Ababa',
     description:
-      'The Cambridge pathway at Nucleus International School, Mekanisa — a portable, internationally recognised education from the early years through Grade 8.',
+      'The Cambridge pathway at Nucleus International School, Vatican — a portable, internationally recognised education from the early years through Grade 8.',
     layout: [
       {
         blockType: 'hero',
@@ -383,7 +391,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'An education that opens doors',
         items: [
           { type: 'lead', text: 'The Cambridge pathway is one of the world’s most recognised curricula — structured, rigorous and respected by universities across Europe, North America and beyond.' },
-          { type: 'p', text: 'At Nucleus we follow the Cambridge pathway from the early years through Grade 8, so a child who begins in Mekanisa is prepared to continue, and to thrive, wherever life takes your family next.' },
+          { type: 'p', text: 'At Nucleus we follow the Cambridge pathway from the early years through Grade 8, so a child who begins at Vatican is prepared to continue, and to thrive, wherever life takes your family next.' },
           { type: 'p', text: 'It is content-rich and clearly assessed, which suits children who like defined goals and steady, visible progress.' },
         ],
       },
@@ -415,7 +423,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         blockType: 'ctaBand',
         background: 'purple',
         heading: 'See the Cambridge pathway in action',
-        subhead: 'Book a tour of our Mekanisa campus, or request the full fee sheet.',
+        subhead: 'Book a tour of our Vatican campus, or request the full fee sheet.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Admissions & Fees', url: '/admissions' } },
@@ -428,7 +436,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Robotics & STEM',
     seoTitle: 'Robotics & STEM at Nucleus | Hands-on Tech for Kids in Addis Ababa',
     description:
-      'Robotics, coding and STEM at Nucleus International School, Mekanisa — future-ready skills built through hands-on technology and science from an early age.',
+      'Robotics, coding and STEM at Nucleus International School, Vatican — future-ready skills built through hands-on technology and science from an early age.',
     layout: [
       {
         blockType: 'hero',
@@ -487,7 +495,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Agriculture & Animal Care',
     seoTitle: 'Agriculture & Animal Care at Nucleus | Learning Beyond Books, Addis Ababa',
     description:
-      'Agriculture and animal care at Nucleus International School, Mekanisa — holistic, hands-on learning that roots children in nature, patience and responsibility.',
+      'Agriculture and animal care at Nucleus International School, Vatican — holistic, hands-on learning that roots children in nature, patience and responsibility.',
     layout: [
       {
         blockType: 'hero',
@@ -535,7 +543,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         blockType: 'ctaBand',
         background: 'purple',
         heading: 'A full life starts outdoors',
-        subhead: 'Book a tour of our Mekanisa campus.',
+        subhead: 'Book a tour of our Vatican campus.',
         links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
       },
     ],

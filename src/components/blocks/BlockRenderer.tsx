@@ -8,6 +8,7 @@ import { LatestPostsBlock, type LatestPostsProps } from './LatestPostsBlock'
 import { ProseBlock, type ProseProps } from './ProseBlock'
 import { FaqListBlock, type FaqListProps } from './FaqListBlock'
 import { TestimonialsBlock, type TestimonialsProps } from './TestimonialsBlock'
+import { MapBlock, type MapProps } from './MapBlock'
 import { FormBlock } from './FormBlock'
 
 /** A CMS layout block, plus the synthetic code-only blocks (homepage + inner pages). */
@@ -17,6 +18,7 @@ export type RenderableBlock =
   | ProseProps
   | FaqListProps
   | TestimonialsProps
+  | MapProps
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
@@ -29,6 +31,7 @@ const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
   prose: ProseBlock,
   faqList: FaqListBlock,
   testimonials: TestimonialsBlock,
+  map: MapBlock,
   formBlock: FormBlock,
 }
 

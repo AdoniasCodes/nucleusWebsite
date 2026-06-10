@@ -32,6 +32,8 @@ import {
   Eye,
   Handshake,
   Mountain,
+  Clock,
+  Navigation,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -40,7 +42,7 @@ const ICONS: Record<string, LucideIcon> = {
   GraduationCap, ShieldCheck, Bot, Cpu, Sprout, Leaf, Languages, Globe, Utensils,
   Award, Scale, Lightbulb, Target, Users, HeartHandshake, Heart, BadgeCheck, Baby,
   FlaskConical, MapPin, Music, BookOpen, Phone, CalendarCheck, ClipboardCheck,
-  FileText, Sparkles, Bus, Star, Compass, Eye, Handshake, Mountain,
+  FileText, Sparkles, Bus, Star, Compass, Eye, Handshake, Mountain, Clock, Navigation,
 }
 
 /** Render a Lucide icon by name. Falls back to a neutral mark (never the orb) if unknown. */

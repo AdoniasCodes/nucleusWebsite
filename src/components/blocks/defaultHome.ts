@@ -12,6 +12,15 @@ import type { RenderableBlock } from './BlockRenderer'
  * Copy is brand-voiced + grounded; unverified specifics stay soft (see content/open-questions.md).
  * Stats values + testimonials are PLACEHOLDER pending confirmation — do not present as verified facts.
  */
+const coreValuesCards = [
+  { iconName: 'Handshake', title: 'Honesty', description: 'Living and speaking with absolute truthfulness to build a community rooted in mutual trust.' },
+  { iconName: 'ShieldCheck', title: 'Integrity', description: 'Doing what is right, honorable, and ethical in all circumstances, even when no one is watching.' },
+  { iconName: 'Eye', title: 'Transparency', description: 'Maintaining open, clear, and visible communication with students, parents, and stakeholders.' },
+  { iconName: 'Mountain', title: 'Resilience', description: 'Embracing challenges with grit, learning from mistakes, and persisting through obstacles to solve complex problems.' },
+  { iconName: 'Heart', title: 'Care', description: 'Putting the emotional, social, and physical well-being of every child at the center of all decisions.' },
+  { iconName: 'Award', title: 'Excellence', description: 'Striving for the highest standards in innovation, academic growth, and personal achievement.' },
+]
+
 export const defaultHomeLayout: RenderableBlock[] = [
   {
     blockType: 'hero',
@@ -37,7 +46,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
       { value: 'Cambridge', label: 'International Pathway' }, // soft until Q2 (registered vs aligned)
       { value: '2–G8', label: 'Ages Served' },
       { value: 'STEM', label: 'Labs & Robotics' },
-      { value: 'Mekanisa', label: 'Secure Campus' },
+      { value: 'Vatican', label: 'Secure Campus' },
     ],
   },
   {
@@ -102,19 +111,14 @@ export const defaultHomeLayout: RenderableBlock[] = [
   {
     blockType: 'cardsGrid',
     background: 'white',
+    bgImage: '/images/stock/core-values.jpg',
+    bgOverlay: 'gradient',
     reveal: 'blur',
     eyebrow: 'Our Foundation',
     heading: 'Our Core Values',
     intro: 'The principles that guide our community and shape future leaders.',
     columns: '3',
-    cards: [
-      { iconName: 'Handshake', title: 'Honesty', description: 'Living and speaking with absolute truthfulness to build a community rooted in mutual trust.' },
-      { iconName: 'ShieldCheck', title: 'Integrity', description: 'Doing what is right, honorable, and ethical in all circumstances, even when no one is watching.' },
-      { iconName: 'Eye', title: 'Transparency', description: 'Maintaining open, clear, and visible communication with students, parents, and stakeholders.' },
-      { iconName: 'Mountain', title: 'Resilience', description: 'Embracing challenges with grit, learning from mistakes, and persisting through obstacles to solve complex problems.' },
-      { iconName: 'Heart', title: 'Care', description: 'Putting the emotional, social, and physical well-being of every child at the center of all decisions.' },
-      { iconName: 'Award', title: 'Excellence', description: 'Striving for the highest standards in innovation, academic growth, and personal achievement.' },
-    ],
+    cards: coreValuesCards,
   },
   {
     blockType: 'galleryBlock',
@@ -130,7 +134,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     items: [
       { q: 'What curriculum does Nucleus follow?', a: 'The Cambridge pathway, from the early years through Grade 8 — a portable, internationally recognised education.' },
       { q: 'What ages does Nucleus accept?', a: 'Children from age 2 through Grade 8, on a single planned journey from the early years into the Cambridge primary and middle years.' },
-      { q: 'Where is Nucleus located?', a: 'In Mekanisa, about 100 metres from Mekanisa Abo Square, Addis Ababa.' },
+      { q: 'Where is Nucleus located?', a: 'At Vatican, Addis Ababa — beside the Vatican Embassy (the former Peace Corps compound), just before Mekanisa Abo Square. Our preschool remains at Mekanisa Abo Square.' },
       { q: 'How much are the fees?', a: 'We keep fees transparent, with no hidden capital-fee surprises. Request the full fee sheet and we’ll send it directly.' },
       { q: 'How safe is the campus?', a: 'Safety comes first — a secure, supervised campus with controlled access is the foundation of everything we do.' },
       { q: 'Is an international school worth it compared to a local school?', a: 'A good international school gives a portable, globally recognised education, smaller classes and learning beyond the textbook. It costs more, so the value depends on the school delivering it in practice — which is why we encourage you to visit and see for yourself.' },
@@ -147,6 +151,25 @@ export const defaultHomeLayout: RenderableBlock[] = [
       { link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } },
       { link: { appearance: 'outline', type: 'custom', label: 'Request Fee Sheet', url: '/admissions' } },
     ],
+  },
+  {
+    blockType: 'map',
+    eyebrow: 'Visit Nucleus',
+    heading: 'Find Us at Vatican, Addis Ababa',
+    intro: 'Easy to reach from Bole, Old Airport, Kazanchis and Gerji — come and see a full life in motion.',
+    embedSrc: 'https://www.google.com/maps?q=Peace+Corps+Ethiopia,+Addis+Ababa&z=14&hl=en&output=embed',
+    directionsUrl: 'https://maps.app.goo.gl/EPEuid1MeAT4N9RN6',
+    rows: [
+      {
+        iconName: 'MapPin',
+        title: 'Our Campus',
+        description:
+          'Vatican, Addis Ababa — beside the Vatican Embassy (the former Peace Corps compound), just before Mekanisa Abo Square.',
+      },
+      { iconName: 'Phone', title: 'Call Us', description: '0947 500 992 · 0947 500 494' },
+      { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
+    ],
+    note: 'Our preschool remains at its long-standing home at Mekanisa Abo Square.',
   },
   {
     blockType: 'latestPosts',

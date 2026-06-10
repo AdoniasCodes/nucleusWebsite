@@ -32,7 +32,8 @@ export const SiteSettings: GlobalConfig = {
             {
               name: 'address',
               type: 'textarea',
-              defaultValue: 'Mekanisa, ~100m from Mekanisa Abo Square, Addis Ababa, Ethiopia',
+              defaultValue:
+                'Vatican, Addis Ababa — beside the Vatican Embassy (former Peace Corps compound), just before Mekanisa Abo Square',
             },
             {
               type: 'row',

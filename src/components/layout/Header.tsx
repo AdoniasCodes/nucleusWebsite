@@ -36,7 +36,7 @@ export function Header({ schoolName = 'Nucleus International School' }: { school
         </nav>
 
         <div className="hidden lg:block">
-          <ButtonLink href="/admissions/book-a-tour" appearance="primary">
+          <ButtonLink href="/contact" appearance="primary">
             Book a Tour
           </ButtonLink>
         </div>
@@ -69,7 +69,7 @@ export function Header({ schoolName = 'Nucleus International School' }: { school
               </li>
             ))}
             <li className="mt-2">
-              <ButtonLink href="/admissions/book-a-tour" appearance="primary" className="w-full">
+              <ButtonLink href="/contact" appearance="primary" className="w-full">
                 Book a Tour
               </ButtonLink>
             </li>

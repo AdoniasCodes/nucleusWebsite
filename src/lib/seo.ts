@@ -29,7 +29,8 @@ export function buildOrganizationSchema(settings?: SiteSetting | null, seo?: Seo
     ...(seo?.organization?.foundingYear ? { foundingDate: seo.organization.foundingYear } : {}),
     address: {
       '@type': 'PostalAddress',
-      streetAddress: settings?.address ?? 'Mekanisa, ~100m from Mekanisa Abo Square',
+      streetAddress:
+        settings?.address ?? 'Vatican, beside the Vatican Embassy (former Peace Corps compound), near Mekanisa Abo Square',
       addressLocality: 'Addis Ababa',
       addressCountry: 'ET',
     },

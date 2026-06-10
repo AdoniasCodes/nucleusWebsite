@@ -149,7 +149,7 @@ const posts: SeedPost[] = [
         'What documents do you need to enrol?',
         'Can we tour before we arrive, in person or virtually?',
       ] },
-      { p: 'Nucleus sits in Mekanisa, within reach of Bole, Old Airport and Kazanchis, and welcomes diplomatic and expat families. If you are planning a move, reach out early — the best time to arrange a visit is before you land.' },
+      { p: 'Nucleus sits at Vatican, near Mekanisa, within reach of Bole, Old Airport and Kazanchis, and welcomes diplomatic and expat families. If you are planning a move, reach out early — the best time to arrange a visit is before you land.' },
     ],
   },
 
@@ -213,7 +213,7 @@ const posts: SeedPost[] = [
         '“International” on the sign does not guarantee quality; visit and verify.',
         'A strong local school can beat a weak international one.',
       ] },
-      { p: 'The benefit is real only when a school delivers it in practice. Nucleus brings a Cambridge pathway, a secure campus and hands-on learning to Mekanisa — come and see whether it fits your child.' },
+      { p: 'The benefit is real only when a school delivers it in practice. Nucleus brings a Cambridge pathway, a secure campus and hands-on learning to Vatican, near Mekanisa — come and see whether it fits your child.' },
       { related: [
         { label: 'Private vs public school in Ethiopia', url: '/news/private-vs-public-school-ethiopia' },
         { label: 'Which curriculum is best for your child?', url: '/news/best-curriculum-for-your-child-ethiopia' },
@@ -245,7 +245,7 @@ const posts: SeedPost[] = [
         'How safe and well-supervised is the campus?',
         'Can we afford this comfortably, every year, without strain?',
       ] },
-      { p: 'There is no universal winner — only the right fit for your child and budget. If you are leaning toward a private, Cambridge education, Nucleus in Mekanisa is built to offer that without premium-tier capital fees.' },
+      { p: 'There is no universal winner — only the right fit for your child and budget. If you are leaning toward a private, Cambridge education, Nucleus at Vatican, near Mekanisa is built to offer that without premium-tier capital fees.' },
       { related: [
         { label: 'The real benefits of an international school', url: '/news/benefits-of-international-school-addis-ababa' },
         { label: 'Ethiopian school “levels” explained', url: '/news/ethiopian-private-school-levels-explained' },
@@ -329,7 +329,7 @@ const posts: SeedPost[] = [
       { h2: 'The balanced middle' },
       { p: 'In the middle are schools such as Cambridge Academy Ethiopia, Flipper International, One Planet and Sandford (which offers a mix of curricula). These aim for international standards at more accessible, largely local-currency price points.' },
       { h2: 'Value and newer options' },
-      { p: 'Then there are newer and value-focused schools — including Nucleus, a Cambridge school in Mekanisa serving age 2 through Grade 8, built around a secure campus, holistic learning (robotics, agriculture, music and sport) and transparent fees without surprise capital-fee jumps.' },
+      { p: 'Then there are newer and value-focused schools — including Nucleus, a Cambridge school at Vatican, near Mekanisa serving age 2 through Grade 8, built around a secure campus, holistic learning (robotics, agriculture, music and sport) and transparent fees without surprise capital-fee jumps.' },
       { h2: 'How to pick the best one for YOU' },
       { ul: [
         'Curriculum fit and portability — Cambridge, IB or national.',
@@ -361,7 +361,7 @@ const posts: SeedPost[] = [
       { h2: 'Why families choose Cambridge' },
       { p: 'Cambridge is structured, subject-focused and built around recognised exams, and its qualifications transfer cleanly to universities worldwide. For families who value clear progress and global portability, it is a natural fit.' },
       { h2: 'Cambridge and British options in Addis' },
-      { p: 'Schools following Cambridge or British curricula include Cambridge Academy Ethiopia, Bingham Academy, Reach (RICE) and One Planet, with Sandford offering a mix. Nucleus joins them with a Cambridge pathway from age 2 through Grade 8 in Mekanisa.' },
+      { p: 'Schools following Cambridge or British curricula include Cambridge Academy Ethiopia, Bingham Academy, Reach (RICE) and One Planet, with Sandford offering a mix. Nucleus joins them with a Cambridge pathway from age 2 through Grade 8 at Vatican, near Mekanisa.' },
       { h2: 'How to compare Cambridge schools' },
       { ul: [
         'Which Cambridge stages are actually taught at your child’s grade today?',
@@ -399,7 +399,7 @@ const posts: SeedPost[] = [
       { h2: 'Why it costs that much' },
       { p: 'You are paying for the IB curriculum, a large international faculty, extensive facilities and strong demand from the diplomatic and corporate community. For families who need exactly that, it can be worth it.' },
       { h2: 'Lower-cost alternatives worth a look' },
-      { p: 'Plenty of mid-market Cambridge and British schools deliver an international standard for a fraction of the all-in cost. Nucleus is one — a Cambridge school in Mekanisa (age 2 to Grade 8) with transparent, birr-friendly fees and no surprise capital-fee jumps. Request our fee sheet for exact figures.' },
+      { p: 'Plenty of mid-market Cambridge and British schools deliver an international standard for a fraction of the all-in cost. Nucleus is one — a Cambridge school at Vatican, near Mekanisa (age 2 to Grade 8) with transparent, birr-friendly fees and no surprise capital-fee jumps. Request our fee sheet for exact figures.' },
       { h2: 'Aim for value, not just a lower price' },
       { ul: [
         'Does the curriculum travel where you might go next?',
