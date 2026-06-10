@@ -8,6 +8,7 @@ import { Media } from '@/components/ui/Media'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { getPayloadClient } from '@/lib/payload'
 import { buildBreadcrumbSchema } from '@/lib/seo'
+import { stockWebp } from '@/lib/img'
 import { SERVER_URL } from '@/lib/serverUrl'
 import type { Post } from '@/payload-types'
 
@@ -46,7 +47,7 @@ export default async function PostPage({ params }: Props) {
   if (!post) notFound()
 
   const hero = post.heroImage && typeof post.heroImage === 'object' ? post.heroImage : null
-  const heroUrl = hero?.url || post.heroImageUrl || null
+  const heroUrl = hero?.url || stockWebp(post.heroImageUrl) || null
 
   return (
     <article>

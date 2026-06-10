@@ -7,6 +7,7 @@ import { Media } from '@/components/ui/Media'
 import { Orb } from '@/components/ui/Orb'
 import { Reveal } from '@/components/ui/Reveal'
 import { getPayloadClient } from '@/lib/payload'
+import { stockWebp } from '@/lib/img'
 import type { Post } from '@/payload-types'
 
 /**
@@ -49,7 +50,7 @@ export async function LatestPostsBlock({ heading = 'News & Perspectives', intro,
                     {post.heroImage && typeof post.heroImage === 'object' ? (
                       <Media resource={post.heroImage} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
                     ) : post.heroImageUrl ? (
-                      <Image src={post.heroImageUrl} alt={post.title} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
+                      <Image src={stockWebp(post.heroImageUrl)} alt={post.title} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
                     ) : (
                       <div className="flex h-full items-center justify-center">
                         <Orb size={56} />
