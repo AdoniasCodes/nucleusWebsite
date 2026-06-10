@@ -9,7 +9,8 @@ import Script from 'next/script'
  *   NEXT_PUBLIC_CLARITY_ID  e.g. abcdefghij
  * Scripts load `afterInteractive` so they never block first paint / hurt the speed score.
  */
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID
+// GA4 — defaults to the live Nucleus Measurement ID; override via env if it ever changes.
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-9WN6K3GHST'
 // Microsoft Clarity — defaults to the live Nucleus project ID; override via env if it ever changes.
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || 'x4tumr5we9'
 

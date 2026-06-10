@@ -120,7 +120,7 @@ export function CardsGridBlock(
     return (
       <section className="relative overflow-hidden py-[var(--spacing-section)]">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          className="absolute inset-0 bg-cover bg-center bg-scroll md:bg-fixed"
           style={{ backgroundImage: `url(${props.bgImage})` }}
           aria-hidden
         />

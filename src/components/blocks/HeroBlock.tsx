@@ -36,10 +36,20 @@ export function HeroBlock(
         </div>
       ) : props.bgVideo ? (
         <div className="absolute inset-0">
-          {/* Muted, looping, autoplaying background clip — decorative, so no audio/controls.
-              Slow ken-burns drift keeps the frame alive; navy gradient keeps text legible. */}
+          {/* Mobile: a static WebP poster only — the video is hidden (display:none) so phones never
+              download the ~870KB clip. Desktop: the decorative muted/looping ken-burns video. */}
+          {props.bgPoster && (
+            <Image
+              src={props.bgPoster}
+              alt=""
+              fill
+              priority
+              className="hero-kenburns object-cover md:hidden"
+              sizes="100vw"
+            />
+          )}
           <video
-            className="hero-kenburns absolute inset-0 h-full w-full object-cover"
+            className="hero-kenburns absolute inset-0 hidden h-full w-full object-cover md:block"
             autoPlay
             muted
             loop
