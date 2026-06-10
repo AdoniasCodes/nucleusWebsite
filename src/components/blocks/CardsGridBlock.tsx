@@ -5,7 +5,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Media } from '@/components/ui/Media'
 import { Icon } from '@/components/ui/Icon'
 import { CMSLink } from '@/components/ui/Button'
-import { Reveal } from '@/components/ui/Reveal'
+import { Reveal, type RevealVariant } from '@/components/ui/Reveal'
 
 const colsClass: Record<string, string> = {
   '2': 'sm:grid-cols-2',
@@ -13,11 +13,16 @@ const colsClass: Record<string, string> = {
   '4': 'sm:grid-cols-2 lg:grid-cols-4',
 }
 
-/** Cards grid — "Why Leaders Choose Nucleus", values, programs, steps. Uniform card system. */
-export function CardsGridBlock(props: CardsGridBlockType) {
+/**
+ * Cards grid — "Why Leaders Choose Nucleus", values, programs, steps. Uniform card system.
+ * Optional code-only `reveal` controls the scroll animation: a RevealVariant applied to every
+ * card, or 'mirror' to alternate slide-in-left / slide-in-right. Defaults to fade-up.
+ */
+export function CardsGridBlock(props: CardsGridBlockType & { reveal?: RevealVariant | 'mirror' }) {
   const background = (props.background ?? 'white') as SectionBackground
   const dark = isDark(background)
   const cards = props.cards ?? []
+  const reveal = props.reveal ?? 'up'
 
   return (
     <Section background={background}>
@@ -26,8 +31,9 @@ export function CardsGridBlock(props: CardsGridBlockType) {
         <div className={`grid grid-cols-1 gap-6 ${colsClass[props.columns ?? '3'] ?? colsClass['3']}`}>
           {cards.map((card, i) => {
             const hasImageIcon = card.icon && typeof card.icon === 'object'
+            const variant: RevealVariant = reveal === 'mirror' ? (i % 2 === 0 ? 'left' : 'right') : reveal
             return (
-              <Reveal key={i} delay={Math.min(i, 5) * 70} className="h-full">
+              <Reveal key={i} variant={variant} delay={Math.min(i, 5) * 70} className="h-full">
               <article
                 className={`group flex h-full flex-col rounded-2xl border p-7 transition-all duration-200 ${
                   dark

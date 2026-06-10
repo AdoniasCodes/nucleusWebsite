@@ -50,7 +50,12 @@ export const defaultPages: Record<string, DefaultPage> = {
           { type: 'h3', text: 'Our Mission' },
           {
             type: 'p',
-            text: 'To mold a generation of thinkers, creators and problem-solvers — self-aware, innovative leaders who navigate a globalized world with humility, compassion and a heart for service.',
+            text: 'To empower a generation of thinkers, creators, and problem solvers as self-aware, innovative leaders who navigate a globalized world with humility, compassion, and a heart for service.',
+          },
+          { type: 'h3', text: 'Our Vision' },
+          {
+            type: 'p',
+            text: 'To witness a global legacy of innovative thinkers who cross borders with humility and solve problems for a better tomorrow.',
           },
           { type: 'h3', text: 'What We Believe' },
           {
@@ -69,12 +74,12 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Our Core Values',
         columns: '3',
         cards: [
-          { iconName: 'Award', title: 'Excellence in Education', description: 'Holding every learner to a high, caring standard.' },
-          { iconName: 'Scale', title: 'Integrity & Respect', description: 'Character first — honesty and respect in everything.' },
-          { iconName: 'Lightbulb', title: 'Creativity & Innovation', description: 'Encouraging bold thinking and original ideas.' },
-          { iconName: 'Target', title: 'Responsibility & Discipline', description: 'Building self-direction and good habits for life.' },
-          { iconName: 'Users', title: 'Community & Collaboration', description: 'Families and faculty growing together.' },
-          { iconName: 'HeartHandshake', title: 'A Heart for Service', description: 'Leadership measured by how we lift others.' },
+          { iconName: 'Handshake', title: 'Honesty', description: 'Living and speaking with absolute truthfulness to build a community rooted in mutual trust.' },
+          { iconName: 'ShieldCheck', title: 'Integrity', description: 'Doing what is right, honorable, and ethical in all circumstances, even when no one is watching.' },
+          { iconName: 'Eye', title: 'Transparency', description: 'Maintaining open, clear, and visible communication with students, parents, and stakeholders.' },
+          { iconName: 'Mountain', title: 'Resilience', description: 'Embracing challenges with grit, learning from mistakes, and persisting through obstacles to solve complex problems.' },
+          { iconName: 'Heart', title: 'Care', description: 'Putting the emotional, social, and physical well-being of every child at the center of all decisions.' },
+          { iconName: 'Award', title: 'Excellence', description: 'Striving for the highest standards in innovation, academic growth, and personal achievement.' },
         ],
       },
       {

@@ -2,6 +2,7 @@ import { Container } from '@/components/ui/Container'
 import { Section, isDark, type SectionBackground } from '@/components/ui/Section'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Icon } from '@/components/ui/Icon'
+import { Reveal } from '@/components/ui/Reveal'
 
 /**
  * Social-proof band (synthetic block). Inline quotes for the code-defined homepage.
@@ -27,9 +28,9 @@ export function TestimonialsBlock({ heading = 'What Parents Say', intro, backgro
         <SectionHeading heading={heading} intro={intro} dark={dark} />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {quotes.map((t, i) => (
+            <Reveal key={i} variant="up" delay={i * 110} className="h-full">
             <figure
-              key={i}
-              className={`flex flex-col rounded-2xl border p-7 ${
+              className={`flex h-full flex-col rounded-2xl border p-7 ${
                 dark ? 'border-white/10 bg-white/[0.06]' : 'border-navy/[0.08] bg-white shadow-[0_1px_3px_rgba(17,2,77,0.04)]'
               }`}
             >
@@ -42,6 +43,7 @@ export function TestimonialsBlock({ heading = 'What Parents Say', intro, backgro
                 {t.relationship && <span className={`text-sm ${dark ? 'text-pale/70' : 'text-ink/55'}`}>{t.relationship}</span>}
               </figcaption>
             </figure>
+            </Reveal>
           ))}
         </div>
       </Container>

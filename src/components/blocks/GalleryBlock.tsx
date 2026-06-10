@@ -5,6 +5,7 @@ import { Section } from '@/components/ui/Section'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Media } from '@/components/ui/Media'
 import { Orb } from '@/components/ui/Orb'
+import { Reveal } from '@/components/ui/Reveal'
 import { getPayloadClient } from '@/lib/payload'
 
 // TEMP demo stock — swap for real campus photos once provided (open-questions.md Q13).
@@ -42,7 +43,8 @@ export async function GalleryBlock(props: GalleryBlockType) {
         <div className="grid grid-cols-2 gap-5 sm:gap-7 lg:grid-cols-4">
           {items.length > 0
             ? items.map((item, i) => (
-                <figure key={item.id ?? i} className="group">
+                <Reveal key={item.id ?? i} variant="scale" delay={(i % 4) * 90}>
+                <figure className="group">
                   <div
                     className={`relative aspect-[4/5] overflow-hidden transition-transform duration-300 ease-out group-hover:-translate-y-1.5 group-hover:scale-[1.05] ${TINTS[i % TINTS.length]}`}
                     style={{ clipPath: SHIELD }}
@@ -59,9 +61,11 @@ export async function GalleryBlock(props: GalleryBlockType) {
                     {item.title}
                   </figcaption>
                 </figure>
+                </Reveal>
               ))
             : PLACEHOLDERS.map((ph, i) => (
-                <figure key={i} className="group">
+                <Reveal key={i} variant="scale" delay={(i % 4) * 90}>
+                <figure className="group">
                   <div
                     className={`relative aspect-[4/5] overflow-hidden transition-transform duration-300 ease-out group-hover:-translate-y-1.5 group-hover:scale-[1.05] ${TINTS[i % TINTS.length]}`}
                     style={{ clipPath: SHIELD }}
@@ -78,6 +82,7 @@ export async function GalleryBlock(props: GalleryBlockType) {
                     {ph.label}
                   </figcaption>
                 </figure>
+                </Reveal>
               ))}
         </div>
       </Container>

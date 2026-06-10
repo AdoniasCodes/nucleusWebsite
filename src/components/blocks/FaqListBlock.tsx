@@ -2,6 +2,7 @@ import { Container } from '@/components/ui/Container'
 import { Section, isDark, type SectionBackground } from '@/components/ui/Section'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { Reveal } from '@/components/ui/Reveal'
 
 /**
  * FAQ accordion. Uses native <details>/<summary> — accessible, SEO-crawlable, and zero client JS.
@@ -36,7 +37,7 @@ export function FaqListBlock({ heading = 'Frequently Asked Questions', intro, ba
       {renderSchema && <JsonLd data={schema} />}
       <Container width="narrow">
         <SectionHeading heading={heading} intro={intro} dark={dark} />
-        <div className="divide-y divide-navy/10 rounded-2xl border border-navy/10 bg-white">
+        <Reveal variant="up" className="divide-y divide-navy/10 rounded-2xl border border-navy/10 bg-white">
           {items.map((it, i) => (
             <details key={i} className="group px-6 py-4 open:bg-navy/[0.02]">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display font-semibold text-navy">
@@ -46,7 +47,7 @@ export function FaqListBlock({ heading = 'Frequently Asked Questions', intro, ba
               <p className="mt-3 leading-relaxed text-ink/75">{it.a}</p>
             </details>
           ))}
-        </div>
+        </Reveal>
       </Container>
     </Section>
   )

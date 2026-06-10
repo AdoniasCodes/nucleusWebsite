@@ -8,11 +8,10 @@ import { Media } from '@/components/ui/Media'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { getPayloadClient } from '@/lib/payload'
 import { buildBreadcrumbSchema } from '@/lib/seo'
+import { SERVER_URL } from '@/lib/serverUrl'
 import type { Post } from '@/payload-types'
 
 export const revalidate = 300
-
-const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
 
 async function getPost(slug: string): Promise<Post | null> {
   const payload = await getPayloadClient()

@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next'
-
-const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+import { SERVER_URL } from '@/lib/serverUrl'
 
 /** Allow crawling of public pages; keep admin + API out of the index. */
 export default function robots(): MetadataRoute.Robots {

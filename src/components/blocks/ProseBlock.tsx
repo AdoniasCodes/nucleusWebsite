@@ -1,6 +1,7 @@
 import { Container } from '@/components/ui/Container'
 import { Section, isDark, type SectionBackground } from '@/components/ui/Section'
 import { SectionHeading } from '@/components/ui/SectionHeading'
+import { Reveal } from '@/components/ui/Reveal'
 
 /** A readable prose section for narrative page content (About, Academics, etc.). Synthetic block. */
 export type ProseItem =
@@ -26,7 +27,7 @@ export function ProseBlock({ background = 'white', eyebrow, heading, intro, alig
     <Section background={background}>
       <Container width="narrow">
         <SectionHeading eyebrow={eyebrow} heading={heading} intro={intro} dark={dark} align={align} />
-        <div className="space-y-5">
+        <Reveal variant="up" className="space-y-5">
           {items.map((item, i) => {
             if (item.type === 'lead')
               return <p key={i} className={`text-xl leading-relaxed ${dark ? 'text-pale' : 'text-ink/90'}`}>{item.text}</p>
@@ -42,7 +43,7 @@ export function ProseBlock({ background = 'white', eyebrow, heading, intro, alig
               )
             return <p key={i} className={`leading-relaxed ${muted}`}>{item.text}</p>
           })}
-        </div>
+        </Reveal>
       </Container>
     </Section>
   )

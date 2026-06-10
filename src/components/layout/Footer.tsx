@@ -29,7 +29,7 @@ export async function Footer() {
             alt={schoolName}
             width={568}
             height={429}
-            className="h-20 w-auto"
+            className="h-30 w-auto"
           />
           <p className="mt-4 max-w-xs text-sm text-pale/75">{tagline}</p>
           <p lang="am" className="mt-2 text-sm text-ochre">
@@ -38,7 +38,7 @@ export async function Footer() {
         </div>
 
         <nav aria-label="Footer — explore">
-          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-ochre">Explore</h2>
+          <p className="font-display text-sm font-semibold uppercase tracking-wider text-ochre">Explore</p>
           <ul className="mt-4 space-y-2.5 text-sm text-pale/80">
             {NAV.map((item) => (
               <li key={item.href}>
@@ -51,7 +51,7 @@ export async function Footer() {
         </nav>
 
         <nav aria-label="Footer — programs">
-          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-ochre">Programs</h2>
+          <p className="font-display text-sm font-semibold uppercase tracking-wider text-ochre">Programs</p>
           <ul className="mt-4 space-y-2.5 text-sm text-pale/80">
             {PROGRAMS.map((item, i) => (
               <li key={i}>
@@ -64,7 +64,7 @@ export async function Footer() {
         </nav>
 
         <div>
-          <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-ochre">Visit & Contact</h2>
+          <p className="font-display text-sm font-semibold uppercase tracking-wider text-ochre">Visit & Contact</p>
           <address className="mt-4 space-y-2.5 text-sm text-pale/80 not-italic">
             <p>{address}</p>
             {phones.map((p, i) => (

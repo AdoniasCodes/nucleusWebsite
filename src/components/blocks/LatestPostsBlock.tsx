@@ -5,6 +5,7 @@ import { Section } from '@/components/ui/Section'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Media } from '@/components/ui/Media'
 import { Orb } from '@/components/ui/Orb'
+import { Reveal } from '@/components/ui/Reveal'
 import { getPayloadClient } from '@/lib/payload'
 
 /**
@@ -32,8 +33,9 @@ export async function LatestPostsBlock({ heading = 'News & Perspectives', intro,
           <p className="text-center text-ink/55">News and stories from campus will appear here soon.</p>
         ) : (
           <div className="grid grid-cols-1 gap-7 md:grid-cols-3">
-            {docs.map((post) => (
-              <article key={post.id} className="overflow-hidden rounded-2xl border border-navy/10 bg-white">
+            {docs.map((post, i) => (
+              <Reveal key={post.id} variant="up" delay={i * 110} className="h-full">
+              <article className="h-full overflow-hidden rounded-2xl border border-navy/10 bg-white">
                 <Link href={`/news/${post.slug}`} className="block">
                   <div className="relative aspect-[16/10] bg-navy/5">
                     {post.heroImage && typeof post.heroImage === 'object' ? (
@@ -57,6 +59,7 @@ export async function LatestPostsBlock({ heading = 'News & Perspectives', intro,
                   </div>
                 </Link>
               </article>
+              </Reveal>
             ))}
           </div>
         )}

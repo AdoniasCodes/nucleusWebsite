@@ -19,7 +19,7 @@ export function Header({ schoolName = 'Nucleus International School' }: { school
             width={1802}
             height={758}
             priority
-            className="h-9 w-auto sm:h-11"
+            className="h-[3.375rem] w-auto sm:h-[4.125rem]"
           />
         </Link>
 

@@ -106,11 +106,42 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes kenBurns {
+  from { transform: scale(1.06); }
+  to { transform: scale(1.16); }
+}
 .animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-float { animation: floatY 7s ease-in-out infinite; }
 
-/* Scroll-reveal: hidden until .is-visible is added by the Reveal observer. */
-.reveal { opacity: 0; transform: translateY(16px); }
-.reveal.is-visible { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+/* Slow drift on the hero background video — a living, cinematic frame. */
+.hero-kenburns { animation: kenBurns 22s ease-in-out infinite alternate; }
+
+/* ── Scroll-reveal system ──────────────────────────────────────────────────────
+   Hidden until the Reveal observer adds .is-visible. Transition-based so the
+   direction/variant composes cleanly. The easing is a soft "settle" curve. */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal-up { transform: translateY(28px); }
+.reveal-fade { transform: none; }
+.reveal-left { transform: translateX(-44px); }
+.reveal-right { transform: translateX(44px); }
+.reveal-scale { transform: scale(0.92); }
+.reveal-blur { filter: blur(14px); transform: translateY(14px); }
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
 
 .caret::after {
   content: '';

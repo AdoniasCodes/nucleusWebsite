@@ -1,6 +1,5 @@
 import type { SiteSetting, SeoSetting } from '@/payload-types'
-
-const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+import { SERVER_URL } from '@/lib/serverUrl'
 
 const mediaUrl = (m: unknown): string | undefined =>
   m && typeof m === 'object' && 'url' in m && typeof (m as { url?: string }).url === 'string'

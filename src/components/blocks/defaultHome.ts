@@ -16,10 +16,13 @@ export const defaultHomeLayout: RenderableBlock[] = [
   {
     blockType: 'hero',
     background: 'purple',
-    bgImage: '/images/stock/home-hero.jpg',
+    bgVideo: '/video/hero.mp4',
+    bgPoster: '/video/hero-poster.jpg',
     animateHeading: true,
+    eyebrow: 'Cambridge International School in Addis Ababa',
     amharicSubline: 'ትምህርት ከደብተር ያልፋል',
-    heading: 'Think Deeply.\nCreate Boldly.\nSolve Truly.',
+    heading: 'Nucleus International School',
+    tagline: 'Think Deeply. Create Boldly. Solve Truly.',
     subhead:
       'A Cambridge international education in the heart of Addis Ababa — raising secure, curious, globally-minded children from age 2 through Grade 8.',
     links: [
@@ -40,6 +43,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
   {
     blockType: 'cardsGrid',
     background: 'white',
+    reveal: 'scale',
     eyebrow: 'Why Nucleus',
     heading: 'Why Leaders Choose Nucleus',
     intro: 'A holistic, innovative environment that prepares children for a global future.',
@@ -67,24 +71,49 @@ export const defaultHomeLayout: RenderableBlock[] = [
   {
     blockType: 'ctaBand',
     background: 'navy',
-    heading: 'Beyond the Classroom. Into the World.',
+    bgImage: '/images/stock/globe-3.jpg',
+    heading: 'Learning Beyond Books',
     subhead:
       'Robotics, agriculture, music, sport and a secure campus — a full life that shapes thinkers, creators and solvers.',
     links: [{ link: { appearance: 'primary', type: 'custom', label: 'Discover Campus Life', url: '/campus-life' } }],
   },
   {
     blockType: 'cardsGrid',
+    background: 'mist',
+    reveal: 'mirror',
+    eyebrow: 'Our Purpose',
+    heading: 'Mission & Vision',
+    columns: '2',
+    cards: [
+      {
+        iconName: 'Compass',
+        title: 'Our Mission',
+        description:
+          'To empower a generation of thinkers, creators, and problem solvers as self-aware, innovative leaders who navigate a globalized world with humility, compassion, and a heart for service.',
+      },
+      {
+        iconName: 'Globe',
+        title: 'Our Vision',
+        description:
+          'To witness a global legacy of innovative thinkers who cross borders with humility and solve problems for a better tomorrow.',
+      },
+    ],
+  },
+  {
+    blockType: 'cardsGrid',
     background: 'white',
+    reveal: 'blur',
     eyebrow: 'Our Foundation',
     heading: 'Our Core Values',
     intro: 'The principles that guide our community and shape future leaders.',
     columns: '3',
     cards: [
-      { iconName: 'Award', title: 'Excellence in Education', description: 'Holding every learner to a high, caring standard.' },
-      { iconName: 'Scale', title: 'Integrity & Respect', description: 'Character first — honesty and respect in everything.' },
-      { iconName: 'Lightbulb', title: 'Creativity & Innovation', description: 'Encouraging bold thinking and original ideas.' },
-      { iconName: 'Target', title: 'Responsibility & Discipline', description: 'Building self-direction and good habits for life.' },
-      { iconName: 'Users', title: 'Community & Collaboration', description: 'Families and faculty growing together.' },
+      { iconName: 'Handshake', title: 'Honesty', description: 'Living and speaking with absolute truthfulness to build a community rooted in mutual trust.' },
+      { iconName: 'ShieldCheck', title: 'Integrity', description: 'Doing what is right, honorable, and ethical in all circumstances, even when no one is watching.' },
+      { iconName: 'Eye', title: 'Transparency', description: 'Maintaining open, clear, and visible communication with students, parents, and stakeholders.' },
+      { iconName: 'Mountain', title: 'Resilience', description: 'Embracing challenges with grit, learning from mistakes, and persisting through obstacles to solve complex problems.' },
+      { iconName: 'Heart', title: 'Care', description: 'Putting the emotional, social, and physical well-being of every child at the center of all decisions.' },
+      { iconName: 'Award', title: 'Excellence', description: 'Striving for the highest standards in innovation, academic growth, and personal achievement.' },
     ],
   },
   {
@@ -100,14 +129,18 @@ export const defaultHomeLayout: RenderableBlock[] = [
     heading: 'Parents Often Ask',
     items: [
       { q: 'What curriculum does Nucleus follow?', a: 'The Cambridge pathway, from the early years through Grade 8 — a portable, internationally recognised education.' },
+      { q: 'What ages does Nucleus accept?', a: 'Children from age 2 through Grade 8, on a single planned journey from the early years into the Cambridge primary and middle years.' },
       { q: 'Where is Nucleus located?', a: 'In Mekanisa, about 100 metres from Mekanisa Abo Square, Addis Ababa.' },
       { q: 'How much are the fees?', a: 'We keep fees transparent, with no hidden capital-fee surprises. Request the full fee sheet and we’ll send it directly.' },
       { q: 'How safe is the campus?', a: 'Safety comes first — a secure, supervised campus with controlled access is the foundation of everything we do.' },
+      { q: 'Is an international school worth it compared to a local school?', a: 'A good international school gives a portable, globally recognised education, smaller classes and learning beyond the textbook. It costs more, so the value depends on the school delivering it in practice — which is why we encourage you to visit and see for yourself.' },
+      { q: 'Cambridge or IB — which is better for my child?', a: 'Neither is automatically better. Cambridge is structured and exam-based; the IB is inquiry and project-led. Nucleus follows Cambridge for its clear structure and global portability.' },
     ],
   },
   {
     blockType: 'ctaBand',
     background: 'purple',
+    bgImage: '/images/stock/globe-1.jpg',
     heading: 'Registration is open — Gift Your Kids a Full Life',
     subhead: 'Secure your child’s place for the upcoming intake. Tours fill quickly.',
     links: [

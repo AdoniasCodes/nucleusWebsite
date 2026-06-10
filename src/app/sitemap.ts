@@ -1,8 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { getPayloadClient } from '@/lib/payload'
 import { defaultPages } from '@/components/blocks/defaultPages'
-
-const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+import { SERVER_URL } from '@/lib/serverUrl'
 
 /** Auto-generated sitemap of canonical URLs: home + all code/CMS pages + published posts. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

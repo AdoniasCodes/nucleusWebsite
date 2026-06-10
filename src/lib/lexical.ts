@@ -7,8 +7,32 @@ export type ContentBlock =
   | { h3: string }
   | { p: string }
   | { ul: string[] }
+  | { related: { label: string; url: string }[] } // internal-link row (SEO interlinking)
 
 const text = (t: string) => ({ detail: 0, format: 0, mode: 'normal', style: '', text: t, type: 'text', version: 1 })
+
+const linkNode = (label: string, url: string) => ({
+  type: 'link',
+  version: 3,
+  fields: { linkType: 'custom', url, newTab: false },
+  direction: 'ltr',
+  format: '',
+  indent: 0,
+  children: [text(label)],
+})
+
+/** "Related reading: A · B" paragraph of real internal links. */
+const relatedPara = (items: { label: string; url: string }[]) => ({
+  children: [
+    { ...text('Related reading: '), format: 1 }, // bold
+    ...items.flatMap((it, i) => (i === 0 ? [linkNode(it.label, it.url)] : [text('  ·  '), linkNode(it.label, it.url)])),
+  ],
+  direction: 'ltr',
+  format: '',
+  indent: 0,
+  type: 'paragraph',
+  version: 1,
+})
 
 const para = (t: string) => ({
   children: [text(t)],
@@ -54,6 +78,7 @@ export function richTextFromBlocks(blocks: ContentBlock[]) {
     if ('h2' in b) return heading(b.h2, 'h2')
     if ('h3' in b) return heading(b.h3, 'h3')
     if ('ul' in b) return list(b.ul)
+    if ('related' in b) return relatedPara(b.related)
     return para(b.p)
   })
   return { root: { children, direction: 'ltr', format: '', indent: 0, type: 'root', version: 1 } }
@@ -62,6 +87,6 @@ export function richTextFromBlocks(blocks: ContentBlock[]) {
 /** Plain-text version (for excerpts / meta fallback). */
 export function blocksToPlainText(blocks: ContentBlock[]): string {
   return blocks
-    .map((b) => ('h2' in b ? b.h2 : 'h3' in b ? b.h3 : 'ul' in b ? b.ul.join('. ') : b.p))
+    .map((b) => ('h2' in b ? b.h2 : 'h3' in b ? b.h3 : 'ul' in b ? b.ul.join('. ') : 'related' in b ? '' : b.p))
     .join(' ')
 }
