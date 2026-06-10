@@ -27,7 +27,7 @@ export async function Footer() {
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-16 sm:px-8 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Image
-            src="/images/nucleus-logo-white.png"
+            src="/images/nucleus-logo-white.webp"
             alt={schoolName}
             width={568}
             height={429}

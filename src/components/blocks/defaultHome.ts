@@ -26,7 +26,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     blockType: 'hero',
     background: 'purple',
     bgVideo: '/video/hero.mp4',
-    bgPoster: '/video/hero-poster.jpg',
+    bgPoster: '/video/hero-poster.webp',
     animateHeading: true,
     eyebrow: 'Cambridge International School in Addis Ababa',
     amharicSubline: 'ትምህርት ከደብተር ያልፋል',
@@ -80,7 +80,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
   {
     blockType: 'ctaBand',
     background: 'navy',
-    bgImage: '/images/stock/globe-3.jpg',
+    bgImage: '/images/stock/globe-3.webp',
     heading: 'Learning Beyond Books',
     subhead:
       'Robotics, agriculture, music, sport and a secure campus — a full life that shapes thinkers, creators and solvers.',
@@ -111,7 +111,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
   {
     blockType: 'cardsGrid',
     background: 'white',
-    bgImage: '/images/stock/core-values.jpg',
+    bgImage: '/images/stock/core-values.webp',
     bgOverlay: 'gradient',
     reveal: 'blur',
     eyebrow: 'Our Foundation',
@@ -144,7 +144,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
   {
     blockType: 'ctaBand',
     background: 'purple',
-    bgImage: '/images/stock/globe-1.jpg',
+    bgImage: '/images/stock/globe-1.webp',
     heading: 'Registration is open — Gift Your Kids a Full Life',
     subhead: 'Secure your child’s place for the upcoming intake. Tours fill quickly.',
     links: [

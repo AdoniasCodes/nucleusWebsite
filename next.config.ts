@@ -10,7 +10,9 @@ const dirname = path.dirname(__filename)
 // effect over HTTPS, which Vercel serves. X-Frame SAMEORIGIN keeps Payload's live-preview
 // iframe (same origin) working while blocking external framing/clickjacking.
 const securityHeaders = [
-  { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
+  // No `preload` on purpose: the cPanel email subdomains (mail./webmail.) must stay flexible,
+  // and HSTS preload is effectively irreversible. includeSubDomains is safe (cPanel AutoSSL covers them).
+  { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains' },
   { key: 'X-Content-Type-Options', value: 'nosniff' },
   { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },

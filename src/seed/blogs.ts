@@ -28,7 +28,7 @@ const posts: SeedPost[] = [
     category: 'academics',
     excerpt:
       'Addis Ababa offers both Cambridge and IB international schools. Here is a clear, parent-first look at how they differ — and which suits your child.',
-    heroFile: 'blog-cambridge.jpg',
+    heroFile: 'blog-cambridge.webp',
     publishedAt: '2026-06-02T09:00:00.000Z',
     body: [
       { p: 'If you are comparing international schools in Addis Ababa, you will meet two big names quickly: Cambridge and the International Baccalaureate (IB). Both are respected worldwide. Neither is automatically "better." The right one depends on your child and your plans.' },
@@ -54,7 +54,7 @@ const posts: SeedPost[] = [
     category: 'admissions',
     excerpt:
       'Tuition is only part of the picture. Here is a transparent look at international school fees in Addis Ababa — including the capital fees that catch families out.',
-    heroFile: 'blog-fees.jpg',
+    heroFile: 'blog-fees.webp',
     publishedAt: '2026-06-03T09:00:00.000Z',
     body: [
       { p: 'Fees are the first question most parents ask, and the hardest to get a straight answer to. International school costs in Addis Ababa span an enormous range, and the headline tuition is rarely the full story.' },
@@ -84,7 +84,7 @@ const posts: SeedPost[] = [
     category: 'parent-resources',
     excerpt:
       'A practical, no-nonsense checklist for choosing an international school in Addis Ababa — from curriculum and safety to the questions to ask on your tour.',
-    heroFile: 'blog-choose.jpg',
+    heroFile: 'blog-choose.webp',
     publishedAt: '2026-06-04T09:00:00.000Z',
     body: [
       { p: 'Choosing a school is one of the bigger decisions a family makes, and it is easy to be swayed by a glossy website. Here is a checklist to keep you focused on what matters.' },
@@ -112,7 +112,7 @@ const posts: SeedPost[] = [
     category: 'campus-life',
     excerpt:
       'Hands-on learning is not a luxury add-on. Here is why robotics, STEM and growing things belong in a child’s education from the start.',
-    heroFile: 'blog-beyond.jpg',
+    heroFile: 'blog-beyond.webp',
     publishedAt: '2026-06-05T09:00:00.000Z',
     body: [
       { p: 'Ask a child what they did at school and "we built a robot" or "my seeds sprouted" beats "we copied notes" every time. That excitement is not a distraction from learning. It is learning.' },
@@ -132,7 +132,7 @@ const posts: SeedPost[] = [
     category: 'parent-resources',
     excerpt:
       'Relocating to Addis Ababa with children? Here is what diplomatic and expat families should know about choosing a school that travels with you.',
-    heroFile: 'blog-expat.jpg',
+    heroFile: 'blog-expat.webp',
     publishedAt: '2026-06-06T09:00:00.000Z',
     body: [
       { p: 'Relocating with children adds a layer to every decision. School is often the one that decides whether the whole posting feels right. A few things matter more in Addis than anywhere else.' },
@@ -160,7 +160,7 @@ const posts: SeedPost[] = [
     category: 'parent-resources',
     excerpt:
       'Confused by “Level 2, 3, 4” or “category” private schools in Addis Ababa? A plain-English guide to how Ethiopia classifies schools — and what it means for fees.',
-    heroFile: 'blog-fees.jpg',
+    heroFile: 'blog-fees.webp',
     publishedAt: '2026-05-20T09:00:00.000Z',
     body: [
       { p: 'When you start comparing schools in Addis Ababa, you quickly meet terms like “Level 2,” “Level 3,” or “category” schools — and sometimes “C1 to C4.” Here is what those labels actually mean, and what they do not.' },
@@ -195,7 +195,7 @@ const posts: SeedPost[] = [
     category: 'parent-resources',
     excerpt:
       'Are international schools really better than local schools? An honest look at what an international education actually gives a child in Addis Ababa.',
-    heroFile: 'gallery-classroom.jpg',
+    heroFile: 'gallery-classroom.webp',
     publishedAt: '2026-05-24T09:00:00.000Z',
     body: [
       { p: '“Are international schools better?” is one of the most-searched questions among Addis parents. The honest answer: not automatically — but a good one offers things that are genuinely hard to find elsewhere.' },
@@ -227,7 +227,7 @@ const posts: SeedPost[] = [
     category: 'parent-resources',
     excerpt:
       'Private or government school? A balanced, parent-first comparison for families in Addis Ababa — cost, class size, curriculum and what really matters.',
-    heroFile: 'academics-hero.jpg',
+    heroFile: 'academics-hero.webp',
     publishedAt: '2026-05-28T09:00:00.000Z',
     body: [
       { p: 'Private or public? It is one of the first big decisions a family makes, and the loudest opinions are rarely the most useful. Here is a calm look at both sides.' },
@@ -259,7 +259,7 @@ const posts: SeedPost[] = [
     category: 'academics',
     excerpt:
       'Cambridge, IB or the Ethiopian national curriculum — which is best? A clear, parent-first comparison to help you choose with confidence.',
-    heroFile: 'blog-cambridge.jpg',
+    heroFile: 'blog-cambridge.webp',
     publishedAt: '2026-06-01T09:00:00.000Z',
     body: [
       { p: 'Once you start school-hunting, you have to pick a curriculum as well as a school. The three you will meet most in Addis are Cambridge, the IB and the Ethiopian national curriculum. None is universally “best” — but one will suit your child best.' },
@@ -289,7 +289,7 @@ const posts: SeedPost[] = [
     category: 'parent-resources',
     excerpt:
       'What age is best to start school — and which years matter most? A calm, evidence-aware guide for parents of young children in Addis Ababa.',
-    heroFile: 'admissions-hero.jpg',
+    heroFile: 'admissions-hero.webp',
     publishedAt: '2026-06-05T09:00:00.000Z',
     body: [
       { p: 'Parents of toddlers ask two versions of the same question: what age should my child start school, and how much do these early years really matter? Here is a calm, honest guide.' },
@@ -320,7 +320,7 @@ const posts: SeedPost[] = [
     category: 'parent-resources',
     excerpt:
       'Looking for the best international school in Addis Ababa? An honest 2026 guide to the main options — by curriculum, budget and what each does well.',
-    heroFile: 'campus-hero.jpg',
+    heroFile: 'campus-hero.webp',
     publishedAt: '2026-06-08T09:00:00.000Z',
     body: [
       { p: '“What is the best international school in Addis Ababa?” There is no single answer — the best school depends on your budget, your child, and where you might go next. Here is an honest map of the landscape to help you shortlist.' },
@@ -354,7 +354,7 @@ const posts: SeedPost[] = [
     category: 'academics',
     excerpt:
       'Want a Cambridge education in Addis Ababa? Here are the main Cambridge and British-curriculum schools to know in 2026 — and how to choose between them.',
-    heroFile: 'blog-choose.jpg',
+    heroFile: 'blog-choose.webp',
     publishedAt: '2026-06-09T09:00:00.000Z',
     body: [
       { p: 'If you have decided on the Cambridge pathway, the next question is simply: where? Addis Ababa has a growing set of Cambridge and British-curriculum schools to choose from.' },
@@ -383,7 +383,7 @@ const posts: SeedPost[] = [
     category: 'admissions',
     excerpt:
       'ICS is the most expensive school in Addis Ababa. Here are its 2025/26 fees in plain numbers — and the lower-cost Cambridge alternatives worth considering.',
-    heroFile: 'blog-fees.jpg',
+    heroFile: 'blog-fees.webp',
     publishedAt: '2026-06-10T09:00:00.000Z',
     body: [
       { p: 'The International Community School (ICS) is Addis Ababa’s best-known — and most expensive — international school. If you are weighing it up, here are the published 2025/26 numbers in plain terms, plus alternatives worth a look.' },

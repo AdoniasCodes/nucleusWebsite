@@ -14,7 +14,7 @@ export function Header({ schoolName = 'Nucleus International School' }: { school
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
         <Link href="/" aria-label={`${schoolName} — home`}>
           <Image
-            src="/images/nucleus-logo.png"
+            src="/images/nucleus-logo.webp"
             alt={schoolName}
             width={1802}
             height={758}

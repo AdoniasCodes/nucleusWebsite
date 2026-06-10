@@ -29,7 +29,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'purple',
         eyebrow: 'About Nucleus',
         heading: 'A Full Life\nBegins Here',
-        bgImage: '/images/stock/about-hero.jpg',
+        bgImage: '/images/stock/about-hero.webp',
         subhead:
           'Nucleus is growing from one of Addis Ababa’s most trusted homes for early childhood into a full Cambridge international school — without ever losing the warmth that built it.',
         links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
@@ -103,7 +103,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'purple',
         eyebrow: 'Academics',
         heading: 'A Cambridge Education,\nBuilt for the Real World',
-        bgImage: '/images/stock/academics-hero.jpg',
+        bgImage: '/images/stock/academics-hero.webp',
         subhead:
           'We follow the Cambridge pathway — one of the world’s most recognised and portable curricula — rewarding deep understanding over memorisation.',
         links: [
@@ -173,7 +173,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         eyebrow: 'Campus Life',
         heading: 'Learning Beyond Books',
         amharicSubline: 'ትምህርት ከደብተር ያልፋል',
-        bgImage: '/images/stock/campus-hero.jpg',
+        bgImage: '/images/stock/campus-hero.webp',
         subhead:
           'Robotics, agriculture, music, sport and chef-prepared meals — a full education that reaches far beyond the notebook, on a campus built for peace of mind.',
       },
@@ -213,7 +213,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'purple',
         eyebrow: 'Admissions',
         heading: 'Joining Nucleus',
-        bgImage: '/images/stock/admissions-hero.jpg',
+        bgImage: '/images/stock/admissions-hero.webp',
         subhead:
           'We believe families deserve clarity — no hidden capital-fee surprises. Request your full fee sheet and we’ll send it directly.',
         links: [
@@ -299,7 +299,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'purple',
         eyebrow: 'Contact & Visit',
         heading: 'Come See a Full Life\nin Motion',
-        bgImage: '/images/stock/contact-hero.jpg',
+        bgImage: '/images/stock/contact-hero.webp',
         subhead:
           'We’d love to show you around. Find us at Vatican, Addis Ababa — beside the Vatican Embassy (the former Peace Corps compound), just before Mekanisa Abo Square.',
       },
@@ -362,7 +362,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'purple',
         eyebrow: 'News & Perspectives',
         heading: 'From Our\nLearning Community',
-        bgImage: '/images/stock/news-hero.jpg',
+        bgImage: '/images/stock/news-hero.webp',
         subhead: 'Stories, milestones and ideas from campus.',
       },
       { blockType: 'latestPosts', heading: 'Latest', limit: 9 },
@@ -378,7 +378,7 @@ export const defaultPages: Record<string, DefaultPage> = {
       {
         blockType: 'hero',
         background: 'purple',
-        bgImage: '/images/stock/academics-hero.jpg',
+        bgImage: '/images/stock/academics-hero.webp',
         eyebrow: 'Academics',
         heading: 'The Cambridge Pathway',
         subhead:
@@ -441,7 +441,7 @@ export const defaultPages: Record<string, DefaultPage> = {
       {
         blockType: 'hero',
         background: 'purple',
-        bgImage: '/images/stock/gallery-stem.jpg',
+        bgImage: '/images/stock/gallery-stem.webp',
         eyebrow: 'Learning Beyond Books',
         heading: 'Robotics & STEM',
         subhead:
@@ -500,7 +500,7 @@ export const defaultPages: Record<string, DefaultPage> = {
       {
         blockType: 'hero',
         background: 'purple',
-        bgImage: '/images/stock/blog-beyond.jpg',
+        bgImage: '/images/stock/blog-beyond.webp',
         eyebrow: 'Learning Beyond Books',
         heading: 'Agriculture &\nAnimal Care',
         subhead:

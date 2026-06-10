@@ -10,10 +10,10 @@ import { getPayloadClient } from '@/lib/payload'
 
 // TEMP demo stock — swap for real campus photos once provided (open-questions.md Q13).
 const PLACEHOLDERS = [
-  { label: 'Campus', src: '/images/stock/gallery-campus.jpg' },
-  { label: 'Classrooms', src: '/images/stock/gallery-classroom.jpg' },
-  { label: 'STEM & Robotics', src: '/images/stock/gallery-stem.jpg' },
-  { label: 'Sports & Play', src: '/images/stock/gallery-sports.jpg' },
+  { label: 'Campus', src: '/images/stock/gallery-campus.webp' },
+  { label: 'Classrooms', src: '/images/stock/gallery-classroom.webp' },
+  { label: 'STEM & Robotics', src: '/images/stock/gallery-stem.webp' },
+  { label: 'Sports & Play', src: '/images/stock/gallery-sports.webp' },
 ]
 
 // Shield/badge silhouette — the brand's most ownable device, used as photo frames.
