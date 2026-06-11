@@ -1,18 +1,16 @@
 import Script from 'next/script'
 
 /**
- * Analytics loader — Google Analytics 4 + Microsoft Clarity.
+ * Analytics loader — Google Analytics 4 only.
  *
- * Both are OFF until their IDs are present, so this is safe to ship now and "lights up"
- * the moment the env vars are set (no redeploy of code needed, just the vars + a rebuild):
- *   NEXT_PUBLIC_GA_ID       e.g. G-XXXXXXXXXX
- *   NEXT_PUBLIC_CLARITY_ID  e.g. abcdefghij
- * Scripts load `afterInteractive` so they never block first paint / hurt the speed score.
+ * GA4 is OFF until its ID is present, so this is safe to ship and "lights up" the moment the
+ * env var is set (just the var + a rebuild):
+ *   NEXT_PUBLIC_GA_ID  e.g. G-XXXXXXXXXX
+ * Loads `afterInteractive` so it never blocks first paint / hurts the speed score.
+ * (Microsoft Clarity was removed 2026-06-11 — re-add from git history if heatmaps are wanted later.)
  */
 // GA4 — defaults to the live Nucleus Measurement ID; override via env if it ever changes.
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-9WN6K3GHST'
-// Microsoft Clarity — defaults to the live Nucleus project ID; override via env if it ever changes.
-const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || 'x4tumr5we9'
 
 export function Analytics() {
   return (
@@ -24,11 +22,6 @@ export function Analytics() {
             {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
           </Script>
         </>
-      )}
-      {CLARITY_ID && (
-        <Script id="clarity-init" strategy="afterInteractive">
-          {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_ID}");`}
-        </Script>
       )}
     </>
   )

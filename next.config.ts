@@ -32,6 +32,11 @@ const nextConfig: NextConfig = {
       {
         pathname: '/images/**',
       },
+      {
+        // Hero poster (HeroBlock bgPoster) lives under /public/video — Next 16 blocks any
+        // local image path not explicitly allowed here.
+        pathname: '/video/**',
+      },
     ],
   },
   webpack: (webpackConfig) => {

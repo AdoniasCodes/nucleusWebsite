@@ -14,12 +14,12 @@ export function Header({ schoolName = 'Nucleus International School' }: { school
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
         <Link href="/" aria-label={`${schoolName} — home`}>
           <Image
-            src="/images/nucleus-logo.webp"
-            alt={schoolName}
-            width={1802}
-            height={758}
+            src="/images/nucleus-cambridge-logo.webp"
+            alt={`${schoolName} — Cambridge International Education`}
+            width={1206}
+            height={243}
             priority
-            className="h-[3.375rem] w-auto sm:h-[4.125rem]"
+            className="h-[3.15rem] w-auto sm:h-[3.45rem] lg:h-[4.03rem]"
           />
         </Link>
 
