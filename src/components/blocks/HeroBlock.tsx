@@ -31,7 +31,7 @@ export function HeroBlock(
     >
       {hasMedia ? (
         <div className="absolute inset-0">
-          <Media resource={props.image} fill priority className="object-cover" sizes="100vw" />
+          <Media resource={props.image} fill priority className="img-grade object-cover" sizes="100vw" />
           <div className="absolute inset-0 bg-navy/55" />
         </div>
       ) : props.bgVideo ? (
@@ -44,7 +44,7 @@ export function HeroBlock(
               alt=""
               fill
               priority
-              className="hero-kenburns object-cover md:hidden"
+              className="hero-kenburns img-grade object-cover md:hidden"
               sizes="100vw"
             />
           )}
@@ -65,7 +65,7 @@ export function HeroBlock(
         </div>
       ) : props.bgImage ? (
         <div className="absolute inset-0">
-          <Image src={props.bgImage} alt="" fill priority className="hero-kenburns object-cover" sizes="100vw" />
+          <Image src={props.bgImage} alt="" fill priority className="hero-kenburns img-grade object-cover" sizes="100vw" />
           {/* Navy gradient overlay keeps text legible over any photo. */}
           <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/65 to-navy/45" />
         </div>
