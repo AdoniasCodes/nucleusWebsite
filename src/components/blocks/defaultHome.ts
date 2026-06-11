@@ -67,6 +67,24 @@ export const defaultHomeLayout: RenderableBlock[] = [
     ],
   },
   {
+    blockType: 'whyCambridge',
+    eyebrow: 'The Cambridge Difference',
+    heading: 'An Education That Travels With Your Child',
+    intro:
+      'Nucleus follows the Cambridge Pathway — the world’s most widely recognised international curriculum. Wherever life takes your family, your child’s learning is recognised and respected.',
+    stats: [
+      { value: '160', label: 'Countries recognise Cambridge' },
+      { value: '10,000+', label: 'Cambridge schools worldwide' },
+      { value: '2–G8', label: 'One portable journey' },
+    ],
+    points: [
+      { iconName: 'Globe', title: 'Globally portable', description: 'Move countries without losing a step — Cambridge is understood everywhere.' },
+      { iconName: 'GraduationCap', title: 'University-recognised', description: 'Respected by leading universities around the world.' },
+      { iconName: 'Lightbulb', title: 'Thinking, not memorising', description: 'Builds real understanding, problem-solving and curiosity.' },
+    ],
+    link: { label: 'Explore the Cambridge Pathway', url: '/cambridge-pathway' },
+  },
+  {
     blockType: 'testimonials',
     background: 'mist',
     heading: 'Loved by Nucleus Families',
@@ -121,11 +139,39 @@ export const defaultHomeLayout: RenderableBlock[] = [
     cards: coreValuesCards,
   },
   {
+    blockType: 'dayTimeline',
+    eyebrow: 'A Day in the Life',
+    heading: 'A Day at Nucleus',
+    intro:
+      'From a secure morning welcome to a full, joyful afternoon — every day is structured to grow the whole child.',
+    steps: [
+      { time: '8:00', iconName: 'ShieldCheck', title: 'Safe Arrival', description: 'A calm, secure start — every child welcomed by name.' },
+      { time: '9:00', iconName: 'BookOpen', title: 'Cambridge Lessons', description: 'Literacy, numeracy and inquiry-led learning.' },
+      { time: '12:30', iconName: 'Utensils', title: 'Chef-Prepared Lunch', description: 'Fresh, balanced meals cooked on campus.' },
+      { time: '1:30', iconName: 'Bot', title: 'Robotics & Agriculture', description: 'Hands-on STEM, coding, gardening and animal care.' },
+      { time: '3:00', iconName: 'Music', title: 'Music, Sport & Play', description: 'Band, PE and free play — a full life.' },
+      { time: '3:30', iconName: 'Navigation', title: 'Safe Departure', description: 'Supervised, secure dismissal home.' },
+    ],
+  },
+  {
     blockType: 'galleryBlock',
     heading: 'Campus Life',
     source: 'category',
     category: 'campus',
     limit: 4,
+  },
+  {
+    blockType: 'feeTransparency',
+    eyebrow: 'Honest, Transparent Fees',
+    heading: 'No Hidden Capital-Fee Surprises',
+    intro:
+      'While other schools surprise families with steep capital levies and mid-year hikes, Nucleus keeps it clear and predictable from day one.',
+    points: [
+      { iconName: 'Scale', title: 'One clear fee structure', description: 'You see exactly what you pay for — before you commit, not after.' },
+      { iconName: 'ShieldCheck', title: 'No surprise capital fees', description: 'No unexpected building or capital charges bolted on after enrolment.' },
+      { iconName: 'HeartHandshake', title: 'Genuine value', description: 'A premium international education positioned as honest value, not a Tier-I price ceiling.' },
+    ],
+    link: { label: 'Request the Full Fee Sheet', url: '/admissions' },
   },
   {
     blockType: 'faqList',

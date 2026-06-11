@@ -97,6 +97,12 @@
   );
 }
 
+/* Subtle dot-grid texture for otherwise-flat bands (depth without weight). */
+@utility dot-grid {
+  background-image: radial-gradient(rgba(217, 230, 245, 0.5) 1px, transparent 1.4px);
+  background-size: 22px 22px;
+}
+
 /* ── Micro-animations (subtle, professional — a touch of child-like wonder) ───── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }

@@ -2,6 +2,7 @@ import type { StatsBlock as StatsBlockType } from '@/payload-types'
 import { Container } from '@/components/ui/Container'
 import { Section, type SectionBackground } from '@/components/ui/Section'
 import { Reveal } from '@/components/ui/Reveal'
+import { CountUp } from '@/components/ui/CountUp'
 
 /** Trust/stats strip. Numbers scale-reveal in a quick stagger as the strip enters view. */
 export function StatsBlock(props: StatsBlockType) {
@@ -16,7 +17,9 @@ export function StatsBlock(props: StatsBlockType) {
           {items.map((item, i) => (
             <Reveal key={i} variant="scale" delay={i * 90}>
               <div className="text-center">
-                <dt className="font-display text-4xl font-bold text-ochre sm:text-5xl">{item.value}</dt>
+                <dt className="font-display text-4xl font-bold text-ochre sm:text-5xl">
+                  <CountUp value={item.value} />
+                </dt>
                 <dd className="mt-2 text-sm font-medium uppercase tracking-wide text-pale/75">{item.label}</dd>
               </div>
             </Reveal>

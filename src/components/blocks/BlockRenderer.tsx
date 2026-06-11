@@ -10,6 +10,9 @@ import { FaqListBlock, type FaqListProps } from './FaqListBlock'
 import { TestimonialsBlock, type TestimonialsProps } from './TestimonialsBlock'
 import { MapBlock, type MapProps } from './MapBlock'
 import { FormBlock } from './FormBlock'
+import { WhyCambridgeBlock, type WhyCambridgeProps } from './WhyCambridgeBlock'
+import { FeeTransparencyBlock, type FeeTransparencyProps } from './FeeTransparencyBlock'
+import { DayTimelineBlock, type DayTimelineProps } from './DayTimelineBlock'
 
 /** A CMS layout block, plus the synthetic code-only blocks (homepage + inner pages). */
 export type RenderableBlock =
@@ -19,6 +22,9 @@ export type RenderableBlock =
   | FaqListProps
   | TestimonialsProps
   | MapProps
+  | WhyCambridgeProps
+  | FeeTransparencyProps
+  | DayTimelineProps
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
@@ -33,6 +39,9 @@ const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
   testimonials: TestimonialsBlock,
   map: MapBlock,
   formBlock: FormBlock,
+  whyCambridge: WhyCambridgeBlock,
+  feeTransparency: FeeTransparencyBlock,
+  dayTimeline: DayTimelineBlock,
 }
 
 export function BlockRenderer({ blocks }: { blocks?: RenderableBlock[] | null }) {
