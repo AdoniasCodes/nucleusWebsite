@@ -3,10 +3,11 @@
 import { useEffect, useRef, useState } from 'react'
 
 /**
- * Counts a number up from zero the first time it scrolls into view.
- * Only PURE numeric values animate — "160", "10,000+", "95%" → animate;
- * anything else ("8:1", "2–G8", "Cambridge") renders unchanged. Respects
- * prefers-reduced-motion (shows the final value instantly, no motion).
+ * Makes a stat value feel alive when it scrolls into view:
+ *  • PURE numbers ("160", "10,000+", "95%") count UP from zero;
+ *  • everything else ("Cambridge", "2–G8", "8:1") reveals letter-by-letter.
+ * One IntersectionObserver, fires once. SSR renders the plain value (no hydration
+ * mismatch, never invisible without JS). Respects prefers-reduced-motion.
  */
 export function CountUp({
   value,
@@ -22,11 +23,16 @@ export function CountUp({
   const target = match ? parseInt(match[1].replace(/,/g, ''), 10) : null
   const suffix = match ? match[2] : ''
   const [n, setN] = useState(0)
+  const [mounted, setMounted] = useState(false)
+  const [revealed, setRevealed] = useState(false)
+
+  useEffect(() => setMounted(true), [])
 
   useEffect(() => {
-    if (target === null || typeof window === 'undefined') return
+    if (!mounted || typeof window === 'undefined') return
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setN(target)
+      if (target !== null) setN(target)
+      setRevealed(true)
       return
     }
     const el = ref.current
@@ -35,27 +41,49 @@ export function CountUp({
       ([entry]) => {
         if (!entry.isIntersecting) return
         io.disconnect()
-        const start = performance.now()
-        const tick = (t: number) => {
-          const p = Math.min((t - start) / durationMs, 1)
-          const eased = 1 - Math.pow(1 - p, 3) // easeOutCubic
-          setN(Math.round(eased * target))
-          if (p < 1) requestAnimationFrame(tick)
+        setRevealed(true)
+        if (target !== null) {
+          const start = performance.now()
+          const tick = (t: number) => {
+            const p = Math.min((t - start) / durationMs, 1)
+            setN(Math.round((1 - Math.pow(1 - p, 3)) * target))
+            if (p < 1) requestAnimationFrame(tick)
+          }
+          requestAnimationFrame(tick)
         }
-        requestAnimationFrame(tick)
       },
       { threshold: 0.4 },
     )
     io.observe(el)
     return () => io.disconnect()
-  }, [target, durationMs])
+  }, [mounted, target, durationMs])
 
-  if (target === null) return <span className={className}>{value}</span>
+  // Numbers → count up
+  if (target !== null) {
+    return (
+      <span ref={ref} className={className}>
+        {n.toLocaleString('en-US')}
+        {suffix}
+      </span>
+    )
+  }
 
+  // SSR / pre-hydration → plain visible text (safe, indexable, never hidden without JS)
+  if (!mounted) return <span className={className}>{value}</span>
+
+  // Text → staggered per-letter reveal
   return (
-    <span ref={ref} className={className}>
-      {n.toLocaleString('en-US')}
-      {suffix}
+    <span ref={ref} className={className} aria-label={value}>
+      {[...value].map((ch, i) => (
+        <span
+          key={i}
+          aria-hidden
+          className="inline-block"
+          style={revealed ? { animation: `fadeUp 0.5s cubic-bezier(0.22,1,0.36,1) ${i * 0.035}s both` } : { opacity: 0 }}
+        >
+          {ch === ' ' ? ' ' : ch}
+        </span>
+      ))}
     </span>
   )
 }
