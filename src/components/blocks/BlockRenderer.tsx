@@ -13,6 +13,7 @@ import { FormBlock } from './FormBlock'
 import { WhyCambridgeBlock, type WhyCambridgeProps } from './WhyCambridgeBlock'
 import { FeeTransparencyBlock, type FeeTransparencyProps } from './FeeTransparencyBlock'
 import { DayTimelineBlock, type DayTimelineProps } from './DayTimelineBlock'
+import { CoreValuesOrbit, type CoreValuesOrbitProps } from './CoreValuesOrbit'
 
 /** A CMS layout block, plus the synthetic code-only blocks (homepage + inner pages). */
 export type RenderableBlock =
@@ -25,6 +26,7 @@ export type RenderableBlock =
   | WhyCambridgeProps
   | FeeTransparencyProps
   | DayTimelineProps
+  | CoreValuesOrbitProps
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
@@ -42,6 +44,7 @@ const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
   whyCambridge: WhyCambridgeBlock,
   feeTransparency: FeeTransparencyBlock,
   dayTimeline: DayTimelineBlock,
+  coreValuesOrbit: CoreValuesOrbit,
 }
 
 export function BlockRenderer({ blocks }: { blocks?: RenderableBlock[] | null }) {
