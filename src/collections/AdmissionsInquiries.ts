@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { isAdminOrStaff, isSuperAdmin } from '../access'
+import { notifyLead } from '../hooks/notifyLead'
 
 /**
  * Admissions inquiries (incl. gated fee-sheet requests). Created publicly by the website
@@ -20,6 +21,9 @@ export const AdmissionsInquiries: CollectionConfig = {
     read: isAdminOrStaff,
     update: isAdminOrStaff,
     delete: isSuperAdmin,
+  },
+  hooks: {
+    afterChange: [notifyLead('Admissions Inquiry')],
   },
   fields: [
     {

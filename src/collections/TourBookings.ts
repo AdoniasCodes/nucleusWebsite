@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { isAdminOrStaff, isSuperAdmin } from '../access'
+import { notifyLead } from '../hooks/notifyLead'
 
 /**
  * School tour / campus visit bookings. Public create from the website; staff manage
@@ -19,6 +20,9 @@ export const TourBookings: CollectionConfig = {
     read: isAdminOrStaff,
     update: isAdminOrStaff,
     delete: isSuperAdmin,
+  },
+  hooks: {
+    afterChange: [notifyLead('Tour Booking')],
   },
   fields: [
     {

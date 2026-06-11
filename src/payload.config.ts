@@ -3,6 +3,7 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { s3Storage } from '@payloadcms/storage-s3'
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
 import path from 'path'
 import { buildConfig, type Plugin } from 'payload'
 import { fileURLToPath } from 'url'
@@ -47,6 +48,37 @@ const s3Enabled = Boolean(
     process.env.S3_SECRET_ACCESS_KEY,
 )
 
+/**
+ * Email: lead-form notifications go out over the school's cPanel SMTP mailbox (mail.<domain>),
+ * so every enquiry lands in the same webmail inbox the school already checks. Enabled only when
+ * the SMTP_* env vars are present; otherwise Payload uses its default mock transport (console)
+ * so local dev still boots without credentials — mirrors the S3 graceful-fallback pattern.
+ * cPanel: host = mail.<domain>, port 465 (SSL) or 587 (STARTTLS), user/pass = a real mailbox.
+ */
+const smtpEnabled = Boolean(
+  process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS,
+)
+const smtpPort = Number(process.env.SMTP_PORT || 465)
+
+const emailAdapter = smtpEnabled
+  ? nodemailerAdapter({
+      defaultFromName: 'Nucleus International School',
+      defaultFromAddress: process.env.EMAIL_FROM || (process.env.SMTP_USER as string),
+      transportOptions: {
+        host: process.env.SMTP_HOST,
+        port: smtpPort,
+        secure: smtpPort === 465, // 465 = implicit SSL; 587 = STARTTLS
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+        },
+        // cPanel AutoSSL certs sometimes mismatch the mail hostname; set
+        // SMTP_REJECT_UNAUTHORIZED=false to tolerate that if sending fails on a cert error.
+        tls: { rejectUnauthorized: process.env.SMTP_REJECT_UNAUTHORIZED !== 'false' },
+      },
+    })
+  : undefined
+
 const storagePlugins: Plugin[] = s3Enabled
   ? [
       s3Storage({
@@ -68,6 +100,7 @@ const storagePlugins: Plugin[] = s3Enabled
 
 export default buildConfig({
   serverURL: SERVER_URL,
+  email: emailAdapter,
   admin: {
     user: Users.slug,
     importMap: {
