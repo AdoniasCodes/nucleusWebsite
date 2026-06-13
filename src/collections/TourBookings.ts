@@ -4,8 +4,11 @@ import { isAdminOrStaff, isSuperAdmin } from '../access'
 import { notifyLead } from '../hooks/notifyLead'
 
 /**
- * School tour / campus visit bookings. Public create from the website; staff manage
- * status. No public read. (Phase 4: honeypot + rate limiting on public create.)
+ * School tour / campus visit bookings. Staff manage status. No public read.
+ *
+ * SECURITY: create is locked to authenticated CMS users so POST /api/tour-bookings can't be
+ * spammed directly. Real public submissions come through the `submitForm` server action
+ * (Local API / overrideAccess) AFTER honeypot + per-IP rate limit + reCAPTCHA v3.
  */
 export const TourBookings: CollectionConfig = {
   slug: 'tour-bookings',
@@ -16,7 +19,7 @@ export const TourBookings: CollectionConfig = {
     group: 'Forms',
   },
   access: {
-    create: () => true,
+    create: isAdminOrStaff, // public submits go through the server action's Local API (see header)
     read: isAdminOrStaff,
     update: isAdminOrStaff,
     delete: isSuperAdmin,
@@ -28,16 +31,16 @@ export const TourBookings: CollectionConfig = {
     {
       type: 'row',
       fields: [
-        { name: 'parentName', type: 'text', required: true, admin: { width: '50%' } },
+        { name: 'parentName', type: 'text', required: true, maxLength: 200, admin: { width: '50%' } },
         { name: 'email', type: 'email', required: true, admin: { width: '50%' } },
       ],
     },
     {
       type: 'row',
       fields: [
-        { name: 'phone', type: 'text', admin: { width: '33%' } },
-        { name: 'childAge', type: 'text', label: "Child's age", admin: { width: '33%' } },
-        { name: 'childGrade', type: 'text', label: 'Grade applying for', admin: { width: '34%' } },
+        { name: 'phone', type: 'text', maxLength: 50, admin: { width: '33%' } },
+        { name: 'childAge', type: 'text', label: "Child's age", maxLength: 50, admin: { width: '33%' } },
+        { name: 'childGrade', type: 'text', label: 'Grade applying for', maxLength: 100, admin: { width: '34%' } },
       ],
     },
     // Legacy column kept (hidden) so the schema change stays additive — no dev-push rename prompt.
@@ -58,10 +61,11 @@ export const TourBookings: CollectionConfig = {
         },
       ],
     },
-    { name: 'notes', type: 'textarea' },
+    { name: 'notes', type: 'textarea', maxLength: 3000 },
     {
       name: 'sourcePage',
       type: 'text',
+      maxLength: 300,
       admin: { readOnly: true },
     },
     {

@@ -130,6 +130,11 @@ export default buildConfig({
   // CSRF/CORS locked to the canonical site origin — admin + API only trust our own origin.
   cors: ORIGINS,
   csrf: ORIGINS,
+  // The site uses the Local API, never GraphQL — disable it to remove the /api/graphql and
+  // public /api/graphql-playground surface entirely. (The admin UI runs on REST, unaffected.)
+  graphQL: {
+    disable: true,
+  },
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },

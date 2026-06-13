@@ -1,7 +1,6 @@
 'use client'
 
-import { useActionState } from 'react'
-import { useFormStatus } from 'react-dom'
+import { useActionState, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import type { FormBlockType } from '@/payload-types'
 import { Container } from '@/components/ui/Container'
@@ -9,6 +8,7 @@ import { Section, isDark, type SectionBackground } from '@/components/ui/Section
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Icon } from '@/components/ui/Icon'
 import { submitForm, type FormState } from '@/app/(frontend)/actions/submitForm'
+import { useRecaptcha } from '@/components/recaptcha/useRecaptcha'
 
 const inputBase =
   'w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-ink outline-none transition focus:border-ochre focus:ring-2 focus:ring-ochre/30'
@@ -22,8 +22,7 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
   )
 }
 
-function SubmitButton({ label }: { label: string }) {
-  const { pending } = useFormStatus()
+function SubmitButton({ label, pending }: { label: string; pending: boolean }) {
   return (
     <button
       type="submit"
@@ -38,8 +37,21 @@ function SubmitButton({ label }: { label: string }) {
 const initial: FormState = { status: 'idle', message: '' }
 
 export function FormBlock(props: FormBlockType) {
-  const [state, action] = useActionState(submitForm, initial)
+  const [state, action, isPending] = useActionState(submitForm, initial)
+  const { executeRecaptcha } = useRecaptcha()
+  const [gettingToken, setGettingToken] = useState(false)
   const pathname = usePathname()
+
+  // Mint a fresh invisible-reCAPTCHA token at submit, attach it, then dispatch the server action.
+  const handleAction = async (formData: FormData) => {
+    setGettingToken(true)
+    try {
+      formData.set('recaptchaToken', await executeRecaptcha('lead_form'))
+    } finally {
+      setGettingToken(false)
+    }
+    action(formData)
+  }
   const background = (props.background ?? 'offwhite') as SectionBackground
   const dark = isDark(background)
   const formType = props.formType ?? 'inquiry'
@@ -59,7 +71,7 @@ export function FormBlock(props: FormBlockType) {
             <p className="mt-4 text-lg text-ink/80">{props.successMessage || state.message}</p>
           </div>
         ) : (
-          <form action={action} className="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:p-8">
+          <form action={handleAction} className="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:p-8">
             <input type="hidden" name="formType" value={formType} />
             <input type="hidden" name="sourcePage" value={pathname} />
             {/* Honeypot — hidden from humans */}
@@ -109,9 +121,18 @@ export function FormBlock(props: FormBlockType) {
             )}
 
             <div className="mt-6 flex items-center gap-4">
-              <SubmitButton label={submitLabel} />
+              <SubmitButton label={submitLabel} pending={gettingToken || isPending} />
               <span className="text-sm text-ink/55">We’ll reply within one business day.</span>
             </div>
+
+            {/* reCAPTCHA v3 (invisible) protects this form. Google requires this disclosure when the badge is hidden. */}
+            <p className="mt-4 text-xs text-ink/45">
+              Protected by reCAPTCHA — Google’s{' '}
+              <a href="https://policies.google.com/privacy" className="underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a>{' '}
+              and{' '}
+              <a href="https://policies.google.com/terms" className="underline" target="_blank" rel="noopener noreferrer">Terms</a>{' '}
+              apply.
+            </p>
           </form>
         )}
       </Container>

@@ -16,7 +16,11 @@ export const Users: CollectionConfig = {
     // Hide the Users collection entirely from staff.
     hidden: ({ user }) => !superAdminOnlyUI({ req: { user } }),
   },
-  auth: true,
+  // Brute-force protection: lock an account for 10 min after 5 failed password attempts.
+  auth: {
+    maxLoginAttempts: 5,
+    lockTime: 10 * 60 * 1000,
+  },
   access: {
     create: isSuperAdmin,
     delete: isSuperAdmin,
