@@ -78,12 +78,12 @@ export function HeroBlock(
           const subheadAndLinks = (
             <>
               {props.subhead && (
-                <p className={`mt-6 max-w-xl text-lg ${dark || hasBg ? 'text-pale/90' : 'text-ink/75'}`}>
+                <p className={`mt-6 max-w-xl text-lg mx-auto sm:mx-0 ${dark || hasBg ? 'text-pale/90' : 'text-ink/75'}`}>
                   {props.subhead}
                 </p>
               )}
               {props.links && props.links.length > 0 && (
-                <div className="mt-9 flex flex-wrap gap-4">
+                <div className="mt-9 flex flex-wrap gap-4 justify-center sm:justify-start">
                   {props.links.map((item, i) => (
                     <CMSLink key={i} link={item.link} />
                   ))}
@@ -107,7 +107,7 @@ export function HeroBlock(
           }
 
           return (
-            <div className="max-w-3xl">
+            <div className="mx-auto max-w-3xl text-center sm:mx-0 sm:text-left">
               {props.amharicSubline && (
                 <p lang="am" className={`mb-4 text-lg ${dark || hasBg ? 'text-ochre' : 'text-ochre-600'}`}>
                   {props.amharicSubline}

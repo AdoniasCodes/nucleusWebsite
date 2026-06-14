@@ -32,7 +32,7 @@ export function WhyCambridgeBlock(props: WhyCambridgeProps) {
         <SectionHeading eyebrow={props.eyebrow} heading={props.heading} intro={props.intro} dark />
 
         {stats.length > 0 && (
-          <div className="mx-auto grid max-w-3xl grid-cols-2 gap-8 sm:grid-cols-3">
+          <div className="mx-auto grid max-w-3xl grid-cols-2 gap-8 sm:grid-cols-3 max-sm:[&>*:last-child:nth-child(odd)]:col-span-2">
             {stats.map((s, i) => (
               <Reveal key={i} variant="scale" delay={i * 90}>
                 <div className="text-center">

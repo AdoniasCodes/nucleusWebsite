@@ -5,9 +5,10 @@ import { resolveHref, type CMSLinkValue } from '@/lib/link'
 type Appearance = 'primary' | 'secondary' | 'outline' | 'link'
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-full font-display font-semibold transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'
+  'group inline-flex items-center justify-center gap-2 rounded-full font-display font-semibold transition-[color,background-color,border-color,transform] duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'
 
-const sizes = 'px-7 py-3 text-[0.95rem]'
+// Solid/outline buttons get padding + a tactile tap-press; text links don't (scaling inline text reads odd).
+const sizes = 'px-7 py-3 text-[0.95rem] motion-safe:active:scale-[0.97]'
 
 const appearances: Record<Appearance, string> = {
   primary: 'bg-ochre text-navy hover:bg-ochre-600',
@@ -45,18 +46,28 @@ export function ButtonLink({
   newTab?: boolean
   className?: string
 }) {
-  const cls = `${base} ${appearance === 'link' ? '' : sizes} ${appearances[appearance]} ${className}`
+  const isLink = appearance === 'link'
+  const cls = `${base} ${isLink ? '' : sizes} ${appearances[appearance]} ${className}`
+  // Text links get a chevron that slides on hover/tap — a small, consistent "go" cue site-wide.
+  const content = isLink ? (
+    <>
+      {children}
+      <span aria-hidden className="transition-transform duration-200 motion-safe:group-hover:translate-x-1 motion-safe:group-active:translate-x-1">→</span>
+    </>
+  ) : (
+    children
+  )
   const external = href.startsWith('http') || newTab
   if (external) {
     return (
       <a href={href} className={cls} {...(newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
-        {children}
+        {content}
       </a>
     )
   }
   return (
     <Link href={href} className={cls}>
-      {children}
+      {content}
     </Link>
   )
 }

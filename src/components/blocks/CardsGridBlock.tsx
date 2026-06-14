@@ -85,7 +85,7 @@ export function CardsGridBlock(
             return (
               <Reveal key={i} variant={variant} delay={Math.min(i, 5) * 70} className="h-full">
               <article
-                className={`group flex h-full flex-col rounded-2xl border p-7 transition-all duration-200 ${cardClassByMode[mode]}`}
+                className={`group flex h-full flex-col items-center text-center sm:items-start sm:text-left rounded-2xl border p-7 transition-all duration-200 motion-safe:active:scale-[0.98] ${cardClassByMode[mode]}`}
               >
                 <div
                   className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-200 ${iconClassByMode[mode]}`}

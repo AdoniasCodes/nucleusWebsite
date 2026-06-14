@@ -73,7 +73,7 @@ export function HeroReveal({
   })
 
   return (
-    <div className="max-w-3xl">
+    <div className="mx-auto max-w-3xl text-center sm:mx-0 sm:text-left">
       {amharic && (
         <p lang="am" className={`mb-3 text-lg animate-fade-up ${dark ? 'text-ochre' : 'text-ochre-600'}`}>
           {amharic}

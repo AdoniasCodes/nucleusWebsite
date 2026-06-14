@@ -15,7 +15,11 @@ export function SectionHeading({
   align?: 'center' | 'left'
 }) {
   if (!eyebrow && !heading && !intro) return null
-  const alignCls = align === 'center' ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl'
+  // Mobile is always centered for a consistent vertical spine; desktop respects `align`.
+  const alignCls =
+    align === 'center'
+      ? 'mx-auto max-w-2xl text-center'
+      : 'mx-auto max-w-2xl text-center sm:mx-0 sm:text-left'
   return (
     <Reveal variant="up" className={`${alignCls} mb-12`}>
       {eyebrow && (

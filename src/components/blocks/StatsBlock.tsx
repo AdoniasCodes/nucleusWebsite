@@ -17,7 +17,7 @@ export function StatsBlock(props: StatsBlockType) {
           {items.map((item, i) => (
             <Reveal key={i} variant="scale" delay={i * 90}>
               <div className="text-center">
-                <dt className="font-display text-4xl font-bold text-ochre sm:text-5xl">
+                <dt className="font-display text-[1.6rem] font-bold leading-tight text-ochre sm:text-5xl">
                   <CountUp value={item.value} />
                 </dt>
                 <dd className="mt-2 text-sm font-medium uppercase tracking-wide text-pale/75">{item.label}</dd>

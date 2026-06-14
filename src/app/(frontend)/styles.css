@@ -202,6 +202,17 @@
   animation: caretBlink 1s steps(1) infinite;
 }
 
+/* Mobile: disable the continuous Ken-Burns zoom on the hero poster and featured stills.
+   Animating transform on an `img-grade`-FILTERED full-screen image forces a per-frame filter
+   re-raster on phones → dropped frames / scroll stutter. The slow zoom is imperceptible at this
+   size anyway, so phones get a crisp static image. Desktop (md+) keeps the cinematic motion. */
+@media (max-width: 767px) {
+  .hero-kenburns,
+  .img-drift {
+    animation: none;
+  }
+}
+
 /* Reduced-motion respect (accessibility). */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

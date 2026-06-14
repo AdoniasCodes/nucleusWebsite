@@ -44,7 +44,7 @@ export async function LatestPostsBlock({ heading = 'News & Perspectives', intro,
           <div className="grid grid-cols-1 gap-7 md:grid-cols-3">
             {docs.map((post, i) => (
               <Reveal key={post.id} variant="up" delay={i * 110} className="h-full">
-              <article className="h-full overflow-hidden rounded-2xl border border-navy/10 bg-white">
+              <article className="h-full overflow-hidden rounded-2xl border border-navy/10 bg-white transition-transform duration-200 motion-safe:active:scale-[0.98]">
                 <Link href={`/news/${post.slug}`} className="block">
                   <div className="relative aspect-[16/10] bg-navy/5">
                     {post.heroImage && typeof post.heroImage === 'object' ? (
