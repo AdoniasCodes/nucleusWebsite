@@ -1,6 +1,6 @@
 'use client'
 
-import { useActionState, useState } from 'react'
+import { useActionState, useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import type { FormBlockType } from '@/payload-types'
 import { Container } from '@/components/ui/Container'
@@ -9,6 +9,22 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Icon } from '@/components/ui/Icon'
 import { submitForm, type FormState } from '@/app/(frontend)/actions/submitForm'
 import { useRecaptcha } from '@/components/recaptcha/useRecaptcha'
+import { trackLead } from '@/lib/pixels'
+
+/** Grades served — Preschool through Grade 8. Used by the "Grade applying for" dropdown. */
+const GRADE_OPTIONS = [
+  'Preschool',
+  'KG',
+  'Grade 1',
+  'Grade 2',
+  'Grade 3',
+  'Grade 4',
+  'Grade 5',
+  'Grade 6',
+  'Grade 7',
+  'Grade 8',
+  'Not sure yet',
+]
 
 const inputBase =
   'w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-ink outline-none transition focus:border-ochre focus:ring-2 focus:ring-ochre/30'
@@ -56,9 +72,23 @@ export function FormBlock(props: FormBlockType) {
   const dark = isDark(background)
   const formType = props.formType ?? 'inquiry'
   const isTour = formType === 'tour'
+  const isRegistration = formType === 'registration'
 
-  const heading = props.heading ?? (isTour ? 'Book a Tour' : formType === 'fee-request' ? 'Request the Fee Sheet' : 'Send an Enquiry')
-  const submitLabel = isTour ? 'Request my visit' : formType === 'fee-request' ? 'Send me the fee sheet' : 'Send enquiry'
+  // Fire the marketing-pixel conversion event once the submission succeeds.
+  useEffect(() => {
+    if (state.status === 'success') trackLead(formType)
+  }, [state.status, formType])
+
+  const heading =
+    props.heading ??
+    (isTour ? 'Visit Now' : isRegistration ? 'Start Registration' : formType === 'fee-request' ? 'Request the Fee Sheet' : 'Send an Enquiry')
+  const submitLabel = isTour
+    ? 'Request my visit'
+    : isRegistration
+      ? 'Submit registration'
+      : formType === 'fee-request'
+        ? 'Send me the fee sheet'
+        : 'Send enquiry'
 
   return (
     <Section background={background}>
@@ -91,7 +121,14 @@ export function FormBlock(props: FormBlockType) {
                 <input name="childAge" className={inputBase} inputMode="numeric" placeholder="e.g. 5" />
               </Field>
               <Field label="Grade applying for">
-                <input name="childGrade" className={inputBase} placeholder="e.g. KG or Grade 1" />
+                <select name="childGrade" className={inputBase} defaultValue="">
+                  <option value="">Select a grade…</option>
+                  {GRADE_OPTIONS.map((g) => (
+                    <option key={g} value={g}>
+                      {g}
+                    </option>
+                  ))}
+                </select>
               </Field>
 
               {isTour && (

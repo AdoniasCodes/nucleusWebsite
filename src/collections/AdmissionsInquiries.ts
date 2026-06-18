@@ -54,6 +54,7 @@ export const AdmissionsInquiries: CollectionConfig = {
       defaultValue: 'general',
       options: [
         { label: 'General inquiry', value: 'general' },
+        { label: 'Registration', value: 'registration' },
         { label: 'Fee sheet request', value: 'fee-request' },
         { label: 'Admissions', value: 'admissions' },
         { label: 'Summer camp', value: 'summer-camp' },

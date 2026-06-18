@@ -16,7 +16,7 @@ export async function Footer() {
   const phones = settings?.phones ?? []
   const address =
     settings?.address ??
-    'Vatican, Addis Ababa — beside the Vatican Embassy (former Peace Corps compound), just before Mekanisa Abo Square'
+    'Grade school: Sarbet Vatican, behind the Embassy of Indonesia. Preschool: Mekanisa Abo Square. Addis Ababa, Ethiopia.'
   const email = settings?.email
   const tagline = settings?.footerTagline ?? 'Think Deeply. Create Boldly. Solve Truly.'
   const socials = settings?.socials ?? []

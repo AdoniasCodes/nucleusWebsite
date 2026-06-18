@@ -32,7 +32,10 @@ export const defaultPages: Record<string, DefaultPage> = {
         bgImage: '/images/stock/about-hero.webp',
         subhead:
           'Nucleus is growing from one of Addis Ababa’s most trusted homes for early childhood into a full Cambridge international school — without ever losing the warmth that built it.',
-        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+        links: [
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
+        ],
       },
       {
         blockType: 'prose',
@@ -47,16 +50,6 @@ export const defaultPages: Record<string, DefaultPage> = {
             type: 'p',
             text: 'Our Vatican campus is our proof of concept — where we show, every day, that elite academic standards and a nurturing, secure environment belong together. It is the first step in a longer journey, with a second campus planned for Gerji.',
           },
-          { type: 'h3', text: 'Our Mission' },
-          {
-            type: 'p',
-            text: 'To empower a generation of thinkers, creators, and problem solvers as self-aware, innovative leaders who navigate a globalized world with humility, compassion, and a heart for service.',
-          },
-          { type: 'h3', text: 'Our Vision' },
-          {
-            type: 'p',
-            text: 'To witness a global legacy of innovative thinkers who cross borders with humility and solve problems for a better tomorrow.',
-          },
           { type: 'h3', text: 'What We Believe' },
           {
             type: 'ul',
@@ -65,6 +58,27 @@ export const defaultPages: Record<string, DefaultPage> = {
               'Create Boldly — purposeful vision.',
               'Solve Truly — true servanthood.',
             ],
+          },
+        ],
+      },
+      {
+        blockType: 'cardsGrid',
+        background: 'white',
+        eyebrow: 'Our Purpose',
+        heading: 'Mission & Vision',
+        columns: '2',
+        cards: [
+          {
+            iconName: 'Compass',
+            title: 'Our Mission',
+            description:
+              'To empower a generation of thinkers, creators, and problem solvers as self-aware, innovative leaders who navigate a globalized world with humility, compassion, and a heart for service.',
+          },
+          {
+            iconName: 'Globe',
+            title: 'Our Vision',
+            description:
+              'To witness a global legacy of innovative thinkers who cross borders with humility and solve problems for a better tomorrow.',
           },
         ],
       },
@@ -86,8 +100,11 @@ export const defaultPages: Record<string, DefaultPage> = {
         blockType: 'ctaBand',
         background: 'navy',
         heading: 'Come see it for yourself',
-        subhead: 'The best way to understand Nucleus is to visit. Book a tour of our Vatican campus.',
-        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+        subhead: 'The best way to understand Nucleus is to visit our campus and meet the team.',
+        links: [
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
+        ],
       },
     ],
   },
@@ -108,7 +125,7 @@ export const defaultPages: Record<string, DefaultPage> = {
           'We follow the Cambridge pathway — one of the world’s most recognised and portable curricula — rewarding deep understanding over memorisation.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'The Cambridge Pathway', url: '/cambridge-pathway' } },
-          { link: { appearance: 'outline', type: 'custom', label: 'Book a Tour', url: '/contact' } },
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
         ],
       },
       {
@@ -156,7 +173,10 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'purple',
         heading: 'Cambridge or IB? Let’s talk it through.',
         subhead: 'Choosing a curriculum is a big decision. Visit us and we’ll help you weigh what fits your child.',
-        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+        links: [
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
+        ],
       },
     ],
   },
@@ -197,7 +217,10 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'purple',
         heading: 'See a full life in motion',
         subhead: 'Book a tour and walk our Vatican campus.',
-        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+        links: [
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
+        ],
       },
     ],
   },
@@ -218,7 +241,7 @@ export const defaultPages: Record<string, DefaultPage> = {
           'We believe families deserve clarity — no hidden capital-fee surprises. Request your full fee sheet and we’ll send it directly.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'Request Fee Sheet', url: '/contact' } },
-          { link: { appearance: 'outline', type: 'custom', label: 'Book a Tour', url: '/contact' } },
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
         ],
       },
       {
@@ -228,7 +251,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Four simple steps',
         columns: '4',
         cards: [
-          { iconName: 'CalendarCheck', title: '1. Book a Tour', description: 'Visit our Vatican campus and meet the team.' },
+          { iconName: 'CalendarCheck', title: '1. Visit Now', description: 'Visit our Vatican campus and meet the team.' },
           { iconName: 'FileText', title: '2. Enquire', description: 'Submit an enquiry and receive the full fee sheet.' },
           { iconName: 'ClipboardCheck', title: '3. Apply', description: 'Complete the application with your child’s documents.' },
           { iconName: 'BadgeCheck', title: '4. Confirm', description: 'Secure your child’s place for the intake.' },
@@ -261,7 +284,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         intro: 'The questions families ask us most.',
         items: [
           { q: 'What curriculum does Nucleus follow?', a: 'Nucleus follows the Cambridge pathway, from the early years through Grade 8 — a portable, internationally recognised education.' },
-          { q: 'Where is Nucleus located?', a: 'At Vatican, Addis Ababa — beside the Vatican Embassy (the former Peace Corps compound), just before Mekanisa Abo Square. Our preschool remains at Mekanisa Abo Square.' },
+          { q: 'Where is Nucleus located?', a: 'Our grade school campus is at Sarbet Vatican, Addis Ababa — behind the Embassy of Indonesia — and our preschool campus is at Mekanisa Abo Square.' },
           { q: 'What ages and grades do you accept?', a: 'We serve children from age 2 through Grade 8, growing with your child across early years, primary and lower secondary.' },
           { q: 'How much are the fees?', a: 'We keep our fees transparent and free of hidden capital-fee surprises. Request the full fee sheet and we’ll share it with you directly.' },
           { q: 'Is the campus safe?', a: 'Safety and child safeguarding come first at Nucleus — a secure, supervised campus is the foundation of everything we do.' },
@@ -283,7 +306,10 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'purple',
         heading: 'Gift your kids a full life',
         subhead: 'Prefer to talk? Call us or book a tour.',
-        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+        links: [
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
+        ],
       },
     ],
   },
@@ -292,7 +318,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Contact & Visit',
     seoTitle: 'Contact & Visit | Nucleus International School, Vatican, Addis Ababa',
     description:
-      'Visit Nucleus International School at Vatican, Addis Ababa — beside the Vatican Embassy, just before Mekanisa Abo Square. Directions from Bole, Old Airport and Kazanchis, contact numbers, and how to book a tour.',
+      'Visit Nucleus International School — grade school at Sarbet Vatican (behind the Embassy of Indonesia) and preschool at Mekanisa Abo Square, Addis Ababa. Directions from Bole, Old Airport and Kazanchis, contact numbers, and how to book a tour.',
     layout: [
       {
         blockType: 'hero',
@@ -301,7 +327,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Come See a Full Life\nin Motion',
         bgImage: '/images/stock/contact-hero.webp',
         subhead:
-          'We’d love to show you around. Find us at Vatican, Addis Ababa — beside the Vatican Embassy (the former Peace Corps compound), just before Mekanisa Abo Square.',
+          'We’d love to show you around. Find our grade school campus at Sarbet Vatican, Addis Ababa, behind the Indonesian Embassy and our preschool campus at Mekanisa Abo Square.',
       },
       {
         blockType: 'cardsGrid',
@@ -309,44 +335,131 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Reach Us',
         columns: '3',
         cards: [
-          { iconName: 'Phone', title: 'Call', description: '0947500992 / 0947500494' },
-          { iconName: 'MapPin', title: 'Visit', description: 'Vatican — beside the Vatican Embassy (former Peace Corps), just before Mekanisa Abo Square, Addis Ababa.' },
-          { iconName: 'CalendarCheck', title: 'Book a Tour', description: 'Arrange a visit and meet our team in person.' },
+          { iconName: 'Phone', title: 'Call', description: '09 81 99 99 22 / 09 81 99 99 33' },
+          { iconName: 'MapPin', title: 'Visit', description: 'Grade school: Sarbet Vatican, behind the Indonesian Embassy. Preschool: Mekanisa Abo Square, Addis Ababa.' },
+          { iconName: 'CalendarCheck', title: 'Visit Now', description: 'Arrange a visit and meet our team in person.' },
         ],
       },
       {
         blockType: 'formBlock',
         formType: 'tour',
         background: 'white',
-        heading: 'Book a Tour',
+        heading: 'Visit Now',
         intro: 'Tell us a little about your family and we’ll arrange a visit that suits you.',
         successMessage: 'Thank you — we’ll be in touch within one business day to confirm your visit.',
       },
       {
         blockType: 'map',
         eyebrow: 'Getting to the School',
-        heading: 'Find Us at Vatican, Addis Ababa',
+        heading: 'Our Two Campuses',
         intro: 'Easy to reach from across Addis Ababa — including Bole, Old Airport, Kazanchis and Gerji.',
-        embedSrc: 'https://www.google.com/maps?q=Peace+Corps+Ethiopia,+Addis+Ababa&z=14&hl=en&output=embed',
-        directionsUrl: 'https://maps.app.goo.gl/EPEuid1MeAT4N9RN6',
-        rows: [
+        campuses: [
           {
-            iconName: 'MapPin',
-            title: 'Our Campus',
-            description:
-              'Vatican, Addis Ababa — beside the Vatican Embassy (the former Peace Corps compound), just before Mekanisa Abo Square.',
+            name: 'Grade School Campus',
+            embedSrc: 'https://www.google.com/maps?q=8.9873873,38.7363836&z=17&hl=en&output=embed',
+            directionsUrl: 'https://maps.app.goo.gl/kYmfwP9guTr2GFyJ7',
+            streetAddress: 'Sarbet Vatican, 50 metres behind the Embassy of Indonesia',
+            telephone: ['0981999922', '0981999933'],
+            rows: [
+              {
+                iconName: 'MapPin',
+                title: 'Grade School Campus Address',
+                description: 'Sarbet Vatican Campus, 50 metres behind Embassy of Indonesia, Addis Ababa, Ethiopia.',
+              },
+              { iconName: 'Phone', title: 'Call Us', description: '09 81 99 99 22 · 09 81 99 99 33' },
+              { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
+            ],
           },
-          { iconName: 'Phone', title: 'Call Us', description: '0947 500 992 · 0947 500 494' },
-          { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
+          {
+            name: 'Preschool Campus',
+            embedSrc: 'https://www.google.com/maps?q=8.9817515,38.7337897&z=17&hl=en&output=embed',
+            directionsUrl: 'https://maps.app.goo.gl/BodKtkUxY6JiBKDz5',
+            streetAddress: 'Abo Mekanisa, 100 metres from Mekanisa Abo Square',
+            telephone: ['0981999922', '0981999933'],
+            rows: [
+              {
+                iconName: 'MapPin',
+                title: 'Preschool Campus Address',
+                description: 'Abo Mekanisa Campus, 100 metres from Mekanisa Abo Square, Addis Ababa, Ethiopia.',
+              },
+              { iconName: 'Phone', title: 'Call Us', description: '09 81 99 99 22 · 09 81 99 99 33' },
+              { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
+            ],
+          },
         ],
-        note: 'Our preschool remains at its long-standing home at Mekanisa Abo Square.',
       },
       {
         blockType: 'ctaBand',
         background: 'navy',
         heading: 'Arrange your visit',
         subhead: 'Call us or send an enquiry — we’ll find a time that works for your family.',
-        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Call 0947500992', url: 'tel:0947500992' } }],
+        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Call 09 81 99 99 22', url: 'tel:0981999922' } }],
+      },
+    ],
+  },
+
+  register: {
+    title: 'Start Registration',
+    seoTitle: 'Start Registration | Nucleus International School, Addis Ababa',
+    description:
+      'Begin your child’s registration at Nucleus International School — a Cambridge international school in Addis Ababa serving Preschool to Grade 8. Complete the form and our admissions team will be in touch.',
+    layout: [
+      {
+        blockType: 'hero',
+        background: 'purple',
+        eyebrow: 'Admissions',
+        heading: 'Start Your\nRegistration',
+        bgImage: '/images/stock/admissions-hero.webp',
+        subhead:
+          'Begin your child’s journey at Nucleus. Share a few details below and our admissions team will reach out to guide you through the next steps.',
+        links: [{ link: { appearance: 'outline', type: 'custom', label: 'Visit Now first', url: '/contact' } }],
+      },
+      {
+        blockType: 'cardsGrid',
+        background: 'white',
+        eyebrow: 'How It Works',
+        heading: 'Three simple steps',
+        columns: '3',
+        cards: [
+          { iconName: 'ClipboardCheck', title: '1. Register', description: 'Complete the short form below — it takes a couple of minutes.' },
+          { iconName: 'Phone', title: '2. We Reach Out', description: 'Our admissions team contacts you to confirm details and answer questions.' },
+          { iconName: 'BadgeCheck', title: '3. Confirm a Place', description: 'Bring your child’s documents and secure a place for the intake.' },
+        ],
+      },
+      {
+        blockType: 'formBlock',
+        formType: 'registration',
+        background: 'offwhite',
+        heading: 'Registration Form',
+        intro: 'Tell us about your family and the grade you’re registering for. Fields marked * are required.',
+        successMessage: 'Thank you — your registration has been received. Our admissions team will contact you within one business day.',
+      },
+      {
+        blockType: 'prose',
+        background: 'white',
+        heading: 'What to have ready',
+        items: [
+          { type: 'p', text: 'To complete registration, please have the following ready when we contact you:' },
+          {
+            type: 'ul',
+            items: [
+              'Child’s birth certificate',
+              'Previous report card (if applicable)',
+              'Passport-size photographs',
+              'Parent / guardian ID',
+            ],
+          },
+        ],
+      },
+      {
+        blockType: 'ctaBand',
+        background: 'navy',
+        heading: 'Prefer to talk first?',
+        subhead: 'Visit our campus or call us — we’ll walk you through everything.',
+        links: [
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Call 09 81 99 99 22', url: 'tel:0981999922' } },
+        ],
       },
     ],
   },
@@ -383,7 +496,10 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'The Cambridge Pathway',
         subhead:
           'A world-class, portable curriculum that rewards deep understanding over memorisation — and travels with your child anywhere in the world.',
-        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+        links: [
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
+        ],
       },
       {
         blockType: 'prose',
@@ -425,7 +541,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'See the Cambridge pathway in action',
         subhead: 'Book a tour of our Vatican campus, or request the full fee sheet.',
         links: [
-          { link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Visit Now', url: '/contact' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Admissions & Fees', url: '/admissions' } },
         ],
       },
@@ -446,7 +562,10 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Robotics & STEM',
         subhead:
           'Coding, robotics and science that turn curious children into confident problem-solvers — unafraid of hard problems.',
-        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+        links: [
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
+        ],
       },
       {
         blockType: 'prose',
@@ -486,7 +605,10 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'purple',
         heading: 'Watch curiosity become capability',
         subhead: 'Book a tour and see our learning in motion.',
-        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+        links: [
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
+        ],
       },
     ],
   },
@@ -505,7 +627,10 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Agriculture &\nAnimal Care',
         subhead:
           'The “Farmer-Scientist” — tending plants and animals teaches patience, responsibility and a feel for cause and effect no screen can.',
-        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+        links: [
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
+        ],
       },
       {
         blockType: 'prose',
@@ -544,7 +669,10 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'purple',
         heading: 'A full life starts outdoors',
         subhead: 'Book a tour of our Vatican campus.',
-        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } }],
+        links: [
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
+        ],
       },
     ],
   },

@@ -26,14 +26,14 @@ export const SiteSettings: GlobalConfig = {
               name: 'phones',
               type: 'array',
               fields: [{ name: 'number', type: 'text', required: true }],
-              defaultValue: [{ number: '0947500992' }, { number: '0947500494' }],
+              defaultValue: [{ number: '0981999922' }, { number: '0981999933' }],
             },
             { name: 'email', type: 'email' },
             {
               name: 'address',
               type: 'textarea',
               defaultValue:
-                'Vatican, Addis Ababa — beside the Vatican Embassy (former Peace Corps compound), just before Mekanisa Abo Square',
+                'Grade school: Sarbet Vatican, behind the Embassy of Indonesia. Preschool: Mekanisa Abo Square. Addis Ababa, Ethiopia.',
             },
             {
               type: 'row',

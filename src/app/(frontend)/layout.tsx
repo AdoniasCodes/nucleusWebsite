@@ -44,9 +44,13 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     applicationName: siteName,
     icons: {
-      icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
-      shortcut: '/favicon.svg',
-      apple: '/images/nucleus-logo.png',
+      icon: [
+        { url: '/favicon-32.png', type: 'image/png', sizes: '32x32' },
+        { url: '/favicon-16.png', type: 'image/png', sizes: '16x16' },
+        { url: '/favicon-512.png', type: 'image/png', sizes: '512x512' },
+      ],
+      shortcut: '/favicon-32.png',
+      apple: '/apple-touch-icon.png',
     },
     openGraph: { type: 'website', siteName, title, description, locale: 'en_US', url: SERVER_URL },
     twitter: { card: 'summary_large_image', title, description },

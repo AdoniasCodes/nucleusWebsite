@@ -35,8 +35,8 @@ export const defaultHomeLayout: RenderableBlock[] = [
     subhead:
       'A Cambridge international education in the heart of Addis Ababa — raising secure, curious, globally-minded children from age 2 through Grade 8.',
     links: [
-      { link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } },
-      { link: { appearance: 'outline', type: 'custom', label: 'Explore Academics', url: '/academics' } },
+      { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
+      { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
     ],
   },
   {
@@ -44,7 +44,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     background: 'navy',
     items: [
       { value: 'Cambridge', label: 'International Pathway' }, // soft until Q2 (registered vs aligned)
-      { value: '2–G8', label: 'Ages Served' },
+      { value: 'Pre K-G8', label: 'Grades Served' },
       { value: 'STEM', label: 'Labs & Robotics' },
       { value: 'Vatican', label: 'Secure Campus' },
     ],
@@ -75,7 +75,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     stats: [
       { value: '160', label: 'Countries recognise Cambridge' },
       { value: '10,000+', label: 'Cambridge schools worldwide' },
-      { value: '2–G8', label: 'One portable journey' },
+      { value: 'Pre K-G8', label: 'One portable journey' },
     ],
     points: [
       { iconName: 'Globe', title: 'Globally portable', description: 'Move countries without losing a step — Cambridge is understood everywhere.' },
@@ -132,6 +132,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     heading: 'Our Core Values',
     intro: 'The principles that guide our community and shape future leaders.',
     bgImage: '/images/stock/core-values.webp',
+    surface: 'light',
     values: coreValuesCards,
   },
   {
@@ -176,7 +177,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     items: [
       { q: 'What curriculum does Nucleus follow?', a: 'The Cambridge pathway, from the early years through Grade 8 — a portable, internationally recognised education.' },
       { q: 'What ages does Nucleus accept?', a: 'Children from age 2 through Grade 8, on a single planned journey from the early years into the Cambridge primary and middle years.' },
-      { q: 'Where is Nucleus located?', a: 'At Vatican, Addis Ababa — beside the Vatican Embassy (the former Peace Corps compound), just before Mekanisa Abo Square. Our preschool remains at Mekanisa Abo Square.' },
+      { q: 'Where is Nucleus located?', a: 'Our grade school campus is at Sarbet Vatican, Addis Ababa — behind the Embassy of Indonesia — and our preschool campus is at Mekanisa Abo Square.' },
       { q: 'How much are the fees?', a: 'We keep fees transparent, with no hidden capital-fee surprises. Request the full fee sheet and we’ll send it directly.' },
       { q: 'How safe is the campus?', a: 'Safety comes first — a secure, supervised campus with controlled access is the foundation of everything we do.' },
       { q: 'Is an international school worth it compared to a local school?', a: 'A good international school gives a portable, globally recognised education, smaller classes and learning beyond the textbook. It costs more, so the value depends on the school delivering it in practice — which is why we encourage you to visit and see for yourself.' },
@@ -188,30 +189,51 @@ export const defaultHomeLayout: RenderableBlock[] = [
     background: 'purple',
     bgImage: '/images/stock/globe-1.webp',
     heading: 'Registration is open — Gift Your Kids a Full Life',
-    subhead: 'Secure your child’s place for the upcoming intake. Tours fill quickly.',
+    subhead: 'Secure your child’s place for the upcoming intake. Places fill quickly.',
     links: [
-      { link: { appearance: 'primary', type: 'custom', label: 'Book a Tour', url: '/contact' } },
-      { link: { appearance: 'outline', type: 'custom', label: 'Request Fee Sheet', url: '/admissions' } },
+      { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
+      { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
     ],
   },
   {
     blockType: 'map',
     eyebrow: 'Visit Nucleus',
-    heading: 'Find Us at Vatican, Addis Ababa',
-    intro: 'Easy to reach from Bole, Old Airport, Kazanchis and Gerji — come and see a full life in motion.',
-    embedSrc: 'https://www.google.com/maps?q=Peace+Corps+Ethiopia,+Addis+Ababa&z=14&hl=en&output=embed',
-    directionsUrl: 'https://maps.app.goo.gl/EPEuid1MeAT4N9RN6',
-    rows: [
+    heading: 'Find Us in Addis Ababa',
+    intro: 'Two campuses, easy to reach from Bole, Old Airport, Kazanchis and Gerji — come and see a full life in motion.',
+    campuses: [
       {
-        iconName: 'MapPin',
-        title: 'Our Campus',
-        description:
-          'Vatican, Addis Ababa — beside the Vatican Embassy (the former Peace Corps compound), just before Mekanisa Abo Square.',
+        name: 'Grade School Campus',
+        embedSrc: 'https://www.google.com/maps?q=8.9873873,38.7363836&z=17&hl=en&output=embed',
+        directionsUrl: 'https://maps.app.goo.gl/kYmfwP9guTr2GFyJ7',
+        streetAddress: 'Sarbet Vatican, 50 metres behind the Embassy of Indonesia',
+        telephone: ['0981999922', '0981999933'],
+        rows: [
+          {
+            iconName: 'MapPin',
+            title: 'Grade School Campus Address',
+            description: 'Sarbet Vatican Campus, 50 metres behind Embassy of Indonesia, Addis Ababa, Ethiopia.',
+          },
+          { iconName: 'Phone', title: 'Call Us', description: '09 81 99 99 22 · 09 81 99 99 33' },
+          { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
+        ],
       },
-      { iconName: 'Phone', title: 'Call Us', description: '0947 500 992 · 0947 500 494' },
-      { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
+      {
+        name: 'Preschool Campus',
+        embedSrc: 'https://www.google.com/maps?q=8.9817515,38.7337897&z=17&hl=en&output=embed',
+        directionsUrl: 'https://maps.app.goo.gl/BodKtkUxY6JiBKDz5',
+        streetAddress: 'Abo Mekanisa, 100 metres from Mekanisa Abo Square',
+        telephone: ['0981999922', '0981999933'],
+        rows: [
+          {
+            iconName: 'MapPin',
+            title: 'Preschool Campus Address',
+            description: 'Abo Mekanisa Campus, 100 metres from Mekanisa Abo Square, Addis Ababa, Ethiopia.',
+          },
+          { iconName: 'Phone', title: 'Call Us', description: '09 81 99 99 22 · 09 81 99 99 33' },
+          { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
+        ],
+      },
     ],
-    note: 'Our preschool remains at its long-standing home at Mekanisa Abo Square.',
   },
   {
     blockType: 'latestPosts',

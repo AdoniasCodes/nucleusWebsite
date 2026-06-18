@@ -515,7 +515,7 @@ export interface CTABandBlock {
  * via the `definition` "FormBlockType".
  */
 export interface FormBlockType {
-  formType: 'inquiry' | 'tour' | 'fee-request';
+  formType: 'inquiry' | 'tour' | 'registration' | 'fee-request';
   background?: ('offwhite' | 'white' | 'purple') | null;
   heading?: string | null;
   intro?: string | null;
@@ -649,7 +649,7 @@ export interface AdmissionsInquiry {
   childAge?: string | null;
   childGrade?: string | null;
   childAgeOrGrade?: string | null;
-  interest?: ('general' | 'fee-request' | 'admissions' | 'summer-camp') | null;
+  interest?: ('general' | 'registration' | 'fee-request' | 'admissions' | 'summer-camp') | null;
   message?: string | null;
   /**
    * Page the form was submitted from.

@@ -51,7 +51,7 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
   // Invisible reCAPTCHA v3 check. Skips automatically when no secret is configured (local dev).
   const captcha = await verifyRecaptcha(get('recaptchaToken'), 'lead_form', ip)
   if (!captcha.ok) {
-    return { status: 'error', message: 'We couldn’t verify your submission. Please try again, or call us on 0947500992.' }
+    return { status: 'error', message: 'We couldn’t verify your submission. Please try again, or call us on 0981999922.' }
   }
 
   const formType = get('formType') || 'inquiry'
@@ -92,7 +92,8 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
           phone,
           childAge,
           childGrade,
-          interest: formType === 'fee-request' ? 'fee-request' : 'general',
+          interest:
+            formType === 'fee-request' ? 'fee-request' : formType === 'registration' ? 'registration' : 'general',
           message: get('message', 3000) || undefined,
           sourcePage,
         },
@@ -101,6 +102,6 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
 
     return { status: 'success', message: 'Thank you — we will be in touch shortly.' }
   } catch {
-    return { status: 'error', message: 'Something went wrong. Please call us on 0947500992.' }
+    return { status: 'error', message: 'Something went wrong. Please call us on 0981999922.' }
   }
 }

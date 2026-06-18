@@ -17,7 +17,8 @@ export const FormBlock: Block = {
       defaultValue: 'inquiry',
       options: [
         { label: 'Admissions inquiry', value: 'inquiry' },
-        { label: 'Book a tour', value: 'tour' },
+        { label: 'Visit Now (tour)', value: 'tour' },
+        { label: 'Start Registration', value: 'registration' },
         { label: 'Request fee sheet (gated)', value: 'fee-request' },
       ],
     },
