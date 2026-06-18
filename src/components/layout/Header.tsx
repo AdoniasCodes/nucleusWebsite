@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { ButtonLink } from '@/components/ui/Button'
 import { NAV } from './nav'
 
-export function Header({ schoolName = 'Nucleus International School' }: { schoolName?: string }) {
+export function Header({ schoolName = 'Nucleus International Schools' }: { schoolName?: string }) {
   const [open, setOpen] = useState(false)
 
   return (

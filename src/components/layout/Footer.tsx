@@ -12,7 +12,7 @@ const PROGRAMS = [
 
 export async function Footer() {
   const settings = await getSiteSettings().catch(() => null)
-  const schoolName = settings?.schoolName ?? 'Nucleus International School'
+  const schoolName = settings?.schoolName ?? 'Nucleus International Schools'
   const phones = settings?.phones ?? []
   const address =
     settings?.address ??

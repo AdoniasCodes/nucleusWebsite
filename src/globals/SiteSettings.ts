@@ -21,7 +21,7 @@ export const SiteSettings: GlobalConfig = {
         {
           label: 'Contact',
           fields: [
-            { name: 'schoolName', type: 'text', defaultValue: 'Nucleus International School' },
+            { name: 'schoolName', type: 'text', defaultValue: 'Nucleus International Schools' },
             {
               name: 'phones',
               type: 'array',

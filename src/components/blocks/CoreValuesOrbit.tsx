@@ -88,6 +88,11 @@ function TreatmentBg({ treatment, img }: { treatment: BgTreatment; img: string }
           className="absolute inset-0"
           style={{ background: 'radial-gradient(58% 58% at 50% 46%, rgba(255,255,255,0.42), rgba(17,2,77,0.35) 68%, rgba(17,2,77,0.7))' }}
         />
+        {/* Top-left light wash so a dark/purple left-aligned heading stays readable over the photo. */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'radial-gradient(46% 44% at 14% 16%, rgba(255,255,255,0.72), transparent 60%)' }}
+        />
       </div>
     </>
   )

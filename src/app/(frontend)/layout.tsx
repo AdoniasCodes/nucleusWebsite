@@ -28,9 +28,9 @@ export const viewport: Viewport = {
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSEOSettings().catch(() => null)
-  const siteName = seo?.siteName ?? 'Nucleus International School'
+  const siteName = seo?.siteName ?? 'Nucleus International Schools'
   // Keep ≤ 60 chars (the audit flagged a 66-char title). Front-loads the core keywords.
-  const title = seo?.defaultMetaTitle ?? 'Nucleus International School | Cambridge in Addis Ababa'
+  const title = seo?.defaultMetaTitle ?? 'Nucleus International Schools | Cambridge in Addis Ababa'
   const description =
     seo?.defaultMetaDescription ??
     'A Cambridge-curriculum international school at Vatican, Addis Ababa (near Mekanisa Abo Square) for ages 2–Grade 8 — secure campus, robotics, STEM and multilingual learning.'

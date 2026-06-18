@@ -15,17 +15,17 @@ export const SEOSettings: GlobalConfig = {
     update: isSuperAdmin,
   },
   fields: [
-    { name: 'siteName', type: 'text', defaultValue: 'Nucleus International School' },
+    { name: 'siteName', type: 'text', defaultValue: 'Nucleus International Schools' },
     {
       name: 'titleTemplate',
       type: 'text',
-      defaultValue: '%s | Nucleus International School',
+      defaultValue: '%s | Nucleus International Schools',
       admin: { description: 'Use %s for the page title.' },
     },
     {
       name: 'defaultMetaTitle',
       type: 'text',
-      defaultValue: 'Nucleus International School — Cambridge School in Addis Ababa',
+      defaultValue: 'Nucleus International Schools — Cambridge School in Addis Ababa',
     },
     {
       name: 'defaultMetaDescription',
@@ -41,7 +41,7 @@ export const SEOSettings: GlobalConfig = {
       type: 'group',
       label: 'Organization schema',
       fields: [
-        { name: 'legalName', type: 'text', defaultValue: 'Nucleus International School' },
+        { name: 'legalName', type: 'text', defaultValue: 'Nucleus International Schools' },
         { name: 'foundingYear', type: 'text' },
         { name: 'logo', type: 'upload', relationTo: 'media' },
       ],

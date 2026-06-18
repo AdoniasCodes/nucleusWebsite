@@ -94,7 +94,7 @@ export function MapBlock(props: MapProps) {
   const schema = campuses.map((c) => ({
     '@context': 'https://schema.org',
     '@type': ['School', 'LocalBusiness'],
-    name: `Nucleus International School — ${c.name}`,
+    name: `Nucleus International Schools — ${c.name}`,
     url: SERVER_URL,
     ...(c.telephone?.length ? { telephone: c.telephone } : {}),
     address: {

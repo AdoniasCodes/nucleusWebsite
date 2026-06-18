@@ -20,7 +20,7 @@ export type DefaultPage = {
 export const defaultPages: Record<string, DefaultPage> = {
   about: {
     title: 'About',
-    seoTitle: 'About Nucleus International School | Cambridge School at Vatican, Addis Ababa',
+    seoTitle: 'About Nucleus International Schools | Cambridge School at Vatican, Addis Ababa',
     description:
       'From a trusted Addis preschool to a Cambridge international school. The story, mission and values behind Nucleus at Vatican, Addis Ababa — and our growth toward a Gerji campus.',
     layout: [
@@ -113,7 +113,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Academics',
     seoTitle: 'Cambridge Curriculum in Addis Ababa | Nucleus Academics (Ages 2–Grade 8)',
     description:
-      'The Cambridge pathway at Nucleus International School, Vatican — Early Years through Grade 8, with robotics, STEM, agriculture and multilingual learning. A portable, world-class education.',
+      'The Cambridge pathway at Nucleus International Schools, Vatican — Early Years through Grade 8, with robotics, STEM, agriculture and multilingual learning. A portable, world-class education.',
     layout: [
       {
         blockType: 'hero',
@@ -185,7 +185,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Campus Life',
     seoTitle: 'Campus Life at Nucleus | Robotics, Agriculture, Music & a Secure Campus at Vatican',
     description:
-      'Inside Nucleus International School, Vatican: robotics & STEM, an agriculture & animal-care program, music, sport, chef-prepared meals and a secure, nurturing campus.',
+      'Inside Nucleus International Schools, Vatican: robotics & STEM, an agriculture & animal-care program, music, sport, chef-prepared meals and a secure, nurturing campus.',
     layout: [
       {
         blockType: 'hero',
@@ -227,9 +227,9 @@ export const defaultPages: Record<string, DefaultPage> = {
 
   admissions: {
     title: 'Admissions',
-    seoTitle: 'Admissions & Fees | Nucleus International School, Addis Ababa',
+    seoTitle: 'Admissions & Fees | Nucleus International Schools, Addis Ababa',
     description:
-      'How to join Nucleus International School at Vatican, Addis Ababa — admissions steps, requirements, tour booking and transparent fee information. Request your full fee sheet.',
+      'How to join Nucleus International Schools at Vatican, Addis Ababa — admissions steps, requirements, tour booking and transparent fee information. Request your full fee sheet.',
     layout: [
       {
         blockType: 'hero',
@@ -316,9 +316,9 @@ export const defaultPages: Record<string, DefaultPage> = {
 
   contact: {
     title: 'Contact & Visit',
-    seoTitle: 'Contact & Visit | Nucleus International School, Vatican, Addis Ababa',
+    seoTitle: 'Contact & Visit | Nucleus International Schools, Vatican, Addis Ababa',
     description:
-      'Visit Nucleus International School — grade school at Sarbet Vatican (behind the Embassy of Indonesia) and preschool at Mekanisa Abo Square, Addis Ababa. Directions from Bole, Old Airport and Kazanchis, contact numbers, and how to book a tour.',
+      'Visit Nucleus International Schools — grade school at Sarbet Vatican (behind the Embassy of Indonesia) and preschool at Mekanisa Abo Square, Addis Ababa. Directions from Bole, Old Airport and Kazanchis, contact numbers, and how to book a tour.',
     layout: [
       {
         blockType: 'hero',
@@ -400,9 +400,9 @@ export const defaultPages: Record<string, DefaultPage> = {
 
   register: {
     title: 'Start Registration',
-    seoTitle: 'Start Registration | Nucleus International School, Addis Ababa',
+    seoTitle: 'Start Registration | Nucleus International Schools, Addis Ababa',
     description:
-      'Begin your child’s registration at Nucleus International School — a Cambridge international school in Addis Ababa serving Preschool to Grade 8. Complete the form and our admissions team will be in touch.',
+      'Begin your child’s registration at Nucleus International Schools — a Cambridge international school in Addis Ababa serving Preschool to Grade 8. Complete the form and our admissions team will be in touch.',
     layout: [
       {
         blockType: 'hero',
@@ -466,9 +466,9 @@ export const defaultPages: Record<string, DefaultPage> = {
 
   news: {
     title: 'News & Perspectives',
-    seoTitle: 'News & Perspectives | Nucleus International School',
+    seoTitle: 'News & Perspectives | Nucleus International Schools',
     description:
-      'Stories, milestones and ideas from the Nucleus International School learning community at Vatican, Addis Ababa.',
+      'Stories, milestones and ideas from the Nucleus International Schools learning community at Vatican, Addis Ababa.',
     layout: [
       {
         blockType: 'hero',
@@ -486,7 +486,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Cambridge Pathway',
     seoTitle: 'The Cambridge Pathway at Nucleus | Cambridge School in Addis Ababa',
     description:
-      'The Cambridge pathway at Nucleus International School, Vatican — a portable, internationally recognised education from the early years through Grade 8.',
+      'The Cambridge pathway at Nucleus International Schools, Vatican — a portable, internationally recognised education from the early years through Grade 8.',
     layout: [
       {
         blockType: 'hero',
@@ -552,7 +552,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Robotics & STEM',
     seoTitle: 'Robotics & STEM at Nucleus | Hands-on Tech for Kids in Addis Ababa',
     description:
-      'Robotics, coding and STEM at Nucleus International School, Vatican — future-ready skills built through hands-on technology and science from an early age.',
+      'Robotics, coding and STEM at Nucleus International Schools, Vatican — future-ready skills built through hands-on technology and science from an early age.',
     layout: [
       {
         blockType: 'hero',
@@ -617,7 +617,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Agriculture & Animal Care',
     seoTitle: 'Agriculture & Animal Care at Nucleus | Learning Beyond Books, Addis Ababa',
     description:
-      'Agriculture and animal care at Nucleus International School, Vatican — holistic, hands-on learning that roots children in nature, patience and responsibility.',
+      'Agriculture and animal care at Nucleus International Schools, Vatican — holistic, hands-on learning that roots children in nature, patience and responsibility.',
     layout: [
       {
         blockType: 'hero',

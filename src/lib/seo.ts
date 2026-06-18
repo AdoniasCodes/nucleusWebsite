@@ -11,7 +11,7 @@ const mediaUrl = (m: unknown): string | undefined =>
  * geo, phones) + WebSite. Rendered once in the homepage <head>. See project-docs/schema.md.
  */
 export function buildOrganizationSchema(settings?: SiteSetting | null, seo?: SeoSetting | null) {
-  const name = seo?.siteName ?? settings?.schoolName ?? 'Nucleus International School'
+  const name = seo?.siteName ?? settings?.schoolName ?? 'Nucleus International Schools'
   const phones = (settings?.phones ?? []).map((p) => p.number).filter(Boolean) as string[]
   const sameAs = (settings?.socials ?? []).map((s) => s.url).filter(Boolean) as string[]
   const logo = mediaUrl(seo?.organization?.logo) || `${SERVER_URL}/images/nucleus-logo.png`

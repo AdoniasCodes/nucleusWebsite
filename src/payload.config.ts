@@ -62,7 +62,7 @@ const smtpPort = Number(process.env.SMTP_PORT || 465)
 
 const emailAdapter = smtpEnabled
   ? nodemailerAdapter({
-      defaultFromName: 'Nucleus International School',
+      defaultFromName: 'Nucleus International Schools',
       defaultFromAddress: process.env.EMAIL_FROM || (process.env.SMTP_USER as string),
       transportOptions: {
         host: process.env.SMTP_HOST,
@@ -107,7 +107,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
     meta: {
-      titleSuffix: '| Nucleus International School',
+      titleSuffix: '| Nucleus International Schools',
     },
   },
   // Order here = order in the admin sidebar (within each `admin.group`).
@@ -159,7 +159,7 @@ export default buildConfig({
       uploadsCollection: 'media',
       tabbedUI: true,
       generateTitle: ({ doc }) =>
-        doc?.title ? `${doc.title} | Nucleus International School` : 'Nucleus International School',
+        doc?.title ? `${doc.title} | Nucleus International Schools` : 'Nucleus International Schools',
       generateDescription: ({ doc }) => doc?.excerpt || '',
       generateURL: ({ doc }) => `${SERVER_URL}/${doc?.slug ?? ''}`,
     }),

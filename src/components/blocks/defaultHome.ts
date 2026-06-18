@@ -30,7 +30,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     animateHeading: true,
     eyebrow: 'Cambridge International School in Addis Ababa',
     amharicSubline: 'ትምህርት ከደብተር ያልፋል',
-    heading: 'Nucleus International School',
+    heading: 'Nucleus International Schools',
     tagline: 'Think Deeply. Create Boldly. Solve Truly.',
     subhead:
       'A Cambridge international education in the heart of Addis Ababa — raising secure, curious, globally-minded children from age 2 through Grade 8.',
@@ -130,9 +130,10 @@ export const defaultHomeLayout: RenderableBlock[] = [
     blockType: 'coreValuesOrbit',
     eyebrow: 'Our Foundation',
     heading: 'Our Core Values',
-    intro: 'The principles that guide our community and shape future leaders.',
     bgImage: '/images/stock/core-values.webp',
-    surface: 'light',
+    bgTreatment: 'spotlight',
+    headingAlign: 'left',
+    headingColor: 'navy',
     values: coreValuesCards,
   },
   {

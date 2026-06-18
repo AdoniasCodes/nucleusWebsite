@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = post.meta?.title || post.title
   const description = post.meta?.description || post.excerpt || undefined
   return {
-    title: title ? { absolute: `${title} | Nucleus International School` } : undefined,
+    title: title ? { absolute: `${title} | Nucleus International Schools` } : undefined,
     description,
     alternates: { canonical: `/news/${slug}` },
     openGraph: { type: 'article', title: title ?? undefined, description, url: `/news/${slug}` },
@@ -66,7 +66,7 @@ export default async function PostPage({ params }: Props) {
             datePublished: post.publishedAt || post.createdAt,
             dateModified: post.updatedAt,
             image: heroUrl ? new URL(heroUrl, SERVER_URL).toString() : undefined,
-            author: { '@type': 'Organization', name: 'Nucleus International School' },
+            author: { '@type': 'Organization', name: 'Nucleus International Schools' },
             publisher: { '@id': `${SERVER_URL}/#organization` },
             mainEntityOfPage: `${SERVER_URL}/news/${slug}`,
           },
