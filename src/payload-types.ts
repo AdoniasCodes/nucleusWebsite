@@ -325,6 +325,10 @@ export interface CardsGridBlock {
   eyebrow?: string | null;
   heading?: string | null;
   intro?: string | null;
+  /**
+   * Optional HTML id for in-page links (e.g. "activities" → #activities).
+   */
+  anchor?: string | null;
   columns?: ('2' | '3' | '4') | null;
   cards?:
     | {
@@ -515,11 +519,15 @@ export interface CTABandBlock {
  * via the `definition` "FormBlockType".
  */
 export interface FormBlockType {
-  formType: 'inquiry' | 'tour' | 'registration' | 'fee-request';
+  formType: 'inquiry' | 'tour' | 'registration' | 'fee-request' | 'summer-camp';
   background?: ('offwhite' | 'white' | 'purple') | null;
   heading?: string | null;
   intro?: string | null;
   successMessage?: string | null;
+  /**
+   * Optional HTML id for in-page links (e.g. "register" → #register).
+   */
+  anchor?: string | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'formBlock';
@@ -900,6 +908,7 @@ export interface CardsGridBlockSelect<T extends boolean = true> {
   eyebrow?: T;
   heading?: T;
   intro?: T;
+  anchor?: T;
   columns?: T;
   cards?:
     | T
@@ -1027,6 +1036,7 @@ export interface FormBlockTypeSelect<T extends boolean = true> {
   heading?: T;
   intro?: T;
   successMessage?: T;
+  anchor?: T;
   id?: T;
   blockName?: T;
 }

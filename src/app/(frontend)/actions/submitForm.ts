@@ -60,6 +60,7 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
   const phone = get('phone')
   const childAge = get('childAge')
   const childGrade = get('childGrade')
+  const preferredCampus = get('preferredCampus')
   const sourcePage = get('sourcePage', 300)
 
   if (!parentName || !email) return { status: 'error', message: 'Please add your name and email.' }
@@ -84,6 +85,23 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
         },
       })
     } else {
+      const interest =
+        formType === 'fee-request'
+          ? 'fee-request'
+          : formType === 'registration'
+            ? 'registration'
+            : formType === 'summer-camp'
+              ? 'summer-camp'
+              : 'general'
+      // Camp leads capture a preferred campus (not a stored column) — fold it into the message
+      // so staff see it alongside the enquiry when following up.
+      const baseMessage = get('message', 3000)
+      const message =
+        formType === 'summer-camp'
+          ? [preferredCampus && `Preferred campus: ${preferredCampus}`, baseMessage].filter(Boolean).join('\n') ||
+            undefined
+          : baseMessage || undefined
+
       await payload.create({
         collection: 'admissions-inquiries',
         data: {
@@ -92,9 +110,8 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
           phone,
           childAge,
           childGrade,
-          interest:
-            formType === 'fee-request' ? 'fee-request' : formType === 'registration' ? 'registration' : 'general',
-          message: get('message', 3000) || undefined,
+          interest,
+          message,
           sourcePage,
         },
       })

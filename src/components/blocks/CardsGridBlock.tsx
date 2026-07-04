@@ -54,6 +54,7 @@ export function CardsGridBlock(
     reveal?: RevealVariant | 'mirror'
     bgImage?: string
     bgOverlay?: Overlay
+    anchor?: string
   },
 ) {
   const background = (props.background ?? 'white') as SectionBackground
@@ -118,7 +119,7 @@ export function CardsGridBlock(
 
   if (props.bgImage) {
     return (
-      <section className="relative overflow-hidden py-[var(--spacing-section)]">
+      <section id={props.anchor} className="relative overflow-hidden py-[var(--spacing-section)]">
         <div
           className="absolute inset-0 bg-cover bg-center bg-scroll md:bg-fixed"
           style={{ backgroundImage: `url(${props.bgImage})` }}
@@ -130,5 +131,9 @@ export function CardsGridBlock(
     )
   }
 
-  return <Section background={background}>{inner}</Section>
+  return (
+    <Section background={background} id={props.anchor}>
+      {inner}
+    </Section>
+  )
 }

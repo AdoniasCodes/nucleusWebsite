@@ -20,6 +20,7 @@ export const FormBlock: Block = {
         { label: 'Visit Now (tour)', value: 'tour' },
         { label: 'Start Registration', value: 'registration' },
         { label: 'Request fee sheet (gated)', value: 'fee-request' },
+        { label: 'Summer Camp registration', value: 'summer-camp' },
       ],
     },
     {
@@ -35,5 +36,10 @@ export const FormBlock: Block = {
     { name: 'heading', type: 'text' },
     { name: 'intro', type: 'textarea' },
     { name: 'successMessage', type: 'text', defaultValue: 'Thank you — we will be in touch shortly.' },
+    {
+      name: 'anchor',
+      type: 'text',
+      admin: { description: 'Optional HTML id for in-page links (e.g. "register" → #register).' },
+    },
   ],
 }

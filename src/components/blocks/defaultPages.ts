@@ -61,6 +61,7 @@ export const defaultPages: Record<string, DefaultPage> = {
           },
         ],
       },
+      { blockType: 'founderMessage' },
       {
         blockType: 'cardsGrid',
         background: 'white',
@@ -96,6 +97,7 @@ export const defaultPages: Record<string, DefaultPage> = {
           { iconName: 'Award', title: 'Excellence', description: 'Striving for the highest standards in innovation, academic growth, and personal achievement.' },
         ],
       },
+      { blockType: 'ourTeam' },
       {
         blockType: 'ctaBand',
         background: 'navy',
@@ -104,6 +106,77 @@ export const defaultPages: Record<string, DefaultPage> = {
         links: [
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
           { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
+        ],
+      },
+    ],
+  },
+
+  'summer-camp': {
+    title: 'Summer Camp',
+    seoTitle: 'Nucleus Summer Camp 2026 in Addis Ababa | Robotics, STEM, Sport, Music & Art',
+    description:
+      'Nucleus Summer Camp 2026 (July 6 – August 12) in Addis Ababa — robotics, STEM labs, chess, taekwondo, football, basketball, music and art, led by qualified Cambridge educators on two secure campuses. Register your child.',
+    layout: [
+      { blockType: 'summerCampHero' },
+      {
+        blockType: 'stats',
+        background: 'navy',
+        items: [
+          { value: '6 weeks', label: 'July 6 – Aug 12' },
+          { value: '10+', label: 'Activities' },
+          { value: '2', label: 'Secure campuses' },
+          { value: 'Ages 4–14', label: 'Welcome' },
+        ],
+      },
+      { blockType: 'campMoments', background: 'white' },
+      { blockType: 'campActivities', anchor: 'activities' },
+      {
+        blockType: 'cardsGrid',
+        background: 'white',
+        eyebrow: 'Why Nucleus',
+        heading: 'A summer camp that’s actually good for them',
+        intro: 'Not a place to drop the kids — a place they come home from taller, braver and full of stories.',
+        columns: '3',
+        cards: [
+          { iconName: 'GraduationCap', title: 'Qualified educators', description: 'Every activity is led by a specialist who teaches for a living — Cambridge-aligned and genuinely great with children.' },
+          { iconName: 'ShieldCheck', title: 'Serious about safety', description: 'Secure, supervised campuses with a dedicated head of security. Peace of mind is part of the package.' },
+          { iconName: 'Sprout', title: 'Real growth, not screen time', description: 'Children build robots, skills and friendships — leaving with confidence they carry into the school year.' },
+          { iconName: 'MapPin', title: 'Two convenient campuses', description: 'Choose Mekanisa or the Vatican campus — whichever is closest and easiest for your family.' },
+          { iconName: 'Users', title: 'Small, mixed-age groups', description: 'Grouped by age so every child is challenged at the right level and never lost in the crowd.' },
+          { iconName: 'Sun', title: 'Flexible weeks', description: 'Join for the full six weeks or the weeks that suit your summer. We’ll help you plan it.' },
+        ],
+      },
+      { blockType: 'campInstructors', background: 'mist' },
+      {
+        blockType: 'cardsGrid',
+        background: 'white',
+        eyebrow: 'Good to Know',
+        heading: 'The essentials',
+        columns: '3',
+        cards: [
+          { iconName: 'CalendarCheck', title: 'Dates', description: 'July 6 – August 12, 2026. Join for all six weeks or by the week.' },
+          { iconName: 'MapPin', title: 'Campuses', description: 'Mekanisa Campus and the Vatican Campus, Addis Ababa.' },
+          { iconName: 'Sun', title: 'Ages', description: 'Open to children ages 4–14, grouped by age for the right challenge.' },
+        ],
+      },
+      {
+        blockType: 'formBlock',
+        formType: 'summer-camp',
+        anchor: 'register',
+        background: 'offwhite',
+        heading: 'Reserve your child’s spot',
+        intro:
+          'Tell us a little about your child and we’ll follow up within one business day with dates, pricing and how to secure a place. Spots are limited per campus.',
+        successMessage: 'Thank you! Your spot request is in — our camp team will call or email you within one business day.',
+      },
+      {
+        blockType: 'ctaBand',
+        background: 'navy',
+        heading: 'Questions before you register?',
+        subhead: 'Talk to our camp team directly — we’ll help you choose the right weeks and campus for your child.',
+        links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Call 0981 999 922', url: 'tel:+251981999922' } },
+          { link: { appearance: 'outline', type: 'custom', label: 'Reserve a spot', url: '#register' } },
         ],
       },
     ],
@@ -356,8 +429,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         campuses: [
           {
             name: 'Grade School Campus',
-            embedSrc: 'https://www.google.com/maps?q=8.9873873,38.7363836&z=17&hl=en&output=embed',
-            directionsUrl: 'https://maps.app.goo.gl/kYmfwP9guTr2GFyJ7',
+            embedSrc: 'https://www.google.com/maps?q=Nucleus+International+Schools,+Addis+Ababa&z=17&hl=en&output=embed',
+            directionsUrl: 'https://maps.app.goo.gl/DHQMbtpZc7PBDWEF8',
             streetAddress: 'Sarbet Vatican, 50 metres behind the Embassy of Indonesia',
             telephone: ['0981999922', '0981999933'],
             rows: [

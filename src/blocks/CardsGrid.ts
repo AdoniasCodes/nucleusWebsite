@@ -27,6 +27,11 @@ export const CardsGrid: Block = {
     { name: 'heading', type: 'text' },
     { name: 'intro', type: 'textarea' },
     {
+      name: 'anchor',
+      type: 'text',
+      admin: { description: 'Optional HTML id for in-page links (e.g. "activities" → #activities).' },
+    },
+    {
       name: 'columns',
       type: 'select',
       defaultValue: '3',

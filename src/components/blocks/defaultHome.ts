@@ -23,20 +23,41 @@ const coreValuesCards = [
 
 export const defaultHomeLayout: RenderableBlock[] = [
   {
-    blockType: 'hero',
-    background: 'purple',
-    bgVideo: '/video/hero.mp4',
-    bgPoster: '/video/hero-poster.webp',
-    animateHeading: true,
-    eyebrow: 'Cambridge International School in Addis Ababa',
-    amharicSubline: 'ትምህርት ከደብተር ያልፋል',
-    heading: 'Nucleus International Schools',
-    tagline: 'Think Deeply. Create Boldly. Solve Truly.',
-    subhead:
-      'A Cambridge international education in the heart of Addis Ababa — raising secure, curious, globally-minded children from age 2 through Grade 8.',
-    links: [
-      { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-      { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
+    blockType: 'heroSlider',
+    slides: [
+      // Time-sensitive campaign slide (shows first, ~9s), bright/white ground.
+      {
+        kind: 'campaign',
+        badge: 'Registration open · Summer 2026',
+        eyebrow: 'Nucleus Summer Camp · July 6 – Aug 12',
+        heading: 'A summer that',
+        headingAccent: 'actually grows them.',
+        subhead:
+          'Robotics, sport, music, art and real discovery — led by qualified Cambridge educators, on two secure Addis Ababa campuses.',
+        image: '/images/camp/hero-robotics.webp',
+        links: [
+          { label: 'Explore Summer Camp', url: '/summer-camp', appearance: 'primary' },
+          { label: 'Reserve a spot', url: '/summer-camp#register', appearance: 'outline' },
+        ],
+        durationMs: 9000,
+      },
+      // Evergreen brand hero (looping video + typed tagline). Stays long enough to read.
+      {
+        kind: 'brand',
+        bgVideo: '/video/hero.mp4',
+        bgPoster: '/video/hero-poster.webp',
+        eyebrow: 'Cambridge International School in Addis Ababa',
+        amharic: 'ትምህርት ከደብተር ያልፋል',
+        heading: 'Nucleus International Schools',
+        tagline: 'Think Deeply. Create Boldly. Solve Truly.',
+        subhead:
+          'A Cambridge international education in the heart of Addis Ababa — raising secure, curious, globally-minded children from age 2 through Grade 8.',
+        links: [
+          { label: 'Visit Now', url: '/contact', appearance: 'outline' },
+          { label: 'Start Registration', url: '/register', appearance: 'primary' },
+        ],
+        durationMs: 11000,
+      },
     ],
   },
   {
@@ -204,8 +225,8 @@ export const defaultHomeLayout: RenderableBlock[] = [
     campuses: [
       {
         name: 'Grade School Campus',
-        embedSrc: 'https://www.google.com/maps?q=8.9873873,38.7363836&z=17&hl=en&output=embed',
-        directionsUrl: 'https://maps.app.goo.gl/kYmfwP9guTr2GFyJ7',
+        embedSrc: 'https://www.google.com/maps?q=Nucleus+International+Schools,+Addis+Ababa&z=17&hl=en&output=embed',
+        directionsUrl: 'https://maps.app.goo.gl/DHQMbtpZc7PBDWEF8',
         streetAddress: 'Sarbet Vatican, 50 metres behind the Embassy of Indonesia',
         telephone: ['0981999922', '0981999933'],
         rows: [

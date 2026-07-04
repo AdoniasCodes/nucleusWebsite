@@ -52,7 +52,7 @@ function SubmitButton({ label, pending }: { label: string; pending: boolean }) {
 
 const initial: FormState = { status: 'idle', message: '' }
 
-export function FormBlock(props: FormBlockType) {
+export function FormBlock(props: FormBlockType & { anchor?: string }) {
   const [state, action, isPending] = useActionState(submitForm, initial)
   const { executeRecaptcha } = useRecaptcha()
   const [gettingToken, setGettingToken] = useState(false)
@@ -73,6 +73,7 @@ export function FormBlock(props: FormBlockType) {
   const formType = props.formType ?? 'inquiry'
   const isTour = formType === 'tour'
   const isRegistration = formType === 'registration'
+  const isSummerCamp = formType === 'summer-camp'
 
   // Fire the marketing-pixel conversion event once the submission succeeds.
   useEffect(() => {
@@ -81,17 +82,27 @@ export function FormBlock(props: FormBlockType) {
 
   const heading =
     props.heading ??
-    (isTour ? 'Visit Now' : isRegistration ? 'Start Registration' : formType === 'fee-request' ? 'Request the Fee Sheet' : 'Send an Enquiry')
+    (isTour
+      ? 'Visit Now'
+      : isRegistration
+        ? 'Start Registration'
+        : isSummerCamp
+          ? 'Reserve your child’s spot'
+          : formType === 'fee-request'
+            ? 'Request the Fee Sheet'
+            : 'Send an Enquiry')
   const submitLabel = isTour
     ? 'Request my visit'
     : isRegistration
       ? 'Submit registration'
-      : formType === 'fee-request'
-        ? 'Send me the fee sheet'
-        : 'Send enquiry'
+      : isSummerCamp
+        ? 'Reserve my child’s spot'
+        : formType === 'fee-request'
+          ? 'Send me the fee sheet'
+          : 'Send enquiry'
 
   return (
-    <Section background={background}>
+    <Section background={background} id={props.anchor}>
       <Container width="narrow">
         <SectionHeading heading={heading} intro={props.intro} dark={dark} />
 
@@ -120,16 +131,26 @@ export function FormBlock(props: FormBlockType) {
               <Field label="Child’s age">
                 <input name="childAge" className={inputBase} inputMode="numeric" placeholder="e.g. 5" />
               </Field>
-              <Field label="Grade applying for">
-                <select name="childGrade" className={inputBase} defaultValue="">
-                  <option value="">Select a grade…</option>
-                  {GRADE_OPTIONS.map((g) => (
-                    <option key={g} value={g}>
-                      {g}
-                    </option>
-                  ))}
-                </select>
-              </Field>
+              {isSummerCamp ? (
+                <Field label="Preferred campus">
+                  <select name="preferredCampus" className={inputBase} defaultValue="">
+                    <option value="">No preference</option>
+                    <option value="Mekanisa">Mekanisa Campus</option>
+                    <option value="Vatican">Vatican Campus</option>
+                  </select>
+                </Field>
+              ) : (
+                <Field label="Grade applying for">
+                  <select name="childGrade" className={inputBase} defaultValue="">
+                    <option value="">Select a grade…</option>
+                    {GRADE_OPTIONS.map((g) => (
+                      <option key={g} value={g}>
+                        {g}
+                      </option>
+                    ))}
+                  </select>
+                </Field>
+              )}
 
               {isTour && (
                 <>

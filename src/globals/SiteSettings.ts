@@ -38,8 +38,8 @@ export const SiteSettings: GlobalConfig = {
             {
               type: 'row',
               fields: [
-                { name: 'latitude', type: 'number', admin: { width: '50%' } },
-                { name: 'longitude', type: 'number', admin: { width: '50%' } },
+                { name: 'latitude', type: 'number', defaultValue: 8.9874375, admin: { width: '50%' } },
+                { name: 'longitude', type: 'number', defaultValue: 38.7364375, admin: { width: '50%' } },
               ],
             },
           ],

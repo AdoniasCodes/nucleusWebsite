@@ -14,6 +14,13 @@ import { WhyCambridgeBlock, type WhyCambridgeProps } from './WhyCambridgeBlock'
 import { FeeTransparencyBlock, type FeeTransparencyProps } from './FeeTransparencyBlock'
 import { DayTimelineBlock, type DayTimelineProps } from './DayTimelineBlock'
 import { CoreValuesOrbit, type CoreValuesOrbitProps } from './CoreValuesOrbit'
+import { FounderMessageBlock, type FounderMessageProps } from './FounderMessageBlock'
+import { OurTeamBlock, type OurTeamProps } from './OurTeamBlock'
+import { HeroSliderBlock, type HeroSliderProps } from './HeroSliderBlock'
+import { SummerCampHeroBlock, type SummerCampHeroProps } from './SummerCampHeroBlock'
+import { CampInstructorsBlock, type CampInstructorsProps } from './CampInstructorsBlock'
+import { CampMomentsBlock, type CampMomentsProps } from './CampMomentsBlock'
+import { CampActivitiesBlock, type CampActivitiesProps } from './CampActivitiesBlock'
 
 /** A CMS layout block, plus the synthetic code-only blocks (homepage + inner pages). */
 export type RenderableBlock =
@@ -27,6 +34,13 @@ export type RenderableBlock =
   | FeeTransparencyProps
   | DayTimelineProps
   | CoreValuesOrbitProps
+  | FounderMessageProps
+  | OurTeamProps
+  | HeroSliderProps
+  | SummerCampHeroProps
+  | CampInstructorsProps
+  | CampMomentsProps
+  | CampActivitiesProps
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
@@ -45,6 +59,13 @@ const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
   feeTransparency: FeeTransparencyBlock,
   dayTimeline: DayTimelineBlock,
   coreValuesOrbit: CoreValuesOrbit,
+  founderMessage: FounderMessageBlock,
+  ourTeam: OurTeamBlock,
+  heroSlider: HeroSliderBlock,
+  summerCampHero: SummerCampHeroBlock,
+  campInstructors: CampInstructorsBlock,
+  campMoments: CampMomentsBlock,
+  campActivities: CampActivitiesBlock,
 }
 
 export function BlockRenderer({ blocks }: { blocks?: RenderableBlock[] | null }) {
