@@ -39,7 +39,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
           { label: 'Explore Summer Camp', url: '/summer-camp', appearance: 'primary' },
           { label: 'Reserve a spot', url: '/summer-camp#register', appearance: 'outline' },
         ],
-        durationMs: 9000,
+        durationMs: 4000,
       },
       // Evergreen brand hero (looping video + typed tagline). Stays long enough to read.
       {
@@ -56,7 +56,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
           { label: 'Visit Now', url: '/contact', appearance: 'outline' },
           { label: 'Start Registration', url: '/register', appearance: 'primary' },
         ],
-        durationMs: 11000,
+        durationMs: 4000,
       },
     ],
   },

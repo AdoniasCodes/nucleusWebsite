@@ -61,22 +61,22 @@ export function SummerCampHeroBlock({
         }}
       />
       <Container width="wide" className="relative">
-        <div className="grid grid-cols-2 gap-3 py-10 sm:gap-4 sm:py-14 lg:grid-cols-4 lg:grid-rows-2 lg:h-[560px]">
+        <div className="grid grid-cols-2 gap-3 py-8 sm:gap-4 sm:py-14 lg:grid-cols-4 lg:grid-rows-2 lg:h-[560px]">
           {/* Headline card */}
-          <div className="col-span-2 flex flex-col justify-center rounded-[2rem] border border-navy/10 bg-gradient-to-br from-mist to-white p-7 shadow-[0_30px_70px_-40px_rgba(17,2,77,0.4)] sm:p-9 lg:row-span-2">
+          <div className="col-span-2 flex flex-col justify-center rounded-[1.75rem] border border-navy/10 bg-gradient-to-br from-mist to-white p-6 shadow-[0_30px_70px_-40px_rgba(17,2,77,0.4)] sm:rounded-[2rem] sm:p-9 lg:row-span-2">
             {badge && (
               <span className="inline-flex w-fit items-center gap-2 rounded-full bg-ochre/15 px-4 py-1.5 font-display text-sm font-semibold text-ochre-600">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-ochre" /> {badge}
               </span>
             )}
             {eyebrow && (
-              <p className="mt-5 font-display text-sm font-semibold uppercase tracking-[0.18em] text-ochre-600">{eyebrow}</p>
+              <p className="mt-4 font-display text-sm font-semibold uppercase tracking-[0.18em] text-ochre-600 sm:mt-5">{eyebrow}</p>
             )}
-            <h1 className="mt-3 text-4xl font-bold leading-[1.02] text-navy sm:text-5xl xl:text-6xl">
+            <h1 className="mt-3 text-[2rem] font-bold leading-[1.05] text-navy sm:text-5xl sm:leading-[1.02] xl:text-6xl">
               {heading} <span className="text-ochre">{headingAccent}</span>
             </h1>
-            {subhead && <p className="mt-5 max-w-lg text-lg text-ink/75">{subhead}</p>}
-            <div className="mt-7 flex flex-wrap gap-3">
+            {subhead && <p className="mt-4 max-w-lg text-base text-ink/75 sm:mt-5 sm:text-lg">{subhead}</p>}
+            <div className="mt-6 flex flex-wrap gap-3 sm:mt-7">
               <ButtonLink href={primaryUrl} appearance="primary">
                 {primaryLabel}
               </ButtonLink>
@@ -85,7 +85,7 @@ export function SummerCampHeroBlock({
               </ButtonLink>
             </div>
             {facts.length > 0 && (
-              <ul className="mt-7 flex flex-wrap gap-x-5 gap-y-2">
+              <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 sm:mt-7">
                 {facts.map((f, i) => (
                   <li key={i} className="inline-flex items-center gap-1.5 font-display text-sm font-medium text-navy">
                     <Icon name={f.icon} size={17} className="text-ochre-600" />

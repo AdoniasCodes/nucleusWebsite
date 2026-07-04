@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { Container } from '@/components/ui/Container'
 import { ButtonLink } from '@/components/ui/Button'
+import { Icon } from '@/components/ui/Icon'
 import { HeroReveal } from './HeroReveal'
 
 /**
@@ -52,6 +53,8 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
   const [paused, setPaused] = useState(false)
   const reduced = useRef(false)
   const count = slides.length
+  // The active slide's ground decides the control colours (light campaign vs. dark brand slide).
+  const onLight = slides[active]?.kind === 'campaign'
 
   const go = useCallback((i: number) => setActive((i + count) % count), [count])
 
@@ -70,7 +73,7 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
 
   return (
     <section
-      className="relative flex min-h-[78vh] items-center overflow-hidden"
+      className="relative flex min-h-[74vh] items-center overflow-hidden lg:min-h-[60vh]"
       aria-roledescription="carousel"
       aria-label="Highlights"
       onMouseEnter={() => setPaused(true)}
@@ -104,7 +107,7 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
             type="button"
             onClick={() => go(active - 1)}
             aria-label="Previous slide"
-            className="group absolute left-3 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-navy/25 text-white backdrop-blur-sm transition hover:bg-navy/50 sm:left-6"
+            className="group absolute left-3 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-navy/25 text-white backdrop-blur-sm transition hover:bg-navy/50 sm:left-6 sm:flex"
           >
             <span className="text-xl leading-none">‹</span>
           </button>
@@ -112,11 +115,11 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
             type="button"
             onClick={() => go(active + 1)}
             aria-label="Next slide"
-            className="group absolute right-3 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-navy/25 text-white backdrop-blur-sm transition hover:bg-navy/50 sm:right-6"
+            className="group absolute right-3 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-navy/25 text-white backdrop-blur-sm transition hover:bg-navy/50 sm:right-6 sm:flex"
           >
             <span className="text-xl leading-none">›</span>
           </button>
-          <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-2.5">
+          <div className="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center sm:bottom-5">
             {slides.map((_, i) => (
               <button
                 key={i}
@@ -124,10 +127,22 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
                 onClick={() => go(i)}
                 aria-label={`Go to slide ${i + 1}`}
                 aria-current={i === active}
-                className={`h-2.5 rounded-full transition-all ${
-                  i === active ? 'w-7 bg-ochre' : 'w-2.5 bg-white/60 hover:bg-white'
-                }`}
-              />
+                className="group flex h-11 min-w-[44px] items-center justify-center"
+              >
+                {/* Dots recolour to the active slide's ground: brand blue/purple on the white
+                    summer-camp slide (white dots would vanish), white on the dark video slide. */}
+                <span
+                  className={`block h-2.5 rounded-full transition-all ${
+                    onLight
+                      ? i === active
+                        ? 'w-8 bg-periwinkle'
+                        : 'w-2.5 bg-navy/25 group-hover:bg-navy/40'
+                      : i === active
+                        ? 'w-8 bg-ochre'
+                        : 'w-2.5 bg-white/70 group-hover:bg-white'
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </>
@@ -193,6 +208,17 @@ function BrandSlideView({ slide, active }: { slide: BrandSlide; active: boolean 
   )
 }
 
+/** A small floating icon tile used as decorative "camp" motif on the mobile campaign slide. */
+function FloatChip({ icon, tint, className = '' }: { icon: string; tint: string; className?: string }) {
+  return (
+    <span
+      className={`absolute flex h-12 w-12 items-center justify-center rounded-2xl shadow-[0_12px_30px_-10px_rgba(17,2,77,0.45)] sm:h-14 sm:w-14 ${tint} ${className}`}
+    >
+      <Icon name={icon} size={26} />
+    </span>
+  )
+}
+
 function CampaignSlideView({ slide }: { slide: CampaignSlide }) {
   return (
     <div className="relative h-full w-full bg-white">
@@ -204,9 +230,19 @@ function CampaignSlideView({ slide }: { slide: CampaignSlide }) {
             'radial-gradient(60% 60% at 88% 12%, rgba(224,169,59,0.10), transparent 60%), radial-gradient(50% 60% at 5% 100%, rgba(63,93,186,0.08), transparent 60%)',
         }}
       />
+      {/* Mobile drops the photo entirely — these soft orbs keep the text-only slide from feeling flat. */}
+      <div aria-hidden className="pointer-events-none absolute -right-16 -top-12 h-64 w-64 rounded-full bg-ochre/20 blur-3xl lg:hidden" />
+      <div aria-hidden className="pointer-events-none absolute -bottom-20 -left-16 h-72 w-72 rounded-full bg-periwinkle/20 blur-3xl lg:hidden" />
+      {/* Playful "camp" motifs float in the top/bottom whitespace — mobile only (desktop has the photo). */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden lg:hidden">
+        <FloatChip icon="Bot" tint="bg-periwinkle text-white" className="left-4 top-[6%] animate-bob [--tilt:-8deg]" />
+        <FloatChip icon="Palette" tint="bg-coral text-white" className="right-4 top-[10%] animate-float [animation-delay:.8s]" />
+        <FloatChip icon="Music" tint="bg-teal text-white" className="left-5 bottom-[15%] animate-float-slow [animation-delay:.4s]" />
+        <FloatChip icon="Trophy" tint="bg-ochre text-navy" className="right-5 bottom-[8%] animate-bob [--tilt:7deg] [animation-delay:1.1s]" />
+      </div>
       <Container className="relative flex h-full w-full items-center py-16 sm:py-20">
         <div className="grid w-full items-center gap-8 lg:grid-cols-2 lg:gap-14">
-          <div className="order-2 text-center lg:order-1 lg:text-left">
+          <div className="text-center lg:order-1 lg:text-left">
             {slide.badge && (
               <span className="inline-flex items-center gap-2 rounded-full bg-ochre/15 px-4 py-1.5 font-display text-sm font-semibold text-ochre-600">
                 <span className="h-2 w-2 rounded-full bg-ochre" /> {slide.badge}
@@ -232,7 +268,7 @@ function CampaignSlideView({ slide }: { slide: CampaignSlide }) {
               </div>
             )}
           </div>
-          <div className="relative order-1 lg:order-2">
+          <div className="relative hidden lg:order-2 lg:block">
             <div className="relative mx-auto aspect-[4/3] w-full max-w-xl overflow-hidden rounded-3xl border border-navy/10 shadow-[0_30px_70px_-30px_rgba(17,2,77,0.45)]">
               <Image
                 src={slide.image}

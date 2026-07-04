@@ -137,6 +137,14 @@
 .animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .animate-float { animation: floatY 7s ease-in-out infinite; }
 
+/* Staggered float variants for the mobile hero's floating "camp" motifs (robot, ball, note…). */
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0) rotate(var(--tilt, -6deg)); }
+  50% { transform: translateY(-12px) rotate(calc(var(--tilt, -6deg) * -1)); }
+}
+.animate-bob { animation: floatBob 6.5s ease-in-out infinite; }
+.animate-float-slow { animation: floatY 9.5s ease-in-out infinite; }
+
 /* Slow drift on the hero background video — a living, cinematic frame. */
 .hero-kenburns { animation: kenBurns 22s ease-in-out infinite alternate; }
 
