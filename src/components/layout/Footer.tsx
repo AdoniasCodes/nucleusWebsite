@@ -7,6 +7,7 @@ const PROGRAMS = [
   { label: 'Cambridge Pathway', href: '/cambridge-pathway' },
   { label: 'Robotics & STEM', href: '/robotics-stem' },
   { label: 'Agriculture & Animal Care', href: '/agriculture-animal-care' },
+  { label: 'Summer Camp', href: '/summer-camp' },
   { label: 'Admissions & Fees', href: '/admissions' },
 ]
 
@@ -27,11 +28,11 @@ export async function Footer() {
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-16 sm:px-8 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Image
-            src="/images/nucleus-logo-white.webp"
+            src="/images/logo-footer.webp"
             alt={schoolName}
-            width={568}
-            height={429}
-            className="h-30 w-auto"
+            width={950}
+            height={324}
+            className="h-16 w-auto sm:h-[4.5rem]"
           />
           <p className="mt-4 max-w-xs text-sm text-pale/75">{tagline}</p>
           <p lang="am" className="mt-2 text-sm text-ochre">

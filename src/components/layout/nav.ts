@@ -5,7 +5,6 @@ export const NAV = [
   { label: 'Academics', href: '/academics' },
   { label: 'Admissions', href: '/admissions' },
   { label: 'Campus Life', href: '/campus-life' },
-  { label: 'Summer Camp', href: '/summer-camp' },
   { label: 'News', href: '/news' },
   { label: 'Contact', href: '/contact' },
 ]
