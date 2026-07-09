@@ -143,7 +143,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
         iconName: 'Globe',
         title: 'Our Vision',
         description:
-          'To witness a global legacy of innovative thinkers who cross borders with humility and solve problems for a better tomorrow.',
+          'To see a global legacy of innovative thinkers who cross borders with humility and solve problems for a better tomorrow.',
       },
     ],
   },

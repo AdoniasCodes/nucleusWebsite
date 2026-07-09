@@ -10,7 +10,7 @@ import { notifyLead } from '../hooks/notifyLead'
  * SECURITY: create is locked to authenticated CMS users so the public REST endpoint
  * (POST /api/admissions-inquiries) can't be spammed directly. Real public submissions come
  * through the `submitForm` server action, which uses the Local API (overrideAccess) AFTER
- * passing honeypot + per-IP rate limit + reCAPTCHA v3 verification.
+ * passing honeypot + per-IP rate limit + signed form-token check.
  */
 export const AdmissionsInquiries: CollectionConfig = {
   slug: 'admissions-inquiries',

@@ -15,12 +15,14 @@ import { FeeTransparencyBlock, type FeeTransparencyProps } from './FeeTransparen
 import { DayTimelineBlock, type DayTimelineProps } from './DayTimelineBlock'
 import { CoreValuesOrbit, type CoreValuesOrbitProps } from './CoreValuesOrbit'
 import { FounderMessageBlock, type FounderMessageProps } from './FounderMessageBlock'
-import { OurTeamBlock, type OurTeamProps } from './OurTeamBlock'
+import { type OurTeamProps } from './OurTeamBlock'
+import { OurTeamServer } from './OurTeamServer'
 import { HeroSliderBlock, type HeroSliderProps } from './HeroSliderBlock'
 import { SummerCampHeroBlock, type SummerCampHeroProps } from './SummerCampHeroBlock'
 import { CampInstructorsBlock, type CampInstructorsProps } from './CampInstructorsBlock'
 import { CampMomentsBlock, type CampMomentsProps } from './CampMomentsBlock'
 import { CampActivitiesBlock, type CampActivitiesProps } from './CampActivitiesBlock'
+import { mintFormToken } from '@/lib/formToken'
 
 /** A CMS layout block, plus the synthetic code-only blocks (homepage + inner pages). */
 export type RenderableBlock =
@@ -60,7 +62,7 @@ const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
   dayTimeline: DayTimelineBlock,
   coreValuesOrbit: CoreValuesOrbit,
   founderMessage: FounderMessageBlock,
-  ourTeam: OurTeamBlock,
+  ourTeam: OurTeamServer,
   heroSlider: HeroSliderBlock,
   summerCampHero: SummerCampHeroBlock,
   campInstructors: CampInstructorsBlock,
@@ -75,7 +77,10 @@ export function BlockRenderer({ blocks }: { blocks?: RenderableBlock[] | null })
       {blocks.map((block, i) => {
         const Component = REGISTRY[block.blockType]
         if (!Component) return null
-        return <Component key={('id' in block && block.id) || i} {...block} />
+        // Form blocks get a fresh server-minted signed token, embedded as a hidden field so the
+        // server action can prove the POST came from a rendered page (our reCAPTCHA replacement).
+        const extra = block.blockType === 'formBlock' ? { formToken: mintFormToken() } : {}
+        return <Component key={('id' in block && block.id) || i} {...block} {...extra} />
       })}
     </>
   )

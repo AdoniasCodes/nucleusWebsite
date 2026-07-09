@@ -2,7 +2,7 @@
 
 import { headers } from 'next/headers'
 import { getPayloadClient } from '@/lib/payload'
-import { verifyRecaptcha } from '@/lib/recaptcha'
+import { verifyFormToken } from '@/lib/formToken'
 
 export type FormState = { status: 'idle' | 'success' | 'error'; message: string }
 
@@ -11,7 +11,8 @@ const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
 /**
  * Best-effort in-memory rate limit: max submissions per IP per window. On Vercel this is
  * per-warm-instance (not global), so it throttles bursts but is NOT the primary defense —
- * reCAPTCHA + the locked REST endpoint are. Cheap, zero-dependency, no false-blocking of real users.
+ * the signed form token + the locked REST endpoint are. Cheap, zero-dependency, no
+ * false-blocking of real users.
  */
 const RATE_MAX = 5
 const RATE_WINDOW_MS = 10 * 60 * 1000
@@ -30,9 +31,11 @@ function rateLimited(ip: string): boolean {
 
 /**
  * Handle a public lead-capture submission. Routes to the right collection by formType:
- *  - tour        → tour-bookings
- *  - inquiry     → admissions-inquiries (interest: general)
- *  - fee-request → admissions-inquiries (interest: fee-request)
+ *  - tour         → tour-bookings
+ *  - summer-camp  → summer-camp-registrations
+ *  - inquiry      → admissions-inquiries (interest: general)
+ *  - fee-request  → admissions-inquiries (interest: fee-request)
+ *  - registration → admissions-inquiries (interest: registration)
  * Includes a honeypot ("company"): if filled, we pretend success and drop it (bot).
  */
 export async function submitForm(_prev: FormState, formData: FormData): Promise<FormState> {
@@ -48,10 +51,14 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
   const ip = (await headers()).get('x-forwarded-for')?.split(',')[0]?.trim() ?? ''
   if (rateLimited(ip)) return { status: 'success', message: 'Thank you — we will be in touch shortly.' }
 
-  // Invisible reCAPTCHA v3 check. Skips automatically when no secret is configured (local dev).
-  const captcha = await verifyRecaptcha(get('recaptchaToken'), 'lead_form', ip)
-  if (!captcha.ok) {
-    return { status: 'error', message: 'We couldn’t verify your submission. Please try again, or call us on 0981999922.' }
+  // Signed form token: minted on the server at page render, embedded as a hidden field. A bot
+  // POSTing straight at this action without loading the page has no valid token and is rejected.
+  if (!verifyFormToken(get('formToken', 400))) {
+    return {
+      status: 'error',
+      message:
+        'Something went wrong sending your request. Please refresh the page and try again, or call us on 0981999922.',
+    }
   }
 
   const formType = get('formType') || 'inquiry'
@@ -84,23 +91,25 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
           sourcePage,
         },
       })
+    } else if (formType === 'summer-camp') {
+      // Summer camp has its own collection so staff see camp sign-ups clearly, with the
+      // preferred campus as its own column (no longer folded into the message).
+      await payload.create({
+        collection: 'summer-camp-registrations',
+        data: {
+          parentName,
+          email,
+          phone,
+          childAge,
+          childGrade,
+          preferredCampus: preferredCampus || undefined,
+          message: get('message', 3000) || undefined,
+          sourcePage,
+        },
+      })
     } else {
       const interest =
-        formType === 'fee-request'
-          ? 'fee-request'
-          : formType === 'registration'
-            ? 'registration'
-            : formType === 'summer-camp'
-              ? 'summer-camp'
-              : 'general'
-      // Camp leads capture a preferred campus (not a stored column) — fold it into the message
-      // so staff see it alongside the enquiry when following up.
-      const baseMessage = get('message', 3000)
-      const message =
-        formType === 'summer-camp'
-          ? [preferredCampus && `Preferred campus: ${preferredCampus}`, baseMessage].filter(Boolean).join('\n') ||
-            undefined
-          : baseMessage || undefined
+        formType === 'fee-request' ? 'fee-request' : formType === 'registration' ? 'registration' : 'general'
 
       await payload.create({
         collection: 'admissions-inquiries',
@@ -111,7 +120,7 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
           childAge,
           childGrade,
           interest,
-          message,
+          message: get('message', 3000) || undefined,
           sourcePage,
         },
       })

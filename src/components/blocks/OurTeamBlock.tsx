@@ -13,7 +13,7 @@ import { Reveal } from '@/components/ui/Reveal'
  * Content is inline for now; can migrate to the `staff` collection for admin editing later.
  * Client component (modal state). Synthetic block.
  */
-type Member = {
+export type TeamMember = {
   id: string
   name: string
   role: string
@@ -22,7 +22,8 @@ type Member = {
   bio: string[]
 }
 
-const TEAM: Member[] = [
+/** Hardcoded fallback roster. Used when no `members` are supplied (e.g. the CMS is empty or errors). */
+export const TEAM: TeamMember[] = [
   {
     id: 'wondwossen',
     name: 'Wondwossen G. Teklemichael',
@@ -60,7 +61,7 @@ const TEAM: Member[] = [
   {
     id: 'meaza',
     name: 'Meaza Mekuria',
-    role: 'Head of Human Resources',
+    role: 'HR & Admin Manager',
     dept: 'Operations',
     photo: '/images/team/meaza-mekuria.webp',
     bio: [
@@ -132,6 +133,8 @@ export type OurTeamProps = {
   eyebrow?: string
   heading?: string
   intro?: string
+  /** CMS-managed roster (from the `staff` collection). Falls back to TEAM when absent/empty. */
+  members?: TeamMember[]
 }
 
 export function OurTeamBlock({
@@ -139,8 +142,10 @@ export function OurTeamBlock({
   eyebrow = 'The People of Nucleus',
   heading = 'Meet the team behind the promise',
   intro = 'Leaders, educators and specialists who make Nucleus a place where children truly thrive.',
+  members,
 }: OurTeamProps) {
-  const [active, setActive] = useState<Member | null>(null)
+  const team = members && members.length > 0 ? members : TEAM
+  const [active, setActive] = useState<TeamMember | null>(null)
   const closeRef = useRef<HTMLButtonElement>(null)
   const lastFocus = useRef<HTMLElement | null>(null)
 
@@ -159,7 +164,7 @@ export function OurTeamBlock({
     }
   }, [active])
 
-  const open = (m: Member, el: HTMLElement) => {
+  const open = (m: TeamMember, el: HTMLElement) => {
     lastFocus.current = el
     setActive(m)
   }
@@ -173,7 +178,7 @@ export function OurTeamBlock({
       <Container>
         <SectionHeading eyebrow={eyebrow} heading={heading} intro={intro} />
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {TEAM.map((m, i) => (
+          {team.map((m, i) => (
             <Reveal key={m.id} variant="up" delay={Math.min(i, 5) * 70} className="h-full">
               <button
                 type="button"
@@ -226,13 +231,13 @@ export function OurTeamBlock({
               ✕
             </button>
             <div className="grid grid-cols-1 sm:grid-cols-[14rem_1fr]">
-              <div className="relative min-h-[240px] bg-gradient-to-b from-mist to-pale">
+              <div className="relative h-[50vh] min-h-[320px] bg-gradient-to-b from-mist to-pale sm:h-auto sm:min-h-[240px]">
                 <Image
                   src={active.photo}
                   alt={active.name}
                   fill
                   sizes="(max-width: 640px) 100vw, 14rem"
-                  className="object-cover object-top"
+                  className="object-cover object-[center_20%]"
                 />
               </div>
               <div className="p-6 sm:p-8">

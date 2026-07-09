@@ -40,7 +40,7 @@ export const defaultPages: Record<string, DefaultPage> = {
       {
         blockType: 'prose',
         eyebrow: 'Our Story',
-        heading: 'Care first. Then the world.',
+        heading: 'Care first, then the world',
         items: [
           {
             type: 'lead',
@@ -79,7 +79,7 @@ export const defaultPages: Record<string, DefaultPage> = {
             iconName: 'Globe',
             title: 'Our Vision',
             description:
-              'To witness a global legacy of innovative thinkers who cross borders with humility and solve problems for a better tomorrow.',
+              'To see a global legacy of innovative thinkers who cross borders with humility and solve problems for a better tomorrow.',
           },
         ],
       },

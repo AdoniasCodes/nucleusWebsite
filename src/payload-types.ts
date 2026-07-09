@@ -76,6 +76,7 @@ export interface Config {
     staff: Staff;
     'admissions-inquiries': AdmissionsInquiry;
     'tour-bookings': TourBooking;
+    'summer-camp-registrations': SummerCampRegistration;
     redirects: Redirect;
     users: User;
     'payload-kv': PayloadKv;
@@ -94,6 +95,7 @@ export interface Config {
     staff: StaffSelect<false> | StaffSelect<true>;
     'admissions-inquiries': AdmissionsInquiriesSelect<false> | AdmissionsInquiriesSelect<true>;
     'tour-bookings': TourBookingsSelect<false> | TourBookingsSelect<true>;
+    'summer-camp-registrations': SummerCampRegistrationsSelect<false> | SummerCampRegistrationsSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -689,6 +691,27 @@ export interface TourBooking {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "summer-camp-registrations".
+ */
+export interface SummerCampRegistration {
+  id: number;
+  parentName: string;
+  email: string;
+  phone?: string | null;
+  childAge?: string | null;
+  childGrade?: string | null;
+  preferredCampus?: string | null;
+  message?: string | null;
+  /**
+   * Page the form was submitted from.
+   */
+  sourcePage?: string | null;
+  status?: ('new' | 'confirmed' | 'completed' | 'cancelled') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -764,6 +787,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'tour-bookings';
         value: number | TourBooking;
+      } | null)
+    | ({
+        relationTo: 'summer-camp-registrations';
+        value: number | SummerCampRegistration;
       } | null)
     | ({
         relationTo: 'redirects';
@@ -1224,6 +1251,23 @@ export interface TourBookingsSelect<T extends boolean = true> {
   preferredDate?: T;
   preferredTime?: T;
   notes?: T;
+  sourcePage?: T;
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "summer-camp-registrations_select".
+ */
+export interface SummerCampRegistrationsSelect<T extends boolean = true> {
+  parentName?: T;
+  email?: T;
+  phone?: T;
+  childAge?: T;
+  childGrade?: T;
+  preferredCampus?: T;
+  message?: T;
   sourcePage?: T;
   status?: T;
   updatedAt?: T;

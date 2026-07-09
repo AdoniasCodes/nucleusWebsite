@@ -1,6 +1,6 @@
 'use client'
 
-import { useActionState, useEffect, useState } from 'react'
+import { useActionState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import type { FormBlockType } from '@/payload-types'
 import { Container } from '@/components/ui/Container'
@@ -8,7 +8,6 @@ import { Section, isDark, type SectionBackground } from '@/components/ui/Section
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Icon } from '@/components/ui/Icon'
 import { submitForm, type FormState } from '@/app/(frontend)/actions/submitForm'
-import { useRecaptcha } from '@/components/recaptcha/useRecaptcha'
 import { trackLead } from '@/lib/pixels'
 
 /** Grades served — Preschool through Grade 8. Used by the "Grade applying for" dropdown. */
@@ -52,22 +51,10 @@ function SubmitButton({ label, pending }: { label: string; pending: boolean }) {
 
 const initial: FormState = { status: 'idle', message: '' }
 
-export function FormBlock(props: FormBlockType & { anchor?: string }) {
+export function FormBlock(props: FormBlockType & { anchor?: string; formToken?: string }) {
   const [state, action, isPending] = useActionState(submitForm, initial)
-  const { executeRecaptcha } = useRecaptcha()
-  const [gettingToken, setGettingToken] = useState(false)
   const pathname = usePathname()
 
-  // Mint a fresh invisible-reCAPTCHA token at submit, attach it, then dispatch the server action.
-  const handleAction = async (formData: FormData) => {
-    setGettingToken(true)
-    try {
-      formData.set('recaptchaToken', await executeRecaptcha('lead_form'))
-    } finally {
-      setGettingToken(false)
-    }
-    action(formData)
-  }
   const background = (props.background ?? 'offwhite') as SectionBackground
   const dark = isDark(background)
   const formType = props.formType ?? 'inquiry'
@@ -112,9 +99,11 @@ export function FormBlock(props: FormBlockType & { anchor?: string }) {
             <p className="mt-4 text-lg text-ink/80">{props.successMessage || state.message}</p>
           </div>
         ) : (
-          <form action={handleAction} className="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:p-8">
+          <form action={action} className="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:p-8">
             <input type="hidden" name="formType" value={formType} />
             <input type="hidden" name="sourcePage" value={pathname} />
+            {/* Server-minted signed token — proves this POST came from a rendered page, not a bot. */}
+            <input type="hidden" name="formToken" value={props.formToken ?? ''} />
             {/* Honeypot — hidden from humans */}
             <input type="text" name="company" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
@@ -179,18 +168,9 @@ export function FormBlock(props: FormBlockType & { anchor?: string }) {
             )}
 
             <div className="mt-6 flex items-center gap-4">
-              <SubmitButton label={submitLabel} pending={gettingToken || isPending} />
+              <SubmitButton label={submitLabel} pending={isPending} />
               <span className="text-sm text-ink/55">We’ll reply within one business day.</span>
             </div>
-
-            {/* reCAPTCHA v3 (invisible) protects this form. Google requires this disclosure when the badge is hidden. */}
-            <p className="mt-4 text-xs text-ink/45">
-              Protected by reCAPTCHA — Google’s{' '}
-              <a href="https://policies.google.com/privacy" className="underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a>{' '}
-              and{' '}
-              <a href="https://policies.google.com/terms" className="underline" target="_blank" rel="noopener noreferrer">Terms</a>{' '}
-              apply.
-            </p>
           </form>
         )}
       </Container>

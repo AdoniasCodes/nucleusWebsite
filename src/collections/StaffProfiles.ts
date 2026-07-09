@@ -33,6 +33,7 @@ export const StaffProfiles: CollectionConfig = {
         { label: 'Arts & Music', value: 'arts' },
         { label: 'PE & Sports', value: 'pe' },
         { label: 'Operations', value: 'operations' },
+        { label: 'Front Office', value: 'front-office' },
       ],
     },
     { name: 'photo', type: 'upload', relationTo: 'media' },
