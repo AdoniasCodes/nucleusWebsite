@@ -622,7 +622,9 @@ export interface Staff {
    * e.g. "Head of Primary".
    */
   role: string;
-  department?: ('leadership' | 'early-years' | 'primary' | 'stem' | 'languages' | 'arts' | 'pe' | 'operations') | null;
+  department?:
+    | ('leadership' | 'early-years' | 'primary' | 'stem' | 'languages' | 'arts' | 'pe' | 'operations' | 'front-office')
+    | null;
   photo?: (number | null) | Media;
   bio?: {
     root: {

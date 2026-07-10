@@ -12,10 +12,14 @@ import { createHmac, timingSafeEqual } from 'node:crypto'
  *
  * Pages are ISR-cached (revalidate 300), so the token is baked into the cached HTML at render
  * time and can be up to a few minutes old before a real parent even sees the form. We therefore
- * accept any age up to 6 hours and DO NOT enforce a minimum age.
+ * accept a generous age and DO NOT enforce a minimum age.
  */
 
-const MAX_AGE_MS = 6 * 60 * 60 * 1000 // 6 hours
+// 7 days, NOT hours: ISR serves stale HTML to the first visitor after a quiet stretch (verified
+// in prod: the 5am summer-camp page carried last night's token and a 6h cap rejected a real
+// submission). Bots are stopped by having no valid signature, not by token age — the age cap
+// only bounds how long a scraped token could be replayed, and the rate limit covers that.
+const MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000
 
 function sign(ts: string): string {
   const secret = process.env.PAYLOAD_SECRET || ''
