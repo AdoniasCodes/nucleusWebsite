@@ -175,8 +175,9 @@ export const defaultHomeLayout: RenderableBlock[] = [
   {
     blockType: 'galleryBlock',
     heading: 'Campus Life',
+    // No category filter: this band shows a MIX (campus/classroom/stem/sports). Filtering to
+    // 'campus' collapses it to one card now that the gallery collection is seeded.
     source: 'category',
-    category: 'campus',
     limit: 4,
   },
   {

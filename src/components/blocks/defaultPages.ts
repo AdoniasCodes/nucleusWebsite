@@ -284,7 +284,9 @@ export const defaultPages: Record<string, DefaultPage> = {
           { iconName: 'Users', title: 'A Nurturing Community', description: 'Warm, attentive staff who know every child by name.' },
         ],
       },
-      { blockType: 'galleryBlock', heading: 'Moments from Campus', source: 'category', category: 'campus', limit: 8 },
+      // No category filter (shows the full mix) — a 'campus'-only filter collapses to one card
+      // now that the gallery collection is seeded.
+      { blockType: 'galleryBlock', heading: 'Moments from Campus', source: 'category', limit: 8 },
       {
         blockType: 'ctaBand',
         background: 'purple',

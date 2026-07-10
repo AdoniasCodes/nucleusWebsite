@@ -33,6 +33,9 @@ export async function GalleryBlock(props: GalleryBlockType) {
     const res = await payload.find({
       collection: 'gallery',
       where: props.category ? { category: { equals: props.category } } : {},
+      // Featured first: the first item takes the big cinematic slot, so the "featured"
+      // checkbox in the admin decides which photo leads the band.
+      sort: ['-featured', 'createdAt'],
       limit: props.limit ?? 8,
       depth: 1,
     })
