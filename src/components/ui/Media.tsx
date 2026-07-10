@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import type { Media as MediaType } from '@/payload-types'
+import { relativeMediaUrl } from '@/lib/mediaUrl'
 
 type Resource = MediaType | number | string | null | undefined
 
@@ -21,7 +22,8 @@ export function Media({
   fill?: boolean
 }) {
   if (!resource || typeof resource !== 'object') return null
-  const { url, alt, width, height } = resource
+  const { url: rawUrl, alt, width, height } = resource
+  const url = relativeMediaUrl(rawUrl)
   if (!url) return null
 
   if (fill) {

@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url'
 import { getPayload } from 'payload'
 import config from '../payload.config'
 import { richTextFromBlocks } from '../lib/lexical'
-import { TEAM } from '../components/blocks/OurTeamBlock'
+import { TEAM } from '../components/blocks/teamData'
 
 /**
  * Seeds the `staff` collection (and their photos into `media`) from the hardcoded TEAM roster in

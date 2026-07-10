@@ -1,5 +1,7 @@
 import { getPayloadClient } from '@/lib/payload'
-import { OurTeamBlock, TEAM, type OurTeamProps, type TeamMember } from './OurTeamBlock'
+import { relativeMediaUrl } from '@/lib/mediaUrl'
+import { OurTeamBlock, type OurTeamProps } from './OurTeamBlock'
+import { TEAM, type TeamMember } from './teamData'
 
 /**
  * Server wrapper for the "Our Team" grid: fetches the roster from the `staff` collection so the
@@ -42,7 +44,9 @@ export async function OurTeamServer(props: OurTeamProps) {
           // Same-name hardcoded entry backfills anything missing in the CMS doc.
           const fallback = TEAM.find((t) => t.name === d.name)
           const photo =
-            (typeof d.photo === 'object' && d.photo?.url) || fallback?.photo || ''
+            relativeMediaUrl(typeof d.photo === 'object' ? d.photo?.url : undefined) ||
+            fallback?.photo ||
+            ''
           const bio = bioToParagraphs(d.bio)
           return {
             id: String(d.id),
@@ -56,8 +60,9 @@ export async function OurTeamServer(props: OurTeamProps) {
         .filter((m) => m.photo !== '')
       if (members.length === 0) members = undefined
     }
-  } catch {
+  } catch (err) {
     // CMS unreachable → render the hardcoded fallback.
+    console.error('[OurTeamServer] staff fetch failed, using fallback:', err)
   }
   return <OurTeamBlock {...props} members={members} />
 }
