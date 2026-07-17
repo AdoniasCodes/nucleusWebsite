@@ -74,12 +74,12 @@ export const TEAM: TeamMember[] = [
   {
     id: 'mandefro',
     name: 'Mandefro Melaku',
-    role: 'Summer Camp Director',
+    role: 'Athletic Director and Summer Camp Director',
     dept: 'PE & Sports',
     photo: '/images/team/mandefro-melaku.webp',
     bio: [
       'Mandefro brings over 10 years of experience in physical education, youth development and sports coaching. He holds an MBA, a BSc in Sport Science and a CAF D Football Coaching License, and has served as a PE teacher at leading international schools while coaching youth football and wellness programs.',
-      'With expertise in the Cambridge curriculum, student leadership and holistic child development, he designs summer-camp experiences that build confidence, teamwork and creativity — so every child enjoys a safe, enriching and memorable camp.',
+      'As Athletic Director he leads the school’s PE and sports programs year-round, drawing on his expertise in the Cambridge curriculum, student leadership and holistic child development. As Summer Camp Director he designs camp experiences that build confidence, teamwork and creativity, so every child enjoys a safe, enriching and memorable summer.',
     ],
   },
   {
