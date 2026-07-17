@@ -58,6 +58,31 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
 
   const go = useCallback((i: number) => setActive((i + count) % count), [count])
 
+  // Touch swipe (mobile): a horizontal drag past the threshold advances the slide.
+  // We only hijack the gesture when the movement is clearly horizontal so vertical
+  // page scrolling still works. Autoplay pauses for the duration of the touch.
+  const touchStart = useRef<{ x: number; y: number } | null>(null)
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    const t = e.touches[0]
+    touchStart.current = { x: t.clientX, y: t.clientY }
+    setPaused(true)
+  }, [])
+  const onTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      const start = touchStart.current
+      touchStart.current = null
+      setPaused(false)
+      if (!start || count < 2) return
+      const t = e.changedTouches[0]
+      const dx = t.clientX - start.x
+      const dy = t.clientY - start.y
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+        setActive((a) => (a + (dx < 0 ? 1 : -1) + count) % count)
+      }
+    },
+    [count],
+  )
+
   useEffect(() => {
     reduced.current =
       typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -80,6 +105,8 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={() => setPaused(false)}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
     >
       {slides.map((slide, i) => {
         const isActive = i === active
