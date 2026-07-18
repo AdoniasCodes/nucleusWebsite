@@ -40,7 +40,7 @@ export function Header({ schoolName = 'Nucleus International Schools' }: { schoo
             Visit Now
           </ButtonLink>
           <ButtonLink href="/register" appearance="primary">
-            Start Registration
+            Register Now
           </ButtonLink>
         </div>
 
@@ -73,7 +73,7 @@ export function Header({ schoolName = 'Nucleus International Schools' }: { schoo
             ))}
             <li className="mt-2">
               <ButtonLink href="/register" appearance="primary" className="w-full">
-                Start Registration
+                Register Now
               </ButtonLink>
             </li>
             <li className="mt-2">
