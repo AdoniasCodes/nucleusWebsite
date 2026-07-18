@@ -29,6 +29,7 @@ export const Posts: CollectionConfig = {
         { label: 'Admissions', value: 'admissions' },
         { label: 'Campus Life', value: 'campus-life' },
         { label: 'Parent Resources', value: 'parent-resources' },
+        { label: 'Newsletter', value: 'newsletter' },
       ],
     },
     { name: 'excerpt', type: 'textarea', maxLength: 280 },
@@ -39,6 +40,57 @@ export const Posts: CollectionConfig = {
       admin: { description: 'Optional local/stock image path (e.g. /images/...) used if no hero image is uploaded.' },
     },
     { name: 'content', type: 'richText', required: true },
+    {
+      name: 'sections',
+      type: 'array',
+      admin: {
+        description:
+          'Newsletter magazine sections. When present (category "Newsletter"), the article renders as a visual magazine layout from these sections; the content field above is the plain fallback.',
+        condition: (data) => data?.category === 'newsletter',
+      },
+      fields: [
+        { name: 'heading', type: 'text' },
+        { name: 'body', type: 'richText' },
+        {
+          name: 'style',
+          type: 'select',
+          defaultValue: 'auto',
+          options: [
+            { label: 'Auto (alternating image + text)', value: 'auto' },
+            { label: 'Photo gallery (mosaic)', value: 'gallery' },
+            { label: 'Highlight band (navy)', value: 'highlight' },
+          ],
+        },
+        {
+          name: 'images',
+          type: 'array',
+          fields: [
+            { name: 'image', type: 'upload', relationTo: 'media' },
+            {
+              name: 'imageUrl',
+              type: 'text',
+              admin: { description: 'Optional local image path used if no image is uploaded.' },
+            },
+            { name: 'alt', type: 'text' },
+            { name: 'caption', type: 'text' },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'playlist',
+      type: 'relationship',
+      relationTo: 'playlists',
+      admin: {
+        position: 'sidebar',
+        description: 'Newsletter series this article belongs to (e.g. Summer Camp 2026).',
+      },
+    },
+    {
+      name: 'playlistPart',
+      type: 'number',
+      admin: { position: 'sidebar', description: 'Order inside the series (1 = first part).' },
+    },
     {
       name: 'authors',
       type: 'relationship',

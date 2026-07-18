@@ -27,7 +27,11 @@ export async function LatestPostsBlock({ heading = 'News & Perspectives', intro,
       sort: '-publishedAt',
       limit,
       depth: 1,
-      where: { _status: { equals: 'published' } },
+      // Newsletter issues have their own home at /newsletter — keep this block to blog posts.
+      where: {
+        _status: { equals: 'published' },
+        or: [{ category: { not_equals: 'newsletter' } }, { category: { exists: false } }],
+      },
     })
     docs = res.docs
   } catch (err) {

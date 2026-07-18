@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     pages: Page;
     posts: Post;
+    playlists: Playlist;
     media: Media;
     gallery: Gallery;
     testimonials: Testimonial;
@@ -88,6 +89,7 @@ export interface Config {
   collectionsSelect: {
     pages: PagesSelect<false> | PagesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    playlists: PlaylistsSelect<false> | PlaylistsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     gallery: GallerySelect<false> | GallerySelect<true>;
     testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
@@ -541,7 +543,7 @@ export interface FormBlockType {
 export interface Post {
   id: number;
   title: string;
-  category?: ('news' | 'academics' | 'admissions' | 'campus-life' | 'parent-resources') | null;
+  category?: ('news' | 'academics' | 'admissions' | 'campus-life' | 'parent-resources' | 'newsletter') | null;
   excerpt?: string | null;
   heroImage?: (number | null) | Media;
   /**
@@ -563,6 +565,51 @@ export interface Post {
     };
     [k: string]: unknown;
   };
+  /**
+   * Newsletter magazine sections. When present (category "Newsletter"), the article renders as a visual magazine layout from these sections; the content field above is the plain fallback.
+   */
+  sections?:
+    | {
+        heading?: string | null;
+        body?: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        style?: ('auto' | 'gallery' | 'highlight') | null;
+        images?:
+          | {
+              image?: (number | null) | Media;
+              /**
+               * Optional local image path used if no image is uploaded.
+               */
+              imageUrl?: string | null;
+              alt?: string | null;
+              caption?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Newsletter series this article belongs to (e.g. Summer Camp 2026).
+   */
+  playlist?: (number | null) | Playlist;
+  /**
+   * Order inside the series (1 = first part).
+   */
+  playlistPart?: number | null;
   authors?: (number | User)[] | null;
   publishedAt?: string | null;
   /**
@@ -580,6 +627,29 @@ export interface Post {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "playlists".
+ */
+export interface Playlist {
+  id: number;
+  title: string;
+  /**
+   * One or two sentences shown on the series page and series cards.
+   */
+  description?: string | null;
+  coverImage?: (number | null) | Media;
+  /**
+   * Optional local image path (e.g. /images/newsletter/...) used if no cover is uploaded.
+   */
+  coverImageUrl?: string | null;
+  /**
+   * URL path segment. Auto-generated from the title if left blank.
+   */
+  slug?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -761,6 +831,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'posts';
         value: number | Post;
+      } | null)
+    | ({
+        relationTo: 'playlists';
+        value: number | Playlist;
       } | null)
     | ({
         relationTo: 'media';
@@ -1080,6 +1154,25 @@ export interface PostsSelect<T extends boolean = true> {
   heroImage?: T;
   heroImageUrl?: T;
   content?: T;
+  sections?:
+    | T
+    | {
+        heading?: T;
+        body?: T;
+        style?: T;
+        images?:
+          | T
+          | {
+              image?: T;
+              imageUrl?: T;
+              alt?: T;
+              caption?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  playlist?: T;
+  playlistPart?: T;
   authors?: T;
   publishedAt?: T;
   slug?: T;
@@ -1093,6 +1186,19 @@ export interface PostsSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "playlists_select".
+ */
+export interface PlaylistsSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  coverImage?: T;
+  coverImageUrl?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

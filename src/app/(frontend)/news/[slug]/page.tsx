@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import { Container } from '@/components/ui/Container'
 import { Media } from '@/components/ui/Media'
@@ -45,6 +45,8 @@ export default async function PostPage({ params }: Props) {
   const { slug } = await params
   const post = await getPost(slug).catch(() => null)
   if (!post) notFound()
+  // Newsletter articles canonically live under /newsletter — never render them here.
+  if (post.category === 'newsletter') redirect(`/newsletter/${slug}`)
 
   const hero = post.heroImage && typeof post.heroImage === 'object' ? post.heroImage : null
   const heroUrl = hero?.url || stockWebp(post.heroImageUrl) || null

@@ -14,6 +14,7 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
+import { Playlists } from './collections/Playlists'
 import { Gallery } from './collections/Gallery'
 import { Testimonials } from './collections/Testimonials'
 import { FAQ } from './collections/FAQ'
@@ -115,6 +116,7 @@ export default buildConfig({
   collections: [
     Pages,
     Posts,
+    Playlists,
     Media,
     Gallery,
     Testimonials,

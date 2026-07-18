@@ -13,13 +13,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly' as const,
       priority: slug === 'admissions' ? 0.9 : 0.7,
     })),
+    // The newsletter index refreshes weekly — worth a high crawl priority.
+    { url: `${SERVER_URL}/newsletter`, changeFrequency: 'weekly' as const, priority: 0.8 },
   ]
 
   try {
     const payload = await getPayloadClient()
-    const [pages, posts] = await Promise.all([
+    const [pages, posts, playlists] = await Promise.all([
       payload.find({ collection: 'pages', limit: 500, depth: 0, where: { _status: { equals: 'published' } } }),
       payload.find({ collection: 'posts', limit: 500, depth: 0, where: { _status: { equals: 'published' } } }),
+      payload.find({ collection: 'playlists', limit: 100, depth: 0 }),
     ])
 
     for (const p of pages.docs) {
@@ -28,7 +31,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
     for (const post of posts.docs) {
       if (!post.slug) continue
-      base.push({ url: `${SERVER_URL}/news/${post.slug}`, lastModified: post.updatedAt, changeFrequency: 'monthly', priority: 0.5 })
+      if (post.category === 'newsletter') {
+        base.push({ url: `${SERVER_URL}/newsletter/${post.slug}`, lastModified: post.updatedAt, changeFrequency: 'weekly', priority: 0.6 })
+      } else {
+        base.push({ url: `${SERVER_URL}/news/${post.slug}`, lastModified: post.updatedAt, changeFrequency: 'monthly', priority: 0.5 })
+      }
+    }
+    for (const pl of playlists.docs) {
+      if (!pl.slug) continue
+      base.push({ url: `${SERVER_URL}/newsletter/series/${pl.slug}`, lastModified: pl.updatedAt, changeFrequency: 'weekly', priority: 0.6 })
     }
   } catch {
     // DB unavailable at build/runtime → still return the static routes.
