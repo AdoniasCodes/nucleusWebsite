@@ -54,7 +54,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
           'A Cambridge international education in the heart of Addis Ababa — raising secure, curious, globally-minded children from age 2 through Grade 8.',
         links: [
           { label: 'Visit Now', url: '/contact', appearance: 'outline' },
-          { label: 'Start Registration', url: '/register', appearance: 'primary' },
+          { label: 'Register Now', url: '/register', appearance: 'primary' },
         ],
         durationMs: 4000,
       },
@@ -215,7 +215,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     subhead: 'Secure your child’s place for the upcoming intake. Places fill quickly.',
     links: [
       { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-      { link: { appearance: 'primary', type: 'custom', label: 'Start Registration', url: '/register' } },
+      { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register' } },
     ],
   },
   {
