@@ -3,6 +3,7 @@
 import { headers } from 'next/headers'
 import { getPayloadClient } from '@/lib/payload'
 import { verifyFormToken } from '@/lib/formToken'
+import { normalizePhone, PHONE_ERROR, cleanText } from '@/lib/phone'
 
 export type FormState = { status: 'idle' | 'success' | 'error'; message: string }
 
@@ -42,7 +43,10 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
   // Clamp every field to a sane max so an abusive payload can't bloat the DB. Short fields → 200
   // chars; free-text (message/notes) and sourcePage get a higher cap below. Truncates rather than
   // rejects so a long-but-genuine parent message is never lost.
-  const get = (k: string, max = 200) => (formData.get(k)?.toString() ?? '').trim().slice(0, max)
+  // Sanitize on the way in: control characters stripped, whitespace collapsed, length clamped.
+  const get = (k: string, max = 200) => cleanText(formData.get(k)?.toString() ?? '').slice(0, max)
+  const getLong = (k: string, max = 3000) =>
+    cleanText(formData.get(k)?.toString() ?? '', { multiline: true }).slice(0, max)
 
   // Honeypot — bots fill hidden fields. Silently succeed without saving.
   if (get('company')) return { status: 'success', message: 'Thank you — we will be in touch shortly.' }
@@ -63,15 +67,20 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
 
   const formType = get('formType') || 'inquiry'
   const parentName = get('parentName')
-  const email = get('email')
-  const phone = get('phone')
-  const childAge = get('childAge')
+  const email = get('email').toLowerCase()
+  // Age arrives as free text; keep digits only so "5 yrs" and "05" both store as a clean number.
+  const childAge = get('childAge').replace(/\D/g, '').slice(0, 2)
   const childGrade = get('childGrade')
   const preferredCampus = get('preferredCampus')
   const sourcePage = get('sourcePage', 300)
 
   if (!parentName || !email) return { status: 'error', message: 'Please add your name and email.' }
   if (!isEmail(email)) return { status: 'error', message: 'Please enter a valid email address.' }
+
+  // Phone is how staff actually reach parents — it must be a number we can dial.
+  // Normalized before storing: Ethiopian mobiles → 09.../07..., international → +E.164.
+  const phone = normalizePhone(get('phone'))
+  if (!phone) return { status: 'error', message: PHONE_ERROR }
 
   try {
     const payload = await getPayloadClient()
@@ -87,7 +96,7 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
           childGrade,
           preferredDate: get('preferredDate') || undefined,
           preferredTime: (get('preferredTime') as 'morning' | 'afternoon') || undefined,
-          notes: get('notes', 3000) || undefined,
+          notes: getLong('notes') || undefined,
           sourcePage,
         },
       })
@@ -103,7 +112,7 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
           childAge,
           childGrade,
           preferredCampus: preferredCampus || undefined,
-          message: get('message', 3000) || undefined,
+          message: getLong('message') || undefined,
           sourcePage,
         },
       })
@@ -120,7 +129,7 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
           childAge,
           childGrade,
           interest,
-          message: get('message', 3000) || undefined,
+          message: getLong('message') || undefined,
           sourcePage,
         },
       })

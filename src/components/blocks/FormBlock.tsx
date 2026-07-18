@@ -1,7 +1,8 @@
 'use client'
 
-import { useActionState, useEffect } from 'react'
+import { useActionState, useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
+import { normalizePhone, PHONE_ERROR } from '@/lib/phone'
 import type { FormBlockType } from '@/payload-types'
 import { Container } from '@/components/ui/Container'
 import { Section, isDark, type SectionBackground } from '@/components/ui/Section'
@@ -55,6 +56,26 @@ export function FormBlock(props: FormBlockType & { anchor?: string; formToken?: 
   const [state, action, isPending] = useActionState(submitForm, initial)
   const pathname = usePathname()
 
+  // Phone is validated client-side before the action runs — staff call every
+  // lead, so a mistyped number is a lost lead. Normalized in place on blur.
+  const [phone, setPhone] = useState('')
+  const [phoneError, setPhoneError] = useState('')
+
+  const checkPhone = (): boolean => {
+    if (!phone.trim()) {
+      setPhoneError('Please add a phone number so we can call you back.')
+      return false
+    }
+    const normalized = normalizePhone(phone)
+    if (!normalized) {
+      setPhoneError(PHONE_ERROR)
+      return false
+    }
+    setPhone(normalized)
+    setPhoneError('')
+    return true
+  }
+
   const background = (props.background ?? 'offwhite') as SectionBackground
   const dark = isDark(background)
   const formType = props.formType ?? 'inquiry'
@@ -99,7 +120,13 @@ export function FormBlock(props: FormBlockType & { anchor?: string; formToken?: 
             <p className="mt-4 text-lg text-ink/80">{props.successMessage || state.message}</p>
           </div>
         ) : (
-          <form action={action} className="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:p-8">
+          <form
+            action={action}
+            onSubmit={(e) => {
+              if (!checkPhone()) e.preventDefault()
+            }}
+            className="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:p-8"
+          >
             <input type="hidden" name="formType" value={formType} />
             <input type="hidden" name="sourcePage" value={pathname} />
             {/* Server-minted signed token — proves this POST came from a rendered page, not a bot. */}
@@ -114,8 +141,31 @@ export function FormBlock(props: FormBlockType & { anchor?: string; formToken?: 
               <Field label="Email *">
                 <input name="email" type="email" required className={inputBase} autoComplete="email" />
               </Field>
-              <Field label="Phone">
-                <input name="phone" className={inputBase} autoComplete="tel" inputMode="tel" />
+              <Field label="Phone *">
+                <input
+                  name="phone"
+                  required
+                  value={phone}
+                  onChange={(e) => {
+                    setPhone(e.target.value)
+                    if (phoneError) setPhoneError('')
+                  }}
+                  onBlur={() => {
+                    if (phone.trim()) checkPhone()
+                  }}
+                  aria-invalid={phoneError ? true : undefined}
+                  aria-describedby={phoneError ? 'phone-error' : undefined}
+                  className={`${inputBase} ${phoneError ? '!border-coral focus:!ring-coral/30' : ''}`}
+                  autoComplete="tel"
+                  inputMode="tel"
+                  placeholder="e.g. 0912 345 678"
+                  maxLength={20}
+                />
+                {phoneError && (
+                  <span id="phone-error" role="alert" className="mt-1.5 block text-sm font-medium text-coral">
+                    {phoneError}
+                  </span>
+                )}
               </Field>
               <Field label="Child’s age">
                 <input name="childAge" className={inputBase} inputMode="numeric" placeholder="e.g. 5" />
