@@ -540,15 +540,15 @@ export const defaultPages: Record<string, DefaultPage> = {
   },
 
   news: {
-    title: 'News & Perspectives',
-    seoTitle: 'News & Perspectives | Nucleus International Schools',
+    title: 'The Nucleus Blog',
+    seoTitle: 'Blog | Nucleus International Schools',
     description:
-      'Stories, milestones and ideas from the Nucleus International Schools learning community at Vatican, Addis Ababa.',
+      'Stories, guides and ideas from the Nucleus International Schools learning community at Vatican, Addis Ababa.',
     layout: [
       {
         blockType: 'hero',
         background: 'purple',
-        eyebrow: 'News & Perspectives',
+        eyebrow: 'The Nucleus Blog',
         heading: 'From Our\nLearning Community',
         bgImage: '/images/stock/news-hero.webp',
         subhead: 'Stories, milestones and ideas from campus.',

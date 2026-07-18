@@ -17,7 +17,7 @@ import type { Post } from '@/payload-types'
  */
 export type LatestPostsProps = { blockType: 'latestPosts'; heading?: string; intro?: string; limit?: number }
 
-export async function LatestPostsBlock({ heading = 'News & Perspectives', intro, limit = 3 }: LatestPostsProps) {
+export async function LatestPostsBlock({ heading = 'From the Blog', intro, limit = 3 }: LatestPostsProps) {
   // Degrade gracefully: a DB hiccup (e.g. pooler limit) renders the empty state, never a 500.
   let docs: Post[] = []
   try {

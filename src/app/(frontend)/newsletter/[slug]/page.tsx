@@ -174,9 +174,17 @@ export default async function NewsletterArticlePage({ params }: Props) {
               </p>
             )}
             <h1 className="mt-4 max-w-4xl text-3xl font-bold text-white sm:text-5xl">{post.title}</h1>
-            <p className="mt-4 font-display text-sm text-pale/80">
-              {date} · {minutes} min read
-            </p>
+            <div className="mt-4 flex flex-wrap items-center gap-4">
+              <p className="font-display text-sm text-pale/80">
+                {date} · {minutes} min read
+              </p>
+              <a
+                href={`/newsletter/${slug}/pdf`}
+                className="rounded-full border border-pale/40 px-4 py-1.5 font-display text-xs font-semibold text-pale transition-colors hover:bg-white/10"
+              >
+                Download PDF ↓
+              </a>
+            </div>
           </Container>
           </div>
         </div>
@@ -308,6 +316,12 @@ export default async function NewsletterArticlePage({ params }: Props) {
                 <ButtonLink href="/register" appearance="primary" className="mt-5 w-full">
                   Register Now
                 </ButtonLink>
+                <a
+                  href={`/newsletter/${slug}/pdf`}
+                  className="mt-3 block rounded-full border border-pale/40 px-5 py-2.5 text-center font-display text-sm font-semibold text-pale transition-colors hover:bg-white/10"
+                >
+                  Download this issue (PDF)
+                </a>
               </section>
             </div>
           </aside>

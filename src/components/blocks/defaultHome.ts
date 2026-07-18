@@ -260,7 +260,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
   },
   {
     blockType: 'latestPosts',
-    heading: 'News & Perspectives',
+    heading: 'From the Blog',
     intro: 'Stories, milestones and ideas from our learning community.',
   },
 ] as RenderableBlock[]

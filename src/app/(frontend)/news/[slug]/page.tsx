@@ -57,7 +57,7 @@ export default async function PostPage({ params }: Props) {
         data={[
           buildBreadcrumbSchema([
             { name: 'Home', path: '/' },
-            { name: 'News', path: '/news' },
+            { name: 'Blog', path: '/news' },
             { name: post.title, path: `/news/${slug}` },
           ]),
           {
@@ -79,7 +79,7 @@ export default async function PostPage({ params }: Props) {
       <header className="orb-glow text-pale">
         <Container width="narrow" className="py-20 sm:py-24">
           <Link href="/news" className="font-display text-sm text-ochre hover:underline">
-            ← News &amp; Perspectives
+            ← The Nucleus Blog
           </Link>
           {post.category && (
             <p className="mt-6 font-display text-xs font-semibold uppercase tracking-[0.16em] text-ochre">

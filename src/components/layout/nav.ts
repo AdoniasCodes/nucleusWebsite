@@ -4,7 +4,8 @@ export const NAV = [
   { label: 'About', href: '/about' },
   { label: 'Academics', href: '/academics' },
   { label: 'Campus Life', href: '/campus-life' },
-  { label: 'News', href: '/news' },
   { label: 'Newsletter', href: '/newsletter' },
+  // Label is "Blog" but URLs stay /news/* — those are indexed; relabel only, no migration.
+  { label: 'Blog', href: '/news' },
   { label: 'Contact', href: '/contact' },
 ]
