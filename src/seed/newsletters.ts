@@ -147,13 +147,6 @@ const sections: SeedSection[] = [
         ],
       },
     ],
-    images: [
-      {
-        imageUrl: `${IMG}/week1-music-class.webp`,
-        alt: 'Campers seated in a circle in the music room as their teacher leads a rhythm game',
-        caption: 'Rhythm games in the music wing.',
-      },
-    ],
   },
   {
     heading: 'Camp Snapshots',
@@ -166,7 +159,6 @@ const sections: SeedSection[] = [
       { imageUrl: `${IMG}/week1-taekwondo-class.webp`, alt: 'Campers holding a taekwondo stance with their instructors' },
       { imageUrl: `${IMG}/week1-vex-robot.webp`, alt: 'A VEX robot with a red basket built in robotics class' },
       { imageUrl: `${IMG}/week1-art-class.webp`, alt: 'Campers cutting paper figures with a teacher in the art studio' },
-      { imageUrl: `${IMG}/week1-music-class.webp`, alt: 'The music room during a group rhythm activity' },
       { imageUrl: `${IMG}/week1-robot-flag-build.webp`, alt: 'A WhalesBot build with its remote control on the robotics table' },
       { imageUrl: `${IMG}/week1-shape-man-wall.webp`, alt: 'A blue paper Shape Man displayed on the classroom wall' },
     ],
