@@ -147,6 +147,13 @@ const sections: SeedSection[] = [
         ],
       },
     ],
+    images: [
+      {
+        imageUrl: `${IMG}/week1-music-keyboards.webp`,
+        alt: 'Campers playing keyboards while their music teacher guides the session in the music room',
+        caption: 'Keyboards and rhythm in the music wing.',
+      },
+    ],
   },
   {
     heading: 'Camp Snapshots',
@@ -160,6 +167,7 @@ const sections: SeedSection[] = [
       { imageUrl: `${IMG}/week1-vex-robot.webp`, alt: 'A VEX robot with a red basket built in robotics class' },
       { imageUrl: `${IMG}/week1-art-class.webp`, alt: 'Campers cutting paper figures with a teacher in the art studio' },
       { imageUrl: `${IMG}/week1-robot-flag-build.webp`, alt: 'A WhalesBot build with its remote control on the robotics table' },
+      { imageUrl: `${IMG}/week1-music-keyboards.webp`, alt: 'Campers playing keyboards with their music teacher in the music room' },
       { imageUrl: `${IMG}/week1-shape-man-wall.webp`, alt: 'A blue paper Shape Man displayed on the classroom wall' },
     ],
   },
