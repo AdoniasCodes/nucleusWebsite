@@ -11,7 +11,7 @@ import { Icon } from '@/components/ui/Icon'
 type Tile = { src: string; label: string; pill: string }
 
 const TILES: Tile[] = [
-  { src: '/images/camp/hero-robotics.webp', label: 'Robotics', pill: 'bg-periwinkle text-white' },
+  { src: '/images/camp/hero-robotics.webp', label: 'Football', pill: 'bg-periwinkle text-white' },
   { src: '/images/camp/act-basketball.webp', label: 'Sport', pill: 'bg-coral text-white' },
   { src: '/images/camp/act-taekwondo.webp', label: 'Taekwondo', pill: 'bg-ochre text-navy' },
   { src: '/images/camp/act-chess.webp', label: 'Chess', pill: 'bg-teal text-white' },
