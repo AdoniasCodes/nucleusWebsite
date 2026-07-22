@@ -151,6 +151,11 @@ export default buildConfig({
       // Idle connections are released back to the pooler quickly so dev hot-reloads don't leak.
       max: 5,
       idleTimeoutMillis: 20000,
+      // TCP keepalives + a bounded connect timeout: the local link to eu-west-2 drops idle
+      // connections intermittently, which otherwise surfaces as read ETIMEDOUT mid-query.
+      keepAlive: true,
+      keepAliveInitialDelayMillis: 5000,
+      connectionTimeoutMillis: 15000,
     },
     // Never auto-push schema in production; prod schema changes go through committed migrations.
     // PAYLOAD_SKIP_PUSH=1 lets data-only scripts (e.g. refresh:gallery) skip the slow drizzle

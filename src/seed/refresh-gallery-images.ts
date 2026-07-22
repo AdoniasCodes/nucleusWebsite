@@ -23,27 +23,48 @@ const FILES = [
   'gallery-sports.webp',
 ]
 
+/** Retry helper for a flaky link: transient ETIMEDOUT/ECONNRESET get 3 attempts with backoff. */
+async function withRetry<T>(label: string, fn: () => Promise<T>): Promise<T> {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await fn()
+    } catch (err) {
+      if (attempt >= 3) throw err
+      console.log(`  retry ${attempt}/2 for ${label} (${(err as Error).message?.slice(0, 60)})`)
+      await new Promise((r) => setTimeout(r, 4000 * attempt))
+    }
+  }
+}
+
 async function run() {
-  const payload = await getPayload({ config })
+  const payload = await withRetry('connect', () => getPayload({ config }))
   let updated = 0
 
   for (const file of FILES) {
-    const existing = await payload.find({
-      collection: 'media',
-      where: { filename: { equals: file } },
-      limit: 1,
-    })
+    // Match the base name AND suffixed re-uploads (gallery-campus-1.webp, -2, …):
+    // Payload appends a counter on every refresh because S3 keys are never overwritten.
+    const base = file.replace(/\.webp$/, '')
+    const existing = await withRetry(`find ${file}`, () =>
+      payload.find({
+        collection: 'media',
+        where: { filename: { like: base } },
+        sort: '-createdAt',
+        limit: 1,
+      }),
+    )
     const doc = existing.docs[0]
     if (!doc) {
       console.log(`  media ? ${file} (not in CMS — skipped, run seed:gallery first)`)
       continue
     }
-    await payload.update({
-      collection: 'media',
-      id: doc.id,
-      data: {},
-      filePath: path.join(STOCK_DIR, file),
-    })
+    await withRetry(`update ${file}`, () =>
+      payload.update({
+        collection: 'media',
+        id: doc.id,
+        data: {},
+        filePath: path.join(STOCK_DIR, file),
+      }),
+    )
     updated++
     console.log(`  media ~ ${file} (refreshed)`)
   }
