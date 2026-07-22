@@ -153,7 +153,9 @@ export default buildConfig({
       idleTimeoutMillis: 20000,
     },
     // Never auto-push schema in production; prod schema changes go through committed migrations.
-    push: process.env.NODE_ENV !== 'production',
+    // PAYLOAD_SKIP_PUSH=1 lets data-only scripts (e.g. refresh:gallery) skip the slow drizzle
+    // schema pull — it runs ~100 sequential queries and dies on flaky connections.
+    push: process.env.NODE_ENV !== 'production' && !process.env.PAYLOAD_SKIP_PUSH,
   }),
   sharp,
   plugins: [
