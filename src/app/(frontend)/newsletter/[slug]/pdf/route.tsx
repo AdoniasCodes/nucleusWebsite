@@ -43,6 +43,17 @@ function lexicalToBlocks(data: unknown): PdfBlock[] {
   return out
 }
 
+/** Fetch the white masthead logo as a PNG data URI (JPEG would flatten its transparency onto black). */
+async function logoDataUri(origin: string): Promise<string | undefined> {
+  try {
+    const res = await fetch(new URL('/images/newsletter/pdf-logo-white.png', origin).toString(), { cache: 'no-store' })
+    if (!res.ok) return undefined
+    return `data:image/png;base64,${Buffer.from(await res.arrayBuffer()).toString('base64')}`
+  } catch {
+    return undefined
+  }
+}
+
 /** Fetch any site image (webp/png/jpg, relative or absolute) → JPEG data URI (react-pdf has no webp support). */
 async function toJpegDataUri(url: string, origin: string, width: number): Promise<string | null> {
   try {
@@ -118,6 +129,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
     hero,
     sections: effectiveSections,
     siteHost: new URL(origin).host,
+    logoSrc: await logoDataUri(origin),
   }
 
   registerPdfFonts(origin)

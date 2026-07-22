@@ -22,6 +22,8 @@ export type PdfData = {
   hero?: PdfImage
   sections: PdfSection[]
   siteHost: string
+  /** White Nucleus wordmark (PNG data URI) shown in the masthead. */
+  logoSrc?: string
 }
 
 export function registerPdfFonts(origin: string) {
@@ -52,7 +54,9 @@ const SLATE = '#8a97a6'
 
 const s = StyleSheet.create({
   page: { paddingTop: 36, paddingHorizontal: 42, paddingBottom: 64, fontFamily: 'Lora', fontSize: 10, color: INK },
-  masthead: { backgroundColor: NAVY, borderRadius: 12, paddingVertical: 18, paddingHorizontal: 22, marginBottom: 18 },
+  masthead: { backgroundColor: NAVY, borderRadius: 12, paddingVertical: 18, paddingHorizontal: 22, marginBottom: 18, flexDirection: 'row', alignItems: 'center' },
+  // 568×429 source; keep the aspect ratio so react-pdf doesn't letterbox it.
+  mastheadLogo: { width: 76, height: 57.4, marginRight: 18 },
   mastheadKicker: { fontFamily: 'Jost', fontWeight: 500, fontSize: 8, color: PALE, letterSpacing: 1.6, textTransform: 'uppercase' },
   mastheadTitle: { fontFamily: 'Jost', fontWeight: 700, fontSize: 26, color: '#ffffff', marginTop: 4 },
   mastheadTagline: { fontFamily: 'Jost', fontWeight: 500, fontSize: 8.5, color: OCHRE, marginTop: 6 },
@@ -139,9 +143,15 @@ export function NewsletterPdf({ data }: { data: PdfData }) {
       <Page size="A4" style={s.page}>
         {/* Masthead */}
         <View style={s.masthead}>
-          <Text style={s.mastheadKicker}>Nucleus International Schools presents</Text>
-          <Text style={s.mastheadTitle}>The Nucleus Spark</Text>
-          <Text style={s.mastheadTagline}>Think Deeply. Create Boldly. Solve Truly.</Text>
+          {data.logoSrc && (
+            // eslint-disable-next-line jsx-a11y/alt-text -- react-pdf Image has no alt prop
+            <Image src={data.logoSrc} style={s.mastheadLogo} />
+          )}
+          <View>
+            <Text style={s.mastheadKicker}>Nucleus International Schools presents</Text>
+            <Text style={s.mastheadTitle}>The Nucleus Spark</Text>
+            <Text style={s.mastheadTagline}>Think Deeply. Create Boldly. Solve Truly.</Text>
+          </View>
         </View>
 
         <View style={s.seriesRow}>
@@ -210,7 +220,7 @@ export function NewsletterPdf({ data }: { data: PdfData }) {
           <Text
             style={s.footerText}
             render={({ pageNumber, totalPages }) =>
-              `${data.siteHost} · 0947 500 992 · Page ${pageNumber} of ${totalPages}`
+              `${data.siteHost} · 09 81 99 99 22 · Page ${pageNumber} of ${totalPages}`
             }
           />
         </View>
