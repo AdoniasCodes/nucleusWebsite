@@ -599,6 +599,15 @@ export interface Post {
               id?: string | null;
             }[]
           | null;
+        /**
+         * Optional local video path (e.g. /video/newsletter/...). Plays inline on the website; excluded from the PDF version.
+         */
+        videoUrl?: string | null;
+        /**
+         * Optional poster image path shown before the video plays.
+         */
+        videoPoster?: string | null;
+        videoCaption?: string | null;
         id?: string | null;
       }[]
     | null;
@@ -1169,6 +1178,9 @@ export interface PostsSelect<T extends boolean = true> {
               caption?: T;
               id?: T;
             };
+        videoUrl?: T;
+        videoPoster?: T;
+        videoCaption?: T;
         id?: T;
       };
   playlist?: T;

@@ -75,6 +75,20 @@ export const Posts: CollectionConfig = {
             { name: 'caption', type: 'text' },
           ],
         },
+        {
+          name: 'videoUrl',
+          type: 'text',
+          admin: {
+            description:
+              'Optional local video path (e.g. /video/newsletter/...). Plays inline on the website; excluded from the PDF version.',
+          },
+        },
+        {
+          name: 'videoPoster',
+          type: 'text',
+          admin: { description: 'Optional poster image path shown before the video plays.' },
+        },
+        { name: 'videoCaption', type: 'text' },
       ],
     },
     {

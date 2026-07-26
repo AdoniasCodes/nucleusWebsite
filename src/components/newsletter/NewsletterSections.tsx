@@ -33,6 +33,28 @@ function Figure({
   )
 }
 
+/** Inline camp video: web only, the PDF route ignores video fields. */
+function VideoFigure({ section, className = '' }: { section: Section; className?: string }) {
+  if (!section.videoUrl) return null
+  return (
+    <figure className={className}>
+      <div className="relative overflow-hidden rounded-2xl bg-navy/5">
+        <video
+          controls
+          playsInline
+          preload="metadata"
+          poster={section.videoPoster || undefined}
+          src={section.videoUrl}
+          className="mx-auto max-h-[34rem] w-full object-contain"
+        />
+      </div>
+      {section.videoCaption && (
+        <figcaption className="mt-2 font-display text-xs text-ink/55">{section.videoCaption}</figcaption>
+      )}
+    </figure>
+  )
+}
+
 /** Mosaic for gallery sections: first photo leads double-height, the rest tile around it. */
 function GalleryMosaic({ images }: { images: NonNullable<Section['images']> }) {
   return (
@@ -106,12 +128,13 @@ export function NewsletterSections({ sections }: { sections: NonNullable<Post['s
                 <div className="mt-6">
                   <GalleryMosaic images={images} />
                 </div>
+                <VideoFigure section={section} className="mt-6" />
               </section>
             </Reveal>
           )
         }
 
-        if (images.length === 0) {
+        if (images.length === 0 && !section.videoUrl) {
           return (
             <Reveal key={section.id ?? idx} variant="up">
               <section className="rounded-3xl bg-mist px-6 py-8 sm:px-8">
@@ -148,6 +171,7 @@ export function NewsletterSections({ sections }: { sections: NonNullable<Post['s
                     sizes="(max-width:1024px) 100vw, 40vw"
                   />
                 ))}
+                <VideoFigure section={section} />
               </div>
             </section>
           </Reveal>
