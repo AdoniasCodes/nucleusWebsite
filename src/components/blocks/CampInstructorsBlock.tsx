@@ -19,9 +19,9 @@ type Instructor = {
 const INSTRUCTORS: Instructor[] = [
   {
     name: 'Mandefro Melaku',
-    role: 'Athletic Director and Summer Camp Director',
+    role: 'Summer Camp Director',
     photo: '/images/team/mandefro-melaku.webp',
-    bio: 'MBA, BSc in Sport Science and a CAF D coaching licence. Nucleus Athletic Director with over 10 years in physical education and youth development, he designs safe, active, Cambridge-aligned camp days.',
+    bio: 'MBA, BSc in Sport Science and a CAF D coaching licence. Over 10 years in physical education and youth development, he designs safe, active, Cambridge-aligned camp days.',
   },
   {
     name: 'Ruth Derrick',

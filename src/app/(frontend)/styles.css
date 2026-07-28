@@ -226,3 +226,89 @@
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
+
+/* ── "The Nucleus Promise" band (About page) ──────────────────────────────────
+   Big statement of the five Cambridge learner attributes. Words enter with a
+   masked stagger; a duplicate overlay clipped to a circle at the pointer forms
+   the ochre reading light; the active pair ignites while siblings dim. */
+.promise-riser {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.promise-word {
+  display: inline-block;
+  transform: translateY(112%);
+}
+.promise-band.is-inview .promise-word {
+  transform: translateY(0);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--d, 0ms);
+}
+.promise-statement {
+  color: var(--color-navy);
+}
+.promise-pair {
+  transition: opacity 0.45s ease;
+}
+/* One pair lit (hover or idle cycle) → the others recede. */
+.promise-statement:has(.is-active) .promise-pair:not(.is-active),
+.promise-light:has(.is-active) .promise-pair:not(.is-active) {
+  opacity: 0.38;
+}
+.promise-pair.is-active .promise-attr .promise-word {
+  color: var(--color-ochre-600);
+  transition: color 0.35s ease;
+}
+/* Underline draws under the lit attribute. */
+.promise-attr {
+  position: relative;
+}
+.promise-attr::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0.28em;
+  bottom: 0.04em;
+  height: 0.07em;
+  border-radius: 999px;
+  background: var(--color-ochre);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.promise-pair.is-active .promise-attr::after {
+  transform: scaleX(1);
+}
+/* The reading light: an aligned copy of the statement, ochre, visible only
+   inside a circle that tracks the cursor (vars unset → circle parked offscreen). */
+.promise-light {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  pointer-events: none;
+  color: var(--color-ochre-600);
+  clip-path: circle(6.5rem at var(--cx, -50rem) var(--cy, -50rem));
+}
+.promise-light .promise-attr::after {
+  background: var(--color-navy);
+}
+@media (hover: none) {
+  .promise-light {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .promise-word {
+    transform: none !important;
+    transition: none !important;
+  }
+  .promise-pair,
+  .promise-attr::after,
+  .promise-pair.is-active .promise-attr .promise-word {
+    transition: none !important;
+  }
+  .promise-light {
+    display: none;
+  }
+}

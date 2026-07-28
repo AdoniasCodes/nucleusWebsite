@@ -97,6 +97,7 @@ export const defaultPages: Record<string, DefaultPage> = {
           { iconName: 'Award', title: 'Excellence', description: 'Striving for the highest standards in innovation, academic growth, and personal achievement.' },
         ],
       },
+      { blockType: 'learnerPromise' },
       { blockType: 'ourTeam' },
       {
         blockType: 'ctaBand',

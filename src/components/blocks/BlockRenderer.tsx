@@ -22,6 +22,7 @@ import { SummerCampHeroBlock, type SummerCampHeroProps } from './SummerCampHeroB
 import { CampInstructorsBlock, type CampInstructorsProps } from './CampInstructorsBlock'
 import { CampMomentsBlock, type CampMomentsProps } from './CampMomentsBlock'
 import { CampActivitiesBlock, type CampActivitiesProps } from './CampActivitiesBlock'
+import { LearnerPromiseBlock, type LearnerPromiseProps } from './LearnerPromiseBlock'
 import { mintFormToken } from '@/lib/formToken'
 
 /** A CMS layout block, plus the synthetic code-only blocks (homepage + inner pages). */
@@ -43,6 +44,7 @@ export type RenderableBlock =
   | CampInstructorsProps
   | CampMomentsProps
   | CampActivitiesProps
+  | LearnerPromiseProps
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
@@ -68,6 +70,7 @@ const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
   campInstructors: CampInstructorsBlock,
   campMoments: CampMomentsBlock,
   campActivities: CampActivitiesBlock,
+  learnerPromise: LearnerPromiseBlock,
 }
 
 export function BlockRenderer({ blocks }: { blocks?: RenderableBlock[] | null }) {

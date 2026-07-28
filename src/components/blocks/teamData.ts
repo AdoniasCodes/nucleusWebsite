@@ -50,6 +50,18 @@ export const TEAM: TeamMember[] = [
     ],
   },
   {
+    id: 'teklebrhan',
+    name: 'Teklebrhan Tesfaye',
+    role: 'Cambridge Coordinator',
+    dept: 'Leadership',
+    photo: '/images/team/teklebrhan-tesfaye.webp',
+    bio: [
+      'Teklebrhan Tesfay Kassaye serves as the Cambridge Coordinator at Nucleus International Schools (NIS). With over a decade of experience in academic leadership, curriculum management and English language education, Teklebrhan plays a central role in maintaining rigorous academic standards and driving educational excellence at NIS.',
+      'He holds a Bachelor of Arts in English Language and Literature from Arba Minch University and is a certified Cambridge Examination Officer. His extensive professional background includes serving as Cambridge Coordinator and Department Head at International Maarif Schools of Ethiopia, as well as teaching roles at prestigious institutions like Lideta Catholic Cathedral School.',
+      'Teklebrhan has completed specialized training through Cambridge Assessment International Education, the British Council and Kotebe University of Education, covering areas such as exam security protocols, active learning methodologies, learner-centered instruction and teacher supervision. At NIS, he is dedicated to ensuring seamless Cambridge curriculum delivery, fostering teacher professional development, and empowering students to achieve their full potential as global citizens.',
+    ],
+  },
+  {
     id: 'meaza',
     name: 'Meaza Mekuria',
     role: 'HR & Admin Manager',
@@ -74,12 +86,12 @@ export const TEAM: TeamMember[] = [
   {
     id: 'mandefro',
     name: 'Mandefro Melaku',
-    role: 'Athletic Director and Summer Camp Director',
+    role: 'Summer Camp Director',
     dept: 'PE & Sports',
     photo: '/images/team/mandefro-melaku.webp',
     bio: [
       'Mandefro brings over 10 years of experience in physical education, youth development and sports coaching. He holds an MBA, a BSc in Sport Science and a CAF D Football Coaching License, and has served as a PE teacher at leading international schools while coaching youth football and wellness programs.',
-      'As Athletic Director he leads the school’s PE and sports programs year-round, drawing on his expertise in the Cambridge curriculum, student leadership and holistic child development. As Summer Camp Director he designs camp experiences that build confidence, teamwork and creativity, so every child enjoys a safe, enriching and memorable summer.',
+      'He supports the school’s PE and sports programs, drawing on his expertise in the Cambridge curriculum, student leadership and holistic child development. As Summer Camp Director he designs camp experiences that build confidence, teamwork and creativity, so every child enjoys a safe, enriching and memorable summer.',
     ],
   },
   {
