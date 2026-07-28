@@ -58,7 +58,7 @@ const s = StyleSheet.create({
   // 568×429 source; keep the aspect ratio so react-pdf doesn't letterbox it.
   mastheadLogo: { width: 76, height: 57.4, marginRight: 18 },
   mastheadKicker: { fontFamily: 'Jost', fontWeight: 500, fontSize: 8, color: PALE, letterSpacing: 1.6, textTransform: 'uppercase' },
-  mastheadTitle: { fontFamily: 'Jost', fontWeight: 700, fontSize: 26, color: '#ffffff', marginTop: 4 },
+  mastheadTitle: { fontFamily: 'Jost', fontWeight: 700, fontSize: 24, color: '#ffffff', marginTop: 4, textTransform: 'uppercase', letterSpacing: 1.5 },
   mastheadTagline: { fontFamily: 'Jost', fontWeight: 500, fontSize: 8.5, color: OCHRE, marginTop: 6 },
   seriesRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 8 },
   seriesChip: { backgroundColor: OCHRE, color: NAVY, fontFamily: 'Jost', fontWeight: 700, fontSize: 8, paddingVertical: 3, paddingHorizontal: 9, borderRadius: 9 },
@@ -149,7 +149,7 @@ export function NewsletterPdf({ data }: { data: PdfData }) {
           )}
           <View>
             <Text style={s.mastheadKicker}>Nucleus International Schools presents</Text>
-            <Text style={s.mastheadTitle}>The Nucleus Spark</Text>
+            <Text style={s.mastheadTitle}>Inside Nucleus</Text>
             <Text style={s.mastheadTagline}>Think Deeply. Create Boldly. Solve Truly.</Text>
           </View>
         </View>

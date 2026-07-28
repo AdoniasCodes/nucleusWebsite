@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${data.playlist.title}: Newsletter Series`,
     description:
       data.playlist.description ||
-      `All parts of the ${data.playlist.title} series from The Nucleus Spark, the Nucleus International Schools newsletter.`,
+      `All parts of the ${data.playlist.title} series from Inside Nucleus, the Nucleus International Schools newsletter.`,
     alternates: { canonical: `/newsletter/series/${slug}` },
     openGraph: { title: data.playlist.title, url: `/newsletter/series/${slug}` },
   }
@@ -102,7 +102,7 @@ export default async function SeriesPage({ params }: Props) {
                 href="/newsletter"
                 className="font-display text-sm font-medium text-pale/90 transition-colors hover:text-white"
               >
-                ← The Nucleus Spark
+                ← Inside Nucleus
               </Link>
               <p className="mt-5 font-display text-xs font-semibold uppercase tracking-[0.14em] text-ochre">
                 Newsletter series

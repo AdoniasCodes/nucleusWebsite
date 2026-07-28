@@ -160,7 +160,7 @@ export default async function NewsletterArticlePage({ params }: Props) {
               href="/newsletter"
               className="font-display text-sm font-medium text-pale/90 transition-colors hover:text-white"
             >
-              ← The Nucleus Spark
+              ← Inside Nucleus
             </Link>
             {playlist && (
               <p className="mt-5">

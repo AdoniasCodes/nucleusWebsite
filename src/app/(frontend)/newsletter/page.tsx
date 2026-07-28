@@ -16,12 +16,12 @@ import type { Playlist, Post } from '@/payload-types'
 export const revalidate = 300
 
 export const metadata: Metadata = {
-  title: 'Newsletter: The Nucleus Spark',
+  title: 'Newsletter: Inside Nucleus',
   description:
-    'The Nucleus Spark is the newsletter of Nucleus International Schools in Addis Ababa: weekly updates, school news, summer camp recaps, monthly highlights and practical information for parents.',
+    'Inside Nucleus is the newsletter of Nucleus International Schools in Addis Ababa: weekly updates, school news, summer camp recaps, monthly highlights and practical information for parents.',
   alternates: { canonical: '/newsletter' },
   openGraph: {
-    title: 'The Nucleus Spark: the Nucleus International Schools newsletter',
+    title: 'Inside Nucleus: the Nucleus International Schools newsletter',
     description:
       'Weekly updates, school news, summer camp recaps and monthly highlights from Nucleus International Schools, Addis Ababa.',
     url: '/newsletter',
@@ -87,7 +87,7 @@ export default async function NewsletterPage() {
             '@context': 'https://schema.org',
             '@type': 'Blog',
             '@id': `${SERVER_URL}/newsletter#blog`,
-            name: 'The Nucleus Spark',
+            name: 'Inside Nucleus',
             description:
               'The newsletter of Nucleus International Schools: weekly updates, school news, summer camp recaps and monthly highlights for parents and the public.',
             url: `${SERVER_URL}/newsletter`,
@@ -106,8 +106,8 @@ export default async function NewsletterPage() {
       <header className="border-b border-navy/10 bg-white">
         <Container className="pb-10 pt-12 text-center sm:pb-12 sm:pt-16">
           <p className="font-display text-sm font-medium text-ink/60">Nucleus International Schools presents</p>
-          <h1 className="mx-auto mt-3 max-w-4xl font-display text-[clamp(2.6rem,7vw,5rem)] font-bold leading-none text-navy">
-            The Nucleus Spark
+          <h1 className="mx-auto mt-3 max-w-4xl font-display text-[clamp(2.4rem,6.5vw,4.6rem)] font-bold uppercase leading-none tracking-[0.06em] text-navy">
+            Inside Nucleus
           </h1>
           <div className="woven-rule mx-auto mt-6 h-1 w-40" aria-hidden />
           <p className="mx-auto mt-5 max-w-2xl text-ink/75">
@@ -164,7 +164,7 @@ export default async function NewsletterPage() {
         </section>
       ) : (
         <Container className="py-20 text-center text-ink/60">
-          <p>The first issue of The Nucleus Spark is on its way. Check back soon.</p>
+          <p>The first issue of Inside Nucleus is on its way. Check back soon.</p>
         </Container>
       )}
 
@@ -206,7 +206,7 @@ export default async function NewsletterPage() {
           <div className="rounded-3xl bg-mist px-6 py-8 sm:px-10 sm:py-10">
             <h2 className="text-xl font-bold text-navy sm:text-2xl">What you will find here</h2>
             <p className="mt-3 max-w-3xl text-ink/75">
-              The Nucleus Spark shares weekly updates from our classrooms and campuses in Addis
+              Inside Nucleus shares weekly updates from our classrooms and campuses in Addis
               Ababa, recaps of programs like Nucleus Summer Camp, monthly school highlights,
               teacher takeaways and practical information for parents. New issues are published
               every week during term and camp season.

@@ -34,7 +34,10 @@ function Risers({ text, from }: { text: string; from: number }) {
       {text.split(' ').map((word, i) => (
         <span key={i}>
           <span className="promise-riser">
-            <span className="promise-word" style={{ ['--d' as string]: `${(from + i) * 60}ms` }}>
+            <span
+              className="promise-word"
+              style={{ ['--d' as string]: `${(from + i) * 35}ms`, ['--i' as string]: from + i }}
+            >
               {word}
             </span>
           </span>{' '}
@@ -87,7 +90,7 @@ export function LearnerPromiseBlock({
           io.disconnect()
         }
       },
-      { threshold: 0.25 },
+      { threshold: 0.15 },
     )
     io.observe(el)
     return () => io.disconnect()
@@ -148,11 +151,11 @@ export function LearnerPromiseBlock({
             {eyebrow}
           </p>
           <Image
-            src="/images/nucleus-cambridge-logo.webp"
+            src="/images/logo-header.webp"
             alt="Nucleus International Schools and Cambridge International Education"
-            width={1206}
-            height={243}
-            className="h-10 w-auto sm:h-12"
+            width={950}
+            height={324}
+            className="h-14 w-auto sm:h-16"
           />
         </div>
 
@@ -167,9 +170,24 @@ export function LearnerPromiseBlock({
           </p>
         </div>
 
-        <p className="mt-6 font-display text-xs tracking-wide text-ink/45">
-          The five attributes of the Cambridge learner, lived daily at Nucleus.
-        </p>
+        <figure className="promise-attrib mt-8 flex items-center gap-4">
+          <Image
+            src="/images/team/teklebrhan-tesfaye.webp"
+            alt="Teklebrhan Tesfaye, Cambridge Coordinator at Nucleus International Schools"
+            width={112}
+            height={112}
+            className="h-14 w-14 rounded-full border-2 border-ochre/60 object-cover object-[center_18%] sm:h-16 sm:w-16"
+          />
+          <figcaption>
+            <p className="font-display text-base font-semibold text-navy">Teklebrhan Tesfaye</p>
+            <p className="font-display text-sm text-ochre-600">
+              Cambridge Coordinator, Nucleus International Schools
+            </p>
+            <p className="mt-1 font-display text-xs tracking-wide text-ink/45">
+              The five attributes of the Cambridge learner, lived daily at Nucleus.
+            </p>
+          </figcaption>
+        </figure>
 
         <div className="mt-12 flex flex-wrap items-baseline gap-x-4 gap-y-2 border-t border-navy/10 pt-6">
           <p className="font-display text-base font-semibold text-navy">

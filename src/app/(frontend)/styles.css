@@ -240,9 +240,12 @@
   display: inline-block;
   transform: translateY(112%);
 }
+.promise-band {
+  view-timeline: --promise block;
+}
 .promise-band.is-inview .promise-word {
   transform: translateY(0);
-  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--d, 0ms);
 }
 .promise-statement {
@@ -293,15 +296,68 @@
 .promise-light .promise-attr::after {
   background: var(--color-navy);
 }
+/* Attribution fades up once the statement has finished rising. */
+.promise-attrib {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.promise-band.is-inview .promise-attrib {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0.45s;
+}
 @media (hover: none) {
   .promise-light {
     display: none;
   }
+  /* Touch devices: the entrance scrubs with the user's scroll instead of playing
+     on a timer — each word rises as the band moves up through the viewport,
+     staggered by its position in the statement. Older browsers without
+     scroll-driven animations keep the fast IntersectionObserver entrance. */
+  @supports (animation-timeline: --promise) {
+    .promise-band .promise-word {
+      transform: translateY(112%);
+      transition: none;
+      animation: promiseRise 1s linear both;
+      animation-timeline: --promise;
+      animation-range: entry calc(18% + var(--i, 0) * 1.6%) entry calc(48% + var(--i, 0) * 1.6%);
+    }
+    .promise-band .promise-attrib {
+      transition: none;
+      animation: promiseFadeUp 1s linear both;
+      animation-timeline: --promise;
+      animation-range: entry 55% entry 90%;
+    }
+  }
+}
+@keyframes promiseRise {
+  from {
+    transform: translateY(112%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes promiseFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .promise-word {
+  .promise-word,
+  .promise-attrib {
+    opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+    animation: none !important;
   }
   .promise-pair,
   .promise-attr::after,
