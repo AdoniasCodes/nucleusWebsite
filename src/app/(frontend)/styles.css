@@ -233,15 +233,15 @@
    the ochre reading light; the active pair ignites while siblings dim. */
 .promise-riser {
   display: inline-block;
+  /* clip, not hidden: hidden makes the riser a scroll container, which would
+     hijack the words' view() timelines on mobile. hidden kept as old-browser fallback. */
   overflow: hidden;
+  overflow: clip;
   vertical-align: bottom;
 }
 .promise-word {
   display: inline-block;
   transform: translateY(112%);
-}
-.promise-band {
-  view-timeline: --promise block;
 }
 .promise-band.is-inview .promise-word {
   transform: translateY(0);
@@ -314,22 +314,23 @@
     display: none;
   }
   /* Touch devices: the entrance scrubs with the user's scroll instead of playing
-     on a timer — each word rises as the band moves up through the viewport,
-     staggered by its position in the statement. Older browsers without
-     scroll-driven animations keep the fast IntersectionObserver entrance. */
-  @supports (animation-timeline: --promise) {
+     on a timer. Each word drives its OWN view() timeline: it starts rising the
+     moment it appears at the bottom edge of the screen (cover 0%) and is fully
+     risen by the time it reaches the middle (cover 45%), line by line. Older
+     browsers without scroll-driven animations keep the fast IO entrance. */
+  @supports (animation-timeline: view()) {
     .promise-band .promise-word {
       transform: translateY(112%);
       transition: none;
       animation: promiseRise 1s linear both;
-      animation-timeline: --promise;
-      animation-range: entry calc(18% + var(--i, 0) * 1.6%) entry calc(48% + var(--i, 0) * 1.6%);
+      animation-timeline: view();
+      animation-range: cover 0% cover 45%;
     }
     .promise-band .promise-attrib {
       transition: none;
       animation: promiseFadeUp 1s linear both;
-      animation-timeline: --promise;
-      animation-range: entry 55% entry 90%;
+      animation-timeline: view();
+      animation-range: cover 0% cover 40%;
     }
   }
 }
