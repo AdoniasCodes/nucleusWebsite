@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Media } from '@/components/ui/Media'
+import { ButtonLink } from '@/components/ui/Button'
 import { Orb } from '@/components/ui/Orb'
 import { Reveal } from '@/components/ui/Reveal'
 import { getPayloadClient } from '@/lib/payload'
@@ -75,6 +76,15 @@ export async function LatestPostsBlock({ heading = 'From the Blog', intro, limit
               </Reveal>
             ))}
           </div>
+        )}
+        {docs.length > 0 && (
+          <Reveal variant="up" delay={docs.length * 110}>
+            <div className="mt-10 flex justify-center">
+              <ButtonLink href="/news" appearance="outline">
+                See more blogs
+              </ButtonLink>
+            </div>
+          </Reveal>
         )}
       </Container>
     </Section>

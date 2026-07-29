@@ -22,6 +22,7 @@ import { StaffProfiles } from './collections/StaffProfiles'
 import { AdmissionsInquiries } from './collections/AdmissionsInquiries'
 import { TourBookings } from './collections/TourBookings'
 import { SummerCampRegistrations } from './collections/SummerCampRegistrations'
+import { AdmissionApplications } from './collections/AdmissionApplications'
 import { Redirects } from './collections/Redirects'
 
 // Globals
@@ -125,6 +126,7 @@ export default buildConfig({
     AdmissionsInquiries,
     TourBookings,
     SummerCampRegistrations,
+    AdmissionApplications,
     Redirects,
     Users,
   ],

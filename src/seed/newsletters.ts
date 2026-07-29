@@ -5,21 +5,49 @@ import { richTextFromBlocks, type ContentBlock } from '../lib/lexical'
 import type { Post } from '../payload-types'
 
 /**
- * Seeds the newsletter: the "Nucleus International School Summer Camp 2026"
- * series (playlist) and its weekly recap articles.
- * Re-runnable — upserts the playlist by slug and recreates each article by slug.
+ * Seeds the newsletter: every series (playlist) and the articles inside them.
+ * Re-runnable — upserts each playlist by slug and recreates each article by slug.
  * Run: `npm run seed:newsletters`
+ *
+ * To add a series: append to SERIES, then give its issues the matching `seriesSlug`.
  */
 
 const IMG = '/images/newsletter/summer-camp-2026'
+const CBT = '/images/newsletter/teachers-cbt'
 
-const PLAYLIST = {
-  title: 'Nucleus International School Summer Camp 2026',
-  slug: 'summer-camp-2026',
-  description:
-    'Weekly recaps of Nucleus Summer Camp 2026: photos from our campuses, what campers built and learned each week, and takeaways from our staff and camp teachers.',
-  coverImageUrl: `${IMG}/week1-taekwondo-class.webp`,
+type SeedSeries = {
+  title: string
+  slug: string
+  description: string
+  coverImageUrl: string
+  /** Cross-links appended to every article in this series. */
+  related: { label: string; url: string }[]
 }
+
+const SERIES: SeedSeries[] = [
+  {
+    title: 'Nucleus International School Summer Camp 2026',
+    slug: 'summer-camp-2026',
+    description:
+      'Weekly recaps of Nucleus Summer Camp 2026: photos from our campuses, what campers built and learned each week, and takeaways from our staff and camp teachers.',
+    coverImageUrl: `${IMG}/week1-taekwondo-class.webp`,
+    related: [
+      { label: 'Explore Nucleus Summer Camp & reserve a spot', url: '/summer-camp' },
+      { label: 'Inside Nucleus Summer Camp 2026', url: '/news/nucleus-summer-camp-2026' },
+    ],
+  },
+  {
+    title: 'The Educators’ Core: Teachers’ Capacity Building Training',
+    slug: 'teachers-capacity-building',
+    description:
+      'The continuous professional development newsletter of Nucleus International Schools. Each issue documents one module of our Teachers’ Capacity Building Training programme — the practical tools, global strategies and pedagogical backing behind our classrooms.',
+    coverImageUrl: `${CBT}/cbt01-ei-session.webp`,
+    related: [
+      { label: 'Meet the team behind the training', url: '/about' },
+      { label: 'The Cambridge pathway at Nucleus', url: '/cambridge-pathway' },
+    ],
+  },
+]
 
 type SeedSection = {
   heading?: string
@@ -367,7 +395,80 @@ const week2Sections: SeedSection[] = [
   },
 ]
 
+/* ------------------------------------------------------------------------------
+ * The Educators' Core — Issue 01: Emotional Intelligence
+ * Source: the CBT programme doc from leadership (Vatican Campus session, July 2026).
+ * ---------------------------------------------------------------------------- */
+const cbt01Sections: SeedSection[] = [
+  {
+    heading: 'A Message from Leadership',
+    body: [
+      {
+        p: 'Welcome to the inaugural edition of The Educators\u2019 Core. As we roll out our Teachers\u2019 Capacity Building Training programme across our campuses, the goal is a simple one: to give our teachers the practical tools, global strategies and pedagogical backing they need to lead a modern classroom.',
+      },
+      {
+        p: 'Aligned with our standards and our commitment to excellence, this series will document that professional development journey step by step, module by module, so that what one campus learns, every campus learns.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${CBT}/cbt01-ei-session.webp`,
+        alt: 'A facilitator leading the Emotional Intelligence session for Nucleus teachers at the Vatican campus',
+        caption: 'The first Capacity Building Training session, Vatican Campus.',
+      },
+    ],
+  },
+  {
+    heading: 'Module Spotlight: Emotional Intelligence',
+    body: [
+      {
+        p: 'Teaching is an emotional endeavour as much as an intellectual one. Before a student can learn from us, they must feel safe, seen and understood by us. Our inaugural session at the Vatican Campus focused on emotional intelligence in the classroom \u2014 what it is, and what it changes on an ordinary Tuesday morning.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${CBT}/cbt01-participants.webp`,
+        alt: 'Nucleus teachers taking notes during the Emotional Intelligence module of the Capacity Building Training',
+        caption: 'Teachers from across the school, working through the module together.',
+      },
+    ],
+  },
+  {
+    heading: 'Key Takeaways from the Training',
+    style: 'highlight',
+    body: [
+      {
+        ul: [
+          'Self-awareness is a teaching tool. High-performing educators recognise their own emotional triggers \u2014 and when we regulate our own state, we co-regulate our students.',
+          'Empathy is classroom management. Disruptive behaviour is often a request for support. Empathy lets us address the root cause of a disruption without damaging the relationship.',
+          'Social-emotional learning belongs in the lesson. Integrating short emotional check-ins into daily lessons improves academic endurance, resilience and exam performance.',
+        ],
+      },
+    ],
+  },
+  {
+    heading: 'Practical Classroom Tip of the Week',
+    body: [
+      {
+        p: 'The 10-second pause. Before responding to a challenging behavioural moment in class, take a full ten seconds. Ask yourself: am I reacting out of frustration, or responding to help this student learn?',
+      },
+      {
+        p: 'It is one habit, and it costs ten seconds \u2014 but it shifts a teacher\u2019s posture from reactive to responsive, and students feel the difference immediately.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${CBT}/cbt01-group-activity.webp`,
+        alt: 'Nucleus staff working through a group activity on a whiteboard during the training session',
+        caption: 'Working the ideas through as a group, not just hearing them.',
+      },
+    ],
+  },
+]
+
 type SeedIssue = {
+  /** Which SERIES entry this issue belongs to. */
+  seriesSlug: string
   article: {
     title: string
     slug: string
@@ -382,6 +483,7 @@ type SeedIssue = {
 
 const ISSUES: SeedIssue[] = [
   {
+    seriesSlug: 'summer-camp-2026',
     article: {
       title: 'Nucleus Summer Camp 2026, Week 1 Recap: Robotics, Art, Sports and Music',
       slug: 'summer-camp-2026-week-1-recap',
@@ -399,6 +501,7 @@ const ISSUES: SeedIssue[] = [
     sections: week1Sections,
   },
   {
+    seriesSlug: 'summer-camp-2026',
     article: {
       title: 'Nucleus Summer Camp 2026, Week 2 Recap: Confidence, Coding and Creativity',
       slug: 'summer-camp-2026-week-2-recap',
@@ -415,38 +518,60 @@ const ISSUES: SeedIssue[] = [
     },
     sections: week2Sections,
   },
+  {
+    seriesSlug: 'teachers-capacity-building',
+    article: {
+      title: 'The Educators\u2019 Core, Issue 01: Emotional Intelligence, the Heart of Effective Teaching',
+      slug: 'educators-core-issue-01-emotional-intelligence',
+      excerpt:
+        'The first issue of our professional development newsletter: why teaching is an emotional endeavour as much as an intellectual one, three takeaways from our inaugural training session at the Vatican campus, and the ten-second habit that makes a teacher responsive.',
+      heroImageUrl: `${CBT}/cbt01-ei-session.webp`,
+      publishedAt: '2026-07-28T15:00:00.000Z',
+      playlistPart: 1,
+      meta: {
+        title: 'Emotional Intelligence in the Classroom | Nucleus Teachers\u2019 Capacity Building Training',
+        description:
+          'Issue 01 of The Educators\u2019 Core, the professional development newsletter of Nucleus International Schools: emotional intelligence in the classroom, self-awareness, empathy-driven classroom management and social-emotional learning.',
+      },
+    },
+    sections: cbt01Sections,
+  },
 ]
 
 /** Flatten an issue's visual sections into plain richText for the content fallback + search. */
-const contentBlocksFor = (sections: SeedSection[]): ContentBlock[] => {
+const contentBlocksFor = (sections: SeedSection[], related: SeedSeries['related']): ContentBlock[] => {
   const blocks = sections.flatMap((s): ContentBlock[] => [
     ...(s.heading ? [{ h2: s.heading }] : []),
     ...s.body,
   ])
-  blocks.push({
-    related: [
-      { label: 'Explore Nucleus Summer Camp & reserve a spot', url: '/summer-camp' },
-      { label: 'Inside Nucleus Summer Camp 2026', url: '/news/nucleus-summer-camp-2026' },
-    ],
-  })
+  blocks.push({ related })
   return blocks
 }
 
 const run = async () => {
   const payload = await getPayload({ config })
 
-  // Upsert the series (playlist) by slug — never delete it, articles point at it.
-  const existing = await payload.find({
-    collection: 'playlists',
-    where: { slug: { equals: PLAYLIST.slug } },
-    limit: 1,
-  })
-  const playlist = existing.docs[0]
-    ? await payload.update({ collection: 'playlists', id: existing.docs[0].id, data: PLAYLIST })
-    : await payload.create({ collection: 'playlists', data: PLAYLIST })
-  console.log('playlist ready:', playlist.slug, `(#${playlist.id})`)
+  // Upsert every series (playlist) by slug — never delete them, articles point at them.
+  const playlistIds = new Map<string, number>()
+  const relatedBySeries = new Map<string, SeedSeries['related']>()
+  for (const series of SERIES) {
+    const { related, ...data } = series
+    const existing = await payload.find({
+      collection: 'playlists',
+      where: { slug: { equals: series.slug } },
+      limit: 1,
+    })
+    const playlist = existing.docs[0]
+      ? await payload.update({ collection: 'playlists', id: existing.docs[0].id, data })
+      : await payload.create({ collection: 'playlists', data })
+    playlistIds.set(series.slug, playlist.id as number)
+    relatedBySeries.set(series.slug, related)
+    console.log('playlist ready:', playlist.slug, `(#${playlist.id})`)
+  }
 
-  for (const { article, sections } of ISSUES) {
+  for (const { seriesSlug, article, sections } of ISSUES) {
+    const playlistId = playlistIds.get(seriesSlug)
+    if (!playlistId) throw new Error(`Unknown seriesSlug "${seriesSlug}" on article "${article.slug}"`)
     await payload.delete({ collection: 'posts', where: { slug: { equals: article.slug } } }).catch(() => {})
     await payload.create({
       collection: 'posts',
@@ -457,10 +582,12 @@ const run = async () => {
         excerpt: article.excerpt,
         heroImageUrl: article.heroImageUrl,
         publishedAt: article.publishedAt,
-        playlist: playlist.id,
+        playlist: playlistId,
         playlistPart: article.playlistPart,
         meta: article.meta,
-        content: richTextFromBlocks(contentBlocksFor(sections)) as unknown as Post['content'],
+        content: richTextFromBlocks(
+          contentBlocksFor(sections, relatedBySeries.get(seriesSlug) ?? []),
+        ) as unknown as Post['content'],
         sections: sections.map((s) => ({
           heading: s.heading,
           style: s.style ?? 'auto',

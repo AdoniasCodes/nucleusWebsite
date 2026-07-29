@@ -61,6 +61,13 @@ export const TourBookings: CollectionConfig = {
         },
       ],
     },
+    {
+      name: 'heardAbout',
+      type: 'text',
+      label: 'How they heard about us',
+      maxLength: 100,
+      admin: { description: 'Marketing attribution, chosen by the parent on the contact form.' },
+    },
     { name: 'notes', type: 'textarea', maxLength: 3000 },
     {
       name: 'sourcePage',

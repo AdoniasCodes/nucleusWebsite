@@ -200,7 +200,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     items: [
       { q: 'What curriculum does Nucleus follow?', a: 'The Cambridge pathway, from the early years through Grade 8 — a portable, internationally recognised education.' },
       { q: 'What ages does Nucleus accept?', a: 'Children from age 2 through Grade 8, on a single planned journey from the early years into the Cambridge primary and middle years.' },
-      { q: 'Where is Nucleus located?', a: 'Our grade school campus is at Sarbet Vatican, Addis Ababa — behind the Embassy of Indonesia — and our preschool campus is at Mekanisa Abo Square.' },
+      { q: 'Where is Nucleus located?', a: 'We have three campuses in Addis Ababa: the Vatican grade school campus (behind the Vatican Embassy), the Abo preschool campus (100 m from Mekanisa Abo Square) and the Totot campus (behind World Vision).' },
       { q: 'How much are the fees?', a: 'We keep fees transparent, with no hidden capital-fee surprises. Request the full fee sheet and we’ll send it directly.' },
       { q: 'How safe is the campus?', a: 'Safety comes first — a secure, supervised campus with controlled access is the foundation of everything we do.' },
       { q: 'Is an international school worth it compared to a local school?', a: 'A good international school gives a portable, globally recognised education, smaller classes and learning beyond the textbook. It costs more, so the value depends on the school delivering it in practice — which is why we encourage you to visit and see for yourself.' },
@@ -222,19 +222,19 @@ export const defaultHomeLayout: RenderableBlock[] = [
     blockType: 'map',
     eyebrow: 'Visit Nucleus',
     heading: 'Find Us in Addis Ababa',
-    intro: 'Two campuses, easy to reach from Bole, Old Airport, Kazanchis and Gerji — come and see a full life in motion.',
+    intro: 'Three campuses, easy to reach from Bole, Old Airport, Kazanchis and Gerji — come and see a full life in motion.',
     campuses: [
       {
         name: 'Grade School Campus',
         embedSrc: 'https://www.google.com/maps?q=Nucleus+International+Schools,+Addis+Ababa&z=17&hl=en&output=embed',
         directionsUrl: 'https://maps.app.goo.gl/DHQMbtpZc7PBDWEF8',
-        streetAddress: 'Sarbet Vatican, 50 metres behind the Embassy of Indonesia',
+        streetAddress: 'Sarbet Vatican, 50 metres behind the Vatican Embassy',
         telephone: ['0981999922', '0981999933'],
         rows: [
           {
             iconName: 'MapPin',
             title: 'Grade School Campus Address',
-            description: 'Sarbet Vatican Campus, 50 metres behind Embassy of Indonesia, Addis Ababa, Ethiopia.',
+            description: 'Sarbet Vatican Campus, 50 metres behind the Vatican Embassy, Addis Ababa, Ethiopia.',
           },
           { iconName: 'Phone', title: 'Call Us', description: '09 81 99 99 22 · 09 81 99 99 33' },
           { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
@@ -251,6 +251,23 @@ export const defaultHomeLayout: RenderableBlock[] = [
             iconName: 'MapPin',
             title: 'Preschool Campus Address',
             description: 'Abo Mekanisa Campus, 100 metres from Mekanisa Abo Square, Addis Ababa, Ethiopia.',
+          },
+          { iconName: 'Phone', title: 'Call Us', description: '09 81 99 99 22 · 09 81 99 99 33' },
+          { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
+        ],
+      },
+      {
+        name: 'Totot Campus',
+        // TODO(Eyoel): replace with the exact Google Maps pin for the Totot campus.
+        embedSrc: 'https://www.google.com/maps?q=World+Vision+Ethiopia,+Addis+Ababa&z=17&hl=en&output=embed',
+        directionsUrl: 'https://www.google.com/maps/search/?api=1&query=World+Vision+Ethiopia,+Addis+Ababa',
+        streetAddress: 'Totot, behind World Vision, Addis Ababa',
+        telephone: ['0981999922', '0981999933'],
+        rows: [
+          {
+            iconName: 'MapPin',
+            title: 'Totot Campus Address',
+            description: 'Totot Campus, behind World Vision, Addis Ababa, Ethiopia.',
           },
           { iconName: 'Phone', title: 'Call Us', description: '09 81 99 99 22 · 09 81 99 99 33' },
           { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },

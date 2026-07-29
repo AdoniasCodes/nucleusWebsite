@@ -78,6 +78,7 @@ export interface Config {
     'admissions-inquiries': AdmissionsInquiry;
     'tour-bookings': TourBooking;
     'summer-camp-registrations': SummerCampRegistration;
+    'admission-applications': AdmissionApplication;
     redirects: Redirect;
     users: User;
     'payload-kv': PayloadKv;
@@ -98,6 +99,7 @@ export interface Config {
     'admissions-inquiries': AdmissionsInquiriesSelect<false> | AdmissionsInquiriesSelect<true>;
     'tour-bookings': TourBookingsSelect<false> | TourBookingsSelect<true>;
     'summer-camp-registrations': SummerCampRegistrationsSelect<false> | SummerCampRegistrationsSelect<true>;
+    'admission-applications': AdmissionApplicationsSelect<false> | AdmissionApplicationsSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -764,6 +766,10 @@ export interface TourBooking {
   childAgeOrGrade?: string | null;
   preferredDate?: string | null;
   preferredTime?: ('morning' | 'afternoon') | null;
+  /**
+   * Marketing attribution, chosen by the parent on the contact form.
+   */
+  heardAbout?: string | null;
   notes?: string | null;
   sourcePage?: string | null;
   status?: ('new' | 'confirmed' | 'completed' | 'cancelled') | null;
@@ -788,6 +794,103 @@ export interface SummerCampRegistration {
    */
   sourcePage?: string | null;
   status?: ('new' | 'confirmed' | 'completed' | 'cancelled') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "admission-applications".
+ */
+export interface AdmissionApplication {
+  id: number;
+  /**
+   * Auto-composed from the child’s first / middle / last name on submit.
+   */
+  studentName: string;
+  previousSchool?: string | null;
+  previousCurriculum?: string | null;
+  currentGrade?: string | null;
+  gradeApplyingTo?: string | null;
+  preferredCampus?: string | null;
+  /**
+   * Date the parent submitted the form (YYYY-MM-DD).
+   */
+  applicationDate?: string | null;
+  childFirstName: string;
+  childMiddleName?: string | null;
+  childLastName: string;
+  gender?: ('male' | 'female') | null;
+  /**
+   * YYYY-MM-DD
+   */
+  dateOfBirth?: string | null;
+  placeOfBirth?: string | null;
+  nationality?: string | null;
+  citizenship?: string | null;
+  passportNumber?: string | null;
+  motherTongue?: string | null;
+  secondLanguage?: string | null;
+  /**
+   * Which parent/guardian the school should contact first.
+   */
+  primaryContact?: string | null;
+  fatherSalutation?: string | null;
+  fatherFirstName?: string | null;
+  fatherMiddleName?: string | null;
+  fatherLastName?: string | null;
+  fatherNationality?: string | null;
+  fatherOccupation?: string | null;
+  fatherPassport?: string | null;
+  fatherPassportExpiry?: string | null;
+  fatherNationalId?: string | null;
+  fatherMobile?: string | null;
+  fatherBusinessPhone?: string | null;
+  fatherEmergencyPhone?: string | null;
+  fatherEmail?: string | null;
+  fatherWorkEmail?: string | null;
+  motherSalutation?: string | null;
+  motherFirstName?: string | null;
+  motherMiddleName?: string | null;
+  motherLastName?: string | null;
+  motherNationality?: string | null;
+  motherOccupation?: string | null;
+  motherPassport?: string | null;
+  motherPassportExpiry?: string | null;
+  motherNationalId?: string | null;
+  motherMobile?: string | null;
+  motherBusinessPhone?: string | null;
+  motherEmergencyPhone?: string | null;
+  motherEmail?: string | null;
+  motherWorkEmail?: string | null;
+  hasSiblings?: boolean | null;
+  isStaffChild?: boolean | null;
+  siblingDetails?: string | null;
+  hasHealthConditions?: boolean | null;
+  needsTreatment?: boolean | null;
+  healthDetails?: string | null;
+  hasLearningNeeds?: boolean | null;
+  hasDisability?: boolean | null;
+  learningNeedsDetails?: string | null;
+  hasAllergies?: boolean | null;
+  allergyDetails?: string | null;
+  cat4Verbal?: string | null;
+  cat4Quantitative?: string | null;
+  cat4NonVerbal?: string | null;
+  cat4Spatial?: string | null;
+  mediaConsent?: boolean | null;
+  parentsSeparated?: boolean | null;
+  transportInterest?: boolean | null;
+  heardAbout?: string | null;
+  /**
+   * Typed full name — the parent’s electronic signature on the declaration.
+   */
+  declarationName?: string | null;
+  declarationAccepted?: boolean | null;
+  /**
+   * Page the form was submitted from.
+   */
+  sourcePage?: string | null;
+  status?: ('new' | 'reviewing' | 'assessment' | 'accepted' | 'enrolled' | 'declined') | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -876,6 +979,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'summer-camp-registrations';
         value: number | SummerCampRegistration;
+      } | null)
+    | ({
+        relationTo: 'admission-applications';
+        value: number | AdmissionApplication;
       } | null)
     | ({
         relationTo: 'redirects';
@@ -1370,6 +1477,7 @@ export interface TourBookingsSelect<T extends boolean = true> {
   childAgeOrGrade?: T;
   preferredDate?: T;
   preferredTime?: T;
+  heardAbout?: T;
   notes?: T;
   sourcePage?: T;
   status?: T;
@@ -1388,6 +1496,84 @@ export interface SummerCampRegistrationsSelect<T extends boolean = true> {
   childGrade?: T;
   preferredCampus?: T;
   message?: T;
+  sourcePage?: T;
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "admission-applications_select".
+ */
+export interface AdmissionApplicationsSelect<T extends boolean = true> {
+  studentName?: T;
+  previousSchool?: T;
+  previousCurriculum?: T;
+  currentGrade?: T;
+  gradeApplyingTo?: T;
+  preferredCampus?: T;
+  applicationDate?: T;
+  childFirstName?: T;
+  childMiddleName?: T;
+  childLastName?: T;
+  gender?: T;
+  dateOfBirth?: T;
+  placeOfBirth?: T;
+  nationality?: T;
+  citizenship?: T;
+  passportNumber?: T;
+  motherTongue?: T;
+  secondLanguage?: T;
+  primaryContact?: T;
+  fatherSalutation?: T;
+  fatherFirstName?: T;
+  fatherMiddleName?: T;
+  fatherLastName?: T;
+  fatherNationality?: T;
+  fatherOccupation?: T;
+  fatherPassport?: T;
+  fatherPassportExpiry?: T;
+  fatherNationalId?: T;
+  fatherMobile?: T;
+  fatherBusinessPhone?: T;
+  fatherEmergencyPhone?: T;
+  fatherEmail?: T;
+  fatherWorkEmail?: T;
+  motherSalutation?: T;
+  motherFirstName?: T;
+  motherMiddleName?: T;
+  motherLastName?: T;
+  motherNationality?: T;
+  motherOccupation?: T;
+  motherPassport?: T;
+  motherPassportExpiry?: T;
+  motherNationalId?: T;
+  motherMobile?: T;
+  motherBusinessPhone?: T;
+  motherEmergencyPhone?: T;
+  motherEmail?: T;
+  motherWorkEmail?: T;
+  hasSiblings?: T;
+  isStaffChild?: T;
+  siblingDetails?: T;
+  hasHealthConditions?: T;
+  needsTreatment?: T;
+  healthDetails?: T;
+  hasLearningNeeds?: T;
+  hasDisability?: T;
+  learningNeedsDetails?: T;
+  hasAllergies?: T;
+  allergyDetails?: T;
+  cat4Verbal?: T;
+  cat4Quantitative?: T;
+  cat4NonVerbal?: T;
+  cat4Spatial?: T;
+  mediaConsent?: T;
+  parentsSeparated?: T;
+  transportInterest?: T;
+  heardAbout?: T;
+  declarationName?: T;
+  declarationAccepted?: T;
   sourcePage?: T;
   status?: T;
   updatedAt?: T;

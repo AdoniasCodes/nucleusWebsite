@@ -96,6 +96,7 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
           childGrade,
           preferredDate: get('preferredDate') || undefined,
           preferredTime: (get('preferredTime') as 'morning' | 'afternoon') || undefined,
+          heardAbout: get('heardAbout', 100) || undefined,
           notes: getLong('notes') || undefined,
           sourcePage,
         },

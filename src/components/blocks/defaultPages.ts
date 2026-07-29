@@ -360,7 +360,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         intro: 'The questions families ask us most.',
         items: [
           { q: 'What curriculum does Nucleus follow?', a: 'Nucleus follows the Cambridge pathway, from the early years through Grade 8 — a portable, internationally recognised education.' },
-          { q: 'Where is Nucleus located?', a: 'Our grade school campus is at Sarbet Vatican, Addis Ababa — behind the Embassy of Indonesia — and our preschool campus is at Mekanisa Abo Square.' },
+          { q: 'Where is Nucleus located?', a: 'We have three campuses in Addis Ababa: the Vatican grade school campus (behind the Vatican Embassy), the Abo preschool campus (100 m from Mekanisa Abo Square) and the Totot campus (behind World Vision).' },
           { q: 'What ages and grades do you accept?', a: 'We serve children from age 2 through Grade 8, growing with your child across early years, primary and lower secondary.' },
           { q: 'How much are the fees?', a: 'We keep our fees transparent and free of hidden capital-fee surprises. Request the full fee sheet and we’ll share it with you directly.' },
           { q: 'Is the campus safe?', a: 'Safety and child safeguarding come first at Nucleus — a secure, supervised campus is the foundation of everything we do.' },
@@ -394,7 +394,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Contact & Visit',
     seoTitle: 'Contact & Visit | Nucleus International Schools, Vatican, Addis Ababa',
     description:
-      'Visit Nucleus International Schools — grade school at Sarbet Vatican (behind the Embassy of Indonesia) and preschool at Mekanisa Abo Square, Addis Ababa. Directions from Bole, Old Airport and Kazanchis, contact numbers, and how to book a tour.',
+      'Visit Nucleus International Schools — grade school at Sarbet Vatican (behind the Vatican Embassy), preschool at Mekanisa Abo Square and our Totot campus behind World Vision, Addis Ababa. Directions from Bole, Old Airport and Kazanchis, contact numbers, and how to book a tour.',
     layout: [
       {
         blockType: 'hero',
@@ -403,7 +403,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Come See a Full Life\nin Motion',
         bgImage: '/images/stock/contact-hero.webp',
         subhead:
-          'We’d love to show you around. Find our grade school campus at Sarbet Vatican, Addis Ababa, behind the Indonesian Embassy and our preschool campus at Mekanisa Abo Square.',
+          'We’d love to show you around. Find us at three campuses across Addis Ababa — Vatican (grade school, behind the Vatican Embassy), Abo (preschool, by Mekanisa Abo Square) and Totot (behind World Vision).',
       },
       {
         blockType: 'cardsGrid',
@@ -412,7 +412,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         columns: '3',
         cards: [
           { iconName: 'Phone', title: 'Call', description: '09 81 99 99 22 / 09 81 99 99 33' },
-          { iconName: 'MapPin', title: 'Visit', description: 'Grade school: Sarbet Vatican, behind the Indonesian Embassy. Preschool: Mekanisa Abo Square, Addis Ababa.' },
+          { iconName: 'MapPin', title: 'Visit', description: 'Vatican (grade school), behind the Vatican Embassy. Abo (preschool), Mekanisa Abo Square. Totot, behind World Vision. Addis Ababa.' },
           { iconName: 'CalendarCheck', title: 'Visit Now', description: 'Arrange a visit and meet our team in person.' },
         ],
       },
@@ -427,20 +427,20 @@ export const defaultPages: Record<string, DefaultPage> = {
       {
         blockType: 'map',
         eyebrow: 'Getting to the School',
-        heading: 'Our Two Campuses',
+        heading: 'Our Three Campuses',
         intro: 'Easy to reach from across Addis Ababa — including Bole, Old Airport, Kazanchis and Gerji.',
         campuses: [
           {
             name: 'Grade School Campus',
             embedSrc: 'https://www.google.com/maps?q=Nucleus+International+Schools,+Addis+Ababa&z=17&hl=en&output=embed',
             directionsUrl: 'https://maps.app.goo.gl/DHQMbtpZc7PBDWEF8',
-            streetAddress: 'Sarbet Vatican, 50 metres behind the Embassy of Indonesia',
+            streetAddress: 'Sarbet Vatican, 50 metres behind the Vatican Embassy',
             telephone: ['0981999922', '0981999933'],
             rows: [
               {
                 iconName: 'MapPin',
                 title: 'Grade School Campus Address',
-                description: 'Sarbet Vatican Campus, 50 metres behind Embassy of Indonesia, Addis Ababa, Ethiopia.',
+                description: 'Sarbet Vatican Campus, 50 metres behind the Vatican Embassy, Addis Ababa, Ethiopia.',
               },
               { iconName: 'Phone', title: 'Call Us', description: '09 81 99 99 22 · 09 81 99 99 33' },
               { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
@@ -462,6 +462,23 @@ export const defaultPages: Record<string, DefaultPage> = {
               { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
             ],
           },
+          {
+            name: 'Totot Campus',
+            // TODO(Eyoel): replace with the exact Google Maps pin for the Totot campus.
+            embedSrc: 'https://www.google.com/maps?q=World+Vision+Ethiopia,+Addis+Ababa&z=17&hl=en&output=embed',
+            directionsUrl: 'https://www.google.com/maps/search/?api=1&query=World+Vision+Ethiopia,+Addis+Ababa',
+            streetAddress: 'Totot, behind World Vision, Addis Ababa',
+            telephone: ['0981999922', '0981999933'],
+            rows: [
+              {
+                iconName: 'MapPin',
+                title: 'Totot Campus Address',
+                description: 'Totot Campus, behind World Vision, Addis Ababa, Ethiopia.',
+              },
+              { iconName: 'Phone', title: 'Call Us', description: '09 81 99 99 22 · 09 81 99 99 33' },
+              { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
+            ],
+          },
         ],
       },
       {
@@ -469,25 +486,28 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'navy',
         heading: 'Arrange your visit',
         subhead: 'Call us or send an enquiry — we’ll find a time that works for your family.',
-        links: [{ link: { appearance: 'primary', type: 'custom', label: 'Call 09 81 99 99 22', url: 'tel:0981999922' } }],
+        links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Call 09 81 99 99 22', url: 'tel:0981999922' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Call 09 81 99 99 33', url: 'tel:0981999933' } },
+        ],
       },
     ],
   },
 
   register: {
-    title: 'Start Registration',
-    seoTitle: 'Start Registration | Nucleus International Schools, Addis Ababa',
+    title: 'Registration',
+    seoTitle: 'Register Your Child | Nucleus International Schools, Addis Ababa',
     description:
-      'Begin your child’s registration at Nucleus International Schools — a Cambridge international school in Addis Ababa serving Preschool to Grade 8. Complete the form and our admissions team will be in touch.',
+      'Complete the Nucleus International Schools admission form online — a Cambridge international school in Addis Ababa serving Preschool to Grade 8. Six short steps, saved as you go, and our admissions team replies within one business day.',
     layout: [
       {
         blockType: 'hero',
         background: 'purple',
         eyebrow: 'Admissions',
-        heading: 'Start Your\nRegistration',
+        heading: 'Register\nYour Child',
         bgImage: '/images/stock/admissions-hero.webp',
         subhead:
-          'Begin your child’s journey at Nucleus. Share a few details below and our admissions team will reach out to guide you through the next steps.',
+          'This is our full admission form, online. It takes about ten minutes, it saves as you go, and you can stop and come back to it any time on the same device.',
         links: [{ link: { appearance: 'outline', type: 'custom', label: 'Visit Now first', url: '/contact' } }],
       },
       {
@@ -497,36 +517,29 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Three simple steps',
         columns: '3',
         cards: [
-          { iconName: 'ClipboardCheck', title: '1. Register', description: 'Complete the short form below — it takes a couple of minutes.' },
-          { iconName: 'Phone', title: '2. We Reach Out', description: 'Our admissions team contacts you to confirm details and answer questions.' },
-          { iconName: 'BadgeCheck', title: '3. Confirm a Place', description: 'Bring your child’s documents and secure a place for the intake.' },
+          { iconName: 'ClipboardCheck', title: '1. Fill the form', description: 'Six short steps below. Your answers are saved on your device as you type.' },
+          { iconName: 'Phone', title: '2. We Reach Out', description: 'Our admissions team contacts you within one business day to confirm details.' },
+          { iconName: 'BadgeCheck', title: '3. Confirm a Place', description: 'Bring your child’s documents to campus and secure a place for the intake.' },
         ],
-      },
-      {
-        blockType: 'formBlock',
-        formType: 'registration',
-        background: 'offwhite',
-        heading: 'Registration Form',
-        intro: 'Tell us about your family and the grade you’re registering for. Fields marked * are required.',
-        successMessage: 'Thank you — your registration has been received. Our admissions team will contact you within one business day.',
       },
       {
         blockType: 'prose',
         background: 'white',
         heading: 'What to have ready',
         items: [
-          { type: 'p', text: 'To complete registration, please have the following ready when we contact you:' },
+          { type: 'p', text: 'Nothing needs to be uploaded now, but the form is quicker with these to hand:' },
           {
             type: 'ul',
             items: [
-              'Child’s birth certificate',
-              'Previous report card (if applicable)',
-              'Passport-size photographs',
-              'Parent / guardian ID',
+              'Child’s birth certificate (for the exact date and place of birth)',
+              'Previous report card, if your child has been at school before',
+              'Parent / guardian ID or passport numbers',
+              'Passport-size photographs — bring these with you to campus',
             ],
           },
         ],
       },
+      { blockType: 'admissionApplication' },
       {
         blockType: 'ctaBand',
         background: 'navy',

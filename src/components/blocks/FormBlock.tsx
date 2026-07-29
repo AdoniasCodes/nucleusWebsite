@@ -3,6 +3,7 @@
 import { useActionState, useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { normalizePhone, PHONE_ERROR } from '@/lib/phone'
+import { HEARD_ABOUT_OPTIONS, HEARD_ABOUT_LABEL } from '@/lib/heardAbout'
 import type { FormBlockType } from '@/payload-types'
 import { Container } from '@/components/ui/Container'
 import { Section, isDark, type SectionBackground } from '@/components/ui/Section'
@@ -201,6 +202,18 @@ export function FormBlock(props: FormBlockType & { anchor?: string; formToken?: 
                       <option value="">No preference</option>
                       <option value="morning">Morning</option>
                       <option value="afternoon">Afternoon</option>
+                    </select>
+                  </Field>
+                  {/* Marketing attribution — the school's paid channels are the main lead source,
+                      so knowing which one sent a parent decides where the next budget goes. */}
+                  <Field label={HEARD_ABOUT_LABEL}>
+                    <select name="heardAbout" className={`${inputBase} cursor-pointer`} defaultValue="">
+                      <option value="">Select one…</option>
+                      {HEARD_ABOUT_OPTIONS.map((o) => (
+                        <option key={o} value={o}>
+                          {o}
+                        </option>
+                      ))}
                     </select>
                   </Field>
                 </>

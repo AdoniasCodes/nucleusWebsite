@@ -33,7 +33,7 @@ export const SiteSettings: GlobalConfig = {
               name: 'address',
               type: 'textarea',
               defaultValue:
-                'Grade school: Sarbet Vatican, behind the Embassy of Indonesia. Preschool: Mekanisa Abo Square. Addis Ababa, Ethiopia.',
+                'Vatican campus (grade school): Sarbet Vatican, behind the Vatican Embassy. Abo campus (preschool): 100 m from Mekanisa Abo Square. Totot campus: behind World Vision. Addis Ababa, Ethiopia.',
             },
             {
               type: 'row',

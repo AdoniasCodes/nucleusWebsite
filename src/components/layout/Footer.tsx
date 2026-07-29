@@ -17,7 +17,7 @@ export async function Footer() {
   const phones = settings?.phones ?? []
   const address =
     settings?.address ??
-    'Grade school: Sarbet Vatican, behind the Embassy of Indonesia. Preschool: Mekanisa Abo Square. Addis Ababa, Ethiopia.'
+    'Vatican campus (grade school): Sarbet Vatican, behind the Vatican Embassy. Abo campus (preschool): 100 m from Mekanisa Abo Square. Totot campus: behind World Vision. Addis Ababa, Ethiopia.'
   const email = settings?.email
   const tagline = settings?.footerTagline ?? 'Think Deeply. Create Boldly. Solve Truly.'
   const socials = settings?.socials ?? []
@@ -27,13 +27,19 @@ export async function Footer() {
       <div className="woven-rule h-1 w-full" />
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-16 sm:px-8 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Image
-            src="/images/logo-footer.webp"
-            alt={schoolName}
-            width={950}
-            height={324}
-            className="h-16 w-auto sm:h-[4.5rem]"
-          />
+          <Link
+            href="/"
+            aria-label={`${schoolName} — go to the homepage`}
+            className="inline-block rounded-sm transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ochre"
+          >
+            <Image
+              src="/images/logo-footer.webp"
+              alt={schoolName}
+              width={950}
+              height={324}
+              className="h-16 w-auto sm:h-[4.5rem]"
+            />
+          </Link>
           <p className="mt-4 max-w-xs text-sm text-pale/75">{tagline}</p>
           <p lang="am" className="mt-2 text-sm text-ochre">
             ትምህርት ከደብተር ያልፋል
