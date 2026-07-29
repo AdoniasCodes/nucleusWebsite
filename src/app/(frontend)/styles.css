@@ -179,6 +179,17 @@
 /* ── Scroll-reveal system ──────────────────────────────────────────────────────
    Hidden until the Reveal observer adds .is-visible. Transition-based so the
    direction/variant composes cleanly. The easing is a soft "settle" curve. */
+
+/* The left/right variants start translated ±44px, which on a phone pushes the
+   not-yet-revealed cards past the viewport and gives the whole page a horizontal
+   scrollbar until they settle. `overflow-x: clip` kills that sideways scroll —
+   and unlike `hidden` it does NOT create a scroll container, so the sticky
+   header and any scroll-driven (view-timeline) animations keep working. */
+html,
+body {
+  overflow-x: clip;
+}
+
 .reveal {
   opacity: 0;
   transition:
