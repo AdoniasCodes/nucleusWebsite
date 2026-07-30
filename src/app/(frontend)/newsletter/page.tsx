@@ -238,11 +238,11 @@ export default async function NewsletterPage() {
               Registration for Nucleus is open. Come see the campuses the newsletter writes about.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-              <ButtonLink href="/register" appearance="primary">
+              <ButtonLink href="/register#application" appearance="primary">
                 Register Now
               </ButtonLink>
               <ButtonLink href="/contact" appearance="outline">
-                Book a Tour
+                Visit Now
               </ButtonLink>
             </div>
           </Container>

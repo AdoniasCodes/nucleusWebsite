@@ -313,7 +313,7 @@ export default async function NewsletterArticlePage({ params }: Props) {
                 <p className="mt-2 text-sm text-pale/85">
                   Registration for Nucleus programs is open all summer.
                 </p>
-                <ButtonLink href="/register" appearance="primary" className="mt-5 w-full">
+                <ButtonLink href="/register#application" appearance="primary" className="mt-5 w-full">
                   Register Now
                 </ButtonLink>
                 <a

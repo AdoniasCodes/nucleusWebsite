@@ -36,11 +36,11 @@ export function Header({ schoolName = 'Nucleus International Schools' }: { schoo
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <ButtonLink href="/register#application" appearance="primary">
+            Register Now
+          </ButtonLink>
           <ButtonLink href="/contact" appearance="outline">
             Visit Now
-          </ButtonLink>
-          <ButtonLink href="/register" appearance="primary">
-            Register Now
           </ButtonLink>
         </div>
 
@@ -72,7 +72,7 @@ export function Header({ schoolName = 'Nucleus International Schools' }: { schoo
               </li>
             ))}
             <li className="mt-2">
-              <ButtonLink href="/register" appearance="primary" className="w-full">
+              <ButtonLink href="/register#application" appearance="primary" className="w-full">
                 Register Now
               </ButtonLink>
             </li>

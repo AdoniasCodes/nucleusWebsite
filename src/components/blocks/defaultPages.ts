@@ -33,8 +33,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         subhead:
           'Nucleus is growing from one of Addis Ababa’s most trusted homes for early childhood into a full Cambridge international school — without ever losing the warmth that built it.',
         links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register' } },
         ],
       },
       {
@@ -106,8 +106,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Come see it for yourself',
         subhead: 'The best way to understand Nucleus is to visit our campus and meet the team.',
         links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register' } },
         ],
       },
     ],
@@ -250,8 +250,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Cambridge or IB? Let’s talk it through.',
         subhead: 'Choosing a curriculum is a big decision. Visit us and we’ll help you weigh what fits your child.',
         links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register' } },
         ],
       },
     ],
@@ -297,8 +297,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'See a full life in motion',
         subhead: 'Book a tour and walk our Vatican campus.',
         links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register' } },
         ],
       },
     ],
@@ -386,8 +386,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Gift your kids a full life',
         subhead: 'Prefer to talk? Call us or book a tour.',
         links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register' } },
         ],
       },
     ],
@@ -496,7 +496,10 @@ export const defaultPages: Record<string, DefaultPage> = {
         bgImage: '/images/stock/admissions-hero.webp',
         subhead:
           'This is our full admission form, online. It takes about ten minutes, it saves as you go, and you can stop and come back to it any time on the same device.',
-        links: [{ link: { appearance: 'outline', type: 'custom', label: 'Visit Now first', url: '/contact' } }],
+        links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '#application' } },
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now first', url: '/contact' } },
+        ],
       },
       {
         blockType: 'cardsGrid',
@@ -574,8 +577,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         subhead:
           'A world-class, portable curriculum that rewards deep understanding over memorisation — and travels with your child anywhere in the world.',
         links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register' } },
         ],
       },
       {
@@ -640,8 +643,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         subhead:
           'Coding, robotics and science that turn curious children into confident problem-solvers — unafraid of hard problems.',
         links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register' } },
         ],
       },
       {
@@ -683,8 +686,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Watch curiosity become capability',
         subhead: 'Book a tour and see our learning in motion.',
         links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register' } },
         ],
       },
     ],
@@ -705,8 +708,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         subhead:
           'The “Farmer-Scientist” — tending plants and animals teaches patience, responsibility and a feel for cause and effect no screen can.',
         links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register' } },
         ],
       },
       {
@@ -747,8 +750,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'A full life starts outdoors',
         subhead: 'Book a tour of our Vatican campus.',
         links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register' } },
         ],
       },
     ],

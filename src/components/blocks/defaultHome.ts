@@ -214,8 +214,8 @@ export const defaultHomeLayout: RenderableBlock[] = [
     heading: 'Registration is open — Gift Your Kids a Full Life',
     subhead: 'Secure your child’s place for the upcoming intake. Places fill quickly.',
     links: [
+      { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
       { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-      { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register' } },
     ],
   },
   {
