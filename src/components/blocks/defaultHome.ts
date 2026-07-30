@@ -53,8 +53,8 @@ export const defaultHomeLayout: RenderableBlock[] = [
         subhead:
           'A Cambridge international education in the heart of Addis Ababa — raising secure, curious, globally-minded children from age 2 through Grade 8.',
         links: [
+          { label: 'Register Now', url: '/register#application', appearance: 'primary' },
           { label: 'Visit Now', url: '/contact', appearance: 'outline' },
-          { label: 'Register Now', url: '/register', appearance: 'primary' },
         ],
         durationMs: 4000,
       },
