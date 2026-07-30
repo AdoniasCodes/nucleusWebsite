@@ -23,7 +23,13 @@ export function CTABandBlock(props: CTABandBlockType & { bgImage?: string }) {
       </Reveal>
       {props.subhead && (
         <Reveal variant="up" delay={100}>
-          <p className={`mx-auto mt-4 max-w-xl text-lg ${dark ? 'text-pale/85' : 'text-ink/70'}`}>{props.subhead}</p>
+          <p
+            className={`mx-auto mt-4 max-w-xl text-lg ${
+              props.bgImage ? 'text-pale' : dark ? 'text-pale/85' : 'text-ink/70'
+            }`}
+          >
+            {props.subhead}
+          </p>
         </Reveal>
       )}
       {props.links && props.links.length > 0 && (
@@ -46,7 +52,16 @@ export function CTABandBlock(props: CTABandBlockType & { bgImage?: string }) {
           style={{ backgroundImage: `url(${props.bgImage})` }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-navy/60" aria-hidden />
+        {/* Two-part tint instead of one flat wash. The photo should stay bright and readable as
+            a photo, so the overall tint is deliberately light — but these campus shots have a
+            blown-out sky and sunlit turf, and white text over that is illegible. So the light
+            wash is paired with a soft scrim that sits only behind the copy, fading out well
+            before the edges. The frame reads open; the words still clear AA contrast. */}
+        <div className="absolute inset-0 bg-navy/25" aria-hidden />
+        <div
+          className="absolute inset-0 [background:radial-gradient(72%_68%_at_50%_50%,rgba(26,29,74,0.84)_0%,rgba(26,29,74,0.68)_40%,rgba(26,29,74,0.16)_74%,transparent_100%)]"
+          aria-hidden
+        />
         {inner}
       </section>
     )

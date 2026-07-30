@@ -380,3 +380,72 @@ body {
     display: none;
   }
 }
+
+
+/* ── Totot "opening soon" campus band ─────────────────────────────────────────
+   The motion here is literal: the track fills to where the build actually is, and
+   the words "final finishing" get a coat of ochre swept across them, left to right,
+   like the finishing they describe. */
+
+/* The build track easing is a slow settle, not a bounce — it should read as
+   progress that has taken months, not a loading spinner. */
+.campus-track {
+  transition: width 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Wet-paint sweep: an ochre underline-block grows from the left behind the words.
+   `isolation: isolate` keeps the z-index:-1 stroke inside this element's stacking
+   context — without it the stroke drops behind the section background entirely. */
+.campus-paint {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  white-space: nowrap;
+}
+.campus-paint::after {
+  content: '';
+  position: absolute;
+  left: -0.12em;
+  right: -0.12em;
+  bottom: 0.07em;
+  height: 0.32em;
+  /* Needs to be this opaque: ochre at 45% over the navy section composites to a muddy
+     brown rather than reading as a stroke of paint. */
+  background: rgb(224 169 59 / 0.72);
+  border-radius: 0.08em;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s;
+  z-index: -1;
+}
+.campus-paint.is-painted::after {
+  transform: scaleX(1);
+}
+
+/* The stage currently being worked on keeps a slow breath so the section never
+   reads as "finished". */
+.campus-pulse {
+  animation: campusPulse 2.4s ease-in-out infinite;
+}
+@keyframes campusPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(224 169 59 / 0.45);
+  }
+  55% {
+    box-shadow: 0 0 0 7px rgb(224 169 59 / 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .campus-track {
+    transition: none;
+  }
+  .campus-paint::after {
+    transition: none;
+    transform: scaleX(1);
+  }
+  .campus-pulse {
+    animation: none;
+  }
+}

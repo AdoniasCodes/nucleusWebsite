@@ -1,4 +1,4 @@
-import type { Page } from '@/payload-types'
+import type { CTABandBlock as CTABandBlockType, Page } from '@/payload-types'
 import { HeroBlock } from './HeroBlock'
 import { StatsBlock } from './StatsBlock'
 import { CardsGridBlock } from './CardsGridBlock'
@@ -24,11 +24,20 @@ import { CampMomentsBlock, type CampMomentsProps } from './CampMomentsBlock'
 import { CampActivitiesBlock, type CampActivitiesProps } from './CampActivitiesBlock'
 import { LearnerPromiseBlock, type LearnerPromiseProps } from './LearnerPromiseBlock'
 import { AdmissionApplicationBlock, type AdmissionApplicationProps } from './AdmissionApplicationBlock'
+import { CampusComingSoonBlock, type CampusComingSoonProps } from './CampusComingSoonBlock'
 import { mintFormToken } from '@/lib/formToken'
+
+/**
+ * A CTA band with the code-only `bgImage` prop. `bgImage` is deliberately NOT a CMS field —
+ * these background photos are chosen per page in code, so the union carries the augmented shape
+ * rather than every default page needing an `as RenderableBlock[]` cast to get past it.
+ */
+type CTABandWithImage = CTABandBlockType & { bgImage?: string }
 
 /** A CMS layout block, plus the synthetic code-only blocks (homepage + inner pages). */
 export type RenderableBlock =
   | NonNullable<Page['layout']>[number]
+  | CTABandWithImage
   | LatestPostsProps
   | ProseProps
   | FaqListProps
@@ -47,6 +56,7 @@ export type RenderableBlock =
   | CampActivitiesProps
   | LearnerPromiseProps
   | AdmissionApplicationProps
+  | CampusComingSoonProps
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
@@ -74,6 +84,7 @@ const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
   campActivities: CampActivitiesBlock,
   learnerPromise: LearnerPromiseBlock,
   admissionApplication: AdmissionApplicationBlock,
+  campusComingSoon: CampusComingSoonBlock,
 }
 
 export function BlockRenderer({ blocks }: { blocks?: RenderableBlock[] | null }) {

@@ -200,7 +200,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     items: [
       { q: 'What curriculum does Nucleus follow?', a: 'The Cambridge pathway, from the early years through Grade 8 — a portable, internationally recognised education.' },
       { q: 'What ages does Nucleus accept?', a: 'Children from age 2 through Grade 8, on a single planned journey from the early years into the Cambridge primary and middle years.' },
-      { q: 'Where is Nucleus located?', a: 'We have three campuses in Addis Ababa: the Vatican grade school campus (behind the Vatican Embassy), the Abo preschool campus (100 m from Mekanisa Abo Square) and the Totot campus (behind World Vision).' },
+      { q: 'Where is Nucleus located?', a: 'Two campuses are open in Addis Ababa: the Vatican grade school campus (behind the Vatican Embassy) and the Abo preschool campus (100 m from Mekanisa Abo Square). A third campus at Totot, behind World Vision, is being finished now.' },
       { q: 'How much are the fees?', a: 'We keep fees transparent, with no hidden capital-fee surprises. Request the full fee sheet and we’ll send it directly.' },
       { q: 'How safe is the campus?', a: 'Safety comes first — a secure, supervised campus with controlled access is the foundation of everything we do.' },
       { q: 'Is an international school worth it compared to a local school?', a: 'A good international school gives a portable, globally recognised education, smaller classes and learning beyond the textbook. It costs more, so the value depends on the school delivering it in practice — which is why we encourage you to visit and see for yourself.' },
@@ -222,7 +222,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     blockType: 'map',
     eyebrow: 'Visit Nucleus',
     heading: 'Find Us in Addis Ababa',
-    intro: 'Three campuses, easy to reach from Bole, Old Airport, Kazanchis and Gerji — come and see a full life in motion.',
+    intro: 'Easy to reach from Bole, Old Airport, Kazanchis and Gerji — come and see a full life in motion.',
     campuses: [
       {
         name: 'Grade School Campus',
@@ -254,34 +254,6 @@ export const defaultHomeLayout: RenderableBlock[] = [
           },
           { iconName: 'Phone', title: 'Call Us', description: '09 81 99 99 22 · 09 81 99 99 33' },
           { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
-        ],
-      },
-      {
-        // Not open yet — the building is under construction. Listed so families planning ahead
-        // can see it is coming, with the status stated plainly so nobody turns up expecting a school.
-        name: 'Totot Campus (opening soon)',
-        notYetOpen: true,
-        embedSrc: 'https://www.google.com/maps?q=9.006586,38.8060689&z=17&hl=en&output=embed',
-        directionsUrl: 'https://maps.app.goo.gl/wdq1TXmVF7EgiVsA8',
-        streetAddress: 'Totot, behind World Vision, Addis Ababa (under construction)',
-        telephone: ['0981999922', '0981999933'],
-        rows: [
-          {
-            iconName: 'HardHat',
-            title: 'Under Construction',
-            description:
-              'Our third campus at Totot, behind World Vision, is being built now. Call us to be told first when it opens.',
-          },
-          {
-            iconName: 'MapPin',
-            title: 'Totot Campus Address',
-            description: 'Totot Campus, behind World Vision, Addis Ababa, Ethiopia.',
-          },
-          {
-            iconName: 'Phone',
-            title: 'Ask About Totot',
-            description: '09 81 99 99 22 · 09 81 99 99 33 — for opening dates and early registration.',
-          },
         ],
       },
     ],

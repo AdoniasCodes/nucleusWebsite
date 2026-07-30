@@ -218,12 +218,23 @@ export default async function NewsletterPage() {
       {/* Cross-links into the blog keep readers (and crawlers) moving. */}
       <LatestPostsBlock blockType="latestPosts" heading="More from Nucleus" limit={3} />
 
-      {/* CTA band */}
-      <section aria-label="Register">
-        <div className="orb-glow brand-weave">
+      {/* CTA band — same photo + two-part tint treatment as the ctaBand block on the other
+          pages (light overall wash, soft scrim behind the copy only). */}
+      <section aria-label="Register" className="relative overflow-hidden text-pale">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-scroll md:bg-fixed"
+          style={{ backgroundImage: 'url(/images/stock/cta-newsletter.webp)' }}
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-navy/25" aria-hidden />
+        <div
+          className="absolute inset-0 [background:radial-gradient(72%_68%_at_50%_50%,rgba(26,29,74,0.84)_0%,rgba(26,29,74,0.68)_40%,rgba(26,29,74,0.16)_74%,transparent_100%)]"
+          aria-hidden
+        />
+        <div className="relative">
           <Container className="py-16 text-center text-pale sm:py-20">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Want your child in the story?</h2>
-            <p className="mx-auto mt-3 max-w-xl text-pale/85">
+            <p className="mx-auto mt-3 max-w-xl text-pale">
               Registration for Nucleus is open. Come see the campuses the newsletter writes about.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
