@@ -44,6 +44,9 @@ import {
   Tent,
   PartyPopper,
   Sun,
+  Check,
+  RotateCcw,
+  HardHat,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -54,6 +57,7 @@ const ICONS: Record<string, LucideIcon> = {
   FlaskConical, MapPin, Music, BookOpen, Phone, CalendarCheck, ClipboardCheck,
   FileText, Sparkles, Bus, Star, Compass, Eye, Handshake, Mountain, Clock, Navigation,
   Crown, Palette, Swords, Trophy, Volleyball, Wind, Dumbbell, Tent, PartyPopper, Sun,
+  Check, RotateCcw, HardHat,
 }
 
 /** Render a Lucide icon by name. Falls back to a neutral mark (never the orb) if unknown. */

@@ -257,20 +257,31 @@ export const defaultHomeLayout: RenderableBlock[] = [
         ],
       },
       {
-        name: 'Totot Campus',
-        // TODO(Eyoel): replace with the exact Google Maps pin for the Totot campus.
-        embedSrc: 'https://www.google.com/maps?q=World+Vision+Ethiopia,+Addis+Ababa&z=17&hl=en&output=embed',
-        directionsUrl: 'https://www.google.com/maps/search/?api=1&query=World+Vision+Ethiopia,+Addis+Ababa',
-        streetAddress: 'Totot, behind World Vision, Addis Ababa',
+        // Not open yet — the building is under construction. Listed so families planning ahead
+        // can see it is coming, with the status stated plainly so nobody turns up expecting a school.
+        name: 'Totot Campus (opening soon)',
+        notYetOpen: true,
+        embedSrc: 'https://www.google.com/maps?q=9.006586,38.8060689&z=17&hl=en&output=embed',
+        directionsUrl: 'https://maps.app.goo.gl/wdq1TXmVF7EgiVsA8',
+        streetAddress: 'Totot, behind World Vision, Addis Ababa (under construction)',
         telephone: ['0981999922', '0981999933'],
         rows: [
+          {
+            iconName: 'HardHat',
+            title: 'Under Construction',
+            description:
+              'Our third campus at Totot, behind World Vision, is being built now. Call us to be told first when it opens.',
+          },
           {
             iconName: 'MapPin',
             title: 'Totot Campus Address',
             description: 'Totot Campus, behind World Vision, Addis Ababa, Ethiopia.',
           },
-          { iconName: 'Phone', title: 'Call Us', description: '09 81 99 99 22 · 09 81 99 99 33' },
-          { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
+          {
+            iconName: 'Phone',
+            title: 'Ask About Totot',
+            description: '09 81 99 99 22 · 09 81 99 99 33 — for opening dates and early registration.',
+          },
         ],
       },
     ],

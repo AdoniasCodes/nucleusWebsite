@@ -24,6 +24,13 @@ export type MapCampus = {
   streetAddress: string
   /** Optional phone(s) for this campus's schema. */
   telephone?: string[]
+  /**
+   * Set for a campus that is announced but not yet operating. It still renders (families
+   * planning ahead should see it is coming) but is EXCLUDED from the School/LocalBusiness
+   * JSON-LD — publishing a school entity at an address with no school at it is a bad local-SEO
+   * signal and simply not true yet.
+   */
+  notYetOpen?: boolean
 }
 
 export type MapProps = {
@@ -51,7 +58,9 @@ function CampusBlock({ campus }: { campus: MapCampus }) {
                 </span>
                 <div>
                   <h4 className="text-base font-bold text-navy">{row.title}</h4>
-                  <p className="mt-1 text-[0.95rem] leading-relaxed text-ink/65">{row.description}</p>
+                  <p className="mt-1 text-[0.95rem] leading-relaxed text-ink/65">
+                    {row.description}
+                  </p>
                 </div>
               </li>
             ))}
@@ -90,20 +99,23 @@ function CampusBlock({ campus }: { campus: MapCampus }) {
 export function MapBlock(props: MapProps) {
   const campuses = props.campuses ?? []
 
-  // One LocalBusiness/School node per campus — accurate NAP for Google Business Profile / local SEO.
-  const schema = campuses.map((c) => ({
-    '@context': 'https://schema.org',
-    '@type': ['School', 'LocalBusiness'],
-    name: `Nucleus International Schools — ${c.name}`,
-    url: SERVER_URL,
-    ...(c.telephone?.length ? { telephone: c.telephone } : {}),
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: c.streetAddress,
-      addressLocality: 'Addis Ababa',
-      addressCountry: 'ET',
-    },
-  }))
+  // One LocalBusiness/School node per OPERATING campus — accurate NAP for Google Business
+  // Profile / local SEO. Campuses still under construction are deliberately left out.
+  const schema = campuses
+    .filter((c) => !c.notYetOpen)
+    .map((c) => ({
+      '@context': 'https://schema.org',
+      '@type': ['School', 'LocalBusiness'],
+      name: `Nucleus International Schools — ${c.name}`,
+      url: SERVER_URL,
+      ...(c.telephone?.length ? { telephone: c.telephone } : {}),
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: c.streetAddress,
+        addressLocality: 'Addis Ababa',
+        addressCountry: 'ET',
+      },
+    }))
 
   return (
     <Section background="white">

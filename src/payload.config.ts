@@ -2,6 +2,7 @@ import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
+import { importExportPlugin } from '@payloadcms/plugin-import-export'
 import { s3Storage } from '@payloadcms/storage-s3'
 import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
 import path from 'path'
@@ -181,6 +182,27 @@ export default buildConfig({
       collections: ['pages'],
       generateURL: (docs) => docs.reduce((url, doc) => `${url}/${doc.slug}`, ''),
       generateLabel: (_, doc) => doc.title as string,
+    }),
+    // Adds an "Export" button to the list view of every form collection, so staff can pull
+    // applications and leads out as CSV/JSON (opens in Excel) instead of copying them by hand,
+    // one record at a time. Enabled ONLY on the form collections — there is no reason to let
+    // anyone bulk-export pages or media.
+    importExportPlugin({
+      collections: (
+        [
+          'admission-applications',
+          'admissions-inquiries',
+          'tour-bookings',
+          'summer-camp-registrations',
+        ] as const
+      ).map((slug) => ({
+        slug,
+        // Export only — an Import button on a leads collection is a footgun, not a feature.
+        import: false as const,
+        // Run the export inline in the request rather than through the jobs queue: there is no
+        // cron worker configured on Vercel, so a queued export would sit there forever.
+        export: { disableJobsQueue: true },
+      })),
     }),
     ...storagePlugins,
   ],
