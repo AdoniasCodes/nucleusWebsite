@@ -181,19 +181,6 @@ export const defaultHomeLayout: RenderableBlock[] = [
     limit: 4,
   },
   {
-    blockType: 'feeTransparency',
-    eyebrow: 'Honest, Transparent Fees',
-    heading: 'No Hidden Capital-Fee Surprises',
-    intro:
-      'While other schools surprise families with steep capital levies and mid-year hikes, Nucleus keeps it clear and predictable from day one.',
-    points: [
-      { iconName: 'Scale', title: 'One clear fee structure', description: 'You see exactly what you pay for — before you commit, not after.' },
-      { iconName: 'ShieldCheck', title: 'No surprise capital fees', description: 'No unexpected building or capital charges bolted on after enrolment.' },
-      { iconName: 'HeartHandshake', title: 'Genuine value', description: 'A premium international education positioned as honest value, not a Tier-I price ceiling.' },
-    ],
-    link: { label: 'Request the Full Fee Sheet', url: '/admissions' },
-  },
-  {
     blockType: 'faqList',
     background: 'mist',
     heading: 'Parents Often Ask',

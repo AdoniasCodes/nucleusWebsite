@@ -11,7 +11,6 @@ import { TestimonialsBlock, type TestimonialsProps } from './TestimonialsBlock'
 import { MapBlock, type MapProps } from './MapBlock'
 import { FormBlock } from './FormBlock'
 import { WhyCambridgeBlock, type WhyCambridgeProps } from './WhyCambridgeBlock'
-import { FeeTransparencyBlock, type FeeTransparencyProps } from './FeeTransparencyBlock'
 import { DayTimelineBlock, type DayTimelineProps } from './DayTimelineBlock'
 import { CoreValuesOrbit, type CoreValuesOrbitProps } from './CoreValuesOrbit'
 import { FounderMessageBlock, type FounderMessageProps } from './FounderMessageBlock'
@@ -44,7 +43,6 @@ export type RenderableBlock =
   | TestimonialsProps
   | MapProps
   | WhyCambridgeProps
-  | FeeTransparencyProps
   | DayTimelineProps
   | CoreValuesOrbitProps
   | FounderMessageProps
@@ -72,7 +70,6 @@ const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
   map: MapBlock,
   formBlock: FormBlock,
   whyCambridge: WhyCambridgeBlock,
-  feeTransparency: FeeTransparencyBlock,
   dayTimeline: DayTimelineBlock,
   coreValuesOrbit: CoreValuesOrbit,
   founderMessage: FounderMessageBlock,
