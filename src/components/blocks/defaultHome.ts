@@ -207,9 +207,8 @@ export const defaultHomeLayout: RenderableBlock[] = [
   },
   {
     blockType: 'map',
-    eyebrow: 'Visit Nucleus',
-    heading: 'Find Us in Addis Ababa',
-    intro: 'Easy to reach from Bole, Old Airport, Kazanchis and Gerji — come and see a full life in motion.',
+    heading: 'The go-to school for parents around Sarbet, Mekanisa, Bisrate Gabriel and Lebu',
+    intro: 'Easy to reach from Bole, Old Airport, Kazanchis, Mexico and Jemo. Come and see a full life in motion.',
     campuses: [
       {
         name: 'Grade School Campus',
@@ -245,6 +244,9 @@ export const defaultHomeLayout: RenderableBlock[] = [
       },
     ],
   },
+  // Totot sits directly beneath the map on purpose: the two open campuses have pins, the third
+  // has this instead — same place in the page, no map embed and no directions to a working build.
+  { blockType: 'campusComingSoon' },
   {
     blockType: 'latestPosts',
     heading: 'From the Blog',

@@ -22,7 +22,7 @@ type Stage = { label: string; note: string; done: boolean }
 const STAGES: Stage[] = [
   { label: 'Site & structure', note: 'Built and standing.', done: true },
   { label: 'Classrooms & services', note: 'Walls, wiring, water.', done: true },
-  { label: 'Finishing touches', note: 'Paint, fittings, furniture — happening now.', done: false },
+  { label: 'Finishing touches', note: 'Paint, fittings, furniture. Happening now.', done: false },
   { label: 'Doors open', note: 'We will announce the date here first.', done: false },
 ]
 
@@ -77,7 +77,7 @@ export function CampusComingSoonBlock(_props: CampusComingSoonProps) {
           </h2>
 
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-pale/80">
-            The building is up and the classrooms are in. What is left is the part you can see —
+            The building is up and the classrooms are in. What is left is the part you can see:
             paint, fittings and furniture. We would rather show it to you finished, so there is no
             map pin here yet.
           </p>
@@ -158,7 +158,7 @@ export function CampusComingSoonBlock(_props: CampusComingSoonProps) {
             </a>
             <p className="text-sm text-pale/60">
               Call 09 81 99 99 22 for opening dates and early registration. Please don’t visit the
-              site yet — it is still a working build.
+              site yet; it is still a working build.
             </p>
           </div>
         </div>
