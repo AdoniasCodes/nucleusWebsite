@@ -157,8 +157,8 @@ export function CampusComingSoonBlock(_props: CampusComingSoonProps) {
               Ask about Totot
             </a>
             <p className="text-sm text-pale/60">
-              Call 09 81 99 99 22 for opening dates and early registration. Please don’t visit the
-              site yet; it is still a working build.
+              Call 09 81 99 99 22 for opening dates and early registration. Visitations are not
+              allowed at our Totot campus as it is still a working build. Stay tuned for updates.
             </p>
           </div>
         </div>
