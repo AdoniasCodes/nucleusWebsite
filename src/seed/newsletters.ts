@@ -395,6 +395,141 @@ const week2Sections: SeedSection[] = [
   },
 ]
 
+const week3Sections: SeedSection[] = [
+  {
+    heading: 'Week 3 Recap: From Confidence to Leadership',
+    body: [
+      { p: 'By week three something exciting happened.' },
+      {
+        p: 'The children who arrived quietly a few weeks ago are now volunteering to lead activities, helping younger campers, solving challenges together and proudly sharing what they have learned. Confidence has become leadership.',
+      },
+      {
+        p: 'Every day our campers are discovering that great leaders begin by being curious, kind and willing to try.',
+      },
+      { p: 'Learning beyond books. Every day.' },
+    ],
+  },
+  {
+    heading: 'The Big Story: Leaders Are Made Here',
+    body: [
+      { p: 'Leadership isn’t about standing in front of a crowd.' },
+      {
+        p: 'It’s about encouraging a teammate, asking thoughtful questions, listening to new ideas and having the courage to try something difficult.',
+      },
+      {
+        p: 'Throughout the week our campers demonstrated leadership in dozens of small moments that made a big difference.',
+      },
+      { p: 'This week’s leadership skills included:' },
+      { ul: ['Initiative', 'Responsibility', 'Communication', 'Teamwork'] },
+    ],
+  },
+  {
+    heading: 'Innovation Lab: Solving Problems Like Engineers',
+    body: [
+      { p: 'Our young innovators continued exploring robotics, coding and engineering challenges.' },
+      { p: 'Rather than simply building robots, campers learned to:' },
+      {
+        ul: [
+          'Test ideas',
+          'Debug mistakes',
+          'Improve designs',
+          'Think logically',
+          'Work together to find solutions',
+        ],
+      },
+      {
+        p: 'Every challenge reminded students that innovation isn’t about getting it right the first time. It’s about improving every time.',
+      },
+    ],
+  },
+  {
+    heading: 'Creative Studio: Every Creation Tells a Story',
+    body: [
+      { p: 'This week our artists transformed simple materials into imaginative creations.' },
+      {
+        p: 'Through painting, design and craft work, students learned that creativity is one of the world’s greatest problem-solving tools.',
+      },
+      { p: 'They explored:' },
+      {
+        ul: [
+          'Working together',
+          'Colour and pattern',
+          'Fine motor development',
+          'Confidence through creativity',
+        ],
+      },
+    ],
+  },
+  {
+    heading: 'Music Corner: Finding Their Voice',
+    body: [
+      { p: 'Music continued filling our classrooms with laughter.' },
+      {
+        p: 'Campers explored rhythm, movement, singing and keyboard while developing:',
+      },
+      { ul: ['Listening', 'Memory', 'Confidence', 'Coordination', 'Self-expression'] },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week3-keyboard-boy.webp`,
+        alt: 'A camper working through a keyboard exercise with his sheet music propped on the stand',
+        caption: 'One line at a time, one hand at a time.',
+      },
+      {
+        imageUrl: `${IMG}/week3-keyboard-girl.webp`,
+        alt: 'A camper practising her keyboard piece from handwritten notes in the music room',
+        caption: 'Finding her voice at the keyboard.',
+      },
+    ],
+  },
+  {
+    heading: 'Active Minds, Active Bodies',
+    body: [
+      { p: 'Learning doesn’t stop in the classroom.' },
+      { p: 'Taekwondo and outdoor games continued helping students build:' },
+      { ul: ['Resilience', 'Fair play', 'Leadership', 'Healthy habits', 'Respect for others'] },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week3-taekwondo-warmup.webp`,
+        alt: 'A full taekwondo class of campers in white doboks working through a warm-up stance together',
+        caption: 'The whole class, one stance, one count.',
+      },
+    ],
+  },
+  {
+    heading: 'This Week’s Character Focus',
+    style: 'highlight',
+    body: [
+      { p: 'At Nucleus we develop more than academic skills.' },
+      { p: 'This week our campers demonstrated:' },
+      { ul: ['Curiosity', 'Respect', 'Courage', 'Creativity', 'Leadership'] },
+      { p: 'These qualities are just as important as mathematics, science and coding.' },
+    ],
+  },
+  {
+    heading: 'Coach’s Corner',
+    style: 'highlight',
+    body: [
+      {
+        p: '"The most rewarding part of this week wasn’t seeing perfect projects. It was watching children encourage one another, celebrate each other’s success and discover they are capable of much more than they imagined."',
+      },
+      { p: 'The Nucleus Summer Camp Team' },
+    ],
+  },
+  {
+    heading: 'Camper Spotlight: Stars of Week 3',
+    style: 'highlight',
+    body: [
+      { p: 'This week’s campers inspired us by demonstrating our Nucleus values:' },
+      { ul: ['Leadership', 'Kindness', 'Curiosity', 'Creativity', 'Teamwork'] },
+      {
+        p: 'Thank you to our wonderful campers and families for another unforgettable week. Every question asked, every friendship formed and every challenge accepted reminds us why we believe in learning beyond books. We can’t wait to see everyone next week!',
+      },
+    ],
+  },
+]
+
 /* ------------------------------------------------------------------------------
  * The Educators' Core — Issue 01: Emotional Intelligence
  * Source: the CBT programme doc from leadership (Vatican Campus session, July 2026).
@@ -517,6 +652,24 @@ const ISSUES: SeedIssue[] = [
       },
     },
     sections: week2Sections,
+  },
+  {
+    seriesSlug: 'summer-camp-2026',
+    article: {
+      title: 'Nucleus Summer Camp 2026, Week 3 Recap: From Confidence to Leadership',
+      slug: 'summer-camp-2026-week-3-recap',
+      excerpt:
+        'Week three of Nucleus Summer Camp 2026 was the week confidence turned into leadership: campers volunteering to lead activities, helping younger friends, debugging their own designs in the innovation lab, and finding their voice at the keyboard.',
+      heroImageUrl: `${IMG}/week3-taekwondo-warmup.webp`,
+      publishedAt: '2026-07-31T15:00:00.000Z',
+      playlistPart: 3,
+      meta: {
+        title: 'Nucleus Summer Camp 2026 Week 3 Recap: From Confidence to Leadership',
+        description:
+          'Week 3 at Nucleus Summer Camp 2026 in Addis Ababa: campers leading activities, engineering fixes in the innovation lab, keyboard lessons in the music corner and taekwondo on the mats.',
+      },
+    },
+    sections: week3Sections,
   },
   {
     seriesSlug: 'teachers-capacity-building',
