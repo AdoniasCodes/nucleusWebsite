@@ -408,6 +408,13 @@ const week3Sections: SeedSection[] = [
       },
       { p: 'Learning beyond books. Every day.' },
     ],
+    images: [
+      {
+        imageUrl: `${IMG}/week3-circle-game-lead.webp`,
+        alt: 'A camper standing with his arms outstretched leading a floor game while the rest of the circle watches him',
+        caption: 'The quiet ones are running the games now.',
+      },
+    ],
   },
   {
     heading: 'The Big Story: Leaders Are Made Here',
@@ -421,6 +428,23 @@ const week3Sections: SeedSection[] = [
       },
       { p: 'This week’s leadership skills included:' },
       { ul: ['Initiative', 'Responsibility', 'Communication', 'Teamwork'] },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week3-coding-tiles-explain.webp`,
+        alt: 'A camper holding up a strip of coding tiles and explaining it to the friends sitting around her on the activity mat',
+        caption: 'Explaining her sequence to the group, tile by tile.',
+      },
+      {
+        imageUrl: `${IMG}/week3-classroom-session.webp`,
+        alt: 'Campers seated in a circle of chairs listening to their teacher during a group session',
+        caption: 'Listening is a leadership skill too.',
+      },
+      {
+        imageUrl: `${IMG}/week3-circle-listening.webp`,
+        alt: 'Campers sitting on the floor in a wide circle, laughing and waiting for their turn in the game',
+        caption: 'Waiting your turn, cheering the next one on.',
+      },
     ],
   },
   {
@@ -441,6 +465,23 @@ const week3Sections: SeedSection[] = [
         p: 'Every challenge reminded students that innovation isn’t about getting it right the first time. It’s about improving every time.',
       },
     ],
+    images: [
+      {
+        imageUrl: `${IMG}/week3-robot-team-build.webp`,
+        alt: 'Four campers kneeling around a robot build on the floor, working through the printed instruction card together',
+        caption: 'Four heads, one instruction card, one robot.',
+      },
+      {
+        imageUrl: `${IMG}/week3-city-mat-build.webp`,
+        alt: 'Two campers assembling a blue tower on the printed city mat while classmates build behind them',
+        caption: 'Building the city, one block at a time.',
+      },
+      {
+        imageUrl: `${IMG}/week3-robot-mat-focus.webp`,
+        alt: 'A camper concentrating on his build on the activity mat while a classmate works on a tablet behind him',
+        caption: 'Test it, debug it, build it again.',
+      },
+    ],
   },
   {
     heading: 'Creative Studio: Every Creation Tells a Story',
@@ -458,6 +499,38 @@ const week3Sections: SeedSection[] = [
           'Confidence through creativity',
         ],
       },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week3-watercolour-painting.webp`,
+        alt: 'Campers painting watercolour scenes at the art table, paint palettes and water cups in front of them',
+        caption: 'Watercolours, and a lot of concentration.',
+      },
+      {
+        imageUrl: `${IMG}/week3-paper-collage-class.webp`,
+        alt: 'Two art teachers guiding a full table of campers cutting and gluing coloured paper shapes',
+        caption: 'Paper, glue and a room full of ideas.',
+      },
+      {
+        imageUrl: `${IMG}/week3-handprint-paintings.webp`,
+        alt: 'Finished handprint paintings in blue, orange and red drying on the wooden art table',
+        caption: 'Every handprint signed by its artist.',
+      },
+      {
+        imageUrl: `${IMG}/week3-painted-hands-frame.webp`,
+        alt: 'A camper holding up both hands painted blue and red to frame his face',
+        caption: 'Blue on the left, red on the right, proud of both.',
+      },
+    ],
+  },
+  {
+    heading: 'Coach’s Corner',
+    style: 'highlight',
+    body: [
+      {
+        p: '"The most rewarding part of this week wasn’t seeing perfect projects. It was watching children encourage one another, celebrate each other’s success and discover they are capable of much more than they imagined."',
+      },
+      { p: 'The Nucleus Summer Camp Team' },
     ],
   },
   {
@@ -480,7 +553,15 @@ const week3Sections: SeedSection[] = [
         alt: 'A camper practising her keyboard piece from handwritten notes in the music room',
         caption: 'Finding her voice at the keyboard.',
       },
+      {
+        imageUrl: `${IMG}/week3-singing-practice.webp`,
+        alt: 'A camper singing out mid phrase while the rest of the group sings along beside the piano',
+        caption: 'Singing out, no longer under his breath.',
+      },
     ],
+    videoUrl: '/video/newsletter/week3-music-choir.mp4',
+    videoPoster: `${IMG}/week3-music-choir-poster.webp`,
+    videoCaption: 'Watch the whole group sing together, with the music teacher on guitar.',
   },
   {
     heading: 'Active Minds, Active Bodies',
@@ -495,6 +576,21 @@ const week3Sections: SeedSection[] = [
         alt: 'A full taekwondo class of campers in white doboks working through a warm-up stance together',
         caption: 'The whole class, one stance, one count.',
       },
+      {
+        imageUrl: `${IMG}/week3-football-tackle.webp`,
+        alt: 'Two campers going to ground for the ball on the turf in front of the Nucleus International Schools building',
+        caption: 'Everything left on the pitch.',
+      },
+      {
+        imageUrl: `${IMG}/week3-playground-hoops.webp`,
+        alt: 'The playground busy with campers on the swings, the climbing frame and hula hoops under the big palm tree',
+        caption: 'Break time, in full swing.',
+      },
+      {
+        imageUrl: `${IMG}/week3-basketball-shot.webp`,
+        alt: 'A camper watching her shot arc towards the hoop on the blue outdoor basketball court',
+        caption: 'One shot, everybody watching.',
+      },
     ],
   },
   {
@@ -508,13 +604,46 @@ const week3Sections: SeedSection[] = [
     ],
   },
   {
-    heading: 'Coach’s Corner',
-    style: 'highlight',
-    body: [
+    heading: 'Camp Snapshots',
+    style: 'gallery',
+    body: [{ p: 'Week three at Nucleus Summer Camp, in pictures.' }],
+    images: [
       {
-        p: '"The most rewarding part of this week wasn’t seeing perfect projects. It was watching children encourage one another, celebrate each other’s success and discover they are capable of much more than they imagined."',
+        imageUrl: `${IMG}/week3-football-banner-field.webp`,
+        alt: 'Campers playing football on the turf beneath the Confidence Beyond Classrooms banner',
       },
-      { p: 'The Nucleus Summer Camp Team' },
+      {
+        imageUrl: `${IMG}/week3-art-table-brushes.webp`,
+        alt: 'The art teacher holding up two brushes while campers wait at the paint table by the window',
+      },
+      {
+        imageUrl: `${IMG}/week3-keyboard-duo.webp`,
+        alt: 'Two campers at the keyboard together, one playing while the other follows the music with a guitar in hand',
+      },
+      {
+        imageUrl: `${IMG}/week3-campus-turf.webp`,
+        alt: 'The Nucleus International Schools building and Cambridge banner seen across the green turf pitch',
+      },
+      {
+        imageUrl: `${IMG}/week3-music-circle.webp`,
+        alt: 'The music teacher leading a circle of campers seated on the floor of the music room',
+      },
+      {
+        imageUrl: `${IMG}/week3-paint-hands-teacher.webp`,
+        alt: 'A teacher laughing with a camper as he presses his paint covered hand onto paper',
+      },
+      {
+        imageUrl: `${IMG}/week3-football-through-goal.webp`,
+        alt: 'Two campers chasing the ball on the turf, seen through the frame of the goal',
+      },
+      {
+        imageUrl: `${IMG}/week3-basketball-court.webp`,
+        alt: 'Campers passing a basketball on the blue outdoor court beside the Think Create Solve board',
+      },
+      {
+        imageUrl: `${IMG}/week3-football-dribble.webp`,
+        alt: 'A camper in red driving the ball forward on the turf in front of the school building',
+      },
     ],
   },
   {
