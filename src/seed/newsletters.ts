@@ -410,9 +410,9 @@ const week3Sections: SeedSection[] = [
     ],
     images: [
       {
-        imageUrl: `${IMG}/week3-circle-game-lead.webp`,
-        alt: 'A camper standing with his arms outstretched leading a floor game while the rest of the circle watches him',
-        caption: 'The quiet ones are running the games now.',
+        imageUrl: `${IMG}/week3-coding-tiles-explain.webp`,
+        alt: 'A camper holding up a strip of coding tiles and explaining it to the friends sitting around her on the activity mat',
+        caption: 'The quiet ones are running the sessions now.',
       },
     ],
   },
@@ -431,9 +431,9 @@ const week3Sections: SeedSection[] = [
     ],
     images: [
       {
-        imageUrl: `${IMG}/week3-coding-tiles-explain.webp`,
-        alt: 'A camper holding up a strip of coding tiles and explaining it to the friends sitting around her on the activity mat',
-        caption: 'Explaining her sequence to the group, tile by tile.',
+        imageUrl: `${IMG}/week3-circle-game-lead.webp`,
+        alt: 'A camper standing with his arms outstretched leading a floor game while the rest of the circle watches him',
+        caption: 'Calling the next round of the game.',
       },
       {
         imageUrl: `${IMG}/week3-classroom-session.webp`,
