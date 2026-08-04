@@ -12,10 +12,10 @@ export function Header({ schoolName = 'Nucleus International Schools' }: { schoo
   return (
     <header className="sticky top-0 z-50 border-b border-navy/10 bg-offwhite/85 backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
-        <Link href="/" aria-label={`${schoolName} — home`} className="shrink-0">
+        <Link href="/" aria-label={`${schoolName}, home`} className="shrink-0">
           <Image
             src="/images/logo-header.webp"
-            alt={`${schoolName} — Cambridge International Education`}
+            alt={`${schoolName}, Cambridge International Education`}
             width={950}
             height={324}
             priority

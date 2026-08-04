@@ -2,7 +2,7 @@ import type { CollectionConfig } from 'payload'
 
 import { anyone, isAdminOrStaff } from '../access'
 
-/** FAQ items — power the FAQ block + FAQPage JSON-LD for AI/SERP answer capture. */
+/** FAQ items: power the FAQ block + FAQPage JSON-LD for AI/SERP answer capture. */
 export const FAQ: CollectionConfig = {
   slug: 'faq',
   labels: { singular: 'FAQ Item', plural: 'FAQ Items' },

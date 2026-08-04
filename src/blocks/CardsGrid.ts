@@ -3,7 +3,7 @@ import type { Block, Field } from 'payload'
 import { linkField } from '../fields/link'
 
 /**
- * Generic cards grid — powers "Why Leaders Choose Nucleus" (the 5 decision levers),
+ * Generic cards grid: powers "Why Leaders Choose Nucleus" (the 5 decision levers),
  * the values grid, program overviews, etc. Each card has an icon/image, title, text,
  * and an optional link.
  */

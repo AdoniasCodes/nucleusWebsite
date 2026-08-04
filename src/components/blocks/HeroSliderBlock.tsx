@@ -97,8 +97,12 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
   }, [active, paused, slides, count])
 
   return (
+    // Slides are stacked in ONE grid cell rather than absolutely positioned, so the section
+    // grows to the tallest slide instead of clipping it. `min-h` is a floor, not a ceiling.
+    // On short laptop viewports (13" Air) 60vh is less than the brand slide needs, and the
+    // CTAs used to be cut off by the band below.
     <section
-      className="relative flex min-h-[74vh] items-center overflow-hidden lg:min-h-[60vh]"
+      className="relative grid min-h-[74vh] overflow-hidden lg:min-h-[60vh]"
       aria-roledescription="carousel"
       aria-label="Highlights"
       onMouseEnter={() => setPaused(true)}
@@ -113,7 +117,7 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
         return (
           <div
             key={i}
-            className={`absolute inset-0 transition-opacity duration-700 ${
+            className={`col-start-1 row-start-1 transition-opacity duration-700 ${
               isActive ? 'z-10 opacity-100' : 'pointer-events-none z-0 opacity-0'
             }`}
             aria-hidden={!isActive}
@@ -209,7 +213,7 @@ function BrandSlideView({ slide, active }: { slide: BrandSlide; active: boolean 
       )}
       <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/65 to-navy/45" />
       {/* text-white so the inherited <h1> ("Nucleus International Schools") is crisp white on the video */}
-      <Container className="relative flex h-full w-full items-center py-20 text-white sm:py-24">
+      <Container className="relative flex h-full w-full items-center py-16 text-white sm:py-20 lg:py-24">
         {/* keyed by `active` so the typewriter replays each time this slide returns */}
         <HeroReveal
           key={active ? 'on' : 'off'}
@@ -257,10 +261,10 @@ function CampaignSlideView({ slide }: { slide: CampaignSlide }) {
             'radial-gradient(60% 60% at 88% 12%, rgba(224,169,59,0.10), transparent 60%), radial-gradient(50% 60% at 5% 100%, rgba(63,93,186,0.08), transparent 60%)',
         }}
       />
-      {/* Mobile drops the photo entirely — these soft orbs keep the text-only slide from feeling flat. */}
+      {/* Mobile drops the photo entirely, so these soft orbs keep the text-only slide from feeling flat. */}
       <div aria-hidden className="pointer-events-none absolute -right-16 -top-12 h-64 w-64 rounded-full bg-ochre/20 blur-3xl lg:hidden" />
       <div aria-hidden className="pointer-events-none absolute -bottom-20 -left-16 h-72 w-72 rounded-full bg-periwinkle/20 blur-3xl lg:hidden" />
-      {/* Playful "camp" motifs float in the top/bottom whitespace — mobile only (desktop has the photo). */}
+      {/* Playful "camp" motifs float in the top/bottom whitespace, mobile only (desktop has the photo). */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden lg:hidden">
         <FloatChip icon="Bot" tint="bg-periwinkle text-white" className="left-4 top-[6%] animate-bob [--tilt:-8deg]" />
         <FloatChip icon="Palette" tint="bg-coral text-white" className="right-4 top-[10%] animate-float [animation-delay:.8s]" />

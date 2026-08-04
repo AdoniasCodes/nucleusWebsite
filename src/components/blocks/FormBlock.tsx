@@ -12,7 +12,7 @@ import { Icon } from '@/components/ui/Icon'
 import { submitForm, type FormState } from '@/app/(frontend)/actions/submitForm'
 import { trackLead } from '@/lib/pixels'
 
-/** Grades served — Preschool through Grade 8. Used by the "Grade applying for" dropdown. */
+/** Grades served: Preschool through Grade 8. Used by the "Grade applying for" dropdown. */
 const GRADE_OPTIONS = [
   'Preschool',
   'KG',
@@ -57,7 +57,7 @@ export function FormBlock(props: FormBlockType & { anchor?: string; formToken?: 
   const [state, action, isPending] = useActionState(submitForm, initial)
   const pathname = usePathname()
 
-  // Phone is validated client-side before the action runs — staff call every
+  // Phone is validated client-side before the action runs. Staff call every
   // lead, so a mistyped number is a lost lead. Normalized in place on blur.
   const [phone, setPhone] = useState('')
   const [phoneError, setPhoneError] = useState('')
@@ -130,9 +130,9 @@ export function FormBlock(props: FormBlockType & { anchor?: string; formToken?: 
           >
             <input type="hidden" name="formType" value={formType} />
             <input type="hidden" name="sourcePage" value={pathname} />
-            {/* Server-minted signed token — proves this POST came from a rendered page, not a bot. */}
+            {/* Server-minted signed token: proves this POST came from a rendered page, not a bot. */}
             <input type="hidden" name="formToken" value={props.formToken ?? ''} />
-            {/* Honeypot — hidden from humans */}
+            {/* Honeypot: hidden from humans */}
             <input type="text" name="company" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -204,7 +204,7 @@ export function FormBlock(props: FormBlockType & { anchor?: string; formToken?: 
                       <option value="afternoon">Afternoon</option>
                     </select>
                   </Field>
-                  {/* Marketing attribution — the school's paid channels are the main lead source,
+                  {/* Marketing attribution: the school's paid channels are the main lead source,
                       so knowing which one sent a parent decides where the next budget goes. */}
                   <Field label={HEARD_ABOUT_LABEL}>
                     <select name="heardAbout" className={`${inputBase} cursor-pointer`} defaultValue="">

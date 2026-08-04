@@ -1,6 +1,6 @@
 import type { Block } from 'payload'
 
-/** Parent/student testimonials — featured set or hand-picked. */
+/** Parent/student testimonials: featured set or hand-picked. */
 export const TestimonialsBlock: Block = {
   slug: 'testimonialsBlock',
   interfaceName: 'TestimonialsBlockType',

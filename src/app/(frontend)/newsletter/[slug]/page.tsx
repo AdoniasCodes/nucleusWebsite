@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
+import { notFound, permanentRedirect } from 'next/navigation'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import { Container } from '@/components/ui/Container'
 import { ButtonLink } from '@/components/ui/Button'
@@ -9,6 +9,7 @@ import { NewsletterSections } from '@/components/newsletter/NewsletterSections'
 import { SmartImage, heroUrlOf, formatDate, readingMinutes } from '@/components/newsletter/shared'
 import { getPayloadClient } from '@/lib/payload'
 import { buildBreadcrumbSchema } from '@/lib/seo'
+import { LEGACY_NEWSLETTER_SLUGS } from '@/lib/legacySlugs'
 import { SERVER_URL } from '@/lib/serverUrl'
 import type { Playlist, Post } from '@/payload-types'
 
@@ -65,7 +66,8 @@ type Props = { params: Promise<{ slug: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = await getArticle(slug).catch(() => null)
-  if (!post) return {}
+  // Legacy slugs 301 in the page component; give the crawler nothing to index here.
+  if (!post) return LEGACY_NEWSLETTER_SLUGS[slug] ? { robots: { index: false } } : {}
   const title = post.meta?.title || post.title
   const description = post.meta?.description || post.excerpt || undefined
   const heroUrl = heroUrlOf(post)
@@ -86,6 +88,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function NewsletterArticlePage({ params }: Props) {
   const { slug } = await params
   const post = await getArticle(slug).catch(() => null)
+  // A retitled issue keeps its old URL alive: 301 to the current slug rather than 404.
+  if (!post && LEGACY_NEWSLETTER_SLUGS[slug]) permanentRedirect(`/newsletter/${LEGACY_NEWSLETTER_SLUGS[slug]}`)
   if (!post) notFound()
 
   let recent: Post[] = []

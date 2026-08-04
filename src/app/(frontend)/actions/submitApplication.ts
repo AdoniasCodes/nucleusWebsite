@@ -47,10 +47,10 @@ export async function submitApplication(
   /** The Yes/No controls post the literal strings "Yes" / "No" / "". */
   const bool = (k: string) => get(k, 5) === 'Yes'
 
-  if (get('company')) return { status: 'success', message: 'Thank you — your application has been received.' }
+  if (get('company')) return { status: 'success', message: 'Thank you. Your application has been received.' }
 
   const ip = (await headers()).get('x-forwarded-for')?.split(',')[0]?.trim() ?? ''
-  if (rateLimited(ip)) return { status: 'success', message: 'Thank you — your application has been received.' }
+  if (rateLimited(ip)) return { status: 'success', message: 'Thank you. Your application has been received.' }
 
   if (!verifyFormToken(get('formToken', 400))) {
     return {
@@ -75,7 +75,7 @@ export async function submitApplication(
 
   for (const email of [fatherEmail, motherEmail, fatherWorkEmail, motherWorkEmail]) {
     if (email && !isEmail(email)) {
-      return { status: 'error', message: 'One of the email addresses is not valid — please check and try again.' }
+      return { status: 'error', message: 'One of the email addresses is not valid. Please check and try again.' }
     }
   }
 
@@ -88,7 +88,7 @@ export async function submitApplication(
     get('motherEmergencyPhone', 40),
   ]
 
-  // The registrar has to be able to call the family back — an application with no reachable
+  // The registrar has to be able to call the family back. An application with no reachable
   // contact is not actionable, so it is rejected rather than silently filed.
   if (!phones.some(Boolean)) {
     return { status: 'error', message: 'Please add at least one phone number so the school can reach you.' }

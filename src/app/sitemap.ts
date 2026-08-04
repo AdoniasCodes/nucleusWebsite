@@ -3,6 +3,17 @@ import { getPayloadClient } from '@/lib/payload'
 import { defaultPages } from '@/components/blocks/defaultPages'
 import { SERVER_URL } from '@/lib/serverUrl'
 
+/** Blog posts aimed at the school's primary commercial queries. */
+const HEAD_TERM_POSTS = new Set([
+  'best-international-schools-addis-ababa',
+  'best-cambridge-schools-addis-ababa',
+  'international-school-fees-addis-ababa-2026',
+  'ics-addis-ababa-fees-and-alternatives',
+  'how-to-choose-international-school-addis-ababa',
+  'robotics-coding-for-kids-addis-ababa',
+  'summer-camp-activities-for-kids-addis-ababa',
+])
+
 /** Auto-generated sitemap of canonical URLs: home + all code/CMS pages + published posts. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base: MetadataRoute.Sitemap = [
@@ -13,7 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly' as const,
       priority: slug === 'admissions' ? 0.9 : 0.7,
     })),
-    // The newsletter index refreshes weekly — worth a high crawl priority.
+    // The newsletter index refreshes weekly, worth a high crawl priority.
     { url: `${SERVER_URL}/newsletter`, changeFrequency: 'weekly' as const, priority: 0.8 },
   ]
 
@@ -34,7 +45,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       if (post.category === 'newsletter') {
         base.push({ url: `${SERVER_URL}/newsletter/${post.slug}`, lastModified: post.updatedAt, changeFrequency: 'weekly', priority: 0.6 })
       } else {
-        base.push({ url: `${SERVER_URL}/news/${post.slug}`, lastModified: post.updatedAt, changeFrequency: 'monthly', priority: 0.5 })
+        // Head-term guides carry the queries the school actually competes for, so they get
+        // a higher crawl priority than the rest of the blog.
+        const priority = HEAD_TERM_POSTS.has(post.slug) ? 0.8 : 0.5
+        base.push({ url: `${SERVER_URL}/news/${post.slug}`, lastModified: post.updatedAt, changeFrequency: 'monthly', priority })
       }
     }
     for (const pl of playlists.docs) {

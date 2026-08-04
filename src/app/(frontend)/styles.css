@@ -2,21 +2,21 @@
 @plugin '@tailwindcss/typography';
 
 /* ──────────────────────────────────────────────────────────────────────────
-   Nucleus brand design tokens (from docs/brand-guideline.md — the 82pp book).
+   Nucleus brand design tokens (from docs/brand-guideline.md, the 82pp book).
    These generate Tailwind utilities: bg-navy, text-ochre, font-display, etc.
    ────────────────────────────────────────────────────────────────────────── */
 @theme {
   /* Primary duo (dominant) */
-  --color-navy: #11024d; /* ROYAL — the core brand color */
+  --color-navy: #11024d; /* ROYAL: the core brand color */
   --color-navy-700: #1d0e63;
   --color-navy-500: #2a1a7a;
   --color-pale: #d9e6f5; /* COOL pale icy blue */
 
-  /* Accent — used sparingly (CTAs, bands, woven pattern). NOT a bright gold. */
+  /* Accent: used sparingly (CTAs, bands, woven pattern). NOT a bright gold. */
   --color-ochre: #e0a93b;
   --color-ochre-600: #c99230;
 
-  /* Playful tertiary set — joyful accents, badge frames, kids' sections only */
+  /* Playful tertiary set: joyful accents, badge frames, kids' sections only */
   --color-teal: #16a4c8;
   --color-grass: #2bb673;
   --color-peach: #f5a878;
@@ -31,7 +31,7 @@
   --color-slate: #8a97a6;
   --color-ink: #14102b; /* near-navy text on light */
 
-  /* Type — Century Gothic → Jost (geometric); Hornbill → Lora (warm serif) */
+  /* Type: Century Gothic → Jost (geometric); Hornbill → Lora (warm serif) */
   --font-display: var(--font-jost), 'Century Gothic', system-ui, sans-serif;
   --font-body: var(--font-lora), 'Hornbill', Georgia, serif;
   --font-amharic: var(--font-ethiopic), 'Noto Sans Ethiopic', sans-serif;
@@ -97,7 +97,7 @@
   );
 }
 
-/* Woven brand texture for dark bands — a fine ochre+pale cross-weave (the brand's
+/* Woven brand texture for dark bands, a fine ochre+pale cross-weave (the brand's
    "woven line pattern"). Static, GPU-free, ~0 cost. */
 @utility brand-weave {
   background-image:
@@ -105,7 +105,7 @@
     repeating-linear-gradient(-45deg, rgba(224, 169, 59, 0.045) 0 1px, transparent 1px 16px);
 }
 
-/* Mouse-reactive "nucleus" glow — an ochre→blue radial centred on --mx/--my, which a
+/* Mouse-reactive "nucleus" glow: an ochre→blue radial centred on --mx/--my, which a
    tiny rAF handler updates from the cursor (see InteractiveBackdrop). No JS = the glow
    simply rests at its default position. */
 .cursor-orb {
@@ -117,7 +117,7 @@
   );
 }
 
-/* ── Micro-animations (subtle, professional — a touch of child-like wonder) ───── */
+/* ── Micro-animations (subtle, professional, a touch of child-like wonder) ───── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }
   to { opacity: 1; transform: translateY(0); }
@@ -145,7 +145,7 @@
 .animate-bob { animation: floatBob 6.5s ease-in-out infinite; }
 .animate-float-slow { animation: floatY 9.5s ease-in-out infinite; }
 
-/* Slow drift on the hero background video — a living, cinematic frame. */
+/* Slow drift on the hero background video, a living, cinematic frame. */
 .hero-kenburns { animation: kenBurns 22s ease-in-out infinite alternate; }
 
 /* ── Photo treatment (Lever 1) ───────────────────────────────────────────────
@@ -173,7 +173,7 @@
   from { transform: scale(1.04); }
   to { transform: scale(1.12); }
 }
-/* Distinct from the stronger hero drift — a slow, subtle pan for featured stills. */
+/* Distinct from the stronger hero drift, a slow, subtle pan for featured stills. */
 .img-drift { animation: kenBurnsSoft 20s ease-in-out infinite alternate; }
 
 /* ── Scroll-reveal system ──────────────────────────────────────────────────────
@@ -182,7 +182,7 @@
 
 /* The left/right variants start translated ±44px, which on a phone pushes the
    not-yet-revealed cards past the viewport and gives the whole page a horizontal
-   scrollbar until they settle. `overflow-x: clip` kills that sideways scroll —
+   scrollbar until they settle. `overflow-x: clip` kills that sideways scroll,
    and unlike `hidden` it does NOT create a scroll container, so the sticky
    header and any scroll-driven (view-timeline) animations keep working. */
 html,
@@ -387,7 +387,7 @@ body {
    the words "final finishing" get a coat of ochre swept across them, left to right,
    like the finishing they describe. */
 
-/* The build track easing is a slow settle, not a bounce — it should read as
+/* The build track easing is a slow settle, not a bounce. It should read as
    progress that has taken months, not a loading spinner. */
 .campus-track {
   transition: width 1.6s cubic-bezier(0.22, 1, 0.36, 1);
@@ -395,7 +395,7 @@ body {
 
 /* Wet-paint sweep: an ochre underline-block grows from the left behind the words.
    `isolation: isolate` keeps the z-index:-1 stroke inside this element's stacking
-   context — without it the stroke drops behind the section background entirely. */
+   context. Without it the stroke drops behind the section background entirely. */
 .campus-paint {
   position: relative;
   display: inline-block;

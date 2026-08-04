@@ -9,9 +9,9 @@ import { COUNTRIES, countryByIso } from '@/lib/countries'
  * families without making them think about formats.
  *
  * The pair is rendered as ONE labelled group (`role="group"` + `aria-labelledby`) so screen
- * readers announce "Mobile — Ethiopia +251, phone number" instead of two orphaned controls.
+ * readers announce "Mobile: Ethiopia +251, phone number" instead of two orphaned controls.
  *
- * Value shape is `{ iso, number }` and the parent composes the E.164 string on submit — keeping
+ * Value shape is `{ iso, number }` and the parent composes the E.164 string on submit, keeping
  * the raw digits in state means the field never fights the user mid-typing.
  */
 export type PhoneValue = { iso: string; number: string }
@@ -56,7 +56,7 @@ export function PhoneField({
         {/* The dial code leads each option so the (width-capped) closed select always shows the
             number that matters; the country name follows it and is fully readable when open. */}
         <select
-          aria-label={`${label} — country code`}
+          aria-label={`${label} country code`}
           value={value.iso}
           onChange={(e) => onChange({ ...value, iso: e.target.value })}
           className="min-h-[3rem] w-[7.5rem] shrink-0 cursor-pointer border-r border-navy/15 bg-mist/60 py-3 pl-3 pr-1 font-display text-base text-navy outline-none"
@@ -108,7 +108,7 @@ export function composePhone({ iso, number }: PhoneValue): string {
   if (!digits) return ''
   const country = countryByIso(iso)
   if (iso === 'ET') {
-    // Accept 0912…, 912…, 251912… — all collapse to the 9-digit subscriber part.
+    // Accept 0912…, 912…, 251912…; all collapse to the 9-digit subscriber part.
     const local = digits.replace(/^(?:251|0)/, '')
     return `0${local}`
   }

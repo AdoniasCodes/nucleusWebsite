@@ -3,7 +3,7 @@ import 'server-only'
 import { createHmac, timingSafeEqual } from 'node:crypto'
 
 /**
- * Signed form tokens — our own lightweight replacement for reCAPTCHA.
+ * Signed form tokens: our own lightweight replacement for reCAPTCHA.
  *
  * A token is `"<ts>.<hmac>"` where ts is the mint time (ms epoch) and hmac is
  * HMAC-SHA256(ts, PAYLOAD_SECRET). It is minted on the SERVER at page render time and embedded
@@ -17,7 +17,7 @@ import { createHmac, timingSafeEqual } from 'node:crypto'
 
 // 7 days, NOT hours: ISR serves stale HTML to the first visitor after a quiet stretch (verified
 // in prod: the 5am summer-camp page carried last night's token and a 6h cap rejected a real
-// submission). Bots are stopped by having no valid signature, not by token age — the age cap
+// submission). Bots are stopped by having no valid signature, not by token age. The age cap
 // only bounds how long a scraped token could be replayed, and the rate limit covers that.
 const MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000
 
@@ -51,7 +51,7 @@ export function verifyFormToken(token: string | undefined | null): boolean {
   const tsNum = Number(ts)
   if (!Number.isFinite(tsNum)) return false
   const age = Date.now() - tsNum
-  // Only an upper bound — no minimum age (see file header re: ISR caching).
+  // Only an upper bound, no minimum age (see file header re: ISR caching).
   if (age > MAX_AGE_MS) return false
 
   return true

@@ -3,11 +3,12 @@ import { getPayload } from 'payload'
 import config from '../payload.config'
 import { richTextFromBlocks, type ContentBlock } from '../lib/lexical'
 import type { Post } from '../payload-types'
+import { LEGACY_NEWSLETTER_SLUGS } from '../lib/legacySlugs'
 
 /**
  * Seeds the newsletter: every series (playlist) and the articles inside them.
- * Re-runnable — upserts each playlist by slug and recreates each article by slug.
- * Run: `npm run seed:newsletters`
+ * Re-runnable: upserts each playlist by slug and recreates each article by slug.
+ * Run: `PAYLOAD_SKIP_PUSH=1 pnpm run seed:newsletters`
  *
  * To add a series: append to SERIES, then give its issues the matching `seriesSlug`.
  */
@@ -40,7 +41,7 @@ const SERIES: SeedSeries[] = [
     title: 'The Educators’ Core: Teachers’ Capacity Building Training',
     slug: 'teachers-capacity-building',
     description:
-      'The continuous professional development newsletter of Nucleus International Schools. Each issue documents one module of our Teachers’ Capacity Building Training programme — the practical tools, global strategies and pedagogical backing behind our classrooms.',
+      'The continuous professional development newsletter of Nucleus International Schools. Each issue documents one module of our Teachers’ Capacity Building Training programme: the practical tools, global strategies and pedagogical backing behind our classrooms.',
     coverImageUrl: `${CBT}/cbt01-ei-session.webp`,
     related: [
       { label: 'Meet the team behind the training', url: '/about' },
@@ -660,7 +661,7 @@ const week3Sections: SeedSection[] = [
 ]
 
 /* ------------------------------------------------------------------------------
- * The Educators' Core — Issue 01: Emotional Intelligence
+ * The Educators' Core: Issue 01: Emotional Intelligence
  * Source: the CBT programme doc from leadership (Vatican Campus session, July 2026).
  * ---------------------------------------------------------------------------- */
 const cbt01Sections: SeedSection[] = [
@@ -749,17 +750,17 @@ const ISSUES: SeedIssue[] = [
   {
     seriesSlug: 'summer-camp-2026',
     article: {
-      title: 'Nucleus Summer Camp 2026, Week 1 Recap: Robotics, Art, Sports and Music',
-      slug: 'summer-camp-2026-week-1-recap',
+      title: 'Inside a Week at Summer Camp in Addis Ababa: Robotics, Art, Sport and Music',
+      slug: 'inside-a-week-at-summer-camp-addis-ababa',
       excerpt:
-        'Week one of Nucleus Summer Camp 2026 was full of discovery: campers built moving Shape Men, met real robots, made musical shakers, and learned taekwondo, running and soccer. The full recap, in pictures.',
+        'What does a week at a kids summer camp in Addis Ababa actually look like? Campers built moving Shape Men, met real robots, made musical shakers, and learned taekwondo, running and soccer. Week one at Nucleus, in pictures.',
       heroImageUrl: `${IMG}/week1-hula-hoops.webp`,
       publishedAt: '2026-07-17T15:00:00.000Z',
       playlistPart: 1,
       meta: {
-        title: 'Nucleus Summer Camp 2026 Week 1 Recap: Robotics, Art, Sports and Music',
+        title: 'Inside a Week at Summer Camp in Addis Ababa',
         description:
-          'Week 1 at Nucleus Summer Camp 2026 in Addis Ababa: robotics discovery, Shape Men art, taekwondo, running, soccer and music. See the full photo recap from camp.',
+          'What a real week at a kids summer camp in Addis Ababa looks like: robotics, Shape Men art, taekwondo, running, soccer and music, in photos.',
       },
     },
     sections: week1Sections,
@@ -767,17 +768,17 @@ const ISSUES: SeedIssue[] = [
   {
     seriesSlug: 'summer-camp-2026',
     article: {
-      title: 'Nucleus Summer Camp 2026, Week 2 Recap: Confidence, Coding and Creativity',
-      slug: 'summer-camp-2026-week-2-recap',
+      title: 'Kids Learning to Code Robots in Addis Ababa: A Week of Coding, Art and Guitar',
+      slug: 'kids-learning-to-code-robots-addis-ababa',
       excerpt:
-        'Week two of Nucleus Summer Camp 2026 was about discovering confidence: campers programmed robots block by block, built bold mosaics, learned guitar, and grew from shy on Monday to leading games by Friday. With video from the robotics lab.',
+        'How do children actually learn to program a robot? Campers built the sequence block by block, made bold mosaics, picked up guitar, and went from shy on Monday to leading games by Friday. With video from the robotics lab at Nucleus Summer Camp, Addis Ababa.',
       heroImageUrl: `${IMG}/week2-football-field.webp`,
       publishedAt: '2026-07-24T15:00:00.000Z',
       playlistPart: 2,
       meta: {
-        title: 'Nucleus Summer Camp 2026 Week 2 Recap: Confidence, Coding and Creativity',
+        title: 'Kids Learning to Code Robots in Addis Ababa',
         description:
-          'Week 2 at Nucleus Summer Camp 2026 in Addis Ababa: robot programming on video, mosaic art, guitar lessons, taekwondo and football. See how confidence grew all week at camp.',
+          'Watch children in Addis Ababa program their first robot, block by block, plus mosaic art, guitar, taekwondo and football. Video from the robotics lab.',
       },
     },
     sections: week2Sections,
@@ -785,17 +786,17 @@ const ISSUES: SeedIssue[] = [
   {
     seriesSlug: 'summer-camp-2026',
     article: {
-      title: 'Nucleus Summer Camp 2026, Week 3 Recap: From Confidence to Leadership',
-      slug: 'summer-camp-2026-week-3-recap',
+      title: 'How Summer Camp Turns Shy Children Into Leaders: A Week in Addis Ababa',
+      slug: 'summer-camp-confidence-to-leadership-addis-ababa',
       excerpt:
-        'Week three of Nucleus Summer Camp 2026 was the week confidence turned into leadership: campers volunteering to lead activities, helping younger friends, debugging their own designs in the innovation lab, and finding their voice at the keyboard.',
+        'The week confidence turned into leadership. Campers volunteered to lead activities, helped younger friends, debugged their own designs in the innovation lab, and found their voice at the keyboard. Week three at Nucleus Summer Camp, Addis Ababa.',
       heroImageUrl: `${IMG}/week3-taekwondo-warmup.webp`,
       publishedAt: '2026-07-31T15:00:00.000Z',
       playlistPart: 3,
       meta: {
-        title: 'Nucleus Summer Camp 2026 Week 3 Recap: From Confidence to Leadership',
+        title: 'How Summer Camp Turns Shy Children Into Leaders',
         description:
-          'Week 3 at Nucleus Summer Camp 2026 in Addis Ababa: campers leading activities, engineering fixes in the innovation lab, keyboard lessons in the music corner and taekwondo on the mats.',
+          'What actually builds confidence in a child? Campers in Addis Ababa start leading activities, fixing their own designs and finding their voice at camp.',
       },
     },
     sections: week3Sections,
@@ -803,17 +804,17 @@ const ISSUES: SeedIssue[] = [
   {
     seriesSlug: 'teachers-capacity-building',
     article: {
-      title: 'The Educators\u2019 Core, Issue 01: Emotional Intelligence, the Heart of Effective Teaching',
-      slug: 'educators-core-issue-01-emotional-intelligence',
+      title: 'Emotional Intelligence in the Classroom: Why the Best Teachers Read the Room First',
+      slug: 'emotional-intelligence-in-the-classroom',
       excerpt:
         'The first issue of our professional development newsletter: why teaching is an emotional endeavour as much as an intellectual one, three takeaways from our inaugural training session at the Vatican campus, and the ten-second habit that makes a teacher responsive.',
       heroImageUrl: `${CBT}/cbt01-ei-session.webp`,
       publishedAt: '2026-07-28T15:00:00.000Z',
       playlistPart: 1,
       meta: {
-        title: 'Emotional Intelligence in the Classroom | Nucleus Teachers\u2019 Capacity Building Training',
+        title: 'Emotional Intelligence in the Classroom',
         description:
-          'Issue 01 of The Educators\u2019 Core, the professional development newsletter of Nucleus International Schools: emotional intelligence in the classroom, self-awareness, empathy-driven classroom management and social-emotional learning.',
+          'How teachers use self-awareness and empathy to run a calmer classroom. Practical notes from the Nucleus teacher training on emotional intelligence.',
       },
     },
     sections: cbt01Sections,
@@ -833,7 +834,15 @@ const contentBlocksFor = (sections: SeedSection[], related: SeedSeries['related'
 const run = async () => {
   const payload = await getPayload({ config })
 
-  // Upsert every series (playlist) by slug — never delete them, articles point at them.
+  // Issues retitled for search intent changed slug, so the rows created under the OLD slugs
+  // are still published and would sit in the sitemap as duplicates of the new ones. Delete
+  // them here; the route 301s the old paths to the new ones via LEGACY_NEWSLETTER_SLUGS.
+  for (const oldSlug of Object.keys(LEGACY_NEWSLETTER_SLUGS)) {
+    const { docs } = await payload.delete({ collection: 'posts', where: { slug: { equals: oldSlug } } })
+    if (docs.length) console.log('removed legacy slug:', oldSlug)
+  }
+
+  // Upsert every series (playlist) by slug. Never delete them: articles point at them.
   const playlistIds = new Map<string, number>()
   const relatedBySeries = new Map<string, SeedSeries['related']>()
   for (const series of SERIES) {

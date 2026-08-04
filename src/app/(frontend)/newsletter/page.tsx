@@ -218,7 +218,7 @@ export default async function NewsletterPage() {
       {/* Cross-links into the blog keep readers (and crawlers) moving. */}
       <LatestPostsBlock blockType="latestPosts" heading="More from Nucleus" limit={3} />
 
-      {/* CTA band — same photo + two-part tint treatment as the ctaBand block on the other
+      {/* CTA band: same photo + two-part tint treatment as the ctaBand block on the other
           pages (light overall wash, soft scrim behind the copy only). */}
       <section aria-label="Register" className="relative overflow-hidden text-pale">
         <div

@@ -9,11 +9,11 @@ import Script from 'next/script'
  * Everything loads `afterInteractive` so it never blocks first paint / hurts the speed score.
  * A standard PageView fires on load; the lead/registration forms fire a conversion event via
  * `src/lib/pixels.ts` (`trackLead`) on successful submit.
- * (Microsoft Clarity was removed 2026-06-11 — re-add from git history if heatmaps are wanted later.)
+ * (Microsoft Clarity was removed 2026-06-11: re-add from git history if heatmaps are wanted later.)
  */
-// GA4 — defaults to the live Nucleus Measurement ID; override via env if it ever changes.
+// GA4: defaults to the live Nucleus Measurement ID; override via env if it ever changes.
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-9WN6K3GHST'
-// Marketing pixels — OFF until Eyoel adds the IDs (env or hardcode default here, like GA4 above).
+// Marketing pixels: OFF until Eyoel adds the IDs (env or hardcode default here, like GA4 above).
 const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID || ''
 const TIKTOK_PIXEL_ID = process.env.NEXT_PUBLIC_TIKTOK_PIXEL_ID || ''
 

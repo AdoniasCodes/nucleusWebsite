@@ -7,7 +7,7 @@ const mediaUrl = (m: unknown): string | undefined =>
     : undefined
 
 /**
- * Site-wide JSON-LD: EducationalOrganization (with local-business signals — address,
+ * Site-wide JSON-LD: EducationalOrganization (with local-business signals: address,
  * geo, phones) + WebSite. Rendered once in the homepage <head>. See project-docs/schema.md.
  */
 export function buildOrganizationSchema(settings?: SiteSetting | null, seo?: SeoSetting | null) {

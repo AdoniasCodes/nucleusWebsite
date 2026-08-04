@@ -13,7 +13,7 @@ export type DayTimelineProps = {
 }
 
 /**
- * "A Day at Nucleus" icon timeline (Lever 2) — tells the daily-experience story with
+ * "A Day at Nucleus" icon timeline (Lever 2): tells the daily-experience story with
  * icons + the brand palette, no photos. Horizontal connected line on desktop, stacked
  * rows on mobile. The icon ring uses the section bg colour so the line reads as "threaded".
  */

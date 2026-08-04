@@ -7,7 +7,7 @@ import { Reveal } from '@/components/ui/Reveal'
 /**
  * Social-proof band (synthetic block). Inline quotes for the code-defined homepage.
  * NOTE: quotes here are PLACEHOLDER until real parent testimonials are provided
- * (content/open-questions.md). Swap before publishing — do not present as real to the public.
+ * (content/open-questions.md). Swap before publishing: do not present as real to the public.
  */
 export type Testimonial = { quote: string; author: string; relationship?: string }
 export type TestimonialsProps = {

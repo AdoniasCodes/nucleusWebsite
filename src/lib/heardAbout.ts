@@ -1,9 +1,9 @@
 /**
- * Marketing attribution options — "How did you hear about us?".
+ * Marketing attribution options: "How did you hear about us?".
  *
  * This is the school's real channel list, supplied by marketing: paid/organic social (including
  * the individual TikTok creators the school sponsors), broadcast, print and physical placements.
- * Kept in one place so the contact form and the admission form report against the SAME taxonomy —
+ * Kept in one place so the contact form and the admission form report against the SAME taxonomy,
  * two slightly different lists would make the numbers impossible to add up.
  *
  * Values are stored verbatim, so DO NOT rename an existing entry without also migrating the rows

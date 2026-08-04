@@ -1,5 +1,5 @@
 /**
- * The Nucleus orb — pearl core + radiant rays. This is the brand's signature 3D
+ * The Nucleus orb: pearl core + radiant rays. This is the brand's signature 3D
  * motif (it's the logo's center), used as the hero accent and as the fallback
  * "icon" for cards before editors upload real iconography. Pure SVG = zero network cost.
  */

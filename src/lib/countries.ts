@@ -1,7 +1,7 @@
 /**
  * Country dial codes for the admission form's phone fields.
  *
- * Stored as a compact `ISO|Name|dial` string and split once at module load — a 240-entry
+ * Stored as a compact `ISO|Name|dial` string and split once at module load, a 240-entry
  * array literal would be ~5x the bytes shipped to the browser for no benefit.
  *
  * Ethiopia is deliberately FIRST (the default for every phone field on this site) and then
@@ -58,7 +58,7 @@ export const countryByIso = (iso: string): Country =>
  * as the dial codes so the two lists can never drift apart. Ethiopia stays pinned first because
  * it is the answer for the large majority of applicants; the rest are alphabetical.
  *
- * These are COUNTRY names, not demonyms ("Ethiopia", not "Ethiopian") — deriving adjectives
+ * These are COUNTRY names, not demonyms ("Ethiopia", not "Ethiopian"), deriving adjectives
  * mechanically produces wrong forms for a lot of countries, and the field is labelled to match.
  */
 export const COUNTRY_NAMES: string[] = [

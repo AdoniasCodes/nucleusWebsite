@@ -289,7 +289,7 @@ function Grid({ children }: { children: React.ReactNode }) {
 
 function StepHeading({ index }: { index: number }) {
   const step = STEPS[index]
-  // The step counter lives in the progress bar above the card — repeating it here just
+  // The step counter lives in the progress bar above the card, repeating it here just
   // duplicates the same number twice in one screen.
   return (
     <div className="border-b border-navy/10 pb-5">
@@ -349,7 +349,7 @@ export function ApplicationForm({ formToken }: { formToken: string }) {
       if (typeof saved.step === 'number') setStep(Math.min(Math.max(saved.step, 0), STEPS.length - 1))
       setRestored(true)
     } catch {
-      // Corrupt or blocked storage (private mode) — start clean rather than break the form.
+      // Corrupt or blocked storage (private mode): start clean rather than break the form.
     }
   }, [])
 
@@ -364,7 +364,7 @@ export function ApplicationForm({ formToken }: { formToken: string }) {
         window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ values, phones, step, at }))
         setSavedAt(at)
       } catch {
-        // Storage full or disabled — autosave is a convenience, never a blocker.
+        // Storage full or disabled: autosave is a convenience, never a blocker.
       }
     }, SAVE_DEBOUNCE_MS)
     return () => clearTimeout(t)
@@ -394,7 +394,7 @@ export function ApplicationForm({ formToken }: { formToken: string }) {
     const emailKeys = i === 2 ? ['fatherEmail', 'fatherWorkEmail'] : i === 3 ? ['motherEmail', 'motherWorkEmail'] : []
     for (const k of emailKeys) {
       const v = val(k).trim()
-      if (v && !isEmail(v)) next[k] = 'That email address does not look right — check for a typo.'
+      if (v && !isEmail(v)) next[k] = 'That email address does not look right. Check for a typo.'
     }
 
     const phoneKeys: PhoneKey[] =
@@ -408,7 +408,7 @@ export function ApplicationForm({ formToken }: { formToken: string }) {
       if (err) next[k] = err
     }
 
-    // The school must be able to reach at least one parent — enforced on the mother step,
+    // The school must be able to reach at least one parent, enforced on the mother step,
     // which is the last point where either number can still be entered.
     if (i === 3) {
       const anyPhone = PHONE_KEYS.some((k) => phones[k].number.replace(/\D/g, ''))
@@ -521,7 +521,7 @@ export function ApplicationForm({ formToken }: { formToken: string }) {
       <Container width="narrow">
         <div ref={topRef} className="scroll-mt-28" />
 
-        {/* Progress — a labelled bar plus a step rail. The rail is horizontally scrollable on
+        {/* Progress: a labelled bar plus a step rail. The rail is horizontally scrollable on
             phones rather than wrapping into an unreadable stack. */}
         <div className="mb-6">
           <div className="flex items-baseline justify-between gap-4">
@@ -833,7 +833,7 @@ export function ApplicationForm({ formToken }: { formToken: string }) {
                     onBlur={() => {
                       const v = val('fatherEmail').trim()
                       if (v && !isEmail(v))
-                        setErrors((p) => ({ ...p, fatherEmail: 'That email address does not look right — check for a typo.' }))
+                        setErrors((p) => ({ ...p, fatherEmail: 'That email address does not look right. Check for a typo.' }))
                     }}
                     maxLength={200}
                   />
@@ -929,7 +929,7 @@ export function ApplicationForm({ formToken }: { formToken: string }) {
                     onBlur={() => {
                       const v = val('motherEmail').trim()
                       if (v && !isEmail(v))
-                        setErrors((p) => ({ ...p, motherEmail: 'That email address does not look right — check for a typo.' }))
+                        setErrors((p) => ({ ...p, motherEmail: 'That email address does not look right. Check for a typo.' }))
                     }}
                     maxLength={200}
                   />

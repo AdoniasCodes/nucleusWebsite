@@ -11,7 +11,7 @@ const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
 
 /**
  * Best-effort in-memory rate limit: max submissions per IP per window. On Vercel this is
- * per-warm-instance (not global), so it throttles bursts but is NOT the primary defense —
+ * per-warm-instance (not global), so it throttles bursts but is NOT the primary defense,
  * the signed form token + the locked REST endpoint are. Cheap, zero-dependency, no
  * false-blocking of real users.
  */
@@ -48,12 +48,12 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
   const getLong = (k: string, max = 3000) =>
     cleanText(formData.get(k)?.toString() ?? '', { multiline: true }).slice(0, max)
 
-  // Honeypot — bots fill hidden fields. Silently succeed without saving.
-  if (get('company')) return { status: 'success', message: 'Thank you — we will be in touch shortly.' }
+  // Honeypot: bots fill hidden fields. Silently succeed without saving.
+  if (get('company')) return { status: 'success', message: 'Thank you. We will be in touch shortly.' }
 
   // Per-IP rate limit. Pretend success so spammers get no signal they were throttled.
   const ip = (await headers()).get('x-forwarded-for')?.split(',')[0]?.trim() ?? ''
-  if (rateLimited(ip)) return { status: 'success', message: 'Thank you — we will be in touch shortly.' }
+  if (rateLimited(ip)) return { status: 'success', message: 'Thank you. We will be in touch shortly.' }
 
   // Signed form token: minted on the server at page render, embedded as a hidden field. A bot
   // POSTing straight at this action without loading the page has no valid token and is rejected.
@@ -77,7 +77,7 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
   if (!parentName || !email) return { status: 'error', message: 'Please add your name and email.' }
   if (!isEmail(email)) return { status: 'error', message: 'Please enter a valid email address.' }
 
-  // Phone is how staff actually reach parents — it must be a number we can dial.
+  // Phone is how staff actually reach parents. It must be a number we can dial.
   // Normalized before storing: Ethiopian mobiles → 09.../07..., international → +E.164.
   const phone = normalizePhone(get('phone'))
   if (!phone) return { status: 'error', message: PHONE_ERROR }
@@ -136,7 +136,7 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
       })
     }
 
-    return { status: 'success', message: 'Thank you — we will be in touch shortly.' }
+    return { status: 'success', message: 'Thank you. We will be in touch shortly.' }
   } catch {
     return { status: 'error', message: 'Something went wrong. Please call us on 0981999922.' }
   }

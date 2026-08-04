@@ -6,22 +6,22 @@ import { Section, isDark, type SectionBackground } from '@/components/ui/Section
 import { Icon } from '@/components/ui/Icon'
 
 /**
- * Camp activities as a horizontal snap-CAROUSEL (10 cards) — more dynamic than a static grid.
+ * Camp activities as a horizontal snap-CAROUSEL (10 cards), more dynamic than a static grid.
  * Swipe on touch; prev/next arrows on desktop. Client component (scroll control). Synthetic block.
  */
 type Activity = { icon: string; title: string; description: string }
 
 const ACTIVITIES: Activity[] = [
   { icon: 'FlaskConical', title: 'STEM Labs', description: 'Hands-on experiments that make science click.' },
-  { icon: 'Bot', title: 'Robotics', description: 'Build and program real robots — the skill of the future.' },
+  { icon: 'Bot', title: 'Robotics', description: 'Build and program real robots: the skill of the future.' },
   { icon: 'Crown', title: 'Chess', description: 'Patience, strategy and focus, one move at a time.' },
-  { icon: 'Palette', title: 'Arts & Crafts', description: 'Paint, clay and mixed-media — room to Create Boldly.' },
+  { icon: 'Palette', title: 'Arts & Crafts', description: 'Paint, clay and mixed-media: room to Create Boldly.' },
   { icon: 'Music', title: 'Music Wing', description: 'Voice, rhythm and keyboard for every level.' },
   { icon: 'Swords', title: 'Taekwondo', description: 'Discipline, respect and confidence on the mat.' },
   { icon: 'Trophy', title: 'Football', description: 'Coached drills, teamwork and plenty of match play.' },
   { icon: 'Target', title: 'Basketball', description: 'Skills, agility and the joy of playing together.' },
   { icon: 'Volleyball', title: 'Volleyball', description: 'Communication and coordination, rally by rally.' },
-  { icon: 'Wind', title: 'Kites & Paper Planes', description: 'Design, build and fly — physics you can feel.' },
+  { icon: 'Wind', title: 'Kites & Paper Planes', description: 'Design, build and fly: physics you can feel.' },
 ]
 
 export type CampActivitiesProps = {
@@ -39,7 +39,7 @@ export function CampActivitiesBlock({
   anchor,
   eyebrow = 'What They’ll Do',
   heading = 'Ten ways to spend a brilliant summer',
-  intro = 'A full, balanced week — mind, body and imagination. Children rotate through hands-on activities led by specialists, not screens.',
+  intro = 'A full, balanced week of mind, body and imagination. Children rotate through hands-on activities led by specialists, not screens.',
   activities = ACTIVITIES,
 }: CampActivitiesProps) {
   const track = useRef<HTMLDivElement>(null)

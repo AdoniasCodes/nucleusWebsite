@@ -25,7 +25,7 @@ export const SEOSettings: GlobalConfig = {
     {
       name: 'defaultMetaTitle',
       type: 'text',
-      defaultValue: 'Nucleus International Schools — Cambridge School in Addis Ababa',
+      defaultValue: 'Nucleus International Schools | Cambridge School in Addis Ababa',
     },
     {
       name: 'defaultMetaDescription',

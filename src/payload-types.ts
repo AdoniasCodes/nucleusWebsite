@@ -895,7 +895,7 @@ export interface AdmissionApplication {
   transportInterest?: boolean | null;
   heardAbout?: string | null;
   /**
-   * Typed full name — the parent’s electronic signature on the declaration.
+   * Typed full name: the parent’s electronic signature on the declaration.
    */
   declarationName?: string | null;
   declarationAccepted?: boolean | null;

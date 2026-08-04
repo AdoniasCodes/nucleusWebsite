@@ -11,7 +11,7 @@ import { TEAM } from '../components/blocks/teamData'
  * OurTeamBlock.tsx, so the school can manage people in the admin. The About page renders the CMS
  * roster via OurTeamServer, falling back to the hardcoded list only when the CMS is empty.
  *
- * Run: `npm run seed:staff`. Idempotent — skips media by filename and staff by name.
+ * Run: `npm run seed:staff`. Idempotent: skips media by filename and staff by name.
  */
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -50,7 +50,7 @@ async function run() {
     } else {
       const media = await payload.create({
         collection: 'media',
-        data: { alt: `${member.name} — ${member.role}, Nucleus International Schools` },
+        data: { alt: `${member.name}, ${member.role}, Nucleus International Schools` },
         filePath: path.join(TEAM_DIR, filename),
       })
       mediaId = media.id

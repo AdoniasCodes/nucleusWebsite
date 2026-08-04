@@ -6,6 +6,8 @@ import { RichText } from '@payloadcms/richtext-lexical/react'
 import { Container } from '@/components/ui/Container'
 import { Media } from '@/components/ui/Media'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { NewsletterSections } from '@/components/newsletter/NewsletterSections'
+import { POST_FAQS } from '@/lib/postFaqs'
 import { getPayloadClient } from '@/lib/payload'
 import { buildBreadcrumbSchema } from '@/lib/seo'
 import { stockWebp } from '@/lib/img'
@@ -45,7 +47,7 @@ export default async function PostPage({ params }: Props) {
   const { slug } = await params
   const post = await getPost(slug).catch(() => null)
   if (!post) notFound()
-  // Newsletter articles canonically live under /newsletter — never render them here.
+  // Newsletter articles canonically live under /newsletter, never render them here.
   if (post.category === 'newsletter') redirect(`/newsletter/${slug}`)
 
   const hero = post.heroImage && typeof post.heroImage === 'object' ? post.heroImage : null
@@ -72,6 +74,21 @@ export default async function PostPage({ params }: Props) {
             publisher: { '@id': `${SERVER_URL}/#organization` },
             mainEntityOfPage: `${SERVER_URL}/news/${slug}`,
           },
+          // Head-term posts carry an FAQ block; the same Q&As are rendered as visible copy
+          // in the post body, which Google requires before it will show the rich result.
+          ...(POST_FAQS[slug]
+            ? [
+                {
+                  '@context': 'https://schema.org',
+                  '@type': 'FAQPage',
+                  mainEntity: POST_FAQS[slug].map((f) => ({
+                    '@type': 'Question',
+                    name: f.q,
+                    acceptedAnswer: { '@type': 'Answer', text: f.a },
+                  })),
+                },
+              ]
+            : []),
         ]}
       />
 
@@ -105,13 +122,26 @@ export default async function PostPage({ params }: Props) {
         </div>
       )}
 
-      {/* Body */}
+      {/* Body. Photo-led posts author their copy as `sections` (same shape the newsletter
+          uses) so real campus photos sit inside the article with alt text and captions;
+          text-only posts still render the plain richText `content`. */}
       <div className="bg-white">
-        <Container width="narrow" className="py-14">
-          <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-navy prose-p:text-ink/80 prose-a:text-ochre-600 prose-li:text-ink/80">
-            {post.content && <RichText data={post.content} />}
-          </div>
-        </Container>
+        {post.sections && post.sections.length > 0 ? (
+          <Container width="narrow" className="py-14">
+            <NewsletterSections sections={post.sections} />
+            {post.content && (
+              <div className="mt-12 border-t border-navy/10 pt-8 prose prose-lg max-w-none prose-headings:font-display prose-headings:text-navy prose-p:text-ink/80 prose-a:text-ochre-600 prose-li:text-ink/80">
+                <RichText data={post.content} />
+              </div>
+            )}
+          </Container>
+        ) : (
+          <Container width="narrow" className="py-14">
+            <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-navy prose-p:text-ink/80 prose-a:text-ochre-600 prose-li:text-ink/80">
+              {post.content && <RichText data={post.content} />}
+            </div>
+          </Container>
+        )}
       </div>
     </article>
   )

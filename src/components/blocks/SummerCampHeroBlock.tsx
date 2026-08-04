@@ -4,7 +4,7 @@ import { ButtonLink } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 
 /**
- * Summer Camp landing hero — a bright "bento mosaic": a headline card beside a 2×2 cluster of
+ * Summer Camp landing hero: a bright "bento mosaic": a headline card beside a 2×2 cluster of
  * real activity photos, so the variety of camp IS the hero. Deliberately different from the
  * homepage slider's split layout. Playful brand accents; white ground (camp = sunshine).
  */
@@ -43,7 +43,7 @@ export function SummerCampHeroBlock({
   eyebrow = 'Nucleus Summer Camp',
   heading = 'Where summer actually',
   headingAccent = 'means something.',
-  subhead = 'Six weeks of robotics, sport, music, art and real discovery — led by qualified Cambridge educators, on two secure Addis Ababa campuses.',
+  subhead = 'Six weeks of robotics, sport, music, art and real discovery, led by qualified Cambridge educators on two secure Addis Ababa campuses.',
   primaryLabel = 'Reserve your child’s spot',
   primaryUrl = '#register',
   secondaryLabel = 'See the activities',

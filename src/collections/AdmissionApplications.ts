@@ -4,7 +4,7 @@ import { isAdminOrStaff, isSuperAdmin } from '../access'
 import { notifyLead } from '../hooks/notifyLead'
 
 /**
- * Full admission applications — the web version of the printed "Student Profile" admission form.
+ * Full admission applications: the web version of the printed "Student Profile" admission form.
  * Kept separate from `admissions-inquiries` (a 6-field lead capture) because this is a complete
  * application record the registrar works from, not a lead to call back.
  *
@@ -272,7 +272,7 @@ export const AdmissionApplications: CollectionConfig = {
               name: 'declarationName',
               type: 'text',
               maxLength: 200,
-              admin: { description: 'Typed full name — the parent’s electronic signature on the declaration.' },
+              admin: { description: 'Typed full name: the parent’s electronic signature on the declaration.' },
             },
             { name: 'declarationAccepted', type: 'checkbox', label: 'Declaration accepted' },
           ],

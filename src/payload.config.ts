@@ -56,7 +56,7 @@ const s3Enabled = Boolean(
  * Email: lead-form notifications go out over the school's cPanel SMTP mailbox (mail.<domain>),
  * so every enquiry lands in the same webmail inbox the school already checks. Enabled only when
  * the SMTP_* env vars are present; otherwise Payload uses its default mock transport (console)
- * so local dev still boots without credentials — mirrors the S3 graceful-fallback pattern.
+ * so local dev still boots without credentials, mirrors the S3 graceful-fallback pattern.
  * cPanel: host = mail.<domain>, port 465 (SSL) or 587 (STARTTLS), user/pass = a real mailbox.
  */
 const smtpEnabled = Boolean(
@@ -134,10 +134,10 @@ export default buildConfig({
   globals: [SiteSettings, SEOSettings],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
-  // CSRF/CORS locked to the canonical site origin — admin + API only trust our own origin.
+  // CSRF/CORS locked to the canonical site origin. Admin + API only trust our own origin.
   cors: ORIGINS,
   csrf: ORIGINS,
-  // The site uses the Local API, never GraphQL — disable it to remove the /api/graphql and
+  // The site uses the Local API, never GraphQL, so it is disabled to remove the /api/graphql and
   // public /api/graphql-playground surface entirely. (The admin UI runs on REST, unaffected.)
   graphQL: {
     disable: true,
@@ -148,7 +148,7 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       // Runtime connection. In production this is the Supabase transaction pooler (port 6543).
-      // Migrations run with DATABASE_URI pointed at the direct connection (5432) — see deployment.md.
+      // Migrations run with DATABASE_URI pointed at the direct connection (5432), see deployment.md.
       connectionString: process.env.DATABASE_URI || '',
       // Cap connections so we never exhaust Supabase's pooler client limit (session mode = 15).
       // Idle connections are released back to the pooler quickly so dev hot-reloads don't leak.
@@ -162,7 +162,7 @@ export default buildConfig({
     },
     // Never auto-push schema in production; prod schema changes go through committed migrations.
     // PAYLOAD_SKIP_PUSH=1 lets data-only scripts (e.g. refresh:gallery) skip the slow drizzle
-    // schema pull — it runs ~100 sequential queries and dies on flaky connections.
+    // schema pull: it runs ~100 sequential queries and dies on flaky connections.
     push: process.env.NODE_ENV !== 'production' && !process.env.PAYLOAD_SKIP_PUSH,
   }),
   sharp,
@@ -185,7 +185,7 @@ export default buildConfig({
     }),
     // Adds an "Export" button to the list view of every form collection, so staff can pull
     // applications and leads out as CSV/JSON (opens in Excel) instead of copying them by hand,
-    // one record at a time. Enabled ONLY on the form collections — there is no reason to let
+    // one record at a time. Enabled ONLY on the form collections: there is no reason to let
     // anyone bulk-export pages or media.
     importExportPlugin({
       collections: (
@@ -197,7 +197,7 @@ export default buildConfig({
         ] as const
       ).map((slug) => ({
         slug,
-        // Export only — an Import button on a leads collection is a footgun, not a feature.
+        // Export only: an Import button on a leads collection is a footgun, not a feature.
         import: false as const,
         // Run the export inline in the request rather than through the jobs queue: there is no
         // cron worker configured on Vercel, so a queued export would sit there forever.

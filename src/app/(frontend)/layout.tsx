@@ -11,7 +11,7 @@ import { SERVER_URL } from '@/lib/serverUrl'
 // Century Gothic → Jost (geometric sans). Hornbill → Lora (warm serif). Self-hosted = no CLS.
 const jost = Jost({ subsets: ['latin'], variable: '--font-jost', display: 'swap' })
 const lora = Lora({ subsets: ['latin'], variable: '--font-lora', display: 'swap' })
-// Amharic appears only in a few sublines — load one weight and don't preload it, so it never
+// Amharic appears only in a few sublines, load one weight and don't preload it, so it never
 // blocks render (the audit flagged the Ethiopic font as render-blocking page weight).
 const ethiopic = Noto_Sans_Ethiopic({
   subsets: ['ethiopic'],
@@ -33,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = seo?.defaultMetaTitle ?? 'Nucleus International Schools | Cambridge in Addis Ababa'
   const description =
     seo?.defaultMetaDescription ??
-    'A Cambridge-curriculum international school at Vatican, Addis Ababa (near Mekanisa Abo Square) for ages 2–Grade 8 — secure campus, robotics, STEM and multilingual learning.'
+    'A Cambridge-curriculum international school at Vatican, Addis Ababa (near Mekanisa Abo Square) for ages 2–Grade 8: secure campus, robotics, STEM and multilingual learning.'
 
   return {
     metadataBase: new URL(SERVER_URL),

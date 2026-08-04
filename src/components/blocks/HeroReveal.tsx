@@ -89,13 +89,13 @@ export function HeroReveal({
         </p>
       )}
       <h1 className="text-4xl font-bold animate-fade-up sm:text-6xl">{heading}</h1>
-      {/* Brand tagline — bold, larger than body but smaller than the H1; verbs in ochre; types in. */}
+      {/* Brand tagline: bold, larger than body but smaller than the H1; verbs in ochre; types in. */}
       <h2 className="mt-4 grid text-xl font-bold sm:text-3xl">
-        {/* Invisible height-reservation copy — holds the full final size in grid cell 1/1. */}
+        {/* Invisible height-reservation copy: holds the full final size in grid cell 1/1. */}
         <span aria-hidden className="invisible col-start-1 row-start-1">
           {tagline}
         </span>
-        {/* Visible animated copy — same grid cell, so no layout shift as it types. */}
+        {/* Visible animated copy: same grid cell, so no layout shift as it types. */}
         <span className="col-start-1 row-start-1">
           {rendered}
           {!done && <span className="caret" aria-hidden />}

@@ -40,8 +40,8 @@ export const Redirects: CollectionConfig = {
       type: 'select',
       defaultValue: '301',
       options: [
-        { label: '301 — Permanent', value: '301' },
-        { label: '302 — Temporary', value: '302' },
+        { label: '301 Permanent', value: '301' },
+        { label: '302 Temporary', value: '302' },
       ],
     },
   ],

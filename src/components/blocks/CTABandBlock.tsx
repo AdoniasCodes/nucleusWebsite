@@ -8,7 +8,7 @@ import { Reveal } from '@/components/ui/Reveal'
  * Full-bleed admissions CTA band. Heading, subhead and CTAs reveal in a soft stagger.
  * Optional code-only `bgImage` turns the band into a parallax panel: the photo is pinned
  * with `bg-fixed` (background-attachment: fixed) so it stays put while the page scrolls over
- * it, under a navy overlay for legibility. (iOS falls back to a normal scroll — graceful.)
+ * it, under a navy overlay for legibility. (iOS falls back to a normal scroll, graceful.)
  */
 export function CTABandBlock(props: CTABandBlockType & { bgImage?: string }) {
   const background = (props.background ?? 'purple') as SectionBackground
@@ -53,7 +53,7 @@ export function CTABandBlock(props: CTABandBlockType & { bgImage?: string }) {
           aria-hidden
         />
         {/* Two-part tint instead of one flat wash. The photo should stay bright and readable as
-            a photo, so the overall tint is deliberately light — but these campus shots have a
+            a photo, so the overall tint is deliberately light, but these campus shots have a
             blown-out sky and sunlit turf, and white text over that is illegible. So the light
             wash is paired with a soft scrim that sits only behind the copy, fading out well
             before the edges. The frame reads open; the words still clear AA contrast. */}

@@ -4,7 +4,7 @@ import { Section, type SectionBackground } from '@/components/ui/Section'
 import { Reveal } from '@/components/ui/Reveal'
 
 /**
- * A photo strip of real camp moments — sport, martial arts, strategy, STEM — to make the
+ * A photo strip of real camp moments (sport, martial arts, strategy, STEM) to make the
  * offer tangible and energetic. Synthetic block. Images live in /public/images/camp.
  */
 type Moment = { src: string; label: string }

@@ -12,7 +12,7 @@ import { stockWebp } from '@/lib/img'
 import type { Post } from '@/payload-types'
 
 /**
- * "News & Perspectives" — latest published posts. Synthetic block (not yet a
+ * "News & Perspectives": the latest published posts. Synthetic block (not yet a
  * Payload block in the schema); rendered from the Posts collection. TODO: promote
  * to a first-class Payload block once editors need to place it on arbitrary pages.
  */
@@ -28,7 +28,7 @@ export async function LatestPostsBlock({ heading = 'From the Blog', intro, limit
       sort: '-publishedAt',
       limit,
       depth: 1,
-      // Newsletter issues have their own home at /newsletter — keep this block to blog posts.
+      // Newsletter issues have their own home at /newsletter; keep this block to blog posts.
       where: {
         _status: { equals: 'published' },
         or: [{ category: { not_equals: 'newsletter' } }, { category: { exists: false } }],
@@ -36,7 +36,7 @@ export async function LatestPostsBlock({ heading = 'From the Blog', intro, limit
     })
     docs = res.docs
   } catch (err) {
-    console.error('[LatestPostsBlock] posts query failed — rendering empty state:', err)
+    console.error('[LatestPostsBlock] posts query failed, rendering empty state:', err)
   }
 
   return (

@@ -22,7 +22,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'About',
     seoTitle: 'About Nucleus International Schools | Cambridge School at Vatican, Addis Ababa',
     description:
-      'From a trusted Addis preschool to a Cambridge international school. The story, mission and values behind Nucleus at Vatican, Addis Ababa — and our growth toward a Gerji campus.',
+      'From a trusted Addis preschool to a Cambridge international school. The story, mission and values behind Nucleus at Vatican, Addis Ababa, and our growth toward a Gerji campus.',
     layout: [
       {
         blockType: 'hero',
@@ -31,7 +31,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'A Full Life\nBegins Here',
         bgImage: '/images/stock/about-hero.webp',
         subhead:
-          'Nucleus is growing from one of Addis Ababa’s most trusted homes for early childhood into a full Cambridge international school — without ever losing the warmth that built it.',
+          'Nucleus is growing from one of Addis Ababa’s most trusted homes for early childhood into a full Cambridge international school, without ever losing the warmth that built it.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
@@ -48,15 +48,15 @@ export const defaultPages: Record<string, DefaultPage> = {
           },
           {
             type: 'p',
-            text: 'Our Vatican campus is our proof of concept — where we show, every day, that elite academic standards and a nurturing, secure environment belong together. It is the first step in a longer journey, with a second campus planned for Gerji.',
+            text: 'Our Vatican campus is our proof of concept, where we show, every day, that elite academic standards and a nurturing, secure environment belong together. It is the first step in a longer journey, with a second campus planned for Gerji.',
           },
           { type: 'h3', text: 'What We Believe' },
           {
             type: 'ul',
             items: [
-              'Think Deeply — compassionate curiosity.',
-              'Create Boldly — purposeful vision.',
-              'Solve Truly — true servanthood.',
+              'Think Deeply: compassionate curiosity.',
+              'Create Boldly: purposeful vision.',
+              'Solve Truly: true servanthood.',
             ],
           },
         ],
@@ -117,7 +117,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Summer Camp',
     seoTitle: 'Nucleus Summer Camp 2026 in Addis Ababa | Robotics, STEM, Sport, Music & Art',
     description:
-      'Nucleus Summer Camp 2026 (July 6 – August 12) in Addis Ababa — robotics, STEM labs, chess, taekwondo, football, basketball, music and art, led by qualified Cambridge educators on two secure campuses. Register your child.',
+      'Nucleus Summer Camp 2026 (July 6 – August 12) in Addis Ababa: robotics, STEM labs, chess, taekwondo, football, basketball, music and art, led by qualified Cambridge educators on two secure campuses. Register your child.',
     layout: [
       { blockType: 'summerCampHero' },
       {
@@ -137,13 +137,13 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'white',
         eyebrow: 'Why Nucleus',
         heading: 'A summer camp that’s actually good for them',
-        intro: 'Not a place to drop the kids — a place they come home from taller, braver and full of stories.',
+        intro: 'Not a place to drop the kids. It is a place they come home from taller, braver and full of stories.',
         columns: '3',
         cards: [
-          { iconName: 'GraduationCap', title: 'Qualified educators', description: 'Every activity is led by a specialist who teaches for a living — Cambridge-aligned and genuinely great with children.' },
+          { iconName: 'GraduationCap', title: 'Qualified educators', description: 'Every activity is led by a specialist who teaches for a living, Cambridge-aligned and genuinely great with children.' },
           { iconName: 'ShieldCheck', title: 'Serious about safety', description: 'Secure, supervised campuses with a dedicated head of security. Peace of mind is part of the package.' },
-          { iconName: 'Sprout', title: 'Real growth, not screen time', description: 'Children build robots, skills and friendships — leaving with confidence they carry into the school year.' },
-          { iconName: 'MapPin', title: 'Two convenient campuses', description: 'Choose Mekanisa or the Vatican campus — whichever is closest and easiest for your family.' },
+          { iconName: 'Sprout', title: 'Real growth, not screen time', description: 'Children build robots, skills and friendships, leaving with confidence they carry into the school year.' },
+          { iconName: 'MapPin', title: 'Two convenient campuses', description: 'Choose Mekanisa or the Vatican campus, whichever is closest and easiest for your family.' },
           { iconName: 'Users', title: 'Small, mixed-age groups', description: 'Grouped by age so every child is challenged at the right level and never lost in the crowd.' },
           { iconName: 'Sun', title: 'Flexible weeks', description: 'Join for the full six weeks or the weeks that suit your summer. We’ll help you plan it.' },
         ],
@@ -169,13 +169,13 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Reserve your child’s spot',
         intro:
           'Tell us a little about your child and we’ll follow up within one business day with dates, pricing and how to secure a place. Spots are limited per campus.',
-        successMessage: 'Thank you! Your spot request is in — our camp team will call or email you within one business day.',
+        successMessage: 'Thank you! Your spot request is in. Our camp team will call or email you within one business day.',
       },
       {
         blockType: 'ctaBand',
         background: 'navy',
         heading: 'Questions before you register?',
-        subhead: 'Talk to our camp team directly — we’ll help you choose the right weeks and campus for your child.',
+        subhead: 'Talk to our camp team directly. We’ll help you choose the right weeks and campus for your child.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'Call 0981 999 922', url: 'tel:+251981999922' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Reserve a spot', url: '#register' } },
@@ -188,7 +188,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Academics',
     seoTitle: 'Cambridge Curriculum in Addis Ababa | Nucleus Academics (Ages 2–Grade 8)',
     description:
-      'The Cambridge pathway at Nucleus International Schools, Vatican — Early Years through Grade 8, with robotics, STEM, agriculture and multilingual learning. A portable, world-class education.',
+      'The Cambridge pathway at Nucleus International Schools, Vatican: Early Years through Grade 8, with robotics, STEM, agriculture and multilingual learning. A portable, world-class education.',
     layout: [
       {
         blockType: 'hero',
@@ -197,7 +197,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'A Cambridge Education,\nBuilt for the Real World',
         bgImage: '/images/stock/academics-hero.webp',
         subhead:
-          'We follow the Cambridge pathway — one of the world’s most recognised and portable curricula — rewarding deep understanding over memorisation.',
+          'We follow the Cambridge pathway, one of the world’s most recognised and portable curricula, rewarding deep understanding over memorisation.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'The Cambridge Pathway', url: '/cambridge-pathway' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
@@ -210,7 +210,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         items: [
           {
             type: 'lead',
-            text: 'A Nucleus child is prepared to continue — and to thrive — at schools across Europe, North America and beyond.',
+            text: 'A Nucleus child is prepared to continue, and to thrive, at schools across Europe, North America and beyond.',
           },
           {
             type: 'p',
@@ -238,7 +238,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         columns: '4',
         cards: [
           { iconName: 'Bot', title: 'Robotics & STEM', description: 'Coding, engineering and hands-on problem-solving.', enableLink: true, link: { type: 'custom', label: 'Explore Robotics & STEM', url: '/robotics-stem' } },
-          { iconName: 'Sprout', title: 'Agriculture & Animal Care', description: 'The “Farmer-Scientist” — science you can hold.', enableLink: true, link: { type: 'custom', label: 'Explore Agriculture', url: '/agriculture-animal-care' } },
+          { iconName: 'Sprout', title: 'Agriculture & Animal Care', description: 'The “Farmer-Scientist”: science you can hold.', enableLink: true, link: { type: 'custom', label: 'Explore Agriculture', url: '/agriculture-animal-care' } },
           { iconName: 'Music', title: 'Music & the Band', description: 'Expression, discipline and joy through music.' },
           { iconName: 'Languages', title: 'Multilingual Learning', description: 'English and Amharic, taught bilingually.' },
         ],
@@ -271,7 +271,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         amharicSubline: 'ትምህርት ከደብተር ያልፋል',
         bgImage: '/images/stock/campus-hero.webp',
         subhead:
-          'Robotics, agriculture, music, sport and chef-prepared meals — a full education that reaches far beyond the notebook, on a campus built for peace of mind.',
+          'Robotics, agriculture, music, sport and chef-prepared meals: a full education that reaches far beyond the notebook, on a campus built for peace of mind.',
       },
       {
         blockType: 'cardsGrid',
@@ -279,15 +279,15 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'A Day at Nucleus',
         columns: '3',
         cards: [
-          { iconName: 'ShieldCheck', title: 'A Secure Campus', description: 'Peace of mind first — a safe, supervised environment where children can simply be children.' },
+          { iconName: 'ShieldCheck', title: 'A Secure Campus', description: 'Peace of mind first: a safe, supervised environment where children can simply be children.' },
           { iconName: 'Bot', title: 'Robotics & STEM', description: 'Hands-on technology, coding and science that build future-ready thinkers.' },
-          { iconName: 'Sprout', title: 'Agriculture & Animal Care', description: 'Nature beyond concrete — responsibility, patience and wonder.' },
+          { iconName: 'Sprout', title: 'Agriculture & Animal Care', description: 'Nature beyond concrete: responsibility, patience and wonder.' },
           { iconName: 'Utensils', title: 'The Chef’s Kitchen', description: 'Chef-prepared, nutritionist-minded meals to fuel growing minds.' },
-          { iconName: 'Music', title: 'Music & Sport', description: 'Band, movement and play — confidence built beyond the classroom.' },
+          { iconName: 'Music', title: 'Music & Sport', description: 'Band, movement and play: confidence built beyond the classroom.' },
           { iconName: 'Users', title: 'A Nurturing Community', description: 'Warm, attentive staff who know every child by name.' },
         ],
       },
-      // No category filter (shows the full mix) — a 'campus'-only filter collapses to one card
+      // No category filter (shows the full mix), a 'campus'-only filter collapses to one card
       // now that the gallery collection is seeded.
       { blockType: 'galleryBlock', heading: 'Moments from Campus', source: 'category', limit: 8 },
       {
@@ -308,7 +308,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Admissions',
     seoTitle: 'Admissions & Fees | Nucleus International Schools, Addis Ababa',
     description:
-      'How to join Nucleus International Schools at Vatican, Addis Ababa — admissions steps, requirements, tour booking and transparent fee information. Request your full fee sheet.',
+      'How to join Nucleus International Schools at Vatican, Addis Ababa: admissions steps, requirements, tour booking and transparent fee information. Request your full fee sheet.',
     layout: [
       {
         blockType: 'hero',
@@ -317,7 +317,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Joining Nucleus',
         bgImage: '/images/stock/admissions-hero.webp',
         subhead:
-          'We believe families deserve clarity — no hidden capital-fee surprises. Request your full fee sheet and we’ll send it directly.',
+          'We believe families deserve clarity, with no hidden capital-fee surprises. Request your full fee sheet and we’ll send it directly.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'Request Fee Sheet', url: '/contact' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
@@ -362,14 +362,14 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Admissions FAQ',
         intro: 'The questions families ask us most.',
         items: [
-          { q: 'What curriculum does Nucleus follow?', a: 'Nucleus follows the Cambridge pathway, from the early years through Grade 8 — a portable, internationally recognised education.' },
+          { q: 'What curriculum does Nucleus follow?', a: 'Nucleus follows the Cambridge pathway, from the early years through Grade 8: a portable, internationally recognised education.' },
           { q: 'Where is Nucleus located?', a: 'Two campuses are open in Addis Ababa: the Vatican grade school campus (behind the Vatican Embassy) and the Abo preschool campus (100 m from Mekanisa Abo Square). A third campus at Totot, behind World Vision, is being finished now.' },
           { q: 'What ages and grades do you accept?', a: 'We serve children from age 2 through Grade 8, growing with your child across early years, primary and lower secondary.' },
           { q: 'How much are the fees?', a: 'We keep our fees transparent and free of hidden capital-fee surprises. Request the full fee sheet and we’ll share it with you directly.' },
-          { q: 'Is the campus safe?', a: 'Safety and child safeguarding come first at Nucleus — a secure, supervised campus is the foundation of everything we do.' },
+          { q: 'Is the campus safe?', a: 'Safety and child safeguarding come first at Nucleus. A secure, supervised campus is the foundation of everything we do.' },
           { q: 'Do you have foreign and multilingual teachers?', a: 'Yes. Our team includes certified, multilingual and international educators.' },
-          { q: 'Do you offer robotics, STEM and agriculture?', a: 'Yes — hands-on robotics & STEM and an agriculture & animal-care program are part of learning at Nucleus.' },
-          { q: 'How do I apply or book a tour?', a: 'Start by booking a tour or sending an enquiry through our contact page — we’ll guide you through every step.' },
+          { q: 'Do you offer robotics, STEM and agriculture?', a: 'Yes. Hands-on robotics & STEM and an agriculture & animal-care program are part of learning at Nucleus.' },
+          { q: 'How do I apply or book a tour?', a: 'Start by booking a tour or sending an enquiry through our contact page. We’ll guide you through every step.' },
         ],
       },
       {
@@ -377,8 +377,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         formType: 'fee-request',
         background: 'white',
         heading: 'Request the Full Fee Sheet',
-        intro: 'Leave your details and we’ll send the complete fee sheet — every line, no hidden surprises.',
-        successMessage: 'Thank you — we’ll email you the full fee sheet shortly.',
+        intro: 'Leave your details and we’ll send the complete fee sheet: every line, no hidden surprises.',
+        successMessage: 'Thank you. We’ll email you the full fee sheet shortly.',
       },
       {
         blockType: 'ctaBand',
@@ -397,7 +397,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Contact & Visit',
     seoTitle: 'Contact & Visit | Nucleus International Schools, Vatican, Addis Ababa',
     description:
-      'Visit Nucleus International Schools — grade school at Sarbet Vatican (behind the Vatican Embassy) and preschool at Mekanisa Abo Square, Addis Ababa, with a third campus at Totot opening soon. Directions from Bole, Old Airport and Kazanchis, contact numbers, and how to book a tour.',
+      'Visit Nucleus International Schools: grade school at Sarbet Vatican (behind the Vatican Embassy) and preschool at Mekanisa Abo Square, Addis Ababa, with a third campus at Totot opening soon. Directions from Bole, Old Airport and Kazanchis, contact numbers, and how to book a tour.',
     layout: [
       {
         blockType: 'hero',
@@ -406,7 +406,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Come See a Full Life\nin Motion',
         bgImage: '/images/stock/contact-hero.webp',
         subhead:
-          'We’d love to show you around. Visit us at Vatican (grade school, behind the Vatican Embassy) or Abo (preschool, by Mekanisa Abo Square) — and watch this space for Totot, opening soon.',
+          'We’d love to show you around. Visit us at Vatican (grade school, behind the Vatican Embassy) or Abo (preschool, by Mekanisa Abo Square), and watch this space for Totot, opening soon.',
       },
       {
         blockType: 'cardsGrid',
@@ -425,13 +425,13 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'white',
         heading: 'Visit Now',
         intro: 'Tell us a little about your family and we’ll arrange a visit that suits you.',
-        successMessage: 'Thank you — we’ll be in touch within one business day to confirm your visit.',
+        successMessage: 'Thank you. We’ll be in touch within one business day to confirm your visit.',
       },
       {
         blockType: 'map',
         eyebrow: 'Getting to the School',
         heading: 'Our Campuses',
-        intro: 'Easy to reach from across Addis Ababa — including Bole, Old Airport, Kazanchis and Gerji.',
+        intro: 'Easy to reach from across Addis Ababa, including Bole, Old Airport, Kazanchis and Gerji.',
         campuses: [
           {
             name: 'Grade School Campus',
@@ -473,7 +473,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         background: 'navy',
         bgImage: '/images/stock/cta-contact.webp',
         heading: 'Arrange your visit',
-        subhead: 'Call us or send an enquiry — we’ll find a time that works for your family.',
+        subhead: 'Call us or send an enquiry. We’ll find a time that works for your family.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'Call 09 81 99 99 22', url: 'tel:0981999922' } },
           { link: { appearance: 'primary', type: 'custom', label: 'Call 09 81 99 99 33', url: 'tel:0981999933' } },
@@ -486,7 +486,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Registration',
     seoTitle: 'Register Your Child | Nucleus International Schools, Addis Ababa',
     description:
-      'Complete the Nucleus International Schools admission form online — a Cambridge international school in Addis Ababa serving Preschool to Grade 8. Six short steps, saved as you go, and our admissions team replies within one business day.',
+      'Complete the Nucleus International Schools admission form online for a Cambridge international school in Addis Ababa serving Preschool to Grade 8. Six short steps, saved as you go, and our admissions team replies within one business day.',
     layout: [
       {
         blockType: 'hero',
@@ -525,7 +525,7 @@ export const defaultPages: Record<string, DefaultPage> = {
               'Child’s birth certificate (for the exact date and place of birth)',
               'Previous report card, if your child has been at school before',
               'Parent / guardian ID or passport numbers',
-              'Passport-size photographs — bring these with you to campus',
+              'Passport-size photographs (bring these with you to campus)',
             ],
           },
         ],
@@ -535,7 +535,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         blockType: 'ctaBand',
         background: 'navy',
         heading: 'Prefer to talk first?',
-        subhead: 'Visit our campus or call us — we’ll walk you through everything.',
+        subhead: 'Visit our campus or call us. We’ll walk you through everything.',
         links: [
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
           { link: { appearance: 'primary', type: 'custom', label: 'Call 09 81 99 99 22', url: 'tel:0981999922' } },
@@ -566,7 +566,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Cambridge Pathway',
     seoTitle: 'The Cambridge Pathway at Nucleus | Cambridge School in Addis Ababa',
     description:
-      'The Cambridge pathway at Nucleus International Schools, Vatican — a portable, internationally recognised education from the early years through Grade 8.',
+      'The Cambridge pathway at Nucleus International Schools, Vatican: a portable, internationally recognised education from the early years through Grade 8.',
     layout: [
       {
         blockType: 'hero',
@@ -575,7 +575,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         eyebrow: 'Academics',
         heading: 'The Cambridge Pathway',
         subhead:
-          'A world-class, portable curriculum that rewards deep understanding over memorisation — and travels with your child anywhere in the world.',
+          'A world-class, portable curriculum that rewards deep understanding over memorisation, and travels with your child anywhere in the world.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
@@ -586,7 +586,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         eyebrow: 'Why Cambridge',
         heading: 'An education that opens doors',
         items: [
-          { type: 'lead', text: 'The Cambridge pathway is one of the world’s most recognised curricula — structured, rigorous and respected by universities across Europe, North America and beyond.' },
+          { type: 'lead', text: 'The Cambridge pathway is one of the world’s most recognised curricula: structured, rigorous and respected by universities across Europe, North America and beyond.' },
           { type: 'p', text: 'At Nucleus we follow the Cambridge pathway from the early years through Grade 8, so a child who begins at Vatican is prepared to continue, and to thrive, wherever life takes your family next.' },
           { type: 'p', text: 'It is content-rich and clearly assessed, which suits children who like defined goals and steady, visible progress.' },
         ],
@@ -632,7 +632,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Robotics & STEM',
     seoTitle: 'Robotics & STEM at Nucleus | Hands-on Tech for Kids in Addis Ababa',
     description:
-      'Robotics, coding and STEM at Nucleus International Schools, Vatican — future-ready skills built through hands-on technology and science from an early age.',
+      'Robotics, coding and STEM at Nucleus International Schools, Vatican: future-ready skills built through hands-on technology and science from an early age.',
     layout: [
       {
         blockType: 'hero',
@@ -641,7 +641,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         eyebrow: 'Learning Beyond Books',
         heading: 'Robotics & STEM',
         subhead:
-          'Coding, robotics and science that turn curious children into confident problem-solvers — unafraid of hard problems.',
+          'Coding, robotics and science that turn curious children into confident problem-solvers who are unafraid of hard problems.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
@@ -652,7 +652,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         eyebrow: 'Why it matters early',
         heading: 'Building thinkers, not just test-takers',
         items: [
-          { type: 'lead', text: 'When children build something — a circuit, a program, a robot — they meet real problems and solve them. That habit carries into everything else they learn.' },
+          { type: 'lead', text: 'When children build something (a circuit, a program, a robot) they meet real problems and solve them. That habit carries into everything else they learn.' },
           { type: 'p', text: 'Coding and robotics teach logic, sequencing and resilience. A program that doesn’t work isn’t a failure; it’s a puzzle. Children who grow up debugging grow up unafraid of hard problems.' },
         ],
       },
@@ -697,7 +697,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Agriculture & Animal Care',
     seoTitle: 'Agriculture & Animal Care at Nucleus | Learning Beyond Books, Addis Ababa',
     description:
-      'Agriculture and animal care at Nucleus International Schools, Vatican — holistic, hands-on learning that roots children in nature, patience and responsibility.',
+      'Agriculture and animal care at Nucleus International Schools, Vatican: holistic, hands-on learning that roots children in nature, patience and responsibility.',
     layout: [
       {
         blockType: 'hero',
@@ -706,7 +706,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         eyebrow: 'Learning Beyond Books',
         heading: 'Agriculture &\nAnimal Care',
         subhead:
-          'The “Farmer-Scientist” — tending plants and animals teaches patience, responsibility and a feel for cause and effect no screen can.',
+          'The “Farmer-Scientist”: tending plants and animals teaches patience, responsibility and a feel for cause and effect no screen can.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
@@ -718,7 +718,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Science you can hold',
         items: [
           { type: 'lead', text: 'There is a kind of learning that only happens with soil on your hands and a living thing in your care.' },
-          { type: 'p', text: 'Tending a garden and caring for animals slows childhood down in the best way — building patience, responsibility and a genuine feel for how the natural world works.' },
+          { type: 'p', text: 'Tending a garden and caring for animals slows childhood down in the best way, building patience, responsibility and a genuine feel for how the natural world works.' },
         ],
       },
       {
@@ -727,7 +727,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'What students do',
         columns: '3',
         cards: [
-          { iconName: 'Sprout', title: 'Growing', description: 'Planting, tending and harvesting — patience made real.' },
+          { iconName: 'Sprout', title: 'Growing', description: 'Planting, tending and harvesting: patience made real.' },
           { iconName: 'Heart', title: 'Animal Care', description: 'Responsibility and empathy through caring for animals.' },
           { iconName: 'FlaskConical', title: 'Real Science', description: 'Cause and effect, observed and understood first-hand.' },
         ],

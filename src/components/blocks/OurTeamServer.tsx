@@ -6,7 +6,7 @@ import { TEAM, type TeamMember } from './teamData'
 /**
  * Server wrapper for the "Our Team" grid: fetches the roster from the `staff` collection so the
  * school can manage people in the admin. Falls back to the hardcoded TEAM when the CMS is empty
- * or unreachable — a CMS hiccup must never blank the About page.
+ * or unreachable: a CMS hiccup must never blank the About page.
  */
 
 const DEPT_LABELS: Record<string, string> = {

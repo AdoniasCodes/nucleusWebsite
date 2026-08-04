@@ -6,11 +6,11 @@ import config from '../payload.config'
 
 /**
  * Re-uploads the four gallery images from public/images/stock into the `media`
- * collection. Run after swapping the local stock files for real campus photos —
+ * collection. Run after swapping the local stock files for real campus photos,
  * the July seed uploaded the old stock images to S3, so the CMS-driven gallery
  * (homepage + campus-life) keeps serving them until the media docs are refreshed.
  *
- * Run: `npm run refresh:gallery`. Idempotent — updates in place, never duplicates.
+ * Run: `npm run refresh:gallery`. Idempotent: updates in place, never duplicates.
  */
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -54,7 +54,7 @@ async function run() {
     )
     const doc = existing.docs[0]
     if (!doc) {
-      console.log(`  media ? ${file} (not in CMS — skipped, run seed:gallery first)`)
+      console.log(`  media ? ${file} (not in CMS, skipped, run seed:gallery first)`)
       continue
     }
     await withRetry(`update ${file}`, () =>

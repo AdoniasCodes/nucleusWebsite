@@ -1,6 +1,6 @@
 import type { Block } from 'payload'
 
-/** Gallery grid — either manually-picked items or auto-filtered by category. */
+/** Gallery grid: either manually-picked items or auto-filtered by category. */
 export const GalleryBlock: Block = {
   slug: 'galleryBlock',
   interfaceName: 'GalleryBlockType',

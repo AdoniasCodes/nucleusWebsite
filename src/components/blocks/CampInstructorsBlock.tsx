@@ -5,7 +5,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Reveal } from '@/components/ui/Reveal'
 
 /**
- * "Meet your child's camp instructors" — transparency/trust section for the Summer Camp
+ * "Meet your child's camp instructors": the transparency/trust section for the Summer Camp
  * landing page. Real, qualified educators (not seasonal babysitters). Compact photo cards.
  * Synthetic block. Instructor data is inline (camp roster is seasonal, not the year-round staff).
  */
@@ -27,13 +27,13 @@ const INSTRUCTORS: Instructor[] = [
     name: 'Ruth Derrick',
     role: 'English & Language Lead',
     photo: '/images/camp/ruth-derrick.webp',
-    bio: 'Associate Director of Global Partners for Education with a Master’s in English. Has taught at university level across Asia and Africa — here to build campers’ communication and confidence.',
+    bio: 'Associate Director of Global Partners for Education with a Master’s in English. Has taught at university level across Asia and Africa, and is here to build campers’ communication and confidence.',
   },
   {
     name: 'Alice Long',
     role: 'Creative & Fine Arts Lead',
     photo: '/images/camp/alice-long.webp',
-    bio: 'A fine-arts educator specialising in hands-on, sensory-rich projects — painting, clay and mixed-media — that let every child truly “Create Boldly.”',
+    bio: 'A fine-arts educator specialising in hands-on, sensory-rich projects (painting, clay and mixed-media) that let every child truly “Create Boldly.”',
   },
   {
     name: 'Abby',
@@ -62,7 +62,7 @@ export function CampInstructorsBlock({
   background = 'offwhite',
   eyebrow = 'Who’s Leading Camp',
   heading = 'Real educators. Not babysitters.',
-  intro = 'Every activity is led by a qualified specialist who does this for a living — so your child is learning, safe and genuinely inspired all summer.',
+  intro = 'Every activity is led by a qualified specialist who does this for a living, so your child is learning, safe and genuinely inspired all summer.',
   instructors = INSTRUCTORS,
 }: CampInstructorsProps) {
   const dark = isDark(background)
@@ -85,7 +85,7 @@ export function CampInstructorsBlock({
                       className="object-cover object-top [filter:saturate(1.06)_contrast(1.02)]"
                     />
                   ) : (
-                    // No photo yet — show tasteful brand initials instead of a broken image.
+                    // No photo yet: show tasteful brand initials instead of a broken image.
                     <span className="flex h-full w-full items-center justify-center font-display text-4xl font-bold text-navy/35">
                       {p.name
                         .split(' ')

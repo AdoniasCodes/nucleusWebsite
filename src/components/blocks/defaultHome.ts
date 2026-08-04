@@ -10,7 +10,7 @@ import type { RenderableBlock } from './BlockRenderer'
  * Primary conversion goal = BOOK A TOUR (one primary CTA, repeated). Light/dark rhythm blends.
  *
  * Copy is brand-voiced + grounded; unverified specifics stay soft (see content/open-questions.md).
- * Stats values + testimonials are PLACEHOLDER pending confirmation — do not present as verified facts.
+ * Stats values + testimonials are PLACEHOLDER pending confirmation, do not present as verified facts.
  */
 const coreValuesCards = [
   { iconName: 'Handshake', title: 'Honesty', description: 'Living and speaking with absolute truthfulness to build a community rooted in mutual trust.' },
@@ -33,7 +33,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
         heading: 'A summer that',
         headingAccent: 'actually grows them.',
         subhead:
-          'Robotics, sport, music, art and real discovery — led by qualified Cambridge educators, on two secure Addis Ababa campuses.',
+          'Robotics, sport, music, art and real discovery, led by qualified Cambridge educators on two secure Addis Ababa campuses.',
         image: '/images/camp/hero-robotics.webp',
         links: [
           { label: 'Explore Summer Camp', url: '/summer-camp', appearance: 'primary' },
@@ -51,7 +51,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
         heading: 'Nucleus International Schools',
         tagline: 'Think Deeply. Create Boldly. Solve Truly.',
         subhead:
-          'A Cambridge international education in the heart of Addis Ababa — raising secure, curious, globally-minded children from age 2 through Grade 8.',
+          'A Cambridge international education in the heart of Addis Ababa, raising secure, curious, globally-minded children from age 2 through Grade 8.',
         links: [
           { label: 'Register Now', url: '/register#application', appearance: 'primary' },
           { label: 'Visit Now', url: '/contact', appearance: 'outline' },
@@ -79,12 +79,12 @@ export const defaultHomeLayout: RenderableBlock[] = [
     intro: 'A holistic, innovative environment that prepares children for a global future.',
     columns: '3',
     cards: [
-      { iconName: 'GraduationCap', title: 'Cambridge Pathway', description: 'An internationally recognised curriculum that travels with your child — portable, rigorous, respected worldwide.', enableLink: true, link: { type: 'custom', label: 'Learn more', url: '/cambridge-pathway' } },
+      { iconName: 'GraduationCap', title: 'Cambridge Pathway', description: 'An internationally recognised curriculum that travels with your child: portable, rigorous, respected worldwide.', enableLink: true, link: { type: 'custom', label: 'Learn more', url: '/cambridge-pathway' } },
       { iconName: 'ShieldCheck', title: 'Advanced Security', description: 'A fortress of safety: controlled access and supervision, so learning happens with total peace of mind.', enableLink: true, link: { type: 'custom', label: 'Our campus', url: '/campus-life' } },
       { iconName: 'Bot', title: 'Robotics & STEM', description: 'Future-ready skills built through hands-on technology, coding and science.', enableLink: true, link: { type: 'custom', label: 'Learn more', url: '/robotics-stem' } },
       { iconName: 'Sprout', title: 'Agriculture & Animal Care', description: 'Real-world, holistic learning that connects children to nature and responsibility.', enableLink: true, link: { type: 'custom', label: 'Learn more', url: '/agriculture-animal-care' } },
       { iconName: 'Languages', title: 'Foreign & Multilingual Staff', description: 'Diverse, international faculty bringing global perspective and language depth.', enableLink: true, link: { type: 'custom', label: 'About us', url: '/about' } },
-      { iconName: 'Utensils', title: 'Chef-Prepared Nutrition', description: 'Balanced, freshly-cooked meals — because well-fed minds learn better.', enableLink: true, link: { type: 'custom', label: 'Campus life', url: '/campus-life' } },
+      { iconName: 'Utensils', title: 'Chef-Prepared Nutrition', description: 'Balanced, freshly-cooked meals, because well-fed minds learn better.', enableLink: true, link: { type: 'custom', label: 'Campus life', url: '/campus-life' } },
     ],
   },
   {
@@ -92,14 +92,14 @@ export const defaultHomeLayout: RenderableBlock[] = [
     eyebrow: 'The Cambridge Difference',
     heading: 'An Education That Travels With Your Child',
     intro:
-      'Nucleus follows the Cambridge Pathway — the world’s most widely recognised international curriculum. Wherever life takes your family, your child’s learning is recognised and respected.',
+      'Nucleus follows the Cambridge Pathway, the world’s most widely recognised international curriculum. Wherever life takes your family, your child’s learning is recognised and respected.',
     stats: [
       { value: '160', label: 'Countries recognise Cambridge' },
       { value: '10,000+', label: 'Cambridge schools worldwide' },
       { value: 'Pre K-G8', label: 'One portable journey' },
     ],
     points: [
-      { iconName: 'Globe', title: 'Globally portable', description: 'Move countries without losing a step — Cambridge is understood everywhere.' },
+      { iconName: 'Globe', title: 'Globally portable', description: 'Move countries without losing a step. Cambridge is understood everywhere.' },
       { iconName: 'GraduationCap', title: 'University-recognised', description: 'Respected by leading universities around the world.' },
       { iconName: 'Lightbulb', title: 'Thinking, not memorising', description: 'Builds real understanding, problem-solving and curiosity.' },
     ],
@@ -109,10 +109,10 @@ export const defaultHomeLayout: RenderableBlock[] = [
     blockType: 'testimonials',
     background: 'mist',
     heading: 'Loved by Nucleus Families',
-    // PLACEHOLDER quotes — replace with real parent testimonials before publishing (open-questions.md).
+    // PLACEHOLDER quotes, replace with real parent testimonials before publishing (open-questions.md).
     quotes: [
       { quote: 'For the first time I drop my daughter off without worrying. The security and the care are unlike anywhere we’ve been.', author: 'A Nucleus Parent', relationship: 'Parent, Early Years' },
-      { quote: 'The robotics and the garden — my son comes home talking about what he built and what he grew. He’s genuinely excited to learn.', author: 'A Nucleus Parent', relationship: 'Parent, Primary' },
+      { quote: 'The robotics and the garden: my son comes home talking about what he built and what he grew. He’s genuinely excited to learn.', author: 'A Nucleus Parent', relationship: 'Parent, Primary' },
       { quote: 'A real international standard, with teachers from around the world, and they were clear and honest about fees from day one.', author: 'A Nucleus Parent', relationship: 'Diplomatic family' },
     ],
   },
@@ -122,7 +122,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     bgImage: '/images/stock/globe-3.webp',
     heading: 'Learning Beyond Books',
     subhead:
-      'Robotics, agriculture, music, sport and a secure campus — a full life that shapes thinkers, creators and solvers.',
+      'Robotics, agriculture, music, sport and a secure campus: a full life that shapes thinkers, creators and solvers.',
     links: [{ link: { appearance: 'primary', type: 'custom', label: 'Discover Campus Life', url: '/campus-life' } }],
   },
   {
@@ -162,13 +162,13 @@ export const defaultHomeLayout: RenderableBlock[] = [
     eyebrow: 'A Day in the Life',
     heading: 'A Day at Nucleus',
     intro:
-      'From a secure morning welcome to a full, joyful afternoon — every day is structured to grow the whole child.',
+      'From a secure morning welcome to a full, joyful afternoon, every day is structured to grow the whole child.',
     steps: [
-      { time: '8:00', iconName: 'ShieldCheck', title: 'Safe Arrival', description: 'A calm, secure start — every child welcomed by name.' },
+      { time: '8:00', iconName: 'ShieldCheck', title: 'Safe Arrival', description: 'A calm, secure start, with every child welcomed by name.' },
       { time: '9:00', iconName: 'BookOpen', title: 'Cambridge Lessons', description: 'Literacy, numeracy and inquiry-led learning.' },
       { time: '12:30', iconName: 'Utensils', title: 'Chef-Prepared Lunch', description: 'Fresh, balanced meals cooked on campus.' },
       { time: '1:30', iconName: 'Bot', title: 'Robotics & Agriculture', description: 'Hands-on STEM, coding, gardening and animal care.' },
-      { time: '3:00', iconName: 'Music', title: 'Music, Sport & Play', description: 'Band, PE and free play — a full life.' },
+      { time: '3:00', iconName: 'Music', title: 'Music, Sport & Play', description: 'Band, PE and free play. A full life.' },
       { time: '3:30', iconName: 'Navigation', title: 'Safe Departure', description: 'Supervised, secure dismissal home.' },
     ],
   },
@@ -185,20 +185,20 @@ export const defaultHomeLayout: RenderableBlock[] = [
     background: 'mist',
     heading: 'Parents Often Ask',
     items: [
-      { q: 'What curriculum does Nucleus follow?', a: 'The Cambridge pathway, from the early years through Grade 8 — a portable, internationally recognised education.' },
+      { q: 'What curriculum does Nucleus follow?', a: 'The Cambridge pathway, from the early years through Grade 8: a portable, internationally recognised education.' },
       { q: 'What ages does Nucleus accept?', a: 'Children from age 2 through Grade 8, on a single planned journey from the early years into the Cambridge primary and middle years.' },
       { q: 'Where is Nucleus located?', a: 'Two campuses are open in Addis Ababa: the Vatican grade school campus (behind the Vatican Embassy) and the Abo preschool campus (100 m from Mekanisa Abo Square). A third campus at Totot, behind World Vision, is being finished now.' },
       { q: 'How much are the fees?', a: 'We keep fees transparent, with no hidden capital-fee surprises. Request the full fee sheet and we’ll send it directly.' },
-      { q: 'How safe is the campus?', a: 'Safety comes first — a secure, supervised campus with controlled access is the foundation of everything we do.' },
-      { q: 'Is an international school worth it compared to a local school?', a: 'A good international school gives a portable, globally recognised education, smaller classes and learning beyond the textbook. It costs more, so the value depends on the school delivering it in practice — which is why we encourage you to visit and see for yourself.' },
-      { q: 'Cambridge or IB — which is better for my child?', a: 'Neither is automatically better. Cambridge is structured and exam-based; the IB is inquiry and project-led. Nucleus follows Cambridge for its clear structure and global portability.' },
+      { q: 'How safe is the campus?', a: 'Safety comes first. A secure, supervised campus with controlled access is the foundation of everything we do.' },
+      { q: 'Is an international school worth it compared to a local school?', a: 'A good international school gives a portable, globally recognised education, smaller classes and learning beyond the textbook. It costs more, so the value depends on the school delivering it in practice, which is why we encourage you to visit and see for yourself.' },
+      { q: 'Cambridge or IB: which is better for my child?', a: 'Neither is automatically better. Cambridge is structured and exam-based; the IB is inquiry and project-led. Nucleus follows Cambridge for its clear structure and global portability.' },
     ],
   },
   {
     blockType: 'ctaBand',
     background: 'purple',
     bgImage: '/images/stock/globe-1.webp',
-    heading: 'Registration is open — Gift Your Kids a Full Life',
+    heading: 'Registration is open: Gift Your Kids a Full Life',
     subhead: 'Secure your child’s place for the upcoming intake. Places fill quickly.',
     links: [
       { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
@@ -245,7 +245,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     ],
   },
   // Totot sits directly beneath the map on purpose: the two open campuses have pins, the third
-  // has this instead — same place in the page, no map embed and no directions to a working build.
+  // has this instead, same place in the page, no map embed and no directions to a working build.
   { blockType: 'campusComingSoon' },
   {
     blockType: 'latestPosts',

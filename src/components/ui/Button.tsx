@@ -48,7 +48,7 @@ export function ButtonLink({
 }) {
   const isLink = appearance === 'link'
   const cls = `${base} ${isLink ? '' : sizes} ${appearances[appearance]} ${className}`
-  // Text links get a chevron that slides on hover/tap — a small, consistent "go" cue site-wide.
+  // Text links get a chevron that slides on hover/tap, a small, consistent "go" cue site-wide.
   const content = isLink ? (
     <>
       {children}

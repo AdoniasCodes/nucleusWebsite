@@ -99,7 +99,7 @@ function TreatmentBg({ treatment, img }: { treatment: BgTreatment; img: string }
 }
 
 /**
- * Core Values — "Nucleus Orbit": the six values orbit a glowing nucleus — hover (or focus) a value
+ * Core Values: "Nucleus Orbit": the six values orbit a glowing nucleus. Hover (or focus) a value
  * and its description reveals in the centre. The orbit + white/gold value cards are fixed; the
  * background is configurable (`surface` or, premium, `bgTreatment`).
  */
@@ -184,7 +184,7 @@ export function CoreValuesOrbit(props: CoreValuesOrbitProps) {
               )
             })}
 
-            {/* central nucleus — white/gold card (fixed look) */}
+            {/* central nucleus: white/gold card (fixed look) */}
             <div
               className={`absolute left-1/2 top-1/2 z-10 flex h-72 w-72 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full p-8 text-center backdrop-blur ${
                 light

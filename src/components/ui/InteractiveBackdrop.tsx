@@ -6,7 +6,7 @@ import { useEffect, useRef } from 'react'
  * Decorative, mouse-reactive backdrop for dark brand bands: a faint woven brand texture
  * with an ochre→blue "nucleus" glow that follows the cursor.
  *
- * Performance-first by design — NO canvas, NO library, NO per-frame render loop:
+ * Performance-first by design: NO canvas, NO library, NO per-frame render loop:
  *  • one mousemove listener, rAF-throttled, writing just two CSS variables;
  *  • attached ONLY while the band is on screen (IntersectionObserver);
  *  • attached ONLY on fine-pointer + motion-allowed devices.

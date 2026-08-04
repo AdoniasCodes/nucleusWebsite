@@ -63,13 +63,13 @@ async function run() {
     moved += 1
     console.log(
       `  moved: ${doc.parentName} <${doc.email}>` +
-        (preferredCampus ? ` — campus: ${preferredCampus}` : ''),
+        (preferredCampus ? `, campus: ${preferredCampus}` : ''),
     )
   }
 
   console.log(
     `\nDone. Copied ${moved} registration(s) into summer-camp-registrations. ` +
-      `Originals in admissions-inquiries were left in place — delete them manually after verifying.`,
+      `Originals in admissions-inquiries were left in place. Delete them manually after verifying.`,
   )
   process.exit(0)
 }

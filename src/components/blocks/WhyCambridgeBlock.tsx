@@ -17,7 +17,7 @@ export type WhyCambridgeProps = {
 }
 
 /**
- * "Why Cambridge" trust band — the school's strongest, exclusive credential, on a dark
+ * "Why Cambridge" trust band: the school's strongest, exclusive credential, on a dark
  * orb-glow band with a mouse-reactive woven-texture + nucleus-glow backdrop (no media).
  */
 export function WhyCambridgeBlock(props: WhyCambridgeProps) {

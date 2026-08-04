@@ -49,7 +49,7 @@ export const Users: CollectionConfig = {
       admin: {
         description: 'Super Admin = full control. Staff = manage content only.',
       },
-      // Only super-admins can see/set roles — prevents privilege escalation.
+      // Only super-admins can see/set roles: prevents privilege escalation.
       access: {
         create: isSuperAdminField,
         update: isSuperAdminField,

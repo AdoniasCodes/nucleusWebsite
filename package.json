@@ -22,7 +22,11 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
     "test": "pnpm run test:int && pnpm run test:e2e",
     "test:e2e": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" playwright test --config=playwright.config.ts",
-    "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts"
+    "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts",
+    "seed:camp-story-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/camp-story-blogs.ts",
+    "seed:summer-camp-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/summer-camp-blogs.ts",
+    "fix:emdash": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/fix-emdash.ts",
+    "check:emdash": "node scripts/check-emdash.mjs"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.85.0",

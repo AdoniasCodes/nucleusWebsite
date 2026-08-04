@@ -5,10 +5,10 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Reveal } from '@/components/ui/Reveal'
 
 /**
- * "A Message From Our Founders" — a paired diptych of the two founders (a father's
+ * "A Message From Our Founders": a paired diptych of the two founders (a father's
  * vision + an engineer-mother's precision), each a warm white card with a portrait
  * cutout floating on a soft pale glow. Light ground by design (the site already leans
- * hard on navy elsewhere — this section stays airy). Synthetic block.
+ * hard on navy elsewhere: this section stays airy). Synthetic block.
  */
 export type Founder = {
   name: string
@@ -36,8 +36,8 @@ const DEFAULT_FOUNDERS: Founder[] = [
     width: 1198,
     height: 1500,
     paragraphs: [
-      'Nucleus International School was born out of love — a love for our four children, and a deep belief that every child deserves an education that sees the whole person, not just the student.',
-      'Three years ago we opened our Cambridge-certified preschool at Abo Mekanisa. What began there has grown into a full Preschool-to-Grade-8 Cambridge school at our Vatican campus — and we are only just beginning.',
+      'Nucleus International School was born out of love, a love for our four children, and a deep belief that every child deserves an education that sees the whole person, not just the student.',
+      'Three years ago we opened our Cambridge-certified preschool at Abo Mekanisa. What began there has grown into a full Preschool-to-Grade-8 Cambridge school at our Vatican campus, and we are only just beginning.',
     ],
   },
   {
@@ -48,12 +48,12 @@ const DEFAULT_FOUNDERS: Founder[] = [
     height: 1355,
     paragraphs: [
       'To be a mother of four and an engineer is to understand that the strongest structures are built on a foundation of absolute love. Every detail of this campus we perfect is for our children.',
-      'When we welcomed our first preschool families, I made a quiet promise: to build a complete, world-class academic sanctuary where their children could grow safely — all the way through their school years. Our Vatican campus is that promise kept.',
+      'When we welcomed our first preschool families, I made a quiet promise: to build a complete, world-class academic sanctuary where their children could grow safely, all the way through their school years. Our Vatican campus is that promise kept.',
     ],
   },
 ]
 
-// Soft "whitish" glow behind each portrait cutout — white → pale, with a faint ochre warmth.
+// Soft "whitish" glow behind each portrait cutout, white → pale, with a faint ochre warmth.
 const portraitGlow =
   'radial-gradient(68% 56% at 50% 20%, rgba(224,169,59,0.13), transparent 60%), linear-gradient(180deg, #ffffff 0%, var(--color-mist) 55%, var(--color-pale) 100%)'
 
@@ -61,7 +61,7 @@ export function FounderMessageBlock({
   background = 'offwhite',
   eyebrow = 'A Message From Our Founders',
   heading = 'Nucleus was born out of love.',
-  intro = 'A husband-and-wife team — a father’s vision and an engineer-mother’s precision — built Nucleus for their own four children first.',
+  intro = 'A husband-and-wife team, a father’s vision and an engineer-mother’s precision, built Nucleus for their own four children first.',
   founders = DEFAULT_FOUNDERS,
 }: FounderMessageProps) {
   return (

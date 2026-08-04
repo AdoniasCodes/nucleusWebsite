@@ -29,7 +29,7 @@ export async function Footer() {
         <div>
           <Link
             href="/"
-            aria-label={`${schoolName} — go to the homepage`}
+            aria-label={`${schoolName}, go to the homepage`}
             className="inline-block rounded-sm transition-opacity hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ochre"
           >
             <Image
@@ -46,7 +46,7 @@ export async function Footer() {
           </p>
         </div>
 
-        <nav aria-label="Footer — explore">
+        <nav aria-label="Footer explore links">
           <p className="font-display text-sm font-semibold uppercase tracking-wider text-ochre">Explore</p>
           <ul className="mt-4 space-y-2.5 text-sm text-pale/80">
             {NAV.map((item) => (
@@ -59,7 +59,7 @@ export async function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="Footer — programs">
+        <nav aria-label="Footer program links">
           <p className="font-display text-sm font-semibold uppercase tracking-wider text-ochre">Programs</p>
           <ul className="mt-4 space-y-2.5 text-sm text-pale/80">
             {PROGRAMS.map((item, i) => (

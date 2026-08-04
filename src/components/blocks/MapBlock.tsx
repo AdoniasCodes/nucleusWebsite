@@ -9,7 +9,7 @@ import { SERVER_URL } from '@/lib/serverUrl'
 /**
  * Code-only block: one or more campus locations, each with an address panel + embedded Google Map.
  * Reassures parents near the conversion CTA and emits a LocalBusiness/School schema per campus
- * (Google Business Profile / local-SEO signal — accurate NAP for each site).
+ * (Google Business Profile / local-SEO signal: accurate NAP for each site).
  */
 export type MapCampus = {
   /** Campus label, e.g. "Grade School Campus". */
@@ -27,7 +27,7 @@ export type MapCampus = {
   /**
    * Set for a campus that is announced but not yet operating. It still renders (families
    * planning ahead should see it is coming) but is EXCLUDED from the School/LocalBusiness
-   * JSON-LD — publishing a school entity at an address with no school at it is a bad local-SEO
+   * JSON-LD: publishing a school entity at an address with no school at it is a bad local-SEO
    * signal and simply not true yet.
    */
   notYetOpen?: boolean
@@ -99,14 +99,14 @@ function CampusBlock({ campus }: { campus: MapCampus }) {
 export function MapBlock(props: MapProps) {
   const campuses = props.campuses ?? []
 
-  // One LocalBusiness/School node per OPERATING campus — accurate NAP for Google Business
+  // One LocalBusiness/School node per OPERATING campus, accurate NAP for Google Business
   // Profile / local SEO. Campuses still under construction are deliberately left out.
   const schema = campuses
     .filter((c) => !c.notYetOpen)
     .map((c) => ({
       '@context': 'https://schema.org',
       '@type': ['School', 'LocalBusiness'],
-      name: `Nucleus International Schools — ${c.name}`,
+      name: `Nucleus International Schools, ${c.name}`,
       url: SERVER_URL,
       ...(c.telephone?.length ? { telephone: c.telephone } : {}),
       address: {

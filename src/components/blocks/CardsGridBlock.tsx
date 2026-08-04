@@ -41,7 +41,7 @@ const iconClassByMode: Record<CardMode, string> = {
 }
 
 /**
- * Cards grid — "Why Leaders Choose Nucleus", values, programs, steps. Uniform card system.
+ * Cards grid: "Why Leaders Choose Nucleus", values, programs, steps. Uniform card system.
  * Optional code-only `reveal` controls the scroll animation: a RevealVariant applied to every
  * card, or 'mirror' to alternate slide-in-left / slide-in-right. Defaults to fade-up.
  * Optional code-only `bgImage` turns the section into a parallax photo band (bg-fixed). Pair it

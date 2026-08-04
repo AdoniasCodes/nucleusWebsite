@@ -6,10 +6,10 @@ import config from '../payload.config'
 
 /**
  * Seeds the `gallery` collection (and images into `media`) with the same four campus photos the
- * GalleryBlock currently shows as hardcoded placeholders — so the admin Gallery/Media sections
+ * GalleryBlock currently shows as hardcoded placeholders, so the admin Gallery/Media sections
  * reflect what the site renders and the school can add or swap photos themselves.
  *
- * Run: `npm run seed:gallery`. Idempotent — skips media by filename and gallery docs by title.
+ * Run: `npm run seed:gallery`. Idempotent: skips media by filename and gallery docs by title.
  */
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))

@@ -9,7 +9,7 @@ import { Orb } from '@/components/ui/Orb'
 import { Reveal } from '@/components/ui/Reveal'
 import { getPayloadClient } from '@/lib/payload'
 
-// TEMP demo stock — swap for real campus photos once provided (open-questions.md Q13).
+// TEMP demo stock: swap for real campus photos once provided (open-questions.md Q13).
 const PLACEHOLDERS = [
   { label: 'Campus', src: '/images/stock/gallery-campus.webp' },
   { label: 'Classrooms', src: '/images/stock/gallery-classroom.webp' },
@@ -17,7 +17,7 @@ const PLACEHOLDERS = [
   { label: 'Sports & Play', src: '/images/stock/gallery-sports.webp' },
 ]
 
-// Shield/badge silhouette — the brand's most ownable device, used as photo frames.
+// Shield/badge silhouette: the brand's most ownable device, used as photo frames.
 const SHIELD = 'polygon(0 0, 100% 0, 100% 72%, 50% 100%, 0 72%)'
 const TINTS = ['bg-teal', 'bg-periwinkle', 'bg-grass', 'bg-ochre', 'bg-coral', 'bg-navy-500']
 
@@ -75,7 +75,7 @@ export async function GalleryBlock(props: GalleryBlockType) {
       <Container>
         <SectionHeading eyebrow="Moments at Nucleus" heading={props.heading ?? 'Campus Life'} dark />
 
-        {/* Featured — a single large, cinematic frame with the caption laid over it. */}
+        {/* Featured: a single large, cinematic frame with the caption laid over it. */}
         <Reveal variant="scale">
           <figure className="group relative aspect-[16/10] overflow-hidden rounded-3xl sm:aspect-[21/9]">
             {featured.render('img-grade img-drift object-cover')}
@@ -89,7 +89,7 @@ export async function GalleryBlock(props: GalleryBlockType) {
           </figure>
         </Reveal>
 
-        {/* Supporting — shield-framed, brand-graded, with a colour-pop on hover. */}
+        {/* Supporting: shield-framed, brand-graded, with a colour-pop on hover. */}
         {rest.length > 0 && (
           <div className="mt-6 flex flex-wrap justify-center gap-5 sm:gap-7">
             {rest.map((slide, i) => (

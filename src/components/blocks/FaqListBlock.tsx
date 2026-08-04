@@ -5,7 +5,7 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import { Reveal } from '@/components/ui/Reveal'
 
 /**
- * FAQ accordion. Uses native <details>/<summary> — accessible, SEO-crawlable, and zero client JS.
+ * FAQ accordion. Uses native <details>/<summary>: accessible, SEO-crawlable, and zero client JS.
  * Emits FAQPage JSON-LD to win "People Also Ask" + AI-answer real estate (synthetic block).
  */
 export type FaqItem = { q: string; a: string }

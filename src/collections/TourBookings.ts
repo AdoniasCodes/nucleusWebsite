@@ -43,7 +43,7 @@ export const TourBookings: CollectionConfig = {
         { name: 'childGrade', type: 'text', label: 'Grade applying for', maxLength: 100, admin: { width: '34%' } },
       ],
     },
-    // Legacy column kept (hidden) so the schema change stays additive — no dev-push rename prompt.
+    // Legacy column kept (hidden) so the schema change stays additive, no dev-push rename prompt.
     // TODO: drop via a proper migration once we're on production migrations.
     { name: 'childAgeOrGrade', type: 'text', admin: { hidden: true } },
     {

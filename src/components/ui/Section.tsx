@@ -4,7 +4,7 @@ export type SectionBackground = 'white' | 'offwhite' | 'mist' | 'purple' | 'navy
 
 /**
  * The section background system shared by every block. "purple" is the brand
- * emphasis band — rendered as the navy orb-glow gradient (the brand has no
+ * emphasis band: rendered as the navy orb-glow gradient (the brand has no
  * literal purple; the orb motif is the emphasis device). Dark backgrounds get
  * light text automatically.
  */

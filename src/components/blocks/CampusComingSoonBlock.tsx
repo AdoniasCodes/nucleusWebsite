@@ -6,7 +6,7 @@ import { Section } from '@/components/ui/Section'
 import { Icon } from '@/components/ui/Icon'
 
 /**
- * A campus that is announced but not yet open — Totot, behind World Vision.
+ * A campus that is announced but not yet open, Totot, behind World Vision.
  *
  * Deliberately NOT part of the map block: there is no embed and no "Get directions", because a
  * parent following a pin to an unfinished building is exactly the outcome we want to avoid. The
@@ -14,7 +14,7 @@ import { Icon } from '@/components/ui/Icon'
  *
  * The interaction is literal rather than decorative: the build track fills to the stage the work
  * has actually reached, the completed stages tick over one by one, and the current stage keeps a
- * slow pulse — so the section *shows* "nearly there, still being finished" rather than saying it.
+ * slow pulse: so the section *shows* "nearly there, still being finished" rather than saying it.
  */
 
 type Stage = { label: string; note: string; done: boolean }
@@ -26,7 +26,7 @@ const STAGES: Stage[] = [
   { label: 'Doors open', note: 'We will announce the date here first.', done: false },
 ]
 
-/** How far along the build is. Sits inside the third stage — nearly there, not there. */
+/** How far along the build is. Sits inside the third stage, nearly there, not there. */
 const PROGRESS = 78
 
 export type CampusComingSoonProps = { blockType: 'campusComingSoon' }

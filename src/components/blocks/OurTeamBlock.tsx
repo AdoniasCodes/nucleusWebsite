@@ -8,7 +8,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Reveal } from '@/components/ui/Reveal'
 
 /**
- * "Our Team" — a badge/arch-framed portrait grid (the brand's shield-arch photo device).
+ * "Our Team": a badge/arch-framed portrait grid (the brand's shield-arch photo device).
  * Each card opens an accessible bio modal (Esc / backdrop / close, scroll-locked, focus-managed).
  * Content is inline for now; can migrate to the `staff` collection for admin editing later.
  * Client component (modal state). Synthetic block.

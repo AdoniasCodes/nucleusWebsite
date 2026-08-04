@@ -35,7 +35,7 @@ export const FormBlock: Block = {
     },
     { name: 'heading', type: 'text' },
     { name: 'intro', type: 'textarea' },
-    { name: 'successMessage', type: 'text', defaultValue: 'Thank you — we will be in touch shortly.' },
+    { name: 'successMessage', type: 'text', defaultValue: 'Thank you. We will be in touch shortly.' },
     {
       name: 'anchor',
       type: 'text',

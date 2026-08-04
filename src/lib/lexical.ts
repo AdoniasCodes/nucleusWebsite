@@ -1,5 +1,5 @@
 /**
- * Build Payload Lexical richText JSON from a simple block list — used by the blog seed so we
+ * Build Payload Lexical richText JSON from a simple block list, used by the blog seed so we
  * author posts as plain content and store valid Lexical without a markdown parser.
  */
 export type ContentBlock =

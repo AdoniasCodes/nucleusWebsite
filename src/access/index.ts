@@ -23,7 +23,7 @@ const roleOf = (user: unknown): 'super-admin' | 'staff' | undefined => {
   return undefined
 }
 
-/** Public — anyone (used for public-readable content). */
+/** Public: anyone (used for public-readable content). */
 export const anyone: Access = () => true
 
 /** Any authenticated admin user (super-admin or staff). */

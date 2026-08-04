@@ -36,7 +36,7 @@ export function HeroBlock(
         </div>
       ) : props.bgVideo ? (
         <div className="absolute inset-0">
-          {/* Mobile: a static WebP poster only — the video is hidden (display:none) so phones never
+          {/* Mobile: a static WebP poster only. The video is hidden (display:none) so phones never
               download the ~870KB clip. Desktop: the decorative muted/looping ken-burns video. */}
           {props.bgPoster && (
             <Image

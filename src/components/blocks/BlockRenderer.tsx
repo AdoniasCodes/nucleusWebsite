@@ -27,7 +27,7 @@ import { CampusComingSoonBlock, type CampusComingSoonProps } from './CampusComin
 import { mintFormToken } from '@/lib/formToken'
 
 /**
- * A CTA band with the code-only `bgImage` prop. `bgImage` is deliberately NOT a CMS field —
+ * A CTA band with the code-only `bgImage` prop. `bgImage` is deliberately NOT a CMS field,
  * these background photos are chosen per page in code, so the union carries the augmented shape
  * rather than every default page needing an `as RenderableBlock[]` cast to get past it.
  */

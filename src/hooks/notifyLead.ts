@@ -4,7 +4,7 @@ import type { CollectionAfterChangeHook } from 'payload'
  * Emails the school when a public lead form is submitted (admissions inquiry or tour booking).
  * Wired as an `afterChange` hook so it fires no matter how the doc is created (website form,
  * REST/Local API, admin). It NEVER throws: the lead is already saved in the DB, so a mail
- * failure must not roll back the submission or surface an error to the parent — we just log it.
+ * failure must not roll back the submission or surface an error to the parent; we just log it.
  *
  * Requires an email adapter to be configured in payload.config.ts (cPanel SMTP via the
  * SMTP_* env vars). With no adapter, Payload's default mock transport logs to the console.

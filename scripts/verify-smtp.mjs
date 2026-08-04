@@ -1,5 +1,5 @@
 /**
- * Standalone SMTP credential test — proves whether the cPanel mailbox login works,
+ * Standalone SMTP credential test: proves whether the cPanel mailbox login works,
  * independent of Vercel/Payload. Reads SMTP_* from the environment.
  *
  * Usage (creds in .env):   node --env-file=.env scripts/verify-smtp.mjs
@@ -32,7 +32,7 @@ console.log(`Testing ${user} @ ${host}:${port} (secure=${port === 465}) ...`)
 
 try {
   await transport.verify()
-  console.log('✅ SMTP AUTH OK — the username/password are valid.')
+  console.log('✅ SMTP AUTH OK. The username and password are valid.')
 
   const to = process.env.LEAD_NOTIFY_TO || user
   const info = await transport.sendMail({

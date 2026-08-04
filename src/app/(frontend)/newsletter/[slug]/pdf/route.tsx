@@ -11,7 +11,7 @@ import {
 } from '@/components/newsletter/pdf/NewsletterPdf'
 
 /**
- * GET /newsletter/[slug]/pdf — the issue as a downloadable, branded A4 PDF.
+ * GET /newsletter/[slug]/pdf: the issue as a downloadable, branded A4 PDF.
  * Rendered on demand from the same CMS data as the web article, so admin edits
  * are always reflected. Cached at the CDN for an hour.
  */
