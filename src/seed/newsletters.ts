@@ -687,7 +687,7 @@ const cbt01Sections: SeedSection[] = [
     heading: 'Module Spotlight: Emotional Intelligence',
     body: [
       {
-        p: 'Teaching is an emotional endeavour as much as an intellectual one. Before a student can learn from us, they must feel safe, seen and understood by us. Our inaugural session at the Vatican Campus focused on emotional intelligence in the classroom \u2014 what it is, and what it changes on an ordinary Tuesday morning.',
+        p: 'Teaching is an emotional endeavour as much as an intellectual one. Before a student can learn from us, they must feel safe, seen and understood by us. Our inaugural session at the Vatican Campus focused on emotional intelligence in the classroom: what it is, and what it changes on an ordinary Tuesday morning.',
       },
     ],
     images: [
@@ -704,7 +704,7 @@ const cbt01Sections: SeedSection[] = [
     body: [
       {
         ul: [
-          'Self-awareness is a teaching tool. High-performing educators recognise their own emotional triggers \u2014 and when we regulate our own state, we co-regulate our students.',
+          'Self-awareness is a teaching tool. High-performing educators recognise their own emotional triggers, and when we regulate our own state, we co-regulate our students.',
           'Empathy is classroom management. Disruptive behaviour is often a request for support. Empathy lets us address the root cause of a disruption without damaging the relationship.',
           'Social-emotional learning belongs in the lesson. Integrating short emotional check-ins into daily lessons improves academic endurance, resilience and exam performance.',
         ],
@@ -718,7 +718,7 @@ const cbt01Sections: SeedSection[] = [
         p: 'The 10-second pause. Before responding to a challenging behavioural moment in class, take a full ten seconds. Ask yourself: am I reacting out of frustration, or responding to help this student learn?',
       },
       {
-        p: 'It is one habit, and it costs ten seconds \u2014 but it shifts a teacher\u2019s posture from reactive to responsive, and students feel the difference immediately.',
+        p: 'It is one habit, and it costs ten seconds, but it shifts a teacher\u2019s posture from reactive to responsive, and students feel the difference immediately.',
       },
     ],
     images: [

@@ -13,7 +13,13 @@ const ROOTS = ['src', 'public', 'scripts']
 const EXT = new Set(['.ts', '.tsx', '.js', '.jsx', '.mjs', '.css', '.md', '.txt', '.json', '.html'])
 const SKIP = new Set(['node_modules', '.next', '.git', 'fonts', 'images', 'video', 'media'])
 
-const EM = '\u2014' // referenced by escape so this file never trips its own check
+const EM = '\u2014' // check:emdash tooling, referenced by escape
+
+// The literal character is only one of the ways an em dash reaches a page. Seed files in this
+// repo write JSON escapes, and hand-written HTML uses entities; both render as an em dash to
+// the reader, so all three forms have to fail the check. A line tagged `check:emdash` is the
+// tooling referring to the character on purpose and is skipped.
+const FORMS = [EM, String.raw`\u2014`, '&mdash;', '&#8212;', '&#x2014;'] // check:emdash
 
 const hits = []
 
@@ -26,7 +32,8 @@ const walk = (dir) => {
     else if (EXT.has(extname(p))) {
       const lines = readFileSync(p, 'utf8').split('\n')
       lines.forEach((line, i) => {
-        if (line.includes(EM)) hits.push(`${p}:${i + 1}: ${line.trim().slice(0, 140)}`)
+        if (line.includes('check:emdash')) return
+        if (FORMS.some((f) => line.includes(f))) hits.push(`${p}:${i + 1}: ${line.trim().slice(0, 140)}`)
       })
     }
   }
