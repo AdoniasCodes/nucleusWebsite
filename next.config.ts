@@ -7,9 +7,9 @@ const __filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(__filename)
 
 /**
- * Content-Security-Policy. Whitelists exactly the third parties this site loads — Google
+ * Content-Security-Policy. Whitelists exactly the third parties this site loads (Google
  * reCAPTCHA v3 (google.com/gstatic.com), GA4 (googletagmanager/google-analytics), and Supabase
- * Storage media — and blocks everything else, plus clickjacking (frame-ancestors), <base> hijack
+ * Storage media) and blocks everything else, plus clickjacking (frame-ancestors), <base> hijack
  * (base-uri), plugin/object embeds (object-src none) and off-site form posts (form-action).
  *
  * 'unsafe-inline'/'unsafe-eval' are required by Next's hydration scripts, the GA4 init snippet and
@@ -59,7 +59,7 @@ const nextConfig: NextConfig = {
         pathname: '/images/**',
       },
       {
-        // Hero poster (HeroBlock bgPoster) lives under /public/video — Next 16 blocks any
+        // Hero poster (HeroBlock bgPoster) lives under /public/video, and Next 16 blocks any
         // local image path not explicitly allowed here.
         pathname: '/video/**',
       },

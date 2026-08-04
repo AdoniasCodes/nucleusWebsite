@@ -9,9 +9,12 @@
 import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join, extname } from 'node:path'
 
-const ROOTS = ['src', 'public', 'scripts']
+const ROOTS = ['src', 'public', 'scripts', '.'] // '.' catches root configs like next.config.ts
 const EXT = new Set(['.ts', '.tsx', '.js', '.jsx', '.mjs', '.css', '.md', '.txt', '.json', '.html'])
-const SKIP = new Set(['node_modules', '.next', '.git', 'fonts', 'images', 'video', 'media'])
+const SKIP = new Set([
+  'node_modules', '.next', '.git', 'fonts', 'images', 'video', 'media',
+  'playwright-report', 'test-results', 'coverage', 'dist', // generated, not authored
+])
 
 const EM = '\u2014' // check:emdash tooling, referenced by escape
 
@@ -23,13 +26,14 @@ const FORMS = [EM, String.raw`\u2014`, '&mdash;', '&#8212;', '&#x2014;'] // chec
 
 const hits = []
 
-const walk = (dir) => {
+const walkOnce = (dir, seen) => {
   for (const entry of readdirSync(dir)) {
     if (SKIP.has(entry)) continue
     const p = join(dir, entry)
     const s = statSync(p)
-    if (s.isDirectory()) walk(p)
-    else if (EXT.has(extname(p))) {
+    if (s.isDirectory()) walkOnce(p, seen)
+    else if (EXT.has(extname(p)) && !seen.has(p)) {
+      seen.add(p)
       const lines = readFileSync(p, 'utf8').split('\n')
       lines.forEach((line, i) => {
         if (line.includes('check:emdash')) return
@@ -39,9 +43,10 @@ const walk = (dir) => {
   }
 }
 
+const seen = new Set()
 for (const r of ROOTS) {
   try {
-    walk(r)
+    walkOnce(r, seen)
   } catch {
     // root not present in this checkout
   }
