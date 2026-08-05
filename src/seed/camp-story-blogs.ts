@@ -7,16 +7,17 @@ import type { Post } from '../payload-types'
 /**
  * Companion SEO blogs built from the summer-camp newsletter material.
  *
- * WHY THIS FILE EXISTS: the newsletter issues document what happened week by week, which is
- * worth reading but matches almost no search query. These three posts take the same camp and
- * the same photographs and aim them at the head terms Addis parents actually type, then link
- * back to the issues. Newsletter = the story; blog = the answer someone searched for.
+ * WHY THIS FILE EXISTS: the newsletter issues document what happened, which is worth reading
+ * but matches almost no search query. These posts take the same events and the same
+ * photographs and aim them at the head terms Addis parents actually type, then link back to
+ * the issues. Newsletter = the story; blog = the answer someone searched for.
  *
  * Each post deliberately targets a DIFFERENT cluster so they never compete with each other or
  * with the newsletter issues:
  *   1. robotics / coding for kids        (contested locally: Ethio Robo, Abugida, iCog ACC)
  *   2. summer camp activities            (what a full week contains)
  *   3. camp and confidence               (the parent-outcome question)
+ *   4. critical thinking in Ethiopia     (companion to CBT issue 02, the founders' vision)
  *
  * Photos are the real camp photographs already optimised for the newsletter, so this seed adds
  * no new files. Body copy lives in `sections` (which render with the images and alt text);
@@ -25,6 +26,7 @@ import type { Post } from '../payload-types'
  * Run: `PAYLOAD_SKIP_PUSH=1 npx tsx src/seed/camp-story-blogs.ts`
  */
 const IMG = '/images/newsletter/summer-camp-2026'
+const CBT = '/images/newsletter/teachers-cbt'
 
 type SeedImage = { imageUrl: string; alt: string; caption?: string }
 type SeedSection = {
@@ -302,7 +304,109 @@ const posts: SeedPost[] = [
       { label: 'Explore Nucleus Summer Camp', url: '/summer-camp' },
     ],
   },
+
+  // ────────────────────────────────────────────────────────────────────────────
+  {
+    title: 'How to Teach Critical Thinking and Problem Solving to Children in Ethiopia',
+    slug: 'teaching-critical-thinking-problem-solving-ethiopia',
+    category: 'parent-resources',
+    excerpt:
+      'Ethiopian classrooms reward memorisation, and it shows on the morning after graduation. Here is what critical thinking actually looks like at primary age, how to tell whether a school teaches it, and what parents can do at home.',
+    heroImageUrl: `${CBT}/cbt02-founder-address.webp`,
+    publishedAt: '2026-08-05T09:00:00.000Z',
+    meta: {
+      title: 'Teaching Critical Thinking to Children in Ethiopia',
+      description:
+        'What critical thinking and problem solving look like at primary age, how to tell whether a school in Addis Ababa really teaches them, and how to support it at home.',
+    },
+    sections: [
+      {
+        body: [
+          { p: 'Ask most Ethiopian parents what they want from school and the answer is some version of a good future. Ask what the school actually measures and the answer is almost always marks. Those two things are not the same, and the gap between them shows up years later on one specific morning.' },
+          { p: 'A young person graduates. The family celebrates, and they should. The next day they wake up with no idea what to do with their life. It is one of the most common experiences in Ethiopian households, and it is usually blamed on the job market. A large part of it starts much earlier, in a classroom that only ever asked for the right answer.' },
+        ],
+        images: [
+          { imageUrl: `${CBT}/cbt02-founder-address.webp`, alt: 'A session on critical thinking in education for teachers at a Cambridge school in Addis Ababa', caption: 'Teacher training at the Nucleus Vatican campus, Addis Ababa.' },
+        ],
+      },
+      {
+        heading: 'What critical thinking actually means at primary age',
+        body: [
+          { p: 'It is not debating club and it is not philosophy. At six to thirteen it is much more ordinary than that, and much easier to spot:' },
+          { ul: [
+            'The child can explain how they got an answer, not only what the answer was.',
+            'They notice when something does not make sense and say so.',
+            'They can hold two options and give a reason for choosing one.',
+            'When their first attempt fails they change something and try again, instead of waiting to be rescued.',
+            'They can look at a real situation, in the classroom or on their street, and suggest what might fix it.',
+          ] },
+          { p: 'Every one of those is a habit, which means it is trainable. It also means it is losable: a child asked only to reproduce material for long enough will stop doing any of it.' },
+        ],
+      },
+      {
+        heading: 'Why memorisation still dominates, and what it costs',
+        body: [
+          { p: 'Memorisation is not stupid. It is efficient, it is easy to mark fairly, and it produces results that look excellent on a report card. In a system with large classes and high-stakes exams, it is the rational thing for a school to optimise.' },
+          { p: 'The cost is invisible until it is not. A student can score highly for twelve years without ever being asked to make a decision, design something, or defend a position. They arrive at adulthood with a strong record and no practice at choosing. That is the confused graduate, and it is a training gap rather than a character flaw.' },
+        ],
+      },
+      {
+        heading: 'How to tell whether a school really teaches it',
+        style: 'highlight',
+        body: [
+          { p: 'Any school will say it teaches critical thinking. These questions separate the ones that do:' },
+          { ul: [
+            'Ask to see work where children got it wrong first. A school that only displays perfect work is not letting anyone struggle.',
+            'Ask what happens when a child gives a wrong answer in class. If the answer is "the teacher corrects it", nothing is being built.',
+            'Ask for an example of an assignment with more than one acceptable answer.',
+            'Ask what children make, not what they learn. Making forces decisions; learning alone does not.',
+            'Sit in on a lesson if they will let you, and count how many questions the children ask versus the teacher.',
+          ] },
+        ],
+      },
+      {
+        heading: 'Breadth is the strategy, not the decoration',
+        body: [
+          { p: 'Parents often read robotics, music, sport and agriculture as extras that justify a fee. Used properly they are the opposite. Each one is a domain where a child meets a real problem with a real consequence: the robot drives into a wall, the plant dies, the chord will not ring, the team loses.' },
+          { p: 'Nobody can say which jobs will exist when a six-year-old turns twenty-five. When the destination is genuinely unknown, range is the safer bet than early specialisation. A child who has been bad at several things and got better at them has learned the one transferable skill: how to start from not knowing.' },
+        ],
+        images: [
+          { imageUrl: `${IMG}/week3-coding-tiles-explain.webp`, alt: 'A child explaining her programming sequence to another child, showing reasoning out loud', caption: 'Explaining the reasoning out loud is where the thinking becomes visible.' },
+          { imageUrl: `${IMG}/week3-robot-team-build.webp`, alt: 'Two children solving a build problem together at a robotics table', caption: 'A problem with a real consequence: it works or it does not.' },
+          { imageUrl: `${IMG}/week3-handprint-paintings.webp`, alt: 'Children making handprint artwork, an activity with more than one right answer', caption: 'Open-ended work forces choices.' },
+        ],
+      },
+      {
+        heading: 'What parents can do at home, for free',
+        body: [
+          { p: 'None of this needs equipment. It needs a change in the questions you ask:' },
+          { ul: [
+            'Replace "what did you get?" with "how did you work it out?" at the end of the school day.',
+            'When they ask you a question you could answer instantly, ask what they think first.',
+            'Let small things fail. A collapsed project they rebuild teaches more than one you quietly fix at midnight.',
+            'Give real household problems to solve: how to fit everything in the car, how to make the budget stretch, how to organise the shelves.',
+            'Ask "what would you do about it?" whenever they complain about something in the neighbourhood.',
+          ] },
+          { p: 'It feels slower. It is slower. It is also the difference between a child who can answer and a child who can decide.' },
+        ],
+      },
+      {
+        heading: 'How this works at Nucleus',
+        body: [
+          { p: 'Nucleus follows the Cambridge pathway from age 2 through Grade 8 at Vatican, near Mekanisa in Addis Ababa, and the reason we chose it is that it rewards understanding over recall. Around it sit robotics and STEM, agriculture and animal care, music, sport and the arts, each one another chance for a child to meet a problem that is genuinely theirs to solve.' },
+          { p: 'Our teachers are trained on this directly rather than by memo. The founders themselves run the session on why the school exists. If you want to see what it looks like in an ordinary lesson, come and visit on a normal school day.' },
+        ],
+      },
+    ],
+    related: [
+      { label: 'The founders on the gap this school was built to close', url: '/newsletter/why-ethiopian-graduates-feel-lost-after-graduation' },
+      { label: 'Why robotics, STEM and agriculture matter early', url: '/news/why-robotics-stem-agriculture-matter-early' },
+      { label: 'The best international school in Addis Ababa: a 2026 guide', url: '/news/best-international-schools-addis-ababa' },
+      { label: 'Book a campus visit', url: '/contact' },
+    ],
+  },
 ]
+
 
 const run = async () => {
   const payload = await getPayload({ config })

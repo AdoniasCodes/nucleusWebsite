@@ -38,10 +38,10 @@ const SERIES: SeedSeries[] = [
     ],
   },
   {
-    title: 'The Educators’ Core: Teachers’ Capacity Building Training',
+    title: 'Nucleus International Schools Teachers’ Capacity Building Training',
     slug: 'teachers-capacity-building',
     description:
-      'The continuous professional development newsletter of Nucleus International Schools. Each issue documents one module of our Teachers’ Capacity Building Training programme: the practical tools, global strategies and pedagogical backing behind our classrooms.',
+      'The professional development newsletter of Nucleus International Schools. Each issue documents one module of our Teachers’ Capacity Building Training: the practical tools, global strategies and pedagogical thinking behind every Nucleus classroom in Addis Ababa.',
     coverImageUrl: `${CBT}/cbt01-ei-session.webp`,
     related: [
       { label: 'Meet the team behind the training', url: '/about' },
@@ -661,7 +661,7 @@ const week3Sections: SeedSection[] = [
 ]
 
 /* ------------------------------------------------------------------------------
- * The Educators' Core: Issue 01: Emotional Intelligence
+ * Teachers' Capacity Building Training, Issue 01: Emotional Intelligence
  * Source: the CBT programme doc from leadership (Vatican Campus session, July 2026).
  * ---------------------------------------------------------------------------- */
 const cbt01Sections: SeedSection[] = [
@@ -669,7 +669,7 @@ const cbt01Sections: SeedSection[] = [
     heading: 'A Message from Leadership',
     body: [
       {
-        p: 'Welcome to the inaugural edition of The Educators\u2019 Core. As we roll out our Teachers\u2019 Capacity Building Training programme across our campuses, the goal is a simple one: to give our teachers the practical tools, global strategies and pedagogical backing they need to lead a modern classroom.',
+        p: 'Welcome to the inaugural edition of this newsletter. As we roll out our Teachers\u2019 Capacity Building Training across our campuses, the goal is a simple one: to give our teachers the practical tools, global strategies and pedagogical backing they need to lead a modern classroom.',
       },
       {
         p: 'Aligned with our standards and our commitment to excellence, this series will document that professional development journey step by step, module by module, so that what one campus learns, every campus learns.',
@@ -726,6 +726,159 @@ const cbt01Sections: SeedSection[] = [
         imageUrl: `${CBT}/cbt01-group-activity.webp`,
         alt: 'Nucleus staff working through a group activity on a whiteboard during the training session',
         caption: 'Working the ideas through as a group, not just hearing them.',
+      },
+    ],
+  },
+]
+
+/* ------------------------------------------------------------------------------
+ * Teachers' Capacity Building Training, Issue 02: the founders' vision session
+ * Source: Eyoel's brief from the 3 Aug 2026 session at the Vatican campus, where
+ * Ato Asfaw G/Hiwot took the staff through the founding story and the education gap
+ * the school was built to close. Photos from the same morning.
+ * ---------------------------------------------------------------------------- */
+const cbt02Sections: SeedSection[] = [
+  {
+    heading: 'The Founder Opened the Training Himself',
+    body: [
+      {
+        p: 'The second module of our Teachers\u2019 Capacity Building Training did not begin with a policy briefing or a curriculum map. It began with the founder.',
+      },
+      {
+        p: 'Ato Asfaw G\u2019Hiwot stood in front of the teaching and support teams at our Vatican campus, under the shield that carries the three words this school is built on, and answered a question most staff inductions skip entirely: not what Nucleus teaches, but why Nucleus exists.',
+      },
+      {
+        p: 'Every teacher who joins us inherits a method. This session was about making sure they inherit the reason behind it too.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${CBT}/cbt02-founder-address.webp`,
+        alt: 'Founder Ato Asfaw G\u2019Hiwot addressing Nucleus teaching staff during capacity building training in Addis Ababa',
+        caption: 'Ato Asfaw G\u2019Hiwot opening the session beneath the school shield: Think Deeply. Create Boldly. Solve Truly.',
+      },
+    ],
+  },
+  {
+    heading: 'Nucleus Was Born Out of Love',
+    body: [
+      {
+        p: 'The founding story is short, and it is personal. Ato Asfaw G\u2019Hiwot and Engineer Demitu Feyisa have four children. Every early decision about this school was first a decision about them.',
+      },
+      {
+        p: 'Three years ago they opened a Cambridge-certified preschool at Abo Mekanisa. It has since grown into a full Preschool to Grade 8 Cambridge school at the Vatican campus. The scale changed. The reason did not.',
+      },
+      {
+        p: '"Born out of love" is easy to read as a line on an About page. Said out loud, to the people who will actually deliver it, it lands differently. A school you built for your own children is a school you cannot afford to get wrong.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${CBT}/cbt02-training-room.webp`,
+        alt: 'Nucleus teachers and staff seated for the capacity building training session at the Vatican campus in Addis Ababa',
+        caption: 'Teaching and support staff together, Vatican campus.',
+      },
+    ],
+  },
+  {
+    heading: 'The Morning After Graduation',
+    body: [
+      {
+        p: 'Then the founder described the moment that made him build a school.',
+      },
+      {
+        p: 'Picture an Ethiopian family on graduation day. Years of school fees. Years of exams. The gown, the photographs, the celebration at home. Everyone is proud, and they have earned it.',
+      },
+      {
+        p: 'The next morning, the graduate wakes up and has no idea what to do with their life.',
+      },
+      {
+        p: 'It is one of the most familiar experiences in Ethiopian households, and it is almost never discussed as an education problem. It gets blamed on the job market, on connections, on luck, sometimes on the young person themselves. Our founder\u2019s argument is that it starts far earlier than graduation day, in a classroom, years before anyone noticed.',
+      },
+    ],
+  },
+  {
+    heading: 'What the System Never Asked Them to Do',
+    body: [
+      {
+        p: 'A student can pass through an entire education being rewarded for a single skill: giving back what they were given. Do that well enough for long enough and you graduate with excellent marks and no practice at the things adult life actually demands.',
+      },
+      {
+        ul: [
+          'They memorised, but were rarely asked to question what they memorised.',
+          'They were graded on the right answer, seldom on how they reached it.',
+          'They were rarely asked to make something that did not exist before.',
+          'They almost never had to look at a real problem in their own community and design a response to it.',
+          'They were given one path and told to follow it, so choosing was never a skill they built.',
+        ],
+      },
+      {
+        p: 'So the confused graduate is not lazy and not unintelligent. They are unpractised. For sixteen years nobody asked them to decide anything, and then everything became a decision.',
+      },
+    ],
+  },
+  {
+    heading: 'Why a Narrow Education Is the Risky One Now',
+    body: [
+      {
+        p: 'The instinct in an uncertain economy is to specialise early and specialise hard. Our founder argued the opposite, and the reasoning is worth sitting with.',
+      },
+      {
+        p: 'Nobody can tell a six-year-old today which jobs will exist when they are twenty-five. When the destination is genuinely unknown, range beats narrowness. A child who has built a robot, kept a garden alive, played in front of an audience, argued a position, lost a match and fixed their own broken design has something more durable than a subject specialism. They have evidence that they can learn a new thing and survive being bad at it first.',
+      },
+      {
+        p: 'That is why robotics, STEM, agriculture and animal care, music, sport and the arts are not enrichment at Nucleus. They are the point. Each one is another chance for a child to discover a capability nobody, including the child, knew was there.',
+      },
+    ],
+  },
+  {
+    heading: 'What This Changes on Monday Morning',
+    style: 'highlight',
+    body: [
+      { p: 'The session closed on what the vision actually asks of a teacher in an ordinary lesson:' },
+      {
+        ul: [
+          'Ask for the reasoning, not just the answer. "How did you get there?" is the whole curriculum in five words.',
+          'Let the first attempt fail. A child who is rescued too early learns that struggle means stop.',
+          'Give problems that have more than one good answer, so choosing becomes a practised skill.',
+          'Point the work at something real. A problem from their own street beats a problem from a textbook.',
+          'Notice the quiet capability. The child who fixes things without being asked is showing you something a test will not.',
+        ],
+      },
+    ],
+  },
+  {
+    heading: 'The Vision and the Mission, in Plain Words',
+    body: [
+      {
+        p: 'Our mission is to empower a generation of thinkers, creators and problem solvers who navigate a globalized world with humility, compassion and a heart for service.',
+      },
+      {
+        p: 'Read against the founding story, every part of that sentence is load bearing. Thinkers, because the graduate who cannot think for themselves is the problem we started with. Creators, because a country is built by people who make things. Problem solvers, because Ethiopia does not need more people who can describe what is wrong. Humility, compassion and service, because capability pointed at nothing but yourself is not what we are trying to produce.',
+      },
+      {
+        p: 'It is the same idea the school shield has carried from the beginning. Think Deeply. Create Boldly. Solve Truly.',
+      },
+    ],
+  },
+  {
+    heading: 'One Staff, One Vision',
+    body: [
+      {
+        p: 'The morning ended with everyone outside on the pitch: teachers, coaches, administrators, support staff, leadership. New faces and founding ones in the same frame.',
+      },
+      {
+        p: 'A vision statement is only worth the number of people who can act on it without being reminded. That is what this module was for, and it is why the founders delivered it themselves rather than sending it down through a memo.',
+      },
+      {
+        p: 'The children arrive shortly. This is the team that will decide what they leave with.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${CBT}/cbt02-staff-group.webp`,
+        alt: 'The full Nucleus International Schools teaching and support staff photographed together at the Addis Ababa campus after capacity building training',
+        caption: 'The full Nucleus team after the vision session, Vatican campus, August 2026.',
       },
     ],
   },
@@ -818,6 +971,24 @@ const ISSUES: SeedIssue[] = [
       },
     },
     sections: cbt01Sections,
+  },
+  {
+    seriesSlug: 'teachers-capacity-building',
+    article: {
+      title: 'Why Ethiopian Graduates Feel Lost After Graduation, and What Schools Must Teach Instead',
+      slug: 'why-ethiopian-graduates-feel-lost-after-graduation',
+      excerpt:
+        'Our founder built a school because of one moment he kept seeing: a young Ethiopian celebrates their graduation, then wakes up the next morning with no idea what to do with their life. Issue 02 of our teacher training newsletter, on the gap Nucleus exists to close.',
+      heroImageUrl: `${CBT}/cbt02-founder-address.webp`,
+      publishedAt: '2026-08-03T15:00:00.000Z',
+      playlistPart: 2,
+      meta: {
+        title: 'Why Ethiopian Graduates Feel Lost After Graduation',
+        description:
+          'Passing exams is not the same as being able to think, create or solve. Our founder on the gap in Ethiopian education, and how Nucleus teachers close it.',
+      },
+    },
+    sections: cbt02Sections,
   },
 ]
 

@@ -12,6 +12,7 @@ const HEAD_TERM_POSTS = new Set([
   'how-to-choose-international-school-addis-ababa',
   'robotics-coding-for-kids-addis-ababa',
   'summer-camp-activities-for-kids-addis-ababa',
+  'teaching-critical-thinking-problem-solving-ethiopia',
 ])
 
 /** Auto-generated sitemap of canonical URLs: home + all code/CMS pages + published posts. */
