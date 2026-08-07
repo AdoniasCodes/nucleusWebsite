@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getSiteSettings } from '@/lib/payload'
 import { NAV } from './nav'
+import { SocialLinks } from './SocialLinks'
 
 const PROGRAMS = [
   { label: 'Cambridge Pathway', href: '/cambridge-pathway' },
@@ -92,15 +93,10 @@ export async function Footer() {
             )}
           </address>
           {socials.length > 0 && (
-            <ul className="mt-4 flex flex-wrap gap-3 text-sm">
-              {socials.map((s, i) => (
-                <li key={i}>
-                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="capitalize text-pale/80 hover:text-ochre">
-                    {s.platform}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="mt-5">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-pale/50">Follow Nucleus</h3>
+              <SocialLinks socials={socials} schoolName={schoolName} tone="footer" className="mt-3" />
+            </div>
           )}
         </div>
       </div>

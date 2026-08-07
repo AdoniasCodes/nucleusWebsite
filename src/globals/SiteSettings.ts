@@ -50,6 +50,18 @@ export const SiteSettings: GlobalConfig = {
             {
               name: 'socials',
               type: 'array',
+              admin: {
+                description:
+                  'Shown as brand icons in the footer and in any "Follow Nucleus" section, and emitted as sameAs in the Organization schema. Order here does not matter, the site sorts them.',
+              },
+              // The footer, the Follow Nucleus band and the sameAs schema all read this one list.
+              defaultValue: [
+                { platform: 'facebook', url: 'https://www.facebook.com/NucleusDaycare/' },
+                { platform: 'tiktok', url: 'https://www.tiktok.com/@nucleusintschools' },
+                { platform: 'instagram', url: 'https://www.instagram.com/nucleusintschools/' },
+                { platform: 'youtube', url: 'https://www.youtube.com/@Nucleusintschools' },
+                { platform: 'linkedin', url: 'https://www.linkedin.com/company/nucleus-international-daycare' },
+              ],
               fields: [
                 {
                   name: 'platform',

@@ -27,6 +27,7 @@
     "seed:summer-camp-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/summer-camp-blogs.ts",
     "fix:emdash": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/fix-emdash.ts",
     "fix:cambridge": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/fix-cambridge-wording.ts",
+    "seed:socials": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/socials.ts",
     "check:emdash": "node scripts/check-emdash.mjs"
   },
   "dependencies": {

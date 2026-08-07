@@ -469,6 +469,12 @@ export const defaultPages: Record<string, DefaultPage> = {
       },
       { blockType: 'campusComingSoon' },
       {
+        blockType: 'socialFollow',
+        background: 'mist',
+        heading: 'Follow Nucleus',
+        intro: 'See the classrooms, the camps and the day-to-day before you visit. We post most often on Facebook and TikTok.',
+      },
+      {
         blockType: 'ctaBand',
         background: 'navy',
         bgImage: '/images/stock/cta-contact.webp',

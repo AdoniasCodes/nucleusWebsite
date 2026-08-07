@@ -1939,6 +1939,9 @@ export interface SiteSetting {
   address?: string | null;
   latitude?: number | null;
   longitude?: number | null;
+  /**
+   * Shown as brand icons in the footer and in any "Follow Nucleus" section, and emitted as sameAs in the Organization schema. Order here does not matter, the site sorts them.
+   */
   socials?:
     | {
         platform: 'facebook' | 'instagram' | 'linkedin' | 'youtube' | 'tiktok' | 'x';

@@ -252,4 +252,10 @@ export const defaultHomeLayout: RenderableBlock[] = [
     heading: 'From the Blog',
     intro: 'Stories, milestones and ideas from our learning community.',
   },
+  {
+    blockType: 'socialFollow',
+    background: 'mist',
+    heading: 'Follow Nucleus',
+    intro: 'The classrooms, the camps and the day-to-day, posted as it happens. We are most active on Facebook and TikTok.',
+  },
 ] as RenderableBlock[]
