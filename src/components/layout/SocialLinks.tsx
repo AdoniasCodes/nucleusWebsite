@@ -77,7 +77,8 @@ export function SocialLinks({ socials, schoolName = 'Nucleus International Schoo
               rel="noopener noreferrer me"
               aria-label={`${schoolName} on ${label}`}
               title={label}
-              className={`flex h-10 w-10 items-center justify-center rounded-full border transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ochre ${styles}`}
+              // h-11 = 44px, the minimum comfortable touch target. Most visitors are on phones.
+              className={`flex h-11 w-11 items-center justify-center rounded-full border transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ochre ${styles}`}
             >
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" className="h-[18px] w-[18px]" fill="currentColor">
                 <path d={path} />
