@@ -25,6 +25,7 @@ import { LearnerPromiseBlock, type LearnerPromiseProps } from './LearnerPromiseB
 import { AdmissionApplicationBlock, type AdmissionApplicationProps } from './AdmissionApplicationBlock'
 import { CampusComingSoonBlock, type CampusComingSoonProps } from './CampusComingSoonBlock'
 import { SocialFollowBlock, type SocialFollowProps } from './SocialFollowBlock'
+import { CampusVideoBlock, type CampusVideoProps } from './CampusVideoBlock'
 import { mintFormToken } from '@/lib/formToken'
 
 /**
@@ -57,6 +58,7 @@ export type RenderableBlock =
   | AdmissionApplicationProps
   | CampusComingSoonProps
   | SocialFollowProps
+  | CampusVideoProps
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
@@ -85,6 +87,7 @@ const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
   admissionApplication: AdmissionApplicationBlock,
   campusComingSoon: CampusComingSoonBlock,
   socialFollow: SocialFollowBlock,
+  campusVideo: CampusVideoBlock,
 }
 
 export function BlockRenderer({ blocks }: { blocks?: RenderableBlock[] | null }) {

@@ -61,6 +61,16 @@ export const defaultPages: Record<string, DefaultPage> = {
           },
         ],
       },
+      // The story, then the place, then the founder. Seeing the campus is what turns a page
+      // visit into a tour booking, so it sits high rather than at the bottom.
+      {
+        blockType: 'campusVideo',
+        background: 'navy',
+        eyebrow: 'Take a Look Around',
+        heading: 'A Walk Through Our Campus',
+        intro:
+          'Classrooms, the science and computer labs, the music room, the library, the pitch and the grounds at Vatican. Filmed on an ordinary school day.',
+      },
       { blockType: 'founderMessage' },
       {
         blockType: 'cardsGrid',
