@@ -26,6 +26,7 @@
     "seed:camp-story-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/camp-story-blogs.ts",
     "seed:summer-camp-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/summer-camp-blogs.ts",
     "fix:emdash": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/fix-emdash.ts",
+    "fix:cambridge": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/fix-cambridge-wording.ts",
     "check:emdash": "node scripts/check-emdash.mjs"
   },
   "dependencies": {
@@ -79,5 +80,6 @@
       "esbuild",
       "unrs-resolver"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.28.2"
 }

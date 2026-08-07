@@ -766,7 +766,7 @@ const cbt02Sections: SeedSection[] = [
         p: 'The founding story is short, and it is personal. Ato Asfaw G\u2019Hiwot and Engineer Demitu Feyisa have four children. Every early decision about this school was first a decision about them.',
       },
       {
-        p: 'Three years ago they opened a Cambridge-certified preschool at Abo Mekanisa. It has since grown into a full Preschool to Grade 8 Cambridge school at the Vatican campus. The scale changed. The reason did not.',
+        p: 'Three years ago they opened a Cambridge-certified preschool at Abo Mekanisa. It has since grown into a full Preschool to Grade 8 school teaching the international Cambridge curriculum at the Vatican campus. The scale changed. The reason did not.',
       },
       {
         p: '"Born out of love" is easy to read as a line on an About page. Said out loud, to the people who will actually deliver it, it lands differently. A school you built for your own children is a school you cannot afford to get wrong.',

@@ -46,7 +46,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
         kind: 'brand',
         bgVideo: '/video/hero.mp4',
         bgPoster: '/video/hero-poster.webp',
-        eyebrow: 'Cambridge International School in Addis Ababa',
+        eyebrow: 'International Cambridge Curriculum in Addis Ababa',
         amharic: 'ትምህርት ከደብተር ያልፋል',
         heading: 'Nucleus International Schools',
         tagline: 'Think Deeply. Create Boldly. Solve Truly.',

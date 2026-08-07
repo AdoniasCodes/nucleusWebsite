@@ -107,7 +107,7 @@ export async function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto w-full max-w-7xl px-5 py-6 text-xs text-pale/60 sm:px-8">
-          © {schoolName}. A Cambridge international school at Vatican, Addis Ababa.
+          © {schoolName}. Teaching the international Cambridge curriculum at Vatican, Addis Ababa.
         </div>
       </div>
     </footer>

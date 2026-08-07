@@ -29,11 +29,13 @@ export const viewport: Viewport = {
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSEOSettings().catch(() => null)
   const siteName = seo?.siteName ?? 'Nucleus International Schools'
-  // Keep ≤ 60 chars (the audit flagged a 66-char title). Front-loads the core keywords.
-  const title = seo?.defaultMetaTitle ?? 'Nucleus International Schools | Cambridge in Addis Ababa'
+  // Front-loads the core keyword. Never "Cambridge School": that is the competitor's name.
+  const title =
+    seo?.defaultMetaTitle ??
+    'International Cambridge Curriculum in Addis Ababa | Nucleus International Schools'
   const description =
     seo?.defaultMetaDescription ??
-    'A Cambridge-curriculum international school at Vatican, Addis Ababa (near Mekanisa Abo Square) for ages 2–Grade 8: secure campus, robotics, STEM and multilingual learning.'
+    'Nucleus teaches the international Cambridge curriculum at Vatican, Addis Ababa (near Mekanisa Abo Square), ages 2 to Grade 8: secure campus, robotics, STEM and multilingual learning.'
 
   return {
     metadataBase: new URL(SERVER_URL),

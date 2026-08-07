@@ -20,9 +20,9 @@ export type DefaultPage = {
 export const defaultPages: Record<string, DefaultPage> = {
   about: {
     title: 'About',
-    seoTitle: 'About Nucleus International Schools | Cambridge School at Vatican, Addis Ababa',
+    seoTitle: 'About Nucleus | International Cambridge Curriculum at Vatican, Addis Ababa',
     description:
-      'From a trusted Addis preschool to a Cambridge international school. The story, mission and values behind Nucleus at Vatican, Addis Ababa, and our growth toward a Gerji campus.',
+      'From a trusted Addis preschool to the full international Cambridge curriculum. The story, mission and values behind Nucleus at Vatican, Addis Ababa, and our growth toward a Gerji campus.',
     layout: [
       {
         blockType: 'hero',
@@ -31,7 +31,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'A Full Life\nBegins Here',
         bgImage: '/images/stock/about-hero.webp',
         subhead:
-          'Nucleus is growing from one of Addis Ababa’s most trusted homes for early childhood into a full Cambridge international school, without ever losing the warmth that built it.',
+          'Nucleus is growing from one of Addis Ababa’s most trusted homes for early childhood into a school teaching the full international Cambridge curriculum, without ever losing the warmth that built it.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
@@ -44,7 +44,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         items: [
           {
             type: 'lead',
-            text: 'Nucleus began as a place parents chose for safety, warmth and genuine care. Today that same foundation is becoming a full Cambridge international school.',
+            text: 'Nucleus began as a place parents chose for safety, warmth and genuine care. Today that same foundation carries the full international Cambridge curriculum.',
           },
           {
             type: 'p',
@@ -186,7 +186,7 @@ export const defaultPages: Record<string, DefaultPage> = {
 
   academics: {
     title: 'Academics',
-    seoTitle: 'Cambridge Curriculum in Addis Ababa | Nucleus Academics (Ages 2–Grade 8)',
+    seoTitle: 'International Cambridge Curriculum in Addis Ababa | Nucleus Academics',
     description:
       'The Cambridge pathway at Nucleus International Schools, Vatican: Early Years through Grade 8, with robotics, STEM, agriculture and multilingual learning. A portable, world-class education.',
     layout: [
@@ -486,7 +486,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Registration',
     seoTitle: 'Register Your Child | Nucleus International Schools, Addis Ababa',
     description:
-      'Complete the Nucleus International Schools admission form online for a Cambridge international school in Addis Ababa serving Preschool to Grade 8. Six short steps, saved as you go, and our admissions team replies within one business day.',
+      'Complete the Nucleus International Schools admission form online for the international Cambridge curriculum in Addis Ababa, Preschool to Grade 8. Six short steps, saved as you go, and our admissions team replies within one business day.',
     layout: [
       {
         blockType: 'hero',
@@ -564,7 +564,7 @@ export const defaultPages: Record<string, DefaultPage> = {
 
   'cambridge-pathway': {
     title: 'Cambridge Pathway',
-    seoTitle: 'The Cambridge Pathway at Nucleus | Cambridge School in Addis Ababa',
+    seoTitle: 'The Cambridge Pathway at Nucleus | International Cambridge Curriculum, Addis Ababa',
     description:
       'The Cambridge pathway at Nucleus International Schools, Vatican: a portable, internationally recognised education from the early years through Grade 8.',
     layout: [

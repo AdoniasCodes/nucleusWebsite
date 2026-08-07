@@ -342,7 +342,7 @@ const posts: SeedPost[] = [
       { p: 'Best for: families paying school fees themselves who still want a recognised international curriculum.' },
 
       { h2: 'Value and newer Cambridge options' },
-      { p: 'Then there are newer, value-focused schools, including Nucleus, a Cambridge school at Vatican near Mekanisa serving age 2 through Grade 8. This tier is built around a secure campus, holistic learning such as robotics, agriculture, music and sport, and transparent fees without surprise capital-fee jumps. Facilities are smaller than the premium tier; the trade is cost and class size.' },
+      { p: 'Then there are newer, value-focused schools, including Nucleus, which teaches the international Cambridge curriculum at Vatican near Mekanisa from age 2 through Grade 8. This tier is built around a secure campus, holistic learning such as robotics, agriculture, music and sport, and transparent fees without surprise capital-fee jumps. Facilities are smaller than the premium tier; the trade is cost and class size.' },
       { p: 'Best for: first-time international-school families, families switching from a private national-curriculum school, and diplomatic families who want quality without premium-tier capital fees.' },
 
       { h2: 'How to judge any school on this list' },
@@ -361,7 +361,7 @@ const posts: SeedPost[] = [
 
       { h2: 'Questions parents ask most' },
       { h3: 'What is the best international school in Addis Ababa?' },
-      { p: 'There is no single best international school in Addis Ababa, because the right choice depends on your budget, your child and where your family may move next. The International Community School is generally treated as the premium benchmark and prices in USD. Cambridge Academy Ethiopia, Sandford, Flipper International and One Planet sit in the balanced middle. Newer value-focused Cambridge schools, including Nucleus at Vatican near Mekanisa, aim at international standards without premium capital fees. Shortlist three, visit each on a normal school day, and compare the all-in first-year cost rather than the headline tuition.' },
+      { p: 'There is no single best international school in Addis Ababa, because the right choice depends on your budget, your child and where your family may move next. The International Community School is generally treated as the premium benchmark and prices in USD. Cambridge Academy Ethiopia, Sandford, Flipper International and One Planet sit in the balanced middle. Newer value-focused schools teaching the international Cambridge curriculum, including Nucleus at Vatican near Mekanisa, aim at international standards without premium capital fees. Shortlist three, visit each on a normal school day, and compare the all-in first-year cost rather than the headline tuition.' },
       { h3: 'How much do international schools in Addis Ababa cost?' },
       { p: 'Costs vary widely by tier. Premium schools price in foreign currency and add substantial one-time capital or development fees on top of tuition. Mid-market and value schools generally price in birr and charge lower or no capital fees. Always ask for the complete fee sheet in writing, including registration, capital or development fees, transport, meals, uniform and exam fees, then compare the total first-year figure between schools rather than the tuition line alone.' },
       { h3: 'Which international schools in Addis Ababa follow the Cambridge curriculum?' },
@@ -434,7 +434,7 @@ const posts: SeedPost[] = [
       { h2: 'Why it costs that much' },
       { p: 'You are paying for the IB curriculum, a large international faculty, extensive facilities and strong demand from the diplomatic and corporate community. For families who need exactly that, it can be worth it.' },
       { h2: 'Lower-cost alternatives worth a look' },
-      { p: 'Plenty of mid-market Cambridge and British schools deliver an international standard for a fraction of the all-in cost. Nucleus is one: a Cambridge school at Vatican, near Mekanisa (age 2 to Grade 8) with transparent, birr-friendly fees and no surprise capital-fee jumps. Request our fee sheet for exact figures.' },
+      { p: 'Plenty of mid-market Cambridge and British schools deliver an international standard for a fraction of the all-in cost. Nucleus is one, teaching the international Cambridge curriculum at Vatican, near Mekanisa (age 2 to Grade 8), with transparent, birr-friendly fees and no surprise capital-fee jumps. Request our fee sheet for exact figures.' },
       { h2: 'Aim for value, not just a lower price' },
       { ul: [
         'Does the curriculum travel where you might go next?',

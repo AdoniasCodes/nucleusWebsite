@@ -25,14 +25,16 @@ export const SEOSettings: GlobalConfig = {
     {
       name: 'defaultMetaTitle',
       type: 'text',
-      defaultValue: 'Nucleus International Schools | Cambridge School in Addis Ababa',
+      // "Cambridge School" reads as the competitor Cambridge International School.
+      // Say "International Cambridge Curriculum" everywhere instead.
+      defaultValue: 'International Cambridge Curriculum in Addis Ababa | Nucleus International Schools',
     },
     {
       name: 'defaultMetaDescription',
       type: 'textarea',
       maxLength: 160,
       defaultValue:
-        'A Cambridge-curriculum international school at Vatican, Addis Ababa (near Mekanisa Abo Square) for ages 2–Grade 8. Robotics, STEM, secure campus, foreign & multilingual staff. Book a tour.',
+        'Nucleus teaches the international Cambridge curriculum at Vatican, Addis Ababa (near Mekanisa Abo Square), ages 2 to Grade 8. Robotics, STEM, secure campus.',
     },
     { name: 'defaultShareImage', type: 'upload', relationTo: 'media' },
     { name: 'twitterHandle', type: 'text' },

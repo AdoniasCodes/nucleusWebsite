@@ -4,7 +4,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 
 /**
  * Homepage hero. Heading hierarchy:
- *   • eyebrow  → small keyword line up top ("Cambridge International School in Addis Ababa")
+ *   • eyebrow  → small keyword line up top ("International Cambridge Curriculum in Addis Ababa")
  *   • heading  → the page's single <h1> ("Nucleus International Schools")
  *   • tagline  → bold <h2> beneath it ("Think Deeply. Create Boldly. Solve Truly."), typed in
  *

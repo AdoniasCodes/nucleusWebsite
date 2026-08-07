@@ -37,7 +37,7 @@ const DEFAULT_FOUNDERS: Founder[] = [
     height: 1500,
     paragraphs: [
       'Nucleus International School was born out of love, a love for our four children, and a deep belief that every child deserves an education that sees the whole person, not just the student.',
-      'Three years ago we opened our Cambridge-certified preschool at Abo Mekanisa. What began there has grown into a full Preschool-to-Grade-8 Cambridge school at our Vatican campus, and we are only just beginning.',
+      'Three years ago we opened our Cambridge-certified preschool at Abo Mekanisa. What began there has grown into a full Preschool-to-Grade-8 school teaching the international Cambridge curriculum at our Vatican campus, and we are only just beginning.',
     ],
   },
   {

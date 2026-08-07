@@ -326,7 +326,7 @@ const posts: SeedPost[] = [
           { p: 'A young person graduates. The family celebrates, and they should. The next day they wake up with no idea what to do with their life. It is one of the most common experiences in Ethiopian households, and it is usually blamed on the job market. A large part of it starts much earlier, in a classroom that only ever asked for the right answer.' },
         ],
         images: [
-          { imageUrl: `${CBT}/cbt02-founder-address.webp`, alt: 'A session on critical thinking in education for teachers at a Cambridge school in Addis Ababa', caption: 'Teacher training at the Nucleus Vatican campus, Addis Ababa.' },
+          { imageUrl: `${CBT}/cbt02-founder-address.webp`, alt: 'A session on critical thinking in education for teachers at an international Cambridge curriculum school in Addis Ababa', caption: 'Teacher training at the Nucleus Vatican campus, Addis Ababa.' },
         ],
       },
       {
