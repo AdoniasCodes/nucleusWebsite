@@ -661,6 +661,216 @@ const week3Sections: SeedSection[] = [
 ]
 
 /* ------------------------------------------------------------------------------
+ * Summer Camp 2026, Week 4: the confidence to try.
+ * Source: the Week 4 doc from leadership, plus 14 photos and 2 taekwondo clips (7 Aug).
+ * The doc lists music and science among the week's activities; there are no photos of
+ * either in this drop, so the list keeps them and the sections only claim what is shown.
+ * ---------------------------------------------------------------------------- */
+const week4Sections: SeedSection[] = [
+  {
+    heading: 'The Confidence to Try',
+    body: [
+      { p: 'Confidence does not arrive overnight. It grows one challenge at a time.' },
+      {
+        p: 'Through week four our campers stepped outside their comfort zones in ways that were easy to miss unless you were watching for them. Joining a game that had already started. Starting a painting with no idea how it would end. Standing up in front of the group. Going back to a problem that did not work the first time.',
+      },
+      {
+        p: 'At Nucleus we celebrate the effort as much as the result. A child who tries something hard and does not get it right has already done the difficult part.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week4-football-confidence-banner.webp`,
+        alt: 'Campers playing football on the turf pitch beneath a Nucleus banner reading Confidence Beyond Classrooms',
+        caption: 'The banner says it. The pitch proves it.',
+      },
+    ],
+    videoUrl: '/video/newsletter/week4-taekwondo-drills.mp4',
+    videoPoster: `${IMG}/week4-taekwondo-drills-poster.webp`,
+    videoCaption: 'Watch: partner drills in the taekwondo hall, where getting it wrong is part of the lesson.',
+  },
+  {
+    heading: 'Learning Beyond the Classroom',
+    body: [
+      {
+        p: 'The week was built around activities that develop the whole child rather than one narrow slice of them.',
+      },
+      {
+        ul: [
+          'Creative arts and imagination',
+          'Science discoveries and hands-on experiments',
+          'Team sports and cooperative games',
+          'Music, movement and self-expression',
+          'Problem-solving activities',
+          'Friendship-building exercises',
+        ],
+      },
+      {
+        p: 'Each one asked children to think for themselves, to speak to each other with respect, and to look out for the person sitting next to them.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week4-art-group-table.webp`,
+        alt: 'Campers gathered around the art station table mixing paint in plastic cups and working on their own sheets',
+        caption: 'The art station on a busy morning.',
+      },
+      {
+        imageUrl: `${IMG}/week4-art-table-painting.webp`,
+        alt: 'Campers standing around the wooden art table painting, one holding up a finished sheet to show the group',
+        caption: 'Holding the work up before the paint is dry.',
+      },
+      {
+        imageUrl: `${IMG}/week4-art-teacher-help.webp`,
+        alt: 'A camper in a red tracksuit painting at the art table while a teacher helps the children around him',
+        caption: 'A teacher on hand, but the choices stay with the child.',
+      },
+    ],
+  },
+  {
+    heading: 'Every Child Has a Moment to Shine',
+    body: [
+      { p: 'The best part of the job is watching a child surprise themselves.' },
+      {
+        p: 'Campers who barely spoke in the first week are now volunteering to lead group activities. Others who preferred to work quietly are putting their ideas to the whole table. Every child moves at their own pace, and every success, big or small, gets marked.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week4-handprints-held-high.webp`,
+        alt: 'Six campers standing in a line holding their handprint paintings above their heads for the camera',
+        caption: 'Everyone finished. Everyone showed.',
+      },
+      {
+        imageUrl: `${IMG}/week4-handprint-proud.webp`,
+        alt: 'A camper holding up her handprint painting in front of the Art Beyond Norms poster in the art room',
+        caption: 'Two hands, two colours, one very pleased artist.',
+      },
+      {
+        imageUrl: `${IMG}/week4-art-table-talk.webp`,
+        alt: 'Four campers sitting around the art table talking to each other between painting sessions',
+        caption: 'Half the learning happens in the gaps between activities.',
+      },
+    ],
+  },
+  {
+    heading: 'Problem Solving, One Robot at a Time',
+    body: [
+      {
+        p: 'In the innovation lab the brief is never just "build it". It is build it, run it, watch it fail, and work out why.',
+      },
+      {
+        p: 'Campers worked in pairs on the kits and at the laptop, taking turns to test a design and change one thing at a time. Nobody gets a working robot on the first attempt, which is exactly the point.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week4-robotics-build-laptop.webp`,
+        alt: 'An instructor kneeling on the floor helping two campers assemble a robotics kit next to an open laptop',
+        caption: 'Testing the build against the code on the laptop.',
+      },
+      {
+        imageUrl: `${IMG}/week4-robot-floor-drive.webp`,
+        alt: 'A young camper lying on the carpet driving a small wheeled robot she has just finished building',
+        caption: 'First successful run of the morning.',
+      },
+    ],
+  },
+  {
+    heading: 'The Taekwondo Hall',
+    body: [
+      {
+        p: 'Taekwondo is where the week is most obviously about nerve. Campers line up in belt order, run the same pattern until it is clean, then put the pads on and face someone their own size.',
+      },
+      {
+        p: 'It teaches control before it teaches anything else: how hard is too hard, when to stop, how to lose a round and shake hands afterwards.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week4-taekwondo-class.webp`,
+        alt: 'A large group of campers in white taekwondo uniforms practising a blocking pattern in the training hall',
+        caption: 'The whole hall on the same count.',
+      },
+      {
+        imageUrl: `${IMG}/week4-taekwondo-punch-line.webp`,
+        alt: 'Campers in taekwondo uniforms lined up in rows practising a punch drill with the instructor at the front',
+        caption: 'Same pattern, again, until it is clean.',
+      },
+    ],
+    videoUrl: '/video/newsletter/week4-taekwondo-sparring.mp4',
+    videoPoster: `${IMG}/week4-taekwondo-sparring-poster.webp`,
+    videoCaption: 'Watch: sparring in full head guards and gloves, with the coach calling the round.',
+  },
+  {
+    heading: 'On the Pitch and the Court',
+    body: [
+      {
+        p: 'Outside, the turf pitch and the blue court ran all week. Football in the morning while it was still cool, basketball once the sun was over the palm trees.',
+      },
+      {
+        p: 'Team sport does something a classroom cannot. You cannot hide in a five-a-side game, and you cannot win one on your own either.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week4-football-dribble-run.webp`,
+        alt: 'Two campers chasing the ball down the turf pitch during a five-a-side football game',
+        caption: 'The chase is most of the game at this age.',
+      },
+      {
+        imageUrl: `${IMG}/week4-basketball-drive.webp`,
+        alt: 'Two campers playing one on one basketball on the blue outdoor court under the palm tree',
+        caption: 'One on one, no referee needed.',
+      },
+      {
+        imageUrl: `${IMG}/week4-basketball-girl.webp`,
+        alt: 'A young camper in a white dress standing on the blue basketball court holding a basketball and smiling',
+        caption: 'Waiting for the pass.',
+      },
+    ],
+  },
+  {
+    heading: 'Building Skills for Life',
+    style: 'highlight',
+    body: [
+      {
+        p: 'Summer Camp is about more than keeping children busy through the holidays. It is about the things that stay with them after the last day.',
+      },
+      {
+        ul: [
+          'Confidence',
+          'Communication',
+          'Creativity',
+          'Critical thinking',
+          'Teamwork',
+          'Leadership',
+          'Resilience',
+        ],
+      },
+      {
+        p: 'These are the qualities that make a successful learner, and later, a compassionate leader.',
+      },
+    ],
+  },
+  {
+    heading: 'Looking Ahead: the Closing Celebration',
+    body: [
+      {
+        p: 'With the final days of camp in sight, everything is now pointing at our Closing Celebration on Friday 14 August, where we mark the friendships made, the skills learned and the memories built over the summer.',
+      },
+      {
+        p: 'Every camper will receive a Certificate of Participation recognising their enthusiasm, their effort and their commitment across the programme.',
+      },
+      {
+        p: 'Thank you to all our parents for trusting Nucleus International Schools with your children this summer. Watching them grow in confidence each day has been a privilege for the whole team.',
+      },
+      { p: 'Together we are nurturing curious minds, kind hearts and confident futures.' },
+    ],
+  },
+]
+
+/* ------------------------------------------------------------------------------
  * Teachers' Capacity Building Training, Issue 01: Emotional Intelligence
  * Source: the CBT programme doc from leadership (Vatican Campus session, July 2026).
  * ---------------------------------------------------------------------------- */
@@ -953,6 +1163,26 @@ const ISSUES: SeedIssue[] = [
       },
     },
     sections: week3Sections,
+  },
+  {
+    seriesSlug: 'summer-camp-2026',
+    article: {
+      // Week 3 owns "confidence to leadership" and the blog owns the confidence head term,
+      // so week 4 takes the outcome query instead: what a child comes home with.
+      title: 'What Children Take Home From a Summer Camp in Addis Ababa',
+      slug: 'what-children-take-home-from-summer-camp-addis-ababa',
+      excerpt:
+        'Confidence, communication and the nerve to try again. Week four at Nucleus Summer Camp: robotics that fail before they work, sparring in full pads, handprints held high, and a closing celebration in sight.',
+      heroImageUrl: `${IMG}/week4-football-confidence-banner.webp`,
+      publishedAt: '2026-08-07T15:00:00.000Z',
+      playlistPart: 4,
+      meta: {
+        title: 'What Kids Take Home From Summer Camp',
+        description:
+          'Confidence, communication, resilience. What children take home from a summer camp in Addis Ababa, and what the final week of the programme looks like.',
+      },
+    },
+    sections: week4Sections,
   },
   {
     seriesSlug: 'teachers-capacity-building',
