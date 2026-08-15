@@ -405,6 +405,126 @@ const posts: SeedPost[] = [
       { label: 'Book a campus visit', url: '/contact' },
     ],
   },
+
+  // ────────────────────────────────────────────────────────────────────────────
+  {
+    title: 'Taekwondo Classes for Kids in Addis Ababa: What Parents Should Look For',
+    slug: 'taekwondo-classes-for-kids-addis-ababa',
+    category: 'parent-resources',
+    excerpt:
+      'Taekwondo is one of the most common activities parents in Addis Ababa sign their children up for, and the quality varies enormously. Here is what a good children’s class looks like, what your child actually learns, what to ask before you enrol, and photographs of it happening.',
+    heroImageUrl: `${IMG}/week5-taekwondo-group-pattern.webp`,
+    publishedAt: '2026-08-15T09:00:00.000Z',
+    meta: {
+      title: 'Taekwondo Classes for Kids in Addis Ababa',
+      description:
+        'What a good children’s taekwondo class in Addis Ababa looks like, what your child learns at 5 to 13, safety and gear, and the questions to ask before enrolling.',
+    },
+    sections: [
+      {
+        body: [
+          { p: 'Taekwondo is one of the easiest activities to find for a child in Addis Ababa and one of the hardest to judge from the outside. A hall, a line of children in white uniforms and a coach counting in Korean looks the same whether the teaching is excellent or careless.' },
+          { p: 'We run taekwondo through every week of Nucleus Summer Camp, for children from about five upwards, and finished this year with the whole group performing for their parents. This is what we look for in a children’s class, written for a parent who is deciding where to send their child.' },
+        ],
+        images: [
+          { imageUrl: `${IMG}/week5-taekwondo-group-pattern.webp`, alt: 'Young children in white taekwondo uniforms performing a pattern together on stage in Addis Ababa', caption: 'The summer camp taekwondo group performing for their families.' },
+        ],
+      },
+      {
+        heading: 'What a child actually learns, and it is not fighting',
+        body: [
+          { p: 'Parents worry about the kicking. In a well-run children’s class the kicking is the least of it. What a five to thirteen year old is really practising is control: how hard is too hard, when to stop, where to put their feet, how to hold a line, how to lose a round and shake hands afterwards.' },
+          { p: 'The physical gains come with it. Balance, coordination on both sides of the body, core strength, and the stamina to repeat something forty times without losing form. For a child who spends most of the day sitting down, that alone is worth the hour.' },
+          { p: 'The part parents notice first is usually posture and attention. A child who has spent a term standing still in line, waiting for a command and executing it properly, brings some of that back into the classroom.' },
+        ],
+        images: [
+          { imageUrl: `${IMG}/week4-taekwondo-class.webp`, alt: 'A large group of children in white taekwondo uniforms practising a blocking pattern in a training hall in Addis Ababa', caption: 'The whole hall on the same count.' },
+          { imageUrl: `${IMG}/week2-taekwondo-high-kick.webp`, alt: 'A child in a taekwondo uniform performing a high kick during a class', caption: 'Height comes from balance long before it comes from strength.' },
+          { imageUrl: `${IMG}/week3-taekwondo-warmup.webp`, alt: 'Children warming up in rows at the start of a taekwondo class', caption: 'Every session starts the same way, which is the point.' },
+        ],
+      },
+      {
+        heading: 'What a good children’s class looks like from the door',
+        body: [
+          { p: 'You can tell most of what you need to know by watching ten minutes of a session, without knowing anything about martial arts:' },
+          { ul: [
+            'Children are grouped by size and belt, not herded into one line of forty.',
+            'There is a warm-up. A class that starts cold with kicking drills is a class that has not thought about children’s joints.',
+            'The coach corrects individuals by name and demonstrates again, rather than shouting the count over everybody.',
+            'Contact work happens in pads and headgear, with the coach standing between the pair.',
+            'Every child gets a turn at the pads. If half the room is queueing while two children work, you are paying for queueing.',
+            'The session ends properly, with a bow and a line, not with children drifting out to their parents.',
+          ] },
+        ],
+        images: [
+          { imageUrl: `${IMG}/week2-taekwondo-coaching.webp`, alt: 'A taekwondo instructor correcting a young student individually during a class in Addis Ababa', caption: 'Correction by name, one child at a time.' },
+          { imageUrl: `${IMG}/week4-taekwondo-punch-line.webp`, alt: 'Children lined up in rows practising a punch drill with the instructor at the front', caption: 'Same pattern, again, until it is clean.' },
+          { imageUrl: `${IMG}/week2-taekwondo-pad-punch.webp`, alt: 'A young child striking a hand pad held by a taekwondo coach', caption: 'Pads mean everybody gets a turn at real contact, safely.' },
+        ],
+      },
+      {
+        heading: 'Safety, gear and contact',
+        body: [
+          { p: 'For beginners the only thing a child needs is a uniform, and most programmes provide or sell one. Sparring gear comes later: a padded chest guard, headgear, shin and forearm guards, gloves and a mouthguard. Any programme that puts children in contact without that set is one to walk away from.' },
+          { p: 'Full-contact sparring is not where a beginner starts, and a six-year-old should not be sparring at all in their first months. Pad work, patterns and controlled drills carry the learning until the child has the control to be trusted with a partner.' },
+          { p: 'Ask who is in the room besides the coach. A single adult supervising thirty children in contact work is a supervision problem, not a coaching style.' },
+        ],
+        images: [
+          { imageUrl: `${IMG}/week5-taekwondo-sparring-gear.webp`, alt: 'Two young students in red and blue taekwondo sparring gear with their instructor between them', caption: 'Chest guards, headgear, gloves, and a coach in the middle.' },
+          { imageUrl: `${IMG}/week5-taekwondo-board-break.webp`, alt: 'A small child in a taekwondo uniform kicking through a target pad held at her own height by an instructor', caption: 'Targets held at the child’s height, not the coach’s.' },
+        ],
+      },
+      {
+        heading: 'What to ask before you enrol',
+        style: 'highlight',
+        body: [
+          { p: 'Six questions that separate a real children’s programme from a hall with a coach in it:' },
+          { ul: [
+            'How many children per coach, and who else is supervising?',
+            'Are the children grouped by age and belt, or all taught together?',
+            'What does my child need to buy, and when do they need sparring gear?',
+            'How are gradings run, who awards the belt, and is the certificate recognised anywhere?',
+            'What happens if my child is nervous or does not want to spar?',
+            'Can I watch a full session before I pay?',
+          ] },
+          { p: 'A programme that welcomes the last question usually answers the first five well too.' },
+        ],
+      },
+      {
+        heading: 'Questions parents ask about taekwondo for kids',
+        body: [
+          { p: 'What age can a child start taekwondo?' },
+          { p: 'Most children can start taekwondo from about four or five years old, when they can follow a sequence of instructions and hold a position for a few seconds. Classes for four to six year olds should be short, game-heavy and built around coordination rather than technique. Serious pattern work and grading usually begin around seven or eight. There is no upper limit, and a child who starts at eleven catches up quickly.' },
+          { p: 'Is taekwondo safe for children?' },
+          { p: 'Taekwondo is safe for children when contact is controlled and supervised. Beginners work on patterns, kicks into pads and drills, not on sparring. When sparring is introduced, children should wear a padded chest guard, headgear, shin and forearm guards, gloves and a mouthguard, and be matched by size rather than by age alone. The main injury risk in badly run classes is not kicks, it is unsupervised horseplay and skipping the warm-up.' },
+          { p: 'What does a child actually learn in taekwondo?' },
+          { p: 'A child learns balance, coordination, core strength and stamina, and alongside that a set of habits: standing still, listening for an instruction, executing it properly, controlling how hard they hit, stopping on command and shaking hands after losing. Most parents notice the discipline and the confidence before they notice the kicking.' },
+          { p: 'What equipment does my child need to start taekwondo?' },
+          { p: 'To start, a child needs only a dobok, the white uniform, which most schools and clubs supply. Sparring gear is needed later and typically includes a chest guard, headgear, shin and forearm guards, gloves and a mouthguard. Ask the programme which items they lend and which the family is expected to buy before you enrol.' },
+          { p: 'How often should a child train?' },
+          { p: 'Twice a week is the usual rhythm for a child who wants to progress, and once a week is enough to keep the habit and the fitness. Intensive holiday programmes such as summer camp are a good way to try it, because a child gets several sessions in a single week and finds out quickly whether they enjoy it before the family commits to a term.' },
+        ],
+        images: [
+          { imageUrl: `${IMG}/week1-taekwondo-class.webp`, alt: 'Young children practising taekwondo in a hall at a summer camp in Addis Ababa', caption: 'Week one of camp, before anyone knew the patterns.' },
+          { imageUrl: `${IMG}/week5-taekwondo-instructor-demo.webp`, alt: 'A taekwondo instructor demonstrating a technique while rows of children follow behind him', caption: 'Five weeks later, on stage, in front of their parents.' },
+        ],
+      },
+      {
+        heading: 'Where this happens at Nucleus',
+        body: [
+          { p: 'Taekwondo runs through every week of Nucleus Summer Camp at our Mekanisa and Vatican campuses, alongside robotics, art, music, chess and team sport, for children aged 4 to 14. Children train in belt-order groups with a qualified instructor, work on pads before they ever spar, and finish the programme performing for their families.' },
+          { p: 'If you want to see it rather than read about it, come to the campus on a normal day and watch a session, or ask us when the next intake opens.' },
+        ],
+      },
+    ],
+    related: [
+      { label: 'The closing ceremony, including the taekwondo demonstration', url: '/newsletter/summer-camp-closing-ceremony-addis-ababa' },
+      { label: 'Summer camp activities in Addis Ababa, a full week', url: '/news/summer-camp-activities-for-kids-addis-ababa' },
+      { label: 'How summer camp builds confidence in children', url: '/news/how-summer-camp-builds-confidence-in-children' },
+      { label: 'Explore Nucleus Summer Camp', url: '/summer-camp' },
+      { label: 'Book a campus visit', url: '/contact' },
+    ],
+  },
 ]
 
 

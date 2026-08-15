@@ -35,6 +35,7 @@ const SERIES: SeedSeries[] = [
     related: [
       { label: 'Explore Nucleus Summer Camp & reserve a spot', url: '/summer-camp' },
       { label: 'Inside Nucleus Summer Camp 2026', url: '/news/nucleus-summer-camp-2026' },
+      { label: 'Taekwondo classes for kids in Addis Ababa: a parent’s guide', url: '/news/taekwondo-classes-for-kids-addis-ababa' },
     ],
   },
   {
@@ -871,6 +872,277 @@ const week4Sections: SeedSection[] = [
 ]
 
 /* ------------------------------------------------------------------------------
+ * Summer Camp 2026, Week 5: the closing ceremony, 14 August 2026.
+ * Source: the final newsletter doc from leadership, plus the photographer's set
+ * from the ceremony. No robotics or chess photos were supplied, so the copy
+ * names them without claiming a picture of either.
+ * ---------------------------------------------------------------------------- */
+const week5Sections: SeedSection[] = [
+  {
+    heading: 'Five Weeks Ago, They Walked In',
+    body: [
+      {
+        p: 'Five weeks ago our campers walked through the doors of Nucleus International Schools ready for a summer adventure. Some arrived excited, some a little shy, and some unsure of what to expect.',
+      },
+      {
+        p: 'Today they leave as a community of young learners who have created, experimented, performed, played, solved problems, made friends and discovered just how much they can do.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week5-ceremony-stage-wide.webp`,
+        alt: 'The stage at the Nucleus International Schools summer camp closing ceremony in Addis Ababa, with a host at the podium and parents seated in front',
+        caption: 'The closing ceremony, Friday 14 August, with the families in their seats.',
+      },
+    ],
+  },
+  {
+    heading: 'Look How Far We Have Come',
+    body: [
+      { p: 'Throughout summer camp, learning has happened everywhere.' },
+      {
+        p: 'At the art table, imagination became creativity. In chess and robotics, children learned to think, plan and solve problems. Through music and drama, they found new ways to express themselves. Through taekwondo and physical activities, they practised discipline, coordination and perseverance.',
+      },
+      {
+        p: 'But perhaps the most important learning cannot be displayed on a table or demonstrated on a stage. We have watched children become more confident, more independent and more willing to try. We have seen friendships form, teamwork develop and children encourage one another.',
+      },
+      { p: 'Those are achievements worth celebrating.' },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week5-art-exhibition-room.webp`,
+        alt: 'Campers and staff in the art classroom at Nucleus, with childrens paintings covering the wall and portraits standing on easels',
+        caption: 'Five weeks of art, hung wall to wall for the families to walk through.',
+      },
+      {
+        imageUrl: `${IMG}/week5-taekwondo-instructor-demo.webp`,
+        alt: 'A taekwondo instructor mid-movement on the mat while rows of young campers in white uniforms follow behind him',
+        caption: 'Discipline and coordination, five weeks in the making.',
+      },
+      {
+        imageUrl: `${IMG}/week5-camper-speaking-podium.webp`,
+        alt: 'A young camper speaking into a microphone at the podium during the Nucleus summer camp closing ceremony',
+        caption: 'A voice that would not have reached the microphone in week one.',
+      },
+    ],
+  },
+  {
+    heading: 'Our Final Celebration',
+    body: [
+      {
+        p: 'On Friday 14 August, our first Nucleus International Summer Camp came to a joyful close with a special celebration for our campers and their families.',
+      },
+      {
+        p: 'The children proudly showcased many of the activities they had enjoyed and developed throughout the five weeks:',
+      },
+      {
+        ul: [
+          'Music and singing',
+          'Speaking and presentation',
+          'Taekwondo',
+          'Chess',
+          'Art',
+          'Robotics',
+        ],
+      },
+      {
+        p: 'Music, singing, speaking, chess and taekwondo came to life through performances, while art and robotics were showcased in individual classrooms, giving parents the chance to see the children’s work up close. It was a wonderful way for the children to demonstrate not only what they had learned, but also the confidence, creativity and teamwork they had developed along the way.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week5-singing-performance.webp`,
+        alt: 'A young camper in a grey suit singing into a microphone on stage while the rest of his group stands behind him in paper crayon hats',
+        caption: 'A soloist, and a group that had his back.',
+      },
+      {
+        imageUrl: `${IMG}/week5-camper-presentation-dress.webp`,
+        alt: 'A camper in a traditional white Ethiopian dress presenting at the microphone on stage at the closing ceremony',
+        caption: 'Speaking and presentation, in front of the whole room.',
+      },
+      {
+        imageUrl: `${IMG}/week5-drama-masks.webp`,
+        alt: 'Four campers dressed in white wearing hand-made bird masks performing a drama piece on stage',
+        caption: 'Drama, in masks the children made themselves.',
+      },
+    ],
+  },
+  {
+    heading: 'The Taekwondo Demonstration',
+    body: [
+      {
+        p: 'The taekwondo group took the stage in belt order and ran their patterns for a room full of parents, which is a very different thing from running them in the hall on a Tuesday.',
+      },
+      {
+        p: 'Then came the pads, the headgear and the boards. Some of the smallest children in the camp queued up to break through a target held at their own height, and the room made more noise for them than for anyone else.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week5-taekwondo-group-pattern.webp`,
+        alt: 'Rows of young campers in white taekwondo uniforms performing a pattern together on stage at the closing ceremony',
+        caption: 'The whole group, on the same count.',
+      },
+      {
+        imageUrl: `${IMG}/week5-taekwondo-board-break.webp`,
+        alt: 'A small camper in a taekwondo uniform kicking through a target pad held by her instructor on stage',
+        caption: 'Held at her height, and through it on the first attempt.',
+      },
+      {
+        imageUrl: `${IMG}/week5-taekwondo-sparring-gear.webp`,
+        alt: 'Two young campers in red and blue taekwondo sparring gear standing either side of their instructor on stage',
+        caption: 'Full pads, and a handshake at the end of it.',
+      },
+    ],
+  },
+  {
+    heading: 'The Classrooms: Every Wall Covered',
+    body: [
+      {
+        p: 'While the performances ran on stage, the art and robotics rooms were open for families to walk through at their own pace.',
+      },
+      {
+        p: 'Every painting from five weeks of art went up on the walls, portraits stood finished on the easels, and parents went looking for the one with their child’s name on it. Several found their child standing next to it, waiting to explain exactly what it was.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week5-artwork-wall.webp`,
+        alt: 'Two members of staff pinning childrens paintings to the display wall in the art room while campers watch',
+        caption: 'The last few pieces going up before the doors opened.',
+      },
+      {
+        imageUrl: `${IMG}/week5-portrait-painting-easel.webp`,
+        alt: 'An artist painting a portrait at an easel in the Nucleus art room while campers and parents look on',
+        caption: 'Portraits being painted live for the families.',
+      },
+      {
+        imageUrl: `${IMG}/week5-parent-viewing-artwork.webp`,
+        alt: 'A parent studying the wall of childrens paintings at the summer camp art exhibition',
+        caption: 'Looking for one name in particular.',
+      },
+    ],
+  },
+  {
+    heading: 'A Special First',
+    style: 'highlight',
+    body: [
+      { p: 'There is something particularly special about this group of children: they were the first.' },
+      {
+        p: 'They were the children who helped us launch our very first Nucleus International Summer Camp. They filled our classrooms with questions, our activity spaces with energy and our days with laughter.',
+      },
+      {
+        p: 'Years from now, when Nucleus has welcomed many more groups of summer campers, these children will always hold a unique place in our story.',
+      },
+    ],
+  },
+  {
+    heading: 'Thank You, Parents',
+    body: [
+      { p: 'To our parents and families: thank you for trusting us with your children.' },
+      {
+        p: 'Thank you for bringing them each morning, encouraging them to participate, reading our newsletters, sharing your feedback and allowing us to be part of their summer.',
+      },
+      {
+        p: 'Most of all, thank you for giving them the opportunity to explore, learn and grow with us.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week5-parents-applauding.webp`,
+        alt: 'Parents seated in the audience applauding during the Nucleus summer camp closing ceremony in Addis Ababa',
+        caption: 'The loudest section of the room, all afternoon.',
+      },
+    ],
+  },
+  {
+    heading: 'Certificates, Photographs and Cake',
+    body: [
+      {
+        p: 'Our celebration ended the way it should have: with Certificates of Participation, camp photographs and refreshments shared together.',
+      },
+      {
+        p: 'Every camper collected a certificate recognising their enthusiasm, their effort and their commitment across the five weeks. Then the families took their photographs, the cake came out, and nobody was in a hurry to leave.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week5-refreshments-table.webp`,
+        alt: 'Campers queueing along the refreshments table for cake and pastries after the closing ceremony',
+        caption: 'The queue that formed the moment the certificates were done.',
+      },
+      {
+        imageUrl: `${IMG}/week5-certificates-group.webp`,
+        alt: 'Campers walking the red carpet holding their summer camp Certificates of Participation',
+        caption: 'Certificates of Participation, earned over five weeks.',
+      },
+      {
+        imageUrl: `${IMG}/week5-certificate-family.webp`,
+        alt: 'A parent photographed with her children and their summer camp certificates at the Nucleus campus',
+        caption: 'The photograph the family came for.',
+      },
+    ],
+  },
+  {
+    heading: 'Scenes From the Closing Ceremony',
+    style: 'gallery',
+    body: [
+      {
+        p: 'The rest of the afternoon, in pictures: the welcome, the games, the staff who ran the five weeks, and the families who filled the room.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week5-hosts-welcome.webp`,
+        alt: 'Two hosts opening the Nucleus International Schools summer camp closing ceremony from the podium',
+        caption: 'Opening the afternoon.',
+      },
+      {
+        imageUrl: `${IMG}/week5-director-address.webp`,
+        alt: 'A member of the Nucleus leadership team addressing parents at the summer camp closing ceremony',
+        caption: 'A word to the parents before the performances began.',
+      },
+      {
+        imageUrl: `${IMG}/week5-leadership-team.webp`,
+        alt: 'Three members of the Nucleus International Schools leadership team standing together on stage',
+        caption: 'The team behind the programme.',
+      },
+      {
+        imageUrl: `${IMG}/week5-staff-stage-welcome.webp`,
+        alt: 'A member of staff on stage with arms open, welcoming campers and families to the closing ceremony',
+        caption: 'Every performance got an introduction.',
+      },
+      {
+        imageUrl: `${IMG}/week5-balloon-game.webp`,
+        alt: 'Staff members holding balloons on stage during a game at the summer camp closing ceremony',
+        caption: 'A game for the parents, run by the staff.',
+      },
+      {
+        imageUrl: `${IMG}/week5-mask-performance-mic.webp`,
+        alt: 'Campers on stage holding hand-made animal masks and a microphone during a drama performance',
+        caption: 'Props made in the art room, used on the stage.',
+      },
+    ],
+  },
+  {
+    heading: 'And to Our Campers',
+    style: 'highlight',
+    body: [
+      {
+        ul: [
+          'Keep asking questions.',
+          'Keep creating.',
+          'Keep being kind.',
+          'Keep trying things that seem difficult.',
+          'Never lose the confidence to say, "I can try."',
+        ],
+      },
+      { p: 'Learning Today. Leading Tomorrow.' },
+    ],
+  },
+]
+
+/* ------------------------------------------------------------------------------
  * Teachers' Capacity Building Training, Issue 01: Emotional Intelligence
  * Source: the CBT programme doc from leadership (Vatican Campus session, July 2026).
  * ---------------------------------------------------------------------------- */
@@ -1183,6 +1455,26 @@ const ISSUES: SeedIssue[] = [
       },
     },
     sections: week4Sections,
+  },
+  {
+    seriesSlug: 'summer-camp-2026',
+    article: {
+      // The final issue is the only page that can own the closing-ceremony query,
+      // and it does not compete with the camp blogs, which hold the activity head terms.
+      title: 'Inside Our Summer Camp Closing Ceremony in Addis Ababa: Five Weeks, One Stage',
+      slug: 'summer-camp-closing-ceremony-addis-ababa',
+      excerpt:
+        'Five weeks, one stage. Our first summer camp closed on 14 August with singing, speaking, drama, a taekwondo demonstration, an art exhibition in the classrooms and a Certificate of Participation for every camper. The final issue from Nucleus Summer Camp, Addis Ababa.',
+      heroImageUrl: `${IMG}/week5-camp-choir-lineup.webp`,
+      publishedAt: '2026-08-14T15:00:00.000Z',
+      playlistPart: 5,
+      meta: {
+        title: 'Summer Camp Closing Ceremony in Addis Ababa',
+        description:
+          'How our first summer camp in Addis Ababa ended: performances, a taekwondo demonstration, an art exhibition and a certificate for every camper.',
+      },
+    },
+    sections: week5Sections,
   },
   {
     seriesSlug: 'teachers-capacity-building',

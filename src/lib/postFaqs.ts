@@ -39,4 +39,26 @@ export const POST_FAQS: Record<string, PostFaq[]> = {
       a: 'Most international schools in Addis Ababa begin at nursery or preschool age, typically between two and four years old, then continue through the primary years. Nucleus takes children from age 2 through Grade 8 on one planned Cambridge pathway, so the early years and what follows are built as a single journey rather than a transfer.',
     },
   ],
+  'taekwondo-classes-for-kids-addis-ababa': [
+    {
+      q: 'What age can a child start taekwondo?',
+      a: 'Most children can start taekwondo from about four or five years old, when they can follow a sequence of instructions and hold a position for a few seconds. Classes for four to six year olds should be short, game-heavy and built around coordination rather than technique. Serious pattern work and grading usually begin around seven or eight. There is no upper limit, and a child who starts at eleven catches up quickly.',
+    },
+    {
+      q: 'Is taekwondo safe for children?',
+      a: 'Taekwondo is safe for children when contact is controlled and supervised. Beginners work on patterns, kicks into pads and drills, not on sparring. When sparring is introduced, children should wear a padded chest guard, headgear, shin and forearm guards, gloves and a mouthguard, and be matched by size rather than by age alone. The main injury risk in badly run classes is not kicks, it is unsupervised horseplay and skipping the warm-up.',
+    },
+    {
+      q: 'What does a child actually learn in taekwondo?',
+      a: 'A child learns balance, coordination, core strength and stamina, and alongside that a set of habits: standing still, listening for an instruction, executing it properly, controlling how hard they hit, stopping on command and shaking hands after losing. Most parents notice the discipline and the confidence before they notice the kicking.',
+    },
+    {
+      q: 'What equipment does my child need to start taekwondo?',
+      a: 'To start, a child needs only a dobok, the white uniform, which most schools and clubs supply. Sparring gear is needed later and typically includes a chest guard, headgear, shin and forearm guards, gloves and a mouthguard. Ask the programme which items they lend and which the family is expected to buy before you enrol.',
+    },
+    {
+      q: 'How often should a child train?',
+      a: 'Twice a week is the usual rhythm for a child who wants to progress, and once a week is enough to keep the habit and the fitness. Intensive holiday programmes such as summer camp are a good way to try it, because a child gets several sessions in a single week and finds out quickly whether they enjoy it before the family commits to a term.',
+    },
+  ],
 }
