@@ -33,6 +33,34 @@ export function CMSLink({ link, className = '' }: { link?: CMSLinkValue | null; 
   )
 }
 
+/**
+ * Same styling as ButtonLink, but a real <button> for in-page actions that go nowhere
+ * (opening the hero film, for one). Kept here so an action never drifts from a link visually.
+ */
+export function ButtonAction({
+  children,
+  onClick,
+  appearance = 'primary',
+  className = '',
+  ...rest
+}: {
+  children: ReactNode
+  onClick: () => void
+  appearance?: Exclude<Appearance, 'link'>
+  className?: string
+} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick' | 'className'>) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`${base} ${sizes} ${appearances[appearance]} ${className}`}
+      {...rest}
+    >
+      {children}
+    </button>
+  )
+}
+
 export function ButtonLink({
   href,
   children,

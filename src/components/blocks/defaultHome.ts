@@ -37,21 +37,22 @@ export const defaultHomeLayout: RenderableBlock[] = [
       uploadDate: '2026-08-16',
     },
     slides: [
-      // Time-sensitive campaign slide (shows first, ~9s), bright/white ground.
+      // The film slide, shown first. It replaced the Summer Camp campaign slide on 16 Aug 2026:
+      // the camp closed on the 14th, and a homepage that opens with "Registration open" for a
+      // finished event is worse than no campaign slide at all. The `campaign` slide kind is
+      // still supported and is the right shape for the next real campaign.
       {
-        kind: 'campaign',
-        badge: 'Registration open · Summer 2026',
-        eyebrow: 'Nucleus Summer Camp · July 6 – Aug 12',
-        heading: 'A summer that',
-        headingAccent: 'actually grows them.',
+        kind: 'film',
+        eyebrow: 'Learning Beyond Books',
+        bgVideo: '/video/tvc-teaser.mp4',
+        bgPoster: '/video/tvc-teaser-poster.webp',
+        heading: 'See Nucleus in',
+        headingAccent: 'sixty seconds.',
         subhead:
-          'Robotics, sport, music, art and real discovery, led by qualified Cambridge educators on two secure Addis Ababa campuses.',
-        image: '/images/camp/hero-robotics.webp',
-        links: [
-          { label: 'Explore Summer Camp', url: '/summer-camp', appearance: 'primary' },
-          { label: 'Reserve a spot', url: '/summer-camp#register', appearance: 'outline' },
-        ],
-        durationMs: 4000,
+          'Inside our classrooms, science and AI labs, robotics, music and sport, on the campus at Vatican, Addis Ababa.',
+        watchLabel: 'Watch the Film',
+        link: { label: 'Book a Visit', url: '/contact', appearance: 'outline' },
+        durationMs: 6000,
       },
       // Evergreen brand hero (looping video + typed tagline). Stays long enough to read.
       {

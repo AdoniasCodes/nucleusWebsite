@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { Container } from '@/components/ui/Container'
-import { ButtonLink } from '@/components/ui/Button'
+import { ButtonAction, ButtonLink } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
 import { HeroReveal } from './HeroReveal'
 
@@ -39,7 +39,27 @@ type CampaignSlide = {
   links?: Cta[]
   durationMs?: number
 }
-export type HeroSlide = BrandSlide | CampaignSlide
+/**
+ * The film slide. Its background is a SHORT muted loop cut from the TVC, not the TVC itself:
+ * the full film is 15 MB and this plays on arrival, so it has to stay in the same budget as the
+ * brand slide's loop. Its primary CTA opens the real film with sound.
+ */
+type FilmSlide = {
+  kind: 'film'
+  eyebrow?: string
+  heading: string
+  headingAccent?: string
+  subhead?: string
+  bgVideo?: string
+  bgPoster?: string
+  /** Label for the button that opens the full film. */
+  watchLabel: string
+  /** An ordinary link shown beside it. */
+  link?: Cta
+  durationMs?: number
+}
+
+export type HeroSlide = BrandSlide | CampaignSlide | FilmSlide
 
 /**
  * The brand film, revealed over the hero when the floating button is pressed.
@@ -67,6 +87,27 @@ export type HeroSliderProps = {
 
 const DEFAULT_DURATION = 8000
 const SITE = 'https://nucleusinternationalschoolsystem.com'
+
+/**
+ * True only once mounted on a desktop-width viewport.
+ *
+ * The decorative background loops MUST be gated on this rather than on `hidden md:block`.
+ * A CSS-hidden <video> with `autoplay` still downloads: measured on a 390px viewport, the phone
+ * pulled the full 1.2 MB teaser and the full 1.4 MB brand loop and displayed neither. Not
+ * mounting the element is the only thing that actually stops the bytes. Starts false so the
+ * server HTML and the first client render agree, then flips after hydration on desktop.
+ */
+function useDesktopViewport() {
+  const [isDesktop, setIsDesktop] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)')
+    const apply = () => setIsDesktop(mq.matches)
+    apply()
+    mq.addEventListener('change', apply)
+    return () => mq.removeEventListener('change', apply)
+  }, [])
+  return isDesktop
+}
 
 export function HeroSliderBlock({ slides, tvc }: HeroSliderProps) {
   const [active, setActive] = useState(0)
@@ -183,6 +224,8 @@ export function HeroSliderBlock({ slides, tvc }: HeroSliderProps) {
           >
             {slide.kind === 'brand' ? (
               <BrandSlideView slide={slide} active={isActive} />
+            ) : slide.kind === 'film' ? (
+              <FilmSlideView slide={slide} onWatch={openTvc} />
             ) : (
               <CampaignSlideView slide={slide} />
             )}
@@ -373,22 +416,25 @@ function TvcLayer({
 }
 
 function BrandSlideView({ slide, active }: { slide: BrandSlide; active: boolean }) {
+  const showVideo = useDesktopViewport()
   return (
     <div className="relative h-full w-full">
       <div className="absolute inset-0 orb-glow" />
+      {/* The still is the base layer on every width, so the slide is never empty before the loop
+          mounts, and never empty at all without JS. The loop draws on top of it on desktop. */}
       {slide.bgPoster && (
         <Image
           src={slide.bgPoster}
           alt=""
           fill
           priority
-          className="hero-kenburns img-grade object-cover md:hidden"
+          className="hero-kenburns img-grade object-cover"
           sizes="100vw"
         />
       )}
-      {slide.bgVideo && (
+      {slide.bgVideo && showVideo && (
         <video
-          className="hero-kenburns absolute inset-0 hidden h-full w-full object-cover md:block"
+          className="hero-kenburns absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop
@@ -426,6 +472,80 @@ function BrandSlideView({ slide, active }: { slide: BrandSlide; active: boolean 
             </div>
           )}
         </HeroReveal>
+      </Container>
+    </div>
+  )
+}
+
+/**
+ * The film slide. Same dark treatment as the brand slide, but the CTA opens the film in place
+ * rather than navigating, and there is no typewriter: the moving footage is the motion here, and
+ * animating the heading on top of it is one thing too many.
+ */
+function FilmSlideView({ slide, onWatch }: { slide: FilmSlide; onWatch: () => void }) {
+  // Phones get the still only. The loop is 1.2 MB and purely decorative.
+  const showVideo = useDesktopViewport()
+  return (
+    <div className="relative h-full w-full">
+      <div className="absolute inset-0 orb-glow" />
+      {slide.bgPoster && (
+        <Image
+          src={slide.bgPoster}
+          alt=""
+          fill
+          priority
+          className="img-grade object-cover"
+          sizes="100vw"
+        />
+      )}
+      {slide.bgVideo && showVideo && (
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={slide.bgPoster}
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source src={slide.bgVideo} type="video/mp4" />
+        </video>
+      )}
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/70 to-navy/45" />
+      <Container className="relative flex h-full w-full items-center pb-40 pt-16 text-white sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-2xl text-center sm:mx-0 sm:text-left">
+          {slide.eyebrow && (
+            <p className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-ochre">
+              {slide.eyebrow}
+            </p>
+          )}
+          <h1 className="mt-4 text-4xl font-bold sm:text-5xl lg:text-6xl">
+            {slide.heading}
+            {slide.headingAccent && (
+              <>
+                {' '}
+                <span className="text-ochre">{slide.headingAccent}</span>
+              </>
+            )}
+          </h1>
+          {slide.subhead && <p className="mt-5 max-w-xl text-lg text-pale/85">{slide.subhead}</p>}
+          <div className="mt-8 flex flex-wrap justify-center gap-4 sm:justify-start">
+            <ButtonAction onClick={onWatch} appearance="primary">
+              {/* Optical centring: a triangle looks off-centre when centred geometrically. */}
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="ml-0.5 h-4 w-4 fill-current">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              {slide.watchLabel}
+            </ButtonAction>
+            {slide.link && (
+              <ButtonLink href={slide.link.url} appearance={slide.link.appearance ?? 'outline'}>
+                {slide.link.label}
+              </ButtonLink>
+            )}
+          </div>
+        </div>
       </Container>
     </div>
   )
