@@ -43,6 +43,11 @@ organisation.
 - [Contact & Visit](https://nucleusinternationalschoolsystem.com/contact): Location map, phone numbers and how to book a tour
 - [News & Perspectives](https://nucleusinternationalschoolsystem.com/news): Guides and articles for parents
 
+## Legal
+
+- [Terms and Conditions](https://nucleusinternationalschoolsystem.com/terms): Enrollment and website terms: admissions, fees and refunds, academic standards, conduct, health and safety, dispute resolution
+- [Privacy Policy](https://nucleusinternationalschoolsystem.com/privacy): What personal data the school collects, why, who it is shared with, retention, photography opt-out and parent rights
+
 ## Guides for parents choosing a school
 
 - [Best international schools in Addis Ababa](https://nucleusinternationalschoolsystem.com/news/best-international-schools-addis-ababa)

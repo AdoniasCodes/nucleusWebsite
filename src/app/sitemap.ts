@@ -16,6 +16,9 @@ const HEAD_TERM_POSTS = new Set([
   'taekwondo-classes-for-kids-addis-ababa',
 ])
 
+/** Legal pages: indexed as trust signals, but never competing with the pages that sell. */
+const LOW_PRIORITY_PAGES = new Set(['terms', 'privacy'])
+
 /** Auto-generated sitemap of canonical URLs: home + all code/CMS pages + published posts. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base: MetadataRoute.Sitemap = [
@@ -23,8 +26,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Every code-defined page (about, academics, program pages, admissions, contact, news…).
     ...Object.keys(defaultPages).map((slug) => ({
       url: `${SERVER_URL}/${slug}`,
-      changeFrequency: 'monthly' as const,
-      priority: slug === 'admissions' ? 0.9 : 0.7,
+      changeFrequency: LOW_PRIORITY_PAGES.has(slug) ? ('yearly' as const) : ('monthly' as const),
+      priority: slug === 'admissions' ? 0.9 : LOW_PRIORITY_PAGES.has(slug) ? 0.3 : 0.7,
     })),
     // The newsletter index refreshes weekly, worth a high crawl priority.
     { url: `${SERVER_URL}/newsletter`, changeFrequency: 'weekly' as const, priority: 0.8 },

@@ -26,6 +26,7 @@ import { AdmissionApplicationBlock, type AdmissionApplicationProps } from './Adm
 import { CampusComingSoonBlock, type CampusComingSoonProps } from './CampusComingSoonBlock'
 import { SocialFollowBlock, type SocialFollowProps } from './SocialFollowBlock'
 import { CampusVideoBlock, type CampusVideoProps } from './CampusVideoBlock'
+import { LegalDocBlock, type LegalDocProps } from './LegalDocBlock'
 import { mintFormToken } from '@/lib/formToken'
 
 /**
@@ -59,6 +60,7 @@ export type RenderableBlock =
   | CampusComingSoonProps
   | SocialFollowProps
   | CampusVideoProps
+  | LegalDocProps
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
@@ -88,6 +90,7 @@ const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
   campusComingSoon: CampusComingSoonBlock,
   socialFollow: SocialFollowBlock,
   campusVideo: CampusVideoBlock,
+  legalDoc: LegalDocBlock,
 }
 
 export function BlockRenderer({ blocks }: { blocks?: RenderableBlock[] | null }) {

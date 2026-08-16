@@ -12,6 +12,12 @@ const PROGRAMS = [
   { label: 'Admissions & Fees', href: '/admissions' },
 ]
 
+/** Legal pages sit on the copyright line, the convention parents already scan for. */
+const LEGAL = [
+  { label: 'Terms & Conditions', href: '/terms' },
+  { label: 'Privacy Policy', href: '/privacy' },
+]
+
 export async function Footer() {
   const settings = await getSiteSettings().catch(() => null)
   const schoolName = settings?.schoolName ?? 'Nucleus International Schools'
@@ -102,8 +108,19 @@ export async function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto w-full max-w-7xl px-5 py-6 text-xs text-pale/60 sm:px-8">
-          © {schoolName}. Teaching the international Cambridge curriculum at Vatican, Addis Ababa.
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-5 py-6 text-xs text-pale/60 sm:px-8 md:flex-row md:items-center md:justify-between">
+          <p>© {schoolName}. Teaching the international Cambridge curriculum at Vatican, Addis Ababa.</p>
+          <nav aria-label="Legal links">
+            <ul className="flex flex-wrap gap-x-6 gap-y-2">
+              {LEGAL.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hover:text-white">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
     </footer>

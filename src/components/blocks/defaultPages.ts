@@ -1,4 +1,5 @@
 import type { RenderableBlock } from './BlockRenderer'
+import { legalPages } from './legalPages'
 
 /**
  * Code-defined inner pages, used until an editor creates a CMS Page with the matching slug.
@@ -772,4 +773,8 @@ export const defaultPages: Record<string, DefaultPage> = {
       },
     ],
   },
+
+  // Terms and Privacy live in their own file: they are reproduced legal text rather than
+  // marketing copy, and they change on the school's schedule, not the site's.
+  ...legalPages,
 }
