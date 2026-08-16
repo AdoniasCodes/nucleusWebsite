@@ -41,18 +41,75 @@ type CampaignSlide = {
 }
 export type HeroSlide = BrandSlide | CampaignSlide
 
+/**
+ * The brand film, revealed over the hero when the floating button is pressed.
+ * `src` is never requested until then: the <video> is not mounted at all until the first open,
+ * so a visitor who never presses the button pays nothing for a 15 MB file.
+ */
+export type HeroTvc = {
+  src: string
+  poster: string
+  /** Button copy. */
+  label: string
+  /** Accessible name of the film, and the `name` in the VideoObject schema. */
+  title: string
+  description?: string
+  /** ISO 8601, e.g. PT1M. */
+  duration?: string
+  uploadDate?: string
+}
+
 export type HeroSliderProps = {
   blockType: 'heroSlider'
   slides: HeroSlide[]
+  tvc?: HeroTvc
 }
 
 const DEFAULT_DURATION = 8000
+const SITE = 'https://nucleusinternationalschoolsystem.com'
 
-export function HeroSliderBlock({ slides }: HeroSliderProps) {
+export function HeroSliderBlock({ slides, tvc }: HeroSliderProps) {
   const [active, setActive] = useState(0)
   const [paused, setPaused] = useState(false)
   const reduced = useRef(false)
   const count = slides.length
+  // `tvcOpen` drives the slide-in. `tvcMounted` stays true once opened, so closing and
+  // reopening does not re-download the film or lose the playback position.
+  const [tvcOpen, setTvcOpen] = useState(false)
+  const [tvcMounted, setTvcMounted] = useState(false)
+  const tvcVideoRef = useRef<HTMLVideoElement>(null)
+  const closeBtnRef = useRef<HTMLButtonElement>(null)
+
+  const openTvc = useCallback(() => {
+    setTvcMounted(true)
+    setTvcOpen(true)
+  }, [])
+
+  const closeTvc = useCallback(() => {
+    tvcVideoRef.current?.pause()
+    setTvcOpen(false)
+  }, [])
+
+  // Play with sound. This runs off the button press, so browsers allow unmuted playback;
+  // if a policy still blocks it the controls are right there, so we swallow the rejection.
+  useEffect(() => {
+    if (!tvcOpen) return
+    const v = tvcVideoRef.current
+    if (v) {
+      v.muted = false
+      void v.play().catch(() => {})
+    }
+    // preventScroll matters: at this instant the panel is still translated fully off to the
+    // right, so a normal focus() makes the browser scroll the overflow-hidden section sideways
+    // to reveal it, and it never scrolls back. Everything then sits ~47px left of where it
+    // belongs and a strip of the slide underneath shows through.
+    closeBtnRef.current?.focus({ preventScroll: true })
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeTvc()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [tvcOpen, closeTvc])
   // The active slide's ground decides the control colours (light campaign vs. dark brand slide).
   const onLight = slides[active]?.kind === 'campaign'
 
@@ -72,7 +129,9 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
       const start = touchStart.current
       touchStart.current = null
       setPaused(false)
-      if (!start || count < 2) return
+      // While the film is open it covers the slides, so a swipe on it must not shuffle
+      // the carousel underneath and leave a different slide behind on close.
+      if (!start || count < 2 || tvcOpen) return
       const t = e.changedTouches[0]
       const dx = t.clientX - start.x
       const dy = t.clientY - start.y
@@ -80,7 +139,7 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
         setActive((a) => (a + (dx < 0 ? 1 : -1) + count) % count)
       }
     },
-    [count],
+    [count, tvcOpen],
   )
 
   useEffect(() => {
@@ -90,11 +149,11 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
 
   // Per-slide autoplay timer. Resets whenever the active slide changes or autoplay pauses.
   useEffect(() => {
-    if (paused || reduced.current || count < 2) return
+    if (paused || reduced.current || count < 2 || tvcOpen) return
     const dur = slides[active]?.durationMs ?? DEFAULT_DURATION
     const id = setTimeout(() => setActive((a) => (a + 1) % count), dur)
     return () => clearTimeout(id)
-  }, [active, paused, slides, count])
+  }, [active, paused, slides, count, tvcOpen])
 
   return (
     // Slides are stacked in ONE grid cell rather than absolutely positioned, so the section
@@ -131,8 +190,9 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
         )
       })}
 
-      {/* Controls */}
-      {count > 1 && (
+      {/* Controls. Hidden while the film is open: they sit under it, and leaving them
+          focusable would let a keyboard user drive an invisible carousel. */}
+      {count > 1 && !tvcOpen && (
         <>
           <button
             type="button"
@@ -178,7 +238,137 @@ export function HeroSliderBlock({ slides }: HeroSliderProps) {
           </div>
         </>
       )}
+
+      {tvc && <TvcLayer tvc={tvc} open={tvcOpen} mounted={tvcMounted} onOpen={openTvc} onClose={closeTvc} videoRef={tvcVideoRef} closeBtnRef={closeBtnRef} />}
     </section>
+  )
+}
+
+/**
+ * The "Watch Our Video" button and the panel it opens.
+ *
+ * The panel slides in over the whole hero rather than opening a modal on top of the page: the
+ * hero is already the right shape for a 16:9 film, and staying in place keeps the transition
+ * readable as "the hero turned into the film" instead of "a box appeared".
+ */
+function TvcLayer({
+  tvc,
+  open,
+  mounted,
+  onOpen,
+  onClose,
+  videoRef,
+  closeBtnRef,
+}: {
+  tvc: HeroTvc
+  open: boolean
+  mounted: boolean
+  onOpen: () => void
+  onClose: () => void
+  videoRef: React.RefObject<HTMLVideoElement | null>
+  closeBtnRef: React.RefObject<HTMLButtonElement | null>
+}) {
+  // Google reads VideoObject for video rich results. It is plain markup in the SSR HTML, so the
+  // client boundary on this block does not hide the film from crawlers.
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: tvc.title,
+    description: tvc.description ?? tvc.title,
+    thumbnailUrl: [`${SITE}${tvc.poster}`],
+    contentUrl: `${SITE}${tvc.src}`,
+    uploadDate: tvc.uploadDate,
+    duration: tvc.duration,
+    publisher: { '@type': 'Organization', name: 'Nucleus International Schools', url: SITE },
+  }
+
+  return (
+    // A grid item pinned to the same cell as the slides, so `absolute inset-0` inside it resolves
+    // against the full hero. Positioning these against the <section> directly does NOT work: an
+    // absolutely positioned child of a grid container resolves against its grid area, which left
+    // the panel offset by tens of pixels and showed a strip of the slide underneath.
+    // It carries no content of its own, so it cannot grow the section.
+    <div className="pointer-events-none relative col-start-1 row-start-1 z-20">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
+      {!open && (
+        <button
+          type="button"
+          onClick={onOpen}
+          aria-label={`${tvc.label}: ${tvc.title}`}
+          className="group pointer-events-auto absolute bottom-16 right-4 sm:bottom-8 sm:right-8"
+        >
+          {/* The pulse is a ring behind the pill, not the pill itself: a button that changes
+              size is hard to hit. The global reduced-motion rule stops the animation. */}
+          <span
+            aria-hidden="true"
+            className="absolute inset-0 animate-ping rounded-full bg-ochre/50 [animation-duration:2.2s]"
+          />
+          <span
+            aria-hidden="true"
+            className="absolute -inset-1 rounded-full bg-ochre/25 blur-md transition-opacity group-hover:opacity-80"
+          />
+          <span className="relative flex items-center gap-3 rounded-full bg-ochre px-5 py-3.5 font-display text-base font-bold text-navy shadow-[0_14px_34px_-10px_rgba(17,2,77,0.6)] transition-transform duration-300 group-hover:scale-105 sm:gap-4 sm:px-7 sm:py-5 sm:text-lg">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-navy sm:h-11 sm:w-11">
+              {/* Optical centring: a triangle looks off-centre when centred geometrically. */}
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="ml-0.5 h-4 w-4 fill-ochre sm:h-5 sm:w-5">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </span>
+            {tvc.label}
+          </span>
+        </button>
+      )}
+
+      <div
+        role="dialog"
+        aria-modal="false"
+        aria-label={tvc.title}
+        aria-hidden={!open}
+        className={`absolute inset-0 z-30 bg-navy transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          open ? 'pointer-events-auto translate-x-0' : 'pointer-events-none translate-x-full'
+        }`}
+      >
+        {/* `max-h-full w-full` rather than `h-full`: on a desktop hero the film fills the width and
+            is capped by the height, while on a portrait phone it settles to its own 1.9:1 strip
+            instead of stretching a letterbox down the whole screen. */}
+        <div className="flex h-full w-full flex-col items-center justify-center">
+          {mounted && (
+            <video
+              ref={videoRef}
+              src={tvc.src}
+              poster={tvc.poster}
+              controls
+              playsInline
+              preload="auto"
+              className="max-h-full w-full bg-navy object-contain"
+            >
+              Your browser does not support video playback.{' '}
+              <a href={tvc.src} className="underline">
+                Download the film
+              </a>
+              .
+            </video>
+          )}
+          {/* Phones leave a lot of navy above and below the strip. Naming the film there beats
+              empty space, and points at the control that actually fixes it. */}
+          <p className="mt-6 max-w-xs px-6 text-center text-sm leading-relaxed text-pale/70 sm:hidden">
+            {tvc.title}
+            <span className="mt-1 block text-pale/45">Tap fullscreen for the best view.</span>
+          </p>
+        </div>
+
+        <button
+          ref={closeBtnRef}
+          type="button"
+          onClick={onClose}
+          aria-label="Close the video and return to the slides"
+          className="absolute right-3 top-3 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-navy/70 text-2xl leading-none text-white backdrop-blur-sm transition hover:bg-navy sm:right-5 sm:top-5"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+    </div>
   )
 }
 
@@ -213,7 +403,9 @@ function BrandSlideView({ slide, active }: { slide: BrandSlide; active: boolean 
       )}
       <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/65 to-navy/45" />
       {/* text-white so the inherited <h1> ("Nucleus International Schools") is crisp white on the video */}
-      <Container className="relative flex h-full w-full items-center py-16 text-white sm:py-20 lg:py-24">
+      {/* pb-32 on mobile reserves the bottom band for the dots and the floating film button.
+          Without it the button lands on top of the slide's own CTAs on a phone. */}
+      <Container className="relative flex h-full w-full items-center pb-40 pt-16 text-white sm:py-20 lg:py-24">
         {/* keyed by `active` so the typewriter replays each time this slide returns */}
         <HeroReveal
           key={active ? 'on' : 'off'}
@@ -271,7 +463,8 @@ function CampaignSlideView({ slide }: { slide: CampaignSlide }) {
         <FloatChip icon="Music" tint="bg-teal text-white" className="left-5 bottom-[15%] animate-float-slow [animation-delay:.4s]" />
         <FloatChip icon="Trophy" tint="bg-ochre text-navy" className="right-5 bottom-[8%] animate-bob [--tilt:7deg] [animation-delay:1.1s]" />
       </div>
-      <Container className="relative flex h-full w-full items-center py-16 sm:py-20">
+      {/* Same reserved bottom band as the brand slide, for the dots and the film button. */}
+      <Container className="relative flex h-full w-full items-center pb-40 pt-16 sm:py-20">
         <div className="grid w-full items-center gap-8 lg:grid-cols-2 lg:gap-14">
           <div className="text-center lg:order-1 lg:text-left">
             {slide.badge && (

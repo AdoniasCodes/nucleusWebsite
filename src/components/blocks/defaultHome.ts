@@ -24,6 +24,18 @@ const coreValuesCards = [
 export const defaultHomeLayout: RenderableBlock[] = [
   {
     blockType: 'heroSlider',
+    // The brand film, behind a button rather than in the slide rotation. 16 MB is far too much
+    // to autoplay at someone on Ethiopian mobile data, so it only downloads once they ask for it.
+    tvc: {
+      src: '/video/nucleus-tvc-en.mp4',
+      poster: '/video/nucleus-tvc-en-poster.webp',
+      label: 'Watch Our Video',
+      title: 'Nucleus International Schools: Learning Beyond Books',
+      description:
+        'The Nucleus International Schools brand film: classrooms, science and AI labs, robotics, music, sport and the campus at Vatican, Addis Ababa, from pre-K through Grade 9.',
+      duration: 'PT1M',
+      uploadDate: '2026-08-16',
+    },
     slides: [
       // Time-sensitive campaign slide (shows first, ~9s), bright/white ground.
       {
