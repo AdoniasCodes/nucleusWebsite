@@ -89,6 +89,8 @@ export function FormBlock(props: FormBlockType & { anchor?: string; formToken?: 
     if (state.status === 'success') trackLead(formType)
   }, [state.status, formType])
 
+  // No fee-sheet wording anywhere: the gated fee-request form is retired, so even a legacy CMS
+  // row with formType 'fee-request' renders as a plain enquiry.
   const heading =
     props.heading ??
     (isTour
@@ -97,18 +99,14 @@ export function FormBlock(props: FormBlockType & { anchor?: string; formToken?: 
         ? 'Start Registration'
         : isSummerCamp
           ? 'Reserve your child’s spot'
-          : formType === 'fee-request'
-            ? 'Request the Fee Sheet'
-            : 'Send an Enquiry')
+          : 'Send an Enquiry')
   const submitLabel = isTour
     ? 'Request my visit'
     : isRegistration
       ? 'Submit registration'
       : isSummerCamp
         ? 'Reserve my child’s spot'
-        : formType === 'fee-request'
-          ? 'Send me the fee sheet'
-          : 'Send enquiry'
+        : 'Send enquiry'
 
   return (
     <Section background={background} id={props.anchor}>

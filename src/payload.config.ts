@@ -24,6 +24,8 @@ import { AdmissionsInquiries } from './collections/AdmissionsInquiries'
 import { TourBookings } from './collections/TourBookings'
 import { SummerCampRegistrations } from './collections/SummerCampRegistrations'
 import { AdmissionApplications } from './collections/AdmissionApplications'
+import { CareerApplications } from './collections/CareerApplications'
+import { CareerCVs } from './collections/CareerCVs'
 import { Redirects } from './collections/Redirects'
 
 // Globals
@@ -86,7 +88,7 @@ const emailAdapter = smtpEnabled
 const storagePlugins: Plugin[] = s3Enabled
   ? [
       s3Storage({
-        collections: { media: true },
+        collections: { media: true, 'career-cvs': true },
         bucket: process.env.S3_BUCKET as string,
         config: {
           endpoint: process.env.S3_ENDPOINT,
@@ -128,6 +130,8 @@ export default buildConfig({
     TourBookings,
     SummerCampRegistrations,
     AdmissionApplications,
+    CareerApplications,
+    CareerCVs,
     Redirects,
     Users,
   ],
@@ -194,6 +198,7 @@ export default buildConfig({
           'admissions-inquiries',
           'tour-bookings',
           'summer-camp-registrations',
+          'career-applications',
         ] as const
       ).map((slug) => ({
         slug,

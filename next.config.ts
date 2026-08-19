@@ -50,6 +50,23 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: '/:path*', headers: securityHeaders }]
   },
+  /**
+   * /admissions used to be a separate page whose hero button and form both requested the gated
+   * fee sheet. Parents reaching it from old links or the footer ended up in the fee flow instead
+   * of registering, so the page is gone and the URL sends them straight to the form. Permanent,
+   * so the ranking the old URL earned transfers to /register.
+   */
+  async redirects() {
+    return [{ source: '/admissions', destination: '/register', permanent: true }]
+  },
+  experimental: {
+    serverActions: {
+      // The /careers form posts a CV through a server action, and Next caps action bodies at 1 MB
+      // by default. The action itself rejects anything over 5 MB with a readable message; this
+      // ceiling sits just above that so a 5 MB CV reaches the check instead of dying in transit.
+      bodySizeLimit: '6mb',
+    },
+  },
   images: {
     localPatterns: [
       {

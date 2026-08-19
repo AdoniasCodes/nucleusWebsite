@@ -315,95 +315,6 @@ export const defaultPages: Record<string, DefaultPage> = {
     ],
   },
 
-  admissions: {
-    title: 'Admissions',
-    seoTitle: 'Admissions & Fees | Nucleus International Schools, Addis Ababa',
-    description:
-      'How to join Nucleus International Schools at Vatican, Addis Ababa: admissions steps, requirements, tour booking and transparent fee information. Request your full fee sheet.',
-    layout: [
-      {
-        blockType: 'hero',
-        background: 'purple',
-        eyebrow: 'Admissions',
-        heading: 'Joining Nucleus',
-        bgImage: '/images/stock/admissions-hero.webp',
-        subhead:
-          'We believe families deserve clarity, with no hidden capital-fee surprises. Request your full fee sheet and we’ll send it directly.',
-        links: [
-          { link: { appearance: 'primary', type: 'custom', label: 'Request Fee Sheet', url: '/contact' } },
-          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-        ],
-      },
-      {
-        blockType: 'cardsGrid',
-        background: 'white',
-        eyebrow: 'How to Apply',
-        heading: 'Four simple steps',
-        columns: '4',
-        cards: [
-          { iconName: 'CalendarCheck', title: '1. Visit Now', description: 'Visit our Vatican campus and meet the team.' },
-          { iconName: 'FileText', title: '2. Enquire', description: 'Submit an enquiry and receive the full fee sheet.' },
-          { iconName: 'ClipboardCheck', title: '3. Apply', description: 'Complete the application with your child’s documents.' },
-          { iconName: 'BadgeCheck', title: '4. Confirm', description: 'Secure your child’s place for the intake.' },
-        ],
-      },
-      {
-        blockType: 'prose',
-        background: 'mist',
-        heading: 'What to bring',
-        items: [
-          { type: 'p', text: 'To apply, please have the following ready:' },
-          {
-            type: 'ul',
-            items: [
-              'Child’s birth certificate',
-              'Previous report card (if applicable)',
-              'Passport-size photographs',
-              'Parent / guardian ID',
-            ],
-          },
-          {
-            type: 'p',
-            text: 'Registration dates and term structure for the upcoming intake will be confirmed here shortly.',
-          },
-        ],
-      },
-      {
-        blockType: 'faqList',
-        heading: 'Admissions FAQ',
-        intro: 'The questions families ask us most.',
-        items: [
-          { q: 'What curriculum does Nucleus follow?', a: 'Nucleus follows the Cambridge pathway, from the early years through Grade 8: a portable, internationally recognised education.' },
-          { q: 'Where is Nucleus located?', a: 'Two campuses are open in Addis Ababa: the Vatican grade school campus (behind the Vatican Embassy) and the Abo preschool campus (100 m from Mekanisa Abo Square). A third campus at Totot, behind World Vision, is being finished now.' },
-          { q: 'What ages and grades do you accept?', a: 'We serve children from age 2 through Grade 8, growing with your child across early years, primary and lower secondary.' },
-          { q: 'How much are the fees?', a: 'We keep our fees transparent and free of hidden capital-fee surprises. Request the full fee sheet and we’ll share it with you directly.' },
-          { q: 'Is the campus safe?', a: 'Safety and child safeguarding come first at Nucleus. A secure, supervised campus is the foundation of everything we do.' },
-          { q: 'Do you have foreign and multilingual teachers?', a: 'Yes. Our team includes certified, multilingual and international educators.' },
-          { q: 'Do you offer robotics, STEM and agriculture?', a: 'Yes. Hands-on robotics & STEM and an agriculture & animal-care program are part of learning at Nucleus.' },
-          { q: 'How do I apply or book a tour?', a: 'Start by booking a tour or sending an enquiry through our contact page. We’ll guide you through every step.' },
-        ],
-      },
-      {
-        blockType: 'formBlock',
-        formType: 'fee-request',
-        background: 'white',
-        heading: 'Request the Full Fee Sheet',
-        intro: 'Leave your details and we’ll send the complete fee sheet: every line, no hidden surprises.',
-        successMessage: 'Thank you. We’ll email you the full fee sheet shortly.',
-      },
-      {
-        blockType: 'ctaBand',
-        background: 'purple',
-        heading: 'Gift your kids a full life',
-        subhead: 'Prefer to talk? Call us or book a tour.',
-        links: [
-          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register#application' } },
-          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-        ],
-      },
-    ],
-  },
-
   contact: {
     title: 'Contact & Visit',
     seoTitle: 'Contact & Visit | Nucleus International Schools, Vatican, Addis Ababa',
@@ -499,11 +410,17 @@ export const defaultPages: Record<string, DefaultPage> = {
     ],
   },
 
+  /**
+   * /register is the fork, not a form. One combined form meant parents picked the wrong campus,
+   * so this page sends them to the campus-locked form that matches their child's grade. The
+   * `#application` anchor sits on the chooser so every existing "Register Now" link still lands
+   * on the thing a parent needs to act on.
+   */
   register: {
     title: 'Registration',
     seoTitle: 'Register Your Child | Nucleus International Schools, Addis Ababa',
     description:
-      'Complete the Nucleus International Schools admission form online for the international Cambridge curriculum in Addis Ababa, Preschool to Grade 8. Six short steps, saved as you go, and our admissions team replies within one business day.',
+      'Register your child at Nucleus International Schools in Addis Ababa for the international Cambridge curriculum. Choose your campus: Preschool and KG at Mekanisa Abo Square, Grade 1 to Grade 8 at Vatican.',
     layout: [
       {
         blockType: 'hero',
@@ -512,22 +429,46 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Register\nYour Child',
         bgImage: '/images/stock/admissions-hero.webp',
         subhead:
-          'This is our full admission form, online. It takes about ten minutes, it saves as you go, and you can stop and come back to it any time on the same device.',
+          'Our full admission form, online. Pick the campus that matches your child\u2019s grade and the form takes about ten minutes. It saves as you go, so you can stop and come back to it any time on the same device.',
         links: [
-          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '#application' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Choose a campus', url: '#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now first', url: '/contact' } },
         ],
       },
       {
-        blockType: 'cardsGrid',
+        blockType: 'campusChoice',
         background: 'white',
+        anchor: 'application',
+        eyebrow: 'Step one',
+        heading: 'Which campus is your child joining?',
+        intro: 'Each campus has its own form. Choose by your child\u2019s grade.',
+        options: [
+          {
+            grades: 'Preschool & KG',
+            campus: 'Mekanisa Abo Square Campus',
+            where: 'Our primary school, 100 metres from Mekanisa Abo Square.',
+            iconName: 'Baby',
+            href: '/register/primary',
+          },
+          {
+            grades: 'Grade 1 to Grade 8',
+            campus: 'Vatican Campus',
+            where: 'Our grade school at Sarbet Vatican, 50 metres behind the Vatican Embassy.',
+            iconName: 'GraduationCap',
+            href: '/register/grade-school',
+          },
+        ],
+      },
+      {
+        blockType: 'cardsGrid',
+        background: 'mist',
         eyebrow: 'How It Works',
         heading: 'Three simple steps',
         columns: '3',
         cards: [
-          { iconName: 'ClipboardCheck', title: '1. Fill the form', description: 'Six short steps below. Your answers are saved on your device as you type.' },
+          { iconName: 'ClipboardCheck', title: '1. Fill the form', description: 'Six short steps. Your answers are saved on your device as you type.' },
           { iconName: 'Phone', title: '2. We Reach Out', description: 'Our admissions team contacts you within one business day to confirm details.' },
-          { iconName: 'BadgeCheck', title: '3. Confirm a Place', description: 'Bring your child’s documents to campus and secure a place for the intake.' },
+          { iconName: 'BadgeCheck', title: '3. Confirm a Place', description: 'Bring your child\u2019s documents to campus and secure a place for the intake.' },
         ],
       },
       {
@@ -539,7 +480,7 @@ export const defaultPages: Record<string, DefaultPage> = {
           {
             type: 'ul',
             items: [
-              'Child’s birth certificate (for the exact date and place of birth)',
+              'Child\u2019s birth certificate (for the exact date and place of birth)',
               'Previous report card, if your child has been at school before',
               'Parent / guardian ID or passport numbers',
               'Passport-size photographs (bring these with you to campus)',
@@ -547,15 +488,101 @@ export const defaultPages: Record<string, DefaultPage> = {
           },
         ],
       },
-      { blockType: 'admissionApplication' },
       {
         blockType: 'ctaBand',
         background: 'navy',
         heading: 'Prefer to talk first?',
-        subhead: 'Visit our campus or call us. We’ll walk you through everything.',
+        subhead: 'Visit our campus or call us. We\u2019ll walk you through everything.',
         links: [
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
           { link: { appearance: 'primary', type: 'custom', label: 'Call 09 81 99 99 22', url: 'tel:0981999922' } },
+        ],
+      },
+    ],
+  },
+
+  careers: {
+    title: 'Careers',
+    seoTitle: 'Careers | Teaching Jobs at Nucleus International Schools, Addis Ababa',
+    description:
+      'Teaching and support jobs at Nucleus International Schools in Addis Ababa. Send your CV for a Cambridge teaching post, a leadership role or a support role at our Vatican and Mekanisa Abo Square campuses.',
+    layout: [
+      {
+        blockType: 'hero',
+        background: 'purple',
+        eyebrow: 'Careers',
+        heading: 'Teach Where\nTeaching Matters',
+        bgImage: '/images/stock/admissions-hero.webp',
+        subhead:
+          'We are always glad to hear from teachers and school staff who want to work somewhere their subject is taken seriously. Send your CV and tell us the role you are after.',
+        links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Send your CV', url: '#apply' } },
+          { link: { appearance: 'outline', type: 'custom', label: 'Meet the team', url: '/about' } },
+        ],
+      },
+      {
+        blockType: 'cardsGrid',
+        background: 'white',
+        eyebrow: 'Why Nucleus',
+        heading: 'What you get here',
+        columns: '3',
+        cards: [
+          {
+            iconName: 'Award',
+            title: 'A real Cambridge programme',
+            description:
+              'The international Cambridge curriculum from the early years through Grade 8, with a Cambridge Coordinator and proper exam procedure behind it.',
+          },
+          {
+            iconName: 'Users',
+            title: 'An international staff room',
+            description:
+              'Multilingual, international colleagues, and leadership that has run schools across Europe, Africa, Asia and South America.',
+          },
+          {
+            iconName: 'Sprout',
+            title: 'Room to build something',
+            description:
+              'Robotics and STEM labs, an agriculture and animal-care programme, music and sport. If you want to start a programme, there is space for it.',
+          },
+        ],
+      },
+      {
+        blockType: 'prose',
+        background: 'mist',
+        heading: 'How hiring works',
+        items: [
+          {
+            type: 'p',
+            text: 'Send your CV through the form below, whether or not we have advertised the role. We keep applications on file and go to them first when a post opens.',
+          },
+          {
+            type: 'ul',
+            items: [
+              'Our HR team reads every application and replies when there is a match.',
+              'Shortlisted candidates are invited to campus to meet the team and teach a sample lesson.',
+              'Teaching posts need your qualification certificates and two referees at the interview stage.',
+              'All staff are subject to child-safeguarding checks before they start. Child safety comes first here.',
+            ],
+          },
+        ],
+      },
+      {
+        blockType: 'careersForm',
+        background: 'white',
+        anchor: 'apply',
+        eyebrow: 'Apply',
+        heading: 'Send us your CV',
+        intro: 'Tell us who you are and the position you are after. It takes two minutes.',
+      },
+      {
+        blockType: 'ctaBand',
+        background: 'navy',
+        heading: 'Questions before you apply?',
+        subhead: 'Call our HR team and ask. We would rather talk than leave you guessing.',
+        links: [
+          { link: { appearance: 'primary', type: 'custom', label: 'Call 09 81 99 99 22', url: 'tel:0981999922' } },
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
         ],
       },
     ],
@@ -636,10 +663,10 @@ export const defaultPages: Record<string, DefaultPage> = {
         blockType: 'ctaBand',
         background: 'purple',
         heading: 'See the Cambridge pathway in action',
-        subhead: 'Book a tour of our Vatican campus, or request the full fee sheet.',
+        subhead: 'Book a tour of our Vatican campus, or register your child online.',
         links: [
-          { link: { appearance: 'primary', type: 'custom', label: 'Visit Now', url: '/contact' } },
-          { link: { appearance: 'outline', type: 'custom', label: 'Admissions & Fees', url: '/admissions' } },
+          { link: { appearance: 'primary', type: 'custom', label: 'Register Now', url: '/register' } },
+          { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
         ],
       },
     ],

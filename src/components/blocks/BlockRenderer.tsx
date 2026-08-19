@@ -27,6 +27,8 @@ import { CampusComingSoonBlock, type CampusComingSoonProps } from './CampusComin
 import { SocialFollowBlock, type SocialFollowProps } from './SocialFollowBlock'
 import { CampusVideoBlock, type CampusVideoProps } from './CampusVideoBlock'
 import { LegalDocBlock, type LegalDocProps } from './LegalDocBlock'
+import { CampusChoiceBlock, type CampusChoiceProps } from './CampusChoiceBlock'
+import { CareersFormBlock, type CareersFormProps } from './CareersFormBlock'
 import { mintFormToken } from '@/lib/formToken'
 
 /**
@@ -61,6 +63,8 @@ export type RenderableBlock =
   | SocialFollowProps
   | CampusVideoProps
   | LegalDocProps
+  | CampusChoiceProps
+  | CareersFormProps
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
@@ -91,6 +95,8 @@ const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
   socialFollow: SocialFollowBlock,
   campusVideo: CampusVideoBlock,
   legalDoc: LegalDocBlock,
+  campusChoice: CampusChoiceBlock,
+  careersForm: CareersFormBlock,
 }
 
 export function BlockRenderer({ blocks }: { blocks?: RenderableBlock[] | null }) {
@@ -102,7 +108,10 @@ export function BlockRenderer({ blocks }: { blocks?: RenderableBlock[] | null })
         if (!Component) return null
         // Form blocks get a fresh server-minted signed token, embedded as a hidden field so the
         // server action can prove the POST came from a rendered page (our reCAPTCHA replacement).
-        const extra = block.blockType === 'formBlock' ? { formToken: mintFormToken() } : {}
+        const extra =
+          block.blockType === 'formBlock' || block.blockType === 'careersForm'
+            ? { formToken: mintFormToken() }
+            : {}
         return <Component key={('id' in block && block.id) || i} {...block} {...extra} />
       })}
     </>

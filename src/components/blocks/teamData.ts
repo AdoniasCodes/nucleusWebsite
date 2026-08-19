@@ -16,6 +16,18 @@ export type TeamMember = {
 /** Hardcoded fallback roster. Used when no `members` are supplied (e.g. the CMS is empty or errors). */
 export const TEAM: TeamMember[] = [
   {
+    id: 'daniel',
+    name: 'Daniel Hiest',
+    role: 'School Director',
+    dept: 'Leadership',
+    photo: '/images/team/daniel-hiest.webp',
+    bio: [
+      'M.A. French Studies. B.Ed. (Hons.). More than 40 years in international education.',
+      'Daniel has served as Principal, Head of School, Academic Director and IB Programme Coordinator across leading international schools in Europe, Africa, Asia and South America.',
+      'His expertise in Cambridge, IB and university admissions provides Nucleus with exceptional academic leadership.',
+    ],
+  },
+  {
     id: 'wondwossen',
     name: 'Wondwossen G. Teklemichael',
     role: 'International School Systems Expert',
@@ -103,17 +115,6 @@ export const TEAM: TeamMember[] = [
     bio: [
       'Yordanos is a Business Management professional with a diverse background in banking, hospitality, event management and marketing & communications, with strong skills in strategic communication, stakeholder engagement and brand representation.',
       'As Marketing and Communication Officer she is committed to strengthening the school’s visibility, building meaningful connections with families, and supporting its mission through effective communication and creative marketing.',
-    ],
-  },
-  {
-    id: 'ahmed',
-    name: 'Ahmed Wageh',
-    role: 'Music Teacher & School Band Director',
-    dept: 'Arts & Music',
-    photo: '/images/team/ahmed-wageh.webp',
-    bio: [
-      'Ahmed is a music educator with nearly a decade of experience helping students of all levels find their voice, build real technique and fall in love with music. He teaches cello, guitar, piano and keyboard, from beginners to advanced performers, and has guided many students through ABRSM, Trinity and IGCSE examinations.',
-      'His teaching is practical and student-centred: he meets learners where they are and adapts to every learning style. Beyond one-to-one lessons he’s passionate about ensemble work. He holds a Bachelor’s in Music Education and is completing his PGCE (International).',
     ],
   },
   {

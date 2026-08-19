@@ -2,8 +2,11 @@ import type { Block } from 'payload'
 
 /**
  * Lead-capture form block. The chosen `formType` determines which collection a
- * submission writes to (admissions inquiry, tour booking, or gated fee-sheet request).
- * Rendering + submission handling live in the frontend (Phase 4).
+ * submission writes to (admissions inquiry, tour booking, camp registration).
+ *
+ * The old `fee-request` type is deliberately gone: parents kept finding the gated fee-sheet form
+ * through stray links instead of registering. Historic submissions keep their `fee-request`
+ * interest value in `admissions-inquiries`; no new one can be created.
  */
 export const FormBlock: Block = {
   slug: 'formBlock',
@@ -19,7 +22,6 @@ export const FormBlock: Block = {
         { label: 'Admissions inquiry', value: 'inquiry' },
         { label: 'Visit Now (tour)', value: 'tour' },
         { label: 'Start Registration', value: 'registration' },
-        { label: 'Request fee sheet (gated)', value: 'fee-request' },
         { label: 'Summer Camp registration', value: 'summer-camp' },
       ],
     },

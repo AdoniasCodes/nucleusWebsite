@@ -9,7 +9,8 @@ const PROGRAMS = [
   { label: 'Robotics & STEM', href: '/robotics-stem' },
   { label: 'Agriculture & Animal Care', href: '/agriculture-animal-care' },
   { label: 'Summer Camp', href: '/summer-camp' },
-  { label: 'Admissions & Fees', href: '/admissions' },
+  { label: 'Admissions', href: '/register' },
+  { label: 'Careers', href: '/careers' },
 ]
 
 /** Legal pages sit on the copyright line, the convention parents already scan for. */

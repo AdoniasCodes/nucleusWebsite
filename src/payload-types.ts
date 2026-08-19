@@ -79,6 +79,8 @@ export interface Config {
     'tour-bookings': TourBooking;
     'summer-camp-registrations': SummerCampRegistration;
     'admission-applications': AdmissionApplication;
+    'career-applications': CareerApplication;
+    'career-cvs': CareerCv;
     redirects: Redirect;
     users: User;
     exports: Export;
@@ -103,6 +105,8 @@ export interface Config {
     'tour-bookings': TourBookingsSelect<false> | TourBookingsSelect<true>;
     'summer-camp-registrations': SummerCampRegistrationsSelect<false> | SummerCampRegistrationsSelect<true>;
     'admission-applications': AdmissionApplicationsSelect<false> | AdmissionApplicationsSelect<true>;
+    'career-applications': CareerApplicationsSelect<false> | CareerApplicationsSelect<true>;
+    'career-cvs': CareerCvsSelect<false> | CareerCvsSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     exports: ExportsSelect<false> | ExportsSelect<true>;
@@ -538,7 +542,7 @@ export interface CTABandBlock {
  * via the `definition` "FormBlockType".
  */
 export interface FormBlockType {
-  formType: 'inquiry' | 'tour' | 'registration' | 'fee-request' | 'summer-camp';
+  formType: 'inquiry' | 'tour' | 'registration' | 'summer-camp';
   background?: ('offwhite' | 'white' | 'purple') | null;
   heading?: string | null;
   intro?: string | null;
@@ -909,6 +913,102 @@ export interface AdmissionApplication {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "career-applications".
+ */
+export interface CareerApplication {
+  id: number;
+  fullName: string;
+  email: string;
+  phone?: string | null;
+  yearsExperience?: string | null;
+  /**
+   * The role chosen from the dropdown on the careers page.
+   */
+  position:
+    | 'early-years-teacher'
+    | 'kg-teacher'
+    | 'primary-teacher'
+    | 'lower-secondary-teacher'
+    | 'english-teacher'
+    | 'mathematics-teacher'
+    | 'science-teacher'
+    | 'amharic-teacher'
+    | 'french-teacher'
+    | 'ict-teacher'
+    | 'robotics-stem-instructor'
+    | 'music-teacher'
+    | 'art-teacher'
+    | 'pe-teacher'
+    | 'agriculture-instructor'
+    | 'teaching-assistant'
+    | 'sen-learning-support'
+    | 'school-counsellor'
+    | 'school-nurse'
+    | 'librarian'
+    | 'head-of-department'
+    | 'cambridge-coordinator'
+    | 'vice-principal'
+    | 'principal'
+    | 'admissions-officer'
+    | 'registrar'
+    | 'hr-officer'
+    | 'finance-officer'
+    | 'marketing-officer'
+    | 'it-support'
+    | 'receptionist'
+    | 'admin-assistant'
+    | 'security-officer'
+    | 'facilities'
+    | 'kitchen-staff'
+    | 'cleaner'
+    | 'driver'
+    | 'bus-attendant'
+    | 'other';
+  /**
+   * Only filled in when the applicant picked "Another position".
+   */
+  otherPosition?: string | null;
+  /**
+   * The role in plain words, so list views and emails read properly.
+   */
+  positionLabel?: string | null;
+  /**
+   * PDF or Word document, up to 5 MB.
+   */
+  cv: number | CareerCv;
+  message?: string | null;
+  /**
+   * Page the form was submitted from.
+   */
+  sourcePage?: string | null;
+  status?: ('new' | 'reviewing' | 'interview' | 'hired' | 'declined') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "career-cvs".
+ */
+export interface CareerCv {
+  id: number;
+  /**
+   * Who sent this CV. Copied from the application on submit.
+   */
+  applicantName?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1162,6 +1262,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'admission-applications';
         value: number | AdmissionApplication;
+      } | null)
+    | ({
+        relationTo: 'career-applications';
+        value: number | CareerApplication;
+      } | null)
+    | ({
+        relationTo: 'career-cvs';
+        value: number | CareerCv;
       } | null)
     | ({
         relationTo: 'redirects';
@@ -1760,6 +1868,43 @@ export interface AdmissionApplicationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "career-applications_select".
+ */
+export interface CareerApplicationsSelect<T extends boolean = true> {
+  fullName?: T;
+  email?: T;
+  phone?: T;
+  yearsExperience?: T;
+  position?: T;
+  otherPosition?: T;
+  positionLabel?: T;
+  cv?: T;
+  message?: T;
+  sourcePage?: T;
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "career-cvs_select".
+ */
+export interface CareerCvsSelect<T extends boolean = true> {
+  applicantName?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects_select".
  */
 export interface RedirectsSelect<T extends boolean = true> {
@@ -2074,6 +2219,8 @@ export interface TaskCreateCollectionExport {
       | 'tour-bookings'
       | 'summer-camp-registrations'
       | 'admission-applications'
+      | 'career-applications'
+      | 'career-cvs'
       | 'redirects'
       | 'users'
       | 'exports'

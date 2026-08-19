@@ -12,10 +12,13 @@ import type { CollectionAfterChangeHook } from 'payload'
 
 const FIELD_ORDER = [
   'parentName',
+  'fullName',
   'email',
   'phone',
   'childAge',
   'childGrade',
+  'positionLabel',
+  'yearsExperience',
   'interest',
   'preferredDate',
   'preferredTime',
@@ -26,6 +29,9 @@ const FIELD_ORDER = [
 
 const LABELS: Record<string, string> = {
   parentName: 'Parent name',
+  fullName: 'Applicant',
+  positionLabel: 'Position applied for',
+  yearsExperience: 'Years of experience',
   email: 'Email',
   phone: 'Phone',
   childAge: "Child's age",
@@ -70,13 +76,15 @@ export const notifyLead = (kind: string): CollectionAfterChangeHook =>
         .join('') +
       `</table>` +
       `<p style="font-family:Arial,sans-serif;font-size:14px;margin-top:16px"><a href="${adminUrl}" style="color:#E0A93B">Open in admin →</a></p>`
+    // The CV itself stays behind the admin login rather than travelling as an attachment.
+
 
     try {
       await req.payload.sendEmail({
         to,
         // Staff can hit "Reply" and write straight back to the parent.
         replyTo: typeof doc?.email === 'string' ? doc.email : undefined,
-        subject: `New ${kind}: ${doc?.parentName ?? 'Unknown'}`,
+        subject: `New ${kind}: ${doc?.parentName ?? doc?.fullName ?? doc?.studentName ?? 'Unknown'}`,
         text,
         html,
       })

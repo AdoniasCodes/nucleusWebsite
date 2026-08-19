@@ -23,12 +23,16 @@ const LOW_PRIORITY_PAGES = new Set(['terms', 'privacy'])
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base: MetadataRoute.Sitemap = [
     { url: SERVER_URL, changeFrequency: 'weekly', priority: 1 },
-    // Every code-defined page (about, academics, program pages, admissions, contact, news…).
+    // Every code-defined page (about, academics, program pages, register, contact, news…).
     ...Object.keys(defaultPages).map((slug) => ({
       url: `${SERVER_URL}/${slug}`,
       changeFrequency: LOW_PRIORITY_PAGES.has(slug) ? ('yearly' as const) : ('monthly' as const),
-      priority: slug === 'admissions' ? 0.9 : LOW_PRIORITY_PAGES.has(slug) ? 0.3 : 0.7,
+      // The registration form is the money page now that /admissions is retired.
+      priority: slug === 'register' ? 0.9 : LOW_PRIORITY_PAGES.has(slug) ? 0.3 : 0.7,
     })),
+    // The two campus-locked registration forms (own routes, so not in `defaultPages`).
+    { url: `${SERVER_URL}/register/primary`, changeFrequency: 'monthly' as const, priority: 0.9 },
+    { url: `${SERVER_URL}/register/grade-school`, changeFrequency: 'monthly' as const, priority: 0.9 },
     // The newsletter index refreshes weekly, worth a high crawl priority.
     { url: `${SERVER_URL}/newsletter`, changeFrequency: 'weekly' as const, priority: 0.8 },
   ]

@@ -8,6 +8,7 @@ import { Icon } from '@/components/ui/Icon'
 import { COUNTRY_NAMES, DEFAULT_COUNTRY } from '@/lib/countries'
 import { HEARD_ABOUT_OPTIONS, HEARD_ABOUT_LABEL } from '@/lib/heardAbout'
 import { PhoneField, composePhone, validatePhone, type PhoneValue } from './PhoneField'
+import type { ApplicationVariant } from './applicationVariants'
 import { submitApplication, type ApplicationState } from '@/app/(frontend)/actions/submitApplication'
 import { trackLead } from '@/lib/pixels'
 
@@ -50,6 +51,7 @@ const GRADES = [
 
 const CAMPUSES = ['Vatican Campus (grade school)', 'Abo Campus (preschool)', 'Totot Campus', 'Not sure yet']
 
+
 const STEPS = [
   { id: 'application', title: 'Application', blurb: 'Which grade and campus you are applying for.' },
   { id: 'student', title: 'Student', blurb: 'Your child’s details, exactly as on their documents.' },
@@ -59,7 +61,9 @@ const STEPS = [
   { id: 'finish', title: 'Finish', blurb: 'Assessment scores, consent and your declaration.' },
 ] as const
 
-const STORAGE_KEY = 'nucleus.application.v1'
+const STORAGE_KEY_BASE = 'nucleus.application.v1'
+const storageKey = (variant?: ApplicationVariant) =>
+  variant ? `${STORAGE_KEY_BASE}.${variant.key}` : STORAGE_KEY_BASE
 const SAVE_DEBOUNCE_MS = 600
 
 /* ------------------------------------------------------------- validation */
@@ -282,6 +286,26 @@ function Textarea({
   )
 }
 
+/**
+ * The campus on a campus-locked form: shown, not chosen. Rendered as a read-only panel rather
+ * than a one-option `<select>`, which looks broken to a parent who taps it expecting choices.
+ * The value itself posts through the hidden-input dump in the form body.
+ */
+function LockedCampus({ campus, note }: { campus: string; note: string }) {
+  return (
+    <div>
+      <Label htmlFor="preferredCampus-display">Campus</Label>
+      <div
+        id="preferredCampus-display"
+        className="min-h-[3rem] w-full rounded-xl border border-navy/20 bg-mist/50 px-3.5 py-3 text-base font-semibold text-navy"
+      >
+        {campus}
+      </div>
+      <span className="mt-1.5 block text-sm text-ink/55">{note}</span>
+    </div>
+  )
+}
+
 /** Two-column on tablet and up, single column on phones. */
 function Grid({ children }: { children: React.ReactNode }) {
   return <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">{children}</div>
@@ -303,12 +327,26 @@ function StepHeading({ index }: { index: number }) {
 
 const initialState: ApplicationState = { status: 'idle', message: '' }
 
-export function ApplicationForm({ formToken }: { formToken: string }) {
+export function ApplicationForm({
+  formToken,
+  variant,
+}: {
+  formToken: string
+  /** Campus-locked variant. Omitted = the full Preschool-to-Grade-8 form with a campus choice. */
+  variant?: ApplicationVariant
+}) {
   const [state, action, isPending] = useActionState(submitApplication, initialState)
   const pathname = usePathname()
 
+  const STORAGE_KEY = storageKey(variant)
+  const grades = variant?.grades ?? GRADES
+
   const [step, setStep] = useState(0)
-  const [values, setValues] = useState<Values>({})
+  // A locked variant seeds `preferredCampus` up front so it posts even if the parent never
+  // touches step 1: the hidden-input dump below carries every value in `values`.
+  const [values, setValues] = useState<Values>(() =>
+    variant ? ({ preferredCampus: variant.campus } as Values) : ({} as Values),
+  )
   const [phones, setPhones] = useState<Phones>(() =>
     Object.fromEntries(PHONE_KEYS.map((k) => [k, emptyPhone()])) as Phones,
   )
@@ -338,7 +376,9 @@ export function ApplicationForm({ formToken }: { formToken: string }) {
       if (!saved || typeof saved !== 'object') return
       const hasContent = saved.values && Object.values(saved.values).some((v) => v && v.trim())
       if (!hasContent) return
-      setValues(saved.values ?? {})
+        const restoredValues: Values = { ...(saved.values ?? {}) }
+      if (variant) restoredValues.preferredCampus = variant.campus
+      setValues(restoredValues)
       if (saved.phones) {
         setPhones(
           Object.fromEntries(
@@ -351,7 +391,7 @@ export function ApplicationForm({ formToken }: { formToken: string }) {
     } catch {
       // Corrupt or blocked storage (private mode): start clean rather than break the form.
     }
-  }, [])
+  }, [STORAGE_KEY, variant])
 
   /* --- autosave --------------------------------------------------------- */
   // Debounced so a fast typist does not write to disk on every keystroke.
@@ -368,7 +408,7 @@ export function ApplicationForm({ formToken }: { formToken: string }) {
       }
     }, SAVE_DEBOUNCE_MS)
     return () => clearTimeout(t)
-  }, [values, phones, step])
+  }, [values, phones, step, STORAGE_KEY])
 
   /* --- clear the draft once the application is safely in --------------- */
   useEffect(() => {
@@ -379,7 +419,7 @@ export function ApplicationForm({ formToken }: { formToken: string }) {
     } catch {
       /* nothing to clean up */
     }
-  }, [state.status])
+  }, [state.status, STORAGE_KEY])
 
   /* --- validation ------------------------------------------------------- */
 
@@ -464,7 +504,7 @@ export function ApplicationForm({ formToken }: { formToken: string }) {
     } catch {
       /* already gone */
     }
-    setValues({})
+    setValues(variant ? ({ preferredCampus: variant.campus } as Values) : ({} as Values))
     setPhones(Object.fromEntries(PHONE_KEYS.map((k) => [k, emptyPhone()])) as Phones)
     setErrors({})
     setRestored(false)
@@ -625,17 +665,21 @@ export function ApplicationForm({ formToken }: { formToken: string }) {
                     required
                     value={val('gradeApplyingTo')}
                     onChange={(v) => set('gradeApplyingTo', v)}
-                    options={GRADES}
+                    options={grades}
                     error={errors.gradeApplyingTo}
                     placeholder="Select a grade…"
                   />
-                  <Select
-                    name="preferredCampus"
-                    label="Preferred campus"
-                    value={val('preferredCampus')}
-                    onChange={(v) => set('preferredCampus', v)}
-                    options={CAMPUSES}
-                  />
+                  {variant ? (
+                    <LockedCampus campus={variant.campus} note={variant.campusNote} />
+                  ) : (
+                    <Select
+                      name="preferredCampus"
+                      label="Preferred campus"
+                      value={val('preferredCampus')}
+                      onChange={(v) => set('preferredCampus', v)}
+                      options={CAMPUSES}
+                    />
+                  )}
                   <Text
                     name="previousSchool"
                     label="Previous school name"
