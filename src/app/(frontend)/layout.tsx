@@ -5,6 +5,7 @@ import './styles.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Analytics } from '@/components/seo/Analytics'
+import { shareImages } from '@/lib/shareImage'
 import { getSEOSettings, getSiteSettings } from '@/lib/payload'
 import { SERVER_URL } from '@/lib/serverUrl'
 
@@ -37,6 +38,13 @@ export async function generateMetadata(): Promise<Metadata> {
     seo?.defaultMetaDescription ??
     'Nucleus teaches the international Cambridge curriculum at Vatican, Addis Ababa (near Mekanisa Abo Square), ages 2 to Grade 8: secure campus, robotics, STEM and multilingual learning.'
 
+  // A share image uploaded in the CMS wins; otherwise the branded card shipped in /public.
+  const cmsShare =
+    seo?.defaultShareImage && typeof seo.defaultShareImage === 'object'
+      ? seo.defaultShareImage.url
+      : null
+  const shareImage = shareImages(cmsShare, siteName)
+
   return {
     metadataBase: new URL(SERVER_URL),
     title: {
@@ -54,8 +62,16 @@ export async function generateMetadata(): Promise<Metadata> {
       shortcut: '/favicon-32.png',
       apple: '/apple-touch-icon.png',
     },
-    openGraph: { type: 'website', siteName, title, description, locale: 'en_US', url: SERVER_URL },
-    twitter: { card: 'summary_large_image', title, description },
+    openGraph: {
+      type: 'website',
+      siteName,
+      title,
+      description,
+      locale: 'en_US',
+      url: SERVER_URL,
+      images: shareImage,
+    },
+    twitter: { card: 'summary_large_image', title, description, images: shareImage },
     robots: { index: true, follow: true },
     alternates: { canonical: '/' },
   }

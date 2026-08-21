@@ -5,6 +5,7 @@ import { defaultPages } from '@/components/blocks/defaultPages'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { getPageBySlug } from '@/lib/payload'
 import { buildBreadcrumbSchema } from '@/lib/seo'
+import { shareImages } from '@/lib/shareImage'
 
 export const revalidate = 300
 
@@ -28,7 +29,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: title ? { absolute: title } : undefined,
     description,
     alternates: { canonical: `/${slug}` },
-    openGraph: { title: title ?? undefined, description: description ?? undefined, url: `/${slug}` },
+    // Next merges metadata shallowly, so this openGraph replaces the root one entirely and has
+    // to carry its own images or the page ships with a blank share preview.
+    openGraph: {
+      title: title ?? undefined,
+      description: description ?? undefined,
+      url: `/${slug}`,
+      images: shareImages(),
+    },
+    twitter: { card: 'summary_large_image', images: shareImages() },
   }
 }
 

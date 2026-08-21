@@ -96,6 +96,12 @@ export async function submitCareerApplication(
   if (position === OTHER_POSITION && !otherPosition) {
     return { status: 'error', message: 'Please type the position you are applying for.' }
   }
+  if (message.length < 30) {
+    return {
+      status: 'error',
+      message: 'Please add a short cover note telling us why this role and what you would bring.',
+    }
+  }
 
   const file = formData.get('cv')
   if (!(file instanceof File) || file.size === 0) {

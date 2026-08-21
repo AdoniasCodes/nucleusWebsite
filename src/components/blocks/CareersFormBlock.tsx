@@ -301,11 +301,18 @@ export function CareersFormBlock({
             </div>
 
             <div className="sm:col-span-2">
-              <Field label="Cover note" htmlFor="message" hint="Optional. A short paragraph is plenty.">
+              <Field
+                label="Cover note"
+                htmlFor="message"
+                required
+                hint="Tell us why this role, and what you would bring. A short paragraph is plenty."
+              >
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
+                  required
+                  minLength={30}
                   maxLength={3000}
                   className={`${inputBase} resize-y`}
                 />

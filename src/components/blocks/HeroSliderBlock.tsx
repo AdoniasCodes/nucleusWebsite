@@ -521,7 +521,8 @@ function FilmSlideView({ slide, onWatch }: { slide: FilmSlide; onWatch: () => vo
               {slide.eyebrow}
             </p>
           )}
-          <h1 className="mt-4 text-4xl font-bold sm:text-5xl lg:text-6xl">
+          {/* h2, not h1: the brand slide already owns the homepage's single h1. */}
+          <h2 className="mt-4 text-4xl font-bold sm:text-5xl lg:text-6xl">
             {slide.heading}
             {slide.headingAccent && (
               <>
@@ -529,7 +530,7 @@ function FilmSlideView({ slide, onWatch }: { slide: FilmSlide; onWatch: () => vo
                 <span className="text-ochre">{slide.headingAccent}</span>
               </>
             )}
-          </h1>
+          </h2>
           {slide.subhead && <p className="mt-5 max-w-xl text-lg text-pale/85">{slide.subhead}</p>}
           <div className="mt-8 flex flex-wrap justify-center gap-4 sm:justify-start">
             <ButtonAction onClick={onWatch} appearance="primary">

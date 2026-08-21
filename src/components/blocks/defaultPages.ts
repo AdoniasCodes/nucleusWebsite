@@ -110,6 +110,9 @@ export const defaultPages: Record<string, DefaultPage> = {
       },
       { blockType: 'learnerPromise' },
       { blockType: 'ourTeam' },
+      // Small recruitment strip, straight under the portraits: people who have just read the
+      // team's bios are the warmest possible careers traffic.
+      { blockType: 'joinTeam' },
       {
         blockType: 'ctaBand',
         background: 'navy',
@@ -578,6 +581,7 @@ export const defaultPages: Record<string, DefaultPage> = {
       {
         blockType: 'ctaBand',
         background: 'navy',
+        bgImage: '/images/stock/gallery-campus.webp',
         heading: 'Questions before you apply?',
         subhead: 'Call our HR team and ask. We would rather talk than leave you guessing.',
         links: [

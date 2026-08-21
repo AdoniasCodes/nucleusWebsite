@@ -12,6 +12,7 @@ import { getPayloadClient } from '@/lib/payload'
 import { buildBreadcrumbSchema } from '@/lib/seo'
 import { stockWebp } from '@/lib/img'
 import { SERVER_URL } from '@/lib/serverUrl'
+import { shareImages } from '@/lib/shareImage'
 import type { Post } from '@/payload-types'
 
 export const revalidate = 300
@@ -35,11 +36,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {}
   const title = post.meta?.title || post.title
   const description = post.meta?.description || post.excerpt || undefined
+  // The hero, absolute-ised (scrapers do not resolve relative URLs reliably), else the default card.
+  const metaHero = post.heroImage && typeof post.heroImage === 'object' ? post.heroImage.url : null
+  const rawShare = metaHero || stockWebp(post.heroImageUrl) || null
+  const shareUrl = rawShare ? new URL(rawShare, SERVER_URL).toString() : null
   return {
     title: title ? { absolute: `${title} | Nucleus International Schools` } : undefined,
     description,
     alternates: { canonical: `/news/${slug}` },
-    openGraph: { type: 'article', title: title ?? undefined, description, url: `/news/${slug}` },
+    openGraph: {
+      type: 'article',
+      title: title ?? undefined,
+      description,
+      url: `/news/${slug}`,
+      images: shareImages(shareUrl, title ?? undefined),
+    },
+    twitter: { card: 'summary_large_image', images: shareImages(shareUrl, title ?? undefined) },
   }
 }
 

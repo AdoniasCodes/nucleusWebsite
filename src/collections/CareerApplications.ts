@@ -83,6 +83,8 @@ export const CareerApplications: CollectionConfig = {
       required: true,
       admin: { description: 'PDF or Word document, up to 5 MB.' },
     },
+    // Required at the form and the server action, deliberately NOT `required` here: flipping a
+    // live Payload column to NOT NULL is a schema push against the production table for no gain.
     { name: 'message', type: 'textarea', maxLength: 3000, label: 'Cover note' },
     {
       name: 'sourcePage',

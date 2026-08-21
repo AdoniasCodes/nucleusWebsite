@@ -29,6 +29,7 @@ import { CampusVideoBlock, type CampusVideoProps } from './CampusVideoBlock'
 import { LegalDocBlock, type LegalDocProps } from './LegalDocBlock'
 import { CampusChoiceBlock, type CampusChoiceProps } from './CampusChoiceBlock'
 import { CareersFormBlock, type CareersFormProps } from './CareersFormBlock'
+import { JoinTeamBlock, type JoinTeamProps } from './JoinTeamBlock'
 import { mintFormToken } from '@/lib/formToken'
 
 /**
@@ -65,6 +66,7 @@ export type RenderableBlock =
   | LegalDocProps
   | CampusChoiceProps
   | CareersFormProps
+  | JoinTeamProps
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
@@ -97,6 +99,7 @@ const REGISTRY: Record<string, (props: any) => React.ReactNode> = {
   legalDoc: LegalDocBlock,
   campusChoice: CampusChoiceBlock,
   careersForm: CareersFormBlock,
+  joinTeam: JoinTeamBlock,
 }
 
 export function BlockRenderer({ blocks }: { blocks?: RenderableBlock[] | null }) {

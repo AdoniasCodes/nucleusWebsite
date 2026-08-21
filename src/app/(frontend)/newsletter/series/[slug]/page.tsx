@@ -8,6 +8,7 @@ import { SmartImage, heroUrlOf, formatDate } from '@/components/newsletter/share
 import { getPayloadClient } from '@/lib/payload'
 import { buildBreadcrumbSchema } from '@/lib/seo'
 import { SERVER_URL } from '@/lib/serverUrl'
+import { shareImages } from '@/lib/shareImage'
 import type { Playlist, Post } from '@/payload-types'
 
 export const revalidate = 300
@@ -38,13 +39,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const data = await getSeries(slug).catch(() => null)
   if (!data) return {}
+  const metaCover =
+    data.playlist.coverImage && typeof data.playlist.coverImage === 'object'
+      ? data.playlist.coverImage.url
+      : null
+  const coverUrl = metaCover ? new URL(metaCover, SERVER_URL).toString() : null
   return {
     title: `${data.playlist.title}: Newsletter Series`,
     description:
       data.playlist.description ||
       `All parts of the ${data.playlist.title} series from Inside Nucleus, the Nucleus International Schools newsletter.`,
     alternates: { canonical: `/newsletter/series/${slug}` },
-    openGraph: { title: data.playlist.title, url: `/newsletter/series/${slug}` },
+    openGraph: {
+      title: data.playlist.title,
+      url: `/newsletter/series/${slug}`,
+      images: shareImages(coverUrl, data.playlist.title),
+    },
+    twitter: { card: 'summary_large_image', images: shareImages(coverUrl, data.playlist.title) },
   }
 }
 

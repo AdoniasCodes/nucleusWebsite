@@ -11,6 +11,7 @@ import { SmartImage, heroUrlOf, formatDate } from '@/components/newsletter/share
 import { getPayloadClient } from '@/lib/payload'
 import { buildBreadcrumbSchema } from '@/lib/seo'
 import { SERVER_URL } from '@/lib/serverUrl'
+import { shareImages } from '@/lib/shareImage'
 import type { Playlist, Post } from '@/payload-types'
 
 export const revalidate = 300
@@ -25,7 +26,9 @@ export const metadata: Metadata = {
     description:
       'Weekly updates, school news, summer camp recaps and monthly highlights from Nucleus International Schools, Addis Ababa.',
     url: '/newsletter',
+    images: shareImages(),
   },
+  twitter: { card: 'summary_large_image', images: shareImages() },
 }
 
 async function getData() {

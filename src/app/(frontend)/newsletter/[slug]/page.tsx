@@ -11,6 +11,7 @@ import { getPayloadClient } from '@/lib/payload'
 import { buildBreadcrumbSchema } from '@/lib/seo'
 import { LEGACY_NEWSLETTER_SLUGS } from '@/lib/legacySlugs'
 import { SERVER_URL } from '@/lib/serverUrl'
+import { shareImages } from '@/lib/shareImage'
 import type { Playlist, Post } from '@/payload-types'
 
 export const revalidate = 300
@@ -80,7 +81,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: title ?? undefined,
       description,
       url: `/newsletter/${slug}`,
-      images: heroUrl ? [{ url: new URL(heroUrl, SERVER_URL).toString() }] : undefined,
+      images: shareImages(heroUrl ? new URL(heroUrl, SERVER_URL).toString() : null, title ?? undefined),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: shareImages(heroUrl ? new URL(heroUrl, SERVER_URL).toString() : null, title ?? undefined),
     },
   }
 }
