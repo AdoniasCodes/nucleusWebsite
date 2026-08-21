@@ -14,15 +14,21 @@ export const DEFAULT_OG_IMAGE = '/og-default.jpg'
 
 export type ShareImage = { url: string; width?: number; height?: number; alt?: string }
 
-/** Resolves to `url` when there is one, otherwise the branded default card. */
+const CARD: ShareImage = {
+  url: DEFAULT_OG_IMAGE,
+  width: 1200,
+  height: 630,
+  alt: 'Nucleus International Schools, Vatican campus, Addis Ababa',
+}
+
+/**
+ * Resolves to `url` when there is one, otherwise the branded default card.
+ *
+ * A page-specific image is listed FIRST and the card second. Nearly all of the site's
+ * photography is WebP, and a scraper that cannot decode WebP falls through to the JPEG instead
+ * of rendering nothing. Either way the link previews.
+ */
 export function shareImages(url?: string | null, alt?: string): ShareImage[] {
-  if (url) return [{ url, alt }]
-  return [
-    {
-      url: DEFAULT_OG_IMAGE,
-      width: 1200,
-      height: 630,
-      alt: alt ?? 'Nucleus International Schools, Vatican campus, Addis Ababa',
-    },
-  ]
+  if (url) return [{ url, alt }, CARD]
+  return [alt ? { ...CARD, alt } : CARD]
 }
