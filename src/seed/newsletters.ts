@@ -15,6 +15,7 @@ import { LEGACY_NEWSLETTER_SLUGS } from '../lib/legacySlugs'
 
 const IMG = '/images/newsletter/summer-camp-2026'
 const CBT = '/images/newsletter/teachers-cbt'
+const PBN = '/images/newsletter/people-behind-nucleus'
 
 type SeedSeries = {
   title: string
@@ -47,6 +48,18 @@ const SERIES: SeedSeries[] = [
     related: [
       { label: 'Meet the team behind the training', url: '/about' },
       { label: 'The Cambridge pathway at Nucleus', url: '/cambridge-pathway' },
+    ],
+  },
+  {
+    title: 'The People Behind Nucleus',
+    slug: 'people-behind-nucleus',
+    description:
+      'The teachers, specialists and staff who make a Nucleus classroom what it is. Each issue is a long conversation with one of them: where they come from, how they think about their subject, and what they are building with our students in Addis Ababa.',
+    coverImageUrl: `${PBN}/pbn01-rajif-classroom.webp`,
+    related: [
+      { label: 'Meet the leadership team at Nucleus', url: '/about' },
+      { label: 'The Cambridge pathway at Nucleus', url: '/cambridge-pathway' },
+      { label: 'Teach at Nucleus: open applications', url: '/careers' },
     ],
   },
 ]
@@ -1366,6 +1379,133 @@ const cbt02Sections: SeedSection[] = [
   },
 ]
 
+/**
+ * Issue 01 of "The People Behind Nucleus": Rajif, Mathematics Teacher.
+ * Interview format: each question is a section heading, because the PDF renderer flattens
+ * h3 blocks into plain paragraphs and the questions would vanish into the answers there.
+ */
+const pbn01Sections: SeedSection[] = [
+  {
+    heading: 'A Physicist in the Maths Classroom',
+    body: [
+      {
+        p: 'We say often at Nucleus that who teaches a child matters as much as what the child is taught. This is the first issue of The People Behind Nucleus, a series about the teachers, specialists and staff who make our classrooms what they are.',
+      },
+      {
+        p: 'We start with Rajif, who teaches mathematics. He holds an M.Sc. in Materials Physics and is a PhD candidate. He brings the working habits of a physicist into a room full of children: look for the pattern, test the idea, and never accept an answer you cannot explain.',
+      },
+      {
+        p: 'We asked him what that actually changes for a student. What follows is Rajif, in his own words.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${PBN}/pbn01-rajif-portrait.webp`,
+        alt: 'Rajif, mathematics teacher at Nucleus International Schools in Addis Ababa',
+        caption: 'Rajif, Mathematics Teacher. M.Sc. in Materials Physics, PhD candidate.',
+      },
+    ],
+  },
+  {
+    heading: 'What does having a physicist in the classroom mean for a student?',
+    body: [
+      {
+        p: 'It means learning mathematics and science as ways of understanding the world, rather than as subjects to be studied and set aside.',
+      },
+      {
+        p: 'I want students to ask questions, recognise patterns, test ideas and not be afraid of getting something wrong. Whether we are solving a mathematics problem or investigating something in science, I want them to understand not only how to reach an answer, but why that answer makes sense.',
+      },
+      {
+        p: 'If students begin to see themselves as curious thinkers and problem solvers, then we are doing something right.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${PBN}/pbn01-rajif-classroom.webp`,
+        alt: 'Rajif preparing a lesson at his desk in the mathematics classroom at Nucleus International Schools, Addis Ababa',
+        caption: 'Lesson planning under the number walls: cube numbers, divisibility rules and the Pythagorean theorem.',
+      },
+    ],
+  },
+  {
+    heading: 'You have an M.Sc. and a PhD in progress. Why teach young people?',
+    body: [
+      { p: 'Because I love the moment of discovery.' },
+      {
+        p: 'Young people ask wonderful questions. Sometimes they make you look at something you thought you understood in a completely different way.',
+      },
+      {
+        p: 'One of the most rewarding moments in this job is when a student moves from \u201cI cannot do this\u201d to \u201cwait, I think I understand\u201d. Research keeps me curious. Teaching lets me share that curiosity.',
+      },
+    ],
+  },
+  {
+    heading: 'How does being a physicist change the way you teach mathematics?',
+    body: [
+      { p: 'Physics teaches you to look for connections.' },
+      {
+        p: 'Mathematics is not a collection of formulas. It is a language for describing patterns, movement, measurement and the relationships in the world around us.',
+      },
+      {
+        p: 'So rather than asking students only to memorise a method, I want them to understand why the method works. I might ask: where can we see this in real life? What happens if we change something? Is there another way to solve it? The reasoning interests me as much as the answer does.',
+      },
+    ],
+  },
+  {
+    heading: '\u201cI am just not good at maths\u201d',
+    style: 'highlight',
+    body: [
+      {
+        p: 'Being good at mathematics is not something a child is born with. It develops through practice, curiosity and a willingness to keep trying.',
+      },
+      {
+        p: 'Mistakes are useful. A wrong answer shows us exactly where the thinking needs to change. I try to give students small successes that build their confidence one step at a time.',
+      },
+      {
+        p: 'You do not have to know the answer immediately. You only have to be willing to investigate it.',
+      },
+    ],
+  },
+  {
+    heading: 'What do you want students to take away from your classroom?',
+    body: [
+      {
+        p: 'I want them to know how to approach something they do not understand. They should be able to ask three questions: what do I know, what do I not know, and what could I try?',
+      },
+      {
+        p: 'Of course I want them to leave with strong mathematical and scientific knowledge. But I also want them to leave with curiosity, resilience, logical thinking and the confidence to face an unfamiliar problem.',
+      },
+      { p: 'If a student learns how to learn, that is a success.' },
+    ],
+  },
+  {
+    heading: 'What might students be surprised to learn about their teacher?',
+    body: [
+      { p: 'That I certainly do not have all the answers.' },
+      {
+        p: 'I am still a student myself. A PhD is a constant reminder of how much there is left to discover, and I think that is one of the best things about science.',
+      },
+      {
+        p: 'Being knowledgeable does not mean knowing everything. It means being curious enough to keep asking questions.',
+      },
+    ],
+  },
+  {
+    heading: 'The Nucleus Difference',
+    style: 'highlight',
+    body: [
+      { p: 'Qualifications matter. What matters more is what a teacher does with them.' },
+      {
+        p: 'Rajif makes advanced thinking reachable for young learners. He turns mathematics from something to memorise into something to question, explore and understand.',
+      },
+      {
+        p: 'That is the classroom we are building at Nucleus: every child known by name, curiosity treated as the point rather than the interruption, and students who leave us able to do three things.',
+      },
+      { ul: ['Think Deeply.', 'Create Boldly.', 'Solve Truly.'] },
+    ],
+  },
+]
+
 type SeedIssue = {
   /** Which SERIES entry this issue belongs to. */
   seriesSlug: string
@@ -1511,6 +1651,26 @@ const ISSUES: SeedIssue[] = [
       },
     },
     sections: cbt02Sections,
+  },
+  {
+    seriesSlug: 'people-behind-nucleus',
+    article: {
+      // Staff profiles have no search demand on their own, so this issue takes the parent
+      // query the interview genuinely answers and carries the teacher in the second half.
+      title: '\u201cI Am Just Not Good at Maths\u201d: Meet the Physicist Who Teaches It at Nucleus',
+      slug: 'when-a-child-says-i-am-not-good-at-maths',
+      excerpt:
+        'Rajif has an M.Sc. in Materials Physics and a PhD in progress, and he teaches mathematics to our students in Addis Ababa. In the first issue of The People Behind Nucleus, he explains why no child is born bad at maths, and what he asks a student who is stuck.',
+      heroImageUrl: `${PBN}/pbn01-rajif-classroom.webp`,
+      publishedAt: '2026-09-02T09:00:00.000Z',
+      playlistPart: 1,
+      meta: {
+        title: 'When a Child Says \u201cI Am Not Good at Maths\u201d',
+        description:
+          'Our mathematics teacher, a physicist with a PhD in progress, on why no child is born bad at maths and how curiosity is taught in an Addis Ababa classroom.',
+      },
+    },
+    sections: pbn01Sections,
   },
 ]
 
