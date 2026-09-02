@@ -68,7 +68,7 @@ type SeedSection = {
   heading?: string
   style?: 'auto' | 'gallery' | 'highlight'
   body: ContentBlock[]
-  images?: { imageUrl: string; alt: string; caption?: string }[]
+  images?: { imageUrl: string; alt: string; caption?: string; portrait?: boolean }[]
   videoUrl?: string
   videoPoster?: string
   videoCaption?: string
@@ -1403,6 +1403,7 @@ const pbn01Sections: SeedSection[] = [
         imageUrl: `${PBN}/pbn01-rajif-portrait.webp`,
         alt: 'Rajif, mathematics teacher at Nucleus International Schools in Addis Ababa',
         caption: 'Rajif, Mathematics Teacher. M.Sc. in Materials Physics, PhD candidate.',
+        portrait: true,
       },
     ],
   },
@@ -1740,6 +1741,7 @@ const run = async () => {
             imageUrl: img.imageUrl,
             alt: img.alt,
             caption: img.caption,
+            portrait: img.portrait ?? false,
           })),
           videoUrl: s.videoUrl,
           videoPoster: s.videoPoster,

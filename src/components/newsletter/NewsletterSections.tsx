@@ -167,7 +167,9 @@ export function NewsletterSections({ sections }: { sections: NonNullable<Post['s
                   <Figure
                     key={img.id ?? i}
                     img={img}
-                    aspect={images.length === 2 ? 'aspect-[3/4]' : 'aspect-[4/3]'}
+                    // A headshot marked `portrait` keeps its 3:4 frame even when it is alone:
+                    // the default 4:3 box crops a standing portrait off at the neck.
+                    aspect={images.length === 2 || img.portrait ? 'aspect-[3/4]' : 'aspect-[4/3]'}
                     sizes="(max-width:1024px) 100vw, 40vw"
                   />
                 ))}

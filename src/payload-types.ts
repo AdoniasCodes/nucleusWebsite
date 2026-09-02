@@ -615,6 +615,10 @@ export interface Post {
               imageUrl?: string | null;
               alt?: string | null;
               caption?: string | null;
+              /**
+               * Render this photo tall (3:4) instead of wide (4:3) when it is the only photo in its section. Use it for headshots, which a 4:3 crop cuts off at the neck.
+               */
+              portrait?: boolean | null;
               id?: string | null;
             }[]
           | null;
@@ -1570,6 +1574,7 @@ export interface PostsSelect<T extends boolean = true> {
               imageUrl?: T;
               alt?: T;
               caption?: T;
+              portrait?: T;
               id?: T;
             };
         videoUrl?: T;

@@ -7,7 +7,7 @@ import { Document, Font, Image, Page, StyleSheet, Text, View } from '@react-pdf/
  */
 
 export type PdfBlock = { type: 'p' | 'li'; text: string }
-export type PdfImage = { src: string; caption?: string }
+export type PdfImage = { src: string; caption?: string; portrait?: boolean }
 export type PdfSection = {
   heading?: string
   style: 'auto' | 'gallery' | 'highlight'
@@ -118,6 +118,21 @@ function Blocks({ blocks, light = false }: { blocks: PdfBlock[]; light?: boolean
 
 /** Image strip: 2-up for regular sections, 3-up rows for galleries. */
 function ImageRows({ images, perRow, height }: { images: PdfImage[]; perRow: number; height: number }) {
+  // A lone portrait would be sliced across the chest by the full-width band, so it gets a
+  // tall half-width frame instead. Mirrors the web renderer's `portrait` flag.
+  const solePortrait = images.length === 1 && images[0].portrait
+  if (solePortrait) {
+    const img = images[0]
+    return (
+      <View style={s.imgRow} wrap={false}>
+        <View style={{ width: '46%' }}>
+          {/* eslint-disable-next-line jsx-a11y/alt-text -- react-pdf Image has no alt prop */}
+          <Image src={img.src} style={{ width: '100%', height: 236, borderRadius: 8, objectFit: 'cover' }} />
+          {img.caption && <Text style={s.caption}>{img.caption}</Text>}
+        </View>
+      </View>
+    )
+  }
   const rows: PdfImage[][] = []
   for (let i = 0; i < images.length; i += perRow) rows.push(images.slice(i, i + perRow))
   return (

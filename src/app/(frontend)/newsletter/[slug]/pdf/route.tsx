@@ -100,7 +100,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
             const raw = (media && typeof media === 'object' ? media.url : null) || url
             if (!raw) return null
             const src = await toJpegDataUri(raw, origin, gallery ? 480 : 640)
-            return src ? { src, caption: img.caption || undefined } : null
+            return src ? { src, caption: img.caption || undefined, portrait: img.portrait || undefined } : null
           }),
         )
       ).filter(Boolean) as PdfImage[]

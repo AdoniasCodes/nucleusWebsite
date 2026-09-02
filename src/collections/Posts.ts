@@ -73,6 +73,14 @@ export const Posts: CollectionConfig = {
             },
             { name: 'alt', type: 'text' },
             { name: 'caption', type: 'text' },
+            {
+              name: 'portrait',
+              type: 'checkbox',
+              admin: {
+                description:
+                  'Render this photo tall (3:4) instead of wide (4:3) when it is the only photo in its section. Use it for headshots, which a 4:3 crop cuts off at the neck.',
+              },
+            },
           ],
         },
         {
