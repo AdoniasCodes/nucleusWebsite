@@ -3,6 +3,13 @@ import { getPayloadClient } from '@/lib/payload'
 import { defaultPages } from '@/components/blocks/defaultPages'
 import { SERVER_URL } from '@/lib/serverUrl'
 
+/**
+ * Posts are seeded straight into the production database, so a sitemap generated only at
+ * build time leaves every new article invisible to crawlers until the next deploy. Rebuild
+ * it hourly instead, matching the ISR window the article routes already use.
+ */
+export const revalidate = 3600
+
 /** Blog posts aimed at the school's primary commercial queries. */
 const HEAD_TERM_POSTS = new Set([
   'best-international-schools-addis-ababa',
