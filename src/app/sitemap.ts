@@ -14,6 +14,7 @@ const HEAD_TERM_POSTS = new Set([
   'summer-camp-activities-for-kids-addis-ababa',
   'teaching-critical-thinking-problem-solving-ethiopia',
   'taekwondo-classes-for-kids-addis-ababa',
+  'cambridge-global-perspectives-explained',
 ])
 
 /** Legal pages: indexed as trust signals, but never competing with the pages that sell. */

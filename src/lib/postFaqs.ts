@@ -61,4 +61,26 @@ export const POST_FAQS: Record<string, PostFaq[]> = {
       a: 'Twice a week is the usual rhythm for a child who wants to progress, and once a week is enough to keep the habit and the fitness. Intensive holiday programmes such as summer camp are a good way to try it, because a child gets several sessions in a single week and finds out quickly whether they enjoy it before the family commits to a term.',
     },
   ],
+  'cambridge-global-perspectives-explained': [
+    {
+      q: 'What is Cambridge Global Perspectives?',
+      a: 'It is a skills-based subject in the international Cambridge curriculum in which students investigate real global and local issues rather than memorise content. They practise research, analysis, evaluation, reflection, collaboration and communication, and they are assessed on the quality of their reasoning and evidence rather than on recalled facts. It runs from the primary years through to A Level, growing in difficulty while keeping the same shape.',
+    },
+    {
+      q: 'Is Global Perspectives a real subject or an extra activity?',
+      a: 'It is a full timetabled subject with its own teacher, topics and assessment, not a club or an enrichment slot. At Nucleus it is taught across all year groups, and in Years 7 to 9 it is taught by a subject teacher.',
+    },
+    {
+      q: 'What topics do students study in Global Perspectives?',
+      a: 'Topics are chosen to connect international issues to a student\u2019s own life. Ours have included global brands and trade, migration, education, food security, disease prevention, sustainability, identity, communication and scarce resources.',
+    },
+    {
+      q: 'Will Global Perspectives help my child in other subjects?',
+      a: 'Yes, and this is the strongest practical argument for it. Research, source evaluation and structured argument are the same skills that carry a student through science write-ups, history essays, university study and eventually the workplace.',
+    },
+    {
+      q: 'How can I support Global Perspectives at home?',
+      a: 'Ask your child three questions about anything they believe: what evidence do you have, how do you know the source is reliable, and could another person see this differently. No subject knowledge is required.',
+    },
+  ],
 }

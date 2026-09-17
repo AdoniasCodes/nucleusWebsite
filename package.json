@@ -24,6 +24,7 @@
     "test:e2e": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" playwright test --config=playwright.config.ts",
     "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts",
     "seed:camp-story-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/camp-story-blogs.ts",
+    "seed:classroom-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/classroom-blogs.ts",
     "seed:summer-camp-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/summer-camp-blogs.ts",
     "fix:emdash": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/fix-emdash.ts",
     "fix:cambridge": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/fix-cambridge-wording.ts",
