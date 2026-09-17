@@ -16,6 +16,7 @@ import { LEGACY_NEWSLETTER_SLUGS } from '../lib/legacySlugs'
 const IMG = '/images/newsletter/summer-camp-2026'
 const CBT = '/images/newsletter/teachers-cbt'
 const PBN = '/images/newsletter/people-behind-nucleus'
+const ITC = '/images/newsletter/inside-the-classroom'
 
 type SeedSeries = {
   title: string
@@ -60,6 +61,18 @@ const SERIES: SeedSeries[] = [
       { label: 'Meet the leadership team at Nucleus', url: '/about' },
       { label: 'The Cambridge pathway at Nucleus', url: '/cambridge-pathway' },
       { label: 'Teach at Nucleus: open applications', url: '/careers' },
+    ],
+  },
+  {
+    title: 'Inside the Nucleus Classroom',
+    slug: 'inside-the-nucleus-classroom',
+    description:
+      'A regular feature from Nucleus International School in Addis Ababa, published every other Monday. Each issue goes inside one subject with the teacher who teaches it: what our students are learning, how they are learning it, and why it matters beyond the classroom.',
+    coverImageUrl: `${ITC}/gp01-global-perspectives-class.webp`,
+    related: [
+      { label: 'The Cambridge pathway at Nucleus', url: '/cambridge-pathway' },
+      { label: 'Meet the team behind our classrooms', url: '/about' },
+      { label: 'Register your child at Nucleus', url: '/register' },
     ],
   },
 ]
@@ -1507,6 +1520,160 @@ const pbn01Sections: SeedSection[] = [
   },
 ]
 
+const itc01Sections: SeedSection[] = [
+  {
+    heading: 'A Lesson That Begins With a Question',
+    body: [
+      { p: 'What if a lesson began with a question rather than an answer?' },
+      {
+        p: 'Why do people leave their home countries? How can disease be prevented? Can we trust everything we read online? Do international brands help or harm Ethiopian businesses?',
+      },
+      {
+        p: 'These are the kinds of questions students explore in Global Perspectives, a subject taught across all year groups at Nucleus International School. In Years 7 to 9, it is taught by Tilahun G/Kiristose.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${ITC}/gp01-tilahun-portrait.webp`,
+        alt: 'Tilahun G/Kiristose standing in the Global Perspectives classroom at Nucleus International School, in front of a world map and a wall of national flags',
+        caption: 'Tilahun G/Kiristose teaches Global Perspectives to Years 7 to 9.',
+        portrait: true,
+      },
+    ],
+  },
+  {
+    heading: 'Learning How to Think',
+    body: [
+      {
+        p: 'Global Perspectives is different from many traditional subjects. Students are not simply asked to remember facts. They learn how to ask good questions, find information, examine evidence and understand different points of view.',
+      },
+      {
+        p: 'In simple terms, the subject helps students learn how to think, not what to think. It encourages them to think critically about different opinions and to understand how and why different perspectives exist.',
+      },
+      {
+        p: 'This is especially important today. Children receive information from websites, videos, social media, advertisements and news reports. They need to know how to separate fact from opinion and decide whether a source can be trusted.',
+      },
+      { p: 'In Global Perspectives, students learn to ask:' },
+      {
+        ul: [
+          'Who produced this information?',
+          'What evidence supports it?',
+          'Is the source reliable?',
+          'Is it fact, opinion or advertising?',
+          'Is another point of view missing?',
+        ],
+      },
+    ],
+  },
+  {
+    heading: 'Inside Tilahun\u2019s Classroom',
+    body: [
+      {
+        p: 'In Tilahun\u2019s classroom, students research, discuss, compare ideas and present conclusions supported by evidence.',
+      },
+      {
+        p: 'They develop six important skills: research, analysis, evaluation, reflection, collaboration and communication.',
+      },
+      {
+        p: 'The work becomes more advanced as students move through the year groups. Year 7 students begin by forming research questions and distinguishing facts from opinions. By Year 9, they are expected to evaluate sources, build evidence-based arguments and suggest possible solutions.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${ITC}/gp01-tilahun-teaching-evidence.webp`,
+        alt: 'Tilahun talking through an investigation with Years 7 to 9 students around a table of working paper in the Global Perspectives room',
+        caption: 'Ideas are compared out loud before anything is written down.',
+      },
+    ],
+  },
+  {
+    heading: 'From a Familiar Product to a Global Question',
+    body: [
+      { p: 'One Year 7 topic is Global Brands.' },
+      {
+        p: 'A familiar shoe, telephone or packet of food can become the starting point for a much larger investigation.',
+      },
+      {
+        p: 'Students might ask where the product was made, who benefits from its sale, how advertising affects people\u2019s choices and what impact international brands may have on Ethiopian businesses and workers.',
+      },
+      {
+        p: 'They may compare local and international products, examine advertisements, conduct surveys and consider the viewpoints of consumers, workers, companies and governments.',
+      },
+      {
+        p: 'The goal is not for every student to reach the same answer. The goal is for each student to explain their thinking and support it with reliable evidence.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${ITC}/gp01-tilahun-with-student.webp`,
+        alt: 'Tilahun handing out materials to a student at the Global Perspectives table, below the classroom display of United Nations flags',
+        caption: 'Every investigation starts with something ordinary on the table.',
+        portrait: true,
+      },
+    ],
+  },
+  {
+    heading: 'In Tilahun\u2019s Words',
+    style: 'highlight',
+    body: [
+      {
+        p: '\u201cI began with something students see every day: a familiar global brand. We explored where it was made, who benefits from it and how it might affect Ethiopian businesses, workers and communities.\u201d',
+      },
+      {
+        p: '\u201cThis opened a wider discussion about globalisation, trade, employment and consumer choices. Students began to understand that the same issue can look very different depending on whether you are a consumer, worker, business owner or government official.\u201d',
+      },
+      {
+        p: '\u201cThey are encouraged to research, compare perspectives and develop possible responses. Most importantly, they begin to see themselves as informed and responsible young people whose choices can have an impact locally and globally.\u201d',
+      },
+    ],
+  },
+  {
+    heading: 'Connecting Ethiopia to the Wider World',
+    body: [
+      {
+        p: 'Global Perspectives connects international issues with students\u2019 everyday experiences in Ethiopia.',
+      },
+      {
+        p: 'Students explore subjects such as migration, education, food security, disease prevention, sustainability, identity, communication and scarce resources. They also learn to understand people from different cultural and linguistic backgrounds.',
+      },
+      {
+        p: 'These lessons help students become stronger researchers, thoughtful communicators and respectful collaborators. The skills they develop will support them in other subjects, in higher education and eventually in the workplace.',
+      },
+    ],
+  },
+  {
+    heading: 'Continuing the Conversation at Home',
+    body: [
+      {
+        p: 'Parents do not need specialist knowledge to support this learning. A news story, advertisement or popular product can lead to a useful family conversation.',
+      },
+      { p: 'Try asking your child:' },
+      {
+        ul: [
+          'What evidence do you have?',
+          'How do you know the source is reliable?',
+          'Could another person see the issue differently?',
+        ],
+      },
+      {
+        p: 'Simple questions like these encourage curiosity, careful reasoning and independent thought, the same habits students are developing inside the Nucleus classroom.',
+      },
+    ],
+  },
+  {
+    heading: 'Coming Next: Building Global Thinking in Years 1 to 6',
+    style: 'highlight',
+    body: [
+      {
+        p: 'Part Two of this feature arrives in two weeks. It explores how our youngest students begin developing curiosity, communication, teamwork and an understanding of different perspectives, long before they meet a formal research question.',
+      },
+      {
+        p: 'Inside the Nucleus Classroom is a regular Nucleus International School feature exploring what students are learning, how they are learning and why it matters beyond the classroom. A new issue arrives every other Monday.',
+      },
+    ],
+  },
+]
+
 type SeedIssue = {
   /** Which SERIES entry this issue belongs to. */
   seriesSlug: string
@@ -1672,6 +1839,24 @@ const ISSUES: SeedIssue[] = [
       },
     },
     sections: pbn01Sections,
+  },
+  {
+    seriesSlug: 'inside-the-nucleus-classroom',
+    article: {
+      title: 'What Happens in a Global Perspectives Lesson? Inside Years 7 to 9 at Nucleus',
+      slug: 'what-happens-in-a-global-perspectives-lesson',
+      excerpt:
+        'Why do people leave their home countries? Can we trust what we read online? Tilahun G/Kiristose opens his Years 7 to 9 Global Perspectives classroom in Addis Ababa, where students are taught how to think rather than what to think.',
+      heroImageUrl: `${ITC}/gp01-global-perspectives-class.webp`,
+      publishedAt: '2026-09-21T06:00:00.000Z',
+      playlistPart: 1,
+      meta: {
+        title: 'What Happens in a Global Perspectives Lesson',
+        description:
+          'Inside Years 7 to 9 Global Perspectives at Nucleus in Addis Ababa: how students question a source, weigh evidence and build an argument they can prove.',
+      },
+    },
+    sections: itc01Sections,
   },
 ]
 
