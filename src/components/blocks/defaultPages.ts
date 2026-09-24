@@ -508,7 +508,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Careers',
     seoTitle: 'Careers | Teaching Jobs at Nucleus International Schools, Addis Ababa',
     description:
-      'Teaching and support jobs at Nucleus International Schools in Addis Ababa. Send your CV for a Cambridge teaching post, a leadership role or a support role at our Vatican and Mekanisa Abo Square campuses.',
+      'Teaching, leadership and support jobs at Nucleus International School in Addis Ababa. See current vacancies and apply by email to hr@nucints.com or through the careers page.',
     layout: [
       {
         blockType: 'hero',
@@ -520,12 +520,20 @@ export const defaultPages: Record<string, DefaultPage> = {
           'We are always glad to hear from teachers and school staff who want to work somewhere their subject is taken seriously. Send your CV and tell us the role you are after.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'Send your CV', url: '#apply' } },
-          { link: { appearance: 'outline', type: 'custom', label: 'Meet the team', url: '/about' } },
+          { link: { appearance: 'outline', type: 'custom', label: 'See vacancies', url: '#vacancies' } },
         ],
       },
       {
-        blockType: 'cardsGrid',
+        blockType: 'vacancies',
         background: 'white',
+        anchor: 'vacancies',
+        eyebrow: 'Vacancies',
+        heading: 'Open positions',
+        intro: 'Every post we advertise is announced here. Tap a role to read the full job description.',
+      },
+      {
+        blockType: 'cardsGrid',
+        background: 'mist',
         eyebrow: 'Why Nucleus',
         heading: 'What you get here',
         columns: '3',
@@ -552,12 +560,12 @@ export const defaultPages: Record<string, DefaultPage> = {
       },
       {
         blockType: 'prose',
-        background: 'mist',
+        background: 'white',
         heading: 'How hiring works',
         items: [
           {
             type: 'p',
-            text: 'Send your CV through the form below, whether or not we have advertised the role. We keep applications on file and go to them first when a post opens.',
+            text: 'Apply through the form below or by email to hr@nucints.com, whether or not we have advertised the role. We keep applications on file and go to them first when a post opens.',
           },
           {
             type: 'ul',
@@ -572,7 +580,7 @@ export const defaultPages: Record<string, DefaultPage> = {
       },
       {
         blockType: 'careersForm',
-        background: 'white',
+        background: 'mist',
         anchor: 'apply',
         eyebrow: 'Apply',
         heading: 'Send us your CV',
