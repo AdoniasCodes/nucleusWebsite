@@ -1520,6 +1520,182 @@ const pbn01Sections: SeedSection[] = [
   },
 ]
 
+const pbn02Sections: SeedSection[] = [
+  {
+    heading: 'Educating the Head and the Heart',
+    body: [
+      {
+        p: '“Education is often a question of opportunity and not a question of intellect.”',
+      },
+      {
+        p: 'This conviction has guided Daniel Hiest throughout more than four decades in education, working in schools across Europe, Africa, South America and Canada. Now, as School Director at Nucleus International Schools, he brings that experience to a young school with ambitious plans for its students.',
+      },
+      {
+        p: 'Daniel wants Nucleus to be known for strong teaching and serious learning: a school where students master essential knowledge, think critically, communicate clearly and are challenged to achieve their best. He believes this requires high expectations, skilled teaching and the right support for each student.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${PBN}/pbn02-daniel-portrait.webp`,
+        alt: 'Daniel Hiest, School Director at Nucleus International Schools, standing in his office in Addis Ababa',
+        caption: 'Daniel Hiest, School Director. More than 40 years in international education.',
+        portrait: true,
+      },
+    ],
+  },
+  {
+    heading: 'Finding His Purpose in Education',
+    body: [
+      {
+        p: 'Daniel did not always know that he would become a teacher. Wanting to serve society, he initially worked in hospitals and retirement homes. His direction became clearer during his National Service, when he worked as an instructor and met intelligent young people whose education had ended too soon.',
+      },
+      {
+        p: '“Clever young people, brighter than me, with no doors opening for them,” he recalls.',
+      },
+      {
+        p: 'The experience showed him that ability alone does not determine a young person’s future. Opportunity, encouragement and access to a good education matter enormously.',
+      },
+      {
+        p: 'That realisation shaped his career. Wherever he has worked, Daniel has tried to help students recognise their potential and attempt what may initially seem beyond their reach.',
+      },
+      {
+        p: '“That light shone for me over fifty years ago, and it is just as bright today. I have never lost that faith in young people, in whom I see all our futures.”',
+      },
+    ],
+  },
+  {
+    heading: 'High Expectations and a Path Forward',
+    body: [
+      {
+        p: 'As School Director, his role is to help create an environment in which effective teaching and purposeful learning can flourish. This means establishing clear academic expectations, recognising where students need additional support and ensuring that they continue progressing.',
+      },
+      {
+        p: '“There is always a path forward,” he says. “There are always positive experiences as yet untapped.”',
+      },
+      {
+        p: 'This is particularly important when a student feels discouraged by a result. A grade matters because it shows what a student has understood and where further work is needed. It should not, however, become a permanent label or place a limit on a child’s ambitions.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${PBN}/pbn02-daniel-thinking.webp`,
+        alt: 'Daniel Hiest at his desk, hand on chin, reading through work on his computer',
+        caption: '“There is always a path forward.”',
+      },
+    ],
+  },
+  {
+    heading: '“The Grade Does Not Define the Person”',
+    style: 'highlight',
+    body: [
+      {
+        p: '“The grade does not define the person. It is simply a stepping stone to the next level of achievement.”',
+      },
+      {
+        p: 'This does not mean making education easier. It means identifying where a student is struggling, providing effective support and expecting that student to continue working towards a higher standard.',
+      },
+    ],
+  },
+  {
+    heading: 'Learning to Think Independently',
+    body: [
+      {
+        p: 'Daniel wants Nucleus students to become active participants in their education. They should learn not only to remember information, but also to ask good questions, examine evidence, solve problems, express their ideas and think independently. These abilities will prepare them for the next stages of their education and for a rapidly changing world.',
+      },
+    ],
+  },
+  {
+    heading: 'Technology With Purpose',
+    body: [
+      {
+        p: 'Daniel believes technology and artificial intelligence have a place in school. Young people need to know how to use them well. But he is equally clear that they are tools, not the purpose of education.',
+      },
+      {
+        p: 'Artificial intelligence can give students speed and access to an extraordinary amount of information. But information is not the same as understanding. Students must still question what they encounter, decide whether it is reliable and consider how knowledge should be used.',
+      },
+      {
+        p: 'Education must therefore offer more than technical skill. As Daniel puts it, technology is “but one element in a rich educational tapestry” alongside science, mathematics, the humanities, music, the arts, religion and philosophy. It should strengthen, never replace, independent thought, judgement and the moral foundation needed to make responsible choices.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${PBN}/pbn02-daniel-at-desk.webp`,
+        alt: 'Daniel Hiest working at his computer in the School Director’s office at Nucleus International Schools',
+        caption: 'Technology is a tool, Daniel says, not the purpose of education.',
+      },
+    ],
+  },
+  {
+    heading: 'Learning Across Cultures',
+    body: [
+      {
+        p: 'Daniel’s international career has shown him that parents everywhere share the same fundamental hope: that their children will receive an excellent education and have the opportunity to build meaningful and successful lives.',
+      },
+      {
+        p: 'It has also taught him that students should be prepared to engage with the wider world without losing their own identity.',
+      },
+      {
+        p: '“All of us are rooted in our cultural heritage, and rightly so,” he says. “We may appear to be different but, beneath the surface, that common humanity bonds us together.”',
+      },
+      {
+        p: 'Daniel first came to Ethiopia during the time of the Dergue. Friendships that became like family, together with his respect for Ethiopia’s traditions and spiritual heritage, have continued to draw him back.',
+      },
+      {
+        p: 'At Nucleus, he sees no contradiction between preserving Ethiopian identity and providing an internationally focused education. Students can remain grounded in who they are while developing the knowledge, confidence and intellectual skills to succeed anywhere in the world.',
+      },
+    ],
+  },
+  {
+    heading: 'His Vision for Nucleus',
+    body: [
+      {
+        p: 'Daniel was attracted to Nucleus by the opportunity to help build a school from its early stages and contribute to the founders’ vision for educational opportunity.',
+      },
+      {
+        p: 'He would like Nucleus to become “a beacon for educational growth”, a school recognised for the quality of its teaching, the seriousness of its learning and the progress its students make.',
+      },
+      {
+        p: 'This vision begins in the classroom. Students should encounter lessons that challenge them to think, participate and apply what they have learned. Teachers should understand the needs of their students, maintain high standards and provide the guidance necessary for each child to move forward.',
+      },
+      {
+        p: '“Our students at Nucleus will become the movers and shakers of tomorrow,” Daniel says. “While they need their critical mental faculties, they also need their sensitivity and patience towards others.”',
+      },
+      { p: '“Academic growth and personal growth go hand in hand.”' },
+    ],
+  },
+  {
+    heading: 'The Person Behind the Position',
+    body: [
+      {
+        p: 'Daniel’s life beyond education contains a few surprises. He is a vegetarian who has completed the London Marathon, a certified and nationally qualified basketball coach, and a former serviceman once known to his army colleagues as “the Coffeepot.” The story behind that nickname may have to wait for another occasion.',
+      },
+      {
+        p: 'His family roots lie in the coal-mining communities of northern France. His father was the engineer who built the first undercarriage for Concorde, another unexpected chapter in Daniel’s family story.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${PBN}/pbn02-daniel-office.webp`,
+        alt: 'Daniel Hiest smiling at his desk with his glasses in hand, in his office at Nucleus International Schools',
+        caption: 'Marathon runner, basketball coach and, once, “the Coffeepot”.',
+      },
+    ],
+  },
+  {
+    heading: 'An Education of the Heart',
+    style: 'highlight',
+    body: [
+      {
+        p: 'After more than 40 years in schools around the world, Daniel returns to one belief about what education should ultimately achieve:',
+      },
+      { p: '“Education, without an education of the heart, is no education at all.”' },
+      {
+        p: 'At Nucleus, this means combining academic ambition with the judgement and character to use education responsibly.',
+      },
+    ],
+  },
+]
+
 const itc01Sections: SeedSection[] = [
   {
     heading: 'A Lesson That Begins With a Question',
@@ -1839,6 +2015,26 @@ const ISSUES: SeedIssue[] = [
       },
     },
     sections: pbn01Sections,
+  },
+  {
+    seriesSlug: 'people-behind-nucleus',
+    article: {
+      // A profile rather than a Q&A. It takes the parent query its strongest passage answers
+      // (what a grade means) instead of the director's name, which has no search demand.
+      title: 'When Your Child Gets a Bad Grade: Our School Director on What Comes Next',
+      slug: 'when-your-child-gets-a-bad-grade',
+      excerpt:
+        'Daniel Hiest has spent more than 40 years in schools across Europe, Africa, South America and Canada. Our School Director explains why a grade never defines a child, where AI belongs in school, and what he means by an education of the heart.',
+      heroImageUrl: `${PBN}/pbn02-daniel-office.webp`,
+      publishedAt: '2026-10-07T09:00:00.000Z',
+      playlistPart: 2,
+      meta: {
+        title: 'When Your Child Gets a Bad Grade',
+        description:
+          'A grade is a stepping stone, not a label. Our School Director in Addis Ababa on high expectations, the right support and an education of the heart.',
+      },
+    },
+    sections: pbn02Sections,
   },
   {
     seriesSlug: 'inside-the-nucleus-classroom',
