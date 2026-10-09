@@ -19,7 +19,7 @@ import config from '../payload.config'
  *
  * Run: `PAYLOAD_SKIP_PUSH=1 pnpm run fix:cambridge`
  */
-const TITLE = 'International Cambridge Curriculum in Addis Ababa | Nucleus International Schools'
+const TITLE = 'Cambridge Curriculum in Addis Ababa | Nucleus International Schools'
 const DESCRIPTION =
   'Nucleus teaches the international Cambridge curriculum in Mekanisa, Addis Ababa, ages 2 to Grade 8. Robotics, STEM, secure campus, multilingual staff.'
 

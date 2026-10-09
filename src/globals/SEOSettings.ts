@@ -27,7 +27,7 @@ export const SEOSettings: GlobalConfig = {
       type: 'text',
       // "Cambridge School" reads as the competitor Cambridge International School.
       // Say "International Cambridge Curriculum" everywhere instead.
-      defaultValue: 'International Cambridge Curriculum in Addis Ababa | Nucleus International Schools',
+      defaultValue: 'Cambridge Curriculum in Addis Ababa | Nucleus International Schools',
     },
     {
       name: 'defaultMetaDescription',

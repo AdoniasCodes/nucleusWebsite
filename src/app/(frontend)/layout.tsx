@@ -33,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
   // Front-loads the core keyword. Never "Cambridge School": that is the competitor's name.
   const title =
     seo?.defaultMetaTitle ??
-    'International Cambridge Curriculum in Addis Ababa | Nucleus International Schools'
+    'Cambridge Curriculum in Addis Ababa | Nucleus International Schools'
   const description =
     seo?.defaultMetaDescription ??
     'Nucleus teaches the international Cambridge curriculum at Vatican, Addis Ababa (near Mekanisa Abo Square), ages 2 to Grade 8: secure campus, robotics, STEM and multilingual learning.'
