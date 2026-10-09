@@ -83,4 +83,70 @@ export const POST_FAQS: Record<string, PostFaq[]> = {
       a: 'Ask your child three questions about anything they believe: what evidence do you have, how do you know the source is reliable, and could another person see this differently. No subject knowledge is required.',
     },
   ],
+  'maths-anxiety-in-children': [
+    {
+      q: 'What is maths anxiety in children?',
+      a: 'Maths anxiety is a real feeling of tension, worry or dread that shows up when a child faces maths, out of proportion to how able they actually are. It is a reaction to the subject, not a measure of intelligence. A child with maths anxiety may freeze at a test, avoid homework, or insist they are simply not a maths person, even when they have solved similar problems before.',
+    },
+    {
+      q: 'What are the signs of maths anxiety in a child?',
+      a: 'Common signs are stomach aches or sudden tiredness on maths days, avoiding or delaying maths homework, rubbing out answers repeatedly, going blank in tests, and saying things like “I am just not good at maths”. Some children get irritable or tearful; others become very quiet. The pattern across several weeks matters more than any single bad day.',
+    },
+    {
+      q: 'Can you be born bad at maths?',
+      a: 'No. Confidence with numbers develops through practice, curiosity and a willingness to keep trying, in the same way reading does. Children differ in how quickly they pick things up, but nobody is born unable to do maths. Believing otherwise is usually what holds a child back, which is why the first job is to change the story the child tells about themselves.',
+    },
+    {
+      q: 'How can I help my child with maths if I am not good at it myself?',
+      a: 'You do not need to know the method. Ask your child to explain what they already know, what they do not know yet, and what they could try next. Praise effort and the attempt rather than the right answer, treat a wrong answer as information, and avoid saying you were also bad at maths. Short, calm, regular practice works better than long, stressful sessions.',
+    },
+    {
+      q: 'When should I talk to the school about my child’s maths?',
+      a: 'Talk to the teacher when the worry has lasted more than a few weeks, when your child is avoiding school or showing physical symptoms on maths days, or when their results and their confidence are both falling. Ask what exactly they find hard and how the teacher is helping them build small successes. A good school will want that conversation early.',
+    },
+  ],
+  'how-to-help-a-child-struggling-at-school': [
+    {
+      q: 'How can I help my child who is struggling at school?',
+      a: 'Start by finding out exactly where the difficulty is: one subject, one skill, or a general loss of confidence. Talk to the teacher, ask what support is in place, and agree one small goal for the next few weeks. At home, keep the tone calm, praise effort, protect sleep and routine, and treat a poor result as information about what to work on next rather than a verdict on your child.',
+    },
+    {
+      q: 'What should I do when my child gets a bad grade?',
+      a: 'Stay calm and ask your child what they think happened before offering your own view. A grade shows what a student has understood so far and where more work is needed. It is a stepping stone, not a label. Then look at the paper together, pick the one or two areas to improve, and ask the teacher what support would help.',
+    },
+    {
+      q: 'How do I motivate a child who is falling behind?',
+      a: 'Motivation returns when a child sees progress, so break the gap into small steps they can actually finish. Keep expectations high but make the next step reachable, celebrate effort and improvement, and avoid comparing them with siblings or classmates. Children who feel known and believed in by their teacher and family usually start trying again.',
+    },
+    {
+      q: 'Is it my child’s fault or the school’s when grades drop?',
+      a: 'Usually neither, and blame rarely helps. Grades drop for many reasons: a missed foundation topic, a change of teacher or school, tiredness, worry at home or a lack of confidence. The useful question is what this child needs next. Work with the school to find the cause, because the answer decides which kind of support will help.',
+    },
+    {
+      q: 'When is a drop in grades a sign of something more serious?',
+      a: 'Look for patterns that last: grades falling across all subjects, a child who stops talking about school, changes in sleep or appetite, or a sudden loss of interest in things they used to enjoy. In those cases speak to the teacher or school leadership promptly, and consider whether there is a learning difficulty or a worry your child has not yet been able to put into words.',
+    },
+  ],
+  'emotional-intelligence-for-kids': [
+    {
+      q: 'What is emotional intelligence in children?',
+      a: 'Emotional intelligence is a child’s ability to notice and name their own feelings, manage them, understand how other people feel, and act kindly and sensibly as a result. It includes self-awareness, empathy and self-control. Children are not born with it fully formed. They learn it from the adults around them and from daily practice.',
+    },
+    {
+      q: 'Why is emotional intelligence important for children?',
+      a: 'A child who feels safe, seen and understood is able to learn. Emotional skills help children stay calm when work gets hard, ask for help, work with classmates and recover from mistakes. In our teacher training, short emotional check-ins built into lessons are linked to more academic endurance, resilience and better exam performance.',
+    },
+    {
+      q: 'How do you teach emotional intelligence to kids?',
+      a: 'Name feelings out loud, listen before correcting, and show the behaviour you want. Give children simple words for emotions, ask what is behind a difficult moment, and pause before responding when you are frustrated yourself. Schools can build the same habits into the day with short check-ins at the start of lessons.',
+    },
+    {
+      q: 'What is social and emotional learning in schools?',
+      a: 'Social and emotional learning means teaching children, as part of ordinary school life, to understand their feelings, build empathy and work well with others. It is not a separate subject for the last period on Friday. It shows up in how teachers respond to difficult behaviour, how lessons begin and how classmates are taught to treat each other.',
+    },
+    {
+      q: 'At what age should children start learning about emotions?',
+      a: 'From the earliest years. Toddlers and preschoolers can learn simple feeling words and begin to understand that other people feel things too. Skills then deepen through the primary and secondary years. The earlier a child has an adult who names and accepts their feelings, the easier it is to build the later skills on top.',
+    },
+  ],
 }

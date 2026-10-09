@@ -22,6 +22,9 @@ const HEAD_TERM_POSTS = new Set([
   'teaching-critical-thinking-problem-solving-ethiopia',
   'taekwondo-classes-for-kids-addis-ababa',
   'cambridge-global-perspectives-explained',
+  'maths-anxiety-in-children',
+  'how-to-help-a-child-struggling-at-school',
+  'emotional-intelligence-for-kids',
 ])
 
 /** Legal pages: indexed as trust signals, but never competing with the pages that sell. */

@@ -47,6 +47,7 @@ const SERIES: SeedSeries[] = [
       'The professional development newsletter of Nucleus International Schools. Each issue documents one module of our Teachers’ Capacity Building Training: the practical tools, global strategies and pedagogical thinking behind every Nucleus classroom in Addis Ababa.',
     coverImageUrl: `${CBT}/cbt01-ei-session.webp`,
     related: [
+      { label: 'Emotional intelligence for kids: what it is and how to build it', url: '/news/emotional-intelligence-for-kids' },
       { label: 'Meet the team behind the training', url: '/about' },
       { label: 'The Cambridge pathway at Nucleus', url: '/cambridge-pathway' },
     ],
@@ -58,6 +59,8 @@ const SERIES: SeedSeries[] = [
       'The teachers, specialists and staff who make a Nucleus classroom what it is. Each issue is a long conversation with one of them: where they come from, how they think about their subject, and what they are building with our students in Addis Ababa.',
     coverImageUrl: `${PBN}/pbn02-daniel-office.webp`,
     related: [
+      { label: 'Maths anxiety in children: signs, causes and how parents can help', url: '/news/maths-anxiety-in-children' },
+      { label: 'How to help a child who is struggling at school', url: '/news/how-to-help-a-child-struggling-at-school' },
       { label: 'Meet the leadership team at Nucleus', url: '/about' },
       { label: 'The Cambridge pathway at Nucleus', url: '/cambridge-pathway' },
       { label: 'Teach at Nucleus: open applications', url: '/careers' },
