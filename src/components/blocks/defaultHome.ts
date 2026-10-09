@@ -117,6 +117,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
       { iconName: 'Lightbulb', title: 'Thinking, not memorising', description: 'Builds real understanding, problem-solving and curiosity.' },
     ],
     link: { label: 'Explore the Cambridge Pathway', url: '/cambridge-pathway' },
+    quietLink: { label: 'See our Cambridge registration certificate', url: '/cambridge-pathway#cambridge-certificate' },
   },
   {
     blockType: 'testimonials',

@@ -98,6 +98,11 @@ export async function Footer() {
                 </a>
               </p>
             )}
+            <p>
+              <a href="/downloads/nucleus-international-schools-prospectus.pdf" download className="hover:text-white">
+                School prospectus (PDF)
+              </a>
+            </p>
           </address>
           {socials.length > 0 && (
             <div className="mt-5">

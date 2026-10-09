@@ -38,6 +38,17 @@ export function buildOrganizationSchema(settings?: SiteSetting | null, seo?: Seo
       ? { geo: { '@type': 'GeoCoordinates', latitude: settings.latitude, longitude: settings.longitude } }
       : {}),
     ...(sameAs.length ? { sameAs } : {}),
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Cambridge Primary School registration',
+      credentialCategory: 'Registration',
+      identifier: 'ET030',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'Cambridge University Press & Assessment',
+        url: 'https://www.cambridgeinternational.org',
+      },
+    },
   }
 
   const website = {

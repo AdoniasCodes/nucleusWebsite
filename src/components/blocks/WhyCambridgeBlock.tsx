@@ -14,6 +14,7 @@ export type WhyCambridgeProps = {
   stats?: { value: string; label: string }[]
   points?: { iconName: string; title: string; description?: string }[]
   link?: { label: string; url: string }
+  quietLink?: { label: string; url: string }
 }
 
 /**
@@ -70,6 +71,17 @@ export function WhyCambridgeBlock(props: WhyCambridgeProps) {
               {props.link.label}
             </ButtonLink>
           </div>
+        )}
+
+        {props.quietLink && (
+          <p className="mt-4 text-center">
+            <a
+              href={props.quietLink.url}
+              className="inline-flex min-h-11 items-center text-sm text-pale/80 underline underline-offset-4 hover:text-white"
+            >
+              {props.quietLink.label}
+            </a>
+          </p>
         )}
       </Container>
     </section>

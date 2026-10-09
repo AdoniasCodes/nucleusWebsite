@@ -647,6 +647,7 @@ export const defaultPages: Record<string, DefaultPage> = {
           { type: 'p', text: 'It is content-rich and clearly assessed, which suits children who like defined goals and steady, visible progress.' },
         ],
       },
+      { blockType: 'cambridgeCertificate' },
       {
         blockType: 'cardsGrid',
         background: 'mist',
