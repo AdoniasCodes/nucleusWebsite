@@ -56,7 +56,7 @@ const SERIES: SeedSeries[] = [
     slug: 'people-behind-nucleus',
     description:
       'The teachers, specialists and staff who make a Nucleus classroom what it is. Each issue is a long conversation with one of them: where they come from, how they think about their subject, and what they are building with our students in Addis Ababa.',
-    coverImageUrl: `${PBN}/pbn01-rajif-classroom.webp`,
+    coverImageUrl: `${PBN}/pbn02-daniel-office.webp`,
     related: [
       { label: 'Meet the leadership team at Nucleus', url: '/about' },
       { label: 'The Cambridge pathway at Nucleus', url: '/cambridge-pathway' },
