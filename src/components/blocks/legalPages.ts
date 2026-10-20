@@ -275,8 +275,8 @@ export const legalPages: Record<string, DefaultPage> = {
           lines: [
             { label: 'Grade campus', value: VATICAN },
             { label: 'Primary campus', value: ABO },
-            { label: 'Phone', value: '09 81 99 99 22', href: 'tel:0981999922' },
-            { label: 'Alternative phone', value: '09 81 99 99 33', href: 'tel:0981999933' },
+            { label: 'Phone', value: '+2519 81 99 99 22', href: 'tel:+251981999922' },
+            { label: 'Alternative phone', value: '+2519 81 99 99 33', href: 'tel:+251981999933' },
             { label: 'Admissions', value: 'melat.a@nucints.com', href: 'mailto:melat.a@nucints.com' },
           ],
         },
@@ -596,8 +596,8 @@ export const legalPages: Record<string, DefaultPage> = {
           lines: [
             { label: 'Grade campus', value: VATICAN },
             { label: 'Primary campus', value: ABO },
-            { label: 'Phone', value: '09 81 99 99 22', href: 'tel:0981999922' },
-            { label: 'Alternative phone', value: '09 81 99 99 33', href: 'tel:0981999933' },
+            { label: 'Phone', value: '+2519 81 99 99 22', href: 'tel:+251981999922' },
+            { label: 'Alternative phone', value: '+2519 81 99 99 33', href: 'tel:+251981999933' },
             {
               label: 'HR and Admin Manager',
               value: 'meaza.m@nucints.com',

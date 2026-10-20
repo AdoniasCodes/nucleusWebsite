@@ -151,13 +151,13 @@ export function CampusComingSoonBlock(_props: CampusComingSoonProps) {
 
           <div className="mt-9 flex flex-wrap items-center gap-4 border-t border-white/10 pt-7">
             <a
-              href="tel:0981999922"
+              href="tel:+251981999922"
               className="inline-flex min-h-[3rem] cursor-pointer items-center justify-center rounded-full bg-ochre px-7 py-3 font-display font-semibold text-navy transition-colors duration-200 hover:bg-ochre-600"
             >
               Ask about Totot
             </a>
             <p className="text-sm text-pale/60">
-              Call 09 81 99 99 22 for opening dates and early registration. Visitations are not
+              Call +2519 81 99 99 22 for opening dates and early registration. Visitations are not
               allowed at our Totot campus as it is still a working build. Stay tuned for updates.
             </p>
           </div>

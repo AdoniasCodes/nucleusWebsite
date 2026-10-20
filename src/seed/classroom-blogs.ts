@@ -250,7 +250,7 @@ const posts: SeedPost[] = [
             p: 'That issue has the full account: the Global Brands investigation, how a familiar product turns into a question about trade and employment, and Tilahun’s own description of what changes in a student who learns to argue from evidence.',
           },
           {
-            p: 'To see it in person, or to ask what a week actually looks like, call 09 81 99 99 22.',
+            p: 'To see it in person, or to ask what a week actually looks like, call +2519 81 99 99 22.',
           },
         ],
       },

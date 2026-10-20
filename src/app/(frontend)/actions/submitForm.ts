@@ -61,7 +61,7 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
     return {
       status: 'error',
       message:
-        'Something went wrong sending your request. Please refresh the page and try again, or call us on 0981999922.',
+        'Something went wrong sending your request. Please refresh the page and try again, or call us on +2519 81 99 99 22.',
     }
   }
 
@@ -138,6 +138,6 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
 
     return { status: 'success', message: 'Thank you. We will be in touch shortly.' }
   } catch {
-    return { status: 'error', message: 'Something went wrong. Please call us on 0981999922.' }
+    return { status: 'error', message: 'Something went wrong. Please call us on +2519 81 99 99 22.' }
   }
 }

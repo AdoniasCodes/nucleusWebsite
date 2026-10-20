@@ -35,7 +35,7 @@ const commonTail = (campus: string): RenderableBlock[] => [
     subhead: `Visit ${campus} or call us. We’ll walk you through everything.`,
     links: [
       { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-      { link: { appearance: 'primary', type: 'custom', label: 'Call 09 81 99 99 22', url: 'tel:0981999922' } },
+      { link: { appearance: 'primary', type: 'custom', label: 'Call +2519 81 99 99 22', url: 'tel:+251981999922' } },
     ],
   },
 ]

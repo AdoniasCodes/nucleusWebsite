@@ -238,7 +238,7 @@ const posts: SeedPost[] = [
             p: 'Nucleus International Schools is an international school in Addis Ababa teaching the international Cambridge curriculum from age 2 through Grade 8. Rajif teaches mathematics here, and every child in his room is known by name.',
           },
           {
-            p: 'For his full account of why no child is born bad at maths, and what he asks a student who is stuck, read the first issue of The People Behind Nucleus. To see a classroom in person, or to ask what a week of maths looks like, call 09 81 99 99 22 or begin the registration form.',
+            p: 'For his full account of why no child is born bad at maths, and what he asks a student who is stuck, read the first issue of The People Behind Nucleus. To see a classroom in person, or to ask what a week of maths looks like, call +2519 81 99 99 22 or begin the registration form.',
           },
         ],
       },
@@ -439,7 +439,7 @@ const posts: SeedPost[] = [
             p: 'Nucleus International Schools teaches the international Cambridge curriculum from age 2 through Grade 8 in Mekanisa, Addis Ababa. Daniel Hiest leads the school as School Director, and his belief that there is always a path forward shapes how we respond when a student is discouraged by a result.',
           },
           {
-            p: 'His full interview, including what he means by an education of the heart, is in the second issue of The People Behind Nucleus. To visit a classroom or talk through your child’s situation, call 09 81 99 99 22 or start the registration form.',
+            p: 'His full interview, including what he means by an education of the heart, is in the second issue of The People Behind Nucleus. To visit a classroom or talk through your child’s situation, call +2519 81 99 99 22 or start the registration form.',
           },
         ],
       },
@@ -633,7 +633,7 @@ const posts: SeedPost[] = [
             p: 'Nucleus International Schools is an international school in Addis Ababa, teaching the international Cambridge curriculum from age 2 through Grade 8. Emotional intelligence was the subject of the first session in our Teachers’ Capacity Building Training, held at the Vatican campus, because we believe a child must feel safe, seen and understood before they can learn.',
           },
           {
-            p: 'The full account of that session, including the three takeaways and the 10-second pause, is in the first issue of our teacher training newsletter. To see how a Nucleus classroom feels, call 09 81 99 99 22 or begin the registration form.',
+            p: 'The full account of that session, including the three takeaways and the 10-second pause, is in the first issue of our teacher training newsletter. To see how a Nucleus classroom feels, call +2519 81 99 99 22 or begin the registration form.',
           },
         ],
       },

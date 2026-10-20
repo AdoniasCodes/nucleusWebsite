@@ -539,12 +539,12 @@ export function ApplicationForm({
             <p className="mx-auto mt-3 max-w-lg text-lg text-ink/75">{state.message}</p>
             <p className="mt-6 text-ink/70">
               Any questions in the meantime? Call{' '}
-              <a href="tel:0981999922" className="font-semibold text-navy underline decoration-ochre decoration-2 underline-offset-4">
-                09 81 99 99 22
+              <a href="tel:+251981999922" className="font-semibold text-navy underline decoration-ochre decoration-2 underline-offset-4">
+                +2519 81 99 99 22
               </a>{' '}
               or{' '}
-              <a href="tel:0981999933" className="font-semibold text-navy underline decoration-ochre decoration-2 underline-offset-4">
-                09 81 99 99 33
+              <a href="tel:+251981999933" className="font-semibold text-navy underline decoration-ochre decoration-2 underline-offset-4">
+                +2519 81 99 99 33
               </a>
               .
             </p>
@@ -1231,8 +1231,8 @@ export function ApplicationForm({
 
         <p className="mt-6 text-center text-sm text-ink/60">
           Prefer to fill this in with us? Call{' '}
-          <a href="tel:0981999922" className="font-semibold text-navy underline decoration-ochre decoration-2 underline-offset-4">
-            09 81 99 99 22
+          <a href="tel:+251981999922" className="font-semibold text-navy underline decoration-ochre decoration-2 underline-offset-4">
+            +2519 81 99 99 22
           </a>{' '}
           or{' '}
           <a href="/contact" className="font-semibold text-navy underline decoration-ochre decoration-2 underline-offset-4">

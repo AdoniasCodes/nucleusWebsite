@@ -9,7 +9,7 @@ export type ApplicationState = { status: 'idle' | 'success' | 'error'; message: 
 
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
 
-const CONTACT_LINE = 'Please call us on 09 81 99 99 22 and we will take your details over the phone.'
+const CONTACT_LINE = 'Please call us on +2519 81 99 99 22 and we will take your details over the phone.'
 
 /**
  * Rate limit, mirroring `submitForm`: best-effort, per-warm-instance. A full application is a

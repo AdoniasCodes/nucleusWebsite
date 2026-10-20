@@ -235,7 +235,7 @@ export function NewsletterPdf({ data }: { data: PdfData }) {
           <Text
             style={s.footerText}
             render={({ pageNumber, totalPages }) =>
-              `${data.siteHost} · 09 81 99 99 22 · Page ${pageNumber} of ${totalPages}`
+              `${data.siteHost} · +2519 81 99 99 22 · Page ${pageNumber} of ${totalPages}`
             }
           />
         </View>

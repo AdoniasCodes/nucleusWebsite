@@ -26,7 +26,7 @@ export const SiteSettings: GlobalConfig = {
               name: 'phones',
               type: 'array',
               fields: [{ name: 'number', type: 'text', required: true }],
-              defaultValue: [{ number: '0981999922' }, { number: '0981999933' }],
+              defaultValue: [{ number: '+2519 81 99 99 22' }, { number: '+2519 81 99 99 33' }],
             },
             { name: 'email', type: 'email' },
             {
