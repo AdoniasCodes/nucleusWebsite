@@ -11,10 +11,12 @@ export type ContentBlock =
 
 const text = (t: string) => ({ detail: 0, format: 0, mode: 'normal', style: '', text: t, type: 'text', version: 1 })
 
+// External sources open in a new tab (the renderer then adds rel="noopener noreferrer");
+// site-relative links stay in the same tab.
 const linkNode = (label: string, url: string) => ({
   type: 'link',
   version: 3,
-  fields: { linkType: 'custom', url, newTab: false },
+  fields: { linkType: 'custom', url, newTab: /^https?:\/\//.test(url) },
   direction: 'ltr',
   format: '',
   indent: 0,
@@ -34,8 +36,26 @@ const relatedPara = (items: { label: string; url: string }[]) => ({
   version: 1,
 })
 
+/**
+ * Inline markdown-style links inside a paragraph or list item: `see [the framework](https://…)`.
+ * Lets a post cite its sources and link deep into the site mid-sentence, not just in the
+ * related row.
+ */
+const INLINE_LINK = /\[([^\]]+)\]\(([^)\s]+)\)/g
+const inline = (t: string) => {
+  const out: object[] = []
+  let last = 0
+  for (const m of t.matchAll(INLINE_LINK)) {
+    if (m.index > last) out.push(text(t.slice(last, m.index)))
+    out.push(linkNode(m[1], m[2]))
+    last = m.index + m[0].length
+  }
+  if (last < t.length) out.push(text(t.slice(last)))
+  return out
+}
+
 const para = (t: string) => ({
-  children: [text(t)],
+  children: inline(t),
   direction: 'ltr',
   format: '',
   indent: 0,
@@ -55,7 +75,7 @@ const heading = (t: string, tag: 'h2' | 'h3') => ({
 
 const list = (items: string[]) => ({
   children: items.map((t, i) => ({
-    children: [text(t)],
+    children: inline(t),
     direction: 'ltr',
     format: '',
     indent: 0,
@@ -89,4 +109,5 @@ export function blocksToPlainText(blocks: ContentBlock[]): string {
   return blocks
     .map((b) => ('h2' in b ? b.h2 : 'h3' in b ? b.h3 : 'ul' in b ? b.ul.join('. ') : 'related' in b ? '' : b.p))
     .join(' ')
+    .replace(INLINE_LINK, '$1')
 }

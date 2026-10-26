@@ -25,6 +25,17 @@ const HEAD_TERM_POSTS = new Set([
   'maths-anxiety-in-children',
   'how-to-help-a-child-struggling-at-school',
   'emotional-intelligence-for-kids',
+  // Curriculum cluster, Oct 2026.
+  'cambridge-curriculum-ethiopia',
+  'cambridge-early-years-curriculum',
+  'what-children-learn-in-year-1',
+  'cambridge-primary-curriculum-subjects',
+  'cambridge-lower-secondary-curriculum',
+  'stem-education-for-kids',
+  'cambridge-computing-curriculum',
+  'hands-on-learning',
+  'best-kindergarten-addis-ababa',
+  'british-vs-american-curriculum-addis-ababa',
 ])
 
 /** Legal pages: indexed as trust signals, but never competing with the pages that sell. */
