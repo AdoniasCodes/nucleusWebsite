@@ -26,6 +26,7 @@
     "seed:camp-story-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/camp-story-blogs.ts",
     "seed:classroom-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/classroom-blogs.ts",
     "seed:curriculum-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/curriculum-blogs.ts",
+    "seed:expanded-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/expanded-blogs-a.ts && cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/expanded-blogs-b.ts && cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/expanded-blogs-c.ts",
     "seed:companion-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/newsletter-companion-blogs.ts",
     "seed:summer-camp-blogs": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/summer-camp-blogs.ts",
     "fix:emdash": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/fix-emdash.ts",

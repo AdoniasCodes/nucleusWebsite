@@ -10,6 +10,10 @@
  * body. FAQPage markup that is not on the page is a structured-data violation, and Google
  * drops the rich result for the whole site if it finds it.
  */
+import { FAQS_A } from '../seed/expanded-faqs-a'
+import { FAQS_B } from '../seed/expanded-faqs-b'
+import { FAQS_C } from '../seed/expanded-faqs-c'
+
 export type PostFaq = { q: string; a: string }
 
 export const POST_FAQS: Record<string, PostFaq[]> = {
@@ -371,4 +375,8 @@ export const POST_FAQS: Record<string, PostFaq[]> = {
       a: 'Not exactly. Cambridge is an international curriculum from Cambridge University Press and Assessment, designed for schools around the world and built on the British tradition. It is not the national curriculum of England, but it follows the same broad structure and leads to IGCSEs and A Levels.',
     },
   ],
+  // Oct 2026 expansions of the original nine short posts (data shared with their seeds).
+  ...FAQS_A,
+  ...FAQS_B,
+  ...FAQS_C,
 }

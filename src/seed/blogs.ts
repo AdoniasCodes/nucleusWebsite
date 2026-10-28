@@ -6,7 +6,10 @@ import type { Post } from '../payload-types'
 
 /**
  * Seeds 5 blog posts into the Posts collection (published, with stock hero images).
- * Run: `npm run seed:blogs`. Re-runnable: deletes existing posts by slug first.
+ * Nine of the original posts were expanded in Oct 2026 and now live in `expanded-blogs-{a,b,c}.ts`;
+ * do not re-add them here or this seed would overwrite the long versions with the old short ones.
+ *
+ * Run: `pnpm run seed:blogs`. Re-runnable: deletes existing posts by slug first.
  *
  * Topics chosen from seo/keyword-and-competitor-research.md (buyer-education cluster: highest E-E-A-T
  * + AEO value). Educational/guide content: no unverified Nucleus specifics asserted.
@@ -24,32 +27,6 @@ type SeedPost = {
 }
 
 const posts: SeedPost[] = [
-  {
-    title: 'Cambridge or IB in Addis Ababa? How to Choose for Your Child',
-    slug: 'cambridge-vs-ib-addis-ababa',
-    category: 'academics',
-    excerpt:
-      'Addis Ababa offers both Cambridge and IB international schools. Here is a clear, parent-first look at how they differ, and which suits your child.',
-    heroFile: 'blog-cambridge.webp',
-    publishedAt: '2026-06-02T09:00:00.000Z',
-    body: [
-      { p: 'If you are comparing international schools in Addis Ababa, you will meet two big names quickly: Cambridge and the International Baccalaureate (IB). Both are respected worldwide. Neither is automatically "better." The right one depends on your child and your plans.' },
-      { h2: 'What Cambridge actually is' },
-      { p: 'The Cambridge pathway runs from the early years through IGCSE and beyond. It is structured and subject-focused, with clear content and recognised exams at each stage. Children who like defined goals and steady progress tend to thrive in it, and the qualifications are accepted by universities across Europe, North America and beyond.' },
-      { h2: 'What the IB emphasises' },
-      { p: 'The IB leans toward inquiry, projects and connecting subjects together. It asks students to juggle several components at once and to reflect on how they learn. Families who want a broad, discussion-led style often gravitate to it.' },
-      { h2: 'Which schools offer what in Addis' },
-      { p: 'In Addis Ababa you will find both. Schools such as ICS and the German Embassy School follow the IB. Cambridge and British-curriculum options include Cambridge Academy Ethiopia, Bingham Academy, Reach (RICE) and One Planet, while Sandford offers a mix. Nucleus follows the Cambridge pathway from age 2 through Grade 8.' },
-      { h2: 'A simple way to decide' },
-      { ul: [
-        'Does your child prefer clear targets and exams, or projects and discussion?',
-        'Where might you move next, and which qualification travels best there?',
-        'What does the school actually offer at your child’s age, today?',
-        'Can you visit, see a class in session, and meet the teachers?',
-      ] },
-      { p: 'Whatever you choose, visit in person. A tour tells you more in an hour than a brochure does in a week.' },
-    ],
-  },
   {
     title: 'What International Schools in Addis Ababa Really Cost in 2026',
     slug: 'international-school-fees-addis-ababa-2026',
@@ -78,80 +55,6 @@ const posts: SeedPost[] = [
         'What is the payment schedule, and are instalments possible?',
       ] },
       { p: 'A school that answers these plainly is showing you something important: respect for families. At Nucleus we keep fees transparent and free of hidden capital-fee surprises, and you can request the full fee sheet and we will send it directly.' },
-    ],
-  },
-  {
-    title: 'How to Choose an International School in Addis Ababa: A Parent’s Checklist',
-    slug: 'how-to-choose-international-school-addis-ababa',
-    category: 'parent-resources',
-    excerpt:
-      'A practical, no-nonsense checklist for choosing an international school in Addis Ababa, from curriculum and safety to the questions to ask on your tour.',
-    heroFile: 'blog-choose.webp',
-    publishedAt: '2026-06-04T09:00:00.000Z',
-    body: [
-      { p: 'Choosing a school is one of the bigger decisions a family makes, and it is easy to be swayed by a glossy website. Here is a checklist to keep you focused on what matters.' },
-      { h2: '1. Curriculum and portability' },
-      { p: 'Decide whether you want Cambridge, IB or another system, and check it travels to wherever you might go next. Ask which curriculum is actually taught at your child’s grade today, not what is planned.' },
-      { h2: '2. Safety and safeguarding' },
-      { p: 'For young children this often matters most. Look at access control, supervision and how the school talks about safeguarding. You should feel the answer, not just read it.' },
-      { h2: '3. Teachers' },
-      { p: 'Ask about teacher qualifications, how many are international or multilingual, and how long they stay. Stable, certified staff are a strong signal.' },
-      { h2: '4. Beyond academics' },
-      { p: 'Robotics, science, sport, music, agriculture, nutrition: the "extras" shape a child as much as the textbooks. See what is real and running, not just listed.' },
-      { h2: '5. The visit' },
-      { ul: [
-        'Can you tour during a normal school day and see real classes?',
-        'Are the children engaged and at ease?',
-        'Do the staff answer money and safety questions directly?',
-        'Does your child light up when they imagine being there?',
-      ] },
-      { p: 'Trust the tour. A school worth choosing will welcome your questions and let you see it in motion.' },
-    ],
-  },
-  {
-    title: 'Beyond the Classroom: Why Robotics, STEM and Agriculture Matter Early',
-    slug: 'why-robotics-stem-agriculture-matter-early',
-    category: 'campus-life',
-    excerpt:
-      'Hands-on learning is not a luxury add-on. Here is why robotics, STEM and growing things belong in a child’s education from the start.',
-    heroFile: 'blog-beyond.webp',
-    publishedAt: '2026-06-05T09:00:00.000Z',
-    body: [
-      { p: 'Ask a child what they did at school and "we built a robot" or "my seeds sprouted" beats "we copied notes" every time. That excitement is not a distraction from learning. It is learning.' },
-      { h2: 'Why hands-on works' },
-      { p: 'When children make something (a circuit, a program, a garden bed) they meet real problems and solve them. They learn that effort and iteration pay off. Those habits carry into reading, maths and everything after.' },
-      { h2: 'Robotics and STEM' },
-      { p: 'Coding and robotics teach logic, sequencing and resilience. A program that does not work is not a failure; it is a puzzle. Children who grow up debugging grow up unafraid of hard problems.' },
-      { h2: 'Agriculture and animal care' },
-      { p: 'Tending plants and animals teaches patience, responsibility and a feel for cause and effect that no screen can. It is science you can hold, and it slows childhood down in the best way.' },
-      { h2: 'The point' },
-      { p: 'A full education reaches beyond the notebook. The aim is not just good marks; it is a curious, capable child who can think, create and solve. That is the whole idea behind learning beyond books.' },
-    ],
-  },
-  {
-    title: 'Moving to Addis Ababa? A Diplomat and Expat Family’s Guide to Schooling',
-    slug: 'moving-to-addis-ababa-expat-school-guide',
-    category: 'parent-resources',
-    excerpt:
-      'Relocating to Addis Ababa with children? Here is what diplomatic and expat families should know about choosing a school that travels with you.',
-    heroFile: 'blog-expat.webp',
-    publishedAt: '2026-06-06T09:00:00.000Z',
-    body: [
-      { p: 'Relocating with children adds a layer to every decision. School is often the one that decides whether the whole posting feels right. A few things matter more in Addis than anywhere else.' },
-      { h2: 'Portability comes first' },
-      { p: 'If your family moves on a three- or four-year cycle, choose a curriculum that transfers cleanly, Cambridge or IB, so your child can pick up where they left off in the next country.' },
-      { h2: 'Security and reassurance' },
-      { p: 'For families new to the city, a secure, supervised campus is non-negotiable. Ask exactly how access is controlled and how the school communicates with parents during the day.' },
-      { h2: 'Community and language' },
-      { p: 'International and multilingual staff, and a mix of nationalities, help a child settle fast. Ask how the school welcomes mid-year arrivals, because relocations rarely follow the school calendar.' },
-      { h2: 'Practical questions for relocating families' },
-      { ul: [
-        'Can my child start mid-term, and how is that handled?',
-        'Which neighbourhoods do most families commute from?',
-        'What documents do you need to enrol?',
-        'Can we tour before we arrive, in person or virtually?',
-      ] },
-      { p: 'Nucleus sits at Vatican, near Mekanisa, within reach of Bole, Old Airport and Kazanchis, and welcomes diplomatic and expat families. If you are planning a move, reach out early. The best time to arrange a visit is before you land.' },
     ],
   },
 
@@ -188,131 +91,6 @@ const posts: SeedPost[] = [
         { label: 'The real benefits of an international school', url: '/news/benefits-of-international-school-addis-ababa' },
         { label: 'What ICS costs, and the alternatives', url: '/news/ics-addis-ababa-fees-and-alternatives' },
         { label: 'How to choose an international school', url: '/news/how-to-choose-international-school-addis-ababa' },
-      ] },
-    ],
-  },
-  {
-    title: 'The Real Benefits of an International School in Addis Ababa',
-    slug: 'benefits-of-international-school-addis-ababa',
-    category: 'parent-resources',
-    excerpt:
-      'Are international schools really better than local schools? An honest look at what an international education actually gives a child in Addis Ababa.',
-    heroFile: 'gallery-classroom.webp',
-    publishedAt: '2026-05-24T09:00:00.000Z',
-    body: [
-      { p: '“Are international schools better?” is one of the most-searched questions among Addis parents. The honest answer: not automatically, but a good one offers things that are genuinely hard to find elsewhere.' },
-      { h2: 'A portable, globally recognised education' },
-      { p: 'Cambridge and IB qualifications are accepted by universities around the world, so a child can change countries without starting over. For families who travel, or who hope their child will study abroad one day, that portability is often the single biggest benefit.' },
-      { h2: 'Smaller classes and real attention' },
-      { p: 'International schools tend to keep classes small and teaching child-centred, with more discussion and hands-on work, fewer rows of silent copying. Children are known as individuals, not seat numbers.' },
-      { h2: 'Language and global perspective' },
-      { p: 'Learning alongside international and multilingual staff, and classmates from many backgrounds, builds the confidence and cross-cultural ease that serve a child for the rest of their life.' },
-      { h2: 'Learning beyond the textbook' },
-      { p: 'Robotics, STEM, sport, music, agriculture and proper nutrition are part of the normal day, not rare extras. Children learn to think, create and solve, not only to memorise and repeat.' },
-      { h2: 'The honest caveat' },
-      { ul: [
-        'International schools cost more, sometimes far more.',
-        '“International” on the sign does not guarantee quality; visit and verify.',
-        'A strong local school can beat a weak international one.',
-      ] },
-      { p: 'The benefit is real only when a school delivers it in practice. Nucleus brings a Cambridge pathway, a secure campus and hands-on learning to Vatican, near Mekanisa. Come and see whether it fits your child.' },
-      { related: [
-        { label: 'Private vs public school in Ethiopia', url: '/news/private-vs-public-school-ethiopia' },
-        { label: 'Which curriculum is best for your child?', url: '/news/best-curriculum-for-your-child-ethiopia' },
-        { label: 'The best international schools in Addis Ababa', url: '/news/best-international-schools-addis-ababa' },
-      ] },
-    ],
-  },
-  {
-    title: 'Private vs Public School in Ethiopia: How to Choose',
-    slug: 'private-vs-public-school-ethiopia',
-    category: 'parent-resources',
-    excerpt:
-      'Private or government school? A balanced, parent-first comparison for families in Addis Ababa: cost, class size, curriculum and what really matters.',
-    heroFile: 'academics-hero.webp',
-    publishedAt: '2026-05-28T09:00:00.000Z',
-    body: [
-      { p: 'Private or public? It is one of the first big decisions a family makes, and the loudest opinions are rarely the most useful. Here is a calm look at both sides.' },
-      { h2: 'The case for public schools' },
-      { p: 'Government schools are low-cost or free, rooted in the local community, and some are genuinely strong. For many families they are a sound, practical choice, especially where a good one is nearby.' },
-      { h2: 'The case for private schools' },
-      { p: 'Private schools usually offer smaller classes, better facilities, a choice of curriculum (including Cambridge or IB), more extracurriculars and, often, stronger English-language teaching. You are paying for attention and options.' },
-      { h2: 'Cost is the obvious trade-off' },
-      { p: 'Private fees range enormously, and the headline tuition is rarely the full cost. Before comparing, ask each school for the all-in first-year figure, including any one-time capital and registration fees.' },
-      { h2: 'Questions that cut through the debate' },
-      { ul: [
-        'What does my specific child need to thrive: structure, support, stimulation?',
-        'Do I need a portable curriculum for a possible move abroad?',
-        'How large are the classes, really, at my child’s grade?',
-        'How safe and well-supervised is the campus?',
-        'Can we afford this comfortably, every year, without strain?',
-      ] },
-      { p: 'There is no universal winner, only the right fit for your child and budget. If you are leaning toward a private, Cambridge education, Nucleus at Vatican, near Mekanisa is built to offer that without premium-tier capital fees.' },
-      { related: [
-        { label: 'The real benefits of an international school', url: '/news/benefits-of-international-school-addis-ababa' },
-        { label: 'Ethiopian school “levels” explained', url: '/news/ethiopian-private-school-levels-explained' },
-        { label: 'How to choose an international school', url: '/news/how-to-choose-international-school-addis-ababa' },
-      ] },
-    ],
-  },
-  {
-    title: 'Cambridge, IB or National Curriculum: Which Is Best for Your Child?',
-    slug: 'best-curriculum-for-your-child-ethiopia',
-    category: 'academics',
-    excerpt:
-      'Cambridge, IB or the Ethiopian national curriculum: which is best? A clear, parent-first comparison to help you choose with confidence.',
-    heroFile: 'blog-cambridge.webp',
-    publishedAt: '2026-06-01T09:00:00.000Z',
-    body: [
-      { p: 'Once you start school-hunting, you have to pick a curriculum as well as a school. The three you will meet most in Addis are Cambridge, the IB and the Ethiopian national curriculum. None is universally “best”, but one will suit your child best.' },
-      { h2: 'Cambridge: structured and portable' },
-      { p: 'The Cambridge pathway is subject-focused and clearly staged, with recognised exams along the way. Children who like defined goals tend to thrive, and the qualifications travel well to universities worldwide. It is often the practical sweet spot for globally-minded families.' },
-      { h2: 'IB: inquiry and breadth' },
-      { p: 'The IB leans into projects, inquiry and connecting subjects, and asks students to reflect on how they learn. Families who want a broad, discussion-led style often prefer it. It is demanding and rewarding in equal measure.' },
-      { h2: 'National curriculum: local and affordable' },
-      { p: 'The Ethiopian national curriculum is the most affordable and the most locally rooted, with strong relevance for families who plan to study and build their lives here. Quality varies widely by school, so visit before deciding.' },
-      { h2: 'So which is “best”?' },
-      { ul: [
-        'Will your child likely study or move abroad? Lean Cambridge or IB.',
-        'Does your child prefer clear targets and exams, or open-ended projects? Cambridge vs IB.',
-        'Is staying and studying locally the plan, on a tighter budget? The national curriculum deserves a serious look.',
-      ] },
-      { p: 'Nucleus follows the Cambridge pathway from age 2 through Grade 8, chosen for its structure and global portability. If that fits your plans, come and see it in action.' },
-      { related: [
-        { label: 'Cambridge or IB in Addis Ababa?', url: '/news/cambridge-vs-ib-addis-ababa' },
-        { label: 'The best Cambridge schools in Addis Ababa', url: '/news/best-cambridge-schools-addis-ababa' },
-        { label: 'The real benefits of an international school', url: '/news/benefits-of-international-school-addis-ababa' },
-      ] },
-    ],
-  },
-  {
-    title: 'When Should My Child Start School? A Guide to the Early Years',
-    slug: 'best-age-to-start-school',
-    category: 'parent-resources',
-    excerpt:
-      'What age is best to start school, and which years matter most? A calm, evidence-aware guide for parents of young children in Addis Ababa.',
-    heroFile: 'admissions-hero.webp',
-    publishedAt: '2026-06-05T09:00:00.000Z',
-    body: [
-      { p: 'Parents of toddlers ask two versions of the same question: what age should my child start school, and how much do these early years really matter? Here is a calm, honest guide.' },
-      { h2: 'The early years do the heavy lifting' },
-      { p: 'Between roughly age 2 and 6, children build the foundations of language, curiosity, self-control and social confidence at a pace they never will again. These are not “filler” years before “real” school. They are the years that make real school work.' },
-      { h2: 'There is no single “right” age' },
-      { p: 'Readiness varies from child to child. Signs a child is ready include curiosity about other children, the ability to separate from a parent for a while, and a growing appetite for stories, songs and play with purpose. Age is a guide; the child is the real signal.' },
-      { h2: 'Why good early years are not “just daycare”' },
-      { p: 'There is a real difference between a place that minds children and one that teaches them through play. The second builds early literacy, numeracy and emotional skills on purpose, and makes the step into primary school feel natural rather than abrupt.' },
-      { h2: 'What to look for in an early-years programme' },
-      { ul: [
-        'A safe, secure, well-supervised environment above all.',
-        'Warm, qualified staff who clearly enjoy young children.',
-        'Play-based learning with real structure behind it.',
-        'A smooth, planned path into the primary years.',
-      ] },
-      { p: 'Nucleus welcomes children from age 2 and carries them on a planned path into the Cambridge primary years, so the early foundation and what follows are built as one journey.' },
-      { related: [
-        { label: 'The real benefits of an international school', url: '/news/benefits-of-international-school-addis-ababa' },
-        { label: 'How to choose an international school', url: '/news/how-to-choose-international-school-addis-ababa' },
-        { label: 'The best international schools in Addis Ababa', url: '/news/best-international-schools-addis-ababa' },
       ] },
     ],
   },
@@ -380,35 +158,6 @@ const posts: SeedPost[] = [
         { label: 'What international schools in Addis really cost', url: '/news/international-school-fees-addis-ababa-2026' },
         { label: 'How to choose an international school: a checklist', url: '/news/how-to-choose-international-school-addis-ababa' },
         { label: 'Book a visit to Nucleus', url: '/contact' },
-      ] },
-    ],
-  },
-  {
-    title: 'The Best Cambridge Schools in Addis Ababa (2026)',
-    slug: 'best-cambridge-schools-addis-ababa',
-    category: 'academics',
-    excerpt:
-      'Want a Cambridge education in Addis Ababa? Here are the main Cambridge and British-curriculum schools to know in 2026, and how to choose between them.',
-    heroFile: 'blog-choose.webp',
-    publishedAt: '2026-06-09T09:00:00.000Z',
-    body: [
-      { p: 'If you have decided on the Cambridge pathway, the next question is simply: where? Addis Ababa has a growing set of Cambridge and British-curriculum schools to choose from.' },
-      { h2: 'Why families choose Cambridge' },
-      { p: 'Cambridge is structured, subject-focused and built around recognised exams, and its qualifications transfer cleanly to universities worldwide. For families who value clear progress and global portability, it is a natural fit.' },
-      { h2: 'Cambridge and British options in Addis' },
-      { p: 'Schools following Cambridge or British curricula include Cambridge Academy Ethiopia, Bingham Academy, Reach (RICE) and One Planet, with Sandford offering a mix. Nucleus joins them with a Cambridge pathway from age 2 through Grade 8 at Vatican, near Mekanisa.' },
-      { h2: 'How to compare Cambridge schools' },
-      { ul: [
-        'Which Cambridge stages are actually taught at your child’s grade today?',
-        'What is the school’s track record and teacher quality?',
-        'What is the all-in cost, including one-time fees?',
-        'How secure and well-run is the campus day to day?',
-      ] },
-      { p: 'A name on a list means little until you have walked the halls. Nucleus would welcome your questions and a visit. See the Cambridge pathway in action before you decide.' },
-      { related: [
-        { label: 'Which curriculum is best for your child?', url: '/news/best-curriculum-for-your-child-ethiopia' },
-        { label: 'Cambridge or IB in Addis Ababa?', url: '/news/cambridge-vs-ib-addis-ababa' },
-        { label: 'The best international schools in Addis Ababa', url: '/news/best-international-schools-addis-ababa' },
       ] },
     ],
   },
