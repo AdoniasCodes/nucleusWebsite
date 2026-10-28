@@ -317,7 +317,7 @@ const posts: SeedPost[] = [
     meta: {
       title: 'Teaching Critical Thinking to Children in Ethiopia',
       description:
-        'What critical thinking and problem solving look like at primary age, how to tell whether a school in Addis Ababa really teaches them, and how to support it at home.',
+        'What critical thinking looks like at primary age, how to tell if a school in Addis Ababa really teaches it, and how to support it at home.',
     },
     sections: [
       {

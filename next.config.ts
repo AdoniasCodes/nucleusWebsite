@@ -47,6 +47,10 @@ const securityHeaders = [
 ]
 
 const nextConfig: NextConfig = {
+  // Next 16 streams metadata into <body> for clients it does not recognise as bots, and ISR can
+  // then serve that copy to Google too. A canonical outside <head> is ignored, so every client
+  // gets blocking metadata in <head>.
+  htmlLimitedBots: /.*/,
   async headers() {
     return [{ source: '/:path*', headers: securityHeaders }]
   },

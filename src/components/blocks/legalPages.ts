@@ -22,7 +22,7 @@ export const legalPages: Record<string, DefaultPage> = {
     title: 'Terms and Conditions',
     seoTitle: 'Terms and Conditions | Nucleus International Schools',
     description:
-      'The terms governing enrollment at Nucleus International Schools and use of our website: admissions, fees, academic standards, conduct, health and safety, and dispute resolution.',
+      'The terms for enrolling at Nucleus International Schools and using this website: admissions, fees, conduct, health and safety, and disputes.',
     layout: [
       {
         blockType: 'legalDoc',
@@ -288,7 +288,7 @@ export const legalPages: Record<string, DefaultPage> = {
     title: 'Privacy Policy',
     seoTitle: 'Privacy Policy | Nucleus International Schools',
     description:
-      'How Nucleus International Schools collects, uses, stores and protects the personal data of students, parents, staff and website visitors, and the rights you hold over it.',
+      'How Nucleus International Schools collects, uses and protects the personal data of students, parents, staff and visitors, and your rights over it.',
     layout: [
       {
         blockType: 'legalDoc',

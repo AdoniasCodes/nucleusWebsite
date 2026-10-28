@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { cache } from 'react'
 import { notFound, permanentRedirect } from 'next/navigation'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import { Container } from '@/components/ui/Container'
@@ -8,7 +9,7 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import { NewsletterSections } from '@/components/newsletter/NewsletterSections'
 import { SmartImage, heroUrlOf, formatDate, readingMinutes } from '@/components/newsletter/shared'
 import { getPayloadClient } from '@/lib/payload'
-import { buildBreadcrumbSchema } from '@/lib/seo'
+import { brandTitle, buildBreadcrumbSchema } from '@/lib/seo'
 import { LEGACY_NEWSLETTER_SLUGS } from '@/lib/legacySlugs'
 import { SERVER_URL } from '@/lib/serverUrl'
 import { shareImages } from '@/lib/shareImage'
@@ -16,7 +17,15 @@ import type { Playlist, Post } from '@/payload-types'
 
 export const revalidate = 300
 
-async function getArticle(slug: string): Promise<Post | null> {
+// Empty list = no build-time renders, but each URL is cached on first visit (ISR) instead of
+// rendering per request, so a DB hiccup serves the last good copy rather than an error.
+export function generateStaticParams() {
+  return []
+}
+
+// Shared by generateMetadata and the page (one query per render). A DB error throws on purpose:
+// ISR then keeps serving the last good copy instead of caching a 404 or homepage-default tags.
+const getArticle = cache(async (slug: string): Promise<Post | null> => {
   const payload = await getPayloadClient()
   const { docs } = await payload.find({
     collection: 'posts',
@@ -29,7 +38,7 @@ async function getArticle(slug: string): Promise<Post | null> {
     limit: 1,
   })
   return docs[0] ?? null
-}
+})
 
 async function getContext(post: Post) {
   const payload = await getPayloadClient()
@@ -66,14 +75,14 @@ type Props = { params: Promise<{ slug: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const post = await getArticle(slug).catch(() => null)
+  const post = await getArticle(slug)
   // Legacy slugs 301 in the page component; give the crawler nothing to index here.
   if (!post) return LEGACY_NEWSLETTER_SLUGS[slug] ? { robots: { index: false } } : {}
   const title = post.meta?.title || post.title
   const description = post.meta?.description || post.excerpt || undefined
   const heroUrl = heroUrlOf(post)
   return {
-    title: title ? { absolute: `${title} | Nucleus International Schools` } : undefined,
+    title: title ? { absolute: brandTitle(title) } : undefined,
     description,
     alternates: { canonical: `/newsletter/${slug}` },
     openGraph: {
@@ -92,7 +101,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function NewsletterArticlePage({ params }: Props) {
   const { slug } = await params
-  const post = await getArticle(slug).catch(() => null)
+  const post = await getArticle(slug)
   // A retitled issue keeps its old URL alive: 301 to the current slug rather than 404.
   if (!post && LEGACY_NEWSLETTER_SLUGS[slug]) permanentRedirect(`/newsletter/${LEGACY_NEWSLETTER_SLUGS[slug]}`)
   if (!post) notFound()

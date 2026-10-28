@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { cache } from 'react'
 import { notFound, redirect } from 'next/navigation'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import { Container } from '@/components/ui/Container'
@@ -9,7 +10,7 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import { NewsletterSections } from '@/components/newsletter/NewsletterSections'
 import { POST_FAQS } from '@/lib/postFaqs'
 import { getPayloadClient } from '@/lib/payload'
-import { buildBreadcrumbSchema } from '@/lib/seo'
+import { brandTitle, buildBreadcrumbSchema } from '@/lib/seo'
 import { stockWebp } from '@/lib/img'
 import { SERVER_URL } from '@/lib/serverUrl'
 import { shareImages } from '@/lib/shareImage'
@@ -17,7 +18,15 @@ import type { Post } from '@/payload-types'
 
 export const revalidate = 300
 
-async function getPost(slug: string): Promise<Post | null> {
+// Empty list = no build-time renders, but each URL is cached on first visit (ISR) instead of
+// rendering per request, so a DB hiccup serves the last good copy rather than an error.
+export function generateStaticParams() {
+  return []
+}
+
+// Shared by generateMetadata and the page (one query per render). A DB error throws on purpose:
+// ISR then keeps serving the last good copy instead of caching a 404 or homepage-default tags.
+const getPost = cache(async (slug: string): Promise<Post | null> => {
   const payload = await getPayloadClient()
   const { docs } = await payload.find({
     collection: 'posts',
@@ -26,13 +35,13 @@ async function getPost(slug: string): Promise<Post | null> {
     limit: 1,
   })
   return docs[0] ?? null
-}
+})
 
 type Props = { params: Promise<{ slug: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const post = await getPost(slug).catch(() => null)
+  const post = await getPost(slug)
   if (!post) return {}
   const title = post.meta?.title || post.title
   const description = post.meta?.description || post.excerpt || undefined
@@ -41,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const rawShare = metaHero || stockWebp(post.heroImageUrl) || null
   const shareUrl = rawShare ? new URL(rawShare, SERVER_URL).toString() : null
   return {
-    title: title ? { absolute: `${title} | Nucleus International Schools` } : undefined,
+    title: title ? { absolute: brandTitle(title) } : undefined,
     description,
     alternates: { canonical: `/news/${slug}` },
     openGraph: {
@@ -57,7 +66,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PostPage({ params }: Props) {
   const { slug } = await params
-  const post = await getPost(slug).catch(() => null)
+  const post = await getPost(slug)
   if (!post) notFound()
   // Newsletter articles canonically live under /newsletter, never render them here.
   if (post.category === 'newsletter') redirect(`/newsletter/${slug}`)

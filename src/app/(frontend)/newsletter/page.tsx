@@ -19,7 +19,7 @@ export const revalidate = 300
 export const metadata: Metadata = {
   title: 'Newsletter: Inside Nucleus',
   description:
-    'Inside Nucleus is the newsletter of Nucleus International Schools in Addis Ababa: weekly updates, school news, summer camp recaps, monthly highlights and practical information for parents.',
+    'Inside Nucleus, the newsletter of Nucleus International Schools in Addis Ababa: school news, summer camp recaps and practical advice for parents.',
   alternates: { canonical: '/newsletter' },
   openGraph: {
     title: 'Inside Nucleus: the Nucleus International Schools newsletter',

@@ -1,4 +1,5 @@
 import 'server-only'
+import { cache } from 'react'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 import type { SiteSetting, SeoSetting, Page } from '@/payload-types'
@@ -16,8 +17,8 @@ export const getSEOSettings = async (): Promise<SeoSetting> => {
   return payload.findGlobal({ slug: 'seo-settings', depth: 1 })
 }
 
-/** Fetch a published page by slug, or null. */
-export const getPageBySlug = async (slug: string): Promise<Page | null> => {
+/** Fetch a published page by slug, or null. cache(): metadata and page share one query per render. */
+export const getPageBySlug = cache(async (slug: string): Promise<Page | null> => {
   const payload = await getPayloadClient()
   const { docs } = await payload.find({
     collection: 'pages',
@@ -26,4 +27,4 @@ export const getPageBySlug = async (slug: string): Promise<Page | null> => {
     limit: 1,
   })
   return docs[0] ?? null
-}
+})

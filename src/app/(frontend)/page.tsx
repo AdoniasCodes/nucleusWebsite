@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { BlockRenderer, type RenderableBlock } from '@/components/blocks/BlockRenderer'
 import { defaultHomeLayout } from '@/components/blocks/defaultHome'
 import { JsonLd } from '@/components/seo/JsonLd'
@@ -6,6 +7,8 @@ import { buildOrganizationSchema } from '@/lib/seo'
 
 // Content is editor-driven; revalidate periodically (ISR) for fast, cacheable delivery.
 export const revalidate = 300
+
+export const metadata: Metadata = { alternates: { canonical: '/' } }
 
 export default async function HomePage() {
   const [home, settings, seo] = await Promise.all([

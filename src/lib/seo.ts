@@ -63,6 +63,30 @@ export function buildOrganizationSchema(settings?: SiteSetting | null, seo?: Seo
   return [organization, website]
 }
 
+/**
+ * Page title with the brand appended: the full name when the whole title fits Google's ~60
+ * characters, otherwise the short "Nucleus" so the SERP does not cut the keyword off.
+ */
+export function brandTitle(title: string): string {
+  const full = `${title} | Nucleus International Schools`
+  return full.length <= 60 ? full : `${title} | Nucleus`
+}
+
+/**
+ * Meta description from long editor copy: whole sentences up to ~160 characters, so the SERP
+ * snippet ends on a full stop instead of being cut mid-word.
+ */
+export function metaDescription(text: string, max = 160): string {
+  if (text.length <= max) return text
+  const sentences = text.match(/[^.!?]+[.!?]+(\s|$)/g) ?? []
+  let out = ''
+  for (const s of sentences) {
+    if ((out + s).trim().length > max) break
+    out += s
+  }
+  return out.trim() || `${text.slice(0, text.lastIndexOf(' ', max - 1))}.`
+}
+
 /** Breadcrumb JSON-LD for inner pages (clarifies hierarchy for search + AEO). */
 export function buildBreadcrumbSchema(trail: { name: string; path: string }[]) {
   return {

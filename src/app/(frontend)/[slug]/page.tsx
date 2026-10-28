@@ -18,7 +18,9 @@ type Props = { params: Promise<{ slug: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const cms = await getPageBySlug(slug).catch(() => null)
+  // No .catch: a DB error must fail the render so ISR keeps the last good copy, rather than
+  // caching the code default (or a 404) in place of an editor's CMS page.
+  const cms = await getPageBySlug(slug)
   const fallback = defaultPages[slug]
   if (!cms && !fallback) return {}
 
@@ -43,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function DynamicPage({ params }: Props) {
   const { slug } = await params
-  const cms = await getPageBySlug(slug).catch(() => null)
+  const cms = await getPageBySlug(slug)
   const fallback = defaultPages[slug]
   if (!cms && !fallback) notFound()
 

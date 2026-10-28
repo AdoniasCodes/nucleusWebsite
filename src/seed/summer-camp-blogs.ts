@@ -28,7 +28,7 @@ const posts: SeedPost[] = [
     slug: 'nucleus-summer-camp-2026',
     category: 'campus-life',
     excerpt:
-      'Robotics, sport, music, chess and real discovery, led by qualified Cambridge educators on two secure Addis Ababa campuses. Here is exactly what your child gets at Nucleus Summer Camp 2026.',
+      'Robotics, sport, music, chess and discovery, led by qualified Cambridge educators on two secure Addis Ababa campuses: inside Nucleus Summer Camp 2026.',
     heroFile: 'blog-summer-camp.webp',
     publishedAt: '2026-06-20T09:00:00.000Z',
     body: [
@@ -65,7 +65,7 @@ const posts: SeedPost[] = [
     slug: 'why-your-child-should-attend-summer-camp',
     category: 'parent-resources',
     excerpt:
-      'Summer camp is one of the highest-value things you can give a child, if you choose the right one. Here is what camp does for kids, and how to find the best summer camp in Addis Ababa.',
+      'What summer camp does for children, why it is worth it, and how to find the best summer camp in Addis Ababa for your child.',
     heroFile: 'blog-summer-camp-why.webp',
     publishedAt: '2026-06-22T09:00:00.000Z',
     body: [

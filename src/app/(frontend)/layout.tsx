@@ -72,8 +72,9 @@ export async function generateMetadata(): Promise<Metadata> {
       images: shareImage,
     },
     twitter: { card: 'summary_large_image', title, description, images: shareImage },
+    // No canonical here: anything set in the layout is inherited by every page that fails to
+    // set its own, which once canonicalised blog posts to the homepage. Each route owns its own.
     robots: { index: true, follow: true },
-    alternates: { canonical: '/' },
   }
 }
 

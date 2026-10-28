@@ -1,19 +1,28 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { cache } from 'react'
 import { notFound } from 'next/navigation'
 import { Container } from '@/components/ui/Container'
 import { Reveal } from '@/components/ui/Reveal'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { SmartImage, heroUrlOf, formatDate } from '@/components/newsletter/shared'
 import { getPayloadClient } from '@/lib/payload'
-import { buildBreadcrumbSchema } from '@/lib/seo'
+import { brandTitle, buildBreadcrumbSchema, metaDescription } from '@/lib/seo'
 import { SERVER_URL } from '@/lib/serverUrl'
 import { shareImages } from '@/lib/shareImage'
 import type { Playlist, Post } from '@/payload-types'
 
 export const revalidate = 300
 
-async function getSeries(slug: string): Promise<{ playlist: Playlist; parts: Post[] } | null> {
+// Empty list = no build-time renders, but each URL is cached on first visit (ISR) instead of
+// rendering per request, so a DB hiccup serves the last good copy rather than an error.
+export function generateStaticParams() {
+  return []
+}
+
+// Shared by generateMetadata and the page (one query per render). A DB error throws on purpose:
+// ISR then keeps serving the last good copy instead of caching a 404 or homepage-default tags.
+const getSeries = cache(async (slug: string): Promise<{ playlist: Playlist; parts: Post[] } | null> => {
   const payload = await getPayloadClient()
   const { docs } = await payload.find({
     collection: 'playlists',
@@ -31,13 +40,13 @@ async function getSeries(slug: string): Promise<{ playlist: Playlist; parts: Pos
     depth: 0,
   })
   return { playlist, parts: parts.docs }
-}
+})
 
 type Props = { params: Promise<{ slug: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const data = await getSeries(slug).catch(() => null)
+  const data = await getSeries(slug)
   if (!data) return {}
   const metaCover =
     data.playlist.coverImage && typeof data.playlist.coverImage === 'object'
@@ -45,10 +54,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : null
   const coverUrl = metaCover ? new URL(metaCover, SERVER_URL).toString() : null
   return {
-    title: `${data.playlist.title}: Newsletter Series`,
-    description:
+    title: { absolute: brandTitle(`${data.playlist.title}: Newsletter Series`) },
+    description: metaDescription(
       data.playlist.description ||
-      `All parts of the ${data.playlist.title} series from Inside Nucleus, the Nucleus International Schools newsletter.`,
+        `All parts of the ${data.playlist.title} series from Inside Nucleus, the Nucleus International Schools newsletter.`,
+    ),
     alternates: { canonical: `/newsletter/series/${slug}` },
     openGraph: {
       title: data.playlist.title,
@@ -61,7 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SeriesPage({ params }: Props) {
   const { slug } = await params
-  const data = await getSeries(slug).catch(() => null)
+  const data = await getSeries(slug)
   if (!data) notFound()
   const { playlist, parts } = data
 

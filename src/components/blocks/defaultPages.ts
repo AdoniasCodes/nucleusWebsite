@@ -23,7 +23,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'About',
     seoTitle: 'About Nucleus | International Cambridge Curriculum at Vatican, Addis Ababa',
     description:
-      'From a trusted Addis preschool to the full international Cambridge curriculum. The story, mission and values behind Nucleus at Vatican, Addis Ababa, and our growth toward a Gerji campus.',
+      'The story, mission and values behind Nucleus International Schools: from a trusted Addis preschool to the international Cambridge curriculum at Vatican.',
     layout: [
       {
         blockType: 'hero',
@@ -131,7 +131,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Summer Camp',
     seoTitle: 'Nucleus Summer Camp 2026 in Addis Ababa | Robotics, STEM, Sport, Music & Art',
     description:
-      'Nucleus Summer Camp 2026 (July 6 – August 12) in Addis Ababa: robotics, STEM labs, chess, taekwondo, football, basketball, music and art, led by qualified Cambridge educators on two secure campuses. Register your child.',
+      'Nucleus Summer Camp in Addis Ababa: robotics, STEM, chess, taekwondo, sport, music and art, led by qualified Cambridge educators on two secure campuses.',
     layout: [
       { blockType: 'summerCampHero' },
       {
@@ -202,7 +202,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Academics',
     seoTitle: 'International Cambridge Curriculum in Addis Ababa | Nucleus Academics',
     description:
-      'The Cambridge pathway at Nucleus International Schools, Vatican: Early Years through Grade 8, with robotics, STEM, agriculture and multilingual learning. A portable, world-class education.',
+      'The international Cambridge curriculum at Nucleus, Addis Ababa: Early Years to Grade 8, with robotics, STEM, agriculture and multilingual learning.',
     layout: [
       {
         blockType: 'hero',
@@ -275,7 +275,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Campus Life',
     seoTitle: 'Campus Life at Nucleus | Robotics, Agriculture, Music & a Secure Campus at Vatican',
     description:
-      'Inside Nucleus International Schools, Vatican: robotics & STEM, an agriculture & animal-care program, music, sport, chef-prepared meals and a secure, nurturing campus.',
+      'Life at Nucleus International Schools, Vatican: robotics and STEM, agriculture and animal care, music, sport, chef-prepared meals and a secure campus.',
     layout: [
       {
         blockType: 'hero',
@@ -322,7 +322,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Contact & Visit',
     seoTitle: 'Contact & Visit | Nucleus International Schools, Vatican, Addis Ababa',
     description:
-      'Visit Nucleus International Schools: grade school at Sarbet Vatican (behind the Vatican Embassy) and preschool at Mekanisa Abo Square, Addis Ababa, with a third campus at Totot opening soon. Directions from Bole, Old Airport and Kazanchis, contact numbers, and how to book a tour.',
+      'Visit Nucleus: grade school at Sarbet Vatican, preschool at Mekanisa Abo Square, Addis Ababa. Directions, phone numbers and how to book a campus tour.',
     layout: [
       {
         blockType: 'hero',
@@ -423,7 +423,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Registration',
     seoTitle: 'Register Your Child | Nucleus International Schools, Addis Ababa',
     description:
-      'Register your child at Nucleus International Schools in Addis Ababa for the international Cambridge curriculum. Choose your campus: Preschool and KG at Mekanisa Abo Square, Grade 1 to Grade 8 at Vatican.',
+      'Register your child for the international Cambridge curriculum in Addis Ababa: Preschool and KG at Mekanisa Abo Square, Grades 1 to 8 at Vatican.',
     layout: [
       {
         blockType: 'hero',
@@ -508,7 +508,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Careers',
     seoTitle: 'Careers | Teaching Jobs at Nucleus International Schools, Addis Ababa',
     description:
-      'Teaching, leadership and support jobs at Nucleus International School in Addis Ababa. See current vacancies and apply by email to hr@nucints.com or through the careers page.',
+      'Teaching, leadership and support jobs at Nucleus International Schools in Addis Ababa. See current vacancies and how to apply.',
     layout: [
       {
         blockType: 'hero',

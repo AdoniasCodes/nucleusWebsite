@@ -45,7 +45,7 @@ export const registerPages: Record<'primary' | 'grade-school', DefaultPage> = {
     title: 'Primary School Registration',
     seoTitle: 'Primary School Registration, Mekanisa Abo Square | Nucleus International Schools',
     description:
-      'Register your child for Preschool or KG at the Nucleus International Schools primary campus, 100 metres from Mekanisa Abo Square, Addis Ababa. Six short steps, saved as you go, and our admissions team replies within one business day.',
+      'Register for Preschool or KG at Nucleus, 100 metres from Mekanisa Abo Square, Addis Ababa. Six short steps, and admissions replies within one business day.',
     layout: [
       {
         blockType: 'hero',
@@ -69,7 +69,7 @@ export const registerPages: Record<'primary' | 'grade-school', DefaultPage> = {
     title: 'Grade School Registration',
     seoTitle: 'Grade School Registration, Vatican Campus | Nucleus International Schools',
     description:
-      'Register your child for Grade 1 to Grade 8 at the Nucleus International Schools grade school, Sarbet Vatican, Addis Ababa, on the international Cambridge curriculum. Six short steps, saved as you go, and our admissions team replies within one business day.',
+      'Register for Grade 1 to 8 at Nucleus, Sarbet Vatican, Addis Ababa, on the international Cambridge curriculum. Admissions replies within one business day.',
     layout: [
       {
         blockType: 'hero',
