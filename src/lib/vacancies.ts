@@ -47,8 +47,69 @@ export const DEFAULT_TERMS =
   'Competitive compensation and benefits package, commensurate with qualifications, experience and the responsibilities of the position.'
 
 const MARCH_2026 = '2026-03-10'
+const OCTOBER_2026 = '2026-10-10'
 
 export const VACANCIES: Vacancy[] = [
+  {
+    slug: 'head-of-school-2026-10',
+    title: 'Head of School',
+    department: 'Leadership',
+    status: 'filled',
+    postedAt: OCTOBER_2026,
+    employmentType: 'Full-time',
+    summary: 'Visionary educational leader for the whole school community, academic standards and holistic development.',
+    sections: [
+      {
+        heading: 'The position',
+        paragraphs: [
+          'Nucleus International School is seeking an experienced, visionary and dynamic educational leader to join our team as Head of School (HoS).',
+          'We are looking for a highly motivated professional with strong leadership capabilities, a passion for educational excellence, and the ability to lead a diverse school community while promoting high academic standards and holistic student development.',
+        ],
+      },
+      {
+        heading: 'Key responsibilities',
+        items: [
+          'Provide strategic leadership and direction for the overall school operations.',
+          'Lead, supervise and support teaching and non-teaching staff.',
+          'Ensure effective curriculum implementation and high-quality teaching and learning.',
+          "Monitor students' academic progress, wellbeing and overall development.",
+          'Promote a positive, safe and supportive learning environment.',
+          'Oversee school policies, procedures and compliance with relevant educational standards.',
+          'Build strong relationships with parents, staff, students and other stakeholders.',
+          'Lead school improvement initiatives and promote continuous professional development.',
+          'Ensure effective management of school resources and operational activities.',
+        ],
+      },
+      {
+        heading: 'Qualifications and requirements',
+        items: [
+          "A Master's degree in Education, Educational Leadership, School Management or a related field (preferred).",
+          'Proven experience in school leadership in a school offering the international Cambridge curriculum, preferably as a Head of School, Principal, Deputy Head or Academic Director.',
+          'A strong understanding of international curricula, preferably Cambridge International Education.',
+          'Excellent leadership, communication, interpersonal and organisational skills.',
+          'Demonstrated ability to lead multicultural teams.',
+          'Strong knowledge of safeguarding, child protection and student wellbeing.',
+          'Excellent command of written and spoken English.',
+        ],
+      },
+      {
+        heading: 'What we offer',
+        items: [
+          'An opportunity to lead a growing international school.',
+          'A collaborative and multicultural working environment.',
+          'Professional growth and development opportunities.',
+        ],
+      },
+    ],
+    terms: 'Competitive remuneration package, commensurate with qualifications and experience.',
+    applicationItems: [
+      'Copies of relevant academic and professional credentials.',
+      'Contact details of three professional referees.',
+    ],
+    closingNote:
+      'Application deadline: 25 October 2026. Location: Addis Ababa, Ethiopia. Nucleus International School is an equal opportunity employer committed to providing a safe and stimulating learning environment for all students.',
+  },
+
   {
     slug: 'head-of-school',
     title: 'Head of School',
@@ -195,6 +256,58 @@ export const VACANCIES: Vacancy[] = [
         ],
       },
     ],
+  },
+
+  {
+    slug: 'english-language-teacher',
+    title: 'English Language Teacher',
+    department: 'Teaching',
+    status: 'filled',
+    postedAt: OCTOBER_2026,
+    employmentType: 'Full-time',
+    summary: "Delivers engaging English lessons and builds students' language and communication skills.",
+    sections: [
+      {
+        heading: 'The position',
+        paragraphs: [
+          'Nucleus International School is seeking a qualified, passionate and dedicated English Language Teacher to join our dynamic academic team.',
+          "The successful candidate will deliver engaging, high-quality English lessons, develop students' language and communication skills, and support their academic and personal growth.",
+        ],
+      },
+      {
+        heading: 'Key responsibilities',
+        items: [
+          "Plan and deliver engaging English lessons in line with the school's curriculum.",
+          "Develop students' reading, writing, speaking, listening and comprehension skills.",
+          'Prepare lesson plans, teaching materials and assessments.',
+          "Monitor, assess and report on students' academic progress.",
+          'Differentiate instruction to meet the diverse learning needs of students.',
+          'Maintain a positive, inclusive and well-managed classroom environment.',
+          'Collaborate with colleagues, parents and school leadership.',
+          'Participate in staff meetings, professional development and school activities.',
+          "Uphold the school's safeguarding and child protection policies.",
+        ],
+      },
+      {
+        heading: 'Qualifications and requirements',
+        items: [
+          "A Bachelor's degree in English Language, English Literature, Education or a related field.",
+          'A relevant teaching qualification or certification.',
+          'Proven experience teaching English, preferably in an international school.',
+          'A strong command of written and spoken English.',
+          'Knowledge of the Cambridge curriculum is an advantage.',
+          'Excellent classroom management, communication and interpersonal skills.',
+          'The ability to engage students and promote a positive learning environment.',
+          'Commitment to safeguarding and student wellbeing.',
+        ],
+      },
+    ],
+    applicationItems: [
+      'Copies of academic and professional credentials.',
+      'Contact details of professional referees.',
+    ],
+    closingNote:
+      'Application deadline: 25 October 2026. Location: Addis Ababa, Ethiopia. Nucleus International School is an equal opportunity employer committed to educational excellence and the holistic development of every child.',
   },
 
   {
