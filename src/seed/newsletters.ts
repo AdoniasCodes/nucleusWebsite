@@ -57,7 +57,7 @@ const SERIES: SeedSeries[] = [
     slug: 'people-behind-nucleus',
     description:
       'The teachers, specialists and staff who make a Nucleus classroom what it is. Each issue is a long conversation with one of them: where they come from, how they think about their subject, and what they are building with our students in Addis Ababa.',
-    coverImageUrl: `${PBN}/pbn01-rajif-portrait.webp`,
+    coverImageUrl: `${PBN}/pbn-cover-table-activity.webp`,
     related: [
       { label: 'Maths anxiety in children: signs, causes and how parents can help', url: '/news/maths-anxiety-in-children' },
       { label: 'How to help a child who is struggling at school', url: '/news/how-to-help-a-child-struggling-at-school' },
@@ -1960,7 +1960,7 @@ const ISSUES: SeedIssue[] = [
       slug: 'when-your-child-gets-a-bad-grade',
       excerpt:
         'It is the question families ask our admissions team most. Here is what we tell them: why a grade never defines a child, how high expectations and the right support work together, where AI belongs in school, and what we mean by an education of the heart.',
-      heroImageUrl: `${ITC}/gp01-tilahun-with-student.webp`,
+      heroImageUrl: `${PBN}/pbn02-preschool-gate.webp`,
       publishedAt: '2026-10-07T09:00:00.000Z',
       playlistPart: 2,
       meta: {

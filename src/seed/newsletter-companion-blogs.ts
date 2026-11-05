@@ -267,7 +267,7 @@ const posts: SeedPost[] = [
     category: 'parent-resources',
     excerpt:
       'A bad grade, a falling report or a child who says school is pointless. Here is how to find the real cause, what to say at home, how to work with the teacher, and what our admissions team tells the parents who ask us.',
-    heroImageUrl: '/images/newsletter/inside-the-classroom/gp01-tilahun-teaching-evidence.webp',
+    heroImageUrl: `${PBN}/pbn02-teacher-mat-circle.webp`,
     publishedAt: '2026-10-09T08:00:00.000Z',
     meta: {
       title: 'Help a Child Struggling at School',
