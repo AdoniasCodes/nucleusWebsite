@@ -16,15 +16,15 @@ export type TeamMember = {
 /** Hardcoded fallback roster. Used when no `members` are supplied (e.g. the CMS is empty or errors). */
 export const TEAM: TeamMember[] = [
   {
-    id: 'daniel',
-    name: 'Daniel Hiest',
+    id: 'richard',
+    name: 'Richard Wainwright',
     role: 'School Director',
     dept: 'Leadership',
-    photo: '/images/team/daniel-hiest.webp',
+    photo: '/images/team/richard-wainwright.webp',
     bio: [
-      'M.A. French Studies. B.Ed. (Hons.). More than 40 years in international education.',
-      'Daniel has served as Principal, Head of School, Academic Director and IB Programme Coordinator across leading international schools in Europe, Africa, Asia and South America.',
-      'His expertise in Cambridge, IB and university admissions provides Nucleus with exceptional academic leadership.',
+      '24 years in primary education, eleven of them as Head of Primary at a leading British-curriculum international school in Addis Ababa, where he led around 530 children from Early Years to Year 6.',
+      'He has taught the UK, American and IB PYP curricula in London, Addis Ababa and Dar es Salaam, and built learning support for pupils with learning differences, safeguarding policy and staff training into the schools he led.',
+      'He believes every child is unique, with their own talents, and that a school should weave Ethiopian culture into an international education.',
     ],
   },
   {

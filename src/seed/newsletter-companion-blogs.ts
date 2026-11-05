@@ -266,13 +266,13 @@ const posts: SeedPost[] = [
     slug: 'how-to-help-a-child-struggling-at-school',
     category: 'parent-resources',
     excerpt:
-      'A bad grade, a falling report or a child who says school is pointless. Here is how to find the real cause, what to say at home, how to work with the teacher, and what a School Director with four decades in classrooms tells parents.',
-    heroImageUrl: `${PBN}/pbn02-daniel-thinking.webp`,
+      'A bad grade, a falling report or a child who says school is pointless. Here is how to find the real cause, what to say at home, how to work with the teacher, and what our admissions team tells the parents who ask us.',
+    heroImageUrl: '/images/newsletter/inside-the-classroom/gp01-tilahun-teaching-evidence.webp',
     publishedAt: '2026-10-09T08:00:00.000Z',
     meta: {
       title: 'Help a Child Struggling at School',
       description:
-        'How to help a child who is struggling or falling behind at school: find the cause, talk it through, work with the teacher. Advice from a School Director.',
+        'How to help a child who is struggling or falling behind at school: find the cause, talk it through, work with the teacher. Advice from a school admissions team.',
     },
     sections: [
       {
@@ -284,14 +284,7 @@ const posts: SeedPost[] = [
             p: 'What happens in the next hour matters more than the grade itself. A child who is met with calm interest tends to try again. A child who is met with disappointment tends to hide the next paper.',
           },
           {
-            p: 'This guide is for any parent whose child is struggling at school: one bad result, a slow slide, or a growing sense that they have given up. It draws on the thinking of Daniel Hiest, School Director at Nucleus International Schools, who has spent more than four decades in education in Europe, Africa, South America and Canada.',
-          },
-        ],
-        images: [
-          {
-            imageUrl: `${PBN}/pbn02-daniel-thinking.webp`,
-            alt: 'Daniel Hiest, School Director at Nucleus International Schools, at his desk reading through student work',
-            caption: 'Daniel Hiest, School Director: “There is always a path forward.”',
+            p: 'This guide is for any parent whose child is struggling at school: one bad result, a slow slide, or a growing sense that they have given up. It draws on what the admissions team at Nucleus International Schools tells the families who ask us this question every week.',
           },
         ],
       },
@@ -323,7 +316,7 @@ const posts: SeedPost[] = [
             p: 'Do less than you want to, and do it more slowly. Ask your child what they think happened before you offer your view. Then look at the paper together, with curiosity rather than a verdict.',
           },
           {
-            p: 'Daniel’s approach is plain: a grade matters because it shows what a student has understood and where further work is needed. It should not become a permanent label or place a limit on a child’s ambitions.',
+            p: 'Our approach is plain: a grade matters because it shows what a student has understood and where further work is needed. It should not become a permanent label or place a limit on a child’s ambitions.',
           },
         ],
       },
@@ -332,13 +325,13 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'No, and the person leading a school should be able to say it plainly. Daniel does: “The grade does not define the person. It is simply a stepping stone to the next level of achievement.”',
+            p: 'No, and a school should be able to say it plainly. We do: a grade does not define a child. It is a stepping stone to the next level of achievement.',
           },
           {
-            p: 'This does not mean lowering the bar. Daniel is clear that the answer is not to make education easier. It means identifying where a student is struggling, providing effective support and expecting that student to continue working towards a higher standard.',
+            p: 'This does not mean lowering the bar. The answer is not to make education easier. It means identifying where a student is struggling, providing effective support and expecting that student to continue working towards a higher standard.',
           },
           {
-            p: 'He puts it in a sentence worth repeating at home: “There is always a path forward.”',
+            p: 'It comes down to a sentence worth repeating at home: “There is always a path forward.”',
           },
         ],
       },
@@ -383,7 +376,7 @@ const posts: SeedPost[] = [
               'Praise effort, strategy and improvement, not just the result.',
               'Read together, or read the same book, even for older children. It builds vocabulary and gives you an easy way to talk.',
               'Keep your own tone steady. Your child reads your face before they read the number.',
-              'Remember what school is for. Daniel wants students to ask good questions, examine evidence, solve problems and think independently, which grows from curiosity at home as much as from lessons.',
+              'Remember what school is for. We want students to ask good questions, examine evidence, solve problems and think independently, which grows from curiosity at home as much as from lessons.',
             ],
           },
         ],
@@ -398,7 +391,7 @@ const posts: SeedPost[] = [
             p: 'Useful questions to bring: Where exactly is my child finding this hard? What support is already in place? What can I do at home that matches what you are doing in class? How will we know in a few weeks whether it is working?',
           },
           {
-            p: 'A good school will welcome these questions. Daniel’s description of the Director’s role includes recognising where students need additional support and ensuring that they continue progressing. If you cannot get clear answers, that is useful information too.',
+            p: 'A good school will welcome these questions. Recognising where a student needs additional support, and making sure they keep progressing, is the school’s job. If you cannot get clear answers, that is useful information too.',
           },
         ],
       },
@@ -406,7 +399,7 @@ const posts: SeedPost[] = [
         heading: 'Should I worry about AI and homework help?',
         body: [
           {
-            p: 'Many parents now ask whether to allow AI tools while a child is struggling. Daniel’s view is balanced: technology and artificial intelligence have a place in school, and young people need to know how to use them well, but they are tools, not the purpose of education.',
+            p: 'Many parents now ask whether to allow AI tools while a child is struggling. Our view is balanced: technology and artificial intelligence have a place in school, and young people need to know how to use them well, but they are tools, not the purpose of education.',
           },
           {
             p: 'A tool that hands over the answer gives speed without understanding. A child who is already behind needs the opposite. If your child uses one, ask them to explain the answer back to you in their own words. If they cannot, the learning has not happened yet.',
@@ -420,7 +413,7 @@ const posts: SeedPost[] = [
             p: 'You are entitled to expect a clear response. In practice that means a teacher who knows your child by name, finds the specific gap, offers support that is matched to it, and keeps expecting more.',
           },
           {
-            p: 'It also means attention to the child as well as the marks. Daniel returns often to a belief he has held for decades: “Education, without an education of the heart, is no education at all.” At Nucleus that means combining academic ambition with the judgement and character to use education responsibly.',
+            p: 'It also means attention to the child as well as the marks. We return often to an old saying: “Educating the mind without educating the heart is no education at all.” At Nucleus that means combining academic ambition with the judgement and character to use education responsibly.',
           },
           {
             p: 'The international Cambridge curriculum helps because it is built in clear stages, so a school can see exactly where a child’s understanding stopped and begin again from there. If you are comparing schools, our guide to choosing an international school in Addis Ababa lists the questions worth asking about support.',
@@ -436,17 +429,17 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus International Schools teaches the international Cambridge curriculum from age 2 through Grade 8 in Mekanisa, Addis Ababa. Daniel Hiest leads the school as School Director, and his belief that there is always a path forward shapes how we respond when a student is discouraged by a result.',
+            p: 'Nucleus International Schools teaches the international Cambridge curriculum from age 2 through Grade 8 in Mekanisa, Addis Ababa. The belief that there is always a path forward shapes how we respond when a student is discouraged by a result.',
           },
           {
-            p: 'His full interview, including what he means by an education of the heart, is in the second issue of The People Behind Nucleus. To visit a classroom or talk through your child’s situation, call +2519 81 99 99 22 or start the registration form.',
+            p: 'Our admissions team’s full piece, including what we mean by an education of the heart, is in the second issue of The People Behind Nucleus. To visit a classroom or talk through your child’s situation, call +2519 81 99 99 22 or start the registration form.',
           },
         ],
       },
     ],
     related: [
       {
-        label: 'Our School Director on what comes after a bad grade',
+        label: 'What our admissions team tells parents about a bad grade',
         url: '/newsletter/when-your-child-gets-a-bad-grade',
       },
       {
