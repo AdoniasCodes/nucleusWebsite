@@ -2,6 +2,7 @@ import 'dotenv/config'
 import { getPayload } from 'payload'
 import config from '../payload.config'
 import { richTextFromBlocks, type ContentBlock } from '../lib/lexical'
+import { POST_FAQS } from '../lib/postFaqs'
 import type { Post } from '../payload-types'
 
 /**
@@ -23,6 +24,7 @@ import type { Post } from '../payload-types'
  * Run: `PAYLOAD_SKIP_PUSH=1 pnpm run seed:classroom-blogs`
  */
 const ITC = '/images/newsletter/inside-the-classroom'
+const CAMP = '/images/newsletter/summer-camp-2026'
 
 type SeedImage = { imageUrl: string; alt: string; caption?: string; portrait?: boolean }
 type SeedSection = {
@@ -43,6 +45,9 @@ type SeedPost = {
   sections: SeedSection[]
   related: { label: string; url: string }[]
 }
+
+const faqBody = (slug: string): ContentBlock[] =>
+  (POST_FAQS[slug] ?? []).map((f) => ({ p: `${f.q} ${f.a}` }))
 
 const posts: SeedPost[] = [
   {
@@ -264,6 +269,179 @@ const posts: SeedPost[] = [
       {
         label: 'Teaching critical thinking and problem solving in Ethiopia',
         url: '/news/teaching-critical-thinking-problem-solving-ethiopia',
+      },
+      { label: 'Register your child at Nucleus', url: '/register' },
+    ],
+  },
+  {
+    title: 'Inquiry-Based Learning in Primary School: What It Is and How It Works',
+    slug: 'inquiry-based-learning-primary-school',
+    category: 'academics',
+    excerpt:
+      'Inquiry-based learning means children learn by asking and investigating questions instead of only memorising answers. Here is what it is, what it looks like from Year 1 to Year 6, what the teacher actually does, and how parents can support it at home.',
+    heroImageUrl: `${CAMP}/week3-classroom-session.webp`,
+    publishedAt: '2026-10-26T10:00:00.000Z',
+    meta: {
+      title: 'Inquiry-Based Learning in Primary School',
+      description:
+        'What inquiry-based learning is, how it works from Year 1 to Year 6, what the teacher does, and how parents can help at home. A guide from Addis Ababa.',
+    },
+    sections: [
+      {
+        body: [
+          {
+            p: 'Ask a parent what their child did at school today and the answer is often a list of facts. Ask what question their child was trying to answer, and the room goes quiet. That second question is the heart of inquiry-based learning.',
+          },
+          {
+            p: 'This guide explains what inquiry-based learning is, how it differs from the way most of us were taught, what it looks like at each age in primary school, and what you can do at home to support it. The examples come from real lessons in the international Cambridge curriculum at Nucleus International Schools in Addis Ababa.',
+          },
+        ],
+      },
+      {
+        heading: 'What is inquiry-based learning?',
+        body: [
+          {
+            p: 'Inquiry-based learning is an approach in which children learn by asking questions, investigating them and explaining what they find, rather than only receiving and repeating information. The question comes first. Knowledge is gathered on the way to answering it.',
+          },
+          {
+            p: 'A typical inquiry has a simple shape that repeats at every age, only growing in difficulty:',
+          },
+          {
+            ul: [
+              'Notice something and ask a question about it.',
+              'Find out: observe, ask people, read, measure or test.',
+              'Look at what you found and decide what it shows.',
+              'Listen to how other people see it.',
+              'Explain your conclusion and your reasons.',
+              'Reflect: did my thinking change, and what would I ask next?',
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'How is it different from traditional teaching?',
+        body: [
+          {
+            p: 'In a traditional lesson the teacher presents the content, the children practise it, and a test checks whether they remember it. That model works well for many things, and good schools still use it. Times tables and spelling need practice, not debate.',
+          },
+          {
+            p: 'Inquiry adds something the traditional model does not train directly: the ability to handle a question nobody has answered for you yet. The child is not only asked what the answer is, but why they think so, how they know, and whether someone else could reasonably disagree.',
+          },
+          {
+            p: 'Good inquiry is not a free-for-all. It is guided. Children who are simply left to discover things on their own tend to learn less, so the teacher plans the question, shapes the investigation and steps in at the right moments.',
+          },
+        ],
+      },
+      {
+        heading: 'What does inquiry-based learning look like from Year 1 to Year 6?',
+        body: [
+          {
+            p: 'In Cambridge Primary, inquiry is built most deliberately through Global Perspectives, a subject designed around six skills: research, analysis, evaluation, reflection, collaboration and communication. Here is how the same habit grows across the primary years at Nucleus.',
+          },
+          {
+            ul: [
+              'Year 1: noticing. Children sorted fruit flashcards, talked about favourites and told sweet from sour. Their teacher noticed them naming fruits they had not known before, without prompting. That is where inquiry starts: what do I know, and what is new to me?',
+              'Year 2: following a chain. Children chose a favourite food and traced it back from the shop to the farm, animal or tree it came from. An ordinary meal turned into a link to a much wider world.',
+              'Year 3: comparing experiences. Children studied their own journeys to school. One preferred walking to the car because of motion sickness: an observation, a comparison and a reasoned preference in one sentence.',
+              'Years 4 and 5: investigating. Children start writing their own questions, using interviews and simple questionnaires, drawing conclusions from small sets of data and recognising that others may see the same issue differently.',
+              'Year 6: researching a big question. One student asked, “Will AI kill us?” The lesson was not the dramatic wording but what came next: what does AI mean, which sources can be trusted, and might the answer change his mind?',
+            ],
+          },
+          {
+            p: 'The questions get bigger because the children’s ability to investigate them is growing. The full account of these lessons is in Part Two of Inside the Nucleus Classroom.',
+          },
+        ],
+        images: [
+          {
+            imageUrl: `${CAMP}/week3-city-mat-build.webp`,
+            alt: 'Two primary-age children at Nucleus International Schools working together on a building task on a classroom floor mat',
+            caption: 'Working a problem out together, rather than being handed the answer.',
+          },
+        ],
+      },
+      {
+        heading: 'What does the teacher do in an inquiry classroom?',
+        body: [
+          {
+            p: 'More, not less. The teacher chooses a question that is worth investigating and right for the age group, plans how the children will find things out, and decides when to guide and when to leave space for a child to work something out alone.',
+          },
+          {
+            p: 'In the lesson, the teacher’s main tools are questions: What makes you think that? How could we check? Does anyone see it differently? Cambridge lets schools choose topics that fit their students and their setting, so in Addis Ababa a lesson on food or transport starts from the children’s own lives. The topic is the starting point. The thinking skill is the purpose.',
+          },
+        ],
+      },
+      {
+        heading: 'What are the benefits of inquiry-based learning?',
+        body: [
+          {
+            ul: [
+              'Children learn to ask better questions, which is the starting point of all research.',
+              'They learn to check whether information is reliable, a skill that matters more every year children spend online.',
+              'They learn to listen to other views without giving up their own.',
+              'They learn to explain their reasons, which carries straight into science write-ups, essays and later exams.',
+              'Curiosity stays alive. A child whose questions are taken seriously keeps asking them.',
+            ],
+          },
+          {
+            p: 'Progress here is less visible than a mark in Mathematics or English. Parents tend to notice it in small ways: a more thoughtful question at dinner, more patience with someone else’s opinion, a child who wonders aloud whether something online is true.',
+          },
+        ],
+      },
+      {
+        heading: 'How can parents support inquiry-based learning at home?',
+        body: [
+          {
+            ul: [
+              'Answer a question with a question now and then: “What do you think? How could we find out?”',
+              'Turn ordinary things into investigations. Where did this food come from? Why is the traffic worse on Mondays?',
+              'When your child states an opinion, ask for the reason, kindly, and give yours.',
+              'Check one thing online together and talk about whether the source is trustworthy.',
+              'Praise good questions, not only right answers.',
+              'Let a big question stay open for a few days. Not every answer needs to arrive tonight.',
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'What to ask a school about inquiry-based learning',
+        body: [
+          {
+            p: 'Many schools say they teach through inquiry. When you visit, ask to hear a real example from a recent lesson in your child’s year group, ask what the teacher does when a child asks an unexpected question, and ask how they make sure core skills such as reading and arithmetic are still practised properly. Clear, specific answers are a good sign.',
+          },
+          {
+            p: 'If you are comparing options, our guide to choosing an international school in Addis Ababa has more questions worth asking.',
+          },
+        ],
+      },
+      {
+        heading: 'Questions parents ask about inquiry-based learning',
+        body: faqBody('inquiry-based-learning-primary-school'),
+      },
+      {
+        heading: 'Where this happens at Nucleus',
+        style: 'highlight',
+        body: [
+          {
+            p: 'Nucleus International Schools teaches the international Cambridge curriculum, including Cambridge Primary Global Perspectives from Year 1, at our campuses in Addis Ababa. As our Cambridge Coordinator Teklebrhan Tesfaye puts it, children are learning “not simply what to think about the world, but how to think about issues in the world.”',
+          },
+          {
+            p: 'To see an inquiry lesson for yourself, call +2519 81 99 99 22 or start the registration form.',
+          },
+        ],
+      },
+    ],
+    related: [
+      {
+        label: 'Inside Global Perspectives from Year 1 to Year 6',
+        url: '/newsletter/primary-global-perspectives-year-1-to-6',
+      },
+      {
+        label: 'Cambridge Global Perspectives explained',
+        url: '/news/cambridge-global-perspectives-explained',
+      },
+      {
+        label: 'How to choose an international school in Addis Ababa',
+        url: '/news/how-to-choose-international-school-addis-ababa',
       },
       { label: 'Register your child at Nucleus', url: '/register' },
     ],

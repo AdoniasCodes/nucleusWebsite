@@ -65,6 +65,28 @@ export const POST_FAQS: Record<string, PostFaq[]> = {
       a: 'Twice a week is the usual rhythm for a child who wants to progress, and once a week is enough to keep the habit and the fitness. Intensive holiday programmes such as summer camp are a good way to try it, because a child gets several sessions in a single week and finds out quickly whether they enjoy it before the family commits to a term.',
     },
   ],
+  'inquiry-based-learning-primary-school': [
+    {
+      q: 'What is inquiry-based learning in simple terms?',
+      a: 'It is learning by asking and investigating questions. Instead of only being told the answer, a child notices something, asks about it, finds out, decides what the evidence shows and explains their reasons. The teacher guides each step.',
+    },
+    {
+      q: 'Is inquiry-based learning suitable for young children?',
+      a: 'Yes, as long as it matches their age. In Year 1 it can be as small as noticing a new fruit and talking about it. The questions and the research grow with the child, so by Year 6 students can investigate a big issue using books, the internet and the people around them.',
+    },
+    {
+      q: 'Does inquiry-based learning replace teaching the basics?',
+      a: 'No. Reading, writing and arithmetic still need direct teaching and regular practice. Inquiry works alongside them and gives children a reason to use those skills on real questions.',
+    },
+    {
+      q: 'How is inquiry-based learning used in the Cambridge curriculum?',
+      a: 'Cambridge Primary builds it most deliberately through Global Perspectives, which trains research, analysis, evaluation, reflection, collaboration and communication. Schools choose topics that suit their students, and the skills grow in difficulty from Year 1 to Year 6.',
+    },
+    {
+      q: 'How can I support inquiry-based learning at home?',
+      a: 'Ask your child what they think and why, turn everyday things into small investigations, check online information together, and praise good questions as well as right answers.',
+    },
+  ],
   'cambridge-global-perspectives-explained': [
     {
       q: 'What is Cambridge Global Perspectives?',

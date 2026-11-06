@@ -73,6 +73,8 @@ const SERIES: SeedSeries[] = [
       'A regular feature from Nucleus International School in Addis Ababa, published every other Monday. Each issue goes inside one subject with the teacher who teaches it: what our students are learning, how they are learning it, and why it matters beyond the classroom.',
     coverImageUrl: `${ITC}/gp01-global-perspectives-class.webp`,
     related: [
+      { label: 'Inquiry-based learning in primary school: what it is and how it works', url: '/news/inquiry-based-learning-primary-school' },
+      { label: 'Cambridge Global Perspectives explained', url: '/news/cambridge-global-perspectives-explained' },
       { label: 'The Cambridge pathway at Nucleus', url: '/cambridge-pathway' },
       { label: 'Meet the team behind our classrooms', url: '/about' },
       { label: 'Register your child at Nucleus', url: '/register' },
@@ -1773,11 +1775,11 @@ const itc01Sections: SeedSection[] = [
     ],
   },
   {
-    heading: 'Coming Next: Building Global Thinking in Years 1 to 6',
+    heading: 'Part Two: Building Global Thinking in Years 1 to 6',
     style: 'highlight',
     body: [
       {
-        p: 'Part Two of this feature arrives in two weeks. It explores how our youngest students begin developing curiosity, communication, teamwork and an understanding of different perspectives, long before they meet a formal research question.',
+        p: 'Part Two of this feature is now published. It explores how our youngest students begin developing curiosity, communication, teamwork and an understanding of different perspectives, long before they meet a formal research question.',
       },
       {
         p: 'Inside the Nucleus Classroom is a regular Nucleus International School feature exploring what students are learning, how they are learning and why it matters beyond the classroom. A new issue arrives every other Monday.',
@@ -1785,6 +1787,244 @@ const itc01Sections: SeedSection[] = [
     ],
   },
 ]
+
+const itc02Sections: SeedSection[] = [
+  {
+    heading: 'How Simple Questions Grow Into Independent Thinking',
+    body: [
+      {
+        p: 'In our last Inside the Nucleus Classroom, we explored Global Perspectives in Years 7 to 9, where students are learning to research issues, question sources, compare different points of view and support their conclusions with evidence.',
+      },
+      { p: 'But those skills do not suddenly appear in Year 7.' },
+      { p: 'At Nucleus, the foundations begin much earlier.' },
+      {
+        p: 'Through Cambridge Primary Global Perspectives, children in Years 1 to 6 gradually develop six essential skills: analysis, collaboration, communication, evaluation, reflection and research.',
+      },
+      {
+        p: 'Unlike traditional subjects built around a defined body of knowledge, Global Perspectives uses familiar topics and real-world questions to help children investigate, listen, discuss, challenge assumptions and form their own conclusions.',
+      },
+      {
+        p: 'And in the younger years, that journey can begin with something as ordinary as a piece of fruit.',
+      },
+    ],
+  },
+  {
+    heading: 'Year 1: It Starts With Noticing',
+    body: [
+      { p: 'Recently, Year 1 explored fruits.' },
+      {
+        p: 'Using flashcards, the children identified different fruits, talked about their favourites and began distinguishing between sweet and sour.',
+      },
+      { p: 'It sounds simple, and at this age, it should be.' },
+      { p: 'But something important was already happening.' },
+      {
+        p: 'Miss Feruz noticed that the children were beginning to identify fruits they had not previously known, without prompting.',
+      },
+      {
+        p: 'This is where inquiry begins. What do I already know? What am I noticing? What is new to me?',
+      },
+      {
+        p: 'At this stage, Cambridge encourages children to ask simple questions, listen to others, share information and begin expressing their own opinions.',
+      },
+      { p: 'The sophistication comes later. The curiosity comes first.' },
+    ],
+  },
+  {
+    heading: 'Year 2: Following the Story Behind Our Food',
+    body: [
+      { p: 'In Year 2, the question became a little bigger: where does our food come from?' },
+      {
+        p: 'Students looked beyond the food on their plates to farms, animals, trees and other sources.',
+      },
+      {
+        p: 'They then chose a favourite food and began constructing a chain showing where it originated, how it was distributed and where their family eventually bought it.',
+      },
+      {
+        p: 'Suddenly, something as familiar as a meal became connected to a much wider world.',
+      },
+      {
+        p: 'This is an important part of Global Perspectives. Children begin with what they know personally and gradually discover connections to other people, their communities and the wider world.',
+      },
+      { p: 'They are learning that even ordinary things have stories worth investigating.' },
+    ],
+  },
+  {
+    heading: 'Year 3: Looking Differently at an Everyday Journey',
+    body: [
+      { p: 'Year 3 investigated an experience almost every child shares: how do we travel to school?' },
+      {
+        p: 'Students considered different forms of transport, but they were also encouraged to observe what happened during their own journeys.',
+      },
+      {
+        p: 'They noticed traffic, distance, temperature and even how travelling made them feel. They compared their journeys to school with journeys to other places.',
+      },
+      {
+        p: 'One student’s observation was wonderfully personal. He preferred walking to travelling by car because he experienced motion sickness.',
+      },
+      { p: 'There is a surprising amount of thinking in that simple comment.' },
+      {
+        p: 'The child had observed his own experience, compared two ways of travelling, considered how each affected him and formed a reasoned preference.',
+      },
+      {
+        p: 'He was doing more than describing his journey. He was beginning to explain why he thought as he did.',
+      },
+      { p: 'That is Global Perspectives taking shape.' },
+    ],
+  },
+  {
+    heading: 'Years 4 and 5: From Curiosity to Investigation',
+    body: [
+      {
+        p: 'As children progress through the primary years, Cambridge gradually raises the expectations.',
+      },
+      {
+        p: 'In Years 3 and 4, students begin learning how to construct their own questions, gather information through interviews and questionnaires, draw conclusions from simple data and recognise that other people may see the same issue differently.',
+      },
+      {
+        p: 'By Year 5, the emphasis increasingly shifts towards investigating questions more independently, examining evidence and considering the reasons behind different perspectives.',
+      },
+      {
+        p: 'Children are encouraged to move beyond asking “What do I think?” towards more demanding questions: Why do I think this? What evidence supports my view? Could someone else reasonably see it differently?',
+      },
+      { p: 'These are important developments.' },
+      {
+        p: 'Learning to recognise another perspective does not mean abandoning one’s own opinion. It means understanding that opinions can be informed by different experiences, information and circumstances.',
+      },
+      {
+        p: 'Equally, learning to research does not simply mean finding information. It means beginning to ask whether that information is reliable, relevant and sufficient to support a conclusion.',
+      },
+      {
+        p: 'These habits take time to develop. Cambridge builds them progressively, recognising that a child’s capacity to investigate and reason grows with age and experience.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week3-circle-listening.webp`,
+        alt: 'Primary-age students at Nucleus International Schools sitting in a circle on the classroom floor, listening to one another',
+        caption: 'Listening to a different view is a skill, and it is taught.',
+      },
+    ],
+  },
+  {
+    heading: 'Year 6: An Unexpected Question About Artificial Intelligence',
+    body: [
+      { p: 'By Year 6, the progression becomes particularly interesting.' },
+      {
+        p: 'Students have been brainstorming major global issues and exploring how different types of questions lead to different investigations. They are gathering information from people around them and researching through books and the internet.',
+      },
+      { p: 'Miss Estemar described a moment that caught her by surprise.' },
+      { p: 'One student asked a question she had not expected: “Will AI kill us?”' },
+      { p: 'It is a striking question, particularly coming from a primary school student.' },
+      {
+        p: 'But what matters educationally is not the dramatic wording, or even whether the eventual answer is yes or no.',
+      },
+      { p: 'It is what happens next.' },
+      {
+        p: 'What does the student mean by artificial intelligence? Where might he find reliable information? Which sources should he trust? Do other people see the issue differently? What evidence supports the claims he encounters?',
+      },
+      {
+        p: 'And perhaps most importantly, after investigating the question, might his own thinking change?',
+      },
+      {
+        p: 'An unexpected question becomes an opportunity to research, evaluate information, consider different perspectives and reach a more informed understanding.',
+      },
+      {
+        p: 'This is precisely the kind of intellectual journey Global Perspectives is designed to encourage.',
+      },
+    ],
+  },
+  {
+    heading: 'The Teacher’s Role: Guiding Discovery, Not Simply Providing Answers',
+    body: [
+      {
+        p: 'One of the most important things for parents to understand is that Global Perspectives requires a different approach to teaching and learning.',
+      },
+      { p: 'The teacher is not simply presenting information for students to remember.' },
+      {
+        p: 'Instead, the teacher helps children formulate worthwhile questions, investigate possible answers, examine evidence, listen to different viewpoints and explain their reasoning.',
+      },
+      {
+        p: 'That requires careful planning, thoughtful questioning and an understanding of when to guide students and when to allow them the space to discover something for themselves.',
+      },
+      {
+        p: 'Cambridge allows schools to select issues and topics appropriate to their students and their context. The topic provides the starting point; the development of thinking skills is the central purpose.',
+      },
+    ],
+    images: [
+      {
+        imageUrl: `${IMG}/week3-coding-tiles-explain.webp`,
+        alt: 'A primary student at Nucleus International Schools explaining her work to two classmates sitting beside her',
+        caption: 'Explaining the reasons behind an answer is part of the lesson.',
+      },
+    ],
+  },
+  {
+    heading: '“How to Think About Issues in the World”',
+    style: 'highlight',
+    body: [
+      {
+        p: 'As Teklebrhan Tesfaye, our Cambridge Coordinator, explained when discussing the primary programme, children are learning “not simply what to think about the world, but how to think about issues in the world.”',
+      },
+      { p: 'And that distinction matters.' },
+    ],
+  },
+  {
+    heading: 'What Parents May Notice at Home',
+    body: [
+      {
+        p: 'Progress in Global Perspectives may not always be as immediately visible as progress in Mathematics or English.',
+      },
+      { p: 'Parents may notice it in other ways.' },
+      {
+        p: 'A child begins asking more thoughtful questions. Listens more carefully to someone else’s opinion. Wonders whether something seen online is actually true. Or starts explaining the reasons behind a belief rather than simply stating it.',
+      },
+      {
+        p: 'These may appear to be small changes, but they represent important steps towards independent thinking.',
+      },
+    ],
+  },
+  {
+    heading: 'Six Years of Learning to Think',
+    body: [
+      { p: 'Consider the progression.' },
+      {
+        ul: [
+          'A Year 1 child looks at a fruit and asks, “What is this?”',
+          'A Year 2 child begins wondering, “Where did my food come from?”',
+          'A Year 3 child observes, “My journey is different when I walk.”',
+          'In Years 4 and 5, children learn to ask more demanding questions, gather evidence and consider viewpoints beyond their own.',
+          'By Year 6, a student feels confident enough to ask, “Will AI kill us?”',
+        ],
+      },
+      {
+        p: 'The questions become bigger because the children’s ability to investigate them is growing.',
+      },
+      {
+        p: 'By the end of Cambridge Primary, students can bring their developing skills together through a team project: identifying a real local issue, researching it, considering different perspectives, agreeing on a goal and taking action.',
+      },
+      {
+        p: 'It is a progression from noticing the world to beginning to understand how they might contribute to it.',
+      },
+    ],
+  },
+  {
+    heading: 'One Very Good Question at a Time',
+    style: 'highlight',
+    body: [
+      { p: 'And perhaps that is the most important message for Nucleus parents.' },
+      {
+        p: 'We are not waiting until children are older to teach them to think critically about their world.',
+      },
+      {
+        p: 'We are giving them the tools to begin now: one observation, one conversation and one very good question at a time.',
+      },
+      {
+        p: 'Inside the Nucleus Classroom is a regular Nucleus International School feature exploring what students are learning, how they are learning and why it matters beyond the classroom.',
+      },
+    ],
+  },
+]
+
 
 type SeedIssue = {
   /** Which SERIES entry this issue belongs to. */
@@ -1988,6 +2228,24 @@ const ISSUES: SeedIssue[] = [
       },
     },
     sections: itc01Sections,
+  },
+  {
+    seriesSlug: 'inside-the-nucleus-classroom',
+    article: {
+      title: 'What Do Children Learn in Primary Global Perspectives? Year 1 to Year 6 at Nucleus',
+      slug: 'primary-global-perspectives-year-1-to-6',
+      excerpt:
+        'A Year 1 child asks what a fruit is. By Year 6, a student asks whether AI will kill us. Part Two goes inside Cambridge Primary Global Perspectives at Nucleus in Addis Ababa, year by year, to show how simple questions grow into independent thinking.',
+      heroImageUrl: `${IMG}/week2-hands-up-circle.webp`,
+      publishedAt: '2026-10-26T06:00:00.000Z',
+      playlistPart: 2,
+      meta: {
+        title: 'Primary Global Perspectives, Year 1 to 6',
+        description:
+          'What children learn in Cambridge Primary Global Perspectives, from Year 1 fruit flashcards to a Year 6 question about AI, at Nucleus in Addis Ababa.',
+      },
+    },
+    sections: itc02Sections,
   },
 ]
 
