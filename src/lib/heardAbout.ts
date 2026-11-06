@@ -30,6 +30,8 @@ export const HEARD_ABOUT_OPTIONS = [
   'Magazine',
   'Digital Screen',
   'Outdoor Signage',
+  // Partner websites (paid banner placements).
+  'Diplomat Corner Website',
 ] as const
 
 export const HEARD_ABOUT_LABEL = 'How did you hear about us?'
