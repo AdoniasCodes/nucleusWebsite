@@ -14,7 +14,7 @@ import { SERVER_URL } from '@/lib/serverUrl'
 import { shareImages } from '@/lib/shareImage'
 import type { Playlist, Post } from '@/payload-types'
 
-export const revalidate = 300
+export const revalidate = 86400
 
 export const metadata: Metadata = {
   title: 'Newsletter: Inside Nucleus',

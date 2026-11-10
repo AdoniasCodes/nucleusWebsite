@@ -16,7 +16,7 @@ import { SERVER_URL } from '@/lib/serverUrl'
 import { shareImages } from '@/lib/shareImage'
 import type { Post } from '@/payload-types'
 
-export const revalidate = 300
+export const revalidate = 86400
 
 // Empty list = no build-time renders, but each URL is cached on first visit (ISR) instead of
 // rendering per request, so a DB hiccup serves the last good copy rather than an error.

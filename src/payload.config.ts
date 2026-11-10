@@ -31,6 +31,7 @@ import { Redirects } from './collections/Redirects'
 // Globals
 import { SiteSettings } from './globals/SiteSettings'
 import { SEOSettings } from './globals/SEOSettings'
+import { withRevalidate, withRevalidateGlobal } from './hooks/revalidateSite'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -134,8 +135,8 @@ export default buildConfig({
     CareerCVs,
     Redirects,
     Users,
-  ],
-  globals: [SiteSettings, SEOSettings],
+  ].map(withRevalidate),
+  globals: [SiteSettings, SEOSettings].map(withRevalidateGlobal),
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   // CSRF/CORS locked to the canonical site origin. Admin + API only trust our own origin.

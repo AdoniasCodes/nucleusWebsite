@@ -11,6 +11,9 @@ import { shareImages } from '@/lib/shareImage'
  */
 const page = registerPages['grade-school']
 
+// Daily refresh (and on-demand from the admin) so the form token baked into the HTML never ages out.
+export const revalidate = 86400
+
 export const metadata: Metadata = {
   title: { absolute: page.seoTitle },
   description: page.description,

@@ -5,10 +5,10 @@ import { SERVER_URL } from '@/lib/serverUrl'
 
 /**
  * Posts are seeded straight into the production database, so a sitemap generated only at
- * build time leaves every new article invisible to crawlers until the next deploy. Rebuild
- * it hourly instead, matching the ISR window the article routes already use.
+ * build time leaves every new article invisible to crawlers until the next deploy. Rebuild it
+ * daily, and on demand whenever content is saved in the admin (hooks/revalidateSite.ts).
  */
-export const revalidate = 3600
+export const revalidate = 86400
 
 /** Blog posts aimed at the school's primary commercial queries. */
 const HEAD_TERM_POSTS = new Set([

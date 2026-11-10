@@ -7,7 +7,7 @@ import { getPageBySlug } from '@/lib/payload'
 import { buildBreadcrumbSchema } from '@/lib/seo'
 import { shareImages } from '@/lib/shareImage'
 
-export const revalidate = 300
+export const revalidate = 86400
 
 // Pre-render the known code-defined pages at build time.
 export function generateStaticParams() {

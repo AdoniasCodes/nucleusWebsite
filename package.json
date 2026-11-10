@@ -33,7 +33,8 @@
     "fix:cambridge": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/fix-cambridge-wording.ts",
     "seed:share-image": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/share-image.ts",
     "seed:socials": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/socials.ts",
-    "check:emdash": "node scripts/check-emdash.mjs"
+    "check:emdash": "node scripts/check-emdash.mjs",
+    "revalidate:prod": "node --env-file=.env scripts/revalidate-prod.mjs"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.85.0",

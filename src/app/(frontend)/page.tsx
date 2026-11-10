@@ -5,8 +5,8 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import { getPageBySlug, getSiteSettings, getSEOSettings } from '@/lib/payload'
 import { buildOrganizationSchema } from '@/lib/seo'
 
-// Content is editor-driven; revalidate periodically (ISR) for fast, cacheable delivery.
-export const revalidate = 300
+// Content is editor-driven: cached for a day, refreshed on demand when the admin saves (hooks/revalidateSite.ts).
+export const revalidate = 86400
 
 export const metadata: Metadata = { alternates: { canonical: '/' } }
 
