@@ -201,7 +201,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
     items: [
       { q: 'What curriculum does Nucleus follow?', a: 'The Cambridge pathway, from the early years through Grade 8: a portable, internationally recognised education.' },
       { q: 'What ages does Nucleus accept?', a: 'Children from age 2 through Grade 8, on a single planned journey from the early years into the Cambridge primary and middle years.' },
-      { q: 'Where is Nucleus located?', a: 'Two campuses are open in Addis Ababa: the Vatican grade school campus (behind the Vatican Embassy) and the Abo preschool campus (100 m from Mekanisa Abo Square). A third campus at Totot, behind World Vision, is being finished now.' },
+      { q: 'Where is Nucleus located?', a: 'Two campuses are open in Addis Ababa: the Vatican grade school campus (behind the Vatican Embassy) and the Bisrate Gebriel preschool and KG campus (South African Campus, next to Adot Building). A third campus at Totot, behind World Vision, is being finished now.' },
       { q: 'How much are the fees?', a: 'We keep fees transparent, with no hidden capital-fee surprises. Call us on +2519 81 99 99 22 and our admissions team will talk you through the fees for your child’s grade.' },
       { q: 'How safe is the campus?', a: 'Safety comes first. A secure, supervised campus with controlled access is the foundation of everything we do.' },
       { q: 'Is an international school worth it compared to a local school?', a: 'A good international school gives a portable, globally recognised education, smaller classes and learning beyond the textbook. It costs more, so the value depends on the school delivering it in practice, which is why we encourage you to visit and see for yourself.' },
@@ -221,7 +221,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
   },
   {
     blockType: 'map',
-    heading: 'The go-to school for parents around Sarbet, Mekanisa, Bisrate Gabriel and Lebu',
+    heading: 'The go-to school for parents around Sarbet, Mekanisa, Bisrate Gebriel and Lebu',
     intro: 'Easy to reach from Bole, Old Airport, Kazanchis, Mexico and Jemo. Come and see a full life in motion.',
     campuses: [
       {
@@ -242,15 +242,13 @@ export const defaultHomeLayout: RenderableBlock[] = [
       },
       {
         name: 'Preschool Campus',
-        embedSrc: 'https://www.google.com/maps?q=8.9817515,38.7337897&z=17&hl=en&output=embed',
-        directionsUrl: 'https://maps.app.goo.gl/BodKtkUxY6JiBKDz5',
-        streetAddress: 'Abo Mekanisa, 100 metres from Mekanisa Abo Square',
+        streetAddress: 'South African Campus, Bisrate Gebriel, next to Adot Building',
         telephone: ['+251981999922', '+251981999933'],
         rows: [
           {
             iconName: 'MapPin',
             title: 'Preschool Campus Address',
-            description: 'Abo Mekanisa Campus, 100 metres from Mekanisa Abo Square, Addis Ababa, Ethiopia.',
+            description: 'South African Campus, Bisrate Gebriel, next to Adot Building, Addis Ababa, Ethiopia.',
           },
           { iconName: 'Phone', title: 'Call Us', description: '+2519 81 99 99 22 · +2519 81 99 99 33' },
           { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },

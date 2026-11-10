@@ -49,7 +49,7 @@ const GRADES = [
   'Grade 8',
 ]
 
-const CAMPUSES = ['Vatican Campus (grade school)', 'Abo Campus (preschool)', 'Totot Campus', 'Not sure yet']
+const CAMPUSES = ['Vatican Campus (grade school)', 'Bisrate Gebriel Campus (preschool and KG)', 'Totot Campus', 'Not sure yet']
 
 
 const STEPS = [

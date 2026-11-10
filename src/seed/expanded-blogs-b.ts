@@ -114,7 +114,7 @@ const posts: SeedPost[] = [
             p: 'For a family on a three or four year posting, this is the practical point. A child who finishes a year in Addis Ababa can start the next in another Cambridge school without relearning the syllabus. Cambridge says of its Global Perspectives programme that each stage builds on the learner’s development “whether from a previous Cambridge stage or from another educational system” ([Cambridge Global Perspectives](https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-global-perspectives/)), which is the same arrangement that makes arrivals from other systems manageable.',
           },
           {
-            p: 'Nucleus International Schools is registered with Cambridge International and teaches the international Cambridge curriculum from Preschool to Grade 8 at its Abo Mekanisa and Sarbet Vatican campuses. The school plans to add Grades 9 to 12 at a new Totot Campus in Gerji for the 2027/28 academic year, with a Cambridge IGCSE and A Level pathway.',
+            p: 'Nucleus International Schools is registered with Cambridge International and teaches the international Cambridge curriculum from Preschool to Grade 8 at its Bisrate Gebriel and Sarbet Vatican campuses. The school plans to add Grades 9 to 12 at a new Totot Campus in Gerji for the 2027/28 academic year, with a Cambridge IGCSE and A Level pathway.',
           },
         ],
         images: [
@@ -236,7 +236,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus International Schools teaches the international Cambridge curriculum from Preschool to Grade 8 at Abo Mekanisa and Sarbet Vatican, with STEM and AI labs, agricultural labs, music, workshop and sport built into the week. Admission is open to students of all nationalities and starts with an age-appropriate placement assessment. To begin, [register your child](/register) or see [the Cambridge pathway at Nucleus](/cambridge-pathway).',
+            p: 'Nucleus International Schools teaches the international Cambridge curriculum from Preschool to Grade 8 at Bisrate Gebriel and Sarbet Vatican, with STEM and AI labs, agricultural labs, music, workshop and sport built into the week. Admission is open to students of all nationalities and starts with an age-appropriate placement assessment. To begin, [register your child](/register) or see [the Cambridge pathway at Nucleus](/cambridge-pathway).',
           },
         ],
       },
@@ -387,7 +387,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus International Schools is a private school teaching the international Cambridge curriculum from Preschool to Grade 8 at Abo Mekanisa and Sarbet Vatican. Teaching is in English by a mix of local and internationally qualified staff, with a Learning Support Department and a pastoral care programme. Admission is open to students of all nationalities, and every child sits an age-appropriate placement assessment. To take the next step, [register your child](/register) or call +2519 81 99 99 22.',
+            p: 'Nucleus International Schools is a private school teaching the international Cambridge curriculum from Preschool to Grade 8 at Bisrate Gebriel and Sarbet Vatican. Teaching is in English by a mix of local and internationally qualified staff, with a Learning Support Department and a pastoral care programme. Admission is open to students of all nationalities, and every child sits an age-appropriate placement assessment. To take the next step, [register your child](/register) or call +2519 81 99 99 22.',
           },
         ],
       },
@@ -451,7 +451,7 @@ const posts: SeedPost[] = [
         heading: 'Choose by age, because the campuses differ',
         body: [
           {
-            p: 'Nucleus International Schools runs two campuses in Addis Ababa, split by age. The Preschool campus is at Abo Mekanisa, 100 metres from Mekanisa Abo Square. The Grade School campus is at Sarbet Vatican, 50 metres behind the Embassy of Indonesia. The prospectus gives the entry ages: Kindergarten 1 at 3 to 4 years, Kindergarten 2 at 4 to 5, and Year 1 (Grade 1) at 5 to 6.',
+            p: 'Nucleus International Schools runs two campuses in Addis Ababa, split by age. The Preschool campus is the South African Campus at Bisrate Gebriel, next to Adot Building. The Grade School campus is at Sarbet Vatican, 50 metres behind the Embassy of Indonesia. The prospectus gives the entry ages: Kindergarten 1 at 3 to 4 years, Kindergarten 2 at 4 to 5, and Year 1 (Grade 1) at 5 to 6.',
           },
           {
             p: 'For the youngest children, see [the best kindergarten in Addis Ababa](/news/best-kindergarten-addis-ababa) and [the Cambridge Early Years curriculum](/news/cambridge-early-years-curriculum). For older ones, [Cambridge Primary subjects](/news/cambridge-primary-curriculum-subjects) and [Cambridge Lower Secondary](/news/cambridge-lower-secondary-curriculum) show what each stage covers.',

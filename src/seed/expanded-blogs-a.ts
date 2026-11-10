@@ -220,7 +220,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus International Schools is a Cambridge certified school teaching the international Cambridge curriculum from Preschool to Grade 8. The preschool is at our Abo Mekanisa campus and the grade school at our Vatican campus in Sarbet. The student-to-teacher ratio is 9:1, and our STEM and AI labs, agricultural lab, music band, workshop and sport are part of the weekly timetable. Our Learning Support department works with families on individual plans.',
+            p: 'Nucleus International Schools is a Cambridge certified school teaching the international Cambridge curriculum from Preschool to Grade 8. The preschool is at our Bisrate Gebriel campus and the grade school at our Vatican campus in Sarbet. The student-to-teacher ratio is 9:1, and our STEM and AI labs, agricultural lab, music band, workshop and sport are part of the weekly timetable. Our Learning Support department works with families on individual plans.',
           },
           {
             p: 'Families come from Ethiopia, Canada, the United States, France, Nigeria, Turkey, India and beyond. We would rather you compare us honestly than choose us in a hurry. Book a tour through the [registration page](/register), and read the [guide for families moving to Addis Ababa](/news/moving-to-addis-ababa-expat-school-guide) if you are arriving from abroad. When you are ready, [register your child](/register).',

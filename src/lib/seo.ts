@@ -30,7 +30,7 @@ export function buildOrganizationSchema(settings?: SiteSetting | null, seo?: Seo
     address: {
       '@type': 'PostalAddress',
       streetAddress:
-        settings?.address ?? 'Sarbet Vatican, behind the Vatican Embassy (grade school); Mekanisa Abo Square (preschool)',
+        settings?.address ?? 'Sarbet Vatican, behind the Vatican Embassy (grade school); South African Campus, Bisrate Gebriel (preschool and KG)',
       addressLocality: 'Addis Ababa',
       addressCountry: 'ET',
     },

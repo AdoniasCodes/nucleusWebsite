@@ -43,25 +43,25 @@ const commonTail = (campus: string): RenderableBlock[] => [
 export const registerPages: Record<'primary' | 'grade-school', DefaultPage> = {
   primary: {
     title: 'Primary School Registration',
-    seoTitle: 'Primary School Registration, Mekanisa Abo Square | Nucleus International Schools',
+    seoTitle: 'Primary School Registration, Bisrate Gebriel | Nucleus International Schools',
     description:
-      'Register for Preschool or KG at Nucleus, 100 metres from Mekanisa Abo Square, Addis Ababa. Six short steps, and admissions replies within one business day.',
+      'Register for Preschool or KG at Nucleus, South African Campus, Bisrate Gebriel, Addis Ababa. Six short steps, and admissions replies within one business day.',
     layout: [
       {
         blockType: 'hero',
         background: 'purple',
-        eyebrow: 'Primary School · Mekanisa Abo Square Campus',
+        eyebrow: 'Primary School · Bisrate Gebriel Campus',
         heading: 'Register for\nPreschool or KG',
         bgImage: '/images/stock/admissions-hero.webp',
         subhead:
-          'This form registers your child at our Mekanisa Abo Square campus. It takes about ten minutes, it saves as you go, and you can stop and come back to it any time on the same device.',
+          'This form registers your child at our Bisrate Gebriel (South African Campus) campus. It takes about ten minutes, it saves as you go, and you can stop and come back to it any time on the same device.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'Start the form', url: '#application' } },
           { link: { appearance: 'outline', type: 'custom', label: 'Joining Grade 1 to 8?', url: '/register/grade-school' } },
         ],
       },
       { blockType: 'admissionApplication', variant: 'primary' },
-      ...commonTail('our Abo Square campus'),
+      ...commonTail('our Bisrate Gebriel campus'),
     ],
   },
 

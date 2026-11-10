@@ -33,7 +33,7 @@ export const SiteSettings: GlobalConfig = {
               name: 'address',
               type: 'textarea',
               defaultValue:
-                'Vatican campus (grade school): Sarbet Vatican, behind the Vatican Embassy. Abo campus (preschool): 100 m from Mekanisa Abo Square. Totot campus: behind World Vision. Addis Ababa, Ethiopia.',
+                'Vatican campus (grade school): Sarbet Vatican, behind the Vatican Embassy. Bisrate Gebriel campus (preschool and KG): South African Campus, Bisrate Gebriel, next to Adot Building. Totot campus: behind World Vision. Addis Ababa, Ethiopia.',
             },
             {
               type: 'row',

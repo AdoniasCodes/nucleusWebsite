@@ -183,7 +183,7 @@ const posts: SeedPost[] = [
         heading: 'How Nucleus handles the early years',
         body: [
           {
-            p: 'Nucleus International Schools teaches the international Cambridge curriculum from Preschool to Grade 8. The preschool opened at our Abo Mekanisa campus in 2022, and Grade 1 to Grade 8 is taught at our Vatican campus in Sarbet. The prospectus describes the preschool stage as a foundation stage focused on language, numeracy, social skills and play-based learning, and we welcome children from age 2. Because the early years and the primary years sit on one pathway, the move into Year 1 is a planned step inside the same school community.',
+            p: 'Nucleus International Schools teaches the international Cambridge curriculum from Preschool to Grade 8. The preschool opened at Abo Mekanisa in 2022 and now runs at our Bisrate Gebriel campus (South African Campus). Grade 1 to Grade 8 is taught at our Vatican campus in Sarbet. The prospectus describes the preschool stage as a foundation stage focused on language, numeracy, social skills and play-based learning, and we welcome children from age 2. Because the early years and the primary years sit on one pathway, the move into Year 1 is a planned step inside the same school community.',
           },
           {
             p: 'Fees are shared by phone: call +2519 81 99 99 22 and we will walk you through them. When you are ready, you can [register your child](/register) or book a visit and watch a normal school day.',
@@ -459,7 +459,7 @@ const posts: SeedPost[] = [
           },
           { h3: 'Nucleus International Schools' },
           {
-            p: 'Nucleus teaches the international Cambridge curriculum from Preschool to Grade 8. The preschool opened at Abo Mekanisa in 2022 and the grade school is at Sarbet Vatican. The 2025/26 prospectus lists a student-to-teacher ratio of 9:1, a mix of local and internationally qualified teachers, and a plan to open Grades 9 to 12 at a new Totot campus in Gerji for the 2027/28 academic year. Students come from Ethiopia, Canada, the United States, France, Nigeria, Turkey, India and beyond. We are the youngest of the three, and we say so: the older schools have track records that ours is still building. Read more about [the Cambridge pathway at Nucleus](/cambridge-pathway).',
+            p: 'Nucleus teaches the international Cambridge curriculum from Preschool to Grade 8. The preschool opened at Abo Mekanisa in 2022 and now runs at Bisrate Gebriel; the grade school is at Sarbet Vatican. The 2025/26 prospectus lists a student-to-teacher ratio of 9:1, a mix of local and internationally qualified teachers, and a plan to open Grades 9 to 12 at a new Totot campus in Gerji for the 2027/28 academic year. Students come from Ethiopia, Canada, the United States, France, Nigeria, Turkey, India and beyond. We are the youngest of the three, and we say so: the older schools have track records that ours is still building. Read more about [the Cambridge pathway at Nucleus](/cambridge-pathway).',
           },
         ],
       },
@@ -478,7 +478,7 @@ const posts: SeedPost[] = [
             ul: [
               'Bingham Academy: Kindergarten to Grade 12, Cambridge IGCSE and A Level route, foreign passport holders only, Christian ethos.',
               'One Planet International School: Kindergarten to Year 13, Cambridge stages listed from Early Years to Advanced, Summit campus, around 950 students.',
-              'Nucleus International Schools: Preschool to Grade 8, international Cambridge curriculum, Mekanisa Abo and Sarbet Vatican campuses, Grades 9 to 12 planned for 2027/28.',
+              'Nucleus International Schools: Preschool to Grade 8, international Cambridge curriculum, Bisrate Gebriel and Sarbet Vatican campuses, Grades 9 to 12 planned for 2027/28.',
             ],
           },
           {

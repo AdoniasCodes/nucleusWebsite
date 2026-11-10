@@ -6,7 +6,7 @@ import { buildBreadcrumbSchema } from '@/lib/seo'
 import { shareImages } from '@/lib/shareImage'
 
 /**
- * Preschool / KG registration, locked to the Mekanisa Abo Square campus. Its own route (rather
+ * Preschool / KG registration, locked to the Bisrate Gebriel (South African Campus). Its own route (rather
  * than a `defaultPages` entry) because the slug has a path segment and `[slug]` matches only one.
  */
 const page = registerPages.primary

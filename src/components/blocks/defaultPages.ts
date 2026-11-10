@@ -322,7 +322,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Contact & Visit',
     seoTitle: 'Contact & Visit | Nucleus International Schools, Vatican, Addis Ababa',
     description:
-      'Visit Nucleus: grade school at Sarbet Vatican, preschool at Mekanisa Abo Square, Addis Ababa. Directions, phone numbers and how to book a campus tour.',
+      'Visit Nucleus: grade school at Sarbet Vatican, preschool and KG at South African Campus, Bisrate Gebriel, Addis Ababa. Directions, phone numbers and how to book a campus tour.',
     layout: [
       {
         blockType: 'hero',
@@ -331,7 +331,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Come See a Full Life\nin Motion',
         bgImage: '/images/stock/contact-hero.webp',
         subhead:
-          'We’d love to show you around. Visit us at Vatican (grade school, behind the Vatican Embassy) or Abo (preschool, by Mekanisa Abo Square), and watch this space for Totot, opening soon.',
+          'We’d love to show you around. Visit us at Vatican (grade school, behind the Vatican Embassy) or Bisrate Gebriel (preschool and KG, South African Campus, next to Adot Building), and watch this space for Totot, opening soon.',
       },
       {
         blockType: 'cardsGrid',
@@ -340,7 +340,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         columns: '3',
         cards: [
           { iconName: 'Phone', title: 'Call', description: '+2519 81 99 99 22 / +2519 81 99 99 33' },
-          { iconName: 'MapPin', title: 'Visit', description: 'Vatican (grade school), behind the Vatican Embassy. Abo (preschool), Mekanisa Abo Square. Addis Ababa.' },
+          { iconName: 'MapPin', title: 'Visit', description: 'Vatican (grade school), behind the Vatican Embassy. Bisrate Gebriel (preschool and KG), South African Campus, next to Adot Building. Addis Ababa.' },
           { iconName: 'CalendarCheck', title: 'Visit Now', description: 'Arrange a visit and meet our team in person.' },
         ],
       },
@@ -376,15 +376,13 @@ export const defaultPages: Record<string, DefaultPage> = {
           },
           {
             name: 'Preschool Campus',
-            embedSrc: 'https://www.google.com/maps?q=8.9817515,38.7337897&z=17&hl=en&output=embed',
-            directionsUrl: 'https://maps.app.goo.gl/BodKtkUxY6JiBKDz5',
-            streetAddress: 'Abo Mekanisa, 100 metres from Mekanisa Abo Square',
+            streetAddress: 'South African Campus, Bisrate Gebriel, next to Adot Building',
             telephone: ['+251981999922', '+251981999933'],
             rows: [
               {
                 iconName: 'MapPin',
                 title: 'Preschool Campus Address',
-                description: 'Abo Mekanisa Campus, 100 metres from Mekanisa Abo Square, Addis Ababa, Ethiopia.',
+                description: 'South African Campus, Bisrate Gebriel, next to Adot Building, Addis Ababa, Ethiopia.',
               },
               { iconName: 'Phone', title: 'Call Us', description: '+2519 81 99 99 22 · +2519 81 99 99 33' },
               { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
@@ -423,7 +421,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Registration',
     seoTitle: 'Register Your Child | Nucleus International Schools, Addis Ababa',
     description:
-      'Register your child for the international Cambridge curriculum in Addis Ababa: Preschool and KG at Mekanisa Abo Square, Grades 1 to 8 at Vatican.',
+      'Register your child for the international Cambridge curriculum in Addis Ababa: Preschool and KG at Bisrate Gebriel, Grades 1 to 8 at Vatican.',
     layout: [
       {
         blockType: 'hero',
@@ -448,8 +446,8 @@ export const defaultPages: Record<string, DefaultPage> = {
         options: [
           {
             grades: 'Preschool & KG',
-            campus: 'Mekanisa Abo Square Campus',
-            where: 'Our primary school, 100 metres from Mekanisa Abo Square.',
+            campus: 'Bisrate Gebriel Campus',
+            where: 'Our primary school, South African Campus, Bisrate Gebriel, next to Adot Building.',
             iconName: 'Baby',
             href: '/register/primary',
           },

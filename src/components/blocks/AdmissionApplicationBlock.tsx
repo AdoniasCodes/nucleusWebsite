@@ -10,8 +10,8 @@ import { mintFormToken } from '@/lib/formToken'
  * signed form token is minted at render (same anti-bot contract as `formBlock`); the wizard
  * itself is a client component.
  *
- * `variant` picks a campus-locked version of the form: 'primary' registers for the Mekanisa Abo
- * Square campus (Preschool and KG), 'grade-school' for the Vatican campus (Grade 1 to Grade 8).
+ * `variant` picks a campus-locked version of the form: 'primary' registers for the Bisrate Gebriel
+ * (South African Campus) campus (Preschool and KG), 'grade-school' for the Vatican campus (Grade 1 to Grade 8).
  * Without it the form shows every grade and lets the parent choose a campus.
  */
 export type AdmissionApplicationProps = {

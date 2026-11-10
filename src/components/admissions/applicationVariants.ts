@@ -24,8 +24,8 @@ export const APPLICATION_VARIANTS = {
   primary: {
     key: 'primary',
     grades: ['Preschool', 'KG'],
-    campus: 'Mekanisa Abo Square Campus',
-    campusNote: 'Our primary school, 100 metres from Mekanisa Abo Square, Addis Ababa.',
+    campus: 'Bisrate Gebriel Campus (South African Campus)',
+    campusNote: 'Our primary school, South African Campus, Bisrate Gebriel (next to Adot Building), Addis Ababa.',
   },
   'grade-school': {
     key: 'grade-school',

@@ -14,7 +14,7 @@ import type { DefaultPage } from './defaultPages'
  */
 
 const VATICAN = 'Vatican Campus, behind the Vatican Embassy, Addis Ababa, Ethiopia'
-const ABO = 'Abo Campus, 100 m from Mekanisa Abo Square, Addis Ababa, Ethiopia'
+const ABO = 'South African Campus, Bisrate Gebriel (next to Adot Building), Addis Ababa, Ethiopia'
 const EFFECTIVE = '16 August 2026'
 
 export const legalPages: Record<string, DefaultPage> = {

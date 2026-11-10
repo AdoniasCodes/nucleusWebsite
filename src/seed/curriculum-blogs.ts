@@ -223,7 +223,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus International Schools in Addis Ababa is registered with Cambridge International and teaches the international Cambridge curriculum from Foundation to Year 9 (Preschool to Grade 8) at our Abo Mekanisa and Sarbet Vatican campuses. Our Totot Campus in Gerji opens Grades 9 to 12 for the 2027/28 academic year, with a Cambridge IGCSE and A Level pathway.',
+            p: 'Nucleus International Schools in Addis Ababa is registered with Cambridge International and teaches the international Cambridge curriculum from Foundation to Year 9 (Preschool to Grade 8) at our Bisrate Gebriel and Sarbet Vatican campuses. Our Totot Campus in Gerji opens Grades 9 to 12 for the 2027/28 academic year, with a Cambridge IGCSE and A Level pathway.',
           },
           {
             p: 'Ask us the six questions above. To visit, call +2519 81 99 99 22, or see [the Cambridge pathway at Nucleus](/cambridge-pathway).',
@@ -415,7 +415,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'At Nucleus, the early years foundation stage runs at our Abo Mekanisa Campus for KG1 (ages three to four) and KG2 (ages four to five). It focuses on language, numeracy, social skills and play-based learning, with time in the agriculture lab, the music room and the STEM lab, and leads straight into Cambridge Primary at our Vatican campus.',
+            p: 'At Nucleus, the early years foundation stage runs at our Bisrate Gebriel Campus (South African Campus) for KG1 (ages three to four) and KG2 (ages four to five). It focuses on language, numeracy, social skills and play-based learning, with time in the agriculture lab, the music room and the STEM lab, and leads straight into Cambridge Primary at our Vatican campus.',
           },
           {
             p: 'Choosing a kindergarten? Our checklist of [12 things to check](/news/best-kindergarten-addis-ababa) works for any school, including ours. To visit, call +2519 81 99 99 22 or [register for Preschool and KG](/register/primary).',
@@ -1699,7 +1699,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus opened its preschool at the Abo Mekanisa Campus, 100 metres from Mekanisa Abo Square, in 2022. It teaches the early years foundation stage, focused on language, numeracy, social skills and play-based learning, and leads straight into the international Cambridge curriculum through Grade 8 at our Vatican campus.',
+            p: 'Nucleus opened its preschool at Abo Mekanisa in 2022, and it now runs at the South African Campus in Bisrate Gebriel, next to Adot Building. It teaches the early years foundation stage, focused on language, numeracy, social skills and play-based learning, and leads straight into the international Cambridge curriculum through Grade 8 at our Vatican campus.',
           },
           {
             p: 'Our school-wide student to teacher ratio is 9:1. Preschool children also spend time in the agriculture lab, the music room and the STEM lab, because learning goes beyond books from the very first year.',

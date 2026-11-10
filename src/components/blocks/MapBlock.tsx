@@ -14,10 +14,10 @@ import { SERVER_URL } from '@/lib/serverUrl'
 export type MapCampus = {
   /** Campus label, e.g. "Grade School Campus". */
   name: string
-  /** Google Maps embed src (output=embed). */
-  embedSrc: string
-  /** Short link / place URL for the "Get directions" button. */
-  directionsUrl: string
+  /** Google Maps embed src (output=embed). Omit when no verified location exists (no map is shown). */
+  embedSrc?: string
+  /** Short link / place URL for the "Get directions" button. Omit with embedSrc. */
+  directionsUrl?: string
   /** Address + orientation lines shown beside the map. */
   rows: { iconName: string; title: string; description: string }[]
   /** Plain address string used for the LocalBusiness schema. */
@@ -45,7 +45,13 @@ export type MapProps = {
 
 function CampusBlock({ campus }: { campus: MapCampus }) {
   return (
-    <div className="grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-stretch">
+    <div
+      className={
+        campus.embedSrc
+          ? 'grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-stretch'
+          : 'grid gap-8'
+      }
+    >
       {/* Location details */}
       <Reveal variant="left">
         <div className="flex h-full flex-col gap-6 rounded-2xl border border-navy/[0.08] bg-mist/60 p-7 sm:p-8">
@@ -66,32 +72,36 @@ function CampusBlock({ campus }: { campus: MapCampus }) {
             ))}
           </ul>
 
-          <a
-            href={campus.directionsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-auto inline-flex items-center justify-center gap-2 self-start rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-ochre hover:text-navy"
-          >
-            <Icon name="MapPin" size={18} />
-            Get directions
-          </a>
+          {campus.directionsUrl && (
+            <a
+              href={campus.directionsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto inline-flex items-center justify-center gap-2 self-start rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-ochre hover:text-navy"
+            >
+              <Icon name="MapPin" size={18} />
+              Get directions
+            </a>
+          )}
         </div>
       </Reveal>
 
-      {/* Embedded map */}
-      <Reveal variant="right" delay={120}>
-        <div className="h-full min-h-[340px] overflow-hidden rounded-2xl border border-navy/[0.08] shadow-[0_12px_40px_-18px_rgba(17,2,77,0.28)]">
-          <iframe
-            title={`${campus.name} location map`}
-            src={campus.embedSrc}
-            className="h-full w-full"
-            style={{ border: 0, minHeight: 340 }}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
-          />
-        </div>
-      </Reveal>
+      {/* Embedded map (skipped for a campus with no verified map location) */}
+      {campus.embedSrc && (
+        <Reveal variant="right" delay={120}>
+          <div className="h-full min-h-[340px] overflow-hidden rounded-2xl border border-navy/[0.08] shadow-[0_12px_40px_-18px_rgba(17,2,77,0.28)]">
+            <iframe
+              title={`${campus.name} location map`}
+              src={campus.embedSrc}
+              className="h-full w-full"
+              style={{ border: 0, minHeight: 340 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+        </Reveal>
+      )}
     </div>
   )
 }
