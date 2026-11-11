@@ -1,5 +1,20 @@
 import type { RenderableBlock } from './BlockRenderer'
 import { legalPages } from './legalPages'
+import { PRESCHOOL_PHONES, VATICAN_PHONES, bothCampusesText, phoneText, phoneTels } from '@/lib/campusPhones'
+
+/** One primary "Call" button per campus (first number of each), preschool first. */
+const campusCallLinks = () =>
+  [
+    { set: PRESCHOOL_PHONES, name: 'Preschool and KG' },
+    { set: VATICAN_PHONES, name: 'Grade 1 to 8' },
+  ].map(({ set, name }) => ({
+    link: {
+      appearance: 'primary' as const,
+      type: 'custom' as const,
+      label: `Call ${name}: ${set.numbers[0].display}`,
+      url: `tel:${set.numbers[0].tel}`,
+    },
+  }))
 
 /**
  * Code-defined inner pages, used until an editor creates a CMS Page with the matching slug.
@@ -191,7 +206,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Questions before you register?',
         subhead: 'Talk to our camp team directly. We’ll help you choose the right weeks and campus for your child.',
         links: [
-          { link: { appearance: 'primary', type: 'custom', label: 'Call +2519 81 99 99 22', url: 'tel:+251981999922' } },
+          ...campusCallLinks(),
           { link: { appearance: 'outline', type: 'custom', label: 'Reserve a spot', url: '#register' } },
         ],
       },
@@ -339,7 +354,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Reach Us',
         columns: '3',
         cards: [
-          { iconName: 'Phone', title: 'Call', description: '+2519 81 99 99 22 / +2519 81 99 99 33' },
+          { iconName: 'Phone', title: 'Call', description: `${bothCampusesText('. ')}.` },
           { iconName: 'MapPin', title: 'Visit', description: 'Vatican (grade school), behind the Vatican Embassy. Bisrate Gebriel (preschool and KG), South African Campus, next to Adot Building. Addis Ababa.' },
           { iconName: 'CalendarCheck', title: 'Visit Now', description: 'Arrange a visit and meet our team in person.' },
         ],
@@ -363,28 +378,28 @@ export const defaultPages: Record<string, DefaultPage> = {
             embedSrc: 'https://www.google.com/maps?q=Nucleus+International+Schools,+Addis+Ababa&z=17&hl=en&output=embed',
             directionsUrl: 'https://maps.app.goo.gl/DHQMbtpZc7PBDWEF8',
             streetAddress: 'Sarbet Vatican, 50 metres behind the Vatican Embassy',
-            telephone: ['+251981999922', '+251981999933'],
+            telephone: phoneTels(VATICAN_PHONES),
             rows: [
               {
                 iconName: 'MapPin',
                 title: 'Grade School Campus Address',
                 description: 'Sarbet Vatican Campus, 50 metres behind the Vatican Embassy, Addis Ababa, Ethiopia.',
               },
-              { iconName: 'Phone', title: 'Call Us', description: '+2519 81 99 99 22 · +2519 81 99 99 33' },
+              { iconName: 'Phone', title: 'Call Us', description: phoneText(VATICAN_PHONES) },
               { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
             ],
           },
           {
             name: 'Preschool Campus',
             streetAddress: 'South African Campus, Bisrate Gebriel, next to Adot Building',
-            telephone: ['+251981999922', '+251981999933'],
+            telephone: phoneTels(PRESCHOOL_PHONES),
             rows: [
               {
                 iconName: 'MapPin',
                 title: 'Preschool Campus Address',
                 description: 'South African Campus, Bisrate Gebriel, next to Adot Building, Addis Ababa, Ethiopia.',
               },
-              { iconName: 'Phone', title: 'Call Us', description: '+2519 81 99 99 22 · +2519 81 99 99 33' },
+              { iconName: 'Phone', title: 'Call Us', description: phoneText(PRESCHOOL_PHONES) },
               { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
             ],
           },
@@ -404,8 +419,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Arrange your visit',
         subhead: 'Call us or send an enquiry. We’ll find a time that works for your family.',
         links: [
-          { link: { appearance: 'primary', type: 'custom', label: 'Call +2519 81 99 99 22', url: 'tel:+251981999922' } },
-          { link: { appearance: 'primary', type: 'custom', label: 'Call +2519 81 99 99 33', url: 'tel:+251981999933' } },
+          ...campusCallLinks(),
         ],
       },
     ],
@@ -496,7 +510,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         subhead: 'Visit our campus or call us. We\u2019ll walk you through everything.',
         links: [
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-          { link: { appearance: 'primary', type: 'custom', label: 'Call +2519 81 99 99 22', url: 'tel:+251981999922' } },
+          ...campusCallLinks(),
         ],
       },
     ],
@@ -591,7 +605,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'Questions before you apply?',
         subhead: 'Call our HR team and ask. We would rather talk than leave you guessing.',
         links: [
-          { link: { appearance: 'primary', type: 'custom', label: 'Call +2519 81 99 99 22', url: 'tel:+251981999922' } },
+          ...campusCallLinks(),
           { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
         ],
       },

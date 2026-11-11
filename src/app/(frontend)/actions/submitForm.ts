@@ -4,6 +4,7 @@ import { headers } from 'next/headers'
 import { getPayloadClient } from '@/lib/payload'
 import { verifyFormToken } from '@/lib/formToken'
 import { normalizePhone, PHONE_ERROR, cleanText } from '@/lib/phone'
+import { bothCampusesText } from '@/lib/campusPhones'
 
 export type FormState = { status: 'idle' | 'success' | 'error'; message: string }
 
@@ -61,7 +62,7 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
     return {
       status: 'error',
       message:
-        'Something went wrong sending your request. Please refresh the page and try again, or call us on +2519 81 99 99 22.',
+        'Something went wrong sending your request. Please refresh the page and try again, or call us: ' + bothCampusesText() + '.',
     }
   }
 
@@ -138,6 +139,6 @@ export async function submitForm(_prev: FormState, formData: FormData): Promise<
 
     return { status: 'success', message: 'Thank you. We will be in touch shortly.' }
   } catch {
-    return { status: 'error', message: 'Something went wrong. Please call us on +2519 81 99 99 22.' }
+    return { status: 'error', message: `Something went wrong. Please call us: ${bothCampusesText()}.` }
   }
 }

@@ -28,6 +28,27 @@ export const SiteSettings: GlobalConfig = {
               fields: [{ name: 'number', type: 'text', required: true }],
               defaultValue: [{ number: '+2519 81 99 99 22' }, { number: '+2519 81 99 99 33' }],
             },
+            {
+              name: 'campusPhones',
+              type: 'array',
+              admin: {
+                description:
+                  'Phone numbers per campus. When filled, the footer and the Organization schema use these instead of "phones" above (kept as a fallback). Display format +2519 XX XX XX XX.',
+              },
+              labels: { singular: 'Campus phone', plural: 'Campus phones' },
+              fields: [
+                {
+                  name: 'campus',
+                  type: 'select',
+                  required: true,
+                  options: [
+                    { label: 'Preschool and KG (Bisrate Gebriel)', value: 'preschool' },
+                    { label: 'Grade 1 to 8 (Vatican)', value: 'grade-school' },
+                  ],
+                },
+                { name: 'number', type: 'text', required: true },
+              ],
+            },
             { name: 'email', type: 'email' },
             {
               name: 'address',

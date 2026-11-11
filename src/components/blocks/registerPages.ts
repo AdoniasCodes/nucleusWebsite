@@ -1,5 +1,6 @@
 import type { RenderableBlock } from './BlockRenderer'
 import type { DefaultPage } from './defaultPages'
+import { PRESCHOOL_PHONES, VATICAN_PHONES, type CampusPhoneSet } from '@/lib/campusPhones'
 
 /**
  * The two campus-locked registration forms, at /register/primary and /register/grade-school.
@@ -10,7 +11,7 @@ import type { DefaultPage } from './defaultPages'
  */
 
 /** Shared tail: what to bring, then a talk-to-us band. Identical on both forms. */
-const commonTail = (campus: string): RenderableBlock[] => [
+const commonTail = (campus: string, phones: CampusPhoneSet): RenderableBlock[] => [
   {
     blockType: 'prose',
     background: 'white',
@@ -35,7 +36,9 @@ const commonTail = (campus: string): RenderableBlock[] => [
     subhead: `Visit ${campus} or call us. We’ll walk you through everything.`,
     links: [
       { link: { appearance: 'outline', type: 'custom', label: 'Visit Now', url: '/contact' } },
-      { link: { appearance: 'primary', type: 'custom', label: 'Call +2519 81 99 99 22', url: 'tel:+251981999922' } },
+      ...phones.numbers.map((n) => ({
+        link: { appearance: 'primary' as const, type: 'custom' as const, label: `Call ${n.display}`, url: `tel:${n.tel}` },
+      })),
     ],
   },
 ]
@@ -61,7 +64,7 @@ export const registerPages: Record<'primary' | 'grade-school', DefaultPage> = {
         ],
       },
       { blockType: 'admissionApplication', variant: 'primary' },
-      ...commonTail('our Bisrate Gebriel campus'),
+      ...commonTail('our Bisrate Gebriel campus', PRESCHOOL_PHONES),
     ],
   },
 
@@ -85,7 +88,7 @@ export const registerPages: Record<'primary' | 'grade-school', DefaultPage> = {
         ],
       },
       { blockType: 'admissionApplication', variant: 'grade-school' },
-      ...commonTail('our Vatican campus'),
+      ...commonTail('our Vatican campus', VATICAN_PHONES),
     ],
   },
 }

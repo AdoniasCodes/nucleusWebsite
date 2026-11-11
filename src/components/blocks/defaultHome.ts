@@ -1,4 +1,5 @@
 import type { RenderableBlock } from './BlockRenderer'
+import { PRESCHOOL_PHONES, VATICAN_PHONES, bothCampusesText, phoneText, phoneTels } from '@/lib/campusPhones'
 
 /**
  * Code-defined homepage used until an editor creates a Page with slug "home".
@@ -202,7 +203,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
       { q: 'What curriculum does Nucleus follow?', a: 'The Cambridge pathway, from the early years through Grade 8: a portable, internationally recognised education.' },
       { q: 'What ages does Nucleus accept?', a: 'Children from age 2 through Grade 8, on a single planned journey from the early years into the Cambridge primary and middle years.' },
       { q: 'Where is Nucleus located?', a: 'Two campuses are open in Addis Ababa: the Vatican grade school campus (behind the Vatican Embassy) and the Bisrate Gebriel preschool and KG campus (South African Campus, next to Adot Building). A third campus at Totot, behind World Vision, is being finished now.' },
-      { q: 'How much are the fees?', a: 'We keep fees transparent, with no hidden capital-fee surprises. Call us on +2519 81 99 99 22 and our admissions team will talk you through the fees for your child’s grade.' },
+      { q: 'How much are the fees?', a: `We keep fees transparent, with no hidden capital-fee surprises. Call us (${bothCampusesText()}) and our admissions team will talk you through the fees for your child’s grade.` },
       { q: 'How safe is the campus?', a: 'Safety comes first. A secure, supervised campus with controlled access is the foundation of everything we do.' },
       { q: 'Is an international school worth it compared to a local school?', a: 'A good international school gives a portable, globally recognised education, smaller classes and learning beyond the textbook. It costs more, so the value depends on the school delivering it in practice, which is why we encourage you to visit and see for yourself.' },
       { q: 'Cambridge or IB: which is better for my child?', a: 'Neither is automatically better. Cambridge is structured and exam-based; the IB is inquiry and project-led. Nucleus follows Cambridge for its clear structure and global portability.' },
@@ -229,28 +230,28 @@ export const defaultHomeLayout: RenderableBlock[] = [
         embedSrc: 'https://www.google.com/maps?q=Nucleus+International+Schools,+Addis+Ababa&z=17&hl=en&output=embed',
         directionsUrl: 'https://maps.app.goo.gl/DHQMbtpZc7PBDWEF8',
         streetAddress: 'Sarbet Vatican, 50 metres behind the Vatican Embassy',
-        telephone: ['+251981999922', '+251981999933'],
+        telephone: phoneTels(VATICAN_PHONES),
         rows: [
           {
             iconName: 'MapPin',
             title: 'Grade School Campus Address',
             description: 'Sarbet Vatican Campus, 50 metres behind the Vatican Embassy, Addis Ababa, Ethiopia.',
           },
-          { iconName: 'Phone', title: 'Call Us', description: '+2519 81 99 99 22 · +2519 81 99 99 33' },
+          { iconName: 'Phone', title: 'Call Us', description: phoneText(VATICAN_PHONES) },
           { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
         ],
       },
       {
         name: 'Preschool Campus',
         streetAddress: 'South African Campus, Bisrate Gebriel, next to Adot Building',
-        telephone: ['+251981999922', '+251981999933'],
+        telephone: phoneTels(PRESCHOOL_PHONES),
         rows: [
           {
             iconName: 'MapPin',
             title: 'Preschool Campus Address',
             description: 'South African Campus, Bisrate Gebriel, next to Adot Building, Addis Ababa, Ethiopia.',
           },
-          { iconName: 'Phone', title: 'Call Us', description: '+2519 81 99 99 22 · +2519 81 99 99 33' },
+          { iconName: 'Phone', title: 'Call Us', description: phoneText(PRESCHOOL_PHONES) },
           { iconName: 'Clock', title: 'School Hours', description: 'Monday–Friday, 8:00 AM – 3:30 PM' },
         ],
       },

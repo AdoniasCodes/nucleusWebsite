@@ -11,6 +11,7 @@ import { PhoneField, composePhone, validatePhone, type PhoneValue } from './Phon
 import type { ApplicationVariant } from './applicationVariants'
 import { submitApplication, type ApplicationState } from '@/app/(frontend)/actions/submitApplication'
 import { trackLead } from '@/lib/pixels'
+import { PRESCHOOL_PHONES, VATICAN_PHONES } from '@/lib/campusPhones'
 
 /* ------------------------------------------------------------------ shape */
 
@@ -529,6 +530,16 @@ export function ApplicationForm({
 
   /* --- success ---------------------------------------------------------- */
 
+  // Numbers shown in the "call us" lines: the campus this form is for (locked variant, or the
+  // campus picked on the combined form); both campuses when it is not known yet.
+  const campusKey = `${variant?.key ?? ''} ${String(values.preferredCampus ?? '')}`.toLowerCase()
+  const callNumbers =
+    campusKey.includes('primary') || campusKey.includes('bisrate')
+      ? PRESCHOOL_PHONES.numbers
+      : campusKey.includes('grade-school') || campusKey.includes('vatican')
+        ? VATICAN_PHONES.numbers
+        : [...PRESCHOOL_PHONES.numbers, ...VATICAN_PHONES.numbers]
+
   if (state.status === 'success') {
     return (
       <Section background="offwhite" id="application">
@@ -539,13 +550,14 @@ export function ApplicationForm({
             <p className="mx-auto mt-3 max-w-lg text-lg text-ink/75">{state.message}</p>
             <p className="mt-6 text-ink/70">
               Any questions in the meantime? Call{' '}
-              <a href="tel:+251981999922" className="font-semibold text-navy underline decoration-ochre decoration-2 underline-offset-4">
-                +2519 81 99 99 22
-              </a>{' '}
-              or{' '}
-              <a href="tel:+251981999933" className="font-semibold text-navy underline decoration-ochre decoration-2 underline-offset-4">
-                +2519 81 99 99 33
-              </a>
+              {callNumbers.map((n, i) => (
+                <span key={n.tel}>
+                  {i > 0 && ' or '}
+                  <a href={`tel:${n.tel}`} className="font-semibold text-navy underline decoration-ochre decoration-2 underline-offset-4">
+                    {n.display}
+                  </a>
+                </span>
+              ))}
               .
             </p>
           </div>
@@ -1231,8 +1243,8 @@ export function ApplicationForm({
 
         <p className="mt-6 text-center text-sm text-ink/60">
           Prefer to fill this in with us? Call{' '}
-          <a href="tel:+251981999922" className="font-semibold text-navy underline decoration-ochre decoration-2 underline-offset-4">
-            +2519 81 99 99 22
+          <a href={`tel:${callNumbers[0].tel}`} className="font-semibold text-navy underline decoration-ochre decoration-2 underline-offset-4">
+            {callNumbers[0].display}
           </a>{' '}
           or{' '}
           <a href="/contact" className="font-semibold text-navy underline decoration-ochre decoration-2 underline-offset-4">

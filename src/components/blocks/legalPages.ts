@@ -1,4 +1,5 @@
 import type { DefaultPage } from './defaultPages'
+import { PRESCHOOL_PHONES, VATICAN_PHONES } from '@/lib/campusPhones'
 
 /**
  * The school's legal pages: Terms and Conditions, and the Privacy Policy.
@@ -14,6 +15,14 @@ import type { DefaultPage } from './defaultPages'
  */
 
 const VATICAN = 'Vatican Campus, behind the Vatican Embassy, Addis Ababa, Ethiopia'
+/** Contact lines for each campus's phones, labelled by campus. */
+const CAMPUS_PHONE_LINES = [PRESCHOOL_PHONES, VATICAN_PHONES].flatMap((set) =>
+  set.numbers.map((n, i) => ({
+    label: i === 0 ? `Phone, ${set.label}` : `Alternative phone, ${set.label}`,
+    value: n.display,
+    href: `tel:${n.tel}`,
+  })),
+)
 const ABO = 'South African Campus, Bisrate Gebriel (next to Adot Building), Addis Ababa, Ethiopia'
 const EFFECTIVE = '16 August 2026'
 
@@ -275,8 +284,7 @@ export const legalPages: Record<string, DefaultPage> = {
           lines: [
             { label: 'Grade campus', value: VATICAN },
             { label: 'Primary campus', value: ABO },
-            { label: 'Phone', value: '+2519 81 99 99 22', href: 'tel:+251981999922' },
-            { label: 'Alternative phone', value: '+2519 81 99 99 33', href: 'tel:+251981999933' },
+            ...CAMPUS_PHONE_LINES,
             { label: 'Admissions', value: 'melat.a@nucints.com', href: 'mailto:melat.a@nucints.com' },
           ],
         },
@@ -596,8 +604,7 @@ export const legalPages: Record<string, DefaultPage> = {
           lines: [
             { label: 'Grade campus', value: VATICAN },
             { label: 'Primary campus', value: ABO },
-            { label: 'Phone', value: '+2519 81 99 99 22', href: 'tel:+251981999922' },
-            { label: 'Alternative phone', value: '+2519 81 99 99 33', href: 'tel:+251981999933' },
+            ...CAMPUS_PHONE_LINES,
             {
               label: 'HR and Admin Manager',
               value: 'meaza.m@nucints.com',

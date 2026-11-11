@@ -2085,6 +2085,16 @@ export interface SiteSetting {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Phone numbers per campus. When filled, the footer and the Organization schema use these instead of "phones" above (kept as a fallback). Display format +2519 XX XX XX XX.
+   */
+  campusPhones?:
+    | {
+        campus: 'preschool' | 'grade-school';
+        number: string;
+        id?: string | null;
+      }[]
+    | null;
   email?: string | null;
   address?: string | null;
   latitude?: number | null;
@@ -2150,6 +2160,13 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   phones?:
     | T
     | {
+        number?: T;
+        id?: T;
+      };
+  campusPhones?:
+    | T
+    | {
+        campus?: T;
         number?: T;
         id?: T;
       };

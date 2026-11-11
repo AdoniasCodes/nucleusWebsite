@@ -4,12 +4,22 @@ import { headers } from 'next/headers'
 import { getPayloadClient } from '@/lib/payload'
 import { verifyFormToken } from '@/lib/formToken'
 import { cleanText } from '@/lib/phone'
+import { PRESCHOOL_PHONES, VATICAN_PHONES, bothCampusesText, phoneText } from '@/lib/campusPhones'
 
 export type ApplicationState = { status: 'idle' | 'success' | 'error'; message: string }
 
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
 
-const CONTACT_LINE = 'Please call us on +2519 81 99 99 22 and we will take your details over the phone.'
+/** Phone line for error messages: the number of the campus being applied to, or both if unknown. */
+const contactLine = (campus: string) => {
+  const c = campus.toLowerCase()
+  const who = c.includes('bisrate') || c.includes('preschool')
+    ? phoneText(PRESCHOOL_PHONES, ' or ')
+    : c.includes('vatican')
+      ? phoneText(VATICAN_PHONES, ' or ')
+      : bothCampusesText()
+  return `Please call us on ${who} and we will take your details over the phone.`
+}
 
 /**
  * Rate limit, mirroring `submitForm`: best-effort, per-warm-instance. A full application is a
@@ -55,7 +65,7 @@ export async function submitApplication(
   if (!verifyFormToken(get('formToken', 400))) {
     return {
       status: 'error',
-      message: `Something went wrong sending your application. Please refresh the page and try again. ${CONTACT_LINE}`,
+      message: `Something went wrong sending your application. Please refresh the page and try again. ${contactLine(get('preferredCampus', 100))}`,
     }
   }
 
@@ -191,6 +201,6 @@ export async function submitApplication(
     }
   } catch (err) {
     console.error('[submitApplication] create failed:', err)
-    return { status: 'error', message: `Something went wrong saving your application. ${CONTACT_LINE}` }
+    return { status: 'error', message: `Something went wrong saving your application. ${contactLine(get('preferredCampus', 100))}` }
   }
 }

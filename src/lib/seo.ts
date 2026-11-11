@@ -12,7 +12,11 @@ const mediaUrl = (m: unknown): string | undefined =>
  */
 export function buildOrganizationSchema(settings?: SiteSetting | null, seo?: SeoSetting | null) {
   const name = seo?.siteName ?? settings?.schoolName ?? 'Nucleus International Schools'
-  const phones = (settings?.phones ?? []).map((p) => p.number).filter(Boolean) as string[]
+  // Per-campus phones win when set; the legacy flat list is the fallback. JSON-LD wants no spaces.
+  const campusPhones = (settings?.campusPhones ?? []).map((p) => p.number).filter(Boolean) as string[]
+  const phones = (campusPhones.length ? campusPhones : ((settings?.phones ?? []).map((p) => p.number).filter(Boolean) as string[])).map(
+    (n) => n.replace(/\s/g, ''),
+  )
   const sameAs = (settings?.socials ?? []).map((s) => s.url).filter(Boolean) as string[]
   const logo = mediaUrl(seo?.organization?.logo) || `${SERVER_URL}/images/nucleus-logo.png`
 

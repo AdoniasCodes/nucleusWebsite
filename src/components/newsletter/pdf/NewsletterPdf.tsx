@@ -1,3 +1,4 @@
+import { PRESCHOOL_PHONES, VATICAN_PHONES } from '@/lib/campusPhones'
 import { Document, Font, Image, Page, StyleSheet, Text, View } from '@react-pdf/renderer'
 
 /**
@@ -235,7 +236,7 @@ export function NewsletterPdf({ data }: { data: PdfData }) {
           <Text
             style={s.footerText}
             render={({ pageNumber, totalPages }) =>
-              `${data.siteHost} · +2519 81 99 99 22 · Page ${pageNumber} of ${totalPages}`
+              `${data.siteHost} · Preschool and KG ${PRESCHOOL_PHONES.numbers[0].display} · Grade 1 to 8 ${VATICAN_PHONES.numbers[0].display} · Page ${pageNumber} of ${totalPages}`
             }
           />
         </View>

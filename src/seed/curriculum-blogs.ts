@@ -418,7 +418,7 @@ const posts: SeedPost[] = [
             p: 'At Nucleus, the early years foundation stage runs at our Bisrate Gebriel Campus (South African Campus) for KG1 (ages three to four) and KG2 (ages four to five). It focuses on language, numeracy, social skills and play-based learning, with time in the agriculture lab, the music room and the STEM lab, and leads straight into Cambridge Primary at our Vatican campus.',
           },
           {
-            p: 'Choosing a kindergarten? Our checklist of [12 things to check](/news/best-kindergarten-addis-ababa) works for any school, including ours. To visit, call +2519 81 99 99 22 or [register for Preschool and KG](/register/primary).',
+            p: 'Choosing a kindergarten? Our checklist of [12 things to check](/news/best-kindergarten-addis-ababa) works for any school, including ours. To visit, call +2519 47 50 09 92 or +2519 47 50 04 94 or [register for Preschool and KG](/register/primary).',
           },
         ],
       },
@@ -1705,7 +1705,7 @@ const posts: SeedPost[] = [
             p: 'Our school-wide student to teacher ratio is 9:1. Preschool children also spend time in the agriculture lab, the music room and the STEM lab, because learning goes beyond books from the very first year.',
           },
           {
-            p: 'The best way to judge us is the way this guide suggests: come on a normal morning and watch. Call +2519 81 99 99 22 to arrange a visit, or [register for Preschool or KG](/register/primary).',
+            p: 'The best way to judge us is the way this guide suggests: come on a normal morning and watch. Call +2519 47 50 09 92 or +2519 47 50 04 94 to arrange a visit, or [register for Preschool or KG](/register/primary).',
           },
         ],
       },

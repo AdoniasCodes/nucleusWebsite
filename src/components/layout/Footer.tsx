@@ -19,10 +19,23 @@ const LEGAL = [
   { label: 'Privacy Policy', href: '/privacy' },
 ]
 
+const CAMPUS_ORDER = [
+  { value: 'preschool', label: 'Preschool and KG (Bisrate Gebriel)' },
+  { value: 'grade-school', label: 'Grade 1 to 8 (Vatican)' },
+] as const
+
 export async function Footer() {
   const settings = await getSiteSettings().catch(() => null)
   const schoolName = settings?.schoolName ?? 'Nucleus International Schools'
+  // Per-campus phones when set in site-settings; otherwise the legacy flat list (fallback).
+  const campusPhones = (settings?.campusPhones ?? []).filter((p) => p.number)
   const phones = settings?.phones ?? []
+  const phoneGroups: { label?: string; numbers: string[] }[] = campusPhones.length
+    ? CAMPUS_ORDER.map((c) => ({
+        label: c.label,
+        numbers: campusPhones.filter((p) => p.campus === c.value).map((p) => p.number),
+      })).filter((g) => g.numbers.length)
+    : [{ numbers: phones.map((p) => p.number ?? '').filter(Boolean) }]
   const address =
     settings?.address ??
     'Vatican campus (grade school): Sarbet Vatican, behind the Vatican Embassy. Bisrate Gebriel campus (preschool and KG): South African Campus, Bisrate Gebriel, next to Adot Building. Totot campus: behind World Vision. Addis Ababa, Ethiopia.'
@@ -84,12 +97,17 @@ export async function Footer() {
           <p className="font-display text-sm font-semibold uppercase tracking-wider text-ochre">Visit & Contact</p>
           <address className="mt-4 space-y-2.5 text-sm text-pale/80 not-italic">
             <p>{address}</p>
-            {phones.map((p, i) => (
-              <p key={i}>
-                <a href={`tel:${(p.number ?? '').replace(/\s/g, '')}`} className="hover:text-white">
-                  {p.number}
-                </a>
-              </p>
+            {phoneGroups.map((g, gi) => (
+              <div key={gi}>
+                {g.label && <p className="text-xs font-semibold uppercase tracking-wider text-pale/50">{g.label}</p>}
+                {g.numbers.map((n, i) => (
+                  <p key={i}>
+                    <a href={`tel:${n.replace(/\s/g, '')}`} className="hover:text-white">
+                      {n}
+                    </a>
+                  </p>
+                ))}
+              </div>
             ))}
             {email && (
               <p>
