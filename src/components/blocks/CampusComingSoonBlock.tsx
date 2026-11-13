@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react'
 import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
 import { Icon } from '@/components/ui/Icon'
-import { PRESCHOOL_PHONES, VATICAN_PHONES, bothCampusesText } from '@/lib/campusPhones'
 
 /**
  * A campus that is announced but not yet open, Totot, behind World Vision.
@@ -150,21 +149,10 @@ export function CampusComingSoonBlock(_props: CampusComingSoonProps) {
             </ol>
           </div>
 
-          <div className="mt-9 flex flex-wrap items-center gap-4 border-t border-white/10 pt-7">
-            {[PRESCHOOL_PHONES, VATICAN_PHONES].map((set) => (
-              <a
-                key={set.label}
-                href={`tel:${set.numbers[0].tel}`}
-                className="inline-flex min-h-[3rem] cursor-pointer items-center justify-center rounded-full bg-ochre px-7 py-3 font-display font-semibold text-navy transition-colors duration-200 hover:bg-ochre-600"
-              >
-                Ask about Totot: {set.label}
-              </a>
-            ))}
-            <p className="text-sm text-pale/60">
-              Call {bothCampusesText()} for opening dates and early registration. Visitations are not
-              allowed at our Totot campus as it is still a working build. Stay tuned for updates.
-            </p>
-          </div>
+          <p className="mt-9 border-t border-white/10 pt-7 text-sm text-pale/60">
+            Totot is opening soon. Visitations are not possible yet as the campus is still a working
+            build. Stay tuned for updates.
+          </p>
         </div>
       </Container>
     </Section>

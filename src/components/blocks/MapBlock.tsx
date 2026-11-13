@@ -18,6 +18,9 @@ export type MapCampus = {
   embedSrc?: string
   /** Short link / place URL for the "Get directions" button. Omit with embedSrc. */
   directionsUrl?: string
+  /** Optional "Call <campus>" button on the card: label + tel number (no spaces). */
+  callLabel?: string
+  callTel?: string
   /** Address + orientation lines shown beside the map. */
   rows: { iconName: string; title: string; description: string }[]
   /** Plain address string used for the LocalBusiness schema. */
@@ -72,16 +75,29 @@ function CampusBlock({ campus }: { campus: MapCampus }) {
             ))}
           </ul>
 
-          {campus.directionsUrl && (
-            <a
-              href={campus.directionsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto inline-flex items-center justify-center gap-2 self-start rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-ochre hover:text-navy"
-            >
-              <Icon name="MapPin" size={18} />
-              Get directions
-            </a>
+          {(campus.callTel || campus.directionsUrl) && (
+            <div className="mt-auto flex flex-wrap items-center gap-3">
+              {campus.callTel && (
+                <a
+                  href={`tel:${campus.callTel}`}
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-ochre px-6 py-3 text-sm font-semibold text-navy transition-colors duration-200 hover:bg-ochre-600"
+                >
+                  <Icon name="Phone" size={18} />
+                  {campus.callLabel ?? 'Call us'}
+                </a>
+              )}
+              {campus.directionsUrl && (
+                <a
+                  href={campus.directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-ochre hover:text-navy"
+                >
+                  <Icon name="MapPin" size={18} />
+                  Get directions
+                </a>
+              )}
+            </div>
           )}
         </div>
       </Reveal>

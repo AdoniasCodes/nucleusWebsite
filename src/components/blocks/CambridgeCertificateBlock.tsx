@@ -6,7 +6,7 @@ import { Reveal } from '@/components/ui/Reveal'
 /**
  * "Officially registered with Cambridge": the school's Cambridge Primary registration certificate
  * shown as a physical document (white paper, soft navy shadow, tilted) in front of a large Nucleus
- * shield silhouette. The certificate straightens and lifts on hover/focus (motion-safe only).
+ * shield silhouette. The certificate lifts on hover/focus (motion-safe only).
  * Ends with one quiet inline prospectus download link. Synthetic, code-defined block (no CMS schema).
  */
 export type CambridgeCertificateProps = {
@@ -40,7 +40,7 @@ export function CambridgeCertificateBlock({
   intro = 'Nucleus International Schools is a registered Cambridge Primary School. The certificate comes from Cambridge International Education, part of Cambridge University Press & Assessment, and it means our primary classrooms teach the international Cambridge curriculum to the standard Cambridge sets and checks.',
   facts = DEFAULT_FACTS,
   imageUrl = '/images/cambridge/nucleus-cambridge-primary-certificate.webp',
-  imageAlt = 'Cambridge International Education Certificate of Registration stating that Nucleus International Schools has registered as a Cambridge Primary School, registered school ET030, issued on 23 September 2026.',
+  imageAlt = 'Cambridge International Education Certificate of Registration for Nucleus International Schools, a registered Cambridge Primary School, registered school ET030, issued on 23 September 2026.',
   prospectusUrl = '/downloads/nucleus-international-schools-prospectus.pdf',
   prospectusLabel = 'Download the school prospectus (PDF, 11 MB)',
 }: CambridgeCertificateProps) {
@@ -68,13 +68,13 @@ export function CambridgeCertificateBlock({
                 target="_blank"
                 rel="noopener"
                 aria-label="View the full certificate (opens in a new tab)"
-                className="group relative z-10 block rounded-[3px] bg-white p-1.5 shadow-[0_28px_50px_-18px_rgba(17,2,77,0.5),0_6px_14px_-6px_rgba(17,2,77,0.3)] ring-1 ring-navy/10 outline-offset-4 motion-safe:rotate-[-2deg] motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-out motion-safe:hover:-translate-y-2 motion-safe:hover:rotate-0 motion-safe:focus-visible:-translate-y-2 motion-safe:focus-visible:rotate-0"
+                className="group relative z-10 block rounded-[3px] bg-white p-1.5 shadow-[0_28px_50px_-18px_rgba(17,2,77,0.5),0_6px_14px_-6px_rgba(17,2,77,0.3)] ring-1 ring-navy/10 outline-offset-4 motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-out motion-safe:hover:-translate-y-2 motion-safe:focus-visible:-translate-y-2"
               >
                 <Image
                   src={imageUrl}
                   alt={imageAlt}
-                  width={1400}
-                  height={1980}
+                  width={1240}
+                  height={1754}
                   sizes="(min-width: 768px) 380px, 320px"
                   loading="lazy"
                   className="h-auto w-full"

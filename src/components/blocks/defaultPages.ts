@@ -4,14 +4,11 @@ import { PRESCHOOL_PHONES, VATICAN_PHONES, bothCampusesText, phoneText, phoneTel
 
 /** One primary "Call" button per campus (first number of each), preschool first. */
 const campusCallLinks = () =>
-  [
-    { set: PRESCHOOL_PHONES, name: 'Preschool and KG' },
-    { set: VATICAN_PHONES, name: 'Grade 1 to 8' },
-  ].map(({ set, name }) => ({
+  [PRESCHOOL_PHONES, VATICAN_PHONES].map((set) => ({
     link: {
       appearance: 'primary' as const,
       type: 'custom' as const,
-      label: `Call ${name}: ${set.numbers[0].display}`,
+      label: `Call ${set.label}`,
       url: `tel:${set.numbers[0].tel}`,
     },
   }))
@@ -347,6 +344,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         bgImage: '/images/stock/contact-hero.webp',
         subhead:
           'We’d love to show you around. Visit us at Vatican (grade school, behind the Vatican Embassy) or Bisrate Gebriel (preschool and KG, South African Campus, next to Adot Building), and watch this space for Totot, opening soon.',
+        links: [...campusCallLinks()],
       },
       {
         blockType: 'cardsGrid',
@@ -375,8 +373,10 @@ export const defaultPages: Record<string, DefaultPage> = {
         campuses: [
           {
             name: 'Grade School Campus',
-            embedSrc: 'https://www.google.com/maps?q=Nucleus+International+Schools,+Addis+Ababa&z=17&hl=en&output=embed',
+            embedSrc: 'https://www.google.com/maps?q=8.9874375,38.7364375&z=17&hl=en&output=embed',
             directionsUrl: 'https://maps.app.goo.gl/DHQMbtpZc7PBDWEF8',
+            callLabel: `Call ${VATICAN_PHONES.label}`,
+            callTel: VATICAN_PHONES.numbers[0].tel,
             streetAddress: 'Sarbet Vatican, 50 metres behind the Vatican Embassy',
             telephone: phoneTels(VATICAN_PHONES),
             rows: [
@@ -391,6 +391,10 @@ export const defaultPages: Record<string, DefaultPage> = {
           },
           {
             name: 'Preschool Campus',
+            embedSrc: 'https://www.google.com/maps?q=Nucleus+International+Schools+-+Preschool+Campus+XPVH%2B5CV&z=17&hl=en&output=embed',
+            directionsUrl: 'https://share.google/tO1YVINXRtY3uphHj',
+            callLabel: `Call ${PRESCHOOL_PHONES.label}`,
+            callTel: PRESCHOOL_PHONES.numbers[0].tel,
             streetAddress: 'South African Campus, Bisrate Gebriel, next to Adot Building',
             telephone: phoneTels(PRESCHOOL_PHONES),
             rows: [
