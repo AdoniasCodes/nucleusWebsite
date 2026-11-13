@@ -392,7 +392,7 @@ export const defaultPages: Record<string, DefaultPage> = {
           {
             name: 'Preschool Campus',
             embedSrc: 'https://www.google.com/maps?q=Nucleus+International+Schools+-+Preschool+Campus+XPVH%2B5CV&z=17&hl=en&output=embed',
-            directionsUrl: 'https://share.google/tO1YVINXRtY3uphHj',
+            directionsUrl: 'https://www.google.com/maps/search/?api=1&query=Nucleus+International+Schools+-+Preschool+Campus+XPVH%2B5CV',
             callLabel: `Call ${PRESCHOOL_PHONES.label}`,
             callTel: PRESCHOOL_PHONES.numbers[0].tel,
             streetAddress: 'South African Campus, Bisrate Gebriel, next to Adot Building',
