@@ -11,7 +11,7 @@ const campusCallLinks = () =>
     link: {
       appearance: 'primary' as const,
       type: 'custom' as const,
-      label: `Call ${set.label}`,
+      label: `Call ${set.short}`,
       url: `tel:${set.numbers[0].tel}`,
     },
   }))
@@ -390,7 +390,7 @@ export const defaultPages: Record<string, DefaultPage> = {
             name: 'Grade School Campus',
             embedSrc: 'https://www.google.com/maps?q=8.9874375,38.7364375&z=17&hl=en&output=embed',
             directionsUrl: 'https://maps.app.goo.gl/DHQMbtpZc7PBDWEF8',
-            callLabel: `Call ${VATICAN_PHONES.label}`,
+            callLabel: `Call ${VATICAN_PHONES.short}`,
             callTel: VATICAN_PHONES.numbers[0].tel,
             streetAddress: 'Sarbet Vatican, 50 metres behind the Vatican Embassy',
             telephone: phoneTels(VATICAN_PHONES),
@@ -408,7 +408,7 @@ export const defaultPages: Record<string, DefaultPage> = {
             name: 'Preschool Campus',
             embedSrc: 'https://www.google.com/maps?q=Nucleus+International+Schools+-+Preschool+Campus+XPVH%2B5CV&z=17&hl=en&output=embed',
             directionsUrl: 'https://www.google.com/maps/search/?api=1&query=Nucleus+International+Schools+-+Preschool+Campus+XPVH%2B5CV',
-            callLabel: `Call ${PRESCHOOL_PHONES.label}`,
+            callLabel: `Call ${PRESCHOOL_PHONES.short}`,
             callTel: PRESCHOOL_PHONES.numbers[0].tel,
             streetAddress: 'South African Campus, Bisrate Gebriel, next to Adot Building',
             telephone: phoneTels(PRESCHOOL_PHONES),
