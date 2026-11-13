@@ -44,15 +44,23 @@ export type MapProps = {
   campuses: MapCampus[]
   /** Soft note shown under the campuses. */
   note?: string
+  /** Code-only HTML id so a link like #our-campuses scrolls here (lands on the campus cards). */
+  anchor?: string
+  /** Code-only. 'columns' puts the campuses side by side on desktop (card above a shorter
+   * map), so both fit on one laptop screen. Default 'rows': one campus per row, map beside it. */
+  layout?: 'rows' | 'columns'
 }
 
-function CampusBlock({ campus }: { campus: MapCampus }) {
+function CampusBlock({ campus, columns = false }: { campus: MapCampus; columns?: boolean }) {
+  const mapHeight = columns ? 260 : 340
   return (
     <div
       className={
-        campus.embedSrc
-          ? 'grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-stretch'
-          : 'grid gap-8'
+        columns
+          ? 'grid gap-5'
+          : campus.embedSrc
+            ? 'grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-stretch'
+            : 'grid gap-8'
       }
     >
       {/* Location details */}
@@ -105,12 +113,15 @@ function CampusBlock({ campus }: { campus: MapCampus }) {
       {/* Embedded map (skipped for a campus with no verified map location) */}
       {campus.embedSrc && (
         <Reveal variant="right" delay={120}>
-          <div className="h-full min-h-[340px] overflow-hidden rounded-2xl border border-navy/[0.08] shadow-[0_12px_40px_-18px_rgba(17,2,77,0.28)]">
+          <div
+            className="h-full overflow-hidden rounded-2xl border border-navy/[0.08] shadow-[0_12px_40px_-18px_rgba(17,2,77,0.28)]"
+            style={{ minHeight: mapHeight }}
+          >
             <iframe
               title={`${campus.name} location map`}
               src={campus.embedSrc}
               className="h-full w-full"
-              style={{ border: 0, minHeight: 340 }}
+              style={{ border: 0, minHeight: mapHeight }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
@@ -147,9 +158,12 @@ export function MapBlock(props: MapProps) {
     <Section background="white">
       <Container>
         <SectionHeading eyebrow={props.eyebrow} heading={props.heading} intro={props.intro} />
-        <div className="flex flex-col gap-10">
+        <div
+          id={props.anchor}
+          className={`scroll-mt-28 ${props.layout === 'columns' ? 'grid gap-10 lg:grid-cols-2 lg:gap-8' : 'flex flex-col gap-10'}`}
+        >
           {campuses.map((campus, i) => (
-            <CampusBlock key={i} campus={campus} />
+            <CampusBlock key={i} campus={campus} columns={props.layout === 'columns'} />
           ))}
         </div>
 

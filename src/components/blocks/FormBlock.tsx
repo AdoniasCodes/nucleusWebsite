@@ -109,7 +109,7 @@ export function FormBlock(props: FormBlockType & { anchor?: string; formToken?: 
         : 'Send enquiry'
 
   return (
-    <Section background={background} id={props.anchor}>
+    <Section background={background} id={props.anchor} className="scroll-mt-16">
       <Container width="narrow">
         <SectionHeading heading={heading} intro={props.intro} dark={dark} />
 

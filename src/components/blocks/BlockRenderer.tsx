@@ -1,4 +1,4 @@
-import type { CTABandBlock as CTABandBlockType, Page } from '@/payload-types'
+import type { CTABandBlock as CTABandBlockType, Page, CardsGridBlock as CardsGridBlockType } from '@/payload-types'
 import { HeroBlock } from './HeroBlock'
 import { StatsBlock } from './StatsBlock'
 import { CardsGridBlock } from './CardsGridBlock'
@@ -41,10 +41,14 @@ import { mintFormToken } from '@/lib/formToken'
  */
 type CTABandWithImage = CTABandBlockType & { bgImage?: string }
 
+/** Cards grid with the code-only `cardHrefs` (one link per card: tel: or #anchor). */
+type CardsGridWithLinks = CardsGridBlockType & { cardHrefs?: (string | undefined)[] }
+
 /** A CMS layout block, plus the synthetic code-only blocks (homepage + inner pages). */
 export type RenderableBlock =
   | NonNullable<Page['layout']>[number]
   | CTABandWithImage
+  | CardsGridWithLinks
   | LatestPostsProps
   | ProseProps
   | FaqListProps

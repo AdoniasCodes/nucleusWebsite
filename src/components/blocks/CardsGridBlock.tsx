@@ -40,6 +40,19 @@ const iconClassByMode: Record<CardMode, string> = {
   invert: 'bg-navy/[0.06] text-navy group-hover:bg-white/15 group-hover:text-ochre',
 }
 
+/** A card is an <article>, or one big link when it has an href (tel: dials, #id scrolls). */
+function CardShell({ href, className, children }: { href?: string; className: string; children: React.ReactNode }) {
+  if (!href) return <article className={className}>{children}</article>
+  return (
+    <a
+      href={href}
+      className={`${className} cursor-pointer no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ochre`}
+    >
+      {children}
+    </a>
+  )
+}
+
 /**
  * Cards grid: "Why Leaders Choose Nucleus", values, programs, steps. Uniform card system.
  * Optional code-only `reveal` controls the scroll animation: a RevealVariant applied to every
@@ -55,6 +68,9 @@ export function CardsGridBlock(
     bgImage?: string
     bgOverlay?: Overlay
     anchor?: string
+    /** Code-only: one href per card (same order). A card with an href becomes one big link,
+     * e.g. tel: to dial or #anchor to scroll. */
+    cardHrefs?: (string | undefined)[]
   },
 ) {
   const background = (props.background ?? 'white') as SectionBackground
@@ -85,7 +101,8 @@ export function CardsGridBlock(
             const variant: RevealVariant = reveal === 'mirror' ? (i % 2 === 0 ? 'left' : 'right') : reveal
             return (
               <Reveal key={i} variant={variant} delay={Math.min(i, 5) * 70} className="h-full">
-              <article
+              <CardShell
+                href={props.cardHrefs?.[i]}
                 className={`group flex h-full flex-col items-start text-left rounded-2xl border p-6 sm:p-7 transition-all duration-200 motion-safe:active:scale-[0.98] ${cardClassByMode[mode]}`}
               >
                 <div
@@ -108,7 +125,7 @@ export function CardsGridBlock(
                     <CMSLink link={{ ...card.link, appearance: 'link' }} />
                   </div>
                 )}
-              </article>
+              </CardShell>
               </Reveal>
             )
           })}

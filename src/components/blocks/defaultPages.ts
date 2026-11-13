@@ -1,6 +1,9 @@
 import type { RenderableBlock } from './BlockRenderer'
 import { legalPages } from './legalPages'
-import { PRESCHOOL_PHONES, VATICAN_PHONES, bothCampusesText, phoneText, phoneTels } from '@/lib/campusPhones'
+import { PRESCHOOL_PHONES, VATICAN_PHONES, phoneText, phoneTels } from '@/lib/campusPhones'
+
+/** Non-breaking spaces inside each phone number, so a card never wraps one across two lines. */
+const keepNumbersWhole = (text: string) => text.replace(/\+\d+(?: \d+)+/g, (n) => n.replace(/ /g, '\u00a0'))
 
 /** One primary "Call" button per campus (first number of each), preschool first. */
 const campusCallLinks = () =>
@@ -350,16 +353,26 @@ export const defaultPages: Record<string, DefaultPage> = {
         blockType: 'cardsGrid',
         background: 'white',
         heading: 'Reach Us',
-        columns: '3',
+        columns: '4',
+        // Every card is a link: the two call cards dial, Visit scrolls to the campus maps,
+        // Visit Now scrolls to the visit form.
         cards: [
-          { iconName: 'Phone', title: 'Call', description: `${bothCampusesText('. ')}.` },
+          { iconName: 'Phone', title: 'Call Preschool and KG', description: `Bisrate Gebriel: ${keepNumbersWhole(phoneText(PRESCHOOL_PHONES))}` },
+          { iconName: 'Phone', title: 'Call Grade School', description: `Grade 1 to 8, Vatican: ${keepNumbersWhole(phoneText(VATICAN_PHONES))}` },
           { iconName: 'MapPin', title: 'Visit', description: 'Vatican (grade school), behind the Vatican Embassy. Bisrate Gebriel (preschool and KG), South African Campus, next to Adot Building. Addis Ababa.' },
           { iconName: 'CalendarCheck', title: 'Visit Now', description: 'Arrange a visit and meet our team in person.' },
+        ],
+        cardHrefs: [
+          `tel:${PRESCHOOL_PHONES.numbers[0].tel}`,
+          `tel:${VATICAN_PHONES.numbers[0].tel}`,
+          '#our-campuses',
+          '#visit-form',
         ],
       },
       {
         blockType: 'formBlock',
         formType: 'tour',
+        anchor: 'visit-form',
         background: 'white',
         heading: 'Visit Now',
         intro: 'Tell us a little about your family and we’ll arrange a visit that suits you.',
@@ -367,6 +380,8 @@ export const defaultPages: Record<string, DefaultPage> = {
       },
       {
         blockType: 'map',
+        anchor: 'our-campuses',
+        layout: 'columns',
         eyebrow: 'Getting to the School',
         heading: 'Our Campuses',
         intro: 'Easy to reach from across Addis Ababa, including Bole, Old Airport, Kazanchis and Gerji.',
