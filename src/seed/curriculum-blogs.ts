@@ -223,7 +223,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus International Schools in Addis Ababa is registered with Cambridge International and teaches the international Cambridge curriculum from Foundation to Year 9 (Preschool to Grade 8) at our Bisrate Gebriel and Sarbet Vatican campuses. Our Totot Campus in Gerji opens Grades 9 to 12 for the 2027/28 academic year, with a Cambridge IGCSE and A Level pathway.',
+            p: 'Nucleus International Schools in Addis Ababa is registered with Cambridge International and teaches the international Cambridge curriculum from Foundation to Year 9 (Grade 8) at our Bisrate Gebriel and Sarbet Vatican campuses. Our Totot Campus in Gerji opens Year 10 to Year 13 (Grade 9 to Grade 12) for the 2027/28 academic year, with a Cambridge IGCSE and A Level pathway.',
           },
           {
             p: 'Ask us the six questions above. To visit, call +2519 81 99 99 22, or see [the Cambridge pathway at Nucleus](/cambridge-pathway).',
@@ -590,7 +590,7 @@ const posts: SeedPost[] = [
         heading: 'Questions parents ask about Year 1',
         body: [
           {
-            p: 'What age is Year 1? Year 1 is usually for children aged five to six. In Cambridge Primary it is Stage 1, the first of six primary stages. At Nucleus, Year 1 is also called Grade 1, and entry is assessed individually.',
+            p: 'What age is Year 1? Year 1 is usually for children aged five to six. In Cambridge Primary it is Stage 1, the first of six primary stages. At Nucleus, the first primary class is Year 2 (Grade 1), and entry is assessed individually.',
           },
           {
             p: 'What do children learn in Year 1 maths? In Cambridge Primary Stage 1, children count to 100, read and write numbers to 20, count in twos and tens, find one more and one less, start doubling and halving, use the equals sign, and work with shapes, measures, time and simple data.',
@@ -611,10 +611,10 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Year 1 (Grade 1) at Nucleus is taught at our Sarbet Vatican campus, for children aged five to six, on the international Cambridge curriculum. Our school-wide student to teacher ratio is 9:1, and our learning support team works with teachers and families on extra help or extra challenge where a child needs it.',
+            p: 'Year 2 (Grade 1) at Nucleus is taught at our Sarbet Vatican campus, for children aged five to six, on the international Cambridge curriculum. Our school-wide student to teacher ratio is 9:1, and our learning support team works with teachers and families on extra help or extra challenge where a child needs it.',
           },
           {
-            p: 'Come and see a Year 1 class on a normal morning. Call +2519 81 99 99 22, or [register for Grade 1 to 8](/register/grade-school).',
+            p: 'Come and see a Year 1 class on a normal morning. Call +2519 81 99 99 22, or [register for Year 2 to Year 9 (Grade 1 to Grade 8)](/register/grade-school).',
           },
         ],
       },
@@ -623,7 +623,7 @@ const posts: SeedPost[] = [
       { label: 'The Cambridge Early Years curriculum', url: '/news/cambridge-early-years-curriculum' },
       { label: 'Cambridge Primary subjects and stages', url: '/news/cambridge-primary-curriculum-subjects' },
       { label: 'Maths anxiety in children', url: '/news/maths-anxiety-in-children' },
-      { label: 'Register for Grade 1 to 8', url: '/register/grade-school' },
+      { label: 'Register for Year 2 to Year 9 (Grade 1 to Grade 8)', url: '/register/grade-school' },
     ],
   },
 
@@ -805,7 +805,7 @@ const posts: SeedPost[] = [
             p: 'Nucleus is registered with Cambridge International for Cambridge Primary, and our primary years are taught at the Sarbet Vatican campus, 50 metres behind the Embassy of Indonesia. English, mathematics and science sit at the centre, taught through inquiry and hands-on projects, alongside Global Perspectives across all year groups, music, art, sport, the STEM and AI labs, and the agriculture lab.',
           },
           {
-            p: 'To see a primary class in session, call +2519 81 99 99 22, or [register for Grade 1 to 8](/register/grade-school).',
+            p: 'To see a primary class in session, call +2519 81 99 99 22, or [register for Year 2 to Year 9 (Grade 1 to Grade 8)](/register/grade-school).',
           },
         ],
       },
@@ -814,7 +814,7 @@ const posts: SeedPost[] = [
       { label: 'What children learn in Year 1', url: '/news/what-children-learn-in-year-1' },
       { label: 'Cambridge Lower Secondary explained', url: '/news/cambridge-lower-secondary-curriculum' },
       { label: 'Cambridge Global Perspectives explained', url: '/news/cambridge-global-perspectives-explained' },
-      { label: 'Register for Grade 1 to 8', url: '/register/grade-school' },
+      { label: 'Register for Year 2 to Year 9 (Grade 1 to Grade 8)', url: '/register/grade-school' },
     ],
   },
 
@@ -847,7 +847,7 @@ const posts: SeedPost[] = [
           {
             imageUrl: `${ITC}/gp01-tilahun-teaching-evidence.webp`,
             alt: 'A teacher working through an argument with lower secondary students at a table in a Nucleus classroom',
-            caption: 'A Years 7 to 9 Global Perspectives session at Nucleus.',
+            caption: 'A Year 7 to Year 9 (Grade 6 to Grade 8) Global Perspectives session at Nucleus.',
           },
         ],
       },
@@ -980,10 +980,10 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus teaches Cambridge Lower Secondary through Grade 8 at our Sarbet Vatican campus, with deeper subject focus and growing student independence. In Years 7 to 9 Global Perspectives is taught by a subject teacher, Tilahun G/Kiristose, whose classroom is the subject of [our first Inside the Nucleus Classroom issue](/newsletter/what-happens-in-a-global-perspectives-lesson).',
+            p: 'Nucleus teaches Cambridge Lower Secondary through Year 9 (Grade 8) at our Sarbet Vatican campus, with deeper subject focus and growing student independence. In Year 7 to Year 9 (Grade 6 to Grade 8) Global Perspectives is taught by a subject teacher, Tilahun G/Kiristose, whose classroom is the subject of [our first Inside the Nucleus Classroom issue](/newsletter/what-happens-in-a-global-perspectives-lesson).',
           },
           {
-            p: 'For the 2027/28 academic year our Totot Campus in Gerji opens Grades 9 to 12 with a Cambridge IGCSE and A Level pathway, so students can continue straight on. Call +2519 81 99 99 22, or [register for Grade 1 to 8](/register/grade-school).',
+            p: 'For the 2027/28 academic year our Totot Campus in Gerji opens Year 10 to Year 13 (Grade 9 to Grade 12) with a Cambridge IGCSE and A Level pathway, so students can continue straight on. Call +2519 81 99 99 22, or [register for Year 2 to Year 9 (Grade 1 to Grade 8)](/register/grade-school).',
           },
         ],
       },
@@ -992,7 +992,7 @@ const posts: SeedPost[] = [
       { label: 'Cambridge Primary subjects and stages', url: '/news/cambridge-primary-curriculum-subjects' },
       { label: 'Teaching critical thinking and problem solving', url: '/news/teaching-critical-thinking-problem-solving-ethiopia' },
       { label: 'British vs American curriculum', url: '/news/british-vs-american-curriculum-addis-ababa' },
-      { label: 'Register for Grade 1 to 8', url: '/register/grade-school' },
+      { label: 'Register for Year 2 to Year 9 (Grade 1 to Grade 8)', url: '/register/grade-school' },
     ],
   },
 
@@ -1049,7 +1049,7 @@ const posts: SeedPost[] = [
             p: 'STEM is not something to start at secondary school. A landmark analysis of six long-term studies covering close to 36,000 children found that early maths skills at school entry, around age five, were the strongest predictor of later achievement, predicting later reading as well as later maths ([Duncan and colleagues, 2007](https://www.sciencedaily.com/releases/2007/11/071112182442.htm)).',
           },
           {
-            p: 'For young children, STEM looks like counting and sorting, building towers that fall down, planting seeds, pouring water and asking why. A school that only starts STEM in Grade 5 has missed the years when it does the most good.',
+            p: 'For young children, STEM looks like counting and sorting, building towers that fall down, planting seeds, pouring water and asking why. A school that only starts STEM in Year 6 (Grade 5) has missed the years when it does the most good.',
           },
         ],
       },
@@ -1586,7 +1586,7 @@ const posts: SeedPost[] = [
         heading: 'Why the kindergarten years matter more than they look',
         body: [
           {
-            p: 'It is tempting to treat kindergarten as a warm-up before "real" school starts in Grade 1. The science says the opposite. The [Harvard Center on the Developing Child](https://developingchild.harvard.edu/science/key-concepts/brain-architecture/) reports that more than one million new neural connections form every second in the first few years of life, and that the brain is built through what researchers call serve and return: a child makes a sound, a gesture or a face, and an adult responds.',
+            p: 'It is tempting to treat kindergarten as a warm-up before "real" school starts in Year 2 (Grade 1). The science says the opposite. The [Harvard Center on the Developing Child](https://developingchild.harvard.edu/science/key-concepts/brain-architecture/) reports that more than one million new neural connections form every second in the first few years of life, and that the brain is built through what researchers call serve and return: a child makes a sound, a gesture or a face, and an adult responds.',
           },
           {
             p: 'That has a very practical meaning for a school visit. A good kindergarten is one where adults talk with children all day long, not at them. You can see it from the doorway: teachers at child height, asking questions, waiting for answers.',
@@ -1645,7 +1645,7 @@ const posts: SeedPost[] = [
           },
           { h3: '12. What happens after KG' },
           {
-            p: 'This is the question parents most often forget. A child who moves to a new school with a different curriculum at Grade 1 starts again with new teachers, new methods and new friends. If the kindergarten leads straight into a primary school on the same curriculum, the move to Grade 1 is a step rather than a jump.',
+            p: 'This is the question parents most often forget. A child who moves to a new school with a different curriculum at Year 2 (Grade 1) starts again with new teachers, new methods and new friends. If the kindergarten leads straight into a primary school on the same curriculum, the move to Year 2 (Grade 1) is a step rather than a jump.',
           },
         ],
       },
@@ -1678,7 +1678,7 @@ const posts: SeedPost[] = [
         heading: 'Questions parents ask about kindergartens in Addis Ababa',
         body: [
           {
-            p: 'What age do children start kindergarten in Addis Ababa? Most private and international kindergartens in Addis Ababa take children from about age three, with two or three kindergarten years before Grade 1. At Nucleus, KG1 is for children aged three to four and KG2 for children aged four to five, followed by Year 1 (Grade 1) at five to six.',
+            p: 'What age do children start kindergarten in Addis Ababa? Most private and international kindergartens in Addis Ababa take children from about age three, with two or three kindergarten years before Year 2 (Grade 1). At Nucleus, KG1 is for children aged three to four and KG2 for children aged four to five, followed by Year 2 (Grade 1) at five to six.',
           },
           {
             p: 'What is a good teacher to child ratio for kindergarten? NAEYC guidance is about one adult for every 9 or 10 children aged three to five, in groups of no more than 18 to 20. Ask for the ratio in your child’s actual classroom, not the school average, and count the adults when you visit.',
@@ -1699,7 +1699,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus opened its preschool at Abo Mekanisa in 2022, and it now runs at the South African Campus in Bisrate Gebriel, next to Adot Building. It teaches the early years foundation stage, focused on language, numeracy, social skills and play-based learning, and leads straight into the international Cambridge curriculum through Grade 8 at our Vatican campus.',
+            p: 'Nucleus opened its preschool at Abo Mekanisa in 2022, and it now runs at the South African Campus in Bisrate Gebriel, next to Adot Building. It teaches the early years foundation stage, focused on language, numeracy, social skills and play-based learning, and leads straight into the international Cambridge curriculum through Year 9 (Grade 8) at our Vatican campus.',
           },
           {
             p: 'Our school-wide student to teacher ratio is 9:1. Preschool children also spend time in the agriculture lab, the music room and the STEM lab, because learning goes beyond books from the very first year.',
@@ -1771,7 +1771,7 @@ const posts: SeedPost[] = [
             p: 'The two systems count differently, which confuses many parents in Addis. In England a child starts Year 1 at age five to six, after a Reception year. The [UK government’s national curriculum page](https://www.gov.uk/national-curriculum) groups the years into Key Stages: Years 1 and 2 (ages 5 to 7), Years 3 to 6 (ages 7 to 11), Years 7 to 9 (ages 11 to 14) and Years 10 and 11 (ages 14 to 16), when students sit GCSEs or IGCSEs. Two more years lead to A Levels at 18.',
           },
           {
-            p: 'In the United States, children start Kindergarten at about five and then move through Grades 1 to 12, which the [US National Center for Education Statistics](https://nces.ed.gov/fastfacts/display.asp?id=372) groups as kindergarten to Grade 8 and then Grades 9 to 12. As a rough rule, a British year number is one higher than the American grade for the same age: Year 2 sits alongside Grade 1, and Year 9 alongside Grade 8.',
+            p: 'In the United States, children start Kindergarten at about five and then move through Grade 1 to Grade 12, which the [US National Center for Education Statistics](https://nces.ed.gov/fastfacts/display.asp?id=372) groups as kindergarten to Grade 8 and then Grade 9 to Grade 12. As a rough rule, a British year number is one higher than the American grade for the same age: Year 2 sits alongside Grade 1, and Year 9 alongside Grade 8.',
           },
           {
             p: 'Schools in Addis Ababa label their classes in different ways, so always ask which class your child would join based on their date of birth, rather than matching names.',
@@ -1878,7 +1878,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus International Schools teaches the international Cambridge curriculum from Foundation to Year 9 (Preschool to Grade 8). For the 2027/28 academic year we will open Grades 9 to 12 at our new Totot Campus in Gerji, with a Cambridge IGCSE and A Level pathway, so a child can complete the whole British route with us.',
+            p: 'Nucleus International Schools teaches the international Cambridge curriculum from Foundation to Year 9 (Grade 8). For the 2027/28 academic year we will open Year 10 to Year 13 (Grade 9 to Grade 12) at our new Totot Campus in Gerji, with a Cambridge IGCSE and A Level pathway, so a child can complete the whole British route with us.',
           },
           {
             p: 'Our community includes families from Ethiopia, Canada, the United States, France, Nigeria, Turkey, India and beyond, so we have this conversation often. Call +2519 81 99 99 22 to talk it through, or read about [the Cambridge pathway at Nucleus](/cambridge-pathway).',

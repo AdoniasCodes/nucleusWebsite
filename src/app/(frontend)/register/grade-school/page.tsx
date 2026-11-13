@@ -6,7 +6,7 @@ import { buildBreadcrumbSchema } from '@/lib/seo'
 import { shareImages } from '@/lib/shareImage'
 
 /**
- * Grade 1 to Grade 8 registration, locked to the Vatican campus. Its own route (rather
+ * Year 2 to Year 9 (Grade 1 to Grade 8) registration, locked to the Vatican campus. Its own route (rather
  * than a `defaultPages` entry) because the slug has a path segment and `[slug]` matches only one.
  */
 const page = registerPages['grade-school']

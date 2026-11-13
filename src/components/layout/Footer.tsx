@@ -21,7 +21,7 @@ const LEGAL = [
 
 const CAMPUS_ORDER = [
   { value: 'preschool', label: 'Preschool and KG (Bisrate Gebriel)' },
-  { value: 'grade-school', label: 'Grade 1 to 8 (Vatican)' },
+  { value: 'grade-school', label: 'Year 2 to Year 9 (Grade 1 to Grade 8) (Vatican)' },
 ] as const
 
 export async function Footer() {

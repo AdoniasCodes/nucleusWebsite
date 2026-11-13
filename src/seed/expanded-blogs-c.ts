@@ -183,7 +183,7 @@ const posts: SeedPost[] = [
         heading: 'How Nucleus handles the early years',
         body: [
           {
-            p: 'Nucleus International Schools teaches the international Cambridge curriculum from Preschool to Grade 8. The preschool opened at Abo Mekanisa in 2022 and now runs at our Bisrate Gebriel campus (South African Campus). Grade 1 to Grade 8 is taught at our Vatican campus in Sarbet. The prospectus describes the preschool stage as a foundation stage focused on language, numeracy, social skills and play-based learning, and we welcome children from age 2. Because the early years and the primary years sit on one pathway, the move into Year 1 is a planned step inside the same school community.',
+            p: 'Nucleus International Schools teaches the international Cambridge curriculum from Preschool to Year 9 (Grade 8). The preschool opened at Abo Mekanisa in 2022 and now runs at our Bisrate Gebriel campus (South African Campus). Year 2 to Year 9 (Grade 1 to Grade 8) is taught at our Vatican campus in Sarbet. The prospectus describes the preschool stage as a foundation stage focused on language, numeracy, social skills and play-based learning, and we welcome children from age 2. Because the early years and the primary years sit on one pathway, the move into Year 2 (Grade 1) is a planned step inside the same school community.',
           },
           {
             p: 'Fees are shared by phone: call +2519 81 99 99 22 and we will walk you through them. When you are ready, you can [register your child](/register) or book a visit and watch a normal school day.',
@@ -418,7 +418,7 @@ const posts: SeedPost[] = [
       {
         body: [
           {
-            p: 'There is no single best among the Cambridge schools in Addis Ababa, because the right one depends on your child’s age, your family’s passport and how long you will stay. Three schools state on their own websites that they teach Cambridge programmes: Bingham Academy, which enrols only foreign passport holders; One Planet International School, which runs Kindergarten to Year 13; and Nucleus International Schools, which teaches the international Cambridge curriculum from Preschool to Grade 8.',
+            p: 'There is no single best among the Cambridge schools in Addis Ababa, because the right one depends on your child’s age, your family’s passport and how long you will stay. Three schools state on their own websites that they teach Cambridge programmes: Bingham Academy, which enrols only foreign passport holders; One Planet International School, which runs Kindergarten to Year 13; and Nucleus International Schools, which teaches the international Cambridge curriculum from Preschool to Year 9 (Grade 8).',
           },
           {
             p: 'We run one of the three, so we have limited what we say about the others to what their own sites state, and we say when we could not confirm something. This guide was prepared in October 2026. Check each school’s current position before you decide.',
@@ -451,7 +451,7 @@ const posts: SeedPost[] = [
         body: [
           { h3: 'Bingham Academy' },
           {
-            p: 'Bingham describes itself as an international Christian school established in 1946, with about 360 students from nearly thirty countries. It states that it teaches the Cambridge International Examinations curriculum from Kindergarten to Grade 12, leading to Cambridge IGCSE and A Level examinations. It also says that, under government regulations, it can only enrol students who hold a foreign passport ([Bingham Academy](https://binghamacademy.net/about-us)). For a diplomatic or missionary family with a long history in Addis, that may be exactly right. For an Ethiopian family, it is not an option.',
+            p: 'Bingham describes itself as an international Christian school established in 1946, with about 360 students from nearly thirty countries. It states that it teaches the Cambridge International Examinations curriculum from Kindergarten to Year 13 (Grade 12), leading to Cambridge IGCSE and A Level examinations. It also says that, under government regulations, it can only enrol students who hold a foreign passport ([Bingham Academy](https://binghamacademy.net/about-us)). For a diplomatic or missionary family with a long history in Addis, that may be exactly right. For an Ethiopian family, it is not an option.',
           },
           { h3: 'One Planet International School' },
           {
@@ -459,7 +459,7 @@ const posts: SeedPost[] = [
           },
           { h3: 'Nucleus International Schools' },
           {
-            p: 'Nucleus teaches the international Cambridge curriculum from Preschool to Grade 8. The preschool opened at Abo Mekanisa in 2022 and now runs at Bisrate Gebriel; the grade school is at Sarbet Vatican. The 2025/26 prospectus lists a student-to-teacher ratio of 9:1, a mix of local and internationally qualified teachers, and a plan to open Grades 9 to 12 at a new Totot campus in Gerji for the 2027/28 academic year. Students come from Ethiopia, Canada, the United States, France, Nigeria, Turkey, India and beyond. We are the youngest of the three, and we say so: the older schools have track records that ours is still building. Read more about [the Cambridge pathway at Nucleus](/cambridge-pathway).',
+            p: 'Nucleus teaches the international Cambridge curriculum from Preschool to Year 9 (Grade 8). The preschool opened at Abo Mekanisa in 2022 and now runs at Bisrate Gebriel; the grade school is at Sarbet Vatican. The 2025/26 prospectus lists a student-to-teacher ratio of 9:1, a mix of local and internationally qualified teachers, and a plan to open Year 10 to Year 13 (Grade 9 to Grade 12) at a new Totot campus in Gerji for the 2027/28 academic year. Students come from Ethiopia, Canada, the United States, France, Nigeria, Turkey, India and beyond. We are the youngest of the three, and we say so: the older schools have track records that ours is still building. Read more about [the Cambridge pathway at Nucleus](/cambridge-pathway).',
           },
         ],
       },
@@ -476,13 +476,13 @@ const posts: SeedPost[] = [
         body: [
           {
             ul: [
-              'Bingham Academy: Kindergarten to Grade 12, Cambridge IGCSE and A Level route, foreign passport holders only, Christian ethos.',
+              'Bingham Academy: Kindergarten to Year 13 (Grade 12), Cambridge IGCSE and A Level route, foreign passport holders only, Christian ethos.',
               'One Planet International School: Kindergarten to Year 13, Cambridge stages listed from Early Years to Advanced, Summit campus, around 950 students.',
-              'Nucleus International Schools: Preschool to Grade 8, international Cambridge curriculum, Bisrate Gebriel and Sarbet Vatican campuses, Grades 9 to 12 planned for 2027/28.',
+              'Nucleus International Schools: Preschool to Year 9 (Grade 8), international Cambridge curriculum, Bisrate Gebriel and Sarbet Vatican campuses, Year 10 to Year 13 (Grade 9 to Grade 12) planned for 2027/28.',
             ],
           },
           {
-            p: 'Each of these is a different answer to a different family. A child who will need A Levels in Addis should shortlist schools that already teach them. A child entering Preschool or Grade 1 has more options, and the question becomes where the next stage will be.',
+            p: 'Each of these is a different answer to a different family. A child who will need A Levels in Addis should shortlist schools that already teach them. A child entering Preschool or Year 2 (Grade 1) has more options, and the question becomes where the next stage will be.',
           },
         ],
       },
@@ -511,7 +511,7 @@ const posts: SeedPost[] = [
         heading: 'Where Nucleus is not the answer',
         body: [
           {
-            p: 'We would rather you chose well than chose us. If your child needs Cambridge IGCSE or A Level classes in Addis Ababa this year, Nucleus does not teach them yet, since our Grades 9 to 12 are planned for 2027/28. If you hold a foreign passport and want a Christian community, Bingham may suit you better. If you want a school with a long record across every year group from Kindergarten to Year 13, One Planet has one. If you want a young school with a 9:1 student-to-teacher ratio, a hands-on programme in STEM and agriculture, and a campus you can walk through on any school day, we would like to meet you. You can [register your child](/register) to start the conversation.',
+            p: 'We would rather you chose well than chose us. If your child needs Cambridge IGCSE or A Level classes in Addis Ababa this year, Nucleus does not teach them yet, since our Year 10 to Year 13 (Grade 9 to Grade 12) are planned for 2027/28. If you hold a foreign passport and want a Christian community, Bingham may suit you better. If you want a school with a long record across every year group from Kindergarten to Year 13, One Planet has one. If you want a young school with a 9:1 student-to-teacher ratio, a hands-on programme in STEM and agriculture, and a campus you can walk through on any school day, we would like to meet you. You can [register your child](/register) to start the conversation.',
           },
         ],
       },
@@ -532,7 +532,7 @@ const posts: SeedPost[] = [
           },
           { h3: 'Which schools in Addis Ababa teach the Cambridge curriculum?' },
           {
-            p: 'From their own websites, Bingham Academy teaches it from Kindergarten to Grade 12, One Planet lists Cambridge stages from Early Years to Advanced, and Nucleus teaches the international Cambridge curriculum from Preschool to Grade 8. Other schools also appear in directories, so confirm each one with Cambridge’s school search.',
+            p: 'From their own websites, Bingham Academy teaches it from Kindergarten to Year 13 (Grade 12), One Planet lists Cambridge stages from Early Years to Advanced, and Nucleus teaches the international Cambridge curriculum from Preschool to Year 9 (Grade 8). Other schools also appear in directories, so confirm each one with Cambridge’s school search.',
           },
           { h3: 'Can Ethiopian children attend Cambridge schools in Addis Ababa?' },
           {

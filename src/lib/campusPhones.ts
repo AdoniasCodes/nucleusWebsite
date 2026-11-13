@@ -21,7 +21,7 @@ export const PRESCHOOL_PHONES: CampusPhoneSet = {
 }
 
 export const VATICAN_PHONES: CampusPhoneSet = {
-  label: 'Grade 1 to 8 (Vatican)',
+  label: 'Year 2 to Year 9 (Grade 1 to Grade 8) (Vatican)',
   numbers: [
     { display: '+2519 81 99 99 22', tel: '+251981999922' },
     { display: '+2519 81 99 99 33', tel: '+251981999933' },
@@ -31,7 +31,7 @@ export const VATICAN_PHONES: CampusPhoneSet = {
 /** "+2519 47 50 09 92 · +2519 47 50 04 94" */
 export const phoneText = (set: CampusPhoneSet, sep = ' · ') => set.numbers.map((n) => n.display).join(sep)
 
-/** Both campuses on one line, labelled: "Preschool and KG (Bisrate Gebriel): ... / Grade 1 to 8 (Vatican): ..." */
+/** Both campuses on one line, labelled: "Preschool and KG (Bisrate Gebriel): ... / Year 2 to Year 9 (Grade 1 to Grade 8) (Vatican): ..." */
 export const bothCampusesText = (sep = ' / ') =>
   [PRESCHOOL_PHONES, VATICAN_PHONES].map((s) => `${s.label}: ${phoneText(s, ' or ')}`).join(sep)
 

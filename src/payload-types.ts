@@ -460,7 +460,7 @@ export interface Testimonial {
   quote: string;
   authorName: string;
   /**
-   * e.g. "Parent of Grade 3 student" or "Alumnus, Class of 2024".
+   * e.g. "Parent of Year 4 (Grade 3) student" or "Alumnus, Class of 2024".
    */
   relationship?: string | null;
   photo?: (number | null) | Media;

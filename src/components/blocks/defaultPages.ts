@@ -217,7 +217,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Academics',
     seoTitle: 'International Cambridge Curriculum in Addis Ababa | Nucleus Academics',
     description:
-      'The international Cambridge curriculum at Nucleus, Addis Ababa: Early Years to Grade 8, with robotics, STEM, agriculture and multilingual learning.',
+      'The international Cambridge curriculum at Nucleus, Addis Ababa: Early Years to Year 9 (Grade 8), with robotics, STEM, agriculture and multilingual learning.',
     layout: [
       {
         blockType: 'hero',
@@ -243,7 +243,7 @@ export const defaultPages: Record<string, DefaultPage> = {
           },
           {
             type: 'p',
-            text: 'We teach across three stages, growing with your child from their earliest years through to Grade 8.',
+            text: 'We teach across three stages, growing with your child from their earliest years through to Year 9 (Grade 8).',
           },
         ],
       },
@@ -251,12 +251,12 @@ export const defaultPages: Record<string, DefaultPage> = {
         blockType: 'cardsGrid',
         background: 'mist',
         heading: 'The Stages',
-        intro: 'A continuous Cambridge journey from first steps to Grade 8.',
+        intro: 'A continuous Cambridge journey from first steps to Year 9 (Grade 8).',
         columns: '3',
         cards: [
           { iconName: 'Baby', title: 'Early Years', description: 'Play-based foundations: language, numeracy, curiosity and confidence.' },
           { iconName: 'BookOpen', title: 'Primary', description: 'Cambridge Primary across English, Mathematics, Science and more.' },
-          { iconName: 'GraduationCap', title: 'Lower Secondary', description: 'Cambridge Lower Secondary through Grade 8, building toward IGCSE-readiness.' },
+          { iconName: 'GraduationCap', title: 'Lower Secondary', description: 'Cambridge Lower Secondary through Year 9 (Grade 8), building toward IGCSE-readiness.' },
         ],
       },
       {
@@ -358,7 +358,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         // Visit Now scrolls to the visit form.
         cards: [
           { iconName: 'Phone', title: 'Call Preschool and KG', description: `Bisrate Gebriel: ${keepNumbersWhole(phoneText(PRESCHOOL_PHONES))}` },
-          { iconName: 'Phone', title: 'Call Grade School', description: `Grade 1 to 8, Vatican: ${keepNumbersWhole(phoneText(VATICAN_PHONES))}` },
+          { iconName: 'Phone', title: 'Call Grade School', description: `Year 2 to Year 9 (Grade 1 to Grade 8), Vatican: ${keepNumbersWhole(phoneText(VATICAN_PHONES))}` },
           { iconName: 'MapPin', title: 'Visit', description: 'Vatican (grade school), behind the Vatican Embassy. Bisrate Gebriel (preschool and KG), South African Campus, next to Adot Building. Addis Ababa.' },
           { iconName: 'CalendarCheck', title: 'Visit Now', description: 'Arrange a visit and meet our team in person.' },
         ],
@@ -454,7 +454,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Registration',
     seoTitle: 'Register Your Child | Nucleus International Schools, Addis Ababa',
     description:
-      'Register your child for the international Cambridge curriculum in Addis Ababa: Preschool and KG at Bisrate Gebriel, Grades 1 to 8 at Vatican.',
+      'Register for the international Cambridge curriculum in Addis Ababa: Preschool and KG at Bisrate Gebriel, Year 2 to Year 9 (Grade 1 to Grade 8) at Vatican.',
     layout: [
       {
         blockType: 'hero',
@@ -485,7 +485,7 @@ export const defaultPages: Record<string, DefaultPage> = {
             href: '/register/primary',
           },
           {
-            grades: 'Grade 1 to Grade 8',
+            grades: 'Year 2 to Year 9 (Grade 1 to Grade 8)',
             campus: 'Vatican Campus',
             where: 'Our grade school at Sarbet Vatican, 50 metres behind the Vatican Embassy.',
             iconName: 'GraduationCap',
@@ -573,7 +573,7 @@ export const defaultPages: Record<string, DefaultPage> = {
             iconName: 'Award',
             title: 'A real Cambridge programme',
             description:
-              'The international Cambridge curriculum from the early years through Grade 8, with a Cambridge Coordinator and proper exam procedure behind it.',
+              'The international Cambridge curriculum from the early years through Year 9 (Grade 8), with a Cambridge Coordinator and proper exam procedure behind it.',
           },
           {
             iconName: 'Users',
@@ -653,7 +653,7 @@ export const defaultPages: Record<string, DefaultPage> = {
     title: 'Cambridge Pathway',
     seoTitle: 'The Cambridge Pathway at Nucleus | International Cambridge Curriculum, Addis Ababa',
     description:
-      'The Cambridge pathway at Nucleus International Schools, Vatican: a portable, internationally recognised education from the early years through Grade 8.',
+      'The Cambridge pathway at Nucleus International Schools, Vatican: a portable, internationally recognised education from the early years to Year 9 (Grade 8).',
     layout: [
       {
         blockType: 'hero',
@@ -674,7 +674,7 @@ export const defaultPages: Record<string, DefaultPage> = {
         heading: 'An education that opens doors',
         items: [
           { type: 'lead', text: 'The Cambridge pathway is one of the world’s most recognised curricula: structured, rigorous and respected by universities across Europe, North America and beyond.' },
-          { type: 'p', text: 'At Nucleus we follow the Cambridge pathway from the early years through Grade 8, so a child who begins at Vatican is prepared to continue, and to thrive, wherever life takes your family next.' },
+          { type: 'p', text: 'At Nucleus we follow the Cambridge pathway from the early years through Year 9 (Grade 8), so a child who begins at Vatican is prepared to continue, and to thrive, wherever life takes your family next.' },
           { type: 'p', text: 'It is content-rich and clearly assessed, which suits children who like defined goals and steady, visible progress.' },
         ],
       },
@@ -683,12 +683,12 @@ export const defaultPages: Record<string, DefaultPage> = {
         blockType: 'cardsGrid',
         background: 'mist',
         heading: 'The Stages',
-        intro: 'A continuous Cambridge journey from first steps to Grade 8.',
+        intro: 'A continuous Cambridge journey from first steps to Year 9 (Grade 8).',
         columns: '3',
         cards: [
           { iconName: 'Baby', title: 'Early Years', description: 'Play-based foundations: language, numeracy, curiosity and confidence.' },
           { iconName: 'BookOpen', title: 'Primary', description: 'Cambridge Primary across English, Mathematics, Science and more.' },
-          { iconName: 'GraduationCap', title: 'Lower Secondary', description: 'Cambridge Lower Secondary through Grade 8, building toward IGCSE-readiness.' },
+          { iconName: 'GraduationCap', title: 'Lower Secondary', description: 'Cambridge Lower Secondary through Year 9 (Grade 8), building toward IGCSE-readiness.' },
         ],
       },
       {

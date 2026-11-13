@@ -10,7 +10,7 @@ import type { Post } from '../payload-types'
  *
  * Same division of labour as `camp-story-blogs.ts`: the newsletter issue documents one real
  * lesson, this post answers the query a parent actually types. Issue 01 of the series went
- * inside Tilahun G/Kiristose's Years 7 to 9 Global Perspectives room, so this post takes the
+ * inside Tilahun G/Kiristose's Year 7 to Year 9 (Grade 6 to Grade 8) Global Perspectives room, so this post takes the
  * subject itself as the head term and links back to the issue for the proof.
  *
  * Cluster check: `teaching-critical-thinking-problem-solving-ethiopia` already owns the
@@ -80,7 +80,7 @@ const posts: SeedPost[] = [
           {
             imageUrl: `${ITC}/gp01-global-perspectives-class.webp`,
             alt: 'Students and their teacher working through a Global Perspectives investigation around a table in Addis Ababa',
-            caption: 'A Years 7 to 9 Global Perspectives session at the Nucleus campus in Mekanisa.',
+            caption: 'A Year 7 to Year 9 (Grade 6 to Grade 8) Global Perspectives session at the Nucleus campus in Mekanisa.',
           },
         ],
       },
@@ -127,7 +127,7 @@ const posts: SeedPost[] = [
             p: 'Students then do the work in the room: they research, they argue, they compare what they found, and they present a conclusion they can support. The teacher is not delivering an answer at the front. The teacher is keeping the reasoning honest.',
           },
           {
-            p: 'In our own Years 7 to 9 classroom, Tilahun G/Kiristose starts from something ordinary. A Year 7 topic is Global Brands, and it begins with a shoe, a phone or a packet of food that students already own. Where was it made? Who profits when it sells? What does the advertising do to the person watching it? What happens to an Ethiopian business competing with it?',
+            p: 'In our own Year 7 to Year 9 (Grade 6 to Grade 8) classroom, Tilahun G/Kiristose starts from something ordinary. A Year 7 topic is Global Brands, and it begins with a shoe, a phone or a packet of food that students already own. Where was it made? Who profits when it sells? What does the advertising do to the person watching it? What happens to an Ethiopian business competing with it?',
           },
           {
             p: 'By the end, students are not expected to agree with each other. They are expected to explain their thinking and back it with evidence that holds.',
@@ -231,7 +231,7 @@ const posts: SeedPost[] = [
             p: 'What is Cambridge Global Perspectives? It is a skills-based subject in the international Cambridge curriculum in which students investigate real global and local issues rather than memorise content. They practise research, analysis, evaluation, reflection, collaboration and communication, and they are assessed on the quality of their reasoning and evidence rather than on recalled facts. It runs from the primary years through to A Level, growing in difficulty while keeping the same shape.',
           },
           {
-            p: 'Is Global Perspectives a real subject or an extra activity? It is a full timetabled subject with its own teacher, topics and assessment, not a club or an enrichment slot. At Nucleus it is taught across all year groups, and in Years 7 to 9 it is taught by a subject teacher.',
+            p: 'Is Global Perspectives a real subject or an extra activity? It is a full timetabled subject with its own teacher, topics and assessment, not a club or an enrichment slot. At Nucleus it is taught across all year groups, and in Year 7 to Year 9 (Grade 6 to Grade 8) it is taught by a subject teacher.',
           },
           {
             p: 'What topics do students study? Topics are chosen to connect international issues to a student’s own life. Ours have included global brands and trade, migration, education, food security, disease prevention, sustainability, identity, communication and scarce resources.',
@@ -249,7 +249,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Global Perspectives is taught across all year groups at Nucleus International Schools in Mekanisa, Addis Ababa. In Years 7 to 9 it is taught by Tilahun G/Kiristose, whose classroom is the subject of the first issue of Inside the Nucleus Classroom.',
+            p: 'Global Perspectives is taught across all year groups at Nucleus International Schools in Mekanisa, Addis Ababa. In Year 7 to Year 9 (Grade 6 to Grade 8) it is taught by Tilahun G/Kiristose, whose classroom is the subject of the first issue of Inside the Nucleus Classroom.',
           },
           {
             p: 'That issue has the full account: the Global Brands investigation, how a familiar product turns into a question about trade and employment, and Tilahun’s own description of what changes in a student who learns to argue from evidence.',
@@ -262,7 +262,7 @@ const posts: SeedPost[] = [
     ],
     related: [
       {
-        label: 'Inside a Global Perspectives lesson, Years 7 to 9',
+        label: 'Inside a Global Perspectives lesson, Year 7 to Year 9 (Grade 6 to Grade 8)',
         url: '/newsletter/what-happens-in-a-global-perspectives-lesson',
       },
       { label: 'The Cambridge pathway at Nucleus', url: '/cambridge-pathway' },

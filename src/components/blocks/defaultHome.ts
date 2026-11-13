@@ -33,7 +33,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
       label: 'Watch Our Video',
       title: 'Nucleus International Schools: Learning Beyond Books',
       description:
-        'The Nucleus International Schools brand film: classrooms, science and AI labs, robotics, music, sport and the campus at Vatican, Addis Ababa, from pre-K through Grade 9.',
+        'The Nucleus International Schools brand film: classrooms, science and AI labs, robotics, music, sport and the campus at Vatican, Addis Ababa, from pre-K through Year 10 (Grade 9).',
       duration: 'PT1M',
       uploadDate: '2026-08-16',
     },
@@ -65,7 +65,7 @@ export const defaultHomeLayout: RenderableBlock[] = [
         heading: 'Nucleus International Schools',
         tagline: 'Think Deeply. Create Boldly. Solve Truly.',
         subhead:
-          'A Cambridge international education in the heart of Addis Ababa, raising secure, curious, globally-minded children from age 2 through Grade 8.',
+          'A Cambridge international education in the heart of Addis Ababa, raising secure, curious, globally-minded children from age 2 through Year 9 (Grade 8).',
         links: [
           { label: 'Register Now', url: '/register#application', appearance: 'primary' },
           { label: 'Visit Now', url: '/contact', appearance: 'outline' },
@@ -200,8 +200,8 @@ export const defaultHomeLayout: RenderableBlock[] = [
     background: 'mist',
     heading: 'Parents Often Ask',
     items: [
-      { q: 'What curriculum does Nucleus follow?', a: 'The Cambridge pathway, from the early years through Grade 8: a portable, internationally recognised education.' },
-      { q: 'What ages does Nucleus accept?', a: 'Children from age 2 through Grade 8, on a single planned journey from the early years into the Cambridge primary and middle years.' },
+      { q: 'What curriculum does Nucleus follow?', a: 'The Cambridge pathway, from the early years through Year 9 (Grade 8): a portable, internationally recognised education.' },
+      { q: 'What ages does Nucleus accept?', a: 'Children from age 2 through Year 9 (Grade 8), on a single planned journey from the early years into the Cambridge primary and middle years.' },
       { q: 'Where is Nucleus located?', a: 'Two campuses are open in Addis Ababa: the Vatican grade school campus (behind the Vatican Embassy) and the Bisrate Gebriel preschool and KG campus (South African Campus, next to Adot Building). A third campus at Totot, behind World Vision, is being finished now.' },
       { q: 'How much are the fees?', a: `Call us (${bothCampusesText()}) and our admissions team will talk you through the fees for your child’s grade.` },
       { q: 'How safe is the campus?', a: 'Safety comes first. A secure, supervised campus with controlled access is the foundation of everything we do.' },

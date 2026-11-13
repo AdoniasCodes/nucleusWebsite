@@ -158,7 +158,7 @@ const posts: SeedPost[] = [
         heading: '6. The route after the last grade',
         body: [
           {
-            p: 'Many schools stop at Grade 6 or Grade 8. That is fine, as long as you know where your child goes next and whether the move is smooth. Ask whether the next school teaches the same programme, and whether this school helps with placement.',
+            p: 'Many schools stop at Year 7 (Grade 6) or Year 9 (Grade 8). That is fine, as long as you know where your child goes next and whether the move is smooth. Ask whether the next school teaches the same programme, and whether this school helps with placement.',
           },
           {
             p: 'University recognition is the long view. UCAS, the UK application service, says there is no list of “accepted qualifications” because each university sets its own entry requirements ([UCAS](https://www.ucas.com/international/international-advisers/qualifications-advice-for-international-advisers)). Rather than trusting a school’s claim that a qualification is “accepted everywhere,” check the course pages of two or three universities your child might apply to.',
@@ -220,7 +220,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus International Schools is a Cambridge certified school teaching the international Cambridge curriculum from Preschool to Grade 8. The preschool is at our Bisrate Gebriel campus and the grade school at our Vatican campus in Sarbet. The student-to-teacher ratio is 9:1, and our STEM and AI labs, agricultural lab, music band, workshop and sport are part of the weekly timetable. Our Learning Support department works with families on individual plans.',
+            p: 'Nucleus International Schools is a Cambridge certified school teaching the international Cambridge curriculum from Preschool to Year 9 (Grade 8). The preschool is at our Bisrate Gebriel campus and the grade school at our Vatican campus in Sarbet. The student-to-teacher ratio is 9:1, and our STEM and AI labs, agricultural lab, music band, workshop and sport are part of the weekly timetable. Our Learning Support department works with families on individual plans.',
           },
           {
             p: 'Families come from Ethiopia, Canada, the United States, France, Nigeria, Turkey, India and beyond. We would rather you compare us honestly than choose us in a hurry. Book a tour through the [registration page](/register), and read the [guide for families moving to Addis Ababa](/news/moving-to-addis-ababa-expat-school-guide) if you are arriving from abroad. When you are ready, [register your child](/register).',
@@ -394,7 +394,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus International Schools is a Cambridge certified school teaching the international Cambridge curriculum from Preschool to Grade 8. We do not teach the IB. For the 2027/28 academic year we plan to open Grades 9 to 12 at our Totot campus in Gerji, on a Cambridge IGCSE and A Level pathway, so that students who start with us can finish with us.',
+            p: 'Nucleus International Schools is a Cambridge certified school teaching the international Cambridge curriculum from Preschool to Year 9 (Grade 8). We do not teach the IB. For the 2027/28 academic year we plan to open Year 10 to Year 13 (Grade 9 to Grade 12) at our Totot campus in Gerji, on a Cambridge IGCSE and A Level pathway, so that students who start with us can finish with us.',
           },
           {
             p: 'If you are weighing the two for a young child, you have time, because the two routes only fork at about 14. See the [Cambridge pathway at Nucleus](/cambridge-pathway), or [register your child](/register) and ask our admissions team anything you want to know. Families deciding between a UK-style and a US-style system can read the [British and American curriculum comparison](/news/british-vs-american-curriculum-addis-ababa).',
@@ -472,7 +472,7 @@ const posts: SeedPost[] = [
             p: 'The national curriculum is set by the Ministry of Education and leads to the national examinations. It is rooted in the local context and is generally the most affordable route. For a family that expects its children to study and work here, it is a sensible default, and quality varies by school, so visit before you decide.',
           },
           {
-            p: 'Some families blend the two: an international programme in the primary years, then a decision at the end of Grade 8 about which route the secondary years should follow. Our guide to [private and public school in Ethiopia](/news/private-vs-public-school-ethiopia) and to [Ethiopian private school levels](/news/ethiopian-private-school-levels-explained) explain how the local system is organised.',
+            p: 'Some families blend the two: an international programme in the primary years, then a decision at the end of Year 9 (Grade 8) about which route the secondary years should follow. Our guide to [private and public school in Ethiopia](/news/private-vs-public-school-ethiopia) and to [Ethiopian private school levels](/news/ethiopian-private-school-levels-explained) explain how the local system is organised.',
           },
           {
             p: 'Cambridge has a long record with Ethiopian education itself. Its own case study describes supporting the Ministry of Education’s general education curriculum reform, including training 3,200 textbook authors, editors, designers and reviewers ([Cambridge case study](https://www.cambridge.org/partnership/case-studies/how-cambridge-supported-curriculum-reform-in-ethiopia)). That is a point about Cambridge’s experience here, not a claim that one system outranks the other.',
@@ -560,7 +560,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus International Schools teaches the international Cambridge curriculum from Preschool to Grade 8, with Grades 9 to 12 planned at our Totot campus for 2027/28. Lessons run in English, and the curriculum sits alongside STEM and AI labs, an agricultural lab, music, a workshop and sport. If you would like to see how the framework works in a real classroom, [book a visit](/register).',
+            p: 'Nucleus International Schools teaches the international Cambridge curriculum from Preschool to Year 9 (Grade 8), with Year 10 to Year 13 (Grade 9 to Grade 12) planned at our Totot campus for 2027/28. Lessons run in English, and the curriculum sits alongside STEM and AI labs, an agricultural lab, music, a workshop and sport. If you would like to see how the framework works in a real classroom, [book a visit](/register).',
           },
           {
             p: 'We also help families decide even when the answer is not Nucleus. Read our [guide to the Cambridge curriculum in Ethiopia](/news/cambridge-curriculum-ethiopia), then call +2519 81 99 99 22 to talk it through, or [register your child](/register) to start the conversation.',

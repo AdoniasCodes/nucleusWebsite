@@ -60,7 +60,7 @@ export const registerPages: Record<'primary' | 'grade-school', DefaultPage> = {
           'This form registers your child at our Bisrate Gebriel (South African Campus) campus. It takes about ten minutes, it saves as you go, and you can stop and come back to it any time on the same device.',
         links: [
           { link: { appearance: 'primary', type: 'custom', label: 'Start the form', url: '#application' } },
-          { link: { appearance: 'outline', type: 'custom', label: 'Joining Grade 1 to 8?', url: '/register/grade-school' } },
+          { link: { appearance: 'outline', type: 'custom', label: 'Joining Year 2 to Year 9 (Grade 1 to Grade 8)?', url: '/register/grade-school' } },
         ],
       },
       { blockType: 'admissionApplication', variant: 'primary' },
@@ -72,13 +72,13 @@ export const registerPages: Record<'primary' | 'grade-school', DefaultPage> = {
     title: 'Grade School Registration',
     seoTitle: 'Grade School Registration, Vatican Campus | Nucleus International Schools',
     description:
-      'Register for Grade 1 to 8 at Nucleus, Sarbet Vatican, Addis Ababa, on the international Cambridge curriculum. Admissions replies within one business day.',
+      'Register for Year 2 to Year 9 (Grade 1 to Grade 8) at Sarbet Vatican, Addis Ababa, on the international Cambridge curriculum. We reply within one business day.',
     layout: [
       {
         blockType: 'hero',
         background: 'purple',
         eyebrow: 'Grade School · Vatican Campus',
-        heading: 'Register for\nGrade 1 to Grade 8',
+        heading: 'Register for\nYear 2 to Year 9 (Grade 1 to Grade 8)',
         bgImage: '/images/stock/admissions-hero.webp',
         subhead:
           'This form registers your child at our Vatican campus, on the international Cambridge curriculum. It takes about ten minutes, it saves as you go, and you can stop and come back to it any time on the same device.',

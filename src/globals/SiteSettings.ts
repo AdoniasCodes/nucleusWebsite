@@ -43,7 +43,7 @@ export const SiteSettings: GlobalConfig = {
                   required: true,
                   options: [
                     { label: 'Preschool and KG (Bisrate Gebriel)', value: 'preschool' },
-                    { label: 'Grade 1 to 8 (Vatican)', value: 'grade-school' },
+                    { label: 'Year 2 to Year 9 (Grade 1 to Grade 8) (Vatican)', value: 'grade-school' },
                   ],
                 },
                 { name: 'number', type: 'text', required: true },

@@ -8,7 +8,7 @@ import { Icon } from '@/components/ui/Icon'
 import { COUNTRY_NAMES, DEFAULT_COUNTRY } from '@/lib/countries'
 import { HEARD_ABOUT_OPTIONS, HEARD_ABOUT_LABEL } from '@/lib/heardAbout'
 import { PhoneField, composePhone, validatePhone, type PhoneValue } from './PhoneField'
-import type { ApplicationVariant } from './applicationVariants'
+import { gradeLabel, type ApplicationVariant } from './applicationVariants'
 import { submitApplication, type ApplicationState } from '@/app/(frontend)/actions/submitApplication'
 import { trackLead } from '@/lib/pixels'
 import { PRESCHOOL_PHONES, VATICAN_PHONES } from '@/lib/campusPhones'
@@ -203,7 +203,7 @@ function Select({
         <option value="">{placeholder}</option>
         {options.map((o) => (
           <option key={o} value={o}>
-            {o}
+            {gradeLabel(o)}
           </option>
         ))}
       </select>
@@ -333,7 +333,7 @@ export function ApplicationForm({
   variant,
 }: {
   formToken: string
-  /** Campus-locked variant. Omitted = the full Preschool-to-Grade-8 form with a campus choice. */
+  /** Campus-locked variant. Omitted = the full Preschool to Year 9 (Grade 8) form with a campus choice. */
   variant?: ApplicationVariant
 }) {
   const [state, action, isPending] = useActionState(submitApplication, initialState)

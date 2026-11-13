@@ -236,7 +236,7 @@ export function NewsletterPdf({ data }: { data: PdfData }) {
           <Text
             style={s.footerText}
             render={({ pageNumber, totalPages }) =>
-              `${data.siteHost} · Preschool and KG ${PRESCHOOL_PHONES.numbers[0].display} · Grade 1 to 8 ${VATICAN_PHONES.numbers[0].display} · Page ${pageNumber} of ${totalPages}`
+              `${data.siteHost} · Preschool and KG ${PRESCHOOL_PHONES.numbers[0].display} · Year 2 to Year 9 (Grade 1 to Grade 8) ${VATICAN_PHONES.numbers[0].display} · Page ${pageNumber} of ${totalPages}`
             }
           />
         </View>

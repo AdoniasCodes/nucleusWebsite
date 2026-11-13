@@ -1279,7 +1279,7 @@ const cbt02Sections: SeedSection[] = [
         p: 'The founding story is short, and it is personal. Ato Asfaw G\u2019Hiwot and Engineer Demitu Feyisa have four children. Every early decision about this school was first a decision about them.',
       },
       {
-        p: 'Three years ago they opened a Cambridge-certified preschool at Abo Mekanisa. It has since grown into a full Preschool to Grade 8 school teaching the international Cambridge curriculum at the Vatican campus. The scale changed. The reason did not.',
+        p: 'Three years ago they opened a Cambridge-certified preschool at Abo Mekanisa. It has since grown into a full Preschool to Year 9 (Grade 8) school teaching the international Cambridge curriculum at the Vatican campus. The scale changed. The reason did not.',
       },
       {
         p: '"Born out of love" is easy to read as a line on an About page. Said out loud, to the people who will actually deliver it, it lands differently. A school you built for your own children is a school you cannot afford to get wrong.',
@@ -1643,14 +1643,14 @@ const itc01Sections: SeedSection[] = [
         p: 'Why do people leave their home countries? How can disease be prevented? Can we trust everything we read online? Do international brands help or harm Ethiopian businesses?',
       },
       {
-        p: 'These are the kinds of questions students explore in Global Perspectives, a subject taught across all year groups at Nucleus International School. In Years 7 to 9, it is taught by Tilahun G/Kiristose.',
+        p: 'These are the kinds of questions students explore in Global Perspectives, a subject taught across all year groups at Nucleus International School. In Year 7 to Year 9 (Grade 6 to Grade 8), it is taught by Tilahun G/Kiristose.',
       },
     ],
     images: [
       {
         imageUrl: `${ITC}/gp01-tilahun-portrait.webp`,
         alt: 'Tilahun G/Kiristose standing in the Global Perspectives classroom at Nucleus International School, in front of a world map and a wall of national flags',
-        caption: 'Tilahun G/Kiristose teaches Global Perspectives to Years 7 to 9.',
+        caption: 'Tilahun G/Kiristose teaches Global Perspectives to Year 7 to Year 9 (Grade 6 to Grade 8).',
         portrait: true,
       },
     ],
@@ -1695,7 +1695,7 @@ const itc01Sections: SeedSection[] = [
     images: [
       {
         imageUrl: `${ITC}/gp01-tilahun-teaching-evidence.webp`,
-        alt: 'Tilahun talking through an investigation with Years 7 to 9 students around a table of working paper in the Global Perspectives room',
+        alt: 'Tilahun talking through an investigation with Year 7 to Year 9 (Grade 6 to Grade 8) students around a table of working paper in the Global Perspectives room',
         caption: 'Ideas are compared out loud before anything is written down.',
       },
     ],
@@ -1793,7 +1793,7 @@ const itc02Sections: SeedSection[] = [
     heading: 'How Simple Questions Grow Into Independent Thinking',
     body: [
       {
-        p: 'In our last Inside the Nucleus Classroom, we explored Global Perspectives in Years 7 to 9, where students are learning to research issues, question sources, compare different points of view and support their conclusions with evidence.',
+        p: 'In our last Inside the Nucleus Classroom, we explored Global Perspectives in Year 7 to Year 9 (Grade 6 to Grade 8), where students are learning to research issues, question sources, compare different points of view and support their conclusions with evidence.',
       },
       { p: 'But those skills do not suddenly appear in Year 7.' },
       { p: 'At Nucleus, the foundations begin much earlier.' },
@@ -2214,17 +2214,17 @@ const ISSUES: SeedIssue[] = [
   {
     seriesSlug: 'inside-the-nucleus-classroom',
     article: {
-      title: 'What Happens in a Global Perspectives Lesson? Inside Years 7 to 9 at Nucleus',
+      title: 'What Happens in a Global Perspectives Lesson? Inside Year 7 to Year 9 (Grade 6 to Grade 8) at Nucleus',
       slug: 'what-happens-in-a-global-perspectives-lesson',
       excerpt:
-        'Why do people leave their home countries? Can we trust what we read online? Tilahun G/Kiristose opens his Years 7 to 9 Global Perspectives classroom in Addis Ababa, where students are taught how to think rather than what to think.',
+        'Why do people leave their home countries? Can we trust what we read online? Tilahun G/Kiristose opens his Year 7 to Year 9 (Grade 6 to Grade 8) Global Perspectives classroom in Addis Ababa, where students are taught how to think rather than what to think.',
       heroImageUrl: `${ITC}/gp01-global-perspectives-class.webp`,
       publishedAt: '2026-09-21T06:00:00.000Z',
       playlistPart: 1,
       meta: {
         title: 'What Happens in a Global Perspectives Lesson',
         description:
-          'Inside Years 7 to 9 Global Perspectives at Nucleus in Addis Ababa: how students question a source, weigh evidence and build an argument they can prove.',
+          'Inside Year 7 to Year 9 (Grade 6 to Grade 8) Global Perspectives at Nucleus: how students question a source, weigh evidence and build an argument.',
       },
     },
     sections: itc01Sections,

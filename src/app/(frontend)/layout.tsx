@@ -36,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
     'Cambridge Curriculum in Addis Ababa | Nucleus International Schools'
   const description =
     seo?.defaultMetaDescription ??
-    'Nucleus teaches the international Cambridge curriculum at Vatican, Addis Ababa (near Mekanisa Abo Square), ages 2 to Grade 8: secure campus, robotics, STEM and multilingual learning.'
+    'Nucleus teaches the international Cambridge curriculum in Addis Ababa, ages 2 to Year 9 (Grade 8): secure campus, robotics, STEM and multilingual learning.'
 
   // A share image uploaded in the CMS wins; otherwise the branded card shipped in /public.
   const cmsShare =

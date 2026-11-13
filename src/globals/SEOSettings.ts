@@ -34,7 +34,7 @@ export const SEOSettings: GlobalConfig = {
       type: 'textarea',
       maxLength: 160,
       defaultValue:
-        'Nucleus teaches the international Cambridge curriculum at Vatican, Addis Ababa (near Mekanisa Abo Square), ages 2 to Grade 8. Robotics, STEM, secure campus.',
+        'Nucleus teaches the international Cambridge curriculum in Addis Ababa, ages 2 to Year 9 (Grade 8). Robotics, STEM, secure campus, multilingual staff.',
     },
     { name: 'defaultShareImage', type: 'upload', relationTo: 'media' },
     { name: 'twitterHandle', type: 'text' },

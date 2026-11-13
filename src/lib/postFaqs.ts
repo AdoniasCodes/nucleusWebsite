@@ -40,7 +40,7 @@ export const POST_FAQS: Record<string, PostFaq[]> = {
     },
     {
       q: 'What age can my child start international school in Addis Ababa?',
-      a: 'Most international schools in Addis Ababa begin at nursery or preschool age, typically between two and four years old, then continue through the primary years. Nucleus takes children from age 2 through Grade 8 on one planned Cambridge pathway, so the early years and what follows are built as a single journey rather than a transfer.',
+      a: 'Most international schools in Addis Ababa begin at nursery or preschool age, typically between two and four years old, then continue through the primary years. Nucleus takes children from age 2 through Year 9 (Grade 8) on one planned Cambridge pathway, so the early years and what follows are built as a single journey rather than a transfer.',
     },
   ],
   'taekwondo-classes-for-kids-addis-ababa': [
@@ -94,7 +94,7 @@ export const POST_FAQS: Record<string, PostFaq[]> = {
     },
     {
       q: 'Is Global Perspectives a real subject or an extra activity?',
-      a: 'It is a full timetabled subject with its own teacher, topics and assessment, not a club or an enrichment slot. At Nucleus it is taught across all year groups, and in Years 7 to 9 it is taught by a subject teacher.',
+      a: 'It is a full timetabled subject with its own teacher, topics and assessment, not a club or an enrichment slot. At Nucleus it is taught across all year groups, and in Year 7 to Year 9 (Grade 6 to Grade 8) it is taught by a subject teacher.',
     },
     {
       q: 'What topics do students study in Global Perspectives?',
@@ -224,7 +224,7 @@ export const POST_FAQS: Record<string, PostFaq[]> = {
   'what-children-learn-in-year-1': [
     {
       q: 'What age is Year 1?',
-      a: 'Year 1 is usually for children aged five to six. In Cambridge Primary it is Stage 1, the first of six primary stages. At Nucleus, Year 1 is also called Grade 1, and entry is assessed individually.',
+      a: 'Year 1 is usually for children aged five to six. In Cambridge Primary it is Stage 1, the first of six primary stages. At Nucleus, the first primary class is Year 2 (Grade 1), and entry is assessed individually.',
     },
     {
       q: 'What do children learn in Year 1 maths?',
@@ -356,7 +356,7 @@ export const POST_FAQS: Record<string, PostFaq[]> = {
   'best-kindergarten-addis-ababa': [
     {
       q: 'What age do children start kindergarten in Addis Ababa?',
-      a: 'Most private and international kindergartens in Addis Ababa take children from about age three, with two or three kindergarten years before Grade 1. At Nucleus, KG1 is for children aged three to four and KG2 for children aged four to five, followed by Year 1 (Grade 1) at five to six.',
+      a: 'Most private and international kindergartens in Addis Ababa take children from about age three, with two or three kindergarten years before Year 2 (Grade 1). At Nucleus, KG1 is for children aged three to four and KG2 for children aged four to five, followed by Year 2 (Grade 1) at five to six.',
     },
     {
       q: 'What is a good teacher to child ratio for kindergarten?',

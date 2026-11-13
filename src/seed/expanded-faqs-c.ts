@@ -57,7 +57,7 @@ export const FAQS_C: Record<string, PostFaq[]> = {
     },
     {
       q: 'Which schools in Addis Ababa teach the Cambridge curriculum?',
-      a: 'From their own websites, Bingham Academy teaches it from Kindergarten to Grade 12, One Planet lists Cambridge stages from Early Years to Advanced, and Nucleus teaches the international Cambridge curriculum from Preschool to Grade 8. Other schools also appear in directories, so confirm each one with Cambridge’s school search.',
+      a: 'From their own websites, Bingham Academy teaches it from Kindergarten to Year 13 (Grade 12), One Planet lists Cambridge stages from Early Years to Advanced, and Nucleus teaches the international Cambridge curriculum from Preschool to Year 9 (Grade 8). Other schools also appear in directories, so confirm each one with Cambridge’s school search.',
     },
     {
       q: 'Can Ethiopian children attend Cambridge schools in Addis Ababa?',

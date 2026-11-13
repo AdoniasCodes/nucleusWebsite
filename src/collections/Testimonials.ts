@@ -22,7 +22,7 @@ export const Testimonials: CollectionConfig = {
     {
       name: 'relationship',
       type: 'text',
-      admin: { description: 'e.g. "Parent of Grade 3 student" or "Alumnus, Class of 2024".' },
+      admin: { description: 'e.g. "Parent of Year 4 (Grade 3) student" or "Alumnus, Class of 2024".' },
     },
     { name: 'photo', type: 'upload', relationTo: 'media' },
     { name: 'featured', type: 'checkbox', defaultValue: false, admin: { position: 'sidebar' } },

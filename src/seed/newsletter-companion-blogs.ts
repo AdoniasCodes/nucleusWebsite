@@ -70,7 +70,7 @@ const posts: SeedPost[] = [
       {
         body: [
           {
-            p: 'Somewhere between Grade 2 and Grade 6, many children decide something about themselves. They are not a maths person. The numbers do not make sense to them, and they never will.',
+            p: 'Somewhere between Year 3 (Grade 2) and Year 7 (Grade 6), many children decide something about themselves. They are not a maths person. The numbers do not make sense to them, and they never will.',
           },
           {
             p: 'It is one of the most common things a parent hears, and one of the most expensive. A child who has decided they are bad at maths stops trying, which guarantees the next result is worse, which proves the decision right. The feeling has a name: maths anxiety.',
@@ -235,7 +235,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus International Schools is an international school in Addis Ababa teaching the international Cambridge curriculum from age 2 through Grade 8. Rajif teaches mathematics here, and every child in his room is known by name.',
+            p: 'Nucleus International Schools is an international school in Addis Ababa teaching the international Cambridge curriculum from age 2 through Year 9 (Grade 8). Rajif teaches mathematics here, and every child in his room is known by name.',
           },
           {
             p: 'For his full account of why no child is born bad at maths, and what he asks a student who is stuck, read the first issue of The People Behind Nucleus. To see a classroom in person, or to ask what a week of maths looks like, call +2519 81 99 99 22 or begin the registration form.',
@@ -429,7 +429,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus International Schools teaches the international Cambridge curriculum from age 2 through Grade 8 in Mekanisa, Addis Ababa. The belief that there is always a path forward shapes how we respond when a student is discouraged by a result.',
+            p: 'Nucleus International Schools teaches the international Cambridge curriculum from age 2 through Year 9 (Grade 8) in Mekanisa, Addis Ababa. The belief that there is always a path forward shapes how we respond when a student is discouraged by a result.',
           },
           {
             p: 'Our admissions team’s full piece, including what we mean by an education of the heart, is in the second issue of The People Behind Nucleus. To visit a classroom or talk through your child’s situation, call +2519 81 99 99 22 or start the registration form.',
@@ -599,7 +599,7 @@ const posts: SeedPost[] = [
             p: 'From the earliest years. A toddler can learn that “sad” and “cross” are different words. A preschooler can learn that a friend’s tears mean something. The skills then deepen through primary and secondary school.',
           },
           {
-            p: 'That is one reason a connected school journey helps. At Nucleus, children join from age 2 and follow one planned pathway through Grade 8 on the international Cambridge curriculum, so habits learned in the early years are still being built on at Cambridge Primary level and beyond, rather than starting again at each transfer.',
+            p: 'That is one reason a connected school journey helps. At Nucleus, children join from age 2 and follow one planned pathway through Year 9 (Grade 8) on the international Cambridge curriculum, so habits learned in the early years are still being built on at Cambridge Primary level and beyond, rather than starting again at each transfer.',
           },
         ],
       },
@@ -623,7 +623,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus International Schools is an international school in Addis Ababa, teaching the international Cambridge curriculum from age 2 through Grade 8. Emotional intelligence was the subject of the first session in our Teachers’ Capacity Building Training, held at the Vatican campus, because we believe a child must feel safe, seen and understood before they can learn.',
+            p: 'Nucleus International Schools is an international school in Addis Ababa, teaching the international Cambridge curriculum from age 2 through Year 9 (Grade 8). Emotional intelligence was the subject of the first session in our Teachers’ Capacity Building Training, held at the Vatican campus, because we believe a child must feel safe, seen and understood before they can learn.',
           },
           {
             p: 'The full account of that session, including the three takeaways and the 10-second pause, is in the first issue of our teacher training newsletter. To see how a Nucleus classroom feels, call +2519 81 99 99 22 or begin the registration form.',

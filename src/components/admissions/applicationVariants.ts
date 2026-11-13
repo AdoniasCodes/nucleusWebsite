@@ -12,7 +12,7 @@
 export type ApplicationVariant = {
   /** Storage-key suffix, so a half-filled draft never leaks between the two forms. */
   key: string
-  /** Grades this campus accepts. Replaces the full Preschool-to-Grade-8 list. */
+  /** Grades this campus accepts. Replaces the full Preschool to Year 9 (Grade 8) list. */
   grades: string[]
   /** The one campus this form registers for. Shown read-only and posted as `preferredCampus`. */
   campus: string
@@ -34,5 +34,14 @@ export const APPLICATION_VARIANTS = {
     campusNote: 'Our grade school at Sarbet Vatican, 50 metres behind the Vatican Embassy, Addis Ababa.',
   },
 } as const satisfies Record<string, ApplicationVariant>
+
+/**
+ * Visible label for a stored grade value. The stored value stays "Grade N" so old submissions and
+ * admin filters keep working; the Cambridge Year (Grade + 1) leads on screen: "Year 9 (Grade 8)".
+ */
+export function gradeLabel(value: string): string {
+  const m = /^Grade (\d+)$/.exec(value)
+  return m ? `Year ${Number(m[1]) + 1} (Grade ${m[1]})` : value
+}
 
 export type ApplicationVariantKey = keyof typeof APPLICATION_VARIANTS

@@ -120,7 +120,7 @@ const posts: SeedPost[] = [
       { p: 'Best for: families paying school fees themselves who still want a recognised international curriculum.' },
 
       { h2: 'Value and newer Cambridge options' },
-      { p: 'Then there are newer, value-focused schools, including Nucleus, which teaches the international Cambridge curriculum at Vatican near Mekanisa from age 2 through Grade 8. This tier is built around a secure campus, holistic learning such as robotics, agriculture, music and sport, and transparent fees without surprise capital-fee jumps. Facilities are smaller than the premium tier; the trade is cost and class size.' },
+      { p: 'Then there are newer, value-focused schools, including Nucleus, which teaches the international Cambridge curriculum at Vatican near Mekanisa from age 2 through Year 9 (Grade 8). This tier is built around a secure campus, holistic learning such as robotics, agriculture, music and sport, and transparent fees without surprise capital-fee jumps. Facilities are smaller than the premium tier; the trade is cost and class size.' },
       { p: 'Best for: first-time international-school families, families switching from a private national-curriculum school, and diplomatic families who want quality without premium-tier capital fees.' },
 
       { h2: 'How to judge any school on this list' },
@@ -135,7 +135,7 @@ const posts: SeedPost[] = [
       { p: 'Ask each school for the complete fee sheet in writing before you commit. A school that answers that plainly is telling you something important about how it treats families.' },
 
       { h2: 'Where Nucleus honestly fits' },
-      { p: 'We will not pretend to out-facility ICS, and we would not want a family to choose us expecting that. What Nucleus aims to be is the best-value Cambridge option in Addis Ababa with a genuinely secure, nurturing campus, from age 2 through Grade 8 on one planned pathway. If your priority is a large international faculty and an IB diploma, another school on this list will serve you better, and we would rather say so.' },
+      { p: 'We will not pretend to out-facility ICS, and we would not want a family to choose us expecting that. What Nucleus aims to be is the best-value Cambridge option in Addis Ababa with a genuinely secure, nurturing campus, from age 2 through Year 9 (Grade 8) on one planned pathway. If your priority is a large international faculty and an IB diploma, another school on this list will serve you better, and we would rather say so.' },
 
       { h2: 'Questions parents ask most' },
       { h3: 'What is the best international school in Addis Ababa?' },
@@ -149,7 +149,7 @@ const posts: SeedPost[] = [
       { h3: 'Do international schools in Addis Ababa accept Ethiopian students?' },
       { p: 'Yes. Most international schools in Addis Ababa enrol a mix of Ethiopian, diplomatic and expatriate families, and Ethiopian children make up a large share of the roll at many of them. A few schools tied to a specific embassy give priority to their own nationals, so confirm admissions policy directly with each school.' },
       { h3: 'What age can my child start international school in Addis Ababa?' },
-      { p: 'Most international schools in Addis Ababa begin at nursery or preschool age, typically between two and four years old, then continue through the primary years. Nucleus takes children from age 2 through Grade 8 on one planned Cambridge pathway, so the early years and what follows are built as a single journey rather than a transfer.' },
+      { p: 'Most international schools in Addis Ababa begin at nursery or preschool age, typically between two and four years old, then continue through the primary years. Nucleus takes children from age 2 through Year 9 (Grade 8) on one planned Cambridge pathway, so the early years and what follows are built as a single journey rather than a transfer.' },
 
       { p: 'The only way to find your best school is to visit a few. We would be glad to be one of them.' },
       { related: [
@@ -174,8 +174,8 @@ const posts: SeedPost[] = [
       { h2: 'ICS fees, in plain numbers (2025/26)' },
       { ul: [
         'Early Years (3–4): about USD 11,760 half-day, around USD 19,130 full-day.',
-        'Kindergarten and Grades 1–5: about USD 29,520 a year.',
-        'Grades 6–8: about USD 33,480; Grades 9–12: roughly USD 35,120–36,520.',
+        'Kindergarten and Year 2 to Year 6 (Grade 1 to Grade 5): about USD 29,520 a year.',
+        'Year 7 to Year 9 (Grade 6 to Grade 8): about USD 33,480; Year 10 to Year 13 (Grade 9 to Grade 12): roughly USD 35,120–36,520.',
         'A one-time capital fee of around USD 10,000 (grade-dependent), plus a USD 300 application fee.',
         'Fees are paid in USD, with small reductions from the third child onward.',
       ] },
@@ -183,7 +183,7 @@ const posts: SeedPost[] = [
       { h2: 'Why it costs that much' },
       { p: 'You are paying for the IB curriculum, a large international faculty, extensive facilities and strong demand from the diplomatic and corporate community. For families who need exactly that, it can be worth it.' },
       { h2: 'Lower-cost alternatives worth a look' },
-      { p: 'Plenty of mid-market Cambridge and British schools deliver an international standard for a fraction of the all-in cost. Nucleus is one, teaching the international Cambridge curriculum at Vatican, near Mekanisa (age 2 to Grade 8), with transparent, birr-friendly fees and no surprise capital-fee jumps. Request our fee sheet for exact figures.' },
+      { p: 'Plenty of mid-market Cambridge and British schools deliver an international standard for a fraction of the all-in cost. Nucleus is one, teaching the international Cambridge curriculum at Vatican, near Mekanisa (age 2 to Year 9 (Grade 8)), with transparent, birr-friendly fees and no surprise capital-fee jumps. Request our fee sheet for exact figures.' },
       { h2: 'Aim for value, not just a lower price' },
       { ul: [
         'Does the curriculum travel where you might go next?',

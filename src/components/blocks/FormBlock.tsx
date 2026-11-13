@@ -11,8 +11,9 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Icon } from '@/components/ui/Icon'
 import { submitForm, type FormState } from '@/app/(frontend)/actions/submitForm'
 import { trackLead } from '@/lib/pixels'
+import { gradeLabel } from '@/components/admissions/applicationVariants'
 
-/** Grades served: Preschool through Grade 8. Used by the "Grade applying for" dropdown. */
+/** Grades served: Preschool through Year 9 (Grade 8). Used by the "Grade applying for" dropdown. */
 const GRADE_OPTIONS = [
   'Preschool',
   'KG',
@@ -183,7 +184,7 @@ export function FormBlock(props: FormBlockType & { anchor?: string; formToken?: 
                     <option value="">Select a grade…</option>
                     {GRADE_OPTIONS.map((g) => (
                       <option key={g} value={g}>
-                        {g}
+                        {gradeLabel(g)}
                       </option>
                     ))}
                   </select>

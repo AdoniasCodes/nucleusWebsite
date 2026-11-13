@@ -229,7 +229,7 @@ export const VACANCIES: Vacancy[] = [
           'Set the daily routines, timetable and learning environment for each pre-primary class.',
           'Track each child through observation-based assessment, and make sure parents receive clear, regular reports.',
           'Own safeguarding, health and safety for the youngest children, working with the School Nurse.',
-          'Plan smooth transitions, from home into school and from KG into Grade 1.',
+          'Plan smooth transitions, from home into school and from KG into Year 2 (Grade 1).',
           'Build strong relationships with parents through meetings, workshops and open, prompt communication.',
           'Lead professional development for the early years team.',
           'Work with Admissions on entry visits and assessments for new children.',

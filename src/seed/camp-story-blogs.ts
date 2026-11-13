@@ -115,7 +115,7 @@ const posts: SeedPost[] = [
       {
         heading: 'Where this fits at Nucleus',
         body: [
-          { p: 'Robotics and STEM run through the Cambridge programme at our Vatican campus from the early years to Grade 8, and through every week of summer camp at Mekanisa and Vatican. Children aged 4 to 14 build, program, break and fix, with a specialist in the room rather than a rota of helpers.' },
+          { p: 'Robotics and STEM run through the Cambridge programme at our Vatican campus from the early years to Year 9 (Grade 8), and through every week of summer camp at Mekanisa and Vatican. Children aged 4 to 14 build, program, break and fix, with a specialist in the room rather than a rota of helpers.' },
           { p: 'If you want to see it rather than read about it, book a visit and watch a session.' },
         ],
       },
@@ -393,7 +393,7 @@ const posts: SeedPost[] = [
       {
         heading: 'How this works at Nucleus',
         body: [
-          { p: 'Nucleus follows the Cambridge pathway from age 2 through Grade 8 at Vatican, near Mekanisa in Addis Ababa, and the reason we chose it is that it rewards understanding over recall. Around it sit robotics and STEM, agriculture and animal care, music, sport and the arts, each one another chance for a child to meet a problem that is genuinely theirs to solve.' },
+          { p: 'Nucleus follows the Cambridge pathway from age 2 through Year 9 (Grade 8) at Vatican, near Mekanisa in Addis Ababa, and the reason we chose it is that it rewards understanding over recall. Around it sit robotics and STEM, agriculture and animal care, music, sport and the arts, each one another chance for a child to meet a problem that is genuinely theirs to solve.' },
           { p: 'Our teachers are trained on this directly rather than by memo. The founders themselves run the session on why the school exists. If you want to see what it looks like in an ordinary lesson, come and visit on a normal school day.' },
         ],
       },
