@@ -11,7 +11,7 @@ import { PRESCHOOL_PHONES, VATICAN_PHONES, bothCampusesText, phoneText, phoneTel
  * Primary conversion goal = BOOK A TOUR (one primary CTA, repeated). Light/dark rhythm blends.
  *
  * Copy is brand-voiced + grounded; unverified specifics stay soft (see content/open-questions.md).
- * Stats values + testimonials are PLACEHOLDER pending confirmation, do not present as verified facts.
+ * Stats values are PLACEHOLDER pending confirmation, do not present as verified facts. Testimonials come from Payload.
  */
 const coreValuesCards = [
   { iconName: 'Handshake', title: 'Honesty', description: 'Living and speaking with absolute truthfulness to build a community rooted in mutual trust.' },
@@ -124,12 +124,9 @@ export const defaultHomeLayout: RenderableBlock[] = [
     blockType: 'testimonials',
     background: 'mist',
     heading: 'Loved by Nucleus Families',
-    // PLACEHOLDER quotes, replace with real parent testimonials before publishing (open-questions.md).
-    quotes: [
-      { quote: 'For the first time I drop my daughter off without worrying. The security and the care are unlike anywhere we’ve been.', author: 'A Nucleus Parent', relationship: 'Parent, Early Years' },
-      { quote: 'The robotics and the garden: my son comes home talking about what he built and what he grew. He’s genuinely excited to learn.', author: 'A Nucleus Parent', relationship: 'Parent, Primary' },
-      { quote: 'A real international standard, with teachers from around the world, and they were clear and honest about fees from day one.', author: 'A Nucleus Parent', relationship: 'Diplomatic family' },
-    ],
+    // Quotes are filled at render time from APPROVED testimonials in Payload (see app/(frontend)/page.tsx).
+    // The section stays hidden until at least three are approved.
+    quotes: [],
   },
   {
     blockType: 'ctaBand',

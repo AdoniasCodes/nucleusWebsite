@@ -464,6 +464,31 @@ export interface Testimonial {
    */
   relationship?: string | null;
   photo?: (number | null) | Media;
+  /**
+   * Optional star rating, 1 to 5.
+   */
+  rating?: number | null;
+  /**
+   * Shown publicly, e.g. "Year 4 (Grade 3)".
+   */
+  childYear?: string | null;
+  /**
+   * Only approved testimonials appear on the website.
+   */
+  status: 'pending' | 'approved' | 'rejected';
+  source?: ('website' | 'staff') | null;
+  /**
+   * Parent agreed to publish their first name and quote.
+   */
+  consent?: boolean | null;
+  /**
+   * Private. Never shown on the website.
+   */
+  email?: string | null;
+  /**
+   * Private. Never shown on the website.
+   */
+  phone?: string | null;
   featured?: boolean | null;
   updatedAt: string;
   createdAt: string;
@@ -1707,6 +1732,13 @@ export interface TestimonialsSelect<T extends boolean = true> {
   authorName?: T;
   relationship?: T;
   photo?: T;
+  rating?: T;
+  childYear?: T;
+  status?: T;
+  source?: T;
+  consent?: T;
+  email?: T;
+  phone?: T;
   featured?: T;
   updatedAt?: T;
   createdAt?: T;

@@ -56,6 +56,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // The two campus-locked registration forms (own routes, so not in `defaultPages`).
     { url: `${SERVER_URL}/register/primary`, changeFrequency: 'monthly' as const, priority: 0.9 },
     { url: `${SERVER_URL}/register/grade-school`, changeFrequency: 'monthly' as const, priority: 0.9 },
+    { url: `${SERVER_URL}/experience`, changeFrequency: 'weekly' as const, priority: 0.6 },
     // The newsletter index refreshes weekly, worth a high crawl priority.
     { url: `${SERVER_URL}/newsletter`, changeFrequency: 'weekly' as const, priority: 0.8 },
   ]

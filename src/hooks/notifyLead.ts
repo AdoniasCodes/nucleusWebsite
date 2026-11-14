@@ -11,12 +11,16 @@ import type { CollectionAfterChangeHook } from 'payload'
  */
 
 const FIELD_ORDER = [
+  'authorName',
+  'rating',
+  'quote',
   'parentName',
   'fullName',
   'email',
   'phone',
   'childAge',
   'childGrade',
+  'childYear',
   'positionLabel',
   'yearsExperience',
   'interest',
@@ -28,6 +32,10 @@ const FIELD_ORDER = [
 ] as const
 
 const LABELS: Record<string, string> = {
+  authorName: 'Name',
+  rating: 'Rating (out of 5)',
+  quote: 'Testimonial',
+  childYear: "Child's year",
   parentName: 'Parent name',
   fullName: 'Applicant',
   positionLabel: 'Position applied for',
@@ -84,7 +92,7 @@ export const notifyLead = (kind: string): CollectionAfterChangeHook =>
         to,
         // Staff can hit "Reply" and write straight back to the parent.
         replyTo: typeof doc?.email === 'string' ? doc.email : undefined,
-        subject: `New ${kind}: ${doc?.parentName ?? doc?.fullName ?? doc?.studentName ?? 'Unknown'}`,
+        subject: `New ${kind}: ${doc?.parentName ?? doc?.fullName ?? doc?.authorName ?? doc?.studentName ?? 'Unknown'}`,
         text,
         html,
       })

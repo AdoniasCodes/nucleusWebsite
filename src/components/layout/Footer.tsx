@@ -11,6 +11,7 @@ const PROGRAMS = [
   { label: 'Summer Camp', href: '/summer-camp' },
   { label: 'Admissions', href: '/register' },
   { label: 'Careers', href: '/careers' },
+  { label: 'Share your experience', href: '/experience' },
 ]
 
 /** Legal pages sit on the copyright line, the convention parents already scan for. */
