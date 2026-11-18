@@ -415,7 +415,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'At Nucleus, the early years foundation stage runs at our Bisrate Gebriel Campus (South African Campus) for KG1 (ages three to four) and KG2 (ages four to five). It focuses on language, numeracy, social skills and play-based learning, with time in the agriculture lab, the music room and the STEM lab, and leads straight into Cambridge Primary at our Vatican campus.',
+            p: 'At Nucleus, the early years foundation stage runs at our Bisrate Gebriel Campus (South African Campus) for KG1 (ages three to four) and KG2 (ages four to five). It focuses on language, numeracy, social skills and play-based learning, with time in the agriculture lab, the music room and the STEM lab, and leads straight into Cambridge Primary at our Vatican campus. Parents can read more about the stage on [our Preschool and KG curriculum page](https://nucleusinternationalpreschool.com/curriculum).',
           },
           {
             p: 'Choosing a kindergarten? Our checklist of [12 things to check](/news/best-kindergarten-addis-ababa) works for any school, including ours. To visit, call +2519 47 50 09 92 or +2519 47 50 04 94 or [register for Preschool and KG](/register/primary).',
@@ -1446,6 +1446,7 @@ const posts: SeedPost[] = [
               'Role play shops with real coins.',
             ],
           },
+          { p: 'For a closer look at how this works with three and four year olds, see [how play-based learning works in a preschool classroom](https://nucleusinternationalpreschool.com/blog/play-based-learning-in-preschool).' },
           { h3: 'Primary (ages 5 to 11)' },
           {
             ul: [
@@ -1699,7 +1700,7 @@ const posts: SeedPost[] = [
         style: 'highlight',
         body: [
           {
-            p: 'Nucleus opened its preschool at Abo Mekanisa in 2022, and it now runs at the South African Campus in Bisrate Gebriel, next to Adot Building. It teaches the early years foundation stage, focused on language, numeracy, social skills and play-based learning, and leads straight into the international Cambridge curriculum through Year 9 (Grade 8) at our Vatican campus.',
+            p: '[Nucleus International Preschool](https://nucleusinternationalpreschool.com) opened at Abo Mekanisa in 2022, and it now runs at the South African Campus in Bisrate Gebriel, next to Adot Building. It teaches the early years foundation stage, focused on language, numeracy, social skills and play-based learning, and leads straight into the international Cambridge curriculum through Year 9 (Grade 8) at our Vatican campus.',
           },
           {
             p: 'Our school-wide student to teacher ratio is 9:1. Preschool children also spend time in the agriculture lab, the music room and the STEM lab, because learning goes beyond books from the very first year.',

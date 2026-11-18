@@ -599,7 +599,7 @@ const posts: SeedPost[] = [
             p: 'From the earliest years. A toddler can learn that “sad” and “cross” are different words. A preschooler can learn that a friend’s tears mean something. The skills then deepen through primary and secondary school.',
           },
           {
-            p: 'That is one reason a connected school journey helps. At Nucleus, children join from age 2 and follow one planned pathway through Year 9 (Grade 8) on the international Cambridge curriculum, so habits learned in the early years are still being built on at Cambridge Primary level and beyond, rather than starting again at each transfer.',
+            p: 'That is one reason a connected school journey helps. At Nucleus, children join from age 2 and follow one planned pathway through Year 9 (Grade 8) on the international Cambridge curriculum, so habits learned in the early years are still being built on at Cambridge Primary level and beyond, rather than starting again at each transfer. The preschool team also wrote about [emotional intelligence in early childhood](https://nucleusinternationalpreschool.com/blog/emotional-intelligence-in-early-childhood) for parents of the youngest children.',
           },
         ],
       },

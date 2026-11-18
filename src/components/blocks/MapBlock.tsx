@@ -20,6 +20,9 @@ export type MapCampus = {
   directionsUrl?: string
   /** Optional "Call <campus>" button on the card: label + tel number (no spaces). */
   callLabel?: string
+  /** The campus's own website (preschool site), shown as a button and used as its JSON-LD url. */
+  websiteUrl?: string
+  websiteLabel?: string
   callTel?: string
   /** Address + orientation lines shown beside the map. */
   rows: { iconName: string; title: string; description: string }[]
@@ -83,7 +86,7 @@ function CampusBlock({ campus, columns = false }: { campus: MapCampus; columns?:
             ))}
           </ul>
 
-          {(campus.callTel || campus.directionsUrl) && (
+          {(campus.callTel || campus.directionsUrl || campus.websiteUrl) && (
             <div className="mt-auto flex flex-wrap items-center gap-3">
               {campus.callTel && (
                 <a
@@ -103,6 +106,15 @@ function CampusBlock({ campus, columns = false }: { campus: MapCampus; columns?:
                 >
                   <Icon name="MapPin" size={18} />
                   Get directions
+                </a>
+              )}
+              {campus.websiteUrl && (
+                <a
+                  href={campus.websiteUrl}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-navy/20 px-6 py-3 text-sm font-semibold text-navy transition-colors duration-200 hover:border-ochre hover:bg-ochre"
+                >
+                  <Icon name="Globe" size={18} />
+                  {campus.websiteLabel ?? 'Visit the campus website'}
                 </a>
               )}
             </div>
@@ -144,7 +156,7 @@ export function MapBlock(props: MapProps) {
       '@context': 'https://schema.org',
       '@type': ['School', 'LocalBusiness'],
       name: `Nucleus International Schools, ${c.name}`,
-      url: SERVER_URL,
+      url: c.websiteUrl ?? SERVER_URL,
       ...(c.telephone?.length ? { telephone: c.telephone } : {}),
       address: {
         '@type': 'PostalAddress',

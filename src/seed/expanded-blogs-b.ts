@@ -451,7 +451,7 @@ const posts: SeedPost[] = [
         heading: 'Choose by age, because the campuses differ',
         body: [
           {
-            p: 'Nucleus International Schools runs two campuses in Addis Ababa, split by age. The Preschool campus is the South African Campus at Bisrate Gebriel, next to Adot Building. The Grade School campus is at Sarbet Vatican, 50 metres behind the Embassy of Indonesia. The prospectus gives the entry ages: Kindergarten 1 at 3 to 4 years, Kindergarten 2 at 4 to 5, and Year 2 (Grade 1) at 5 to 6.',
+            p: 'Nucleus International Schools runs two campuses in Addis Ababa, split by age. The Preschool campus is the South African Campus at Bisrate Gebriel, next to Adot Building, and you can read about [our preschool campus at Bisrate Gebriel](https://nucleusinternationalpreschool.com/new-campus) on its own site. The Grade School campus is at Sarbet Vatican, 50 metres behind the Embassy of Indonesia. The prospectus gives the entry ages: Kindergarten 1 at 3 to 4 years, Kindergarten 2 at 4 to 5, and Year 2 (Grade 1) at 5 to 6.',
           },
           {
             p: 'For the youngest children, see [the best kindergarten in Addis Ababa](/news/best-kindergarten-addis-ababa) and [the Cambridge Early Years curriculum](/news/cambridge-early-years-curriculum). For older ones, [Cambridge Primary subjects](/news/cambridge-primary-curriculum-subjects) and [Cambridge Lower Secondary](/news/cambridge-lower-secondary-curriculum) show what each stage covers.',

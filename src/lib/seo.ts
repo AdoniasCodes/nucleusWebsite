@@ -42,6 +42,8 @@ export function buildOrganizationSchema(settings?: SiteSetting | null, seo?: Seo
       ? { geo: { '@type': 'GeoCoordinates', latitude: settings.latitude, longitude: settings.longitude } }
       : {}),
     ...(sameAs.length ? { sameAs } : {}),
+    // The preschool runs its own site; this ties the two domains together for Google.
+    subOrganization: { '@type': 'Preschool', name: 'Nucleus International Preschool', url: 'https://nucleusinternationalpreschool.com' },
     hasCredential: {
       '@type': 'EducationalOccupationalCredential',
       name: 'Cambridge Primary School registration',

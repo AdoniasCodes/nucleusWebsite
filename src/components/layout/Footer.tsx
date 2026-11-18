@@ -9,6 +9,7 @@ const PROGRAMS = [
   { label: 'Robotics & STEM', href: '/robotics-stem' },
   { label: 'Agriculture & Animal Care', href: '/agriculture-animal-care' },
   { label: 'Summer Camp', href: '/summer-camp' },
+  { label: 'Nucleus International Preschool', href: 'https://nucleusinternationalpreschool.com' },
   { label: 'Admissions', href: '/register' },
   { label: 'Careers', href: '/careers' },
   { label: 'Share your experience', href: '/experience' },

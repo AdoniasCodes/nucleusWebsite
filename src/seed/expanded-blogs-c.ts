@@ -147,7 +147,7 @@ const posts: SeedPost[] = [
           },
           { h3: 'Age 3 to 5: early years proper' },
           {
-            p: 'This is the range Cambridge Early Years is written for. Children learn language, early number and social skills through play, stories and practical tasks. Our guide to the [Cambridge Early Years curriculum](/news/cambridge-early-years-curriculum) explains what that looks like week to week.',
+            p: 'This is the range Cambridge Early Years is written for. Children learn language, early number and social skills through play, stories and practical tasks. Our guide to the [Cambridge Early Years curriculum](/news/cambridge-early-years-curriculum) explains what that looks like week to week. If you are still choosing, read [the preschool’s guide to choosing a preschool](https://nucleusinternationalpreschool.com/blog/how-to-choose-a-preschool-in-addis-ababa).',
           },
           { h3: 'Age 5: Year 1' },
           {
@@ -381,7 +381,7 @@ const posts: SeedPost[] = [
           },
           { h3: 'Is hands-on learning only for older children?' },
           {
-            p: 'No. Young children learn through doing, which is why Cambridge describes its Early Years programme as play-based. The tasks should be simple and guided, and they should lead into the reading, number and science work of the school day.',
+            p: 'No. Young children learn through doing, which is why Cambridge describes its Early Years programme as play-based. The tasks should be simple and guided, and they should lead into the reading, number and science work of the school day. You can see how we do this with the youngest children on the [Nucleus preschool programs page](https://nucleusinternationalpreschool.com/programs).',
           },
         ],
       },
