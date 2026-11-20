@@ -42,7 +42,7 @@ export function CambridgeCertificateBlock({
   imageUrl = '/images/cambridge/nucleus-cambridge-primary-certificate.webp',
   imageAlt = 'Cambridge International Education Certificate of Registration for Nucleus International Schools, a registered Cambridge Primary School, registered school ET030, issued on 23 September 2026.',
   prospectusUrl = '/downloads/nucleus-international-schools-prospectus.pdf',
-  prospectusLabel = 'Download the school prospectus (PDF, 11 MB)',
+  prospectusLabel = 'Download the school prospectus (PDF, 6.5 MB)',
 }: CambridgeCertificateProps) {
   return (
     <Section background={background} id="cambridge-certificate" className="scroll-mt-24 overflow-hidden">
