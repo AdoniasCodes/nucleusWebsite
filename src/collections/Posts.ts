@@ -1,7 +1,14 @@
-import type { CollectionConfig } from 'payload'
-
-import { anyone, isAdminOrStaff } from '../access'
+import type { Access, CollectionConfig } from 'payload'
+import { APIError } from 'payload'
+import { isAdminOrStaff } from '../access'
 import { slugField } from '../fields/slug'
+
+/** Slug prefix of hidden newsletters (/n/<slug>): they live as drafts and must never go public. */
+export const PRIVATE_PREFIX = 'private-'
+
+/** Public API reads published posts only, so draft private issues cannot be listed by slug. */
+const readPublishedOrStaff: Access = (args) =>
+  isAdminOrStaff(args) ? true : { _status: { equals: 'published' } }
 
 /** Blog/News posts. Fully editable by staff. Article schema rendered on the frontend. */
 export const Posts: CollectionConfig = {
@@ -12,10 +19,20 @@ export const Posts: CollectionConfig = {
     group: 'Content',
   },
   access: {
-    read: anyone,
+    read: readPublishedOrStaff,
     create: isAdminOrStaff,
     update: isAdminOrStaff,
     delete: isAdminOrStaff,
+  },
+  hooks: {
+    beforeChange: [
+      ({ data }) => {
+        if (data?._status === 'published' && String(data?.slug ?? '').startsWith(PRIVATE_PREFIX)) {
+          throw new APIError('Private newsletters (slug starts with "private-") must stay as drafts. Change the slug to publish.', 400)
+        }
+        return data
+      },
+    ],
   },
   versions: { drafts: { autosave: { interval: 375 } }, maxPerDoc: 25 },
   fields: [

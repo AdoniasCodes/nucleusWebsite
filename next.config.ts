@@ -52,7 +52,13 @@ const nextConfig: NextConfig = {
   // gets blocking metadata in <head>.
   htmlLimitedBots: /.*/,
   async headers() {
-    return [{ source: '/:path*', headers: securityHeaders }]
+    const noindex = [{ key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' }]
+    return [
+      { source: '/:path*', headers: securityHeaders },
+      // Hidden newsletters and their photos (never indexed, even if a link leaks).
+      { source: '/n/:path*', headers: noindex },
+      { source: '/images/private/:path*', headers: noindex },
+    ]
   },
   /**
    * /admissions used to be a separate page whose hero button and form both requested the gated

@@ -16,6 +16,7 @@
     "seed:admin": "cross-env NODE_OPTIONS=--no-deprecation tsx src/seed/admin.ts",
     "seed:staff": "cross-env NODE_OPTIONS=--no-deprecation tsx src/seed/staff.ts",
     "seed:gallery": "cross-env NODE_OPTIONS=--no-deprecation tsx src/seed/gallery.ts",
+    "seed:private-newsletters": "cross-env NODE_OPTIONS=--no-deprecation tsx src/seed/private-newsletters.ts",
     "seed:newsletters": "cross-env NODE_OPTIONS=--no-deprecation tsx src/seed/newsletters.ts",
     "refresh:gallery": "cross-env NODE_OPTIONS=--no-deprecation PAYLOAD_SKIP_PUSH=1 tsx src/seed/refresh-gallery-images.ts",
     "migrate:camp-leads": "cross-env NODE_OPTIONS=--no-deprecation tsx src/seed/migrate-camp-leads.ts",
