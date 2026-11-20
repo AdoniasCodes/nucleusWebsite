@@ -63,7 +63,15 @@ export default async function PrivateNewsletterPage({ params }: Props) {
           <div className="absolute inset-x-0 bottom-0">
             <Container width="wide" className="pb-10 sm:pb-14">
               <h1 className="max-w-4xl text-3xl font-bold text-white sm:text-5xl">{post.title}</h1>
-              <p className="mt-4 font-display text-sm text-pale/80">{formatDate(post.publishedAt || post.createdAt)}</p>
+              <div className="mt-4 flex flex-wrap items-center gap-4">
+                <p className="font-display text-sm text-pale/80">{formatDate(post.publishedAt || post.createdAt)}</p>
+                <a
+                  href={`/n/${slug}/pdf`}
+                  className="rounded-full border border-pale/40 px-4 py-1.5 font-display text-xs font-semibold text-pale transition-colors hover:bg-white/10"
+                >
+                  Download PDF ↓
+                </a>
+              </div>
             </Container>
           </div>
         </div>
