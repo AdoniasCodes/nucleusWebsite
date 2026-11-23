@@ -57,6 +57,8 @@ const nextConfig: NextConfig = {
       { source: '/:path*', headers: securityHeaders },
       // Hidden newsletters and their photos (never indexed, even if a link leaks).
       { source: '/n/:path*', headers: noindex },
+      // Homepage design previews for the team (unlinked, never indexed).
+      { source: '/preview/:path*', headers: noindex },
       { source: '/images/private/:path*', headers: noindex },
     ]
   },

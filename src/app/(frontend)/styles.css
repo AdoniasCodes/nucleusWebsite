@@ -449,3 +449,47 @@ body {
     animation: none;
   }
 }
+
+/* ── Homepage vibrance previews (/preview/home/[a|b|c]) ─────────────────────────
+   Scoped to [data-vibe], so the live homepage is untouched. Hooks: .hero-tint,
+   .hero-media, .hero-copy (hero), .photo-tint / .photo-scrim (photo bands),
+   .duotone-* (Core Values), .vibe-strip (variant B). */
+[data-vibe] { --vb-sat: 1.3; }
+[data-vibe] .hero-media {
+  filter: saturate(var(--vb-sat)) contrast(1.05) brightness(1.06);
+}
+[data-vibe] .duotone-img { filter: saturate(1.25) contrast(1.05) brightness(1.05) !important; }
+[data-vibe] .duotone-multiply { opacity: 0.22 !important; }
+[data-vibe] .duotone-glow { opacity: 0.4; }
+
+/* A: same layout, lighter tint, more colour. */
+[data-vibe='a'] .hero-tint {
+  background: linear-gradient(to right, rgba(17,2,77,0.46), rgba(17,2,77,0.2) 58%, rgba(17,2,77,0.04));
+}
+[data-vibe='a'] .hero-copy { text-shadow: 0 2px 18px rgba(17,2,77,0.55); }
+[data-vibe='a'] .photo-tint { opacity: 0.35; }
+@media (max-width: 767px) {
+  [data-vibe='a'] .hero-tint { background: linear-gradient(to top, rgba(17,2,77,0.62), rgba(17,2,77,0.3)); }
+}
+
+/* B: photo first. Only a bottom scrim, copy sits low, colour pushed harder. */
+[data-vibe='b'] { --vb-sat: 1.42; }
+[data-vibe='b'] .hero-tint {
+  background: linear-gradient(to top, rgba(17,2,77,0.9) 0%, rgba(17,2,77,0.72) 34%, rgba(17,2,77,0.28) 62%, rgba(17,2,77,0) 86%);
+}
+[data-vibe='b'] .hero-copy { align-items: flex-end; text-shadow: 0 2px 14px rgba(17,2,77,0.7); }
+[data-vibe='b'] .photo-tint { opacity: 0.2; }
+
+/* C: a solid navy panel with a slanted edge holds the words; the photo beside it has no tint. */
+[data-vibe='c'] { --vb-sat: 1.36; }
+[data-vibe='c'] .hero-tint {
+  background: #11024d;
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 52%, 0 40%);
+}
+[data-vibe='c'] .hero-copy { align-items: flex-end; }
+[data-vibe='c'] .photo-tint { opacity: 0.3; }
+@media (min-width: 1024px) {
+  [data-vibe='c'] .hero-tint { clip-path: polygon(0 0, 54% 0, 42% 100%, 0 100%); }
+  [data-vibe='c'] .hero-copy { align-items: center; }
+  [data-vibe='c'] .hero-copy > * { max-width: min(36rem, 42vw); margin-left: 0; margin-right: auto; }
+}

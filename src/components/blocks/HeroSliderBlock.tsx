@@ -428,13 +428,13 @@ function BrandSlideView({ slide, active }: { slide: BrandSlide; active: boolean 
           alt=""
           fill
           priority
-          className="hero-kenburns img-grade object-cover"
+          className="hero-kenburns img-grade hero-media object-cover"
           sizes="100vw"
         />
       )}
       {slide.bgVideo && showVideo && (
         <video
-          className="hero-kenburns absolute inset-0 h-full w-full object-cover"
+          className="hero-kenburns hero-media absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop
@@ -447,11 +447,11 @@ function BrandSlideView({ slide, active }: { slide: BrandSlide; active: boolean 
           <source src={slide.bgVideo} type="video/mp4" />
         </video>
       )}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/65 to-navy/45" />
+      <div className="hero-tint absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/65 to-navy/45" />
       {/* text-white so the inherited <h1> ("Nucleus International Schools") is crisp white on the video */}
       {/* pb-32 on mobile reserves the bottom band for the dots and the floating film button.
           Without it the button lands on top of the slide's own CTAs on a phone. */}
-      <Container className="relative flex h-full w-full items-center pb-40 pt-16 text-white sm:py-20 lg:py-24">
+      <Container className="hero-copy relative flex h-full w-full items-center pb-40 pt-16 text-white sm:py-20 lg:py-24">
         {/* keyed by `active` so the typewriter replays each time this slide returns */}
         <HeroReveal
           key={active ? 'on' : 'off'}
@@ -494,13 +494,13 @@ function FilmSlideView({ slide, onWatch }: { slide: FilmSlide; onWatch: () => vo
           alt=""
           fill
           priority
-          className="img-grade object-cover"
+          className="img-grade hero-media object-cover"
           sizes="100vw"
         />
       )}
       {slide.bgVideo && showVideo && (
         <video
-          className="absolute inset-0 h-full w-full object-cover"
+          className="hero-media absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop
@@ -513,8 +513,8 @@ function FilmSlideView({ slide, onWatch }: { slide: FilmSlide; onWatch: () => vo
           <source src={slide.bgVideo} type="video/mp4" />
         </video>
       )}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/70 to-navy/45" />
-      <Container className="relative flex h-full w-full items-center pb-40 pt-16 text-white sm:py-20 lg:py-24">
+      <div className="hero-tint absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/70 to-navy/45" />
+      <Container className="hero-copy relative flex h-full w-full items-center pb-40 pt-16 text-white sm:py-20 lg:py-24">
         <div className="mx-auto max-w-2xl text-center sm:mx-0 sm:text-left">
           {slide.eyebrow && (
             <p className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-ochre">
@@ -585,7 +585,7 @@ function CampaignSlideView({ slide }: { slide: CampaignSlide }) {
         <FloatChip icon="Trophy" tint="bg-ochre text-navy" className="right-5 bottom-[8%] animate-bob [--tilt:7deg] [animation-delay:1.1s]" />
       </div>
       {/* Same reserved bottom band as the brand slide, for the dots and the film button. */}
-      <Container className="relative flex h-full w-full items-center pb-40 pt-16 sm:py-20">
+      <Container className="hero-copy relative flex h-full w-full items-center pb-40 pt-16 sm:py-20">
         <div className="grid w-full items-center gap-8 lg:grid-cols-2 lg:gap-14">
           <div className="text-center lg:order-1 lg:text-left">
             {slide.badge && (

@@ -37,17 +37,17 @@ function TreatmentBg({ treatment, img }: { treatment: BgTreatment; img: string }
     return (
       <>
         <div
-          className="absolute inset-0 bg-cover bg-center bg-scroll md:bg-fixed"
+          className="duotone-img absolute inset-0 bg-cover bg-center bg-scroll md:bg-fixed"
           style={{ backgroundImage: `url(${img})`, filter: 'grayscale(1) contrast(1.08) brightness(0.92)' }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-navy" style={{ mixBlendMode: 'multiply', opacity: 0.9 }} aria-hidden />
+        <div className="duotone-multiply absolute inset-0 bg-navy" style={{ mixBlendMode: 'multiply', opacity: 0.9 }} aria-hidden />
         <div
-          className="absolute inset-0"
+          className="duotone-glow absolute inset-0"
           style={{ background: 'radial-gradient(110% 80% at 50% 22%, rgba(224,169,59,0.42), transparent 60%)', mixBlendMode: 'screen' }}
           aria-hidden
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/75 via-transparent to-navy/30" aria-hidden />
+        <div className="photo-tint absolute inset-0 bg-gradient-to-t from-navy/75 via-transparent to-navy/30" aria-hidden />
       </>
     )
   }
@@ -83,7 +83,7 @@ function TreatmentBg({ treatment, img }: { treatment: BgTreatment; img: string }
         className="absolute inset-x-4 inset-y-6 overflow-hidden rounded-[2rem] border border-ochre/40 shadow-[0_36px_90px_-44px_rgba(0,0,0,0.8)] sm:inset-x-10 md:inset-x-16"
         aria-hidden
       >
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${img})` }} />
+        <div className="hero-media absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${img})` }} />
         <div
           className="absolute inset-0"
           style={{ background: 'radial-gradient(58% 58% at 50% 46%, rgba(255,255,255,0.42), rgba(17,2,77,0.35) 68%, rgba(17,2,77,0.7))' }}
@@ -128,12 +128,12 @@ export function CoreValuesOrbit(props: CoreValuesOrbitProps) {
         props.bgImage && (
           <>
             <div
-              className="img-grade absolute inset-0 bg-cover bg-center bg-scroll md:bg-fixed"
+              className="img-grade hero-media absolute inset-0 bg-cover bg-center bg-scroll md:bg-fixed"
               style={{ backgroundImage: `url(${props.bgImage})` }}
               aria-hidden
             />
             <div
-              className={`absolute inset-0 bg-gradient-to-br ${
+              className={`photo-tint absolute inset-0 bg-gradient-to-br ${
                 light ? 'from-white/60 via-white/78 to-white/92' : 'from-navy/90 via-navy/72 to-navy/88'
               }`}
               aria-hidden

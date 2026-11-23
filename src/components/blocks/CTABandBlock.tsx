@@ -57,9 +57,9 @@ export function CTABandBlock(props: CTABandBlockType & { bgImage?: string }) {
             blown-out sky and sunlit turf, and white text over that is illegible. So the light
             wash is paired with a soft scrim that sits only behind the copy, fading out well
             before the edges. The frame reads open; the words still clear AA contrast. */}
-        <div className="absolute inset-0 bg-navy/25" aria-hidden />
+        <div className="photo-tint absolute inset-0 bg-navy/25" aria-hidden />
         <div
-          className="absolute inset-0 [background:radial-gradient(72%_68%_at_50%_50%,rgba(26,29,74,0.84)_0%,rgba(26,29,74,0.68)_40%,rgba(26,29,74,0.16)_74%,transparent_100%)]"
+          className="photo-scrim absolute inset-0 [background:radial-gradient(72%_68%_at_50%_50%,rgba(26,29,74,0.84)_0%,rgba(26,29,74,0.68)_40%,rgba(26,29,74,0.16)_74%,transparent_100%)]"
           aria-hidden
         />
         {inner}

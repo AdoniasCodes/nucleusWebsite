@@ -142,7 +142,7 @@ export function CardsGridBlock(
           style={{ backgroundImage: `url(${props.bgImage})` }}
           aria-hidden
         />
-        <div className={`absolute inset-0 ${overlayClass[overlay]}`} aria-hidden />
+        <div className={`photo-tint absolute inset-0 ${overlayClass[overlay]}`} aria-hidden />
         {inner}
       </section>
     )
