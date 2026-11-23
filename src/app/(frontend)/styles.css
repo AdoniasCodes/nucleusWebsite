@@ -474,20 +474,7 @@ body {
 [data-vibe='b'] .hero-copy { align-items: flex-end; text-shadow: 0 2px 14px rgba(17,2,77,0.7); }
 [data-vibe='b'] .photo-tint { opacity: 0.2; }
 
-/* C: a solid navy panel with a slanted edge holds the words; the photo beside it has no tint. */
-[data-vibe='c'] .hero-tint {
-  background: #11024d;
-  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 52%, 0 40%);
-}
-[data-vibe='c'] .hero-copy { align-items: flex-end; }
-[data-vibe='c'] .photo-tint { opacity: 0.3; }
-@media (min-width: 1024px) {
-  [data-vibe='c'] .hero-tint { clip-path: polygon(0 0, 54% 0, 42% 100%, 0 100%); }
-  [data-vibe='c'] .hero-copy { align-items: center; }
-  [data-vibe='c'] .hero-copy > * { max-width: min(36rem, 42vw); margin-left: 0; margin-right: auto; }
-}
-
-/* D: like C, but the slant is measured from the text so every word sits on the navy side. */
+/* D: split panel. The slant is measured from the text so every word sits on the navy side. */
 [data-vibe='d'] {
   --L: max(2rem, calc((100vw - 72rem) / 2 + 2rem)); /* left edge of the page column */
   --w: min(34rem, calc(46vw - var(--L)));            /* widest the words may be */

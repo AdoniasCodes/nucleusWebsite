@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { BlockRenderer, type RenderableBlock } from '@/components/blocks/BlockRenderer'
 import { defaultHomeLayout } from '@/components/blocks/defaultHome'
 import { VibeStrip } from '@/components/blocks/VibeStrip'
+import { CampusCarousel } from '@/components/blocks/CampusCarousel'
 import { getPageBySlug, getPayloadClient } from '@/lib/payload'
 
 // Team-only homepage design previews. Unlinked, noindex (meta + X-Robots-Tag in next.config),
@@ -10,7 +11,7 @@ import { getPageBySlug, getPayloadClient } from '@/lib/payload'
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Homepage preview', robots: { index: false, follow: false } }
 
-const VERSIONS = ['a', 'b', 'c', 'd', 'e']
+const VERSIONS = ['a', 'b', 'd', 'e']
 const MIN_QUOTES = 3
 
 async function quotes() {
@@ -42,7 +43,10 @@ export default async function HomePreview({ params }: { params: Promise<{ v: str
   const blocks = layout.map((b) =>
     b.blockType === 'testimonials' ? { ...b, quotes: q.length >= MIN_QUOTES ? q : [] } : b,
   ) as RenderableBlock[]
-  const [hero, ...rest] = blocks
+  // E drops the Core Values orbit; D swaps the Campus Life gallery for a 5-photo carousel.
+  const kept = v === 'e' ? blocks.filter((b) => b.blockType !== 'coreValuesOrbit') : blocks
+  const [hero, ...rest] = kept
+  const gi = v === 'd' ? rest.findIndex((b) => b.blockType === 'galleryBlock') : -1
 
   return (
     <div data-vibe={v}>
@@ -56,7 +60,15 @@ export default async function HomePreview({ params }: { params: Promise<{ v: str
       )}
       <BlockRenderer blocks={[hero]} />
       {v === 'b' && <VibeStrip />}
-      <BlockRenderer blocks={rest} />
+      {gi >= 0 ? (
+        <>
+          <BlockRenderer blocks={rest.slice(0, gi)} />
+          <CampusCarousel />
+          <BlockRenderer blocks={rest.slice(gi + 1)} />
+        </>
+      ) : (
+        <BlockRenderer blocks={rest} />
+      )}
     </div>
   )
 }
