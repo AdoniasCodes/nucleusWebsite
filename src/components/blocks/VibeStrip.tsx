@@ -24,7 +24,7 @@ export function VibeStrip() {
                 alt={t.alt}
                 fill
                 sizes="(min-width: 640px) 33vw, 100vw"
-                className="object-cover [filter:saturate(1.3)_contrast(1.04)_brightness(1.04)]"
+                className="object-cover"
               />
               <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/70 to-transparent px-5 pb-4 pt-12 font-display text-2xl font-bold text-white">
                 {t.word}

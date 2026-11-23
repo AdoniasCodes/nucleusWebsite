@@ -454,11 +454,6 @@ body {
    Scoped to [data-vibe], so the live homepage is untouched. Hooks: .hero-tint,
    .hero-media, .hero-copy (hero), .photo-tint / .photo-scrim (photo bands),
    .duotone-* (Core Values), .vibe-strip (variant B). */
-[data-vibe] { --vb-sat: 1.3; }
-[data-vibe] .hero-media {
-  filter: saturate(var(--vb-sat)) contrast(1.05) brightness(1.06);
-}
-[data-vibe] .duotone-img { filter: saturate(1.25) contrast(1.05) brightness(1.05) !important; }
 [data-vibe] .duotone-multiply { opacity: 0.22 !important; }
 [data-vibe] .duotone-glow { opacity: 0.4; }
 
@@ -473,7 +468,6 @@ body {
 }
 
 /* B: photo first. Only a bottom scrim, copy sits low, colour pushed harder. */
-[data-vibe='b'] { --vb-sat: 1.42; }
 [data-vibe='b'] .hero-tint {
   background: linear-gradient(to top, rgba(17,2,77,0.9) 0%, rgba(17,2,77,0.72) 34%, rgba(17,2,77,0.28) 62%, rgba(17,2,77,0) 86%);
 }
@@ -481,7 +475,6 @@ body {
 [data-vibe='b'] .photo-tint { opacity: 0.2; }
 
 /* C: a solid navy panel with a slanted edge holds the words; the photo beside it has no tint. */
-[data-vibe='c'] { --vb-sat: 1.36; }
 [data-vibe='c'] .hero-tint {
   background: #11024d;
   clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 52%, 0 40%);
@@ -492,4 +485,60 @@ body {
   [data-vibe='c'] .hero-tint { clip-path: polygon(0 0, 54% 0, 42% 100%, 0 100%); }
   [data-vibe='c'] .hero-copy { align-items: center; }
   [data-vibe='c'] .hero-copy > * { max-width: min(36rem, 42vw); margin-left: 0; margin-right: auto; }
+}
+
+/* D: like C, but the slant is measured from the text so every word sits on the navy side. */
+[data-vibe='d'] {
+  --L: max(2rem, calc((100vw - 72rem) / 2 + 2rem)); /* left edge of the page column */
+  --w: min(34rem, calc(46vw - var(--L)));            /* widest the words may be */
+  --p2: calc(var(--L) + var(--w) + 2.5rem);          /* panel edge at the bottom */
+}
+[data-vibe='d'] .hero-tint {
+  background: #11024d;
+  clip-path: polygon(0 12%, 100% 6%, 100% 100%, 0 100%);
+}
+[data-vibe='d'] .hero-copy { align-items: flex-end; }
+[data-vibe='d'] .photo-tint { opacity: 0.3; }
+@media (min-width: 1024px) {
+  [data-vibe='d'] .hero-tint { clip-path: polygon(0 0, calc(var(--p2) + 9vw) 0, var(--p2) 100%, 0 100%); }
+  [data-vibe='d'] .hero-copy { align-items: center; }
+  [data-vibe='d'] .hero-copy > * { width: var(--w); max-width: var(--w); margin-left: 0; margin-right: auto; }
+}
+
+/* E: the video plays inside a Nucleus badge (shield). The rest of the slide is a flat brand gradient. */
+[data-vibe='e'] {
+  --L: max(2rem, calc((100vw - 72rem) / 2 + 2rem));
+  --bw: min(30rem, 40vw);
+}
+[data-vibe='e'] .hero-tint {
+  z-index: 0;
+  background: radial-gradient(70% 90% at 78% 45%, #3f5dba 0%, #1d0a7a 48%, #11024d 100%);
+}
+[data-vibe='e'] .hero-tint::after {
+  content: '';
+  position: absolute;
+  background: #e0a93b;
+  clip-path: url(#nucleus-badge);
+  top: 7%; bottom: 7%; width: calc(var(--bw) + 1.2rem);
+  right: calc(var(--L) - 0.6rem);
+}
+[data-vibe='e'] .hero-media {
+  position: absolute !important;
+  inset: auto !important;
+  z-index: 1;
+  animation: none !important;
+  clip-path: url(#nucleus-badge);
+  top: calc(7% + 0.6rem) !important; bottom: auto !important;
+  width: var(--bw) !important; height: calc(86% - 1.2rem) !important;
+  right: var(--L) !important; left: auto !important;
+}
+[data-vibe='e'] .hero-copy { z-index: 2; text-shadow: none; }
+[data-vibe='e'] .hero-copy > * { max-width: min(36rem, calc(100vw - var(--bw) - var(--L) - 3rem)); margin-left: 0; margin-right: auto; }
+@media (max-width: 1023px) {
+  /* The badge sits above the words in fixed rem sizes; extra top padding makes the slide grow to fit it. */
+  [data-vibe='e'] { --bw: 10.5rem; }
+  [data-vibe='e'] .hero-copy { align-items: flex-end; padding-top: 15rem !important; }
+  [data-vibe='e'] .hero-copy > * { max-width: none; margin: 0 auto; }
+  [data-vibe='e'] .hero-tint::after { top: 1rem; bottom: auto; height: 12.2rem; right: auto; left: 50%; margin-left: calc(var(--bw) / -2 - 0.6rem); }
+  [data-vibe='e'] .hero-media { top: 1.6rem !important; bottom: auto !important; height: 11rem !important; right: auto !important; left: 50% !important; margin-left: calc(var(--bw) / -2); }
 }
