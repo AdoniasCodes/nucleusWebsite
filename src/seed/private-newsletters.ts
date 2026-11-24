@@ -35,7 +35,10 @@ const ISSUES: { slug: string; title: string; excerpt: string; heroImageUrl: stri
           p('Year 5 (Grade 4) celebrated Fruit Day with a fun, hands-on lesson about healthy eating and nutrition.'),
           p('Each student brought fruit from home. Grapes, strawberries, blueberries, oranges, pineapple, bananas and apples soon filled the table, and the class had plenty to talk about.'),
         ],
-        images: [{ imageUrl: `${IMG}/pineapple.webp`, alt: 'Year 5 students and teachers around a table of sliced fruit while a teacher cuts a pineapple' }],
+        images: [
+          { imageUrl: `${IMG}/pineapple.webp`, alt: 'Year 5 students and teachers around a table of sliced fruit while a teacher cuts a pineapple' },
+          { imageUrl: `${IMG}/smiles-table.webp`, alt: 'Smiling Year 5 students seated around a table of bananas, grapes, apples, oranges and strawberries' },
+        ],
       },
       {
         heading: 'Looking closely, tasting slowly',
@@ -48,6 +51,7 @@ const ISSUES: { slug: string; title: string; excerpt: string; heroImageUrl: stri
           { imageUrl: `${IMG}/grapes.webp`, alt: 'A teacher helping students choose fruit from a bowl of grapes and strawberries' },
           { imageUrl: `${IMG}/blueberries.webp`, alt: 'A teacher placing blueberries on paper plates in front of three students' },
           { imageUrl: `${IMG}/strawberry-top.webp`, alt: 'Two students looking down at strawberries arranged on paper plates' },
+          { imageUrl: `${IMG}/whiteboard-table.webp`, alt: 'A teacher reaching into a bowl of grapes as students gather round the fruit table' },
         ],
       },
       {
